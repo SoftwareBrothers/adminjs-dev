@@ -1,0 +1,6 @@
+[submodule "admin-bro"]
+	path = admin-bro
+	url = git@github.com:SoftwareBrothers/admin-bro.git
+[submodule "admin-bro-hapijs"]
+	path = admin-bro-hapijs
+	url = git@github.com:SoftwareBrothers/admin-bro-hapijs.git
