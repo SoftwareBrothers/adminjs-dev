@@ -1,0 +1,6 @@
+infrastructure/data
+node_modules
+.nyc_output
+coverage
+.DS_store
+docker-compose.ovverride.yml
