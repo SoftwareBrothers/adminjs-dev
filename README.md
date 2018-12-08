@@ -25,7 +25,18 @@ As mentioned before this repo contains another repositories as git submodules. Y
 ## note about npm linking
 
 Since we are using local versions of the packages (via git submodules) we 
-have to inform npm about that. It is done `via npm` link command. Take a look at the [dockerfile](infrastructure/Dockerfile) to see how its used if you want to do the same thing without the docker.
+have to inform npm about that. It is done via `npm link` command. Take a look at the [dockerfile](infrastructure/Dockerfile) to see how its used if you want to do the same thing without the docker.
+
+## License
+
+AdminBro is Copyright © 2018 SoftwareBrothers.co. It is free software, and may be redistributed under the terms specified in the [LICENSE](LICENSE) file.
+
+## About SoftwareBrothers.co
+
+<img src="https://softwarebrothers.co/assets/images/software-brothers-logo-full.svg" width=240>
 
 
+We’re an open, friendly team that helps clients from all over the world to transform their businesses and create astonishing products.
 
+* We are available to [hire](https://softwarebrothers.co/contact).
+* If you want to work for us - checkout the [career page](https://softwarebrothers.co/career).
