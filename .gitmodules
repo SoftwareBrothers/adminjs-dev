@@ -4,3 +4,6 @@
 [submodule "admin-bro-hapijs"]
 	path = admin-bro-hapijs
 	url = git@github.com:SoftwareBrothers/admin-bro-hapijs.git
+[submodule "admin-bro-mongoose"]
+	path = admin-bro-mongoose
+	url = git@github.com:SoftwareBrothers/admin-bro-mongoose.git

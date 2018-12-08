@@ -1,3 +1,7 @@
+const AdminBro = require('admin-bro')
+const AdminBroMongoose = require('admin-bro-mongoose')
+AdminBro.registerAdapter(AdminBroMongoose)
+
 const Hapi = require('hapi')
 const mongoose = require('mongoose')
 const Bcrypt = require('bcrypt')
