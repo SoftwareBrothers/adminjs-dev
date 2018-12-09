@@ -18,6 +18,7 @@
   "homepage": "https://github.com/SoftwareBrothers/admin-bro-dev#readme",
   "dependencies": {
     "admin-bro": "^0.1.1",
+    "axios": "^0.18.0",
     "bcrypt": "^3.0.2",
     "boom": "^7.3.0",
     "hapi": "^17.5.3",

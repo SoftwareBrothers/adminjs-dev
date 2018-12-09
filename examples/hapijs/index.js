@@ -17,6 +17,8 @@ require('../mongoose/category-model')
 require('../mongoose/page-model')
 require('../mongoose/user-model')
 
+const PostCode = require('../rest/postcode')
+
 /**
  * Creates first admin test@example.com:password when there are no
  * admins in the database
@@ -42,7 +44,7 @@ const start = async () => {
       resources: [{
         resource: ArticleModel,
         decorator: ArticleDecorator,
-      }],
+      }, new PostCode()],
       branding: {
         companyName: 'Amazing c.o.',
       },
