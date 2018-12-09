@@ -46,7 +46,6 @@ class PostCode extends BaseResource {
       params: { page: offset / limit + 1, per_page: limit },
     })
     this.totalCount = rest.data.meta.total_count
-    console.log(rest.data.meta)
     return rest.data.results.map(obj => new BaseRecord(obj, this))
   }
 
