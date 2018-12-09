@@ -1,9 +1,12 @@
 [submodule "admin-bro"]
 	path = admin-bro
 	url = git@github.com:SoftwareBrothers/admin-bro.git
+	master = master
 [submodule "admin-bro-hapijs"]
 	path = admin-bro-hapijs
 	url = git@github.com:SoftwareBrothers/admin-bro-hapijs.git
+	master = master
 [submodule "admin-bro-mongoose"]
 	path = admin-bro-mongoose
 	url = git@github.com:SoftwareBrothers/admin-bro-mongoose.git
+	master = master
