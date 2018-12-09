@@ -12,7 +12,7 @@ class ArticleDecorator extends BaseDecorator {
     }
     const publishAction = {
       id: 'publish',
-      icon: 'share',
+      icon: 'fas fa-share',
       label: 'Publish',
       action: (request, response, view) => {
         const { method } = request
@@ -25,16 +25,16 @@ class ArticleDecorator extends BaseDecorator {
     this.recordActions = ['show', 'edit', 'remove', publishAction]
   }
 
-  getValue({ record, property, where, helpers }) {
+  getValue({ record, property, where }) {
     switch (property.name()) {
     case 'publishedAt':
       return `
         <p>Here goes a paragraph</p>
         <p>and another one</p>
-        <a href="${helpers.showRecordUrl(record.resource, record)}">Link somewere</>
+        <a href="${this.helpers.showRecordUrl(record.resource, record)}">Link somewere</>
       `
     default:
-      return super.getValue({ record, property, where, helpers })
+      return super.getValue({ record, property, where })
     }
   }
 }

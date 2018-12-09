@@ -7,7 +7,7 @@ This is a wrapper repo for entire AdminBro core with couple of its plugins. If y
 All AdminBro plugins are embded as a git submodules. To clone entire repo with all dependencies simply run:
 
 ```bash
-git clone --recurse-submodules https://github.com/chaconinc/MainProject
+git clone --recurse-submodules https://github.com/SoftwareBrothers/admin-bro-dev
 ```
 
 After that enter the infrastructure directory and within it run docker:
