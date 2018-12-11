@@ -14,7 +14,7 @@ class ArticleDecorator extends BaseDecorator {
       id: 'publish',
       icon: 'fas fa-share',
       label: 'Publish',
-      action: (request, response, view) => {
+      action: (request, response, data) => {
         const { method } = request
         if (method === 'GET') {
           return 'Some content or form which you want to place here'
