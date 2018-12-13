@@ -1,1 +1,1 @@
-require('./examples/hapijs')
+

@@ -32,5 +32,8 @@ services:
       interval: 5s
       timeout: 5s
       retries: 10
-    # logging:
-    #   driver: none
+
+  postgres:
+    container_name: postgres
+    image: postgres
+    restart: always

@@ -31,7 +31,7 @@ gulp.task('js', () => {
 
 gulp.task('nodemon', () => {
   nodemon({
-    script: 'index.js',
+    script: './admin-bro-example-app/index.js',
     ext: 'js json',
   })
 })
