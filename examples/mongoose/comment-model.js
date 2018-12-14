@@ -6,6 +6,8 @@ const CommentSchema = new Schema({
   content: String,
   createdAt: Date,
   createdBy: String,
+  imgPath: String,
+  status: String,
   parentCommentId: String,
 })
 
