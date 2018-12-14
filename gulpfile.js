@@ -1,3 +1,4 @@
+const { spawn } = require('child_process')
 const gulp = require('gulp')
 const sass = require('gulp-sass')
 const autoprefixer = require('gulp-autoprefixer')
@@ -31,14 +32,22 @@ gulp.task('js', () => {
 
 gulp.task('nodemon', () => {
   nodemon({
-    script: './admin-bro-example-app/index.js',
+    script: './index.js',
     ext: 'js json',
   })
 })
+
+gulp.task('dbCreate', (done) => {
+  spawn('yarn', ['run', 'sequelize', 'db:create'], { cwd: 'admin-bro-example-app/', stdio: 'inherit' })
+    .on('close', () => {
+      spawn('yarn', ['run', 'sequelize', 'db:migrate'], { cwd: 'admin-bro-example-app/', stdio: 'inherit' })
+      .on('close', done)
+    });
+});
 
 gulp.task('watch', () => {
   gulp.watch('admin-bro/src/frontend/styles/**/*.sass', ['sass'])
   gulp.watch('admin-bro/src/frontend/scripts/**/*.js', ['js'])
 })
 
-gulp.task('default', ['nodemon', 'sass', 'js', 'watch'])
+gulp.task('default', ['dbCreate', 'sass', 'js', 'watch', 'nodemon'])
