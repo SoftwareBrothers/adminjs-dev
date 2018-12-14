@@ -6,7 +6,7 @@ class DashboardPage extends PageBuilder {
   constructor(props) {
     super(props)
     this.title = 'Collections overview',
-    this.subtitle = 'Lorem Ipsum subtitle'
+    this.subtitle = 'stats'
   }
 
   async build() {
@@ -38,7 +38,6 @@ class DashboardPage extends PageBuilder {
       icon: 'fas fa-star fa-2x',
       columns: 3
     })
-    this.addDiagram
     return {
       title: this.title,
       subtitle: this.subtitle,
