@@ -17,6 +17,7 @@ require('../mongoose/comment-model')
 require('../mongoose/category-model')
 require('../mongoose/page-model')
 require('../mongoose/user-model')
+require('../mongoose/clients-model')
 
 const PostCode = require('../rest/postcode')
 
