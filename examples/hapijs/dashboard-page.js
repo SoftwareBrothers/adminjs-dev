@@ -8,8 +8,7 @@ const moment = require('moment')
 class DashboardPage extends PageBuilder {
   constructor(props) {
     super(props)
-    this.title = 'Collections overview',
-    this.subtitle = 'stats'
+    this.title = 'My dashboard'
   }
 
   async build() {
@@ -20,7 +19,7 @@ class DashboardPage extends PageBuilder {
     const comments = await CommentModel.find()
     const clients = await ClientsModel.find()
     let mappedComments = null
-    if(comments) {
+    if(comments.length) {
       mappedComments = comments.map(comment => { 
         return {
           title: comment.createdBy,
@@ -31,37 +30,38 @@ class DashboardPage extends PageBuilder {
         }
       })
     }
-    this.addBlock({
+    await this.addOverview('Collections overview', 'stats')
+    await this.addBlock({
       title: 'The number of all articles',
       value: articlesCount,
       icon: 'fas fa-arrow-alt-circle-up fa-2x',
       columns: 3,
-    }, this.types.info)
-    this.addBlock({
+    }, this.colorTypes.info)
+    await this.addBlock({
       title: 'Published articles',
       value: publishedArticlesCount,
       icon: 'fas fa-star fa-2x',
       columns: 3
-    }, this.types.succes)
-    this.addBlock({
+    }, this.colorTypes.succes)
+    await this.addBlock({
       title: 'Unpublished articles',
       value: unpublishedArticlesCount,
       icon: 'fas fa-arrow-alt-circle-down fa-2x',
       columns: 3
-    }, this.types.warning)
-    this.addBlock({
+    }, this.colorTypes.warning)
+    await this.addBlock({
       title: 'The number of users',
       value: usersCount,
       icon: 'fas fa-star fa-2x',
       columns: 3
-    }, this.types.info)
-    mappedComments && this.addInfoTable({
+    }, this.colorTypes.info)
+    mappedComments && await this.addInfoTable({
       title: 'Table Information',
       headers: Object.keys(mappedComments[0]),
       items: mappedComments,
       columns: 12
     })
-    this.addTextBox({
+    await this.addTextBox({
       title: 'Lorem ipsum text title',
       content: `
         <div> lorem ipsum contentum textum boxum</div>
@@ -71,18 +71,18 @@ class DashboardPage extends PageBuilder {
       `,
       columns: 6
     })
-    mappedComments && this.addInfoList({
+    mappedComments && await this.addInfoList({
       title: 'Recent comments',
       subtitle: 'Latest comments from user all around the world',
       columns: 6,
       items: mappedComments
     })
-    this.addTextBox({
+    await this.addTextBox({
       title: 'Simple textbox',
       content: '<div> lorem ipsum contentum textum boxum</div>',
       columns: 6
     })
-    this.addChart({
+    await this.addChart({
       columns: 6,
       config: {
         name: 'example',
@@ -108,7 +108,7 @@ class DashboardPage extends PageBuilder {
         },
       }
     })
-  }                
+  }    
 }
 
 module.exports = DashboardPage
