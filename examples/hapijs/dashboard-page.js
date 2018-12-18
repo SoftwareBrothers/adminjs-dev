@@ -12,12 +12,13 @@ class DashboardPage extends PageBuilder {
   }
 
   async build() {
+    const maxItems = 10
     const articlesCount = await ArticleModel.countDocuments()
-    const publishedArticlesCount = await ArticleModel.find({ published: true }).countDocuments()
+    const publishedArticlesCount = await ArticleModel.find({ published: true }).limit(maxItems).countDocuments()
     const unpublishedArticlesCount = articlesCount - publishedArticlesCount
     const usersCount = await UserModel.countDocuments()
-    const comments = await CommentModel.find()
-    const clients = await ClientsModel.find()
+    const comments = await CommentModel.find({}).limit(maxItems)
+    const clients = await ClientsModel.find({}).limit(maxItems)
     let mappedComments = null
     if(comments.length) {
       mappedComments = comments.map(comment => { 
@@ -30,7 +31,7 @@ class DashboardPage extends PageBuilder {
         }
       })
     }
-    await this.addOverview('Collections overview', 'stats')
+    await this.setOverview('Collections overview', 'stats')
     await this.addBlock({
       title: 'The number of all articles',
       value: articlesCount,
