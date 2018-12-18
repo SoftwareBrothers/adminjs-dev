@@ -21,8 +21,11 @@
     "axios": "^0.18.0",
     "bcrypt": "^3.0.2",
     "boom": "^7.3.0",
+    "chart.js": "^2.7.3",
+    "cheerio": "^1.0.0-rc.2",
     "hapi": "^17.5.3",
-    "inert": "^5.1.2"
+    "inert": "^5.1.2",
+    "moment": "^2.23.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.0",

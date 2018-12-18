@@ -10,12 +10,14 @@ const AdminBroPlugin = require('admin-bro-hapijs')
 const AdminModel = require('../mongoose/admin-model')
 const ArticleModel = require('../mongoose/article-model')
 const ArticleDecorator = require('./article-decorator')
+const DashboardPage = require('./dashboard-page')
 
 require('../mongoose/blog-post-model')
 require('../mongoose/comment-model')
 require('../mongoose/category-model')
 require('../mongoose/page-model')
 require('../mongoose/user-model')
+require('../mongoose/clients-model')
 
 const PostCode = require('../rest/postcode')
 
@@ -58,6 +60,7 @@ const start = async () => {
         cookiePassword: process.env.ADMIN_COOKIE_SECRET || 'yoursupersecretcookiepassword-veryveryverylong',
         isSecure: false, // allows you to test the app with http
       },
+      dashboard: DashboardPage
     }
     await server.register({
       plugin: AdminBroPlugin,
