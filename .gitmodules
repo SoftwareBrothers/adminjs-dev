@@ -10,3 +10,9 @@
 	path = admin-bro-mongoose
 	url = git@github.com:SoftwareBrothers/admin-bro-mongoose.git
 	master = master
+[submodule "admin-bro-sequelizejs"]
+	path = admin-bro-sequelizejs
+	url = git@github.com:SoftwareBrothers/admin-bro-sequelizejs.git
+[submodule "admin-bro-example-app"]
+	path = admin-bro-example-app
+	url = git@github.com:SoftwareBrothers/admin-bro-example-app.git

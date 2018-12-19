@@ -17,13 +17,20 @@
   },
   "homepage": "https://github.com/SoftwareBrothers/admin-bro-dev#readme",
   "dependencies": {
-    "admin-bro": "^0.1.1",
+    "admin-bro": "^0.1.2",
+    "admin-bro-hapijs": "^0.1.1",
+    "admin-bro-mongoose": "^0.1.1",
+    "admin-bro-sequelizejs": "^0.1.0",
     "axios": "^0.18.0",
     "bcrypt": "^3.0.2",
+    "hapi": "^17.8.1",
+    "mongoose": "^5.3.15",
+    "nodemon": "^1.18.8",
+    "pg": "^7.7.1",
+    "sequelize": "^4.42.0",
+    "sequelize-cli": "^5.4.0",
     "boom": "^7.3.0",
     "chart.js": "^2.7.3",
-    "cheerio": "^1.0.0-rc.2",
-    "hapi": "^17.5.3",
     "inert": "^5.1.2",
     "moment": "^2.23.0"
   },
@@ -37,7 +44,6 @@
     "gulp-nodemon": "^2.4.2",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
-    "gulp-uglify": "^3.0.1",
-    "mongoose": "^5.3.15"
+    "gulp-uglify": "^3.0.1"
   }
 }

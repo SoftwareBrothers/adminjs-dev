@@ -13,6 +13,10 @@ services:
       - mongo
     volumes:
       - ../:/usr/src/app
+      - /usr/src/app/admin-bro-example-app/node_modules
+      - /usr/src/app/admin-bro-hapijs/node_modules
+      - /usr/src/app/admin-bro-mongoose/node_modules
+      - /usr/src/app/admin-bro-sequelizejs/node_modules
       - /usr/src/app/node_modules
     command: "./node_modules/.bin/gulp"
     env_file: '.env'
@@ -32,5 +36,8 @@ services:
       interval: 5s
       timeout: 5s
       retries: 10
-    # logging:
-    #   driver: none
+
+  postgres:
+    container_name: postgres
+    image: postgres
+    restart: always
