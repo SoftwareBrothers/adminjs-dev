@@ -1,5 +1,6 @@
 const AdminBro = require('admin-bro')
 const AdminBroMongoose = require('admin-bro-mongoose')
+const inert = require('inert')
 AdminBro.registerAdapter(AdminBroMongoose)
 
 const Hapi = require('hapi')
@@ -38,8 +39,25 @@ const start = async () => {
   try {
     const server = Hapi.server({ port: process.env.PORT || 8080 })
     const connection = await mongoose.connect(process.env.MONGO_URL)
+    await server.register(inert)
 
     await createAdminIfNone()
+
+    server.route({
+      method: 'GET',
+      path: '/custom.css',
+      handler: function (request, h) {
+        return h.file('./examples/hapijs/assets/custom.css')
+      }
+    })
+
+    server.route({
+      method: 'GET',
+      path: '/custom.js',
+      handler: function (request, h) {
+        return h.file('./examples/hapijs/assets/custom.js')
+      }
+    })
 
     const adminBroOptions = {
       databases: [connection],
@@ -60,7 +78,11 @@ const start = async () => {
         cookiePassword: process.env.ADMIN_COOKIE_SECRET || 'yoursupersecretcookiepassword-veryveryverylong',
         isSecure: false, // allows you to test the app with http
       },
-      dashboard: DashboardPage
+      dashboard: DashboardPage,
+      customAssets: {
+        styles: ['/custom.css'],
+        scripts: ['/custom.js']
+      }
     }
     await server.register({
       plugin: AdminBroPlugin,
