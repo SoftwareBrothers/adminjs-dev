@@ -1,0 +1,27 @@
+{
+    "tags": {
+        "allowUnknownTags": ["mermaid"]
+    },
+    "source": {
+        "include": ["./admin-bro/src"],
+        "includePattern": ".js$",
+        "excludePattern": "(node_modules/|docs)"
+    },
+    "plugins": [
+        "plugins/markdown",
+        "jsdoc-mermaid"
+    ],
+    "opts": {
+        "encoding": "utf8",
+        "destination": "docs/",
+        "readme": "readme.md",
+        "recurse": true,
+        "verbose": true,
+        "tutorials": "./tutorials",
+        "template": "better-docs"
+    },
+    "templates": {
+        "cleverLinks": false,
+        "monospaceLinks": false
+    }
+}
