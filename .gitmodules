@@ -16,3 +16,6 @@
 [submodule "admin-bro-example-app"]
 	path = admin-bro-example-app
 	url = git@github.com:SoftwareBrothers/admin-bro-example-app.git
+[submodule "admin-bro-expressjs"]
+	path = admin-bro-expressjs
+	url = git@github.com:SoftwareBrothers/admin-bro-expressjs.git
