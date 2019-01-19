@@ -16,3 +16,6 @@
 [submodule "admin-bro-example-app"]
 	path = admin-bro-example-app
 	url = git@github.com:SoftwareBrothers/admin-bro-example-app.git
+[submodule "better-docs"]
+	path = better-docs
+	url = git@github.com:SoftwareBrothers/better-docs.git
