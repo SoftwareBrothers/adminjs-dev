@@ -19,3 +19,6 @@
 [submodule "better-docs"]
 	path = better-docs
 	url = git@github.com:SoftwareBrothers/better-docs.git
+[submodule "admin-bro-expressjs"]
+	path = admin-bro-expressjs
+	url = git@github.com:SoftwareBrothers/admin-bro-expressjs.git
