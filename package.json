@@ -4,7 +4,7 @@
   "description": "wrapper repo for entire AdminBro core with couple of its plugins",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "docs": "node_modules/.bin/jsdoc -c jsdoc.json"
   },
   "repository": {
     "type": "git",
@@ -23,16 +23,16 @@
     "admin-bro-sequelizejs": "^0.1.0",
     "axios": "^0.18.0",
     "bcrypt": "^3.0.2",
+    "boom": "^7.3.0",
+    "chart.js": "^2.7.3",
     "hapi": "^17.8.1",
+    "inert": "^5.1.2",
+    "moment": "^2.23.0",
     "mongoose": "^5.3.15",
     "nodemon": "^1.18.8",
     "pg": "^7.7.1",
     "sequelize": "^4.42.0",
-    "sequelize-cli": "^5.4.0",
-    "boom": "^7.3.0",
-    "chart.js": "^2.7.3",
-    "inert": "^5.1.2",
-    "moment": "^2.23.0"
+    "sequelize-cli": "^5.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.0",
@@ -44,6 +44,8 @@
     "gulp-nodemon": "^2.4.2",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
-    "gulp-uglify": "^3.0.1"
+    "gulp-uglify": "^3.0.1",
+    "jsdoc": "^3.5.5",
+    "jsdoc-mermaid": "^1.0.0"
   }
 }
