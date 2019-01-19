@@ -28,6 +28,16 @@ As mentioned before, this repo contains other repositories as git submodules. Yo
 Since we are using local versions of the packages (via git submodules) we 
 have to inform npm about that. It is done via `npm link` command. Take a look at the [dockerfile](infrastructure/Dockerfile) to see how it's used if you want to do the same thing without the docker.
 
+## Documentation
+
+Repo also contains documentation of the project. To regenerate it just run
+
+```
+npm run docs
+```
+
+Documentation uses jsdoc along with the better-docs documentation template. Better-docs is included inside this repo as a submodule.
+
 ## License
 
 AdminBro is Copyright © 2018 SoftwareBrothers.co. It is free software, and may be redistributed under the terms specified in the [LICENSE](LICENSE) file.
