@@ -1,15 +1,21 @@
 {
     "tags": {
-        "allowUnknownTags": ["mermaid"]
+        "allowUnknownTags": ["mermaid", "category"]
     },
     "source": {
-        "include": ["./admin-bro/src"],
+        "include": ["./admin-bro/src",
+                    "./admin-bro-hapijs",
+                    "./admin-bro-mongoose",
+                    "./admin-bro-sequelizejs",
+                    "./admin-bro-expressjs"],
         "includePattern": ".js$",
         "excludePattern": "(node_modules/|docs)"
     },
     "plugins": [
         "plugins/markdown",
-        "jsdoc-mermaid"
+        "jsdoc-mermaid",
+        "better-docs/category",
+        "node_modules/jsdoc-typeof-plugin"
     ],
     "opts": {
         "encoding": "utf8",

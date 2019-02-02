@@ -1,0 +1,286 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: admin-bro-expressjs/plugin.js</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Muli:100,400,700|Oswald:300|Inconsolata,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+</head>
+
+<body>
+    <div id="stickyNavbarOverlay"></div>
+    <div class="top-navbar">
+        <div class="container">
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                     
+                        <img src="images/logo.png" alt="logo">
+                    
+                     
+                        <h1 class="navbar-item">AdminBro Documentation</h1>
+                    
+                    <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                 
+                <div class="navbar-menu">
+                    <div class="navbar-end">
+                    
+                        <div class="navbar-item">
+                            <a href="https://github.com/SoftwareBrothers/admin-bro" target="_blank">Github</a>
+                        </div>
+                    
+                        <div class="navbar-item">
+                            <a href="https://admin-bro-example-app.herokuapp.com/admin" target="_blank">Example Application</a>
+                        </div>
+                    
+                    </div>
+                </div>
+                
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <div class="columns">
+            <div class="column is-3" id="sidebarNav">
+                <div class="sidebar">
+                    <nav>
+                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-01-example.html">01. Example App</a></li><li><a href="tutorial-02-frameworks.html">02. Frameworks</a></li><li><a href="tutorial-03-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-04-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-05-custom-dashboard.html">05. Customize dashboard</a></li><li><a href="tutorial-06-architecture.html">06. Architecture</a></li></ul><h3>Modules</h3><ul><li><a href="module-admin-bro-expressjs.html">admin-bro-expressjs</a></li><li><a href="module-admin-bro-hapijs.html">admin-bro-hapijs</a></li><li><a href="module-admin-bro-mongoose.html">admin-bro-mongoose</a></li><li><a href="module-admin-bro-sequelizejs.html">admin-bro-sequelizejs</a></li></ul><h3>Classes</h3><ul><li><a href="AdminBro.html">AdminBro</a></li><li><a href="BaseDecorator.html">BaseDecorator</a></li><li><a href="PageBuilder.html">PageBuilder</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Router">Router</a></li></ul></div><div class="category"><h2>Adapter</h2><h3>Classes</h3><ul><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li></ul></div><div class="category"><h2>Errors</h2><h3>Classes</h3><ul><li><a href="NotImplementedError.html">NotImplementedError</a></li><li><a href="ValidationError.html">ValidationError</a></li></ul></div>
+                    </nav>
+                </div>
+            </div>
+            <div class="column is-9-desktop">
+                <div class="content" id="main-content-wrapper">
+                    <header class="page-title">
+                        <p>Source</p>
+                        <h1>admin-bro-expressjs/plugin.js</h1>
+                    </header>
+                    
+                    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const express = require('express')
+const AdminBro = require('admin-bro')
+
+const path = require('path')
+const bodyParser = require('body-parser')
+
+const pkg = require('./package.json')
+
+let cookieParser
+let session
+
+try {
+  cookieParser = require('cookie-parser') // eslint-disable-line global-require
+  session = require('express-session') // eslint-disable-line global-require
+} catch (e) {
+  console.info('cookie-parser and express-session were not required')
+}
+
+/**
+ * Builds the Express Router handling all the pages and assets
+ *
+ * @param  {AdminBro} admin                       instance of adminBro
+ * @param  {express.Router} [predefinedRouter]    expressjs router
+ * @return {express.Router}                       expressjs router
+ * @function
+ * @static
+ * @memberof module:admin-bro-expressjs
+*/
+const buildRouter = (admin, predefinedRouter) => {
+  const { routes, assets } = AdminBro.Router
+  const router = predefinedRouter || express.Router()
+
+  router.use(bodyParser.json())
+  router.use(bodyParser.urlencoded({ extended: true }))
+
+  routes.forEach((route) => {
+    // we have to change routes defined in admin bro from {recordId} to :recordId
+    const expressPath = route.path.replace(/{/g, ':').replace(/}/g, '')
+
+    const handler = async (req, res) => {
+      try {
+        const controller = new route.Controller({ admin }, req.adminUser)
+        const { params, query } = req
+        const payload = req.body
+        const html = await controller[route.action]({ params, query, payload }, res)
+        if (html) {
+          res.send(html)
+        }
+      } catch (e) {
+        // eslint-disable-next-line no-console
+        console.log(e)
+      }
+    }
+
+    if (route.method === 'GET') {
+      router.get(expressPath, handler)
+    }
+
+    if (route.method === 'POST') {
+      router.post(expressPath, handler)
+    }
+  })
+
+  assets.forEach((asset) => {
+    router.get(asset.path, async (req, res) => {
+      res.sendFile(path.resolve(asset.src))
+    })
+  })
+
+  return router
+}
+
+/**
+ * Builds the Express Router which is protected by session auth
+ *
+ * Using the ruter requires you to install both `express-session` and `cookie-parser` as a
+ * dependency.
+ *
+ * @param  {AdminBro} admin                    instance of adminBro
+ * @param  {Object} auth                          authenticatino options
+ * @param  {Function} auth.authenticate           function taking 2 arguments: email
+ *                                                and password. Returns authenticated
+ *                                                user or null in case of wrong email
+ *                                                and/or password
+ * @param  {String} auth.cookiePassword           secret used to encrypt cookies
+ * @param  {String} auth.cookieName=adminbro      cookie name
+ * @param  {express.Router} [predefinedRouter]    expressjs router
+ * @return {express.Router}                       expressjs router
+ * @static
+ * @memberof module:admin-bro-expressjs
+ * @example
+ * const ADMIN = {
+ *   email: 'test@example.com',
+ *   password: 'password',
+ * }
+ *
+ * AdminBroExpress.buildAuthenticatedRouter(adminBro, {
+ *   authenticate: async (email, password) => {
+ *     if (ADMIN.password === password &amp;&amp; ADMIN.email === email) {
+ *       return ADMIN
+ *     }
+ *     return null
+ *   },
+ *   cookieName: 'adminbro',
+ *   cookiePassword: 'somepassword',
+ * }, [router])
+*/
+const buildAuthenticatedRouter = (admin, auth, predefinedRouter) => {
+  if (!cookieParser || !session) {
+    throw new Error(['In order to use authentication you have to install',
+      'cookie-parser and express-session packages'].join(' '))
+  }
+  const router = predefinedRouter || express.Router()
+  router.use(cookieParser())
+  router.use(session({
+    secret: auth.cookiePassword,
+    name: auth.cookieName || 'adminbro',
+  }))
+  router.use(bodyParser.json())
+  router.use(bodyParser.urlencoded({ extended: true }))
+
+  const { rootPath } = admin.options
+  let { loginPath, logoutPath } = admin.options
+  loginPath = loginPath.replace(rootPath, '')
+  logoutPath = logoutPath.replace(rootPath, '')
+
+  router.get(loginPath, async (req, res) => {
+    const login = await AdminBro.renderLogin({ action: admin.options.loginPath })
+    res.send(login)
+  })
+
+  router.post(loginPath, async (req, res) => {
+    const { email, password } = req.body
+    const adminUser = await auth.authenticate(email, password)
+    if (adminUser) {
+      req.session.adminUser = adminUser
+      res.redirect(rootPath)
+    } else {
+      const login = await AdminBro.renderLogin({
+        action: admin.options.loginPath,
+        errorMessage: 'Invalid credentials!',
+      })
+      res.send(login)
+    }
+  })
+
+  router.use((req, res, next) => {
+    if (AdminBro.Router.assets.find(asset => req.originalUrl.match(asset.path))) {
+      next()
+    } else if (req.session.adminUser) {
+      next()
+    } else {
+      res.redirect(admin.options.loginPath)
+    }
+  })
+
+  router.get(logoutPath, async (req, res) => {
+    req.session.destroy()
+    res.redirect(admin.options.loginPath)
+  })
+
+  return buildRouter(admin, router)
+}
+
+module.exports = {
+  buildRouter,
+  buildAuthenticatedRouter,
+  /**
+   * Version of the plugin
+   * @static
+   * @memberof module:admin-bro-expressjs
+  */
+  version: pkg.version,
+  /**
+   * Plugin name
+   * @static
+   * @memberof module:admin-bro-expressjs
+  */
+  name: 'AdminBroExpressjs',
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Feb 02 2019 14:00:55 GMT+0100 (Central European Standard Time)</p>
+        <p class="sidebar-created-by">
+            <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+            <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers</a>
+        </p>
+    </div>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/app.min.js"></script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

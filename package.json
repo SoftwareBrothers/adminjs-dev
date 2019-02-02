@@ -4,7 +4,8 @@
   "description": "wrapper repo for entire AdminBro core with couple of its plugins",
   "main": "index.js",
   "scripts": {
-    "docs": "node_modules/.bin/jsdoc -c jsdoc.json"
+    "docs": "node_modules/.bin/jsdoc -c jsdoc.json",
+    "validate-docs": "node_modules/.bin/jsdoc -c jsdoc-test.json"
   },
   "repository": {
     "type": "git",
@@ -46,6 +47,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.1",
     "jsdoc": "^3.5.5",
-    "jsdoc-mermaid": "^1.0.0"
+    "jsdoc-mermaid": "^1.0.0",
+    "jsdoc-typeof-plugin": "^1.0.0"
   }
 }

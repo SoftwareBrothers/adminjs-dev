@@ -57,7 +57,7 @@
             <div class="column is-3" id="sidebarNav">
                 <div class="sidebar">
                     <nav>
-                        <h2><a href="index.html">Home</a></h2><h3>Tutorials</h3><ul><li><a href="tutorial-custom-dashboard.html">Custom dashboard</a></li><li><a href="tutorial-resource-decorators.html">Resource customization</a></li></ul><h3>Namespaces</h3><ul><li><a href="Controllers.html">Controllers</a></li></ul><h3>Classes</h3><ul><li><a href="AdminBro.html">AdminBro</a></li><li><a href="BaseController.html">BaseController</a></li><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseDecorator.html">BaseDecorator</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li><li><a href="PageBuilder.html">PageBuilder</a></li><li><a href="ValidationError.html">ValidationError</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Router">Router</a></li></ul>
+                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-01-example.html">01. Example App</a></li><li><a href="tutorial-02-frameworks.html">02. Frameworks</a></li><li><a href="tutorial-03-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-04-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-05-custom-dashboard.html">05. Customize dashboard</a></li><li><a href="tutorial-06-architecture.html">06. Architecture</a></li></ul><h3>Modules</h3><ul><li><a href="module-admin-bro-expressjs.html">admin-bro-expressjs</a></li><li><a href="module-admin-bro-hapijs.html">admin-bro-hapijs</a></li><li><a href="module-admin-bro-mongoose.html">admin-bro-mongoose</a></li><li><a href="module-admin-bro-sequelizejs.html">admin-bro-sequelizejs</a></li></ul><h3>Classes</h3><ul><li><a href="AdminBro.html">AdminBro</a></li><li><a href="BaseDecorator.html">BaseDecorator</a></li><li><a href="PageBuilder.html">PageBuilder</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Router">Router</a></li></ul></div><div class="category"><h2>Adapter</h2><h3>Classes</h3><ul><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li></ul></div><div class="category"><h2>Errors</h2><h3>Classes</h3><ul><li><a href="NotImplementedError.html">NotImplementedError</a></li><li><a href="ValidationError.html">ValidationError</a></li></ul></div>
                     </nav>
                 </div>
             </div>
@@ -92,72 +92,21 @@
 
 
     <section>
-        <article><h2>AdminBro</h2><p>Admin Bro is an Admin Framework for Node - your best Bro in app developement.</p>
-<p>Currently it supports only MongoDB (via mongoose).</p>
-<h2>How it works</h2><p>It is totally separated from any particular nodejs framework. Because of that it can be easily integrated to almost every app.</p>
-<h3>Overal architecture</h3><div class="mermaid">
-  graph LR
-  subgraph AdminBro
-  B(AdminBro)
-  end
-  subgraph Resources
-  A[mongoose] --&gt; B
-  C[rest API endpoints] --&gt; B
-  D[sequelizejs] --&gt; B
-  end
-  subgraph http framework
-  B --&gt; E[Hapijs]
-  B --&gt; F[Express.js]
-  B --&gt; G[your custom framework]
-  end
-
-</div>
-
-<h3>This is an example rendering flow for hapi.js</h3><div class="mermaid">
-  graph LR
-  A[&lt;a href=./examples_hapijs_index.js.html&gt;Hapi.js</a>] --&gt;|&lt;a href=./admin_integrations_hapi.js.html&gt;Mapping Routes</a>| B
-  subgraph AdminBro
-  B{&lt;a href=./Router.html&gt;Router.js</a>}
-  B --&gt; C(DashoardController)
-  B --&gt; D(ResourcesController)
-  E(Renderer)
-  C --&gt; E
-  D --&gt; E
-  F(PUG view)
-  E --&gt; F
-  end
-</div>
-
-<h2>Integration with nodejs Frameworks</h2><p>Example integration for Hapi.js framework can be found here. This code uses Hapi.js integration plugin. If you want to write your own implementation you will have to:</p>
+        <article><h2>Admin Bro</h2><p>An automatic admin interface which can be plugged into your application. You, as a developer, provide database models (like posts, comments, stores, products or whatever else your application uses), and AdminBro generates UI which allows you (or other trusted users) to manage content.</p>
+<h3>Live example</h3><p>Check out the example application with mongodb and postgres models here: <a href="https://admin-bro-example-app.herokuapp.com/admin">https://admin-bro-example-app.herokuapp.com/admin</a></p>
+<p><a href="https://admin-bro-example-app.herokuapp.com/admin" style="margin-right: 80px" class="button is-pulled-left" target="_blank">See the demo app</a></p>
 <ul>
-<li>write a plugin/middleware for a particular framework</li>
-<li>map its routing system to AdminBro routes and controllers (see how Hapi does that: admin/integrations/hapi.js)</li>
-<li>checkout if given framework has ORM already supported. If not you will have to create data mapper for it (see below)</li>
-<li>lastly - don't forget to add integration example in examples folder</li>
+<li>login: <strong> <a href="mailto:test@example.com">test@example.com</a> </strong></li>
+<li>password: <strong>password</strong></li>
 </ul>
-<h2>Data model</h2><p>Most important part of the system is its data model. AdminBro can be integrated with multiple ORMs, that is why it has internal abstraction for handling multiple data models.</p>
-<p>This is how it looks:</p>
-<div class="mermaid">
-  graph LR
-  A[&lt;a href=./BaseDatabase.html&gt;BaseDatabase</a>] --&gt;|has many| B(&lt;a href=./BaseResource.html&gt;BaseResource</a>)
-  B --&gt; |has many|C(&lt;a href=./BaseRecord.html&gt;BaseRecord</a>)
-  B --&gt; |has many|D(&lt;a href=./BaseProperty.html&gt;BaseProperty</a>)
-</div>
-
-<p>First of all <a href="AdminBro.html">base class</a> is used to convert all supported database connections (mongodb, sql-like, etc) to list of databases which interits from <a href="BaseDatabase.html">BaseDatabase</a>. It utilises DatabaseFactory to construct correct database type.</p>
-<p>Then each class which inherits <a href="BaseDatabase.html">BaseDatabase</a> can fetch all resources present in the database. Each resource inherits from <a href="BaseResource.html">BaseResource</a></p>
-<p>Each model has multiple properties with different types like String, Data, Number etc.</p>
-<p>Finally particular database record/document is mapped to <a href="BaseRecord.html">BaseRecord</a></p>
-<h2>Integration with ORMs</h2><p>To create new ORM integration you have to:</p>
-<ul>
-<li>create your implementation of <a href="BaseDatabase.html">BaseDatabase</a>, <a href="BaseResource.html">BaseResource</a>, <a href="BaseRecord.html">BaseRecord</a> and AbstractProperty</li>
-<li>update DatabaseFactory</li>
-<li>update examples</li>
-<li>most probably you will also have to update docker-compose to handle new database</li>
+<h3>How to get started</h3><ul>
+<li>Check out the <a href="https://admin-bro-example-app.herokuapp.com/admin">demo page</a></li>
+<li>Follow tutorials, strarting with <a href="tutorial-01-example.html">01. Example App</a></li>
+<li>checkout our <a href="https://github.com/SoftwareBrothers/admin-bro">admin-bro git repo</a></li>
 </ul>
-<script src="https://cdn.rawgit.com/knsv/mermaid/7.0.0/dist/mermaid.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/knsv/mermaid/7.0.0/dist/mermaid.css">
-<script>mermaid.initialize({ startOnLoad: true });</script></article>
+<h3>Screenshots</h3><p><img src='./images/postcodes.png' style='width: 49%; float: left; margin-right: 1%; border: 1px solid #ccc'>
+<img src='./images/dashboard.png' style='width: 49%; border: 1px solid #ccc'></p>
+<h3>Inspiration</h3><p>Inspired by: <a href="https://docs.djangoproject.com">django admin</a>, <a href="https://github.com/sferik/rails_admin">rails admin</a> and <a href="https://activeadmin.info/">active admin</a>.</p></article>
     </section>
 
 
@@ -172,7 +121,7 @@
 
 <footer class="footer">
     <div class="content has-text-centered">
-        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Jan 19 2019 19:48:04 GMT+0100 (Central European Standard Time)</p>
+        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Feb 02 2019 14:00:55 GMT+0100 (Central European Standard Time)</p>
         <p class="sidebar-created-by">
             <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
             <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers</a>

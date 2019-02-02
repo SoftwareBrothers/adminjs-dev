@@ -1,90 +1,27 @@
-## AdminBro
+## Admin Bro
 
-Admin Bro is an Admin Framework for Node - your best Bro in app developement.
+An automatic admin interface which can be plugged into your application. You, as a developer, provide database models (like posts, comments, stores, products or whatever else your application uses), and AdminBro generates UI which allows you (or other trusted users) to manage content.
 
-Currently it supports only MongoDB (via mongoose).
+### Live example
 
-## How it works
-
-It is totally separated from any particular nodejs framework. Because of that it can be easily integrated to almost every app.
+Check out the example application with mongodb and postgres models here: [https://admin-bro-example-app.herokuapp.com/admin](https://admin-bro-example-app.herokuapp.com/admin)
 
 
-### Overal architecture
+<a href="https://admin-bro-example-app.herokuapp.com/admin" style="margin-right: 80px" class="button is-pulled-left" target="_blank">See the demo app</a>
+- login: __ test@example.com __
+- password: __password__
 
-<div class="mermaid">
-  graph LR
-  subgraph AdminBro
-  B(AdminBro)
-  end
-  subgraph Resources
-  A[mongoose] --> B
-  C[rest API endpoints] --> B
-  D[sequelizejs] --> B
-  end
-  subgraph http framework
-  B --> E[Hapijs]
-  B --> F[Express.js]
-  B --> G[your custom framework]
-  end
+### How to get started
 
-</div>
+- Check out the [demo page](https://admin-bro-example-app.herokuapp.com/admin)
+- Follow tutorials, strarting with {@tutorial 01-example}
+- checkout our [admin-bro git repo](https://github.com/SoftwareBrothers/admin-bro)
 
-### This is an example rendering flow for hapi.js
+### Screenshots
 
-<div class="mermaid">
-  graph LR
-  A[<a href=./examples_hapijs_index.js.html>Hapi.js</a>] -->|<a href=./admin_integrations_hapi.js.html>Mapping Routes</a>| B
-  subgraph AdminBro
-  B{<a href=./Router.html>Router.js</a>}
-  B --> C(DashoardController)
-  B --> D(ResourcesController)
-  E(Renderer)
-  C --> E
-  D --> E
-  F(PUG view)
-  E --> F
-  end
-</div>
+<img src='./images/postcodes.png' style='width: 49%; float: left; margin-right: 1%; border: 1px solid #ccc'>
+<img src='./images/dashboard.png' style='width: 49%; border: 1px solid #ccc'>
 
-## Integration with nodejs Frameworks
+### Inspiration
 
-Example integration for Hapi.js framework can be found [here]{@link examples/hapijs/index.js}. This code uses Hapi.js [integration plugin]{@link admin/integrations/hapi.js}. If you want to write your own implementation you will have to:
-
-- write a plugin/middleware for a particular framework
-- map its routing system to AdminBro routes and controllers (see how Hapi does that: {@link admin/integrations/hapi.js})
-- checkout if given framework has ORM already supported. If not you will have to create data mapper for it (see below)
-- lastly - don't forget to add integration example in examples folder
-
-## Data model
-
-Most important part of the system is its data model. AdminBro can be integrated with multiple ORMs, that is why it has internal abstraction for handling multiple data models.
-
-This is how it looks:
-
-<div class="mermaid">
-  graph LR
-  A[<a href=./BaseDatabase.html>BaseDatabase</a>] -->|has many| B(<a href=./BaseResource.html>BaseResource</a>)
-  B --> |has many|C(<a href=./BaseRecord.html>BaseRecord</a>)
-  B --> |has many|D(<a href=./BaseProperty.html>BaseProperty</a>)
-</div>
-
-First of all [base class]{@link AdminBro} is used to convert all supported database connections (mongodb, sql-like, etc) to list of databases which interits from {@link BaseDatabase}. It utilises {@link DatabaseFactory} to construct correct database type.
-
-Then each class which inherits {@link BaseDatabase} can fetch all resources present in the database. Each resource inherits from {@link BaseResource}
-
-Each model has multiple [properties]{@link BasePorperty} with different types like String, Data, Number etc.
-
-Finally particular database record/document is mapped to {@link BaseRecord}
-
-## Integration with ORMs
-
-To create new ORM integration you have to:
-
-- create your implementation of {@link BaseDatabase}, {@link BaseResource}, {@link BaseRecord} and {@link AbstractProperty}
-- update {@link DatabaseFactory}
-- update examples
-- most probably you will also have to update docker-compose to handle new database
-
-<script src="https://cdn.rawgit.com/knsv/mermaid/7.0.0/dist/mermaid.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/knsv/mermaid/7.0.0/dist/mermaid.css">
-<script>mermaid.initialize({ startOnLoad: true });</script>
+Inspired by: [django admin](https://docs.djangoproject.com), [rails admin](https://github.com/sferik/rails_admin) and [active admin](https://activeadmin.info/).

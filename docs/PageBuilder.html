@@ -57,7 +57,7 @@
             <div class="column is-3" id="sidebarNav">
                 <div class="sidebar">
                     <nav>
-                        <h2><a href="index.html">Home</a></h2><h3>Tutorials</h3><ul><li><a href="tutorial-custom-dashboard.html">Custom dashboard</a></li><li><a href="tutorial-resource-decorators.html">Resource customization</a></li></ul><h3>Namespaces</h3><ul><li><a href="Controllers.html">Controllers</a></li></ul><h3>Classes</h3><ul><li><a href="AdminBro.html">AdminBro</a></li><li><a href="BaseController.html">BaseController</a></li><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseDecorator.html">BaseDecorator</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li><li><a href="PageBuilder.html">PageBuilder</a></li><li><a href="ValidationError.html">ValidationError</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Router">Router</a></li></ul>
+                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-01-example.html">01. Example App</a></li><li><a href="tutorial-02-frameworks.html">02. Frameworks</a></li><li><a href="tutorial-03-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-04-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-05-custom-dashboard.html">05. Customize dashboard</a></li><li><a href="tutorial-06-architecture.html">06. Architecture</a></li></ul><h3>Modules</h3><ul><li><a href="module-admin-bro-expressjs.html">admin-bro-expressjs</a></li><li><a href="module-admin-bro-hapijs.html">admin-bro-hapijs</a></li><li><a href="module-admin-bro-mongoose.html">admin-bro-mongoose</a></li><li><a href="module-admin-bro-sequelizejs.html">admin-bro-sequelizejs</a></li></ul><h3>Classes</h3><ul><li><a href="AdminBro.html">AdminBro</a></li><li><a href="BaseDecorator.html">BaseDecorator</a></li><li><a href="PageBuilder.html">PageBuilder</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Router">Router</a></li></ul></div><div class="category"><h2>Adapter</h2><h3>Classes</h3><ul><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li></ul></div><div class="category"><h2>Errors</h2><h3>Classes</h3><ul><li><a href="NotImplementedError.html">NotImplementedError</a></li><li><a href="ValidationError.html">ValidationError</a></li></ul></div>
                     </nav>
                 </div>
             </div>
@@ -77,9 +77,52 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>PageBuilder<span class="signature">()</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>PageBuilder</h2>
         
-            <div class="class-description"><p>PageBuilder class contains methods which allows you to create page content</p></div>
+            <div class="class-description"><p>Base class for all Pages in the AdminBro.</p>
+<p>To create your own Page you have to extend this class and override
+<a href="PageBuilder.html#build">build()</a> abstract method.</p>
+<p>Example DashboardPage which change <strong>title</strong> and <strong>subtitle</strong> of the header block and adds one
+simple widget by using <a href="PageBuilder.html#addBlock">addBlock</a> method.</p>
+<pre class="prettyprint source"><code>const { PageBuilder } = require('admin-bro')
+
+class DashboardPage extends PageBuilder {
+  constructor(props) {
+    super(props)
+    this.title = 'Custom dashboard'
+    this.subtitle = 'This is just an example what can be done using AdminBro'
+  }
+
+  async build() {
+    this.addBlock({
+      title: 'Published Articles',
+      value: this.articlesCount.published,
+      icon: 'fas fa-newspaper fa-2x',
+      columns: 3,
+    })
+  }
+}
+
+module.exports = DashboardPage</code></pre><h3>Available Widgets</h3><p>There you can use all available widgets:</p>
+<ul>
+<li><a href="PageBuilder.html#addBlock">addBlock</a></li>
+<li><a href="PageBuilder.html#addChart">addChart</a></li>
+<li><a href="PageBuilder.html#addInfoList">addInfoList</a></li>
+<li><a href="PageBuilder.html#addInfoTable">addInfoTable</a></li>
+<li><a href="PageBuilder.html#addTextBox">addTextBox</a></li>
+<li><a href="PageBuilder.html#addWelcomeBlock">addWelcomeBlock</a></li>
+</ul>
+<h3>Adding to the settings</h3><p>You can pass class you created to AdminBro via AdminBroOptions:</p>
+<pre class="prettyprint source"><code>const DashboardPage = require('./dashboard-page')
+
+const adminBroOptions = {
+  ...
+  databases: [...],
+  resources: [...],
+  dashboard: DashboardPage,
+  rootPath: '/admin'
+  ...
+}</code></pre></div>
         
     
 </header>
@@ -88,26 +131,7 @@
     <div class="container-overview">
     
         
-            <div class='vertical-section'>
-                <h3 class="title"><span>Constructor</span></h3>
-                <div class="members">
-                    <div class="member">
-
-    
-    <h4 class="name" id="PageBuilder">
-        
-        <span class="code-name">
-            new PageBuilder<span class="signature">()</span><span class="type-signature"></span>
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>
-    </div>
-    
+            
 
 
 
@@ -116,56 +140,6 @@
 
 
 
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>options.admin</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type"><a href="AdminBro.html">AdminBro</a></span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"><p>current instance of AdminBro</p></td>
-</tr>
-
-
-    
-    </tbody>
-</table>
 
 
 
@@ -204,9 +178,9 @@
 
     
         <p class="tag-source">
-            <a href="backend_utils_page-builder.js.html" class="button">View Source</a>
+            <a href="admin-bro_src_backend_utils_page-builder.js.html" class="button">View Source</a>
             <span>
-                <a href="backend_utils_page-builder.js.html">backend/utils/page-builder.js</a>, <a href="backend_utils_page-builder.js.html#line8">line 8</a>
+                <a href="admin-bro_src_backend_utils_page-builder.js.html">admin-bro/src/backend/utils/page-builder.js</a>, <a href="admin-bro_src_backend_utils_page-builder.js.html#line63">line 63</a>
             </span>
         </p>
     
@@ -232,9 +206,7 @@
 
 
 
-</div>
-                </div>
-            </div>
+
         
     
     </div>
@@ -281,7 +253,14 @@
 
 
 <div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>specific colors for html blocks</p>
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Definition of commonly used colors for widgets.
+It contains following keys:</p>
+<ul>
+<li>WARNING</li>
+<li>DANGER</li>
+<li>SUCCESS</li>
+<li>INFO</li>
+</ul>
 </div>
 
 
@@ -321,9 +300,9 @@
 
     
         <p class="tag-source">
-            <a href="backend_utils_page-builder.js.html" class="button">View Source</a>
+            <a href="admin-bro_src_backend_utils_page-builder.js.html" class="button">View Source</a>
             <span>
-                <a href="backend_utils_page-builder.js.html">backend/utils/page-builder.js</a>, <a href="backend_utils_page-builder.js.html#line222">line 222</a>
+                <a href="admin-bro_src_backend_utils_page-builder.js.html">admin-bro/src/backend/utils/page-builder.js</a>, <a href="admin-bro_src_backend_utils_page-builder.js.html#line311">line 311</a>
             </span>
         </p>
     
@@ -333,154 +312,9 @@
 
 
 
-</div>
-            
-                <div class="member">
-
-    <span class="method-parameter is-pulled-right">
-        <label>Type:</label>
-        
-<span class="param-type">Array.&lt;String></span>
-
-
-    </span>
-
-<h4 class="name" id="_pageContent">
+    <h5>Example</h5>
     
-    <span class="code-name">
-        _pageContent
-    </span>
-</h4>
-
-
-
-
-<div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>_pageContent   array of html elements as String</p>
-</div>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="backend_utils_page-builder.js.html" class="button">View Source</a>
-            <span>
-                <a href="backend_utils_page-builder.js.html">backend/utils/page-builder.js</a>, <a href="backend_utils_page-builder.js.html#line19">line 19</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-</div>
-            
-                <div class="member">
-
-    <span class="method-parameter is-pulled-right">
-        <label>Type:</label>
-        
-<span class="param-type">Object</span>
-
-
-    </span>
-
-<h4 class="name" id="charts">
-    
-    <span class="code-name">
-        charts
-    </span>
-</h4>
-
-
-
-
-<div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>mapped object contains chart's settings</p>
-</div>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="backend_utils_page-builder.js.html" class="button">View Source</a>
-            <span>
-                <a href="backend_utils_page-builder.js.html">backend/utils/page-builder.js</a>, <a href="backend_utils_page-builder.js.html#line37">line 37</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
+    <pre class="prettyprint"><code>addBlock({}, PageBuilder.COLOR.INFO)</code></pre>
 
 
 </div>
@@ -546,9 +380,9 @@
 
     
         <p class="tag-source">
-            <a href="backend_utils_page-builder.js.html" class="button">View Source</a>
+            <a href="admin-bro_src_backend_utils_page-builder.js.html" class="button">View Source</a>
             <span>
-                <a href="backend_utils_page-builder.js.html">backend/utils/page-builder.js</a>, <a href="backend_utils_page-builder.js.html#line31">line 31</a>
+                <a href="admin-bro_src_backend_utils_page-builder.js.html">admin-bro/src/backend/utils/page-builder.js</a>, <a href="admin-bro_src_backend_utils_page-builder.js.html#line87">line 87</a>
             </span>
         </p>
     
@@ -621,9 +455,9 @@
 
     
         <p class="tag-source">
-            <a href="backend_utils_page-builder.js.html" class="button">View Source</a>
+            <a href="admin-bro_src_backend_utils_page-builder.js.html" class="button">View Source</a>
             <span>
-                <a href="backend_utils_page-builder.js.html">backend/utils/page-builder.js</a>, <a href="backend_utils_page-builder.js.html#line25">line 25</a>
+                <a href="admin-bro_src_backend_utils_page-builder.js.html">admin-bro/src/backend/utils/page-builder.js</a>, <a href="admin-bro_src_backend_utils_page-builder.js.html#line81">line 81</a>
             </span>
         </p>
     
@@ -658,7 +492,8 @@
     
     
     <div class="description">
-        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Adds text block element to the page content</p>
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Adds The Simplest block widget to the page content</p>
+<h5>Example Widget:</h5><p><img src="images/add-block.png" alt="addBlock" width="300"/></p>
     </div>
     
 
@@ -936,9 +771,9 @@
 
     
         <p class="tag-source">
-            <a href="backend_utils_page-builder.js.html" class="button">View Source</a>
+            <a href="admin-bro_src_backend_utils_page-builder.js.html" class="button">View Source</a>
             <span>
-                <a href="backend_utils_page-builder.js.html">backend/utils/page-builder.js</a>, <a href="backend_utils_page-builder.js.html#line213">line 213</a>
+                <a href="admin-bro_src_backend_utils_page-builder.js.html">admin-bro/src/backend/utils/page-builder.js</a>, <a href="admin-bro_src_backend_utils_page-builder.js.html#line295">line 295</a>
             </span>
         </p>
     
@@ -981,6 +816,7 @@
     
     <div class="description">
         <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Adds canvas chart to the page content based on chart.js library</p>
+<h5>Example Widget:</h5><p><img src="images/add-chart.png" alt="addChart" width="600"/></p>
     </div>
     
 
@@ -1004,6 +840,8 @@
 
         <th>Type</th>
 
+        
+        <th>Attributes</th>
         
 
         
@@ -1033,6 +871,14 @@
   </td>
 
   
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
 
   
       <td class="default">
@@ -1061,6 +907,14 @@
   </td>
 
   
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
 
   
       <td class="default">
@@ -1088,6 +942,14 @@
   </td>
 
   
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
 
   
       <td class="default">
@@ -1114,6 +976,16 @@
   
   </td>
 
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
+
+      
+
+      
+      </td>
   
 
   
@@ -1144,6 +1016,16 @@
   </td>
 
   
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
+
+      
+
+      
+      </td>
+  
 
   
       <td class="default">
@@ -1172,6 +1054,14 @@
   
   </td>
 
+  
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
   
 
   
@@ -1234,9 +1124,9 @@
 
     
         <p class="tag-source">
-            <a href="backend_utils_page-builder.js.html" class="button">View Source</a>
+            <a href="admin-bro_src_backend_utils_page-builder.js.html" class="button">View Source</a>
             <span>
-                <a href="backend_utils_page-builder.js.html">backend/utils/page-builder.js</a>, <a href="backend_utils_page-builder.js.html#line107">line 107</a>
+                <a href="admin-bro_src_backend_utils_page-builder.js.html">admin-bro/src/backend/utils/page-builder.js</a>, <a href="admin-bro_src_backend_utils_page-builder.js.html#line172">line 172</a>
             </span>
         </p>
     
@@ -1308,6 +1198,7 @@
     
     <div class="description">
         <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Adds info list widget to the page content</p>
+<h5>Example Widget:</h5><p><img src="images/add-info-list.png" alt="addInfoList" width="400"/></p>
     </div>
     
 
@@ -1689,9 +1580,9 @@
 
     
         <p class="tag-source">
-            <a href="backend_utils_page-builder.js.html" class="button">View Source</a>
+            <a href="admin-bro_src_backend_utils_page-builder.js.html" class="button">View Source</a>
             <span>
-                <a href="backend_utils_page-builder.js.html">backend/utils/page-builder.js</a>, <a href="backend_utils_page-builder.js.html#line143">line 143</a>
+                <a href="admin-bro_src_backend_utils_page-builder.js.html">admin-bro/src/backend/utils/page-builder.js</a>, <a href="admin-bro_src_backend_utils_page-builder.js.html#line212">line 212</a>
             </span>
         </p>
     
@@ -1752,6 +1643,7 @@
     
     <div class="description">
         <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Adds info table widget to the page content</p>
+<h5>Example Widget:</h5><p><img src="images/add-info-table.png" alt="addInfoTable" width="800"/></p>
     </div>
     
 
@@ -1998,9 +1890,9 @@
 
     
         <p class="tag-source">
-            <a href="backend_utils_page-builder.js.html" class="button">View Source</a>
+            <a href="admin-bro_src_backend_utils_page-builder.js.html" class="button">View Source</a>
             <span>
-                <a href="backend_utils_page-builder.js.html">backend/utils/page-builder.js</a>, <a href="backend_utils_page-builder.js.html#line172">line 172</a>
+                <a href="admin-bro_src_backend_utils_page-builder.js.html">admin-bro/src/backend/utils/page-builder.js</a>, <a href="admin-bro_src_backend_utils_page-builder.js.html#line245">line 245</a>
             </span>
         </p>
     
@@ -2048,176 +1940,6 @@
                 <div class="member">
 
     
-    <h4 class="name" id="addPartialContent">
-        
-        <span class="code-name">
-            addPartialContent<span class="signature">(view, data)</span><span class="type-signature"></span>
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Adds compiled html elements to the page content
- Developer can declare specific pug view @param view which will be returned as HTML</p>
-    </div>
-    
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>view</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">String</span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"><p>pug template url relative to frontend/views
-                           without the .pug extension</p></td>
-</tr>
-
-
-    
-
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>data</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">Object</span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"><p>data passed to the pug renderer</p></td>
-</tr>
-
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="backend_utils_page-builder.js.html" class="button">View Source</a>
-            <span>
-                <a href="backend_utils_page-builder.js.html">backend/utils/page-builder.js</a>, <a href="backend_utils_page-builder.js.html#line197">line 197</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-            
-                <div class="member">
-
-    
     <h4 class="name" id="addTextBox">
         
         <span class="code-name">
@@ -2230,6 +1952,7 @@
     
     <div class="description">
         <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Adds simple text box widget to the page content</p>
+<h5>Example Widget:</h5><p><img src="images/add-text-box.png" alt="addTextBox" width="600"/></p>
     </div>
     
 
@@ -2449,9 +2172,9 @@
 
     
         <p class="tag-source">
-            <a href="backend_utils_page-builder.js.html" class="button">View Source</a>
+            <a href="admin-bro_src_backend_utils_page-builder.js.html" class="button">View Source</a>
             <span>
-                <a href="backend_utils_page-builder.js.html">backend/utils/page-builder.js</a>, <a href="backend_utils_page-builder.js.html#line185">line 185</a>
+                <a href="admin-bro_src_backend_utils_page-builder.js.html">admin-bro/src/backend/utils/page-builder.js</a>, <a href="admin-bro_src_backend_utils_page-builder.js.html#line262">line 262</a>
             </span>
         </p>
     
@@ -2542,9 +2265,9 @@
 
     
         <p class="tag-source">
-            <a href="backend_utils_page-builder.js.html" class="button">View Source</a>
+            <a href="admin-bro_src_backend_utils_page-builder.js.html" class="button">View Source</a>
             <span>
-                <a href="backend_utils_page-builder.js.html">backend/utils/page-builder.js</a>, <a href="backend_utils_page-builder.js.html#line64">line 64</a>
+                <a href="admin-bro_src_backend_utils_page-builder.js.html">admin-bro/src/backend/utils/page-builder.js</a>, <a href="admin-bro_src_backend_utils_page-builder.js.html#line125">line 125</a>
             </span>
         </p>
     
@@ -2576,6 +2299,10 @@
 
     
     <h4 class="name" id="build">
+        
+            
+                <span class='tag'>abstract</span>
+            
         
         <span class="code-name">
             build<span class="signature">()</span><span class="type-signature"></span>
@@ -2635,112 +2362,13 @@
 
     
         <p class="tag-source">
-            <a href="backend_utils_page-builder.js.html" class="button">View Source</a>
+            <a href="admin-bro_src_backend_utils_page-builder.js.html" class="button">View Source</a>
             <span>
-                <a href="backend_utils_page-builder.js.html">backend/utils/page-builder.js</a>, <a href="backend_utils_page-builder.js.html#line57">line 57</a>
+                <a href="admin-bro_src_backend_utils_page-builder.js.html">admin-bro/src/backend/utils/page-builder.js</a>, <a href="admin-bro_src_backend_utils_page-builder.js.html#line118">line 118</a>
             </span>
         </p>
     
 </dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-            
-                <div class="member">
-
-    
-    <h4 class="name" id="render">
-        
-            
-                <span class='tag'>async</span>
-            
-        
-        <span class="code-name">
-            render<span class="signature">()</span><span class="type-signature"> &rarr; {Object}</span>
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Returns object with page settings</p>
-    </div>
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="backend_utils_page-builder.js.html" class="button">View Source</a>
-            <span>
-                <a href="backend_utils_page-builder.js.html">backend/utils/page-builder.js</a>, <a href="backend_utils_page-builder.js.html#line44">line 44</a>
-            </span>
-        </p>
-    
-</dl>
-
-
 
 
 
@@ -2758,18 +2386,16 @@
 
 
     <div class='columns method-parameter'>
-        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-2"><label>Throws:</label></div>
         <div class="column is-10">
             
                     
-
 <div class="columns">
     
-    
+    <div class='param-desc column is-7'><p>When the method is not implemented by it's subclass</p></div>
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
-        
-<span class="param-type">Object</span>
+<span class="param-type"><a href="NotImplementedError.html">NotImplementedError</a></span>
 
 
     </div>
@@ -2779,6 +2405,8 @@
                 
         </div>
     </div>
+
+
 
 
 
@@ -2806,7 +2434,7 @@
 
 <footer class="footer">
     <div class="content has-text-centered">
-        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Jan 19 2019 19:48:04 GMT+0100 (Central European Standard Time)</p>
+        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Feb 02 2019 14:00:55 GMT+0100 (Central European Standard Time)</p>
         <p class="sidebar-created-by">
             <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
             <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers</a>
