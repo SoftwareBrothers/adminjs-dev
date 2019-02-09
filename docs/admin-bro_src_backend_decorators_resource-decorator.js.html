@@ -1,0 +1,370 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
+    <meta charset="utf-8">
+    <title>JSDoc: admin-bro/src/backend/decorators/resource-decorator.js</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Muli:100,400,700|Oswald:300|Inconsolata,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+</head>
+
+<body>
+    <div id="stickyNavbarOverlay"></div>
+    <div class="top-navbar">
+        <div class="container">
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                     
+                        <img src="images/logo.png" alt="logo">
+                    
+                     
+                        <h1 class="navbar-item">AdminBro Documentation</h1>
+                    
+                    <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                 
+                <div class="navbar-menu">
+                    <div class="navbar-end">
+                    
+                        <div class="navbar-item">
+                            <a href="https://github.com/SoftwareBrothers/admin-bro" target="_blank">Github</a>
+                        </div>
+                    
+                        <div class="navbar-item">
+                            <a href="https://admin-bro-example-app.herokuapp.com/admin" target="_blank">Example Application</a>
+                        </div>
+                    
+                    </div>
+                </div>
+                
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <div class="columns">
+            <div class="column is-3" id="sidebarNav">
+                <div class="sidebar">
+                    <nav>
+                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-01-example.html">01. Example App</a></li><li><a href="tutorial-02-frameworks.html">02. Frameworks</a></li><li><a href="tutorial-03-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-04-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-05-custom-dashboard.html">05. Customize dashboard</a></li><li><a href="tutorial-06-architecture.html">06. Architecture</a></li></ul><h3>Modules</h3><ul><li><a href="module-admin-bro-expressjs.html">admin-bro-expressjs</a></li><li><a href="module-admin-bro-hapijs.html">admin-bro-hapijs</a></li><li><a href="module-admin-bro-mongoose.html">admin-bro-mongoose</a></li><li><a href="module-admin-bro-sequelizejs.html">admin-bro-sequelizejs</a></li></ul><h3>Classes</h3><ul><li><a href="AdminBro.html">AdminBro</a></li><li><a href="PageBuilder.html">PageBuilder</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3><a href="global.html">Global</a></h3></div><div class="category"><h2>PropertyTypes</h2><h3>Modules</h3><ul><li><a href="module-boolean.html">boolean</a></li><li><a href="module-date.html">date</a></li><li><a href="module-datetime.html">datetime</a></li><li><a href="module-defaultType.html">defaultType</a></li><li><a href="module-richtext.html">richtext</a></li><li><a href="module-string.html">string</a></li></ul></div><div class="category"><h2>Adapter</h2><h3>Classes</h3><ul><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li></ul></div><div class="category"><h2>Errors</h2><h3>Classes</h3><ul><li><a href="NotImplementedError.html">NotImplementedError</a></li><li><a href="ValidationError.html">ValidationError</a></li></ul></div><div class="category"><h2>Decorators</h2><h3>Classes</h3><ul><li><a href="PropertyDecorator.html">PropertyDecorator</a></li><li><a href="ResourceDecorator.html">ResourceDecorator</a></li></ul></div>
+                    </nav>
+                </div>
+            </div>
+            <div class="column is-9-desktop">
+                <div class="content" id="main-content-wrapper">
+                    <header class="page-title">
+                        <p>Source</p>
+                        <h1>admin-bro/src/backend/decorators/resource-decorator.js</h1>
+                    </header>
+                    
+                    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/* eslint-disable class-methods-use-this */
+const BaseProperty = require('../adapters/base-property')
+const ViewHelpers = require('../utils/view-helpers')
+const PropertyDecorator = require('./property-decorator')
+
+/**
+ * Default maximum number of items which should be present in a list.
+ *
+ * @type {Number}
+ * @private
+ */
+const DEFAULT_MAX_ITEMS_IN_LIST = 8
+
+/**
+ * @typedef {Object} ResourceOptions
+ * @property {String} name      name of a resource
+ * @property {Array&lt;String>}  listProperties    list of all properties which should be visible
+ *                                              on a list
+ * @property {Array&lt;String>}  showProperties    list of all properties which should be visible
+ *                                              on an object view
+ * @property {Array&lt;String>}  editProperties    list of all properties which should be visible
+ *                                              on edit screen
+ * @property {Array&lt;String>}  filterProperties  list of all properties which should be visible
+ *                                              in the filter
+ * @property {Object | String} parent   parent category in the sidebar
+ * @property {String} parent.name       name of the parent category
+ * @property {String} parent.icon       icon class of a parent category (i.e. 'icon-bomb')
+ * @property {properties&lt;String, PropertyOptions>} properties list of properties with their options
+ */
+
+/**
+ * Base decorator class which decorates the Resource.
+ *
+ * @category Decorators
+ */
+class ResourceDecorator {
+  /**
+   * @param  {Object}       options
+   * @param  {BaseResource} options.resource  resource which is decorated
+   * @param  {AdminBro}     options.admin  current instance of AdminBro
+   * @param  {ResourceOptions} [options]
+   */
+  constructor({ resource, admin, options = {} }) {
+    this._resource = resource
+    this._admin = admin
+    this.helpers = new ViewHelpers({ admin })
+
+    /**
+     * Options passed along with a given resource
+     * @type {ResourceOptions}
+    */
+    this.options = options
+
+    this.options.properties = this.options.properties || {}
+
+    /**
+     * List of all decorated properties
+     * @type {Array&lt;PropertyDecorator>}
+     */
+    this.properties = this.decorateProperties()
+  }
+
+  /**
+   * Initializes PropertyDecorator for all properties within a resource. When
+   * user passess new property in the options - it will be created as well.
+   *
+   * @returns {Object&lt;String,PropertyDecorator>}
+   * @private
+   */
+  decorateProperties() {
+    const resourceProperties = this._resource.properties()
+    // decorate all exising properties
+    const properties = resourceProperties.reduce((memo, property) => {
+      const decorator = new PropertyDecorator({
+        property,
+        admin: this._admin,
+        options: this.options.properties[property.name()],
+      })
+      return { ...memo, [property.name()]: decorator }
+    }, {})
+
+    // decorate all properties user gave in options but the don't exist in the resource
+    Object.keys(this.options.properties).forEach((key) => {
+      if (!properties[key]) {
+        const property = new BaseProperty({ path: key, isSortable: false })
+        properties[key] = new PropertyDecorator({
+          property,
+          admin: this._admin,
+          options: this.options.properties[key],
+        })
+      }
+    })
+    return properties
+  }
+
+  /**
+   * Returns the name for the resource.
+   * @return {String} resource name
+   */
+  getResourceName() {
+    return this.options.name || this._resource.name()
+  }
+
+  /**
+   * Returns resource parent along with the icon. By default it is a
+   * database type with its icon
+   * @return {Object&lt;String,String>} returns { name, icon }
+   */
+  getParent() {
+    const parent = this.options.parent || this._resource.databaseName()
+    const name = parent.name || parent
+    const icon = parent.icon ? parent.icon : `icon-${this._resource.databaseType() || 'database'}`
+    return { name, icon }
+  }
+
+  /**
+   * Returns list of all properties which will be visible on the list
+   * @return {Array&lt;PropertyDecorator>}
+   */
+  getListProperties() {
+    if (this.options.listProperties &amp;&amp; this.options.listProperties.length) {
+      return this.options.listProperties.map(key => this.properties[key])
+    }
+    return Object.keys(this.properties)
+      .filter(key => this.properties[key].isVisible('list'))
+      .sort((key1, key2) => this.properties[key1].position() > this.properties[key2].position())
+      .map(key => this.properties[key])
+      .slice(0, DEFAULT_MAX_ITEMS_IN_LIST)
+  }
+
+  /**
+   * Returns list of all properties which will be visible on the show view
+   * @return {Array&lt;PropertyDecorator>}
+   */
+  getShowProperties() {
+    if (this.options.showProperties &amp;&amp; this.options.showProperties.length) {
+      return this.options.showProperties.map(key => this.properties[key])
+    }
+    return Object.keys(this.properties)
+      .filter(key => this.properties[key].isVisible('show'))
+      .map(key => this.properties[key])
+  }
+
+  /**
+   * Returns list of all properties which will be visible on the edit page
+   * @return {Array&lt;PropertyDecorator>}
+   */
+  getEditProperties() {
+    if (this.options.editProperties &amp;&amp; this.options.editProperties.length) {
+      return this.options.editProperties.map(key => this.properties[key])
+    }
+    return Object.keys(this.properties)
+      .filter(key => this.properties[key].isVisible('edit'))
+      .map(key => this.properties[key])
+  }
+
+  /**
+   * Returns list of all properties which will be filterable
+   * @return {Array&lt;PropertyDecorator>}
+   */
+  getFilterProperties() {
+    if (this.options.filterProperties &amp;&amp; this.options.filterProperties.length) {
+      return this.options.filterProperties.map(key => this.properties[key])
+    }
+    return Object.keys(this.properties)
+      .filter(key => this.properties[key].isVisible('filter'))
+      .map(key => this.properties[key])
+  }
+
+  /**
+   * Returns list of all custom scripts which are should be included in the
+   * head of the page. It gathers them from all properties which has defined custom
+   * head - see: {@link PropertyType}
+   *
+   * @see PropertyType
+   */
+  customHeadScripts() {
+    return Object.keys(this.properties)
+      .map(key => this.properties[key])
+      .filter(property => property.headScripts())
+      .reduce((memo, property) => ({
+        scripts: [...memo.scripts, ...property.headScripts().scripts],
+        styles: [...memo.styles, ...property.headScripts().styles],
+      }), { scripts: [], styles: [] })
+  }
+
+  property(propertyName) {
+    return this.properties[propertyName]
+  }
+
+  /**
+   * Returns object(map) with default actions as keys and their values
+   */
+  getDefaultActions(record) {
+    const resource = this._resource
+    return {
+      show: {
+        path: this.helpers.showRecordUrl(resource, record),
+        icon: 'icomoon-info',
+        label: 'Info',
+      },
+      edit: {
+        path: this.helpers.editRecordUrl(resource, record),
+        icon: 'icomoon-edit',
+        label: 'Edit',
+      },
+      remove: {
+        path: this.helpers.deleteRecordUrl(resource, record),
+        icon: 'icomoon-remove-2',
+        label: 'Remove',
+      },
+    }
+  }
+
+  /**
+   * Returns object(map) with record actions declared in his decorator
+   */
+  getAllAvailableActions(defaultActions, recordActions, record) {
+    return recordActions.reduce((obj, key) => {
+      if (typeof key === 'object') {
+        return {
+          ...obj,
+          ...{
+            [key.id]: {
+              ...key,
+              path: this.helpers.customRecordActionUrl(this._resource, record, key.id),
+            },
+          },
+        }
+      }
+      return {
+        ...obj,
+        ...(Object.keys(defaultActions).includes(key) &amp;&amp; { [key]: defaultActions[key] }),
+      }
+    }, {})
+  }
+
+  /**
+  * Returns object(map) with record actions declared in his decorator.
+  * If record doesn't have declared actions, it automatically returns default ones
+  */
+  getRecordActions(record) {
+    const defaultActions = this.getDefaultActions(record)
+    const recordActions = this.invokeOrGet('recordActions')
+    if (recordActions) {
+      return this.getAllAvailableActions(defaultActions, recordActions, record)
+    }
+    return defaultActions
+  }
+
+  /**
+   * For given parameter it tries to find class member, and when it is a function - it invokes
+   * it, otherwise return parameter value
+   * @param  {String} param
+   * @return {any}
+   */
+  invokeOrGet(param) {
+    return (this[param] instanceof Function) ? this[param]() : this[param]
+  }
+}
+
+ResourceDecorator.DEFAULT_MAX_ITEMS_IN_LIST = DEFAULT_MAX_ITEMS_IN_LIST
+module.exports = ResourceDecorator
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Feb 09 2019 15:16:09 GMT+0100 (Central European Standard Time)</p>
+        <p class="sidebar-created-by">
+            <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+            <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers</a>
+        </p>
+    </div>
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/app.min.js"></script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1314,7 +1314,7 @@ combined-stream@^1.0.6, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
-commander@^2.19.0:
+commander@^2.19.0, commander@^2.9.0:
   version "2.19.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.19.0.tgz#f6198aa84e5b83c46054b94ddedbfed5ee9ff12a"
 
@@ -1447,6 +1447,10 @@ cryptiles@4.x.x:
 crypto-random-string@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/crypto-random-string/-/crypto-random-string-1.0.0.tgz#a230f64f568310e1498009940790ec99545bca7e"
+
+cssfilter@0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/cssfilter/-/cssfilter-0.0.10.tgz#c6d2672632a2e5c83e013e6864a42ce8defd20ae"
 
 currently-unhandled@^0.4.1:
   version "0.4.1"
@@ -1853,6 +1857,12 @@ first-chunk-stream@^1.0.0:
 flagged-respawn@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/flagged-respawn/-/flagged-respawn-1.0.1.tgz#e7de6f1279ddd9ca9aac8a5971d618606b3aab41"
+
+flat@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/flat/-/flat-4.1.0.tgz#090bec8b05e39cba309747f1d588f04dbaf98db2"
+  dependencies:
+    is-buffer "~2.0.3"
 
 flush-write-stream@^1.0.2:
   version "1.0.3"
@@ -2562,6 +2572,10 @@ is-buffer@^1.1.5:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"
 
+is-buffer@~2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-2.0.3.tgz#4ecf3fcf749cbd1e472689e109ac66261a25e725"
+
 is-builtin-module@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npmjs.org/is-builtin-module/-/is-builtin-module-1.0.0.tgz#540572d34f7ac3119f8f76c30cbc1b1e037affbe"
@@ -2823,6 +2837,10 @@ jsdoc-mermaid@^1.0.0:
   resolved "https://registry.yarnpkg.com/jsdoc-mermaid/-/jsdoc-mermaid-1.0.0.tgz#793f319d9f8658c6a15d1ce77f77de4c50fd5905"
   dependencies:
     doctrine "^2.0.0"
+
+jsdoc-typeof-plugin@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/jsdoc-typeof-plugin/-/jsdoc-typeof-plugin-1.0.0.tgz#d9b621d1c63b607116d53b20d73f87a2f917a51f"
 
 jsdoc@^3.5.5:
   version "3.5.5"
@@ -5438,6 +5456,13 @@ xdg-basedir@^3.0.0:
 xmlcreate@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/xmlcreate/-/xmlcreate-1.0.2.tgz#fa6bf762a60a413fb3dd8f4b03c5b269238d308f"
+
+xss@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/xss/-/xss-1.0.3.tgz#d04bd2558fd6c29c46113824d5e8b2a910054e23"
+  dependencies:
+    commander "^2.9.0"
+    cssfilter "0.0.10"
 
 "xtend@>=4.0.0 <4.1.0-0", xtend@^4.0.0, xtend@~4.0.0, xtend@~4.0.1:
   version "4.0.1"

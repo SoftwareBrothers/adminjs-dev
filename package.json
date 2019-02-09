@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "docs": "node_modules/.bin/jsdoc -c jsdoc.json",
-    "validate-docs": "node_modules/.bin/jsdoc -c jsdoc-test.json"
+    "validate-docs": "node_modules/.bin/jsdoc -c jsdoc-test.json",
+    "debug": "nodemon --inspect=0.0.0.0:9222 --nolazy ./index.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "bcrypt": "^3.0.2",
     "boom": "^7.3.0",
     "chart.js": "^2.7.3",
+    "flat": "^4.1.0",
     "hapi": "^17.8.1",
     "inert": "^5.1.2",
     "moment": "^2.23.0",
@@ -33,7 +35,8 @@
     "nodemon": "^1.18.8",
     "pg": "^7.7.1",
     "sequelize": "^4.42.0",
-    "sequelize-cli": "^5.4.0"
+    "sequelize-cli": "^5.4.0",
+    "xss": "^1.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.2.0",

@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 
 COPY admin-bro/package*.json ./admin-bro/
 COPY admin-bro-hapijs/package*.json ./admin-bro-hapijs/
-COPY admin-bro-expressjs/package*.json ./admin-bro-hapijs/
+COPY admin-bro-expressjs/package*.json ./admin-bro-expressjs/
 COPY admin-bro-mongoose/package*.json ./admin-bro-mongoose/
 COPY admin-bro-sequelizejs/package*.json ./admin-bro-sequelizejs/
 COPY admin-bro-example-app/package*.json ./admin-bro-example-app/

@@ -60,7 +60,7 @@
             <div class="column is-3" id="sidebarNav">
                 <div class="sidebar">
                     <nav>
-                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-01-example.html">01. Example App</a></li><li><a href="tutorial-02-frameworks.html">02. Frameworks</a></li><li><a href="tutorial-03-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-04-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-05-custom-dashboard.html">05. Customize dashboard</a></li><li><a href="tutorial-06-architecture.html">06. Architecture</a></li></ul><h3>Modules</h3><ul><li><a href="module-admin-bro-expressjs.html">admin-bro-expressjs</a></li><li><a href="module-admin-bro-hapijs.html">admin-bro-hapijs</a></li><li><a href="module-admin-bro-mongoose.html">admin-bro-mongoose</a></li><li><a href="module-admin-bro-sequelizejs.html">admin-bro-sequelizejs</a></li></ul><h3>Classes</h3><ul><li><a href="AdminBro.html">AdminBro</a></li><li><a href="BaseDecorator.html">BaseDecorator</a></li><li><a href="PageBuilder.html">PageBuilder</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Router">Router</a></li></ul></div><div class="category"><h2>Adapter</h2><h3>Classes</h3><ul><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li></ul></div><div class="category"><h2>Errors</h2><h3>Classes</h3><ul><li><a href="NotImplementedError.html">NotImplementedError</a></li><li><a href="ValidationError.html">ValidationError</a></li></ul></div>
+                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-01-example.html">01. Example App</a></li><li><a href="tutorial-02-frameworks.html">02. Frameworks</a></li><li><a href="tutorial-03-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-04-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-05-custom-dashboard.html">05. Customize dashboard</a></li><li><a href="tutorial-06-architecture.html">06. Architecture</a></li></ul><h3>Modules</h3><ul><li><a href="module-admin-bro-expressjs.html">admin-bro-expressjs</a></li><li><a href="module-admin-bro-hapijs.html">admin-bro-hapijs</a></li><li><a href="module-admin-bro-mongoose.html">admin-bro-mongoose</a></li><li><a href="module-admin-bro-sequelizejs.html">admin-bro-sequelizejs</a></li></ul><h3>Classes</h3><ul><li><a href="AdminBro.html">AdminBro</a></li><li><a href="PageBuilder.html">PageBuilder</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3><a href="global.html">Global</a></h3></div><div class="category"><h2>PropertyTypes</h2><h3>Modules</h3><ul><li><a href="module-boolean.html">boolean</a></li><li><a href="module-date.html">date</a></li><li><a href="module-datetime.html">datetime</a></li><li><a href="module-defaultType.html">defaultType</a></li><li><a href="module-richtext.html">richtext</a></li><li><a href="module-string.html">string</a></li></ul></div><div class="category"><h2>Adapter</h2><h3>Classes</h3><ul><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li></ul></div><div class="category"><h2>Errors</h2><h3>Classes</h3><ul><li><a href="NotImplementedError.html">NotImplementedError</a></li><li><a href="ValidationError.html">ValidationError</a></li></ul></div><div class="category"><h2>Decorators</h2><h3>Classes</h3><ul><li><a href="PropertyDecorator.html">PropertyDecorator</a></li><li><a href="ResourceDecorator.html">ResourceDecorator</a></li></ul></div>
                     </nav>
                 </div>
             </div>
@@ -81,7 +81,6 @@
             <pre class="prettyprint source linenums"><code>const _ = require('lodash')
 
 const Renderer = require('./backend/utils/renderer')
-const BaseDecorator = require('./backend/utils/base-decorator')
 const BaseResource = require('./backend/adapters/base-resource')
 const BaseDatabase = require('./backend/adapters/base-database')
 const BaseRecord = require('./backend/adapters/base-record')
@@ -90,13 +89,14 @@ const PageBuilder = require('./backend/utils/page-builder')
 const ValidationError = require('./backend/utils/validation-error')
 const ResourcesFactory = require('./backend/utils/resources-factory')
 const DefaultDashboard = require('./backend/defaults/default-dashboard')
+const PROPERTY_TYPES = require('./backend/property-types')
 
 const Router = require('./backend/router')
 
 const pkg = require('../package.json')
 
 /**
- * @typedef {Object} AdminBro~AdminBroOptions
+ * @typedef {Object} AdminBroOptions
  * @property {String} [rootPath='/admin']             under which path AdminBro will be available
  * @property {String} [logoutPath='/admin/logout']    url to logout action
  * @property {String} [loginPath='/admin/login']      url to login page
@@ -105,7 +105,7 @@ const pkg = require('../package.json')
  *                                                    give as in a regular way or nested within
  *                                                    an object along with its decorator
  * @property {BaseResource} [resources[].resource]    class which extends {@link BaseResource}
- * @property {BaseDecorator} [resources[].decorator]  class which extends {@link BaseDecorator}
+ * @property {ResourceOptions} [resources[].options]  options for given resource
  * @property {PageBuilder} [dashboard]                your custom dashboard page
  * @property {Object} [branding]                      branding settings
  * @property {String} [branding.logo]                 logo shown in AdminBro in top left corner
@@ -161,7 +161,7 @@ const defaults = {
 }
 
 /**
- * Main class for Admin extension. It takes {@link AdminBro~AdminBroOptions} as an
+ * Main class for Admin extension. It takes {@link AdminBroOptions} as an
  * parameter and creates admin instance.
  *
  * Its main responsibility is to fetch all resources and/or databases given by
@@ -169,7 +169,7 @@ const defaults = {
  */
 class AdminBro {
   /**
-   * @param  {AdminBro~AdminBroOptions}   options
+   * @param  {AdminBroOptions}   options
    */
   constructor(options = {}) {
     /**
@@ -179,7 +179,7 @@ class AdminBro {
     this.resources = []
 
     /**
-     * @type {AdminBro~AdminBroOptions}
+     * @type {AdminBroOptions}
      * @description Options gave by the user
      */
     this.options = _.merge(defaults, options)
@@ -222,7 +222,7 @@ class AdminBro {
    * @return {Promise&lt;string>}                HTML of the rendered page
    */
   static async renderLogin({ action, errorMessage }) {
-    return new Renderer('pages/login', { action, errorMessage }).render()
+    return new Renderer().render('pages/login', { action, errorMessage })
   }
 
   /**
@@ -234,12 +234,6 @@ class AdminBro {
     return this.resources.find(m => m.id() === resourceId)
   }
 }
-
-/**
- * Base class for all resource decorators
- * @type {typeof BaseDecorator}
- */
-AdminBro.BaseDecorator = BaseDecorator
 
 /**
  * List of all supported routes along with controllers
@@ -285,6 +279,12 @@ AdminBro.ValidationError = ValidationError
 
 AdminBro.registeredAdapters = []
 
+/**
+ * List of all property types supported by the AdminBro
+ * @type {Object&lt;string, PropertyType>}
+ */
+AdminBro.PROPERTY_TYPES = PROPERTY_TYPES
+
 AdminBro.VERSION = pkg.version
 
 module.exports = AdminBro
@@ -302,7 +302,7 @@ module.exports = AdminBro
 
 <footer class="footer">
     <div class="content has-text-centered">
-        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Feb 04 2019 11:31:06 GMT+0100 (Central European Standard Time)</p>
+        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Feb 09 2019 15:16:08 GMT+0100 (Central European Standard Time)</p>
         <p class="sidebar-created-by">
             <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
             <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers</a>

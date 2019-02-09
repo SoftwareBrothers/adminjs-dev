@@ -58,7 +58,7 @@
             <div class="column is-3" id="sidebarNav">
                 <div class="sidebar">
                     <nav>
-                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-01-example.html">01. Example App</a></li><li><a href="tutorial-02-frameworks.html">02. Frameworks</a></li><li><a href="tutorial-03-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-04-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-05-custom-dashboard.html">05. Customize dashboard</a></li><li><a href="tutorial-06-architecture.html">06. Architecture</a></li></ul><h3>Modules</h3><ul><li><a href="module-admin-bro-expressjs.html">admin-bro-expressjs</a></li><li><a href="module-admin-bro-hapijs.html">admin-bro-hapijs</a></li><li><a href="module-admin-bro-mongoose.html">admin-bro-mongoose</a></li><li><a href="module-admin-bro-sequelizejs.html">admin-bro-sequelizejs</a></li></ul><h3>Classes</h3><ul><li><a href="AdminBro.html">AdminBro</a></li><li><a href="BaseDecorator.html">BaseDecorator</a></li><li><a href="PageBuilder.html">PageBuilder</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Router">Router</a></li></ul></div><div class="category"><h2>Adapter</h2><h3>Classes</h3><ul><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li></ul></div><div class="category"><h2>Errors</h2><h3>Classes</h3><ul><li><a href="NotImplementedError.html">NotImplementedError</a></li><li><a href="ValidationError.html">ValidationError</a></li></ul></div>
+                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-01-example.html">01. Example App</a></li><li><a href="tutorial-02-frameworks.html">02. Frameworks</a></li><li><a href="tutorial-03-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-04-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-05-custom-dashboard.html">05. Customize dashboard</a></li><li><a href="tutorial-06-architecture.html">06. Architecture</a></li></ul><h3>Modules</h3><ul><li><a href="module-admin-bro-expressjs.html">admin-bro-expressjs</a></li><li><a href="module-admin-bro-hapijs.html">admin-bro-hapijs</a></li><li><a href="module-admin-bro-mongoose.html">admin-bro-mongoose</a></li><li><a href="module-admin-bro-sequelizejs.html">admin-bro-sequelizejs</a></li></ul><h3>Classes</h3><ul><li><a href="AdminBro.html">AdminBro</a></li><li><a href="PageBuilder.html">PageBuilder</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3><a href="global.html">Global</a></h3></div><div class="category"><h2>PropertyTypes</h2><h3>Modules</h3><ul><li><a href="module-boolean.html">boolean</a></li><li><a href="module-date.html">date</a></li><li><a href="module-datetime.html">datetime</a></li><li><a href="module-defaultType.html">defaultType</a></li><li><a href="module-richtext.html">richtext</a></li><li><a href="module-string.html">string</a></li></ul></div><div class="category"><h2>Adapter</h2><h3>Classes</h3><ul><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li></ul></div><div class="category"><h2>Errors</h2><h3>Classes</h3><ul><li><a href="NotImplementedError.html">NotImplementedError</a></li><li><a href="ValidationError.html">ValidationError</a></li></ul></div><div class="category"><h2>Decorators</h2><h3>Classes</h3><ul><li><a href="PropertyDecorator.html">PropertyDecorator</a></li><li><a href="ResourceDecorator.html">ResourceDecorator</a></li></ul></div>
                     </nav>
                 </div>
             </div>
@@ -143,20 +143,28 @@
     
 
     
+
+    
+
+    
         <div class='vertical-section'>
-            <h3 class="title"><span>Members</span></h3>
+            <h3 class="title"><span>Type Definitions</span></h3>
             <div class="members">
             
                 <div class="member">
 
-<h4 class="name" id="Router">
-    
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
         
-            <span class='tag'>constant</span>
-        
+<span class="param-type">Object</span>
+
+
+    </span>
+
+<h4 class="name" id="AdminBroOptions">
     
     <span class="code-name">
-        Router
+        AdminBroOptions
     </span>
 </h4>
 
@@ -164,22 +172,588 @@
 
 
 <div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Contains list of all routes grouped to <code>assets</code> and <code>routes</code>.</p>
-<pre class="prettyprint source"><code>{
-  assets: [{
-    path: '/frontend/assets/app.min.js',
-    src: [ASSETS_ROOT, 'scripts/app.min.js'].join('/'),
-  }, ...],
-  routes: [{
-    method: 'GET',
-    path: '/resources/{resourceId}',
-    Controller: ResourcesController,
-    action: 'index',
-  }, ...]
-}
-</code></pre><p>It is used by supported frameworks to render AdminBro pages.</p>
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>AdminBro takes list of options of the entire framework. All off them
+have default values, but you can tailor them to your needs easily</p>
 </div>
 
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>rootPath</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">String</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+        <td class="default">
+        
+            '/admin'
+        
+        </td>
+    
+
+    <td class="description last"><p>under which path AdminBro will be available</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>logoutPath</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">String</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+        <td class="default">
+        
+            '/admin/logout'
+        
+        </td>
+    
+
+    <td class="description last"><p>url to logout action</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>loginPath</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">String</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+        <td class="default">
+        
+            '/admin/login'
+        
+        </td>
+    
+
+    <td class="description last"><p>url to login page</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>databases</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Array.&lt;<a href="BaseDatabase.html">BaseDatabase</a>></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+        <td class="default">
+        
+            []
+        
+        </td>
+    
+
+    <td class="description last"><p>array of all databases</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>resources</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Array.&lt;<a href="BaseResource.html">BaseResource</a>></span>
+|
+
+<span class="param-type">Array.&lt;Object></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+        <td class="default">
+        
+            []
+        
+        </td>
+    
+
+    <td class="description last"><p>array of all resources. Resources can be
+                                                   give as in a regular way or nested within
+                                                   an object along with its decorator</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>resources[].resource</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="BaseResource.html">BaseResource</a></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+        <td class="default">
+        
+        </td>
+    
+
+    <td class="description last"><p>class which extends <a href="BaseResource.html">BaseResource</a></p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>resources[].options</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="global.html#ResourceOptions">ResourceOptions</a></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+        <td class="default">
+        
+        </td>
+    
+
+    <td class="description last"><p>options for given resource</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>dashboard</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="PageBuilder.html">PageBuilder</a></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+        <td class="default">
+        
+        </td>
+    
+
+    <td class="description last"><p>your custom dashboard page</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>branding</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Object</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+        <td class="default">
+        
+        </td>
+    
+
+    <td class="description last"><p>branding settings</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>logo</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">String</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+        <td class="default">
+        
+        </td>
+    
+
+    <td class="description last"><p>logo shown in AdminBro in top left corner</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>companyName</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">String</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+        <td class="default">
+        
+        </td>
+    
+
+    <td class="description last"><p>company name</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>softwareBrothers</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Boolean</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+        <td class="default">
+        
+        </td>
+    
+
+    <td class="description last"><p>if software brothers logos should be shown
+                                                   in the sidebar footer</p></td>
+</tr>
+
+  
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>assets</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Object</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+        <td class="default">
+        
+        </td>
+    
+
+    <td class="description last"><p>assets object</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>styles</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Array.&lt;String></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+        <td class="default">
+        
+        </td>
+    
+
+    <td class="description last"><p>array with a paths to styles</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>scripts</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Array.&lt;String></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+        <td class="default">
+        
+        </td>
+    
+
+    <td class="description last"><p>array with a paths to scripts</p></td>
+</tr>
+
+  
+
+    
+    </tbody>
+</table>
 
 
 
@@ -217,9 +791,1500 @@
 
     
         <p class="tag-source">
-            <a href="admin-bro_src_backend_router.js.html" class="button">View Source</a>
+            <a href="admin-bro_src_admin-bro.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_router.js.html">admin-bro/src/backend/router.js</a>, <a href="admin-bro_src_backend_router.js.html#line27">line 27</a>
+                <a href="admin-bro_src_admin-bro.js.html">admin-bro/src/admin-bro.js</a>, <a href="admin-bro_src_admin-bro.js.html#line18">line 18</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const AdminBro = require('admin-bro')
+
+const ArticleDecorator = require('./article-decorator')
+const ArticleModel = require('./article')
+
+const connection = await mongoose.connect(process.env.MONGO_URL)
+
+const adminBro = new AdminBro({
+  rootPath: '/xyz-admin',
+  logoutPath: '/xyz-admin/exit',
+  loginPath: '/xyz-admin/sign-in',
+  databases: [connection]
+  resources: [{ resource: ArticleModel, decorator: ArticleDecorator}]
+  branding: {
+    companyName: 'XYZ c.o.'
+  },
+  assets: {
+    styles: ['/style.css'],
+    scripts: ['/scripts.js']
+  }
+})</code></pre>
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Object</span>
+
+
+    </span>
+
+<h4 class="name" id="PropertyOptions">
+    
+    <span class="code-name">
+        PropertyOptions
+    </span>
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>
+</div>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>isVisible</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Boolean</span>
+|
+
+<span class="param-type">Object</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>show</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Boolean</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>list</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Boolean</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>edit</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Boolean</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>filter</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Boolean</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+  
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>render</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="global.html#PropertyType">PropertyType</a></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>type</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">String</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>isId</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Boolean</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>isTitle</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Boolean</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>position</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Number</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>position of the field in a list,
+                                     title field (isTitle) gets position -1 by default other
+                                     fields gets position = 100.</p></td>
+</tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_decorators_property-decorator.js.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_decorators_property-decorator.js.html">admin-bro/src/backend/decorators/property-decorator.js</a>, <a href="admin-bro_src_backend_decorators_property-decorator.js.html#line3">line 3</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Object</span>
+
+
+    </span>
+
+<h4 class="name" id="PropertyType">
+    
+    <span class="code-name">
+        PropertyType
+    </span>
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>
+</div>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>list</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="global.html#RenderFunction">RenderFunction</a></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+        <td class="default">
+        
+        </td>
+    
+
+    <td class="description last"><p>function which will render the list</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>show</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="global.html#RenderFunction">RenderFunction</a></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+        <td class="default">
+        
+        </td>
+    
+
+    <td class="description last"></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>edit</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="global.html#RenderFunction">RenderFunction</a></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+        <td class="default">
+        
+        </td>
+    
+
+    <td class="description last"></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>filter</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="global.html#RenderFilterFunction">RenderFilterFunction</a></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+        <td class="default">
+        
+        </td>
+    
+
+    <td class="description last"></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>head</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Object</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+        <td class="default">
+        
+        </td>
+    
+
+    <td class="description last"><p>files which should be loaded into the head of the page</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>scripts</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Array.&lt;String></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+        <td class="default">
+        
+            []
+        
+        </td>
+    
+
+    <td class="description last"><p>scripts</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>styles</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Array.&lt;String></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+        <td class="default">
+        
+            []
+        
+        </td>
+    
+
+    <td class="description last"><p>styles</p></td>
+</tr>
+
+  
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_decorators_property-decorator.js.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_decorators_property-decorator.js.html">admin-bro/src/backend/decorators/property-decorator.js</a>, <a href="admin-bro_src_backend_decorators_property-decorator.js.html#line18">line 18</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    
+    <h4 class="name" id="RenderFilterFunction">
+        
+        <span class="code-name">
+            RenderFilterFunction<span class="signature">()</span><span class="type-signature"></span>
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>property</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="PropertyDecorator.html">PropertyDecorator</a></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>filter</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Object</span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>h</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="ViewHelpers.html">ViewHelpers</a></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_decorators_property-decorator.js.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_decorators_property-decorator.js.html">admin-bro/src/backend/decorators/property-decorator.js</a>, <a href="admin-bro_src_backend_decorators_property-decorator.js.html#line34">line 34</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    
+    <h4 class="name" id="RenderFunction">
+        
+        <span class="code-name">
+            RenderFunction<span class="signature">()</span><span class="type-signature"></span>
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>property</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="PropertyDecorator.html">PropertyDecorator</a></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>record</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="BaseRecord.html">BaseRecord</a></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>h</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="ViewHelpers.html">ViewHelpers</a></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_decorators_property-decorator.js.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_decorators_property-decorator.js.html">admin-bro/src/backend/decorators/property-decorator.js</a>, <a href="admin-bro_src_backend_decorators_property-decorator.js.html#line28">line 28</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Object</span>
+
+
+    </span>
+
+<h4 class="name" id="ResourceOptions">
+    
+    <span class="code-name">
+        ResourceOptions
+    </span>
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>
+</div>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>name</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">String</span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>name of a resource</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>listProperties</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Array.&lt;String></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>list of all properties which should be visible
+                                             on a list</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>showProperties</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Array.&lt;String></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>list of all properties which should be visible
+                                             on an object view</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>editProperties</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Array.&lt;String></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>list of all properties which should be visible
+                                             on edit screen</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>filterProperties</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Array.&lt;String></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>list of all properties which should be visible
+                                             in the filter</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>parent</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Object</span>
+|
+
+<span class="param-type">String</span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>parent category in the sidebar</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>name</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">String</span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>name of the parent category</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>icon</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">String</span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>icon class of a parent category (i.e. 'icon-bomb')</p></td>
+</tr>
+
+  
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>properties</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">properties.&lt;String, <a href="global.html#PropertyOptions">PropertyOptions</a>></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>list of properties with their options</p></td>
+</tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_decorators_resource-decorator.js.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_decorators_resource-decorator.js.html">admin-bro/src/backend/decorators/resource-decorator.js</a>, <a href="admin-bro_src_backend_decorators_resource-decorator.js.html#line14">line 14</a>
             </span>
         </p>
     
@@ -233,10 +2298,6 @@
             
             </div>
         </div>
-    
-
-    
-
     
 
     
@@ -254,7 +2315,7 @@
 
 <footer class="footer">
     <div class="content has-text-centered">
-        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Feb 04 2019 11:31:06 GMT+0100 (Central European Standard Time)</p>
+        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Feb 09 2019 15:16:09 GMT+0100 (Central European Standard Time)</p>
         <p class="sidebar-created-by">
             <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
             <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers</a>

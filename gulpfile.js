@@ -30,11 +30,8 @@ gulp.task('js', () => {
     .pipe(gulp.dest('admin-bro/src/frontend/assets/scripts'))
 })
 
-gulp.task('nodemon', () => {
-  nodemon({
-    script: './index.js',
-    ext: 'js json',
-  })
+gulp.task('debug', () => {
+  spawn('yarn', ['run', 'debug'], { cwd: './', stdio: 'inherit' })
 })
 
 gulp.task('dbCreate', (done) => {
@@ -50,4 +47,4 @@ gulp.task('watch', () => {
   gulp.watch('admin-bro/src/frontend/scripts/**/*.js', ['js'])
 })
 
-gulp.task('default', ['dbCreate', 'sass', 'js', 'watch', 'nodemon'])
+gulp.task('default', ['dbCreate', 'sass', 'js', 'watch', 'debug'])

@@ -1,11 +1,9 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
     <meta charset="utf-8">
-    <title>JSDoc: admin-bro/src/backend/utils/resources-factory.js</title>
+    <title>JSDoc: string</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -67,128 +65,135 @@
             <div class="column is-9-desktop">
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
-                        <p>Source</p>
-                        <h1>admin-bro/src/backend/utils/resources-factory.js</h1>
+                        <p>Module</p>
+                        <h1>string</h1>
                     </header>
                     
                     
 
 
 
+
+<section>
+
+<header>
     
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>const BaseResource = require('../adapters/base-resource')
+        
+            
+        
+    
+</header>
 
-class NoDatabaseAdapterError extends Error {
-  constructor(database) {
-    const message = 'There are no adapters supporting one of the database you provided'
-    super(message)
-    this.database = database
-    this.name = 'NoDatabaseAdapterError'
-  }
-}
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script></div>
+        
 
-class NoResourceAdapterError extends Error {
-  constructor(resource) {
-    const message = 'There are no adapters supporting one of the resource you provided'
-    super(message)
-    this.resource = resource
-    this.name = 'NoResourceAdapterError'
-  }
-}
+        
+            
 
-class ResourcesFactory {
-  constructor(admin, adapters = []) {
-    this.adapters = adapters
-    this.admin = admin
-  }
 
-  buildResources({ databases, resources }) {
-    const optionsResources = this._convertResources(resources)
 
-    // fetch only those resources from database which werent previousely given as a resource
-    const databaseResources = this._convertDatabases(databases).filter(dr => (
-      !optionsResources.find(optionResource => optionResource.resource.id() === dr.id())
-    ))
 
-    return this._decorateResources([...databaseResources, ...optionsResources])
-  }
 
-  /**
-   * Changes database give by the user in configuration to list of supported resources
-   * @param  {any[]} databases    list of all databases given by the user in {@link AdminBroOptions}
-   * @return {BaseResource[]}     list of all resources from given databases
-  */
-  _convertDatabases(databases) {
-    return databases.reduce((memoArray, db) => {
-      const databaseAdapter = this.adapters.find(adapter => (
-        adapter.Database.isAdapterFor(db)
-      ))
-      if (!databaseAdapter) {
-        throw new NoDatabaseAdapterError(db)
-      }
-      return memoArray.concat(new databaseAdapter.Database(db).resources())
-    }, [])
-  }
 
-  /**
-   * Maps resources given by user to resources supported by AdminBro.
-   *
-   * @param  {any[]}           resources                array of all resources given by the user
-   *                                                    in {@link AdminBroOptions}
-   * @param  {any}             resources[].resource     optionally user can give resource along
-   *                                                    with options
-   * @param  {Object}          resources[].options      options given along with the resource
-   * @return {Object[]}                                 list of Objects with resource and options
-   *                                                    keys
-   *
-   * @example
-   * AdminBro._convertResources([rawAdminModel, {resource: rawUserMode, options: {}}])
-   * // => returns: [AdminModel, {resource: UserModel, options: {}}]
-   * // where AdminModel and UserModel were converted by appropriate database adapters.
-   */
-  _convertResources(resources) {
-    return resources.map((rawResource) => {
-      // resource can be given either by a value or within an object within resource key
-      const resourceObject = rawResource.resource || rawResource
-      const resourceAdapter = this.adapters.find(adapter => (
-        adapter.Resource.isAdapterFor(resourceObject)
-      ))
-      if (!resourceAdapter &amp;&amp; !(resourceObject instanceof BaseResource)) {
-        throw new NoResourceAdapterError(resourceObject)
-      }
-      return {
-        resource: resourceAdapter ? new resourceAdapter.Resource(resourceObject) : resourceObject,
-        options: rawResource.options,
-      }
-    })
-  }
 
-  /**
-   * Assigns decorator to each resource and initializes it with `options` and current `admin`
-   * instance
-   * @param  {Array&lt;Object | BaseResource>} resources    array of all mapped resources given by the
-   *                                                     user in {@link AdminBroOptions} along with
-   *                                                     options
-   * @param  {BaseResource}  resources[].resource        optionally user can give resource along
-   *                                                     with options
-   * @param  {Object} [resources[].options]              options for given resource
-   * @return {BaseResource[]}                            list of resources with decorator assigned
-   */
-  _decorateResources(resources) {
-    return resources.map((resourceObject) => {
-      const resource = resourceObject.resource || resourceObject
-      resource.assignDecorator(this.admin, resourceObject.options)
-      return resource
-    })
-  }
-}
 
-module.exports = ResourcesFactory
-</code></pre>
-        </article>
-    </section>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_property-types_string.js.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_property-types_string.js.html">admin-bro/src/backend/property-types/string.js</a>, <a href="admin-bro_src_backend_property-types_string.js.html#line3">line 3</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
 
 
 
