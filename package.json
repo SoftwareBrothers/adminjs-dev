@@ -6,7 +6,8 @@
   "scripts": {
     "docs": "node_modules/.bin/jsdoc -c jsdoc.json",
     "validate-docs": "node_modules/.bin/jsdoc -c jsdoc-test.json",
-    "debug": "nodemon --inspect=0.0.0.0:9222 --nolazy ./index.js"
+    "debug": "nodemon --inspect=0.0.0.0:9222 --nolazy ./index.js",
+    "start": "nodemon ./index.js"
   },
   "repository": {
     "type": "git",

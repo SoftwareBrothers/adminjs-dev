@@ -1,11 +1,9 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
     <meta charset="utf-8">
-    <title>JSDoc: admin-bro/src/backend/utils/resources-factory.js</title>
+    <title>JSDoc: 06. Architecture</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -67,131 +65,85 @@
             <div class="column is-9-desktop">
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
-                        <p>Source</p>
-                        <h1>admin-bro/src/backend/utils/resources-factory.js</h1>
+                        <p>Tutorial</p>
+                        <h1>06. Architecture</h1>
                     </header>
                     
-                    
+                    <section>
 
-
-
+<header>
     
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>const BaseResource = require('../adapters/base-resource')
+</header>
 
-class NoDatabaseAdapterError extends Error {
-  constructor(database) {
-    const message = 'There are no adapters supporting one of the database you provided'
-    super(message)
-    this.database = database
-    this.name = 'NoDatabaseAdapterError'
-  }
-}
+<article>
+    <h2>How AdminBro works</h2><p>It is totally separated from any particular nodejs framework. Because of that it can be easily integrated to almost every app.</p>
+<h3>Overal architecture</h3><div class="mermaid">
+  graph LR
+  subgraph AdminBro
+  B(AdminBro)
+  end
+  subgraph Resources
+  A[mongoose] --&gt; B
+  C[rest API endpoints] --&gt; B
+  D[sequelizejs] --&gt; B
+  H[your custom ORM] --&gt; B
+  end
+  subgraph http framework
+  B --&gt; E[Hapijs]
+  B --&gt; F[Express.js]
+  B --&gt; G[your custom framework]
+  end
 
-class NoResourceAdapterError extends Error {
-  constructor(resource) {
-    const message = 'There are no adapters supporting one of the resource you provided'
-    super(message)
-    this.resource = resource
-    this.name = 'NoResourceAdapterError'
-  }
-}
+</div>
 
-class ResourcesFactory {
-  constructor(admin, adapters = []) {
-    this.adapters = adapters
-    this.admin = admin
-  }
+<h3>This is an example rendering flow for hapi.js</h3><div class="mermaid">
+  graph LR
+  A[FrontendFramework] --&gt;|Mapping Routes| B
+  subgraph AdminBro
+  B{&lt;a href=./Router.html&gt;Router.js</a>}
+  B --&gt; C(DashoardController)
+  B --&gt; D(ResourcesController)
+  E(Renderer)
+  C --&gt; E
+  D --&gt; E
+  F(PUG view)
+  E --&gt; F
+  end
+</div>
 
-  buildResources({ databases, resources }) {
-    const optionsResources = this._convertResources(resources)
+<h2>Integration with nodejs Frameworks</h2><p>Example integration for Hapi.js framework can be found here. This code uses Hapi.js integration plugin. If you want to write your own implementation you will have to:</p>
+<ul>
+<li>write a plugin/middleware for a particular framework</li>
+<li>map its routing system to AdminBro routes and controllers (see how Hapi does that: admin/integrations/hapi.js)</li>
+<li>checkout if given framework has ORM already supported. If not you will have to create data mapper for it (see below)</li>
+<li>lastly - don't forget to add integration example in examples folder</li>
+</ul>
+<h2>Data model</h2><p>Most important part of the system is its data model. AdminBro can be integrated with multiple ORMs, that is why it has internal abstraction for handling multiple data models.</p>
+<p>This is how it looks:</p>
+<div class="mermaid">
+  graph LR
+  A[&lt;a href=./BaseDatabase.html&gt;BaseDatabase</a>] --&gt;|has many| B(&lt;a href=./BaseResource.html&gt;BaseResource</a>)
+  B --&gt; |has many|C(&lt;a href=./BaseRecord.html&gt;BaseRecord</a>)
+  B --&gt; |has many|D(&lt;a href=./BaseProperty.html&gt;BaseProperty</a>)
+</div>
 
-    // fetch only those resources from database which werent previousely given as a resource
-    const databaseResources = this._convertDatabases(databases).filter(dr => (
-      !optionsResources.find(optionResource => optionResource.resource.id() === dr.id())
-    ))
+<p>First of all <a href="AdminBro.html">base class</a> is used to convert all supported database connections (mongodb, sql-like, etc) to list of databases which interits from <a href="BaseDatabase.html">BaseDatabase</a>. It utilises DatabaseFactory to construct correct database type.</p>
+<p>Then each class which inherits <a href="BaseDatabase.html">BaseDatabase</a> can fetch all resources present in the database. Each resource inherits from <a href="BaseResource.html">BaseResource</a></p>
+<p>Each model has multiple properties with different types like String, Data, Number etc.</p>
+<p>Finally particular database record/document is mapped to <a href="BaseRecord.html">BaseRecord</a></p>
+<h2>Integration with ORMs</h2><p>To create new ORM integration you have to:</p>
+<ul>
+<li>create your implementation of <a href="BaseDatabase.html">BaseDatabase</a>, <a href="BaseResource.html">BaseResource</a>, <a href="BaseRecord.html">BaseRecord</a> and AbstractProperty</li>
+<li>update DatabaseFactory</li>
+<li>update examples</li>
+<li>most probably you will also have to update docker-compose to handle new database</li>
+</ul>
+<script src="https://cdn.rawgit.com/knsv/mermaid/7.0.0/dist/mermaid.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/knsv/mermaid/7.0.0/dist/mermaid.css">
+<script>mermaid.initialize({ startOnLoad: true });</script>
+</article>
 
-    return this._decorateResources([...databaseResources, ...optionsResources])
-  }
-
-  /**
-   * Changes database give by the user in configuration to list of supported resources
-   * @param  {any[]} databases    list of all databases given by the user in {@link AdminBroOptions}
-   * @return {BaseResource[]}     list of all resources from given databases
-  */
-  _convertDatabases(databases) {
-    return databases.reduce((memoArray, db) => {
-      const databaseAdapter = this.adapters.find(adapter => (
-        adapter.Database.isAdapterFor(db)
-      ))
-      if (!databaseAdapter) {
-        throw new NoDatabaseAdapterError(db)
-      }
-      return memoArray.concat(new databaseAdapter.Database(db).resources())
-    }, [])
-  }
-
-  /**
-   * Maps resources given by user to resources supported by AdminBro.
-   *
-   * @param  {any[]}           resources                array of all resources given by the user
-   *                                                    in {@link AdminBroOptions}
-   * @param  {any}             resources[].resource     optionally user can give resource along
-   *                                                    with options
-   * @param  {Object}          resources[].options      options given along with the resource
-   * @return {Object[]}                                 list of Objects with resource and options
-   *                                                    keys
-   *
-   * @example
-   * AdminBro._convertResources([rawAdminModel, {resource: rawUserMode, options: {}}])
-   * // => returns: [AdminModel, {resource: UserModel, options: {}}]
-   * // where AdminModel and UserModel were converted by appropriate database adapters.
-   */
-  _convertResources(resources) {
-    return resources.map((rawResource) => {
-      // resource can be given either by a value or within an object within resource key
-      const resourceObject = rawResource.resource || rawResource
-      const resourceAdapter = this.adapters.find(adapter => (
-        adapter.Resource.isAdapterFor(resourceObject)
-      ))
-      if (!resourceAdapter &amp;&amp; !(resourceObject instanceof BaseResource)) {
-        throw new NoResourceAdapterError(resourceObject)
-      }
-      return {
-        resource: resourceAdapter ? new resourceAdapter.Resource(resourceObject) : resourceObject,
-        options: rawResource.options,
-      }
-    })
-  }
-
-  /**
-   * Assigns decorator to each resource and initializes it with `options` and current `admin`
-   * instance
-   * @param  {Array&lt;Object | BaseResource>} resources    array of all mapped resources given by the
-   *                                                     user in {@link AdminBroOptions} along with
-   *                                                     options
-   * @param  {BaseResource}  resources[].resource        optionally user can give resource along
-   *                                                     with options
-   * @param  {Object} [resources[].options]              options for given resource
-   * @return {BaseResource[]}                            list of resources with decorator assigned
-   */
-  _decorateResources(resources) {
-    return resources.map((resourceObject) => {
-      const resource = resourceObject.resource || resourceObject
-      resource.assignDecorator(this.admin, resourceObject.options)
-      return resource
-    })
-  }
-}
-
-module.exports = ResourcesFactory
-</code></pre>
-        </article>
-    </section>
-
-
-
+</section>
 
                 </div>
             </div>

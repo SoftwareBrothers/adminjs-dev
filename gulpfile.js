@@ -31,7 +31,7 @@ gulp.task('js', () => {
 })
 
 gulp.task('debug', () => {
-  spawn('yarn', ['run', 'debug'], { cwd: './', stdio: 'inherit' })
+  spawn('yarn', ['start'], { cwd: './', stdio: 'inherit' })
 })
 
 gulp.task('dbCreate', (done) => {

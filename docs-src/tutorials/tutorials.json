@@ -11,16 +11,16 @@
   "04-customizing-resources": {
     "title": "04. Customize resources"
   },
-  "05-custom-dashboard": {
-    "title": "05. Customize dashboard"
+  "05-actions": {
+    "title": "06. Customize actions"
   },
-  "06-actions": {
-    "title": "06. Actions"
+  "06-custom-dashboard": {
+    "title": "05. Customize dashboard"
   },
   "07-api-resources": {
     "title": "07. API resources"
   },
-  "06-architecture": {
+  "07-architecture": {
     "title": "06. Architecture"
   }
 }

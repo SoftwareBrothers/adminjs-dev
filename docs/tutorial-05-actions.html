@@ -1,11 +1,9 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
     <meta charset="utf-8">
-    <title>JSDoc: admin-bro/src/backend/utils/resources-factory.js</title>
+    <title>JSDoc: 06. Customize actions</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -67,131 +65,148 @@
             <div class="column is-9-desktop">
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
-                        <p>Source</p>
-                        <h1>admin-bro/src/backend/utils/resources-factory.js</h1>
+                        <p>Tutorial</p>
+                        <h1>06. Customize actions</h1>
                     </header>
                     
-                    
+                    <section>
 
-
-
+<header>
     
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>const BaseResource = require('../adapters/base-resource')
+</header>
 
-class NoDatabaseAdapterError extends Error {
-  constructor(database) {
-    const message = 'There are no adapters supporting one of the database you provided'
-    super(message)
-    this.database = database
-    this.name = 'NoDatabaseAdapterError'
-  }
-}
-
-class NoResourceAdapterError extends Error {
-  constructor(resource) {
-    const message = 'There are no adapters supporting one of the resource you provided'
-    super(message)
-    this.resource = resource
-    this.name = 'NoResourceAdapterError'
-  }
-}
-
-class ResourcesFactory {
-  constructor(admin, adapters = []) {
-    this.adapters = adapters
-    this.admin = admin
-  }
-
-  buildResources({ databases, resources }) {
-    const optionsResources = this._convertResources(resources)
-
-    // fetch only those resources from database which werent previousely given as a resource
-    const databaseResources = this._convertDatabases(databases).filter(dr => (
-      !optionsResources.find(optionResource => optionResource.resource.id() === dr.id())
-    ))
-
-    return this._decorateResources([...databaseResources, ...optionsResources])
-  }
-
-  /**
-   * Changes database give by the user in configuration to list of supported resources
-   * @param  {any[]} databases    list of all databases given by the user in {@link AdminBroOptions}
-   * @return {BaseResource[]}     list of all resources from given databases
-  */
-  _convertDatabases(databases) {
-    return databases.reduce((memoArray, db) => {
-      const databaseAdapter = this.adapters.find(adapter => (
-        adapter.Database.isAdapterFor(db)
-      ))
-      if (!databaseAdapter) {
-        throw new NoDatabaseAdapterError(db)
+<article>
+    <p>At some point you would probably like to customize default views or create custom actions. <a href="global.html#Action">Actions</a> are the way of doing that.</p>
+<h2>Default actions</h2><p>Admin bro has 4 major default actions defined for each resource:</p>
+<p><strong>Resource</strong> base actions:</p>
+<ul>
+<li><strong>new</strong> [Add new] - creates new record</li>
+</ul>
+<p><strong>Record</strong> base actions:</p>
+<ul>
+<li><strong>show</strong> [info] - shows details of a given record</li>
+<li><strong>edit</strong> [edit] - updates given record</li>
+<li><strong>delete</strong> [remove] - removes given record</li>
+</ul>
+<p><strong>Resource base actions</strong> can be accessed in the header of the list of all the resources (next to the <em>filters</em> button). <strong>Record actions</strong> are places in the list by the resource. Take a look at the following screenshot:</p>
+<p><img src="/images/actions.png"></p>
+<p>Default actions can be accessed right from the AdminBro class.</p>
+<pre class="prettyprint source lang-javascript"><code>
+const AdminBro = require('admin-bro)
+AdminBro.ACTIONS.show // => show action object</code></pre><h2>Modify default action per Resource</h2><p>Each action has all the parameters defined by <a href="global.html#Action">Action</a>. They can be modified per resource along with other <a href="global.html#ResourceOptions">ResourceOptions</a></p>
+<pre class="prettyprint source lang-javascript"><code>const adminBroOptions = {
+  resources: [
+    { resource: Article, options: { actions: {show: {}, edit: {}, ...} } },
+  ],
+}</code></pre><h3>Basic properties</h3><p>Yes - you can modify things like: label, icon and visibility.</p>
+<p>In the folowing example we will change name of show action along with the icon, and will show it only for records with an email.</p>
+<pre class="prettyprint source lang-javascript"><code>const adminBroOptions = {
+  resources: [
+    { resource: Article,
+      options: {
+        actions: {
+          show: {
+            label: 'Show me that',
+            icon: 'fas fa-eye',
+            isVisible: (resource, record) => record.param('email') !== '',
+          },
+        },
+      },
+    },
+  ],
+}</code></pre><p><strong>isVisible</strong> can be either a function returning boolean value or a boolean value itself.</p>
+<h3>Action handler</h3><p>Each action has an <a href="global.html#ActionHandler">ActionHandler</a> function. This function is executed every time the action is invoked.</p>
+<p>Handler is an async fuction returning Promise which can either resolves to HTML string or to the redirect response.</p>
+<p>This is how Edit action is defined:</p>
+<pre class="prettyprint source"><code>module.exports = {
+  name: 'edit',
+  isVisible: true,
+  actionType: 'record',
+  icon: 'icomoon-edit',
+  label: 'Edit',
+  handler: async (request, response, data) => {
+    if (request.method === 'get') {
+      return renderer.render('actions/edit', data)
+    }
+    if (request.method === 'post') {
+      await data.record.update(request.payload)
+      if (data.record.isValid()) {
+        const showAction = data.resource.decorate().actions.show
+        return response.redirect(data.h.recordActionUrl(
+          data.resource, showAction, data.record,
+        ))
       }
-      return memoArray.concat(new databaseAdapter.Database(db).resources())
-    }, [])
-  }
-
-  /**
-   * Maps resources given by user to resources supported by AdminBro.
-   *
-   * @param  {any[]}           resources                array of all resources given by the user
-   *                                                    in {@link AdminBroOptions}
-   * @param  {any}             resources[].resource     optionally user can give resource along
-   *                                                    with options
-   * @param  {Object}          resources[].options      options given along with the resource
-   * @return {Object[]}                                 list of Objects with resource and options
-   *                                                    keys
-   *
-   * @example
-   * AdminBro._convertResources([rawAdminModel, {resource: rawUserMode, options: {}}])
-   * // => returns: [AdminModel, {resource: UserModel, options: {}}]
-   * // where AdminModel and UserModel were converted by appropriate database adapters.
-   */
-  _convertResources(resources) {
-    return resources.map((rawResource) => {
-      // resource can be given either by a value or within an object within resource key
-      const resourceObject = rawResource.resource || rawResource
-      const resourceAdapter = this.adapters.find(adapter => (
-        adapter.Resource.isAdapterFor(resourceObject)
-      ))
-      if (!resourceAdapter &amp;&amp; !(resourceObject instanceof BaseResource)) {
-        throw new NoResourceAdapterError(resourceObject)
-      }
-      return {
-        resource: resourceAdapter ? new resourceAdapter.Resource(resourceObject) : resourceObject,
-        options: rawResource.options,
+      return renderer.render('actions/edit', data)
+    }
+  },
+}
+</code></pre><p>If request was <strong>get</strong> it renders the edit fields. Otherwise (<strong>post</strong>) updates the record.</p>
+<h3>Example of modifying the show action</h3><p>Lets imagine we would like to add a graph to the details of the articles showing the number of comments.</p>
+<p>We can update an <a href="global.html#ActionHandler">ActionHandler</a> and utilise the <a href="PageBuilder.html">PageBuilder</a> class.</p>
+<p>This is how we would do this:</p>
+<pre class="prettyprint source lang-javascript"><code>{
+  ...,
+  handler: async (request, response, data) => {
+    const content = await AdminBro.ACTIONS.show.handler(request, response, data)
+    const page = new AdminBro.PageBuilder({ admin: data._admin })
+    page.addColumn({ content, columns: 7 })
+    page.addChart({
+      columns: 5,
+      title: 'Popularity',
+      subtitle: 'How people like this article',
+      config: {
+        type: 'bar',
+        data: {
+          datasets: [
+            {
+              label: 'Thumbs UP',
+              fill: true,
+              backgroundColor: AdminBro.PageBuilder.COLOR.INFO,
+              data: [522]
+            }, {
+              label: 'Thumbs Down',
+              fill: true,
+              backgroundColor: AdminBro.PageBuilder.COLOR.WARNING,
+              data: [20]
+            },
+          ],
+        },
       }
     })
-  }
+    return page.toHTML()
+  },
+  ...
+}</code></pre><p>And this is the result</p>
+<p><img src="./images/graph-in-show.png"></p>
+<h2>Custom Actions</h2><p>Also you can define your own actions. Simply pass <a href="global.html#Action">Action</a> under a new key to <a href="global.html#ResourceOptions">ResourceOptions</a>.</p>
+<p>Your action can be either Resource'is, Record'is or both.</p>
+<pre class="prettyprint source lang-javascript"><code>const adminBroOptions = {
+  resources: [
+    { resource: Article,
+      options: {
+        actions: {
+          newAction: {
+            actionType: ['record'],
+            label: 'Publish',
+            icon: 'fas fa-eye',
+            isVisible: true,
+            handler: async () => {...}
+          },
+        },
+      },
+    },
+  ],
+}</code></pre><h2>What's next</h2><p>Make sure to check out following types definitions: </p>
+<ul>
+<li><a href="global.html#ResourceOptions">ResourceOptions</a></li>
+<li><a href="global.html#Action">Action</a></li>
+<li><a href="global.html#ActionHandler">ActionHandler</a></li>
+<li><a href="global.html#IsVisible">IsVisible</a></li>
+</ul>
+<p>And you might also want to check out <a href="PageBuilder.html">PageBuilder</a></p>
+</article>
 
-  /**
-   * Assigns decorator to each resource and initializes it with `options` and current `admin`
-   * instance
-   * @param  {Array&lt;Object | BaseResource>} resources    array of all mapped resources given by the
-   *                                                     user in {@link AdminBroOptions} along with
-   *                                                     options
-   * @param  {BaseResource}  resources[].resource        optionally user can give resource along
-   *                                                     with options
-   * @param  {Object} [resources[].options]              options for given resource
-   * @return {BaseResource[]}                            list of resources with decorator assigned
-   */
-  _decorateResources(resources) {
-    return resources.map((resourceObject) => {
-      const resource = resourceObject.resource || resourceObject
-      resource.assignDecorator(this.admin, resourceObject.options)
-      return resource
-    })
-  }
-}
-
-module.exports = ResourcesFactory
-</code></pre>
-        </article>
-    </section>
-
-
-
+</section>
 
                 </div>
             </div>
