@@ -16,7 +16,7 @@ __Record__ base actions:
 
 __Resource base actions__ can be accessed in the header of the list of all the resources (next to the _filters_ button). __Record actions__ are places in the list by the resource. Take a look at the following screenshot:
 
-<img src="/images/actions.png">
+<img src="./images/actions.png">
 
 Default actions can be accessed right from the AdminBro class.
 
