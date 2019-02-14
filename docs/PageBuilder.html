@@ -81,17 +81,17 @@
         <h2><span class="attribs"><span class="type-signature"></span></span>PageBuilder<span class="signature">()</span><span class="type-signature"></span></h2>
         
             <div class="class-description"><p>Base class for all Pages in the AdminBro.</p>
-<h3>Extending the <strong>PageBuilder</strong> class</h3><p>To create your own Page you have to extend this class and override
+<h3>Extending the <strong>PageBuilder</strong> class</h3><p>To create your own Page, you have to extend this class and override
 <a href="PageBuilder.html#build">build()</a> abstract method.</p>
-<p>Example DashboardPage which change <strong>title</strong> and <strong>subtitle</strong> of the header block and adds one
-simple widget by using <a href="PageBuilder.html#addBlock">addBlock</a> method.</p>
+<p>Below is an example DashboardPage, which change <strong>title</strong> and <strong>subtitle</strong> of the header
+block and adds one simple widget by using <a href="PageBuilder.html#addBlock">addBlock</a> method.</p>
 <pre class="prettyprint source"><code>const { PageBuilder } = require('admin-bro')
 
 class DashboardPage extends PageBuilder {
   constructor(props) {
     super(props)
     this.title = 'Custom dashboard'
-    this.subtitle = 'This is just an example what can be done using AdminBro'
+    this.subtitle = 'This is just an example of what can be done using AdminBro'
   }
 
   async build() {
@@ -104,7 +104,7 @@ class DashboardPage extends PageBuilder {
   }
 }
 
-module.exports = DashboardPage</code></pre><h3>Initialize <strong>PageBuilder</strong> and render html via <strong>toHTML()</strong></h3><p>The other option of using PageBuilder is to simply initialize it and
+module.exports = DashboardPage</code></pre><h3>Initialize <strong>PageBuilder</strong> and render HTML via <strong>toHTML()</strong></h3><p>The other option of using PageBuilder is to simply initialize it and
 then use <a href="PageBuilder.html#toHTML">PageBuilder#toHTML</a></p>
 <pre class="prettyprint source"><code>const page = new AdminBro.PageBuilder({ admin })
 page.addBlock({
@@ -113,7 +113,7 @@ page.addBlock({
   icon: 'fas fa-newspaper fa-2x',
   columns: 3,
 })
-page.toHTML()</code></pre><h3>Available Widgets</h3><p>There you can use all available widgets:</p>
+page.toHTML()</code></pre><h3>Available widgets</h3><p>Below you can find a list of all available at this moment widgets:</p>
 <ul>
 <li><a href="PageBuilder.html#addBlock">addBlock</a></li>
 <li><a href="PageBuilder.html#addChart">addChart</a></li>
@@ -122,7 +122,7 @@ page.toHTML()</code></pre><h3>Available Widgets</h3><p>There you can use all ava
 <li><a href="PageBuilder.html#addTextBox">addTextBox</a></li>
 <li><a href="PageBuilder.html#addWelcomeBlock">addWelcomeBlock</a></li>
 </ul>
-<h3>Adding to the settings</h3><p>You can pass class you created to AdminBro via <a href="global.html#AdminBroOptions">AdminBroOptions</a>:</p>
+<h3>Adding to the settings</h3><p>You can pass any created class to AdminBro via <a href="global.html#AdminBroOptions">AdminBroOptions</a>:</p>
 <pre class="prettyprint source"><code>const DashboardPage = require('./dashboard-page')
 
 const adminBroOptions = {
@@ -335,7 +335,7 @@ const adminBroOptions = {
 
 <div class="description">
     <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Definition of commonly used colors for widgets.
-It contains following keys:</p>
+Contains following keys:</p>
 <ul>
 <li>WARNING</li>
 <li>DANGER</li>
@@ -496,7 +496,7 @@ It contains following keys:</p>
 
 
 <div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>page title - what will be on the header</p>
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>page title - what will be in the header</p>
 </div>
 
 
@@ -573,8 +573,8 @@ It contains following keys:</p>
     
     
     <div class="description">
-        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Adds The Simplest block widget to the page content</p>
-<h5>Example Widget:</h5><p><img src="images/add-block.png" alt="addBlock" width="300"/></p>
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Adds the simplest block widget to the page content</p>
+<h5>Example widget:</h5><p><img src="images/add-block.png" alt="addBlock" width="300"/></p>
     </div>
     
 
@@ -664,7 +664,7 @@ It contains following keys:</p>
       </td>
   
 
-  <td class="description last"><p>number of columns on which widget should visible</p></td>
+  <td class="description last"><p>number of columns on which a widget should visible</p></td>
 </tr>
 
   
@@ -774,7 +774,7 @@ It contains following keys:</p>
       </td>
   
 
-  <td class="description last"><p>string plased in the core of the widget</p></td>
+  <td class="description last"><p>string placed in the core of the widget</p></td>
 </tr>
 
   
@@ -807,7 +807,7 @@ It contains following keys:</p>
       </td>
   
 
-  <td class="description last"><p>color hex for the font.</p></td>
+  <td class="description last"><p>HTX color of the font.</p></td>
 </tr>
 
 
@@ -897,7 +897,7 @@ It contains following keys:</p>
     
     <div class="description">
         <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Adds canvas chart to the page content based on chart.js library</p>
-<h5>Example Widget:</h5><p><img src="images/add-chart.png" alt="addChart" width="600"/></p>
+<h5>Example widget:</h5><p><img src="images/add-chart.png" alt="addChart" width="600"/></p>
     </div>
     
 
@@ -1077,7 +1077,7 @@ It contains following keys:</p>
       </td>
   
 
-  <td class="description last"><p>number of columns on which widget should visible</p></td>
+  <td class="description last"><p>number of columns on which a widget should visible</p></td>
 </tr>
 
   
@@ -1395,7 +1395,7 @@ It contains following keys:</p>
       </td>
   
 
-  <td class="description last"><p>number of columns on which widget should visible</p></td>
+  <td class="description last"><p>number of columns on which a widget should visible</p></td>
 </tr>
 
   
@@ -1516,7 +1516,7 @@ It contains following keys:</p>
     
     <div class="description">
         <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Adds info list widget to the page content</p>
-<h5>Example Widget:</h5><p><img src="images/add-info-list.png" alt="addInfoList" width="400"/></p>
+<h5>Example widget:</h5><p><img src="images/add-info-list.png" alt="addInfoList" width="400"/></p>
     </div>
     
 
@@ -1768,7 +1768,7 @@ It contains following keys:</p>
       </td>
   
 
-  <td class="description last"><p>number of columns on which widget should visible</p></td>
+  <td class="description last"><p>number of columns on which a widget should visible</p></td>
 </tr>
 
   
@@ -1931,14 +1931,14 @@ It contains following keys:</p>
     <pre class="prettyprint"><code>async build(){
   this.addInfoList({
     title: 'Recent comments',
-    subtitle: 'Latest comments from user all around the world',
+    subtitle: 'Latest comments from users all around the world',
     columns: 4,
     items: (await CommentModel.find({}).limit(3).sort({createdAt: 'desc'})).map(comment => ({
       title: comment.content,
       subtitle: comment.createdBy,
       date: moment(comment.createdAt).format('YYYY-MM-DD HH:MM'),
       status: comment.flagged &amp;&amp; 'flagged',
-      imgSrc: 'http://www.question2answer.org/qa/?qa=image&amp;qa_blobid=18247718293145324634&amp;qa_size=40',
+      imgSrc: 'http://www.question2answer.org/qa/?qa=image&amp;qa_ blobid=18247718293145324634&amp;qa_size=40',
     }))
   })
 }</code></pre>
@@ -1961,7 +1961,7 @@ It contains following keys:</p>
     
     <div class="description">
         <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Adds info table widget to the page content</p>
-<h5>Example Widget:</h5><p><img src="images/add-info-table.png" alt="addInfoTable" width="800"/></p>
+<h5>Example widget:</h5><p><img src="images/add-info-table.png" alt="addInfoTable" width="800"/></p>
     </div>
     
 
@@ -2078,7 +2078,7 @@ It contains following keys:</p>
       </td>
   
 
-  <td class="description last"><p>number of columns on which widget should visible</p></td>
+  <td class="description last"><p>number of columns on which a widget should visible</p></td>
 </tr>
 
   
@@ -2270,7 +2270,7 @@ It contains following keys:</p>
     
     <div class="description">
         <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Adds simple text box widget to the page content</p>
-<h5>Example Widget:</h5><p><img src="images/add-text-box.png" alt="addTextBox" width="600"/></p>
+<h5>Example widget:</h5><p><img src="images/add-text-box.png" alt="addTextBox" width="600"/></p>
     </div>
     
 
@@ -2414,7 +2414,7 @@ It contains following keys:</p>
       </td>
   
 
-  <td class="description last"><p>number of columns on which widget should visible</p></td>
+  <td class="description last"><p>number of columns on which a widget should visible</p></td>
 </tr>
 
   
@@ -2749,7 +2749,7 @@ It contains following keys:</p>
     
     
     <div class="description">
-        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Returns object with page settings</p>
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Returns an object with page settings</p>
     </div>
     
 
@@ -2965,7 +2965,7 @@ It contains following keys:</p>
 
 <footer class="footer">
     <div class="content has-text-centered">
-        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Feb 13 2019 23:57:58 GMT+0100 (Central European Standard Time)</p>
+        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Thu Feb 14 2019 18:50:27 GMT+0100 (Central European Standard Time)</p>
         <p class="sidebar-created-by">
             <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
             <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers</a>

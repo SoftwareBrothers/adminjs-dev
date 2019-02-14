@@ -88,12 +88,12 @@
     <div class="container-overview">
     
         
-            <div class="description"><script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><h2>Installation</h2><pre class="prettyprint source lang-sh"><code>npm install admin-bro-hapijs boom inert</code></pre><p>Plugin depends on the following packages and they have to be installed:</p>
+            <div class="description"><script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><h2>Installation</h2><pre class="prettyprint source lang-sh"><code>npm install admin-bro-hapijs boom inert</code></pre><p>Plugin depends on the following packages and they have to be installed beforehand:</p>
 <ul>
 <li><a href="https://github.com/hapijs/boom">boom</a> - handling errors</li>
 <li><a href="https://github.com/hapijs/inert">inert</a> - rendering static assets</li>
 </ul>
-<p>And, if you want to use built-in auth:</p>
+<p>If you want to use built-in auth, you'll also need this:</p>
 <ul>
 <li><a href="https://github.com/hapijs/hapi-auth-cookie">hapi-auth-cookie</a></li>
 </ul>
@@ -118,8 +118,8 @@ const start = async () => {
 
 start()</code></pre><p>The example above will launch the admin panel under default <code>localhost:8080/admin</code> url.
 Routes will be accessible by all users without any authentication.</p>
-<p>To restrict access you can pass <code>auth</code> via plugin options.</p>
-<h2>Authentication options</h2><p>Plugin receives all <a href="global.html#AdminBroOptions">AdminBroOptions</a> and one special parameter: <code>auth</code> which controls the authentication.</p>
+<p>To restrict access, you can pass <code>auth</code> via plugin options.</p>
+<h2>Authentication options</h2><p>Plugin receives all <a href="global.html#AdminBroOptions">AdminBroOptions</a> and one special parameter: <code>auth</code>, which controls the authentication.</p>
 <ol>
 <li>By default, if you won't give <code>options.auth</code> - admin panel will be available without the authentication (like in the simplest example above)</li>
 <li>You can set whatever authentication you prefer for admin routes by setting <code>options.auth.strategy</code>. For example:</li>
@@ -135,7 +135,7 @@ await server.register({
 //...</code></pre><p>The strategy will be passed down to all AdminBro routes.</p>
 <ol start="3">
 <li>admin-bro-hapijs plugin can be setup to use <a href="https://github.com/hapijs/hapi-auth-cookie">auth-cookie</a>. 
-Only thing you have to do is to define following <a href="module-admin-bro-hapijs.html#.register">auth options</a>: 
+Only thing you have to do is to define the following <a href="module-admin-bro-hapijs.html#.register">auth options</a>: 
 <em>authenticate</em>, <em>cookiePassword</em>, <em>isSecure</em>, <em>cookieName</em>.</li>
 </ol></div>
         
@@ -258,7 +258,7 @@ Only thing you have to do is to define following <a href="module-admin-bro-hapij
     
     
     <div class="description">
-        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Actual method which Hapi uses under the hood - when you call
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Actual method that Hapi uses under the hood when you call
 server.register(plugin, options) method.
 Options you give in Hapi are passed back to it.</p>
     </div>
@@ -330,7 +330,7 @@ Options you give in Hapi are passed back to it.</p>
       </td>
   
 
-  <td class="description last"><p>hapijs server</p></td>
+  <td class="description last"><p>Hapi.js server</p></td>
 </tr>
 
 
@@ -440,10 +440,10 @@ Options you give in Hapi are passed back to it.</p>
       </td>
   
 
-  <td class="description last"><p>function taking email and password
-                                                 as an arguments. Should return logged in
-                                                 user or null (no authorization). If given
-                                                 options.auth.strategy is set to 'session'.</p></td>
+  <td class="description last"><p>function takes email and password
+                                                 as arguments. Should return a logged in
+                                                 user or null (no authorization), if given
+                                                 options.auth.strategy is set to 'session'</p></td>
 </tr>
 
   
@@ -480,7 +480,7 @@ Options you give in Hapi are passed back to it.</p>
       </td>
   
 
-  <td class="description last"><p>auth strategy for hapijs routes. By default
+  <td class="description last"><p>auth strategy for hapi.js routes. By default,
                                                  set to none - all admin routes will be
                                                  available without authentication</p></td>
 </tr>
@@ -521,8 +521,8 @@ Options you give in Hapi are passed back to it.</p>
       </td>
   
 
-  <td class="description last"><p>When auth strategy is set to session this
-                                                    will be the name for the cookie.</p></td>
+  <td class="description last"><p>When auth strategy is set to 'session',
+                                                 this will be the name of the cookie</p></td>
 </tr>
 
   
@@ -679,7 +679,7 @@ Options you give in Hapi are passed back to it.</p>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>adminBro instance</p></div>
+    <div class='param-desc column is-7'><p>AdminBro instance</p></div>
     
     
     <div class='column is-5 has-text-left'>
@@ -704,7 +704,7 @@ Options you give in Hapi are passed back to it.</p>
     <pre class="prettyprint"><code>const AdminBroPlugin = require('admin-bro-hapijs')
 const Hapi = require('hapi')
 
-// see AdminBro documentation about setting up the database.
+// see AdminBro documentation on database setup.
 const yourDatabase = require('your-database-setup-file')
 
 const ADMIN = {
@@ -762,7 +762,7 @@ start()</code></pre>
     
     
     <div class="description">
-        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Renders login page. It simply invokes <a href="AdminBro.html#.renderLogin">AdminBro.renderLogin</a></p>
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Renders login page by simply invoking <a href="AdminBro.html#.renderLogin">AdminBro.renderLogin</a></p>
     </div>
     
 
@@ -862,7 +862,7 @@ start()</code></pre>
 
 <footer class="footer">
     <div class="content has-text-centered">
-        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Feb 13 2019 23:57:58 GMT+0100 (Central European Standard Time)</p>
+        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Thu Feb 14 2019 18:50:27 GMT+0100 (Central European Standard Time)</p>
         <p class="sidebar-created-by">
             <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
             <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers</a>
