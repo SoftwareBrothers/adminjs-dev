@@ -176,15 +176,15 @@ node server.js
 
 and, under `localhost:8080/admin`, you should see something like this:
 
-<img src="images/one-file-example.png">
+<img src="./images/one-file-example.png">
 
 ## What next
 
 So now you know how to add AdminBro to simple express.js app. If you are using a different framework
 or you want to discover different authentication options - visit the next tutorial {@tutorial 02-frameworks}.
 
-<a href="/tutorial-02-frameworks.html" class="button">See all the supported frameworks</a>
+<a href="./tutorial-02-frameworks.html" class="button">See all the supported frameworks</a>
 
 or skip it and go right away to:
 
-<a href="/tutorial-03-passing-resources.html" class="button">Passing Resources</a>
+<a href="./tutorial-03-passing-resources.html" class="button">Passing Resources</a>
