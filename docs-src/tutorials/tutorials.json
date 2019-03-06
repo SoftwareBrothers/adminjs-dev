@@ -1,26 +1,29 @@
 {
+  "00-installation-instructions": {
+    "title": "01. Installation instructions"
+  },
   "01-example": {
-    "title": "01. Example App"
+    "title": "02. Example App"
   },
   "02-frameworks": {
-    "title": "02. Frameworks"
+    "title": "03. Frameworks"
   },
   "03-passing-resources": {
-    "title": "03. Adding resources"
+    "title": "04. Adding resources"
   },
   "04-customizing-resources": {
-    "title": "04. Customize resources"
+    "title": "05. Customize resources"
   },
   "05-actions": {
     "title": "06. Customize actions"
   },
   "06-custom-dashboard": {
-    "title": "05. Customize dashboard"
+    "title": "07. Customize dashboard"
   },
   "07-api-resources": {
-    "title": "07. API resources"
+    "title": "08. API resources"
   },
   "07-architecture": {
-    "title": "06. Architecture"
+    "title": "08. Architecture"
   }
 }

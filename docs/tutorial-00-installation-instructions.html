@@ -3,7 +3,7 @@
 <head>
     <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
     <meta charset="utf-8">
-    <title>JSDoc: 02. Example App</title>
+    <title>JSDoc: 01. Installation instructions</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -66,7 +66,7 @@
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
                         <p>Tutorial</p>
-                        <h1>02. Example App</h1>
+                        <h1>01. Installation instructions</h1>
                     </header>
                     
                     <section>
@@ -76,137 +76,65 @@
 </header>
 
 <article>
-    <p>AdminBro is an <strong>automatic admin interface</strong> which allows you to manage your database resources. It can be added to almost any nodejs framework. In this short tutorial I will show you how configure AdminBro to manage <em>User</em> <a href="https://mongoosejs.com/">mongoosejs</a> resource in a simple <a href="https://expressjs.com/">express.js</a> app.</p>
-<p>We will:</p>
-<ol>
-<li>Create a simple express app</li>
-<li>Add AdminBro to it</li>
-</ol>
-<h2>Let's do this!</h2><p>In the first step we will create a simple <strong>one file</strong> API server.</p>
-<h2>An example app without an AdminBro</h2><p>The app is an <a href="https://expressjs.com/">express.js</a> API server which uses <a href="https://mongoosejs.com/">mongoosejs</a> to fetch data from mongodb and returns it in an JSON format.</p>
-<p>The code of the app looks like this.</p>
-<pre class="prettyprint source lang-javascript"><code>// ==========  server.js ==============
-// Requirements
-const mongoose = require('mongoose')
-const express = require('express')
-const bodyParser = require('body-parser')
-
-// express server definition
-const app = express()
-app.use(bodyParser.json())
-
-// Resources definitions
-const User = mongoose.model('User', { name: String, email: String, surname: String })
-
-// Routes definitions
-app.get('/', (req, res) => res.send('Hello World!'))
-
-// Route which returns last 100 users from the database
-app.get('/users', async (req, res) => {
-  const users = await User.find({}).limit(10)
-  res.send(users)
-})
-
-// Route which creates new user
-app.post('/users', async (req, res) => {
-  const user = await new User(req.body.user).save()
-  res.send(user)
-})
-
-// Running the server
-const run = async () => {
-  await mongoose.connect('mongodb://localhost:27017/test', { useNewUrlParser: true })
-  await app.listen(8080, () => console.log(`Example app listening on port 8080!`))
-}
-
-run()</code></pre><p>To run it you have to install dependencies:</p>
-<pre class="prettyprint source lang-sh"><code>npm install mongoose express body-parser</code></pre><p>Make sure you have a <a href="https://www.mongodb.com/">mongodb</a> running in the system.</p>
-<p>and you can run the server via <code>node</code> command:</p>
-<pre class="prettyprint source lang-sh"><code>node server.js</code></pre><p>Server exposes 2 routes <code>GET /users</code> and <code>POST /users</code> you can test them by using <a href="https://curl.haxx.se/">curl</a>:</p>
-<pre class="prettyprint source lang-sh"><code>curl -d '{&quot;user&quot;: {&quot;name&quot;: &quot;wojtek&quot;}}' -H &quot;Content-Type: application/json&quot; -X POST http://localhost:8080/users/
-# => {&quot;_id&quot;:&quot;5c546dcbc98f5e1923c8eef9&quot;,&quot;name&quot;:&quot;wojtek&quot;,&quot;__v&quot;:0}
-
-curl http://localhost:8080/users
-# => [{&quot;_id&quot;:&quot;5c546dcbc98f5e1923c8eef9&quot;,&quot;name&quot;:&quot;wojtek&quot;,&quot;__v&quot;:0}]</code></pre><h2>Adding AdminBro</h2><p>Ok - so now we would like to add an <strong>admin UI</strong> with the ability to manage users. Of course we will be using <strong>AdminBro</strong> in order to do that. </p>
-<p>First, let's install all dependencies. We are using mongoose so we will have to install admin-bro-mongoose database adapter. Also we use expressjs, that is why we will need admin-bro-expressjs plugin:</p>
-<pre class="prettyprint source lang-sh"><code>npm install admin-bro admin-bro-mongoose admin-bro-expressjs</code></pre><p>So now we have to use those modules. We will:</p>
-<ul>
-<li>use AdminBroExpressjs module from 'admin-bro-expressjs' package to attach AdminBro into an express routes.</li>
-<li>use AdminBroMongoose adapter form 'admin-bro-mongoose' package to add mongoose Resources to the admin panel. </li>
-</ul>
-<p>This is how it will look like:</p>
+    <p>Installation of an <strong>AdminBro</strong> consist of 2 steps.</p>
+<h1>01. Install the fremework plugin</h1><p>Since <strong>AdminBro</strong> uses your existing framework to render its routes - you have to use one of our plugins.</p>
+<h2>Express</h2><p>Install the admin bro along with the adapter</p>
+<pre class="prettyprint source"><code>npm install admin-bro admin-bro-expressjs</code></pre><p>Create express router</p>
 <pre class="prettyprint source lang-javascript"><code>const AdminBro = require('admin-bro')
-const AdminBroExpressjs = require('admin-bro-expressjs')
+const AdminBroExpress = require('admin-bro-expressjs')
 
-// We have to tell AdminBro that we will manage mongoose resources with it
-AdminBro.registerAdapter(require('admin-bro-mongoose'))
-
-// Pass all configuration settings to AdminBro
-const adminBro = new AdminBro({
-  resources: [User],
-  rootPath: '/admin',
-})
-
-// Build and use a router which will handle all AdminBro routes
-const router = AdminBroExpressjs.buildRouter(adminBro)
-app.use(adminBro.options.rootPath, router)</code></pre><h2>Full application in one file</h2><p>This is an entire Express server with AdminBro managing Mongoose User Resource:</p>
-<pre class="prettyprint source lang-javascript"><code>// ==========  server.js ==============
-// Requirements
-const mongoose = require('mongoose')
 const express = require('express')
-const bodyParser = require('body-parser')
-const AdminBro = require('admin-bro')
-const AdminBroExpressjs = require('admin-bro-expressjs')
-
-// We have to tell AdminBro that we will manage mongoose resources with it
-AdminBro.registerAdapter(require('admin-bro-mongoose'))
-
-// express server definition
 const app = express()
-app.use(bodyParser.json())
 
-// Resources definitions
-const User = mongoose.model('User', { name: String, email: String, surname: String })
-
-// Routes definitions
-app.get('/', (req, res) => res.send('Hello World!'))
-
-// Route which returns last 100 users from the database
-app.get('/users', async (req, res) => {
-  const users = await User.find({}).limit(10)
-  res.send(users)
-})
-
-// Route which creates new user
-app.post('/users', async (req, res) => {
-  const user = await new User(req.body.user).save()
-  res.send(user)
-})
-
-// Pass all configuration settings to AdminBro
 const adminBro = new AdminBro({
-  resources: [User],
+  databases: [],
   rootPath: '/admin',
 })
 
-// Build and use a router which will handle all AdminBro routes
-const router = AdminBroExpressjs.buildRouter(adminBro)
-app.use(adminBro.options.rootPath, router)
+const router = AdminBroExpress.buildRouter(adminBro)</code></pre><p>Use the router in expres.js app</p>
+<pre class="prettyprint source lang-javascript"><code>app.use(adminBro.options.rootPath, router)
+app.listen(8080, () => console.log('AdminBro is under localhost:8080/admin'))</code></pre><p>To see how to add authentication or other modifications - visit the <a href="module-admin-bro-expressjs.html">Express Plugin</a> documentation.</p>
+<h2>Hapi</h2><p>Installation</p>
+<pre class="prettyprint source lang-bash"><code>npm install admin-bro-hapijs boom inert</code></pre><p>Register plugin and start server</p>
+<pre class="prettyprint source lang-javascript"><code>const AdminBroPlugin = require('admin-bro-hapijs')
+const Hapi = require('hapi')
 
-// Running the server
-const run = async () => {
-  await mongoose.connect('mongodb://localhost:27017/test', { useNewUrlParser: true })
-  await app.listen(8080, () => console.log(`Example app listening on port 8080!`))
+const adminBroOptions = {
+  resources: [],
+  rootPath: '/admin',
 }
 
-run()</code></pre><p>To run it simply write:</p>
-<pre class="prettyprint source lang-sh"><code>node server.js</code></pre><p>and, under <code>localhost:8080/admin</code>, you should see something like this:</p>
-<p><img src="./images/one-file-example.png"></p>
-<h2>What next</h2><p>So now you know how to add AdminBro to simple express.js app. If you are using a different framework
-or you want to discover different authentication options - visit the next tutorial <a href="tutorial-02-frameworks.html">03. Frameworks</a>.</p>
-<p><a href="./tutorial-02-frameworks.html" class="button">See all the supported frameworks</a></p>
-<p>or skip it and go right away to:</p>
-<p><a href="./tutorial-03-passing-resources.html" class="button">Passing Resources</a></p>
+const server = Hapi.server({ port: process.env.PORT || 8080 })
+const start = async () => {
+  await server.register({
+    plugin: AdminBroPlugin,
+    options: adminBroOptions,
+  })
+
+  await server.start()
+}
+
+start()</code></pre><p>To see how to add authentication or other modifications - visit the <a href="module-admin-bro-hapijs.html">Hapi Plugin</a> documentation.</p>
+<h1>02. Install the Database Adapter and add resources</h1><p><strong>AdminBro</strong> can be connected to many different types of resources. Right now we support mongoose ODM and sequelize ORM.</p>
+<p>To add resources to <strong>AdminBro</strong> you first have to register an adapter for the resource type you will be using.</p>
+<p>Example for a mongoose setup:</p>
+<p>Installation</p>
+<pre class="prettyprint source lang-bash"><code>npm install admin-bro-mongoose</code></pre><p>Register adapter</p>
+<pre class="prettyprint source lang-javascript"><code>const AdminBro = require('admin-bro')
+const AdminBroMongoose = require('admin-bro-mongoose')
+
+AdminBro.registerAdapter(AdminBroMongoose)</code></pre><p>Add resources to options</p>
+<pre class="prettyprint source lang-javascript"><code>const User = mongoose.model('User', { name: String, email: String, surname: String })
+const AdminBroOptions = {
+  resources: [User],
+}</code></pre><p>Pass resources via options to <strong>AdminBro</strong>: <em>express example</em></p>
+<pre class="prettyprint source lang-javascript"><code>const AdminBro = new AdminBro(AdminBroOptions)
+const router = AdminBroExpress.buildRouter(adminBro)
+// and add router to express</code></pre><h1>What's next?</h1><ul>
+<li>To find more information about passing resources visit the <a href="tutorial-03-passing-resources.html">04. Adding resources</a> tutorial</li>
+<li>See how you can customize resources: <a href="tutorial-04-customizing-resources.html">05. Customize resources</a></li>
+<li>Or add custom actions: <a href="tutorial-05-actions.html">06. Customize actions</a></li>
+</ul>
 </article>
 
 </section>

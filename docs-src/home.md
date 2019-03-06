@@ -14,7 +14,7 @@ Check out the example application with mongodb and postgres models here: [https:
 ### How to get started
 
 - Check out the [demo page](https://admin-bro-example-app.herokuapp.com/admin)
-- Follow tutorials, strarting with {@tutorial 01-example}
+- Follow tutorials, strarting with {@tutorial 00-installation-instructions}
 - checkout our [admin-bro git repo](https://github.com/SoftwareBrothers/admin-bro)
 
 ### Screenshots
