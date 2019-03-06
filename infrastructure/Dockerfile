@@ -2,13 +2,13 @@ FROM node:10.8.0
 
 WORKDIR /usr/src/app
 
-COPY admin-bro/package*.json ./admin-bro/
-COPY admin-bro-hapijs/package*.json ./admin-bro-hapijs/
-COPY admin-bro-expressjs/package*.json ./admin-bro-expressjs/
-COPY admin-bro-mongoose/package*.json ./admin-bro-mongoose/
-COPY admin-bro-sequelizejs/package*.json ./admin-bro-sequelizejs/
-COPY admin-bro-example-app/package*.json ./admin-bro-example-app/
-COPY package*.json ./
+COPY ["admin-bro/package*.json", "admin-bro/yarn.lock", "./admin-bro/"]
+COPY ["admin-bro-hapijs/package*.json", "admin-bro-hapijs/yarn.lock" , "./admin-bro-hapijs/"]
+COPY ["admin-bro-expressjs/package*.json", "admin-bro-expressjs/yarn.lock", "./admin-bro-expressjs/"]
+COPY ["admin-bro-mongoose/package*.json", "admin-bro-mongoose/yarn.lock" , "./admin-bro-mongoose/"]
+COPY ["admin-bro-sequelizejs/package*.json", "admin-bro-sequelizejs/yarn.lock", "./admin-bro-sequelizejs/"]
+COPY ["admin-bro-example-app/package*.json", "admin-bro-example-app/yarn.lock", "./admin-bro-example-app/"]
+COPY ["package*.json", "yarn.lock", "./"]
 
 RUN cd admin-bro && yarn install
 RUN cd admin-bro-hapijs && yarn install
