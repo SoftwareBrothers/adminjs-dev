@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
     <meta charset="utf-8">
     <title>JSDoc: ApiClient</title>
 
-    <script src="scripts/prettify/prettify.js"></script>
-    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="./build/entry.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -57,7 +59,7 @@
             <div class="column is-3" id="sidebarNav">
                 <div class="sidebar">
                     <nav>
-                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-01-example.html">01. Example App</a></li><li><a href="tutorial-02-installation.html">02. Installation</a></li><li><a href="tutorial-03-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-04-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-05-custom-dashboard.html">05. Customize dashboard</a></li><li><a href="tutorial-06-actions.html">06. Actions</a></li><li><a href="tutorial-07-api-resources.html">07. API resources</a></li><li><a href="tutorial-08-architecture.html">08. Architecture</a></li></ul><h3>Classes</h3><ul><li><a href="AdminBro.html">AdminBro</a></li><li><a href="ApiClient.html">ApiClient</a></li><li><a href="BaseController.html">BaseController</a></li><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseDecorator.html">BaseDecorator</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li><li><a href="NotImplementedError.html">NotImplementedError</a></li><li><a href="PageBuilder.html">PageBuilder</a></li><li><a href="ValidationError.html">ValidationError</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3>Global</h3><ul><li><a href="global.html#Router">Router</a></li><li><a href="global.html#sessionAuth">sessionAuth</a></li></ul></div><div class="category"><h2>AdminBroExpressjs</h2><h3>Modules</h3><ul><li><a href="module-AdminBroExpressjs.html">AdminBroExpressjs</a></li></ul></div><div class="category"><h2>AdminBroMongoose</h2><h3>Classes</h3><ul><li><a href="Property.html">Property</a></li><li><a href="Resource.html">Resource</a></li></ul></div><div class="category"><h2>AdminBroHapijs</h2><h3>Global</h3><ul><li><a href="global.html#register">register</a></li></ul></div>
+                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-00-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-01-example.html">02. Example App</a></li><li><a href="tutorial-03-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-04-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-05-actions.html">05. Customize actions</a></li><li><a href="tutorial-06-writing-react-components.html">06. Writing your own Components</a></li><li><a href="tutorial-07-custom-dashboard.html">07. Customize dashboard</a></li></ul><h3>Modules</h3><ul><li><a href="module-admin-bro-expressjs.html">admin-bro-expressjs</a></li><li><a href="module-admin-bro-hapijs.html">admin-bro-hapijs</a></li><li><a href="module-admin-bro-mongoose.html">admin-bro-mongoose</a></li><li><a href="module-admin-bro-sequelizejs.html">admin-bro-sequelizejs</a></li></ul><h3>Classes</h3><ul><li><a href="AdminBro.html">AdminBro</a></li><li><a href="ApiClient.html">ApiClient</a></li><li><a href="ApiController.html">ApiController</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3>Components</h3><ul><li><a href="Column.html">Column</a></li><li><a href="Columns.html">Columns</a></li><li><a href="DashboardHeader.html">DashboardHeader</a></li><li><a href="Label.html">Label</a></li><li><a href="Loader.html">Loader</a></li><li><a href="Paginate.html">Paginate</a></li><li><a href="PropertyInEdit.html">PropertyInEdit</a></li><li><a href="PropertyInFilter.html">PropertyInFilter</a></li><li><a href="PropertyInShow.html">PropertyInShow</a></li><li><a href="StyledButton.html">StyledButton</a></li><li><a href="Table.html">Table</a></li><li><a href="ValueBlock.html">ValueBlock</a></li><li><a href="WrapperBox.html">WrapperBox</a></li></ul><h3>Global</h3><ul><li><a href="global.html#label">label</a></li><li><a href="global.html#name">name</a></li></ul></div><div class="category"><h2>Actions</h2><h3>Modules</h3><ul><li><a href="module-DeleteAction.html">DeleteAction</a></li><li><a href="module-EditAction.html">EditAction</a></li><li><a href="module-NewAction.html">NewAction</a></li><li><a href="module-ShowAction.html">ShowAction</a></li></ul></div><div class="category"><h2>Base</h2><h3>Classes</h3><ul><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li></ul><h3>Interfaces</h3><ul><li><a href="BaseAction.html">BaseAction</a></li></ul><h3>Components</h3><ul><li><a href="BaseActionComponent.html">BaseActionComponent</a></li><li><a href="BasePropertyComponent.html">BasePropertyComponent</a></li></ul></div><div class="category"><h2>Decorators</h2><h3>Classes</h3><ul><li><a href="PropertyDecorator.html">PropertyDecorator</a></li><li><a href="ResourceDecorator.html">ResourceDecorator</a></li></ul></div><div class="category"><h2>Errors</h2><h3>Classes</h3><ul><li><a href="ConfigurationError.html">ConfigurationError</a></li><li><a href="NotImplementedError.html">NotImplementedError</a></li><li><a href="ValidationError.html">ValidationError</a></li></ul></div>
                     </nav>
                 </div>
             </div>
@@ -77,9 +79,17 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>ApiClient<span class="signature">(args)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>ApiClient<span class="signature">()</span><span class="type-signature"></span></h2>
         
-            <div class="class-description"><p>Simple api client</p></div>
+            <div class="class-description"><p>Client which access the admin API.
+Use it to fetch data from auto generated AdminBro API.</p>
+<p>In the backend it uses <a href="https://github.com/axios/axios">axios</a> client
+library.</p>
+<p>Usage:</p>
+<pre class="prettyprint source lang-javascript"><code>import { ApiClient } from 'admin-bro'
+
+const api = new ApiClient()
+api.getRecords({ resourceId: 'Comments' }).then(results => {...})</code></pre></div>
         
     
 </header>
@@ -97,7 +107,7 @@
     <h4 class="name" id="ApiClient">
         
         <span class="code-name">
-            new ApiClient<span class="signature">(args)</span><span class="type-signature"></span>
+            new ApiClient<span class="signature">()</span><span class="type-signature"></span>
         </span>
     </h4>
     
@@ -117,113 +127,7 @@
 
 
 
-    <h5>Parameters:</h5>
-    
 
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>args</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">Object</span>
-
-
-  
-  </td>
-
-  
-      <td class="attributes">
-      
-
-      
-
-      
-      </td>
-  
-
-  
-      <td class="default">
-      
-      </td>
-  
-
-  <td class="description last"></td>
-</tr>
-
-  
-  
-    
-<tr class="deep-level-1">
-  
-      <td class="name"><code>rootURL</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">String</span>
-
-
-  
-  </td>
-
-  
-      <td class="attributes">
-      
-          &lt;optional><br>
-      
-
-      
-
-      
-      </td>
-  
-
-  
-      <td class="default">
-      
-          process.env.ROOT_URL
-      
-      </td>
-  
-
-  <td class="description last"><p>Root url of the API</p></td>
-</tr>
-
-  
-
-
-    
-    </tbody>
-</table>
 
 
 
@@ -260,25 +164,18 @@
     <dt class="tag-see">See:</dt>
     <dd class="tag-see">
         <ul>
-            <li><a href="http://apiary-link.com2">http://apiary-link.com2</a></li>
+            <li><a href="https://github.com/axios/axios">https://github.com/axios/axios</a></li>
         </ul>
     </dd>
     
 
-    
-    <dt class="tag-todo">To Do:</dt>
-    <dd class="tag-todo">
-        <ul>
-            <li>implement all methods</li>
-        </ul>
-    </dd>
     
 
     
         <p class="tag-source">
-            <a href="admin-bro_src_api-client.js.html" class="button">View Source</a>
+            <a href="admin-bro_src_frontend_utils_api-client.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_api-client.js.html">admin-bro/src/api-client.js</a>, <a href="admin-bro_src_api-client.js.html#line9">line 9</a>
+                <a href="admin-bro_src_frontend_utils_api-client.js.html">admin-bro/src/frontend/utils/api-client.js</a>, <a href="admin-bro_src_frontend_utils_api-client.js.html#line19">line 19</a>
             </span>
         </p>
     
@@ -333,14 +230,14 @@
                 <div class="member">
 
     
-    <h4 class="name" id="fetchUser">
+    <h4 class="name" id="getRecord">
         
             
                 <span class='tag'>async</span>
             
         
         <span class="code-name">
-            fetchUser<span class="signature">(userId)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="ApiClient.html#~UserObject">ApiClient~UserObject</a>>}</span>
+            getRecord<span class="signature">(resourceId, recordId)</span><span class="type-signature"> &rarr; {Promise.&lt;ApiController~BaseRecord~JSON>}</span>
         </span>
     </h4>
     
@@ -348,9 +245,11 @@
     
     
     <div class="description">
-        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Get the user</p>
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Get record from a given resource</p>
     </div>
     
+
+
 
 
 
@@ -386,7 +285,7 @@
         
 <tr class="deep-level-0">
   
-      <td class="name"><code>userId</code></td>
+      <td class="name"><code>resourceId</code></td>
   
 
   <td class="type">
@@ -402,7 +301,32 @@
 
   
 
-  <td class="description last"></td>
+  <td class="description last"><p>Id of a <a href="BaseResource.html#~JSON">BaseResource~JSON</a></p></td>
+</tr>
+
+
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>recordId</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">String</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Id of a <a href="BaseRecord.html#~JSON">BaseRecord~JSON</a></p></td>
 </tr>
 
 
@@ -447,9 +371,1072 @@
 
     
         <p class="tag-source">
-            <a href="admin-bro_src_api-client.js.html" class="button">View Source</a>
+            <a href="admin-bro_src_frontend_utils_api-client.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_api-client.js.html">admin-bro/src/api-client.js</a>, <a href="admin-bro_src_api-client.js.html#line32">line 32</a>
+                <a href="admin-bro_src_frontend_utils_api-client.js.html">admin-bro/src/frontend/utils/api-client.js</a>, <a href="admin-bro_src_frontend_utils_api-client.js.html#line51">line 51</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>response <a href="https://github.com/axios/axios">axios</a>
+                                               response with all the data</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">Promise.&lt;ApiController~BaseRecord~JSON></span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    
+    <h4 class="name" id="getRecords">
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            getRecords<span class="signature">(resourceId, query)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="ApiController.html#~ResourceResponse">ApiController~ResourceResponse</a>>}</span>
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Get records from a given resource</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>resourceId</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">String</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Id of a <a href="BaseResource.html#~JSON">BaseResource~JSON</a></p></td>
+</tr>
+
+
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>query</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type"><a href="ApiClient.html#~RecordsQuery">ApiClient~RecordsQuery</a></span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>query object</p></td>
+</tr>
+
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_frontend_utils_api-client.js.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_frontend_utils_api-client.js.html">admin-bro/src/frontend/utils/api-client.js</a>, <a href="admin-bro_src_frontend_utils_api-client.js.html#line36">line 36</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>response <a href="https://github.com/axios/axios">axios</a>
+                                               response with all the data</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">Promise.&lt;<a href="ApiController.html#~ResourceResponse">ApiController~ResourceResponse</a>></span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    
+    <h4 class="name" id="recordAction">
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            recordAction<span class="signature">(options)</span><span class="type-signature"> &rarr; {Promise.&lt;Object>}</span>
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Invokes given record <a href="Action.html">Action</a> on the backend.</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>options</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">Object</span>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
+
+  
+
+  <td class="description last"></td>
+</tr>
+
+  
+  
+    
+<tr class="deep-level-1">
+  
+      <td class="name"><code>resourceId</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">String</span>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
+
+  
+
+  <td class="description last"><p>id of a <a href="BaseResource.html">BaseResource</a></p></td>
+</tr>
+
+  
+    
+<tr class="deep-level-1">
+  
+      <td class="name"><code>recordId</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">String</span>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
+
+  
+
+  <td class="description last"><p>id of a <a href="BaseRecord.html">BaseRecord</a></p></td>
+</tr>
+
+  
+    
+<tr class="deep-level-1">
+  
+      <td class="name"><code>actionName</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">String</span>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
+
+  
+
+  <td class="description last"><p>name of an <a href="Action.html">Action</a></p></td>
+</tr>
+
+  
+    
+<tr class="deep-level-1">
+  
+      <td class="name"><code>payload</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">Object</span>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
+
+      
+
+      
+      </td>
+  
+
+  
+
+  <td class="description last"><p>optional action payload</p></td>
+</tr>
+
+  
+    
+<tr class="deep-level-1">
+  
+      <td class="name"><code>method</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">String</span>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
+
+      
+
+      
+      </td>
+  
+
+  
+
+  <td class="description last"><p>if there is a Payload it sends
+                                      POST request, otherwise GET.</p></td>
+</tr>
+
+  
+
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_frontend_utils_api-client.js.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_frontend_utils_api-client.js.html">admin-bro/src/frontend/utils/api-client.js</a>, <a href="admin-bro_src_frontend_utils_api-client.js.html#line101">line 101</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>response from an <a href="Action.html">Action</a></p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">Promise.&lt;Object></span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    
+    <h4 class="name" id="resourceAction">
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            resourceAction<span class="signature">(options)</span><span class="type-signature"> &rarr; {Promise.&lt;Object>}</span>
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Invokes given resource <a href="Action.html">Action</a> on the backend.</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>options</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">Object</span>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
+
+  
+
+  <td class="description last"></td>
+</tr>
+
+  
+  
+    
+<tr class="deep-level-1">
+  
+      <td class="name"><code>resourceId</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">String</span>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
+
+  
+
+  <td class="description last"><p>id of a <a href="BaseResource.html">BaseResource</a></p></td>
+</tr>
+
+  
+    
+<tr class="deep-level-1">
+  
+      <td class="name"><code>actionName</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">String</span>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
+
+  
+
+  <td class="description last"><p>name of an <a href="Action.html">Action</a></p></td>
+</tr>
+
+  
+    
+<tr class="deep-level-1">
+  
+      <td class="name"><code>payload</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">Object</span>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
+
+      
+
+      
+      </td>
+  
+
+  
+
+  <td class="description last"><p>optional action payload</p></td>
+</tr>
+
+  
+    
+<tr class="deep-level-1">
+  
+      <td class="name"><code>method</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">String</span>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
+
+      
+
+      
+      </td>
+  
+
+  
+
+  <td class="description last"><p>if there is a Payload it sends
+                                      POST request, otherwise GET.</p></td>
+</tr>
+
+  
+
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_frontend_utils_api-client.js.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_frontend_utils_api-client.js.html">admin-bro/src/frontend/utils/api-client.js</a>, <a href="admin-bro_src_frontend_utils_api-client.js.html#line81">line 81</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>response from an <a href="Action.html">Action</a></p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">Promise.&lt;Object></span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    
+    <h4 class="name" id="searchRecords">
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            searchRecords<span class="signature">(resourceId, query)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="ApiController.html#~SearchResponse">ApiController~SearchResponse</a>>}</span>
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Search by query string for records in a given resource.</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>resourceId</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">String</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Id of a <a href="BaseResource.html#~JSON">BaseResource~JSON</a></p></td>
+</tr>
+
+
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>query</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">String</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>query string</p></td>
+</tr>
+
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_frontend_utils_api-client.js.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_frontend_utils_api-client.js.html">admin-bro/src/frontend/utils/api-client.js</a>, <a href="admin-bro_src_frontend_utils_api-client.js.html#line64">line 64</a>
             </span>
         </p>
     
@@ -484,7 +1471,7 @@
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;<a href="ApiClient.html#~UserObject">ApiClient~UserObject</a>></span>
+<span class="param-type">Promise.&lt;<a href="ApiController.html#~SearchResponse">ApiController~SearchResponse</a>></span>
 
 
     </div>
@@ -519,10 +1506,10 @@
 
     </span>
 
-<h4 class="name" id="~UserObject">
+<h4 class="name" id="~RecordsQuery">
     
     <span class="code-name">
-        UserObject
+        RecordsQuery
     </span>
 </h4>
 
@@ -555,6 +1542,8 @@
         
 
         
+        <th>Default</th>
+        
 
         <th class="last">Description</th>
     </tr>
@@ -565,13 +1554,13 @@
         
 <tr class="deep-level-0">
     
-        <td class="name"><code>name</code></td>
+        <td class="name"><code>page</code></td>
     
 
     <td class="type">
     
         
-<span class="param-type">String</span>
+<span class="param-type">Number</span>
 
 
     
@@ -580,11 +1569,19 @@
     
         <td class="attributes">
         
+            &lt;optional><br>
+        
 
         
         </td>
     
 
+    
+        <td class="default">
+        
+            1
+        
+        </td>
     
 
     <td class="description last"></td>
@@ -594,13 +1591,13 @@
         
 <tr class="deep-level-0">
     
-        <td class="name"><code>surname</code></td>
+        <td class="name"><code>perPage</code></td>
     
 
     <td class="type">
     
         
-<span class="param-type">String</span>
+<span class="param-type">Number</span>
 
 
     
@@ -609,11 +1606,19 @@
     
         <td class="attributes">
         
+            &lt;optional><br>
+        
 
         
         </td>
     
 
+    
+        <td class="default">
+        
+            10
+        
+        </td>
     
 
     <td class="description last"></td>
@@ -623,7 +1628,44 @@
         
 <tr class="deep-level-0">
     
-        <td class="name"><code>email</code></td>
+        <td class="name"><code>filter</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Object</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+        <td class="default">
+        
+        </td>
+    
+
+    <td class="description last"><p>filter which narrow down the search criteria
+                                 in the for of a {key: value}, or {key: {from, to}}
+                                 for dates.</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>direction</code></td>
     
 
     <td class="type">
@@ -646,8 +1688,47 @@
     
 
     
+        <td class="default">
+        
+        </td>
+    
 
-    <td class="description last"></td>
+    <td class="description last"><p>sorting direction. Either <code>asc</code> or <code>desc</code></p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>sortBy</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">String</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+        <td class="default">
+        
+        </td>
+    
+
+    <td class="description last"><p>property base on which results should be sorted</p></td>
 </tr>
 
     
@@ -690,9 +1771,9 @@
 
     
         <p class="tag-source">
-            <a href="admin-bro_src_api-client.js.html" class="button">View Source</a>
+            <a href="admin-bro_src_frontend_utils_api-client.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_api-client.js.html">admin-bro/src/api-client.js</a>, <a href="admin-bro_src_api-client.js.html#line20">line 20</a>
+                <a href="admin-bro_src_frontend_utils_api-client.js.html">admin-bro/src/frontend/utils/api-client.js</a>, <a href="admin-bro_src_frontend_utils_api-client.js.html#line118">line 118</a>
             </span>
         </p>
     
@@ -723,7 +1804,7 @@
 
 <footer class="footer">
     <div class="content has-text-centered">
-        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Jan 28 2019 19:33:42 GMT+0100 (Central European Standard Time)</p>
+        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Thu May 09 2019 19:17:32 GMT+0200 (Central European Summer Time)</p>
         <p class="sidebar-created-by">
             <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
             <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers</a>
@@ -731,7 +1812,6 @@
     </div>
 </footer>
 
-<script> prettyPrint(); </script>
 <script src="scripts/app.min.js"></script>
 <script src="scripts/linenumber.js"> </script>
 </body>

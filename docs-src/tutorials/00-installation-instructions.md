@@ -1,18 +1,26 @@
 Installation of an __AdminBro__ consist of 2 steps.
 
-# 01. Install the fremework plugin
+## 01. Install the fremework plugin
 
 Since __AdminBro__ uses your existing framework to render its routes - you have to use one of our plugins.
 
-## Express
+There are plugins for:
 
-Install the admin bro along with the adapter
+* {@link module:admin-bro-expressjs Express}
+* {@link module:admin-bro-hapijs Hapi}
+
+In this tutorial I will present the simplest way of adding AdminBro to those frameworks. If you
+want to know more - visit their corresponding pages (above).
+
+### Express
+
+Install the AdminBro along with the {@link module:admin-bro-expressjs express plugin}
 
 ```
 npm install admin-bro admin-bro-expressjs
 ```
 
-Create express router
+Create an express router which will handle all AdminBro routes
 
 ```javascript
 const AdminBro = require('admin-bro')
@@ -29,19 +37,18 @@ const adminBro = new AdminBro({
 const router = AdminBroExpress.buildRouter(adminBro)
 ```
 
-Use the router in expres.js app
+Use this router in expres.js `app`
 
 ```javascript
 app.use(adminBro.options.rootPath, router)
 app.listen(8080, () => console.log('AdminBro is under localhost:8080/admin'))
 ```
 
-
 To see how to add authentication or other modifications - visit the {@link module:admin-bro-expressjs Express Plugin} documentation.
 
-## Hapi
+### Hapi
 
-Installation
+If you use [Hapi framework](https://hapijs.com/) instead of express - follow this installation instructions:
 
 ```bash
 npm install admin-bro-hapijs boom inert
@@ -73,9 +80,9 @@ start()
 
 To see how to add authentication or other modifications - visit the {@link module:admin-bro-hapijs Hapi Plugin} documentation.
 
-# 02. Install the Database Adapter and add resources
+## 02. Install the Database Adapter and add resources
 
-__AdminBro__ can be connected to many different types of resources. Right now we support mongoose ODM and sequelize ORM.
+__AdminBro__ can be connected to many different types of resources. Right now we support [mongoose ODM](https://mongoosejs.com/) and [sequelize ORM](http://sequelizejs.com).
 
 To add resources to __AdminBro__ you first have to register an adapter for the resource type you will be using.
 
@@ -96,24 +103,19 @@ const AdminBroMongoose = require('admin-bro-mongoose')
 AdminBro.registerAdapter(AdminBroMongoose)
 ```
 
-Add resources to options
+Pass resources to AdminBro like this (_express example_)
 
 ```javascript
 const User = mongoose.model('User', { name: String, email: String, surname: String })
 const AdminBroOptions = {
   resources: [User],
 }
-```
-
-Pass resources via options to __AdminBro__: _express example_
-
-```javascript
 const AdminBro = new AdminBro(AdminBroOptions)
 const router = AdminBroExpress.buildRouter(adminBro)
 // and add router to express
 ```
 
-# What's next?
+## What's next?
 
 - To find more information about passing resources visit the {@tutorial 03-passing-resources} tutorial
 - See how you can customize resources: {@tutorial 04-customizing-resources}

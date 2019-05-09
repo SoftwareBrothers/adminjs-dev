@@ -60,7 +60,7 @@
             <div class="column is-3" id="sidebarNav">
                 <div class="sidebar">
                     <nav>
-                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-00-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-01-example.html">02. Example App</a></li><li><a href="tutorial-02-frameworks.html">03. Frameworks</a></li><li><a href="tutorial-03-passing-resources.html">04. Adding resources</a></li><li><a href="tutorial-04-customizing-resources.html">05. Customize resources</a></li><li><a href="tutorial-05-actions.html">06. Customize actions</a></li><li><a href="tutorial-06-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-07-architecture.html">08. Architecture</a></li></ul><h3>Modules</h3><ul><li><a href="module-admin-bro-expressjs.html">admin-bro-expressjs</a></li><li><a href="module-admin-bro-hapijs.html">admin-bro-hapijs</a></li><li><a href="module-admin-bro-mongoose.html">admin-bro-mongoose</a></li><li><a href="module-admin-bro-sequelizejs.html">admin-bro-sequelizejs</a></li></ul><h3>Classes</h3><ul><li><a href="AdminBro.html">AdminBro</a></li><li><a href="PageBuilder.html">PageBuilder</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3><a href="global.html">Global</a></h3></div><div class="category"><h2>Adapter</h2><h3>Classes</h3><ul><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li></ul></div><div class="category"><h2>Decorators</h2><h3>Classes</h3><ul><li><a href="PropertyDecorator.html">PropertyDecorator</a></li><li><a href="ResourceDecorator.html">ResourceDecorator</a></li></ul></div><div class="category"><h2>Errors</h2><h3>Classes</h3><ul><li><a href="NotImplementedError.html">NotImplementedError</a></li><li><a href="ValidationError.html">ValidationError</a></li></ul></div><div class="category"><h2>PropertyTypes</h2><h3>Modules</h3><ul><li><a href="module-boolean.html">boolean</a></li><li><a href="module-date.html">date</a></li><li><a href="module-datetime.html">datetime</a></li><li><a href="module-defaultType.html">defaultType</a></li><li><a href="module-richtext.html">richtext</a></li><li><a href="module-string.html">string</a></li></ul></div>
+                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-00-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-01-example.html">02. Example App</a></li><li><a href="tutorial-02-frameworks.html">03. Frameworks</a></li><li><a href="tutorial-03-passing-resources.html">04. Adding resources</a></li><li><a href="tutorial-04-customizing-resources.html">05. Customize resources</a></li><li><a href="tutorial-05-actions.html">06. Customize actions</a></li><li><a href="tutorial-06-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-07-architecture.html">08. Architecture</a></li></ul><h3>Modules</h3><ul><li><a href="module-admin-bro-expressjs.html">admin-bro-expressjs</a></li><li><a href="module-admin-bro-hapijs.html">admin-bro-hapijs</a></li><li><a href="module-admin-bro-mongoose.html">admin-bro-mongoose</a></li><li><a href="module-admin-bro-sequelizejs.html">admin-bro-sequelizejs</a></li></ul><h3>Classes</h3><ul><li><a href="AdminBro.html">AdminBro</a></li><li><a href="Filter.html">Filter</a></li><li><a href="PageBuilder.html">PageBuilder</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3>Global</h3><ul><li><a href="global.html#convertFilter">convertFilter</a></li><li><a href="global.html#populator">populator</a></li></ul></div><div class="category"><h2>Adapter</h2><h3>Classes</h3><ul><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li></ul></div><div class="category"><h2>Decorators</h2><h3>Classes</h3><ul><li><a href="PropertyDecorator.html">PropertyDecorator</a></li><li><a href="ResourceDecorator.html">ResourceDecorator</a></li></ul></div><div class="category"><h2>Errors</h2><h3>Classes</h3><ul><li><a href="NotImplementedError.html">NotImplementedError</a></li><li><a href="ValidationError.html">ValidationError</a></li></ul></div><div class="category"><h2>PropertyTypes</h2><h3>Modules</h3><ul><li><a href="module-boolean.html">boolean</a></li><li><a href="module-date.html">date</a></li><li><a href="module-datetime.html">datetime</a></li><li><a href="module-defaultType.html">defaultType</a></li><li><a href="module-richtext.html">richtext</a></li><li><a href="module-string.html">string</a></li></ul></div>
                     </nav>
                 </div>
             </div>
@@ -79,6 +79,7 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>const Renderer = require('../utils/renderer')
+const Filter = require('../utils/filter')
 
 const renderer = new Renderer()
 
@@ -89,10 +90,8 @@ const renderer = new Renderer()
  */
 module.exports = {
   head: {
-    styles: ['https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/themes/default.css',
-      'https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/themes/default.date.css'],
-    scripts: ['https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/picker.js',
-      'https://cdnjs.cloudflare.com/ajax/libs/pickadate.js/3.5.6/picker.date.js'],
+    styles: ['https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css'],
+    scripts: ['https://cdn.jsdelivr.net/npm/flatpickr'],
   },
 
   list: (property, record, h) => {
@@ -119,10 +118,11 @@ module.exports = {
     })
   },
 
-  filter: (property, filters, h) => {
-    const filterKey = `filters.${property.name()}`
+  filter: (property, filterProperty, h) => {
+    const filterKey = Filter.toFilterKey(property)
+    const value = (filterProperty &amp;&amp; filterProperty.value) || {}
     return renderer.render('property-types/date/filter', {
-      property, filterKey, h, filters,
+      property, filterKey, h, value,
     })
   },
 }
@@ -140,7 +140,7 @@ module.exports = {
 
 <footer class="footer">
     <div class="content has-text-centered">
-        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Mar 06 2019 21:56:30 GMT+0100 (Central European Standard Time)</p>
+        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Thu Mar 28 2019 13:40:59 GMT+0100 (Central European Standard Time)</p>
         <p class="sidebar-created-by">
             <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
             <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers</a>

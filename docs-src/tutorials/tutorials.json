@@ -5,25 +5,19 @@
   "01-example": {
     "title": "02. Example App"
   },
-  "02-frameworks": {
-    "title": "03. Frameworks"
-  },
   "03-passing-resources": {
-    "title": "04. Adding resources"
+    "title": "03. Adding resources"
   },
   "04-customizing-resources": {
-    "title": "05. Customize resources"
+    "title": "04. Customize resources"
   },
   "05-actions": {
-    "title": "06. Customize actions"
+    "title": "05. Customize actions"
   },
-  "06-custom-dashboard": {
+  "06-writing-react-components": {
+    "title": "06. Writing your own Components"
+  },
+  "07-custom-dashboard": {
     "title": "07. Customize dashboard"
-  },
-  "07-api-resources": {
-    "title": "08. API resources"
-  },
-  "07-architecture": {
-    "title": "08. Architecture"
   }
 }

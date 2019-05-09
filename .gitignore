@@ -5,3 +5,4 @@ coverage
 .DS_store
 docker-compose.ovverride.yml
 .vscode
+.cache

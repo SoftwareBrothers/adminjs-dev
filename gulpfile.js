@@ -30,6 +30,17 @@ gulp.task('js', () => {
     .pipe(gulp.dest('admin-bro/src/frontend/assets/scripts'))
 })
 
+gulp.task('react', () => {
+  gulp.src(path.join('admin-bro/src/frontend/app.js'), { base: 'app' })
+    .pipe(concat('app.bundle.js'))
+    .pipe(babel({
+      presets: ['@babel/env', '@babel/react'],
+    }))
+    .pipe(uglify())
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(gulp.dest('admin-bro/src/frontend/assets/scripts'))
+})
+
 gulp.task('debug', () => {
   spawn('yarn', ['start'], { cwd: './', stdio: 'inherit' })
 })

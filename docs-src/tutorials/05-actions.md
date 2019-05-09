@@ -1,4 +1,4 @@
-At some point you would probably like to customize default views or create custom actions. {@link Action Actions} are the way of doing that.
+At some point you would probably like to customize default views or create custom actions. {@link BaseAction Actions} are the way of doing that.
 
 ## Default actions
 
@@ -6,13 +6,13 @@ Admin bro has 4 major default actions defined for each resource:
 
 __Resource__ base actions:
 
-* __new__ [Add new] - creates new record
+* {@link module:NewAction new} [Add new] - creates new record
 
 __Record__ base actions:
 
-* __show__ [info] - shows details of a given record
-* __edit__ [edit] - updates given record
-* __delete__ [remove] - removes given record
+* {@link module:ShowAction show} [info] - shows details of a given record
+* {@link module:EditAction edit} [edit] - updates given record
+* {@link module:DeleteAction delete} [remove] - removes given record
 
 __Resource base actions__ can be accessed in the header of the list of all the resources (next to the _filters_ button). __Record actions__ are places in the list by the resource. Take a look at the following screenshot:
 
@@ -28,7 +28,7 @@ AdminBro.ACTIONS.show // => show action object
 
 ## Modify default action per Resource
 
-Each action has all the parameters defined by {@link Action}. They can be modified per resource along with other {@link ResourceOptions}
+Each action has all the parameters defined by {@link BaseAction}. They can be modified per resource along with other {@link ResourceOptions}
 
 ```javascript
 const adminBroOptions = {
@@ -66,9 +66,9 @@ __isVisible__ can be either a function returning boolean value or a boolean valu
 
 ### Action handler
 
-Each action has an {@link ActionHandler} function. This function is executed every time the action is invoked.
+Each action has an {@link BaseAction.handler} function. This function is executed every time the action is invoked.
 
-Handler is an async fuction returning Promise which can either resolves to HTML string or to the redirect response.
+Handler is an `async` fuction returning `Promise` which resolves to an JSON API response.
 
 This is how Edit action is defined:
 
@@ -80,77 +80,33 @@ module.exports = {
   icon: 'icomoon-edit',
   label: 'Edit',
   handler: async (request, response, data) => {
+    const { record } = data
     if (request.method === 'get') {
-      return renderer.render('actions/edit', data)
+      return { record: record.toJSON() }
     }
     if (request.method === 'post') {
-      await data.record.update(request.payload)
-      if (data.record.isValid()) {
-        const showAction = data.resource.decorate().actions.show
-        return response.redirect(data.h.recordActionUrl(
-          data.resource, showAction, data.record,
-        ))
+      await record.update(request.payload.record)
+      if (record.isValid()) {
+        return {
+          redirectUrl: data.h.recordActionUrl({
+            resourceId: data.resource.id(), recordId: record.id(), actionName: 'show',
+          }),
+          record: record.toJSON(),
+        }
       }
-      return renderer.render('actions/edit', data)
+      return { record: record.toJSON() }
     }
+    return ''
   },
 }
 
 ```
 
-If request was __get__ it renders the edit fields. Otherwise (__post__) updates the record.
-
-### Example of modifying the show action
-
-Lets imagine we would like to add a graph to the details of the articles showing the number of comments.
-
-We can update an {@link ActionHandler} and utilise the {@link PageBuilder} class.
-
-This is how we would do this:
-
-```javascript
-{
-  ...,
-  handler: async (request, response, data) => {
-    const content = await AdminBro.ACTIONS.show.handler(request, response, data)
-    const page = new AdminBro.PageBuilder({ admin: data._admin })
-    page.addColumn({ content, columns: 7 })
-    page.addChart({
-      columns: 5,
-      title: 'Popularity',
-      subtitle: 'How people like this article',
-      config: {
-        type: 'bar',
-        data: {
-          datasets: [
-            {
-              label: 'Thumbs UP',
-              fill: true,
-              backgroundColor: AdminBro.PageBuilder.COLOR.INFO,
-              data: [522]
-            }, {
-              label: 'Thumbs Down',
-              fill: true,
-              backgroundColor: AdminBro.PageBuilder.COLOR.WARNING,
-              data: [20]
-            },
-          ],
-        },
-      }
-    })
-    return page.toHTML()
-  },
-  ...
-}
-```
-
-And this is the result
-
-<img src="./images/graph-in-show.png">
+If request was __get__ it returns the {@link BaseRecord~JSON JSON} object for a record. Otherwise (__post__) updates the record. Then right Component renders the action.
 
 ## Custom Actions
 
-Also you can define your own actions. Simply pass {@link Action} under a new key to {@link ResourceOptions}.
+Also you can define your own actions. Simply pass {@link BaseAction} under a new key to {@link ResourceOptions}.
 
 Your action can be either Resource'is, Record'is or both.
 
@@ -165,7 +121,8 @@ const adminBroOptions = {
             label: 'Publish',
             icon: 'fas fa-eye',
             isVisible: true,
-            handler: async () => {...}
+            handler: async () => {...},
+            component: AdminBro.require('./your-action-component'),
           },
         },
       },
@@ -174,13 +131,16 @@ const adminBroOptions = {
 }
 ```
 
-## What's next
+## Action components
 
-Make sure to check out following types definitions: 
+When you define your own action you have to also create **React component** responsible
+for rendering it. To see what options you have - go to the next tutorial:
 
-* {@link ResourceOptions}
-* {@link Action}
-* {@link ActionHandler}
-* {@link IsVisible}
+- {@tutorial 06-writing-react-components}
 
-And you might also want to check out {@link PageBuilder}
+## Also...
+
+...make sure to check out the following pages: 
+
+* {@link ResourceOptions} and
+* {@link BaseAction}

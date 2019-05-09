@@ -1,6 +1,6 @@
 {
     "tags": {
-        "allowUnknownTags": ["mermaid", "category"]
+        "allowUnknownTags": ["mermaid", "category", "component"]
     },
     "source": {
         "include": ["./admin-bro/src",
@@ -8,13 +8,13 @@
                     "./admin-bro-mongoose",
                     "./admin-bro-sequelizejs",
                     "./admin-bro-expressjs"],
-        "includePattern": ".js$",
-        "excludePattern": "(node_modules/|docs)"
+        "excludePattern": "(node_modules/|docs|app-bundle.js)"
     },
     "plugins": [
         "plugins/markdown",
         "jsdoc-mermaid",
         "better-docs/category",
+        "better-docs/component",
         "node_modules/jsdoc-typeof-plugin"
     ],
     "opts": {
@@ -39,6 +39,7 @@
         "better-docs": {
             "name": "AdminBro Documentation",
             "logo": "images/logo.png",
+            "wrapperComponent": "./docs-src/options/component.jsx",
             "trackingCode": "<!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->",
             "navigation": [
                 {

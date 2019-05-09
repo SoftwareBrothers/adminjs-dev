@@ -3,10 +3,11 @@
 <head>
     <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
     <meta charset="utf-8">
-    <title>JSDoc: 06. Customize actions</title>
+    <title>JSDoc: 05. Customize actions</title>
 
-    <script src="scripts/prettify/prettify.js"></script>
-    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="./build/entry.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -58,7 +59,7 @@
             <div class="column is-3" id="sidebarNav">
                 <div class="sidebar">
                     <nav>
-                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-00-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-01-example.html">02. Example App</a></li><li><a href="tutorial-02-frameworks.html">03. Frameworks</a></li><li><a href="tutorial-03-passing-resources.html">04. Adding resources</a></li><li><a href="tutorial-04-customizing-resources.html">05. Customize resources</a></li><li><a href="tutorial-05-actions.html">06. Customize actions</a></li><li><a href="tutorial-06-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-07-architecture.html">08. Architecture</a></li></ul><h3>Modules</h3><ul><li><a href="module-admin-bro-expressjs.html">admin-bro-expressjs</a></li><li><a href="module-admin-bro-hapijs.html">admin-bro-hapijs</a></li><li><a href="module-admin-bro-mongoose.html">admin-bro-mongoose</a></li><li><a href="module-admin-bro-sequelizejs.html">admin-bro-sequelizejs</a></li></ul><h3>Classes</h3><ul><li><a href="AdminBro.html">AdminBro</a></li><li><a href="PageBuilder.html">PageBuilder</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3><a href="global.html">Global</a></h3></div><div class="category"><h2>Adapter</h2><h3>Classes</h3><ul><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li></ul></div><div class="category"><h2>Decorators</h2><h3>Classes</h3><ul><li><a href="PropertyDecorator.html">PropertyDecorator</a></li><li><a href="ResourceDecorator.html">ResourceDecorator</a></li></ul></div><div class="category"><h2>Errors</h2><h3>Classes</h3><ul><li><a href="NotImplementedError.html">NotImplementedError</a></li><li><a href="ValidationError.html">ValidationError</a></li></ul></div><div class="category"><h2>PropertyTypes</h2><h3>Modules</h3><ul><li><a href="module-boolean.html">boolean</a></li><li><a href="module-date.html">date</a></li><li><a href="module-datetime.html">datetime</a></li><li><a href="module-defaultType.html">defaultType</a></li><li><a href="module-richtext.html">richtext</a></li><li><a href="module-string.html">string</a></li></ul></div>
+                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-00-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-01-example.html">02. Example App</a></li><li><a href="tutorial-03-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-04-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-05-actions.html">05. Customize actions</a></li><li><a href="tutorial-06-writing-react-components.html">06. Writing your own Components</a></li><li><a href="tutorial-07-custom-dashboard.html">07. Customize dashboard</a></li></ul><h3>Modules</h3><ul><li><a href="module-admin-bro-expressjs.html">admin-bro-expressjs</a></li><li><a href="module-admin-bro-hapijs.html">admin-bro-hapijs</a></li><li><a href="module-admin-bro-mongoose.html">admin-bro-mongoose</a></li><li><a href="module-admin-bro-sequelizejs.html">admin-bro-sequelizejs</a></li></ul><h3>Classes</h3><ul><li><a href="AdminBro.html">AdminBro</a></li><li><a href="ApiClient.html">ApiClient</a></li><li><a href="ApiController.html">ApiController</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3>Components</h3><ul><li><a href="Column.html">Column</a></li><li><a href="Columns.html">Columns</a></li><li><a href="DashboardHeader.html">DashboardHeader</a></li><li><a href="Label.html">Label</a></li><li><a href="Loader.html">Loader</a></li><li><a href="Paginate.html">Paginate</a></li><li><a href="PropertyInEdit.html">PropertyInEdit</a></li><li><a href="PropertyInFilter.html">PropertyInFilter</a></li><li><a href="PropertyInShow.html">PropertyInShow</a></li><li><a href="StyledButton.html">StyledButton</a></li><li><a href="Table.html">Table</a></li><li><a href="ValueBlock.html">ValueBlock</a></li><li><a href="WrapperBox.html">WrapperBox</a></li></ul><h3>Global</h3><ul><li><a href="global.html#label">label</a></li><li><a href="global.html#name">name</a></li></ul></div><div class="category"><h2>Actions</h2><h3>Modules</h3><ul><li><a href="module-DeleteAction.html">DeleteAction</a></li><li><a href="module-EditAction.html">EditAction</a></li><li><a href="module-NewAction.html">NewAction</a></li><li><a href="module-ShowAction.html">ShowAction</a></li></ul></div><div class="category"><h2>Base</h2><h3>Classes</h3><ul><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li></ul><h3>Interfaces</h3><ul><li><a href="BaseAction.html">BaseAction</a></li></ul><h3>Components</h3><ul><li><a href="BaseActionComponent.html">BaseActionComponent</a></li><li><a href="BasePropertyComponent.html">BasePropertyComponent</a></li></ul></div><div class="category"><h2>Decorators</h2><h3>Classes</h3><ul><li><a href="PropertyDecorator.html">PropertyDecorator</a></li><li><a href="ResourceDecorator.html">ResourceDecorator</a></li></ul></div><div class="category"><h2>Errors</h2><h3>Classes</h3><ul><li><a href="ConfigurationError.html">ConfigurationError</a></li><li><a href="NotImplementedError.html">NotImplementedError</a></li><li><a href="ValidationError.html">ValidationError</a></li></ul></div>
                     </nav>
                 </div>
             </div>
@@ -66,7 +67,7 @@
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
                         <p>Tutorial</p>
-                        <h1>06. Customize actions</h1>
+                        <h1>05. Customize actions</h1>
                     </header>
                     
                     <section>
@@ -76,24 +77,24 @@
 </header>
 
 <article>
-    <p>At some point you would probably like to customize default views or create custom actions. <a href="global.html#Action">Actions</a> are the way of doing that.</p>
+    <p>At some point you would probably like to customize default views or create custom actions. <a href="BaseAction.html">Actions</a> are the way of doing that.</p>
 <h2>Default actions</h2><p>Admin bro has 4 major default actions defined for each resource:</p>
 <p><strong>Resource</strong> base actions:</p>
 <ul>
-<li><strong>new</strong> [Add new] - creates new record</li>
+<li><a href="module-NewAction.html">new</a> [Add new] - creates new record</li>
 </ul>
 <p><strong>Record</strong> base actions:</p>
 <ul>
-<li><strong>show</strong> [info] - shows details of a given record</li>
-<li><strong>edit</strong> [edit] - updates given record</li>
-<li><strong>delete</strong> [remove] - removes given record</li>
+<li><a href="module-ShowAction.html">show</a> [info] - shows details of a given record</li>
+<li><a href="module-EditAction.html">edit</a> [edit] - updates given record</li>
+<li><a href="module-DeleteAction.html">delete</a> [remove] - removes given record</li>
 </ul>
 <p><strong>Resource base actions</strong> can be accessed in the header of the list of all the resources (next to the <em>filters</em> button). <strong>Record actions</strong> are places in the list by the resource. Take a look at the following screenshot:</p>
 <p><img src="./images/actions.png"></p>
 <p>Default actions can be accessed right from the AdminBro class.</p>
 <pre class="prettyprint source lang-javascript"><code>
 const AdminBro = require('admin-bro)
-AdminBro.ACTIONS.show // => show action object</code></pre><h2>Modify default action per Resource</h2><p>Each action has all the parameters defined by <a href="global.html#Action">Action</a>. They can be modified per resource along with other <a href="global.html#ResourceOptions">ResourceOptions</a></p>
+AdminBro.ACTIONS.show // => show action object</code></pre><h2>Modify default action per Resource</h2><p>Each action has all the parameters defined by <a href="BaseAction.html">BaseAction</a>. They can be modified per resource along with other <a href="global.html#ResourceOptions">ResourceOptions</a></p>
 <pre class="prettyprint source lang-javascript"><code>const adminBroOptions = {
   resources: [
     { resource: Article, options: { actions: {show: {}, edit: {}, ...} } },
@@ -115,8 +116,8 @@ AdminBro.ACTIONS.show // => show action object</code></pre><h2>Modify default ac
     },
   ],
 }</code></pre><p><strong>isVisible</strong> can be either a function returning boolean value or a boolean value itself.</p>
-<h3>Action handler</h3><p>Each action has an <a href="global.html#ActionHandler">ActionHandler</a> function. This function is executed every time the action is invoked.</p>
-<p>Handler is an async fuction returning Promise which can either resolves to HTML string or to the redirect response.</p>
+<h3>Action handler</h3><p>Each action has an <a href="BaseAction.html#.handler">BaseAction.handler</a> function. This function is executed every time the action is invoked.</p>
+<p>Handler is an <code>async</code> fuction returning <code>Promise</code> which resolves to an JSON API response.</p>
 <p>This is how Edit action is defined:</p>
 <pre class="prettyprint source"><code>module.exports = {
   name: 'edit',
@@ -125,60 +126,27 @@ AdminBro.ACTIONS.show // => show action object</code></pre><h2>Modify default ac
   icon: 'icomoon-edit',
   label: 'Edit',
   handler: async (request, response, data) => {
+    const { record } = data
     if (request.method === 'get') {
-      return renderer.render('actions/edit', data)
+      return { record: record.toJSON() }
     }
     if (request.method === 'post') {
-      await data.record.update(request.payload)
-      if (data.record.isValid()) {
-        const showAction = data.resource.decorate().actions.show
-        return response.redirect(data.h.recordActionUrl(
-          data.resource, showAction, data.record,
-        ))
+      await record.update(request.payload.record)
+      if (record.isValid()) {
+        return {
+          redirectUrl: data.h.recordActionUrl({
+            resourceId: data.resource.id(), recordId: record.id(), actionName: 'show',
+          }),
+          record: record.toJSON(),
+        }
       }
-      return renderer.render('actions/edit', data)
+      return { record: record.toJSON() }
     }
+    return ''
   },
 }
-</code></pre><p>If request was <strong>get</strong> it renders the edit fields. Otherwise (<strong>post</strong>) updates the record.</p>
-<h3>Example of modifying the show action</h3><p>Lets imagine we would like to add a graph to the details of the articles showing the number of comments.</p>
-<p>We can update an <a href="global.html#ActionHandler">ActionHandler</a> and utilise the <a href="PageBuilder.html">PageBuilder</a> class.</p>
-<p>This is how we would do this:</p>
-<pre class="prettyprint source lang-javascript"><code>{
-  ...,
-  handler: async (request, response, data) => {
-    const content = await AdminBro.ACTIONS.show.handler(request, response, data)
-    const page = new AdminBro.PageBuilder({ admin: data._admin })
-    page.addColumn({ content, columns: 7 })
-    page.addChart({
-      columns: 5,
-      title: 'Popularity',
-      subtitle: 'How people like this article',
-      config: {
-        type: 'bar',
-        data: {
-          datasets: [
-            {
-              label: 'Thumbs UP',
-              fill: true,
-              backgroundColor: AdminBro.PageBuilder.COLOR.INFO,
-              data: [522]
-            }, {
-              label: 'Thumbs Down',
-              fill: true,
-              backgroundColor: AdminBro.PageBuilder.COLOR.WARNING,
-              data: [20]
-            },
-          ],
-        },
-      }
-    })
-    return page.toHTML()
-  },
-  ...
-}</code></pre><p>And this is the result</p>
-<p><img src="./images/graph-in-show.png"></p>
-<h2>Custom Actions</h2><p>Also you can define your own actions. Simply pass <a href="global.html#Action">Action</a> under a new key to <a href="global.html#ResourceOptions">ResourceOptions</a>.</p>
+</code></pre><p>If request was <strong>get</strong> it returns the <a href="BaseRecord.html#~JSON">JSON</a> object for a record. Otherwise (<strong>post</strong>) updates the record. Then right Component renders the action.</p>
+<h2>Custom Actions</h2><p>Also you can define your own actions. Simply pass <a href="BaseAction.html">BaseAction</a> under a new key to <a href="global.html#ResourceOptions">ResourceOptions</a>.</p>
 <p>Your action can be either Resource'is, Record'is or both.</p>
 <pre class="prettyprint source lang-javascript"><code>const adminBroOptions = {
   resources: [
@@ -190,20 +158,23 @@ AdminBro.ACTIONS.show // => show action object</code></pre><h2>Modify default ac
             label: 'Publish',
             icon: 'fas fa-eye',
             isVisible: true,
-            handler: async () => {...}
+            handler: async () => {...},
+            component: AdminBro.require('./your-action-component'),
           },
         },
       },
     },
   ],
-}</code></pre><h2>What's next</h2><p>Make sure to check out following types definitions: </p>
+}</code></pre><h2>Action components</h2><p>When you define your own action you have to also create <strong>React component</strong> responsible
+for rendering it. To see what options you have - go to the next tutorial:</p>
 <ul>
-<li><a href="global.html#ResourceOptions">ResourceOptions</a></li>
-<li><a href="global.html#Action">Action</a></li>
-<li><a href="global.html#ActionHandler">ActionHandler</a></li>
-<li><a href="global.html#IsVisible">IsVisible</a></li>
+<li><a href="tutorial-06-writing-react-components.html">06. Writing your own Components</a></li>
 </ul>
-<p>And you might also want to check out <a href="PageBuilder.html">PageBuilder</a></p>
+<h2>Also...</h2><p>...make sure to check out the following pages: </p>
+<ul>
+<li><a href="global.html#ResourceOptions">ResourceOptions</a> and</li>
+<li><a href="BaseAction.html">BaseAction</a></li>
+</ul>
 </article>
 
 </section>
@@ -215,7 +186,7 @@ AdminBro.ACTIONS.show // => show action object</code></pre><h2>Modify default ac
 
 <footer class="footer">
     <div class="content has-text-centered">
-        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Mar 06 2019 21:56:30 GMT+0100 (Central European Standard Time)</p>
+        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Thu May 09 2019 19:17:32 GMT+0200 (Central European Summer Time)</p>
         <p class="sidebar-created-by">
             <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
             <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers</a>
@@ -223,7 +194,6 @@ AdminBro.ACTIONS.show // => show action object</code></pre><h2>Modify default ac
     </div>
 </footer>
 
-<script> prettyPrint(); </script>
 <script src="scripts/app.min.js"></script>
 <script src="scripts/linenumber.js"> </script>
 </body>

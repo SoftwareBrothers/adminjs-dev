@@ -7,8 +7,9 @@
     <meta charset="utf-8">
     <title>JSDoc: admin-bro/src/admin-bro.js</title>
 
-    <script src="scripts/prettify/prettify.js"></script>
-    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="./build/entry.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -60,7 +61,7 @@
             <div class="column is-3" id="sidebarNav">
                 <div class="sidebar">
                     <nav>
-                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-00-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-01-example.html">02. Example App</a></li><li><a href="tutorial-02-frameworks.html">03. Frameworks</a></li><li><a href="tutorial-03-passing-resources.html">04. Adding resources</a></li><li><a href="tutorial-04-customizing-resources.html">05. Customize resources</a></li><li><a href="tutorial-05-actions.html">06. Customize actions</a></li><li><a href="tutorial-06-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-07-architecture.html">08. Architecture</a></li></ul><h3>Modules</h3><ul><li><a href="module-admin-bro-expressjs.html">admin-bro-expressjs</a></li><li><a href="module-admin-bro-hapijs.html">admin-bro-hapijs</a></li><li><a href="module-admin-bro-mongoose.html">admin-bro-mongoose</a></li><li><a href="module-admin-bro-sequelizejs.html">admin-bro-sequelizejs</a></li></ul><h3>Classes</h3><ul><li><a href="AdminBro.html">AdminBro</a></li><li><a href="PageBuilder.html">PageBuilder</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3><a href="global.html">Global</a></h3></div><div class="category"><h2>Adapter</h2><h3>Classes</h3><ul><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li></ul></div><div class="category"><h2>Decorators</h2><h3>Classes</h3><ul><li><a href="PropertyDecorator.html">PropertyDecorator</a></li><li><a href="ResourceDecorator.html">ResourceDecorator</a></li></ul></div><div class="category"><h2>Errors</h2><h3>Classes</h3><ul><li><a href="NotImplementedError.html">NotImplementedError</a></li><li><a href="ValidationError.html">ValidationError</a></li></ul></div><div class="category"><h2>PropertyTypes</h2><h3>Modules</h3><ul><li><a href="module-boolean.html">boolean</a></li><li><a href="module-date.html">date</a></li><li><a href="module-datetime.html">datetime</a></li><li><a href="module-defaultType.html">defaultType</a></li><li><a href="module-richtext.html">richtext</a></li><li><a href="module-string.html">string</a></li></ul></div>
+                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-00-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-01-example.html">02. Example App</a></li><li><a href="tutorial-03-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-04-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-05-actions.html">05. Customize actions</a></li><li><a href="tutorial-06-writing-react-components.html">06. Writing your own Components</a></li><li><a href="tutorial-07-custom-dashboard.html">07. Customize dashboard</a></li></ul><h3>Modules</h3><ul><li><a href="module-admin-bro-expressjs.html">admin-bro-expressjs</a></li><li><a href="module-admin-bro-hapijs.html">admin-bro-hapijs</a></li><li><a href="module-admin-bro-mongoose.html">admin-bro-mongoose</a></li><li><a href="module-admin-bro-sequelizejs.html">admin-bro-sequelizejs</a></li></ul><h3>Classes</h3><ul><li><a href="AdminBro.html">AdminBro</a></li><li><a href="ApiClient.html">ApiClient</a></li><li><a href="ApiController.html">ApiController</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3>Components</h3><ul><li><a href="Column.html">Column</a></li><li><a href="Columns.html">Columns</a></li><li><a href="DashboardHeader.html">DashboardHeader</a></li><li><a href="Label.html">Label</a></li><li><a href="Loader.html">Loader</a></li><li><a href="Paginate.html">Paginate</a></li><li><a href="PropertyInEdit.html">PropertyInEdit</a></li><li><a href="PropertyInFilter.html">PropertyInFilter</a></li><li><a href="PropertyInShow.html">PropertyInShow</a></li><li><a href="StyledButton.html">StyledButton</a></li><li><a href="Table.html">Table</a></li><li><a href="ValueBlock.html">ValueBlock</a></li><li><a href="WrapperBox.html">WrapperBox</a></li></ul><h3>Global</h3><ul><li><a href="global.html#label">label</a></li><li><a href="global.html#name">name</a></li></ul></div><div class="category"><h2>Actions</h2><h3>Modules</h3><ul><li><a href="module-DeleteAction.html">DeleteAction</a></li><li><a href="module-EditAction.html">EditAction</a></li><li><a href="module-NewAction.html">NewAction</a></li><li><a href="module-ShowAction.html">ShowAction</a></li></ul></div><div class="category"><h2>Base</h2><h3>Classes</h3><ul><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li></ul><h3>Interfaces</h3><ul><li><a href="BaseAction.html">BaseAction</a></li></ul><h3>Components</h3><ul><li><a href="BaseActionComponent.html">BaseActionComponent</a></li><li><a href="BasePropertyComponent.html">BasePropertyComponent</a></li></ul></div><div class="category"><h2>Decorators</h2><h3>Classes</h3><ul><li><a href="PropertyDecorator.html">PropertyDecorator</a></li><li><a href="ResourceDecorator.html">ResourceDecorator</a></li></ul></div><div class="category"><h2>Errors</h2><h3>Classes</h3><ul><li><a href="ConfigurationError.html">ConfigurationError</a></li><li><a href="NotImplementedError.html">NotImplementedError</a></li><li><a href="ValidationError.html">ValidationError</a></li></ul></div>
                     </nav>
                 </div>
             </div>
@@ -79,17 +80,18 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>const _ = require('lodash')
+const path = require('path')
+const fs = require('fs')
 
-const Renderer = require('./backend/utils/renderer')
+const loginTemplate = require('./frontend/login-template')
 const BaseResource = require('./backend/adapters/base-resource')
 const BaseDatabase = require('./backend/adapters/base-database')
 const BaseRecord = require('./backend/adapters/base-record')
 const BaseProperty = require('./backend/adapters/base-property')
-const PageBuilder = require('./backend/utils/page-builder')
+const Filter = require('./backend/utils/filter')
 const ValidationError = require('./backend/utils/validation-error')
+const ConfigurationError = require('./backend/utils/configuration-error')
 const ResourcesFactory = require('./backend/utils/resources-factory')
-const DefaultDashboard = require('./backend/defaults/default-dashboard')
-const PROPERTY_TYPES = require('./backend/property-types')
 const ACTIONS = require('./backend/actions')
 
 const Router = require('./backend/router')
@@ -101,13 +103,20 @@ const pkg = require('../package.json')
  * @property {String} [rootPath='/admin']             under which path AdminBro will be available
  * @property {String} [logoutPath='/admin/logout']    url to a logout action
  * @property {String} [loginPath='/admin/login']      url to a login page
- * @property {BaseDatabase[]} [databases=[]]         array of all databases
- * @property {BaseResource[] | Object[]} [resources=[]] array of all resources. Resources can be
- *                                                    given in a regular way or nested within
- *                                                    an object along with its decorator
+ * @property {BaseDatabase[]} [databases=[]]          array of all databases
+ * @property {Object[]} [resources=[]]                array of all database resources.
+ *                                                    Resources can be given directly or
+ *                                                    nested within an object along with its
+ *                                                    options
  * @property {BaseResource} [resources[].resource]    class, which extends {@link BaseResource}
  * @property {ResourceOptions} [resources[].options]  options for given resource
- * @property {PageBuilder} [dashboard]                your custom dashboard page
+ * @property {Object} [dashboard]                     your custom dashboard page
+ * @property {BaseAction.handler} [dashboard.handler] action handler which will override default
+ *                                                    dashboard handler - you can perform actions
+ *                                                    on the backend there and pass results to
+ *                                                    component
+ * @property {Component} [dashboard.component]        Component which will be rendered on the
+ *                                                    dashboard
  * @property {Object} [branding]                      branding settings
  * @property {String} [branding.logo]                 logo shown in AdminBro in the top left corner
  * @property {String} [branding.companyName]          company name
@@ -116,32 +125,25 @@ const pkg = require('../package.json')
  * @property {Object} [assets]                        assets object
  * @property {String[]}  [assets.styles]              array with a paths to styles
  * @property {String[]}  [assets.scripts]             array with a paths to scripts
+ * @property {Object&lt;String,String>} [env]            environmental variables passed to the frontend
  *
  * @description AdminBro takes a list of options of the entire framework. All off them
  * have default values, but you can easily tailor them to your needs
  *
  * @example
  * const AdminBro = require('admin-bro')
- *
- * const ArticleDecorator = require('./article-decorator')
- * const ArticleModel = require('./article')
- *
- * const connection = await mongoose.connect(process.env.MONGO_URL)
- *
+ * //...
  * const adminBro = new AdminBro({
  *   rootPath: '/xyz-admin',
  *   logoutPath: '/xyz-admin/exit',
  *   loginPath: '/xyz-admin/sign-in',
  *   databases: [connection]
- *   resources: [{ resource: ArticleModel, decorator: ArticleDecorator}]
+ *   resources: [{ resource: ArticleModel, options: {...}}]
  *   branding: {
  *     companyName: 'XYZ c.o.'
  *   },
- *   assets: {
- *     styles: ['/style.css'],
- *     scripts: ['/scripts.js']
- *   }
  * })
+ * //...
  */
 const defaults = {
   rootPath: '/admin',
@@ -154,10 +156,10 @@ const defaults = {
     companyName: 'Company Name',
     softwareBrothers: true,
   },
-  dashboard: DefaultDashboard,
+  dashboard: {},
   assets: {
-    styles: ['/style.css'],
-    scripts: ['/scripts.js'],
+    styles: [],
+    scripts: [],
   },
 }
 
@@ -183,12 +185,11 @@ class AdminBro {
      * @type {AdminBroOptions}
      * @description Options given by a user
      */
-    this.options = _.merge(defaults, options)
+    this.options = _.merge({}, defaults, options)
 
     const { databases, resources } = this.options
     const resourcesFactory = new ResourcesFactory(this, AdminBro.registeredAdapters)
     this.resources = resourcesFactory.buildResources({ databases, resources })
-    this.DashboardPage = options.dashboard || defaults.dashboard
   }
 
   /**
@@ -223,7 +224,7 @@ class AdminBro {
    * @return {Promise&lt;string>}                HTML of the rendered page
    */
   static async renderLogin({ action, errorMessage }) {
-    return new Renderer().render('pages/login', { action, errorMessage })
+    return loginTemplate({ action, errorMessage })
   }
 
   /**
@@ -234,7 +235,53 @@ class AdminBro {
   findResource(resourceId) {
     return this.resources.find(m => m.id() === resourceId)
   }
+
+  /**
+   * Requires given jsx file, that it can be bundled to the frontend.
+   * It will be available under AdminBro.UserComponents[componentId].
+   *
+   * @param   {String}  src  path to a file containing react component.
+   *
+   * @return  {String}       componentId - uniq id of a component
+   *
+   * @example
+   * const adminBroOptions = {
+   *   dashboard: {
+   *     component: AdminBro.require('./path/to/component'),
+   *   }
+   * }
+   */
+  static require(src) {
+    const extensions = ['.jsx', '.js']
+    let filePath = ''
+    const componentId = _.uniqueId('Component')
+    if (src[0] === '/') {
+      filePath = src
+    } else {
+      const stack = ((new Error()).stack).split('\n')
+      const m = stack[2].match(/\((.*):[0-9]+:[0-9]+\)/)
+      filePath = path.join(path.dirname(m[1]), src)
+    }
+
+    const { root, dir, name } = path.parse(filePath)
+    if (!extensions.find((ext) => {
+      const fileName = path.format({ root, dir, name, ext })
+      return fs.existsSync(fileName)
+    })) {
+      throw new ConfigurationError(`Given file ${src}, doesn't exist.`, 'AdminBro.html')
+    }
+
+    AdminBro.UserComponents[componentId] = path.format({ root, dir, name })
+
+    return componentId
+  }
 }
+
+/**
+ * List of paths to all custom components defined by users.
+ * @type {Object&lt;String, String>}
+ */
+AdminBro.UserComponents = {}
 
 /**
  * List of all supported routes along with controllers
@@ -267,10 +314,10 @@ AdminBro.BaseRecord = BaseRecord
 AdminBro.BaseProperty = BaseProperty
 
 /**
- * PageBuilder
- * @type {typeof PageBuilder}
+ * Filter
+ * @type {typeof Filter}
  */
-AdminBro.PageBuilder = PageBuilder
+AdminBro.Filter = Filter
 
 /**
  * ValidationError
@@ -281,14 +328,8 @@ AdminBro.ValidationError = ValidationError
 AdminBro.registeredAdapters = []
 
 /**
- * List of all property types supported by AdminBro
- * @type {Object&lt;string, PropertyType>}
- */
-AdminBro.PROPERTY_TYPES = PROPERTY_TYPES
-
-/**
  * List of all Actions defined by default in AdminBro
- * @type Object&lt;string, Action>}
+ * @type {Object&lt;string, Action>}
  */
 AdminBro.ACTIONS = ACTIONS
 
@@ -309,7 +350,7 @@ module.exports = AdminBro
 
 <footer class="footer">
     <div class="content has-text-centered">
-        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Mar 06 2019 21:56:30 GMT+0100 (Central European Standard Time)</p>
+        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Thu May 09 2019 19:17:32 GMT+0200 (Central European Summer Time)</p>
         <p class="sidebar-created-by">
             <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
             <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers</a>
@@ -317,7 +358,6 @@ module.exports = AdminBro
     </div>
 </footer>
 
-<script> prettyPrint(); </script>
 <script src="scripts/app.min.js"></script>
 <script src="scripts/linenumber.js"> </script>
 </body>

@@ -75,6 +75,4 @@ Currently we support following Database Adapters:
 
 ## Resources customization
 
-Each resource could be customised in AdminBro - to see how to do this go to 
-
-<a href="/tutorial-04-customizing-resources.html" class="button">Customize Resources Tutorial</a>
+Each resource could be customised in AdminBro - to see how to do this go to {@tutorial 04-customizing-resources}

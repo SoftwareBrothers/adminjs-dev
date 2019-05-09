@@ -5,8 +5,9 @@
     <meta charset="utf-8">
     <title>JSDoc: PropertyDecorator</title>
 
-    <script src="scripts/prettify/prettify.js"></script>
-    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="./build/entry.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -58,7 +59,7 @@
             <div class="column is-3" id="sidebarNav">
                 <div class="sidebar">
                     <nav>
-                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-00-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-01-example.html">02. Example App</a></li><li><a href="tutorial-02-frameworks.html">03. Frameworks</a></li><li><a href="tutorial-03-passing-resources.html">04. Adding resources</a></li><li><a href="tutorial-04-customizing-resources.html">05. Customize resources</a></li><li><a href="tutorial-05-actions.html">06. Customize actions</a></li><li><a href="tutorial-06-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-07-architecture.html">08. Architecture</a></li></ul><h3>Modules</h3><ul><li><a href="module-admin-bro-expressjs.html">admin-bro-expressjs</a></li><li><a href="module-admin-bro-hapijs.html">admin-bro-hapijs</a></li><li><a href="module-admin-bro-mongoose.html">admin-bro-mongoose</a></li><li><a href="module-admin-bro-sequelizejs.html">admin-bro-sequelizejs</a></li></ul><h3>Classes</h3><ul><li><a href="AdminBro.html">AdminBro</a></li><li><a href="PageBuilder.html">PageBuilder</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3><a href="global.html">Global</a></h3></div><div class="category"><h2>Adapter</h2><h3>Classes</h3><ul><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li></ul></div><div class="category"><h2>Decorators</h2><h3>Classes</h3><ul><li><a href="PropertyDecorator.html">PropertyDecorator</a></li><li><a href="ResourceDecorator.html">ResourceDecorator</a></li></ul></div><div class="category"><h2>Errors</h2><h3>Classes</h3><ul><li><a href="NotImplementedError.html">NotImplementedError</a></li><li><a href="ValidationError.html">ValidationError</a></li></ul></div><div class="category"><h2>PropertyTypes</h2><h3>Modules</h3><ul><li><a href="module-boolean.html">boolean</a></li><li><a href="module-date.html">date</a></li><li><a href="module-datetime.html">datetime</a></li><li><a href="module-defaultType.html">defaultType</a></li><li><a href="module-richtext.html">richtext</a></li><li><a href="module-string.html">string</a></li></ul></div>
+                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-00-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-01-example.html">02. Example App</a></li><li><a href="tutorial-03-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-04-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-05-actions.html">05. Customize actions</a></li><li><a href="tutorial-06-writing-react-components.html">06. Writing your own Components</a></li><li><a href="tutorial-07-custom-dashboard.html">07. Customize dashboard</a></li></ul><h3>Modules</h3><ul><li><a href="module-admin-bro-expressjs.html">admin-bro-expressjs</a></li><li><a href="module-admin-bro-hapijs.html">admin-bro-hapijs</a></li><li><a href="module-admin-bro-mongoose.html">admin-bro-mongoose</a></li><li><a href="module-admin-bro-sequelizejs.html">admin-bro-sequelizejs</a></li></ul><h3>Classes</h3><ul><li><a href="AdminBro.html">AdminBro</a></li><li><a href="ApiClient.html">ApiClient</a></li><li><a href="ApiController.html">ApiController</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3>Components</h3><ul><li><a href="Column.html">Column</a></li><li><a href="Columns.html">Columns</a></li><li><a href="DashboardHeader.html">DashboardHeader</a></li><li><a href="Label.html">Label</a></li><li><a href="Loader.html">Loader</a></li><li><a href="Paginate.html">Paginate</a></li><li><a href="PropertyInEdit.html">PropertyInEdit</a></li><li><a href="PropertyInFilter.html">PropertyInFilter</a></li><li><a href="PropertyInShow.html">PropertyInShow</a></li><li><a href="StyledButton.html">StyledButton</a></li><li><a href="Table.html">Table</a></li><li><a href="ValueBlock.html">ValueBlock</a></li><li><a href="WrapperBox.html">WrapperBox</a></li></ul><h3>Global</h3><ul><li><a href="global.html#label">label</a></li><li><a href="global.html#name">name</a></li></ul></div><div class="category"><h2>Actions</h2><h3>Modules</h3><ul><li><a href="module-DeleteAction.html">DeleteAction</a></li><li><a href="module-EditAction.html">EditAction</a></li><li><a href="module-NewAction.html">NewAction</a></li><li><a href="module-ShowAction.html">ShowAction</a></li></ul></div><div class="category"><h2>Base</h2><h3>Classes</h3><ul><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li></ul><h3>Interfaces</h3><ul><li><a href="BaseAction.html">BaseAction</a></li></ul><h3>Components</h3><ul><li><a href="BaseActionComponent.html">BaseActionComponent</a></li><li><a href="BasePropertyComponent.html">BasePropertyComponent</a></li></ul></div><div class="category"><h2>Decorators</h2><h3>Classes</h3><ul><li><a href="PropertyDecorator.html">PropertyDecorator</a></li><li><a href="ResourceDecorator.html">ResourceDecorator</a></li></ul></div><div class="category"><h2>Errors</h2><h3>Classes</h3><ul><li><a href="ConfigurationError.html">ConfigurationError</a></li><li><a href="NotImplementedError.html">NotImplementedError</a></li><li><a href="ValidationError.html">ValidationError</a></li></ul></div>
                     </nav>
                 </div>
             </div>
@@ -109,6 +110,8 @@
         <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>
     </div>
     
+
+
 
 
 
@@ -257,7 +260,7 @@
         <p class="tag-source">
             <a href="admin-bro_src_backend_decorators_property-decorator.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_decorators_property-decorator.js.html">admin-bro/src/backend/decorators/property-decorator.js</a>, <a href="admin-bro_src_backend_decorators_property-decorator.js.html#line48">line 48</a>
+                <a href="admin-bro_src_backend_decorators_property-decorator.js.html">admin-bro/src/backend/decorators/property-decorator.js</a>, <a href="admin-bro_src_backend_decorators_property-decorator.js.html#line30">line 30</a>
             </span>
         </p>
     
@@ -370,7 +373,7 @@
         <p class="tag-source">
             <a href="admin-bro_src_backend_decorators_property-decorator.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_decorators_property-decorator.js.html">admin-bro/src/backend/decorators/property-decorator.js</a>, <a href="admin-bro_src_backend_decorators_property-decorator.js.html#line62">line 62</a>
+                <a href="admin-bro_src_backend_decorators_property-decorator.js.html">admin-bro/src/backend/decorators/property-decorator.js</a>, <a href="admin-bro_src_backend_decorators_property-decorator.js.html#line44">line 44</a>
             </span>
         </p>
     
@@ -390,129 +393,6 @@
         <div class='vertical-section'>
             <h3 class="title"><span>Methods</span></h3>
             <div class="members">
-            
-                <div class="member">
-
-    
-    <h4 class="name" id="headScripts">
-        
-        <span class="code-name">
-            headScripts<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;String>}</span>
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Returns scripts which should be included in the head for given property type.</p>
-    </div>
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-    <dt class="tag-see">See:</dt>
-    <dd class="tag-see">
-        <ul>
-            <li><a href="global.html#PropertyType">PropertyType</a></li>
-        </ul>
-    </dd>
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="admin-bro_src_backend_decorators_property-decorator.js.html" class="button">View Source</a>
-            <span>
-                <a href="admin-bro_src_backend_decorators_property-decorator.js.html">admin-bro/src/backend/decorators/property-decorator.js</a>, <a href="admin-bro_src_backend_decorators_property-decorator.js.html#line146">line 146</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class='columns method-parameter'>
-        <div class="column is-2"><label>Returns:</label></div>
-        <div class="column is-10">
-            
-                    
-
-<div class="columns">
-    
-    
-    <div class='column is-5 has-text-left'>
-        <label>Type: </label>
-        
-<span class="param-type">Array.&lt;String></span>
-
-
-    </div>
-    
-</div>
-
-                
-        </div>
-    </div>
-
-
-
-
-</div>
             
                 <div class="member">
 
@@ -544,6 +424,8 @@
 
 
 
+
+
 <dl class="details">
 
     
@@ -579,7 +461,7 @@
         <p class="tag-source">
             <a href="admin-bro_src_backend_decorators_property-decorator.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_decorators_property-decorator.js.html">admin-bro/src/backend/decorators/property-decorator.js</a>, <a href="admin-bro_src_backend_decorators_property-decorator.js.html#line228">line 228</a>
+                <a href="admin-bro_src_backend_decorators_property-decorator.js.html">admin-bro/src/backend/decorators/property-decorator.js</a>, <a href="admin-bro_src_backend_decorators_property-decorator.js.html#line143">line 143</a>
             </span>
         </p>
     
@@ -660,6 +542,8 @@
 
 
 
+
+
 <dl class="details">
 
     
@@ -695,7 +579,7 @@
         <p class="tag-source">
             <a href="admin-bro_src_backend_decorators_property-decorator.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_decorators_property-decorator.js.html">admin-bro/src/backend/decorators/property-decorator.js</a>, <a href="admin-bro_src_backend_decorators_property-decorator.js.html#line70">line 70</a>
+                <a href="admin-bro_src_backend_decorators_property-decorator.js.html">admin-bro/src/backend/decorators/property-decorator.js</a>, <a href="admin-bro_src_backend_decorators_property-decorator.js.html#line52">line 52</a>
             </span>
         </p>
     
@@ -778,6 +662,8 @@ in the list view and in the breadcrumbs</p>
 
 
 
+
+
 <dl class="details">
 
     
@@ -813,7 +699,7 @@ in the list view and in the breadcrumbs</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_decorators_property-decorator.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_decorators_property-decorator.js.html">admin-bro/src/backend/decorators/property-decorator.js</a>, <a href="admin-bro_src_backend_decorators_property-decorator.js.html#line242">line 242</a>
+                <a href="admin-bro_src_backend_decorators_property-decorator.js.html">admin-bro/src/backend/decorators/property-decorator.js</a>, <a href="admin-bro_src_backend_decorators_property-decorator.js.html#line157">line 157</a>
             </span>
         </p>
     
@@ -881,6 +767,8 @@ in the list view and in the breadcrumbs</p>
         <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Indicates if given property should be visible</p>
     </div>
     
+
+
 
 
 
@@ -979,7 +867,7 @@ in the list view and in the breadcrumbs</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_decorators_property-decorator.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_decorators_property-decorator.js.html">admin-bro/src/backend/decorators/property-decorator.js</a>, <a href="admin-bro_src_backend_decorators_property-decorator.js.html#line161">line 161</a>
+                <a href="admin-bro_src_backend_decorators_property-decorator.js.html">admin-bro/src/backend/decorators/property-decorator.js</a>, <a href="admin-bro_src_backend_decorators_property-decorator.js.html#line112">line 112</a>
             </span>
         </p>
     
@@ -1037,6 +925,8 @@ in the list view and in the breadcrumbs</p>
 
 
 
+
+
 <dl class="details">
 
     
@@ -1072,7 +962,7 @@ in the list view and in the breadcrumbs</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_decorators_property-decorator.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_decorators_property-decorator.js.html">admin-bro/src/backend/decorators/property-decorator.js</a>, <a href="admin-bro_src_backend_decorators_property-decorator.js.html#line79">line 79</a>
+                <a href="admin-bro_src_backend_decorators_property-decorator.js.html">admin-bro/src/backend/decorators/property-decorator.js</a>, <a href="admin-bro_src_backend_decorators_property-decorator.js.html#line70">line 70</a>
             </span>
         </p>
     
@@ -1153,6 +1043,8 @@ in the list view and in the breadcrumbs</p>
 
 
 
+
+
 <dl class="details">
 
     
@@ -1188,7 +1080,7 @@ in the list view and in the breadcrumbs</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_decorators_property-decorator.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_decorators_property-decorator.js.html">admin-bro/src/backend/decorators/property-decorator.js</a>, <a href="admin-bro_src_backend_decorators_property-decorator.js.html#line179">line 179</a>
+                <a href="admin-bro_src_backend_decorators_property-decorator.js.html">admin-bro/src/backend/decorators/property-decorator.js</a>, <a href="admin-bro_src_backend_decorators_property-decorator.js.html#line130">line 130</a>
             </span>
         </p>
     
@@ -1242,10 +1134,10 @@ in the list view and in the breadcrumbs</p>
                 <div class="member">
 
     
-    <h4 class="name" id="renderEdit">
+    <h4 class="name" id="reference">
         
         <span class="code-name">
-            renderEdit<span class="signature">(record)</span><span class="type-signature"> &rarr; {String}</span>
+            reference<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="BaseResource.html">BaseResource</a>}</span>
         </span>
     </h4>
     
@@ -1253,7 +1145,7 @@ in the list view and in the breadcrumbs</p>
     
     
     <div class="description">
-        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Renders element of given property in a edit view</p>
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>When given property is a reference to another Resource - it returns this Resource</p>
     </div>
     
 
@@ -1265,55 +1157,7 @@ in the list view and in the breadcrumbs</p>
 
 
 
-    <h5>Parameters:</h5>
-    
 
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>record</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type"><a href="BaseRecord.html">BaseRecord</a></span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"></td>
-</tr>
-
-
-    
-    </tbody>
-</table>
 
 
 
@@ -1354,7 +1198,7 @@ in the list view and in the breadcrumbs</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_decorators_property-decorator.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_decorators_property-decorator.js.html">admin-bro/src/backend/decorators/property-decorator.js</a>, <a href="admin-bro_src_backend_decorators_property-decorator.js.html#line210">line 210</a>
+                <a href="admin-bro_src_backend_decorators_property-decorator.js.html">admin-bro/src/backend/decorators/property-decorator.js</a>, <a href="admin-bro_src_backend_decorators_property-decorator.js.html#line61">line 61</a>
             </span>
         </p>
     
@@ -1385,13 +1229,13 @@ in the list view and in the breadcrumbs</p>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>HTML of an element</p></div>
+    <div class='param-desc column is-7'><p>reference resource</p></div>
     
     
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">String</span>
+<span class="param-type"><a href="BaseResource.html">BaseResource</a></span>
 
 
     </div>
@@ -1410,10 +1254,10 @@ in the list view and in the breadcrumbs</p>
                 <div class="member">
 
     
-    <h4 class="name" id="renderFilter">
+    <h4 class="name" id="toJSON">
         
         <span class="code-name">
-            renderFilter<span class="signature">(filters<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {String}</span>
+            toJSON<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="BaseProperty.html#~JSON">BaseProperty~JSON</a>}</span>
         </span>
     </h4>
     
@@ -1421,7 +1265,7 @@ in the list view and in the breadcrumbs</p>
     
     
     <div class="description">
-        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Renders element of given property in a filter box</p>
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Returns JSON representation of a property</p>
     </div>
     
 
@@ -1433,75 +1277,7 @@ in the list view and in the breadcrumbs</p>
 
 
 
-    <h5>Parameters:</h5>
-    
 
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Attributes</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>filters</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">Options</span>
-
-
-  
-  </td>
-
-  
-      <td class="attributes">
-      
-          &lt;optional><br>
-      
-
-      
-
-      
-      </td>
-  
-
-  
-      <td class="default">
-      
-          {}
-      
-      </td>
-  
-
-  <td class="description last"><p>already selected filters</p></td>
-</tr>
-
-
-    
-    </tbody>
-</table>
 
 
 
@@ -1542,7 +1318,7 @@ in the list view and in the breadcrumbs</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_decorators_property-decorator.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_decorators_property-decorator.js.html">admin-bro/src/backend/decorators/property-decorator.js</a>, <a href="admin-bro_src_backend_decorators_property-decorator.js.html#line219">line 219</a>
+                <a href="admin-bro_src_backend_decorators_property-decorator.js.html">admin-bro/src/backend/decorators/property-decorator.js</a>, <a href="admin-bro_src_backend_decorators_property-decorator.js.html#line187">line 187</a>
             </span>
         </p>
     
@@ -1573,349 +1349,11 @@ in the list view and in the breadcrumbs</p>
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>HTML of an element</p></div>
-    
     
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">String</span>
-
-
-    </div>
-    
-</div>
-
-                
-        </div>
-    </div>
-
-
-
-
-</div>
-            
-                <div class="member">
-
-    
-    <h4 class="name" id="renderList">
-        
-        <span class="code-name">
-            renderList<span class="signature">(record)</span><span class="type-signature"> &rarr; {String}</span>
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Renders element of given property as a list element</p>
-    </div>
-    
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>record</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type"><a href="BaseRecord.html">BaseRecord</a></span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"></td>
-</tr>
-
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="admin-bro_src_backend_decorators_property-decorator.js.html" class="button">View Source</a>
-            <span>
-                <a href="admin-bro_src_backend_decorators_property-decorator.js.html">admin-bro/src/backend/decorators/property-decorator.js</a>, <a href="admin-bro_src_backend_decorators_property-decorator.js.html#line192">line 192</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class='columns method-parameter'>
-        <div class="column is-2"><label>Returns:</label></div>
-        <div class="column is-10">
-            
-                    
-
-<div class="columns">
-    
-    <div class='param-desc column is-7'><p>HTML of an element</p></div>
-    
-    
-    <div class='column is-5 has-text-left'>
-        <label>Type: </label>
-        
-<span class="param-type">String</span>
-
-
-    </div>
-    
-</div>
-
-                
-        </div>
-    </div>
-
-
-
-
-</div>
-            
-                <div class="member">
-
-    
-    <h4 class="name" id="renderShow">
-        
-        <span class="code-name">
-            renderShow<span class="signature">(record)</span><span class="type-signature"> &rarr; {String}</span>
-        </span>
-    </h4>
-    
-
-    
-    
-    <div class="description">
-        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Renders element of given property in a show view</p>
-    </div>
-    
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>record</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type"><a href="BaseRecord.html">BaseRecord</a></span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"></td>
-</tr>
-
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="admin-bro_src_backend_decorators_property-decorator.js.html" class="button">View Source</a>
-            <span>
-                <a href="admin-bro_src_backend_decorators_property-decorator.js.html">admin-bro/src/backend/decorators/property-decorator.js</a>, <a href="admin-bro_src_backend_decorators_property-decorator.js.html#line201">line 201</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class='columns method-parameter'>
-        <div class="column is-2"><label>Returns:</label></div>
-        <div class="column is-10">
-            
-                    
-
-<div class="columns">
-    
-    <div class='param-desc column is-7'><p>HTML of an element</p></div>
-    
-    
-    <div class='column is-5 has-text-left'>
-        <label>Type: </label>
-        
-<span class="param-type">String</span>
+<span class="param-type"><a href="BaseProperty.html#~JSON">BaseProperty~JSON</a></span>
 
 
     </div>
@@ -1961,6 +1399,8 @@ in the list view and in the breadcrumbs</p>
 
 
 
+
+
 <dl class="details">
 
     
@@ -1996,7 +1436,7 @@ in the list view and in the breadcrumbs</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_decorators_property-decorator.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_decorators_property-decorator.js.html">admin-bro/src/backend/decorators/property-decorator.js</a>, <a href="admin-bro_src_backend_decorators_property-decorator.js.html#line98">line 98</a>
+                <a href="admin-bro_src_backend_decorators_property-decorator.js.html">admin-bro/src/backend/decorators/property-decorator.js</a>, <a href="admin-bro_src_backend_decorators_property-decorator.js.html#line89">line 89</a>
             </span>
         </p>
     
@@ -2068,7 +1508,7 @@ in the list view and in the breadcrumbs</p>
 
 <footer class="footer">
     <div class="content has-text-centered">
-        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Mar 06 2019 21:56:30 GMT+0100 (Central European Standard Time)</p>
+        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Thu May 09 2019 19:17:32 GMT+0200 (Central European Summer Time)</p>
         <p class="sidebar-created-by">
             <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
             <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers</a>
@@ -2076,7 +1516,6 @@ in the list view and in the breadcrumbs</p>
     </div>
 </footer>
 
-<script> prettyPrint(); </script>
 <script src="scripts/app.min.js"></script>
 <script src="scripts/linenumber.js"> </script>
 </body>

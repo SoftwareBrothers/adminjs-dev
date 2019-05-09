@@ -11,7 +11,7 @@ const Article = require('./models/article')
 
 const adminBroOptions = {
   resources: [
-    { resource: Article, options: '...your options goes here' },
+    { resource: Article, options: {'...your options goes here'} },
   ],
   branding: {
     companyName: 'Amazing c.o.',
@@ -25,15 +25,13 @@ When not passed - AdminBro will use defaults.
 
 ## How a __Resource__ can be modified?
 
-You have lots of options. You can modify basic appearance of a resource and more complicate aspects, as
-how a particular field should be rendered.
+You have lots of options. You can modify basic appearance of a resource and more complicate aspects, as how a particular field should be rendered.
 
 In the next sections I will point out a couple of options.
 
 ### { __parent__ } In the sidebar
 
-By default AdminBro groups resources by the database they belong to. But you can change that and group them
-in a different way. It can be done by using a `parent` option.
+By default AdminBro groups resources by the database they belong to. But you can change that and group them in a different way. It can be done by using a `parent` option.
 
 So let say you want to group all text'ish resources into a __content__ category in the sidebar.
 You can do this by passing the __parent__ as an option:
@@ -53,14 +51,11 @@ const adminBroOptions = {
 ```
 
 This will group all Resources together in a "Content" category in a sidebar - and it adds
-__file-text__ icon from {@link https://fontawesome.com/}
-
-
+__file-text__ icon from {@link https://fontawesome.com/}.
 
 ### { __name__ } of a __Resource__
 
-By default - the name of a Resource is taken from the database _collection/table_ - you can change that
-by setting a __name__ option.
+By default - the name of a Resource is taken from the database _collection/table_ - you can change that by setting a __name__ option.
 
 ```javascript
 const adminBroOptions = {
@@ -106,8 +101,7 @@ Everything thanks to {@link PropertyOptions}.
 
 ### Visibility of properties { __...propertyName.position__ } and { __...propertyName.isVisible__ }
 
-using __xxxProperties__ is not the only way of handling which property should be seen on a list, edit, filter
-and show views. You can achieve a similar result by using __position__ and __isVisible__ options.
+using __xxxProperties__ is not the only way of handling which property should be seen on a list, edit, filter and show views. You can achieve a similar result by using __position__ and __isVisible__ options.
 
 Using them have more sense if you want to disable one particular field, so instead of modifying entire __xxxProperties__ array you can setup just one filed.
 
@@ -151,37 +145,73 @@ const adminBroOptions = {
 
 And you will see {@link https://quilljs.com} editor in place of a regular text field.
 
-There are multiple fields supported (see PropertyTypes in the sidebar)
+Those are supported types: 
 
-### { __propertyName.render__ } property appearance
+- **default**
+- **boolean**
+- **richtext**
+- **date**
+- **datetime**
+- **reference**
 
-You can also totally change the way of how property is rendered. The only thing you have to do is to change its __render__ property.
+### { __propertyName.availableValues__ } narrow down the possible values
 
-Render has all the fields defined by {@link PropertyType}. You can override just one of the field or all off them.
+when you pass this option to a property it will render the **select** html element with all the
+available options.
+
+```
+{
+  ...
+  name: 'genre',
+  label: 'Genre'
+  availableOptions: [
+    {value: 'male', label: 'Male'},
+    {value: 'female', label: 'Female'},
+  ],
+  ...
+}
+```
+
+### { __propertyName.component__ } property appearance
+
+You can also totally change the way of how property is rendered. The only thing you have to do is to change __component__ responsible for rendering given field.
 
 So let say we want to change the way how __content__ property is rendered on the list:
 
 ```javascript
 const adminBroOptions = {
-  resources: [
-    { resource: City, options: { properties: {
-      content: { render: {
-        list: (property, record, h) => {
-          return record.param(property.name()) + ' - this is custom addition'
-        }
-      } },
-    }},
-  ],
+  resources: [{
+    resource: City,
+    options: {
+      properties: {
+        content: {
+          component: {
+            list: AdminBro.require('./city-content-in-list'),
+          },
+        },
+      },
+    },
+  }],
 }
 ```
 
-For examples take a looka at how those functions in different types were defined: <a href='./admin-bro_src_backend_property-types_richtext.js.html'>richtext.js</a>
+```javascript
+// city-content-in-list.jsx
+import React from 'react'
 
-For a detailed information about function arguments - take a look at the {@link PropertyType}.
+const CityContentInList = (props) => (
+  <div>Some custom content...</div>
+)
+
+export default CityContentInList
+```
+
+You can read more about creating your own components in {@tutorial 06-writing-react-components}.
 
 ## Adding new properties
 
-Also you can add a new properties to the Resource by using a { __properties.propertyName__ }. You just need to define all renderers and this is it. For example if you want to group 'lat' and 'lng' fields on the list and display them as
+Also you can add a new properties to the Resource by using a { __properties.propertyName__ }. You just need to define some or all components (list, view, edit, filter).
+For example if you want to group 'lat' and 'lng' fields on the list and display them as
 a _google map_ in a __show__ view you can use something like this:
 
 ```javascript
@@ -190,32 +220,27 @@ const adminBroOptions = {
     { resource: City, options: { properties: {
       lat: { isVisible: { list: false, show: false, edit: true, filter: true } },
       lng: { isVisible: { list: false, show: false, edit: true, filter: true } },
-      position: { render: {
-        list: (property, record, h) => {
-          return [
-            'lat:',
-            record.param('lat'),
-            'lng: ',
-            record.param('lng'),
-          ].join(' ')
+      map: {
+        components: {
+          show: AdminBro.require('./city-in-a-show'),
         },
-        show: (property, record, h) => {
-          return '<div id="map">...</div><script....></script>'
-        },
-        head: {
-          scripts: ['https://goooglemapsscript.js']
+        isVisible: {
+          show: true, view: false, edit: false, filter: false,
         }
-      } },
+      },
     }},
   ],
 }
 ```
 
-
-In the example above we also use __head__ parameter having all __scripts__ and __styles__ which should be added
-to a HEAD of the page.
-
 ## What's next?
 
-If you want to see details of how resources can be modified you can study how {@link PropertyDecorator} and {@link ResourceDecorator} look like.
+Now you can read more about creating your own components in 
+
+- {@tutorial 06-writing-react-components}.
+
+Or just go to the next topic: 
+
+- {@tutorial 05-actions}
+
 

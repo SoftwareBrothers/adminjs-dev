@@ -5,8 +5,9 @@
     <meta charset="utf-8">
     <title>JSDoc: BaseResource</title>
 
-    <script src="scripts/prettify/prettify.js"></script>
-    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="./build/entry.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -58,7 +59,7 @@
             <div class="column is-3" id="sidebarNav">
                 <div class="sidebar">
                     <nav>
-                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-00-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-01-example.html">02. Example App</a></li><li><a href="tutorial-02-frameworks.html">03. Frameworks</a></li><li><a href="tutorial-03-passing-resources.html">04. Adding resources</a></li><li><a href="tutorial-04-customizing-resources.html">05. Customize resources</a></li><li><a href="tutorial-05-actions.html">06. Customize actions</a></li><li><a href="tutorial-06-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-07-architecture.html">08. Architecture</a></li></ul><h3>Modules</h3><ul><li><a href="module-admin-bro-expressjs.html">admin-bro-expressjs</a></li><li><a href="module-admin-bro-hapijs.html">admin-bro-hapijs</a></li><li><a href="module-admin-bro-mongoose.html">admin-bro-mongoose</a></li><li><a href="module-admin-bro-sequelizejs.html">admin-bro-sequelizejs</a></li></ul><h3>Classes</h3><ul><li><a href="AdminBro.html">AdminBro</a></li><li><a href="PageBuilder.html">PageBuilder</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3><a href="global.html">Global</a></h3></div><div class="category"><h2>Adapter</h2><h3>Classes</h3><ul><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li></ul></div><div class="category"><h2>Decorators</h2><h3>Classes</h3><ul><li><a href="PropertyDecorator.html">PropertyDecorator</a></li><li><a href="ResourceDecorator.html">ResourceDecorator</a></li></ul></div><div class="category"><h2>Errors</h2><h3>Classes</h3><ul><li><a href="NotImplementedError.html">NotImplementedError</a></li><li><a href="ValidationError.html">ValidationError</a></li></ul></div><div class="category"><h2>PropertyTypes</h2><h3>Modules</h3><ul><li><a href="module-boolean.html">boolean</a></li><li><a href="module-date.html">date</a></li><li><a href="module-datetime.html">datetime</a></li><li><a href="module-defaultType.html">defaultType</a></li><li><a href="module-richtext.html">richtext</a></li><li><a href="module-string.html">string</a></li></ul></div>
+                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-00-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-01-example.html">02. Example App</a></li><li><a href="tutorial-03-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-04-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-05-actions.html">05. Customize actions</a></li><li><a href="tutorial-06-writing-react-components.html">06. Writing your own Components</a></li><li><a href="tutorial-07-custom-dashboard.html">07. Customize dashboard</a></li></ul><h3>Modules</h3><ul><li><a href="module-admin-bro-expressjs.html">admin-bro-expressjs</a></li><li><a href="module-admin-bro-hapijs.html">admin-bro-hapijs</a></li><li><a href="module-admin-bro-mongoose.html">admin-bro-mongoose</a></li><li><a href="module-admin-bro-sequelizejs.html">admin-bro-sequelizejs</a></li></ul><h3>Classes</h3><ul><li><a href="AdminBro.html">AdminBro</a></li><li><a href="ApiClient.html">ApiClient</a></li><li><a href="ApiController.html">ApiController</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3>Components</h3><ul><li><a href="Column.html">Column</a></li><li><a href="Columns.html">Columns</a></li><li><a href="DashboardHeader.html">DashboardHeader</a></li><li><a href="Label.html">Label</a></li><li><a href="Loader.html">Loader</a></li><li><a href="Paginate.html">Paginate</a></li><li><a href="PropertyInEdit.html">PropertyInEdit</a></li><li><a href="PropertyInFilter.html">PropertyInFilter</a></li><li><a href="PropertyInShow.html">PropertyInShow</a></li><li><a href="StyledButton.html">StyledButton</a></li><li><a href="Table.html">Table</a></li><li><a href="ValueBlock.html">ValueBlock</a></li><li><a href="WrapperBox.html">WrapperBox</a></li></ul><h3>Global</h3><ul><li><a href="global.html#label">label</a></li><li><a href="global.html#name">name</a></li></ul></div><div class="category"><h2>Actions</h2><h3>Modules</h3><ul><li><a href="module-DeleteAction.html">DeleteAction</a></li><li><a href="module-EditAction.html">EditAction</a></li><li><a href="module-NewAction.html">NewAction</a></li><li><a href="module-ShowAction.html">ShowAction</a></li></ul></div><div class="category"><h2>Base</h2><h3>Classes</h3><ul><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li></ul><h3>Interfaces</h3><ul><li><a href="BaseAction.html">BaseAction</a></li></ul><h3>Components</h3><ul><li><a href="BaseActionComponent.html">BaseActionComponent</a></li><li><a href="BasePropertyComponent.html">BasePropertyComponent</a></li></ul></div><div class="category"><h2>Decorators</h2><h3>Classes</h3><ul><li><a href="PropertyDecorator.html">PropertyDecorator</a></li><li><a href="ResourceDecorator.html">ResourceDecorator</a></li></ul></div><div class="category"><h2>Errors</h2><h3>Classes</h3><ul><li><a href="ConfigurationError.html">ConfigurationError</a></li><li><a href="NotImplementedError.html">NotImplementedError</a></li><li><a href="ValidationError.html">ValidationError</a></li></ul></div>
                     </nav>
                 </div>
             </div>
@@ -108,6 +109,8 @@ following methods:</p>
     
         
             
+
+
 
 
 
@@ -229,6 +232,8 @@ following methods:</p>
         <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Checks if given adapter supports resource provided by the user</p>
     </div>
     
+
+
 
 
 
@@ -407,6 +412,8 @@ resource.decorate() method</p>
 
 
 
+
+
     <h5>Parameters:</h5>
     
 
@@ -574,7 +581,7 @@ resource.decorate() method</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_adapters_base-resource.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_adapters_base-resource.js.html">admin-bro/src/backend/adapters/base-resource.js</a>, <a href="admin-bro_src_backend_adapters_base-resource.js.html#line215">line 215</a>
+                <a href="admin-bro_src_backend_adapters_base-resource.js.html">admin-bro/src/backend/adapters/base-resource.js</a>, <a href="admin-bro_src_backend_adapters_base-resource.js.html#line233">line 233</a>
             </span>
         </p>
     
@@ -607,12 +614,8 @@ resource.decorate() method</p>
     
     <h4 class="name" id="build">
         
-            
-                <span class='tag'>async</span>
-            
-        
         <span class="code-name">
-            build<span class="signature">(params)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="BaseRecord.html">BaseRecord</a>>}</span>
+            build<span class="signature">(params)</span><span class="type-signature"> &rarr; {<a href="BaseRecord.html">BaseRecord</a>}</span>
         </span>
     </h4>
     
@@ -625,6 +628,8 @@ resource.decorate() method</p>
 it has to be instantiated.</p>
     </div>
     
+
+
 
 
 
@@ -723,7 +728,7 @@ it has to be instantiated.</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_adapters_base-resource.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_adapters_base-resource.js.html">admin-bro/src/backend/adapters/base-resource.js</a>, <a href="admin-bro_src_backend_adapters_base-resource.js.html#line168">line 168</a>
+                <a href="admin-bro_src_backend_adapters_base-resource.js.html">admin-bro/src/backend/adapters/base-resource.js</a>, <a href="admin-bro_src_backend_adapters_base-resource.js.html#line186">line 186</a>
             </span>
         </p>
     
@@ -758,7 +763,7 @@ it has to be instantiated.</p>
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type">Promise.&lt;<a href="BaseRecord.html">BaseRecord</a>></span>
+<span class="param-type"><a href="BaseRecord.html">BaseRecord</a></span>
 
 
     </div>
@@ -797,6 +802,8 @@ it has to be instantiated.</p>
         <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Returns number of elements for given resource by including filters</p>
     </div>
     
+
+
 
 
 
@@ -978,6 +985,8 @@ it has to be instantiated.</p>
 
 
 
+
+
     <h5>Parameters:</h5>
     
 
@@ -1067,7 +1076,7 @@ it has to be instantiated.</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_adapters_base-resource.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_adapters_base-resource.js.html">admin-bro/src/backend/adapters/base-resource.js</a>, <a href="admin-bro_src_backend_adapters_base-resource.js.html#line180">line 180</a>
+                <a href="admin-bro_src_backend_adapters_base-resource.js.html">admin-bro/src/backend/adapters/base-resource.js</a>, <a href="admin-bro_src_backend_adapters_base-resource.js.html#line198">line 198</a>
             </span>
         </p>
     
@@ -1165,6 +1174,8 @@ a mongoose model it should be database name of the mongo database.</p>
 <p>Visuall, by default, all resources are nested in sidebar under their database names.</p>
     </div>
     
+
+
 
 
 
@@ -1297,6 +1308,8 @@ given resource. Default: 'database'</p>
 
 
 
+
+
 <dl class="details">
 
     
@@ -1413,6 +1426,8 @@ given resource. Default: 'database'</p>
 
 
 
+
+
 <dl class="details">
 
     
@@ -1448,7 +1463,7 @@ given resource. Default: 'database'</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_adapters_base-resource.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_adapters_base-resource.js.html">admin-bro/src/backend/adapters/base-resource.js</a>, <a href="admin-bro_src_backend_adapters_base-resource.js.html#line223">line 223</a>
+                <a href="admin-bro_src_backend_adapters_base-resource.js.html">admin-bro/src/backend/adapters/base-resource.js</a>, <a href="admin-bro_src_backend_adapters_base-resource.js.html#line241">line 241</a>
             </span>
         </p>
     
@@ -1525,6 +1540,8 @@ given resource. Default: 'database'</p>
         <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Delete given record by id</p>
     </div>
     
+
+
 
 
 
@@ -1626,7 +1643,7 @@ given resource. Default: 'database'</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_adapters_base-resource.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_adapters_base-resource.js.html">admin-bro/src/backend/adapters/base-resource.js</a>, <a href="admin-bro_src_backend_adapters_base-resource.js.html#line203">line 203</a>
+                <a href="admin-bro_src_backend_adapters_base-resource.js.html">admin-bro/src/backend/adapters/base-resource.js</a>, <a href="admin-bro_src_backend_adapters_base-resource.js.html#line221">line 221</a>
             </span>
         </p>
     
@@ -1677,6 +1694,8 @@ given resource. Default: 'database'</p>
         <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Returns actual records for given resource</p>
     </div>
     
+
+
 
 
 
@@ -2136,11 +2155,13 @@ given resource. Default: 'database'</p>
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>// filters example
+    
+        <pre class="prettyprint"><code>// filters example
 {
    name: 'Tom',
    createdAt: { from: '2019-01-01', to: '2019-01-18' }
 }</code></pre>
+    
 
 
 </div>
@@ -2168,6 +2189,8 @@ given resource. Default: 'database'</p>
         <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Finds one Record in the Resource by its id</p>
     </div>
     
+
+
 
 
 
@@ -2266,7 +2289,7 @@ given resource. Default: 'database'</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_adapters_base-resource.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_adapters_base-resource.js.html">admin-bro/src/backend/adapters/base-resource.js</a>, <a href="admin-bro_src_backend_adapters_base-resource.js.html#line155">line 155</a>
+                <a href="admin-bro_src_backend_adapters_base-resource.js.html">admin-bro/src/backend/adapters/base-resource.js</a>, <a href="admin-bro_src_backend_adapters_base-resource.js.html#line173">line 173</a>
             </span>
         </p>
     
@@ -2341,6 +2364,8 @@ given resource. Default: 'database'</p>
 For instance in Router path for the <code>new</code> form is <code>/resources/{resourceId}/new</code></p>
     </div>
     
+
+
 
 
 
@@ -2478,6 +2503,8 @@ It could be a table name in SQL database, or collection name in mongoDB.</p>
 
 
 
+
+
 <dl class="details">
 
     
@@ -2567,6 +2594,209 @@ It could be a table name in SQL database, or collection name in mongoDB.</p>
                 <div class="member">
 
     
+    <h4 class="name" id="populate">
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            populate<span class="signature">(records, property)</span><span class="type-signature"> &rarr; {Array.&lt;<a href="BaseRecord.html">BaseRecord</a>>}</span>
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Populates records with references for given property.</p>
+<p>Example: Let say resource <code>Article</code> has property <code>user_id</code> and it is a reference
+to <code>User</code> resource. When you call this <code>User.populate([...articleRecords], userIdProperty)</code>
+it should populate <code>articleRecords</code> with corresponding users.
+So after that invoking <code>articleRecord.populated['user_id']</code> will return the user Record</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>records</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">Array.&lt;<a href="BaseRecord.html">BaseRecord</a>></span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>all records which should be populated</p></td>
+</tr>
+
+
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>property</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type"><a href="BaseProperty.html">BaseProperty</a></span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>property which is a reference to <code>this</code> Resource</p></td>
+</tr>
+
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_adapters_base-resource.js.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_adapters_base-resource.js.html">admin-bro/src/backend/adapters/base-resource.js</a>, <a href="admin-bro_src_backend_adapters_base-resource.js.html#line163">line 163</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>populated records</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">Array.&lt;<a href="BaseRecord.html">BaseRecord</a>></span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    
     <h4 class="name" id="properties">
         
             
@@ -2585,6 +2815,8 @@ It could be a table name in SQL database, or collection name in mongoDB.</p>
         <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>returns array of all properties which belongs to resource</p>
     </div>
     
+
+
 
 
 
@@ -2705,6 +2937,8 @@ It could be a table name in SQL database, or collection name in mongoDB.</p>
         <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>returns property object for given field</p>
     </div>
     
+
+
 
 
 
@@ -2888,6 +3122,8 @@ It could be a table name in SQL database, or collection name in mongoDB.</p>
 
 
 
+
+
     <h5>Parameters:</h5>
     
 
@@ -3002,7 +3238,7 @@ It could be a table name in SQL database, or collection name in mongoDB.</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_adapters_base-resource.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_adapters_base-resource.js.html">admin-bro/src/backend/adapters/base-resource.js</a>, <a href="admin-bro_src_backend_adapters_base-resource.js.html#line193">line 193</a>
+                <a href="admin-bro_src_backend_adapters_base-resource.js.html">admin-bro/src/backend/adapters/base-resource.js</a>, <a href="admin-bro_src_backend_adapters_base-resource.js.html#line211">line 211</a>
             </span>
         </p>
     
@@ -3082,6 +3318,373 @@ It could be a table name in SQL database, or collection name in mongoDB.</p>
     
 
     
+        <div class='vertical-section'>
+            <h3 class="title"><span>Type Definitions</span></h3>
+            <div class="members">
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Object</span>
+
+
+    </span>
+
+<h4 class="name" id="~JSON">
+    
+    <span class="code-name">
+        JSON
+    </span>
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>
+</div>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>id</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">String</span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>uniq ID of a resource</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>name</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">String</span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>resource name used in the UI</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>parent.name</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">String</span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>name of the parent category</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>parent.icon</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">String</span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>icon class of a parent category (i.e. 'icon-bomb')</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>titleProperty</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">String</span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>name of a property which should be treated as a
+                                     <em>title</em> property.</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>recordActions</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Array.&lt;<a href="Action.html#~JSON">Action~JSON</a>></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>list of all record actions available for
+                                               given resource</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>resourceActions</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Array.&lt;<a href="Action.html#~JSON">Action~JSON</a>></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>list of all resource actions available
+                                               for given resource</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>listProperties</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Array.&lt;<a href="BaseProperty.html#~JSON">BaseProperty~JSON</a>></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>editProperties</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Array.&lt;<a href="BaseProperty.html#~JSON">BaseProperty~JSON</a>></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>showProperties</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Array.&lt;<a href="BaseProperty.html#~JSON">BaseProperty~JSON</a>></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>filterProperties</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Array.&lt;<a href="BaseProperty.html#~JSON">BaseProperty~JSON</a>></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_decorators_resource-decorator.js.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_decorators_resource-decorator.js.html">admin-bro/src/backend/decorators/resource-decorator.js</a>, <a href="admin-bro_src_backend_decorators_resource-decorator.js.html#line339">line 339</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+            </div>
+        </div>
+    
 
     
 </article>
@@ -3098,7 +3701,7 @@ It could be a table name in SQL database, or collection name in mongoDB.</p>
 
 <footer class="footer">
     <div class="content has-text-centered">
-        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Wed Mar 06 2019 21:56:30 GMT+0100 (Central European Standard Time)</p>
+        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Thu May 09 2019 19:17:32 GMT+0200 (Central European Summer Time)</p>
         <p class="sidebar-created-by">
             <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
             <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers</a>
@@ -3106,7 +3709,6 @@ It could be a table name in SQL database, or collection name in mongoDB.</p>
     </div>
 </footer>
 
-<script> prettyPrint(); </script>
 <script src="scripts/app.min.js"></script>
 <script src="scripts/linenumber.js"> </script>
 </body>

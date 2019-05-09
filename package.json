@@ -7,7 +7,10 @@
     "docs": "node_modules/.bin/jsdoc -c jsdoc.json",
     "validate-docs": "node_modules/.bin/jsdoc -c jsdoc-test.json",
     "debug": "nodemon --inspect=0.0.0.0:9222 --nolazy ./index.js",
-    "start": "nodemon ./index.js"
+    "start": "nodemon -e js,jsx --ignore 'app-bundle.js' ./index.js",
+    "start:express": "nodemon ./admin-bro-example-app/express/index.js",
+    "parcel": "parcel ./docs/entry.js -d ./docs/build",
+    "parcel:build": "parcel build ./docs/entry.js -d ./docs/build"
   },
   "repository": {
     "type": "git",
@@ -20,14 +23,20 @@
   },
   "homepage": "https://github.com/SoftwareBrothers/admin-bro-dev#readme",
   "dependencies": {
+    "@emotion/unitless": "^0.7.3",
     "admin-bro": "^0.1.2",
+    "admin-bro-expressjs": "^0.1.5",
     "admin-bro-hapijs": "^0.1.1",
     "admin-bro-mongoose": "^0.1.1",
     "admin-bro-sequelizejs": "^0.1.0",
     "axios": "^0.18.0",
     "bcrypt": "^3.0.2",
     "boom": "^7.3.0",
+    "brace": "^0.11.1",
     "chart.js": "^2.7.3",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
     "flat": "^4.1.0",
     "hapi": "^17.8.1",
     "inert": "^5.1.2",
@@ -35,13 +44,25 @@
     "mongoose": "^5.3.15",
     "nodemon": "^1.18.8",
     "pg": "^7.7.1",
+    "react": "^15.3.0 || ^16.0.0",
+    "react-ace": "^6.5.0",
+    "react-docgen": "^4.1.1",
+    "react-dom": "^15.3.0 || ^16.0.0",
+    "react-redux": "^7.0.3",
+    "react-router-dom": "^5.0.0",
+    "react-select": "^2.4.3",
+    "recharts": "^1.5.0",
+    "redux": "^4.0.1",
     "sequelize": "^4.42.0",
     "sequelize-cli": "^5.4.0",
+    "styled-components": "^4.2.0",
     "xss": "^1.0.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.2.0",
-    "@babel/preset-env": "^7.2.0",
+    "@babel/core": "^7.0.0-0",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-babel": "^8.0.0",
@@ -52,6 +73,7 @@
     "gulp-uglify": "^3.0.1",
     "jsdoc": "^3.5.5",
     "jsdoc-mermaid": "^1.0.0",
-    "jsdoc-typeof-plugin": "^1.0.0"
+    "jsdoc-typeof-plugin": "^1.0.0",
+    "parcel-bundler": "^1.12.3"
   }
 }

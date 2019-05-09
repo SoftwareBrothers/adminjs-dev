@@ -1,5 +1,7 @@
 ## Admin-bro-dev
 
+parcel watch ./src/frontend/app.jsx --out-dir ./src/frontend/assets/scripts --out-file app.bundle.js --no-hmr
+
 This is a wrapper repo for the entire AdminBro core with a couple of plugins. If you are a developer and you want to work on the AdminBro infrastructure - this is the right repository.
 
 ## Setting up
