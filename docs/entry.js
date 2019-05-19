@@ -34,6 +34,9 @@ Components.Columns = Columns;
 import DashboardHeader from '../admin-bro/src/frontend/components/ui/dashboard-header.jsx';
 Components.DashboardHeader = DashboardHeader;
 
+import Dropdown from '../admin-bro/src/frontend/components/ui/dropdown.jsx';
+Components.Dropdown = Dropdown;
+
 import Label from '../admin-bro/src/frontend/components/ui/label.jsx';
 Components.Label = Label;
 
