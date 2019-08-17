@@ -5,7 +5,7 @@
 <head>
     <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
     <meta charset="utf-8">
-    <title>JSDoc: admin-bro/src/frontend/components/actions/show.jsx</title>
+    <title>JSDoc: admin-bro/src/backend/services/sort-setter.js</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -69,7 +69,7 @@
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
                         <p>Source</p>
-                        <h1>admin-bro/src/frontend/components/actions/show.jsx</h1>
+                        <h1>admin-bro/src/backend/services/sort-setter.js</h1>
                     </header>
                     
                     
@@ -79,50 +79,49 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import React from 'react'
+            <pre class="prettyprint source linenums"><code>const ConfigurationError = require('../utils/configuration-error')
 
-import PropertyType from '../property-type'
-import WrapperBox from '../ui/wrapper-box'
-import { resourceType, recordType } from '../../types'
+const DEFAULT_DIRECTION = 'asc'
 
 /**
- * @name ShowAction
- * @category Actions
- * @description Shows a given record.
- * @component
- * @private
+ * @typedef {Object} SortParams
+ * @property {String} sortBy        name of the property base for the sort
+ * @property {String} direction     either `asc` or `desc`
  */
-const Show = (props) => {
-  const { resource, record } = props
-  const properties = resource.showProperties
 
-  return (
-    &lt;WrapperBox border>
-      {properties.map(property => (
-        &lt;PropertyType
-          key={property.name}
-          where="show"
-          property={property}
-          resource={resource}
-          record={record}
-        />
-      ))}
-    &lt;/WrapperBox>
-  )
+/**
+ * Sets sort parameters for a list.
+ *
+ * @private
+ *
+ * @param {Object}  query
+ * @param {String}  [query.direction]   either `asc` or `desc`
+ * @param {String}  [query.sortBy]      sort by field passed in query
+ * @param {String}  firstPropertyName   property name which will be taken as a default
+ * @param {ResourceOptions} resourceOptions={}  options passed along with given resource
+ * @return {SortParams}
+ */
+const sortSetter = ({ direction, sortBy } = {}, firstPropertyName, resourceOptions = {}) => {
+  const options = resourceOptions.sort || {}
+  if (resourceOptions
+      &amp;&amp; resourceOptions.sort
+      &amp;&amp; resourceOptions.sort.direction
+      &amp;&amp; !['asc', 'desc'].includes(resourceOptions.sort.direction)) {
+    throw new ConfigurationError(`
+    Sort direction should be either "asc" or "desc",
+    "${resourceOptions.direction} was given"`, 'global.html#ResourceOptions')
+  }
+  const params = {
+    direction: direction || options.direction || DEFAULT_DIRECTION,
+    sortBy: sortBy || options.sortBy || firstPropertyName,
+  }
+
+  return params
 }
 
-Show.propTypes = {
-  /**
-   * Object of type: {@link BaseResource~JSON}
-   */
-  resource: resourceType.isRequired,
-  /**
-   * Id of a given record
-   */
-  record: recordType.isRequired,
-}
+sortSetter.DEFAULT_DIRECTION = DEFAULT_DIRECTION
 
-export default Show
+module.exports = sortSetter
 </code></pre>
         </article>
     </section>

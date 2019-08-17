@@ -5,7 +5,7 @@
 <head>
     <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
     <meta charset="utf-8">
-    <title>JSDoc: admin-bro/src/frontend/components/actions/show.jsx</title>
+    <title>JSDoc: admin-bro/src/frontend/components/app/property-header.jsx</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -69,7 +69,7 @@
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
                         <p>Source</p>
-                        <h1>admin-bro/src/frontend/components/actions/show.jsx</h1>
+                        <h1>admin-bro/src/frontend/components/app/property-header.jsx</h1>
                     </header>
                     
                     
@@ -80,49 +80,104 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>import React from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
+import { NavLink, withRouter } from 'react-router-dom'
 
-import PropertyType from '../property-type'
-import WrapperBox from '../ui/wrapper-box'
-import { resourceType, recordType } from '../../types'
+import { propertyType, resourceType, locationType } from '../../types'
 
-/**
- * @name ShowAction
- * @category Actions
- * @description Shows a given record.
- * @component
- * @private
- */
-const Show = (props) => {
-  const { resource, record } = props
-  const properties = resource.showProperties
+const Th = styled.th`
+  &amp;&amp;&amp; {
+    font-size: ${({ theme }) => theme.fonts.min};
+    text-transform: uppercase;
+    color: ${({ theme }) => theme.colors.lightText};
+    font-weight: normal;
+    padding: ${({ theme }) => theme.sizes.padding};
+    letter-spacing: 0.1em;
+    border: none;
+  }
+`
+
+const StyledLink = styled(NavLink).attrs({
+  className: 'is-sortable text-small',
+})`
+  color: ${({ theme }) => theme.colors.lightText};
+
+  &amp;.active {
+    color: ${({ theme }) => theme.colors.primary};
+  }
+
+  &amp; > i {
+    margin-left: ${({ theme }) => theme.sizes.padding}
+  }
+`
+
+class SortLink extends React.PureComponent {
+  constructor(props) {
+    super(props)
+    this.isActive = this.isActive.bind(this)
+  }
+
+  isActive() {
+    const { sortBy, property } = this.props
+    return sortBy === property.name
+  }
+
+  render() {
+    const { property, location, direction } = this.props
+    const query = new URLSearchParams(location.search)
+    const opositeDirection = (this.isActive() &amp;&amp; direction === 'asc') ? 'desc' : 'asc'
+    const sortedByClass = `icomoon-dropdown-${direction === 'asc' ? 'open' : 'close'}`
+
+    query.set('direction', opositeDirection)
+    query.set('sortBy', property.name)
+    return (
+      &lt;StyledLink
+        to={{ search: query.toString() }}
+        isActive={this.isActive}
+      >
+        {property.label}
+        {this.isActive() ? (
+          &lt;i className={sortedByClass} />
+        ) : ''}
+      &lt;/StyledLink>
+    )
+  }
+}
+
+const PropertyHeader = (props) => {
+  const { property, resource } = props
+
+  const isMain = property.name === resource.titleProperty.name
 
   return (
-    &lt;WrapperBox border>
-      {properties.map(property => (
-        &lt;PropertyType
-          key={property.name}
-          where="show"
-          property={property}
-          resource={resource}
-          record={record}
-        />
-      ))}
-    &lt;/WrapperBox>
+    &lt;Th className={isMain ? 'main' : null}>
+      {property.isSortable ? &lt;SortLink {...props} /> : property.label}
+    &lt;/Th>
   )
 }
 
-Show.propTypes = {
-  /**
-   * Object of type: {@link BaseResource~JSON}
-   */
-  resource: resourceType.isRequired,
-  /**
-   * Id of a given record
-   */
-  record: recordType.isRequired,
+SortLink.propTypes = {
+  property: propertyType.isRequired,
+  location: locationType.isRequired,
+  direction: PropTypes.string.isRequired,
+  sortBy: PropTypes.string.isRequired,
 }
 
-export default Show
+PropertyHeader.propTypes = {
+  property: propertyType.isRequired,
+  resource: resourceType.isRequired,
+  /**
+   * currently selected direction. Either 'asc' or 'desc'.
+   */
+  direction: PropTypes.string.isRequired,
+  /**
+   * currently selected field by which list is sorted.
+   */
+  sortBy: PropTypes.string.isRequired,
+}
+
+export default withRouter(PropertyHeader)
 </code></pre>
         </article>
     </section>
