@@ -1,0 +1,243 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
+    <meta charset="utf-8">
+    <title>JSDoc: admin-bro/src/backend/decorators/action-decorator.js</title>
+
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="./build/entry.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Muli:100,400,700|Oswald:300|Inconsolata,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+</head>
+
+<body>
+    <div id="stickyNavbarOverlay"></div>
+    <div class="top-navbar">
+        <div class="container">
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                     
+                        <img src="images/logo.png" alt="logo">
+                    
+                     
+                        <h1 class="navbar-item">AdminBro Documentation</h1>
+                    
+                    <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                 
+                <div class="navbar-menu">
+                    <div class="navbar-end">
+                    
+                        <div class="navbar-item">
+                            <a href="https://github.com/SoftwareBrothers/admin-bro" target="_blank">Github</a>
+                        </div>
+                    
+                        <div class="navbar-item">
+                            <a href="https://admin-bro-example-app.herokuapp.com/admin" target="_blank">Example Application</a>
+                        </div>
+                    
+                    </div>
+                </div>
+                
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <div class="columns">
+            <div class="column is-3" id="sidebarNav">
+                <div class="sidebar">
+                    <nav>
+                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-00-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-01-example.html">02. Example App</a></li><li><a href="tutorial-03-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-04-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-05-actions.html">05. Customize actions</a></li><li><a href="tutorial-06-writing-react-components.html">06. Writing your own Components</a></li><li><a href="tutorial-07-custom-dashboard.html">07. Customize dashboard</a></li></ul><h3>Modules</h3><ul><li><a href="module-admin-bro-expressjs.html">admin-bro-expressjs</a></li><li><a href="module-admin-bro-hapijs.html">admin-bro-hapijs</a></li><li><a href="module-admin-bro-mongoose.html">admin-bro-mongoose</a></li><li><a href="module-admin-bro-sequelizejs.html">admin-bro-sequelizejs</a></li></ul><h3>Classes</h3><ul><li><a href="AdminBro.html">AdminBro</a></li><li><a href="ApiClient.html">ApiClient</a></li><li><a href="ApiController.html">ApiController</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3>Components</h3><ul><li><a href="Column.html">Column</a></li><li><a href="Columns.html">Columns</a></li><li><a href="DashboardHeader.html">DashboardHeader</a></li><li><a href="Dropdown.html">Dropdown</a></li><li><a href="Label.html">Label</a></li><li><a href="Loader.html">Loader</a></li><li><a href="Paginate.html">Paginate</a></li><li><a href="PropertyInEdit.html">PropertyInEdit</a></li><li><a href="PropertyInFilter.html">PropertyInFilter</a></li><li><a href="PropertyInShow.html">PropertyInShow</a></li><li><a href="StyledButton.html">StyledButton</a></li><li><a href="Table.html">Table</a></li><li><a href="ValueBlock.html">ValueBlock</a></li><li><a href="WrapperBox.html">WrapperBox</a></li></ul><h3>Global</h3><ul><li><a href="global.html#label">label</a></li><li><a href="global.html#name">name</a></li></ul></div><div class="category"><h2>Actions</h2><h3>Modules</h3><ul><li><a href="module-DeleteAction.html">DeleteAction</a></li><li><a href="module-EditAction.html">EditAction</a></li><li><a href="module-ListAction.html">ListAction</a></li><li><a href="module-NewAction.html">NewAction</a></li><li><a href="module-ShowAction.html">ShowAction</a></li></ul></div><div class="category"><h2>Base</h2><h3>Classes</h3><ul><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li></ul><h3>Interfaces</h3><ul><li><a href="BaseAction.html">BaseAction</a></li></ul><h3>Components</h3><ul><li><a href="BaseActionComponent.html">BaseActionComponent</a></li><li><a href="BasePropertyComponent.html">BasePropertyComponent</a></li></ul></div><div class="category"><h2>Decorators</h2><h3>Classes</h3><ul><li><a href="ActionDecorator.html">ActionDecorator</a></li><li><a href="PropertyDecorator.html">PropertyDecorator</a></li><li><a href="ResourceDecorator.html">ResourceDecorator</a></li></ul></div><div class="category"><h2>Errors</h2><h3>Classes</h3><ul><li><a href="ConfigurationError.html">ConfigurationError</a></li><li><a href="ForbiddenError.html">ForbiddenError</a></li><li><a href="NotImplementedError.html">NotImplementedError</a></li><li><a href="ValidationError.html">ValidationError</a></li></ul></div>
+                    </nav>
+                </div>
+            </div>
+            <div class="column is-9-desktop">
+                <div class="content" id="main-content-wrapper">
+                    <header class="page-title">
+                        <p>Source</p>
+                        <h1>admin-bro/src/backend/decorators/action-decorator.js</h1>
+                    </header>
+                    
+                    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>const ConfigurationError = require('../utils/configuration-error')
+const ViewHelpers = require('../utils/view-helpers')
+
+/**
+ * @typedef {Object} Action~JSON
+ * @description JSON representation of an {@link Action}
+ * @property {String} name
+ * @property {String | Array&lt;String>} actionType one of 'record' 'resource or
+ *                                               an array containing both
+ * @property {String} icon
+ * @property {String} label
+ * @property {String} guard
+ * @property {String} component
+ */
+
+/**
+ * Decorates an action
+ *
+ * @category Decorators
+ */
+class ActionDecorator {
+  /**
+   * @param {Object}        params
+   * @param {BaseAction}    params.action
+   * @param {BaseResource}    params.resource
+   * @param {AdminBro}      params.admin  current instance of AdminBro
+   */
+  constructor({ action, admin, resource }) {
+    if (!action.actionType) {
+      throw new ConfigurationError(
+        `action: "${action.name}" does not have an "actionType" property`,
+        'BaseAction',
+      )
+    }
+    this.name = action.name
+    this._admin = admin
+    this._resource = resource
+    this.h = new ViewHelpers({ options: admin.options })
+
+    /**
+     * Original action object
+     * @type {BaseAction}
+     */
+    this.action = action
+  }
+
+  /**
+   * Original handler wrapped with the hook `before` and `after` methods.
+   */
+  async handler(request, response, data) {
+    let modifiedRequest = request
+    if (this.action.before) {
+      modifiedRequest = await this.action.before(request)
+    }
+    let ret = await this.action.handler(modifiedRequest, response, data)
+    if (this.action.after) {
+      ret = await this.action.after(ret)
+    }
+    return ret
+  }
+
+  /**
+   * Returns true when action can be performed on a record
+   *
+   * @return  {Boolean}
+   */
+  isRecordType() {
+    return this.action.actionType.includes('record')
+  }
+
+  /**
+   * Returns true when action can be performed on an entire resource
+   *
+   * @return  {Boolean}
+   */
+  isResourceType() {
+    return this.action.actionType.includes('resource')
+  }
+
+  is(what, currentAdmin) {
+    if (!['isAccessible', 'isVisible'].includes(what)) {
+      throw new Error(`'what' has to be either "isAccessible" or "isVisible". You gave ${what}`)
+    }
+    let isAction
+    if (typeof this.action[what] === 'function') {
+      isAction = this.action[what]({
+        resource: this._resource,
+        action: this.action,
+        h: this.h,
+        currentAdmin,
+      })
+    } else if (typeof this.action[what] === 'undefined') {
+      isAction = true
+    } else {
+      isAction = this.action[what]
+    }
+    return isAction
+  }
+
+  /**
+   * Is action visible in the UI
+   *
+   * @return  {Boolean}
+   */
+  isVisible(currentAdmin) {
+    return this.is('isVisible', currentAdmin)
+  }
+
+  /**
+   * Is action accessible
+   *
+   * @return  {Boolean}
+   */
+  isAccessible(currentAdmin) {
+    return this.is('isAccessible', currentAdmin)
+  }
+
+  /**
+   * Serializes action to JSON format
+   *
+   * @return  {Action~JSON}  serialized action
+   */
+  toJSON() {
+    return {
+      name: this.action.name,
+      actionType: this.action.actionType,
+      icon: this.action.icon,
+      label: this.action.label,
+      guard: this.action.guard,
+      showFilter: this.action.showFilter,
+      component: this.action.component,
+    }
+  }
+}
+
+module.exports = ActionDecorator
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Aug 20 2019 10:59:56 GMT+0200 (Central European Summer Time)</p>
+        <p class="sidebar-created-by">
+            <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+            <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers</a>
+        </p>
+    </div>
+</footer>
+
+<script src="scripts/app.min.js"></script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

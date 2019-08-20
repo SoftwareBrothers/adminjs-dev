@@ -101,9 +101,10 @@
 <li>Resource action, which is performed for an entire resource.</li>
 <li>Record action, invoked for an record in a resource</li>
 </ol>
-<p>...and there are 4 actions predefined in AdminBro</p>
+<p>...and there are 5 actions predefined in AdminBro</p>
 <ol>
 <li><a href="module-NewAction.html">new</a> (resource action) - create new records in a resource</li>
+<li>list (resource action) - list all records within a resource</li>
 <li><a href="module-EditAction.html">edit</a> (record action) - update records in a resource</li>
 <li><a href="module-ShowAction.html">show</a> (record action) - show details of given record</li>
 <li><a href="module-DeleteAction.html">delete</a> (record action) - delete given record</li>
@@ -249,7 +250,7 @@ or both (passed as an array)</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_actions_interfaces.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_actions_interfaces.js.html">admin-bro/src/backend/actions/interfaces.js</a>, <a href="admin-bro_src_backend_actions_interfaces.js.html#line76">line 76</a>
+                <a href="admin-bro_src_backend_actions_interfaces.js.html">admin-bro/src/backend/actions/interfaces.js</a>, <a href="admin-bro_src_backend_actions_interfaces.js.html#line112">line 112</a>
             </span>
         </p>
     
@@ -267,6 +268,9 @@ or both (passed as an array)</p>
         <label>Type:</label>
         
 <span class="param-type">Component</span>
+|
+
+<span class="param-type">Boolean</span>
 
 
     </span>
@@ -290,9 +294,12 @@ or both (passed as an array)</p>
 Action components accepts following prop types:</p>
 <ol>
 <li>resource: <a href="BaseResource.html#~JSON">BaseResource~JSON</a></li>
-<li>action: <a href="Action.html#~JSON">Action~JSON</a></li>
-<li>recordId: String</li>
+<li>action: Action~JSON</li>
+<li><em>(optional)</em> recordId: String <em>(for recordAction)</em></li>
 </ol>
+<p>When component is set to <code>false</code> then action doesn't have it's own view.
+Instead after clicking button it is immediatelly performed. Example of
+an action without a view is <a href="module-DeleteAction.html">module:DeleteAction</a>.</p>
 </div>
 
 
@@ -334,7 +341,7 @@ Action components accepts following prop types:</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_actions_interfaces.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_actions_interfaces.js.html">admin-bro/src/backend/actions/interfaces.js</a>, <a href="admin-bro_src_backend_actions_interfaces.js.html#line99">line 99</a>
+                <a href="admin-bro_src_backend_actions_interfaces.js.html">admin-bro/src/backend/actions/interfaces.js</a>, <a href="admin-bro_src_backend_actions_interfaces.js.html#line135">line 135</a>
             </span>
         </p>
     
@@ -413,7 +420,7 @@ Action components accepts following prop types:</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_actions_interfaces.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_actions_interfaces.js.html">admin-bro/src/backend/actions/interfaces.js</a>, <a href="admin-bro_src_backend_actions_interfaces.js.html#line92">line 92</a>
+                <a href="admin-bro_src_backend_actions_interfaces.js.html">admin-bro/src/backend/actions/interfaces.js</a>, <a href="admin-bro_src_backend_actions_interfaces.js.html#line128">line 128</a>
             </span>
         </p>
     
@@ -492,7 +499,7 @@ Action components accepts following prop types:</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_actions_interfaces.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_actions_interfaces.js.html">admin-bro/src/backend/actions/interfaces.js</a>, <a href="admin-bro_src_backend_actions_interfaces.js.html#line85">line 85</a>
+                <a href="admin-bro_src_backend_actions_interfaces.js.html">admin-bro/src/backend/actions/interfaces.js</a>, <a href="admin-bro_src_backend_actions_interfaces.js.html#line121">line 121</a>
             </span>
         </p>
     
@@ -529,7 +536,7 @@ Action components accepts following prop types:</p>
 
 
 <div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>name of the actio which will appear in the UI</p>
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>name of the action which will appear in the UI</p>
 </div>
 
 
@@ -571,7 +578,7 @@ Action components accepts following prop types:</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_actions_interfaces.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_actions_interfaces.js.html">admin-bro/src/backend/actions/interfaces.js</a>, <a href="admin-bro_src_backend_actions_interfaces.js.html#line62">line 62</a>
+                <a href="admin-bro_src_backend_actions_interfaces.js.html">admin-bro/src/backend/actions/interfaces.js</a>, <a href="admin-bro_src_backend_actions_interfaces.js.html#line98">line 98</a>
             </span>
         </p>
     
@@ -650,7 +657,7 @@ Action components accepts following prop types:</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_actions_interfaces.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_actions_interfaces.js.html">admin-bro/src/backend/actions/interfaces.js</a>, <a href="admin-bro_src_backend_actions_interfaces.js.html#line38">line 38</a>
+                <a href="admin-bro_src_backend_actions_interfaces.js.html">admin-bro/src/backend/actions/interfaces.js</a>, <a href="admin-bro_src_backend_actions_interfaces.js.html#line58">line 58</a>
             </span>
         </p>
     
@@ -729,7 +736,7 @@ Action components accepts following prop types:</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_actions_interfaces.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_actions_interfaces.js.html">admin-bro/src/backend/actions/interfaces.js</a>, <a href="admin-bro_src_backend_actions_interfaces.js.html#line69">line 69</a>
+                <a href="admin-bro_src_backend_actions_interfaces.js.html">admin-bro/src/backend/actions/interfaces.js</a>, <a href="admin-bro_src_backend_actions_interfaces.js.html#line105">line 105</a>
             </span>
         </p>
     
@@ -753,6 +760,356 @@ Action components accepts following prop types:</p>
                 <div class="member">
 
     
+    <h4 class="name" id=".after">
+        
+            
+                <span class='tag'>static</span>
+            
+        
+        <span class="code-name">
+            after<span class="signature">(data)</span><span class="type-signature"> &rarr; {Object}</span>
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>After action hook. When it is given - it is performed on the returned,
+by handler the <a href="BaseAction.html#.handler">BaseAction.handler</a>, object,</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>data</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">Object</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>data returned by the BaseAction#handler function</p></td>
+</tr>
+
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_actions_interfaces.js.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_actions_interfaces.js.html">admin-bro/src/backend/actions/interfaces.js</a>, <a href="admin-bro_src_backend_actions_interfaces.js.html#line179">line 179</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>modified data</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">Object</span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    
+    <h4 class="name" id=".before">
+        
+            
+                <span class='tag'>static</span>
+            
+        
+        <span class="code-name">
+            before<span class="signature">(request)</span><span class="type-signature"> &rarr; {<a href="BaseAction.html#~Request">BaseAction~Request</a>}</span>
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Before action hook. When it is given - it is performed before the <a href="BaseAction.html#.handler">BaseAction.handler</a>
+method.</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>request</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type"><a href="BaseAction.html#~Request">BaseAction~Request</a></span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Request object passed by the backend framework</p></td>
+</tr>
+
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_actions_interfaces.js.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_actions_interfaces.js.html">admin-bro/src/backend/actions/interfaces.js</a>, <a href="admin-bro_src_backend_actions_interfaces.js.html#line168">line 168</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>modified request</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type"><a href="BaseAction.html#~Request">BaseAction~Request</a></span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    
     <h4 class="name" id=".handler">
         
             
@@ -760,7 +1117,7 @@ Action components accepts following prop types:</p>
             
         
         <span class="code-name">
-            handler<span class="signature">(request, response, data)</span><span class="type-signature"></span>
+            handler<span class="signature">(request, response, data)</span><span class="type-signature"> &rarr; {Object}</span>
         </span>
     </h4>
     
@@ -796,8 +1153,6 @@ or <a href="ApiController.html#recordAction">ApiController#recordAction</a></p>
         <th>Type</th>
 
         
-        <th>Attributes</th>
-        
 
         
 
@@ -817,154 +1172,18 @@ or <a href="ApiController.html#recordAction">ApiController#recordAction</a></p>
   <td class="type">
   
       
-<span class="param-type">Object</span>
+<span class="param-type"><a href="BaseAction.html#~Request">BaseAction~Request</a></span>
 
 
   
   </td>
 
-  
-      <td class="attributes">
-      
-
-      
-
-      
-      </td>
   
 
   
 
   <td class="description last"><p>Request object passed by the backend framework</p></td>
 </tr>
-
-  
-  
-    
-<tr class="deep-level-1">
-  
-      <td class="name"><code>params</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">Object</span>
-
-
-  
-  </td>
-
-  
-      <td class="attributes">
-      
-
-      
-
-      
-      </td>
-  
-
-  
-
-  <td class="description last"><p>passed via the URL like <em>resourceId</em>,
-                                   <em>recordId</em>, or <em>action</em> name</p></td>
-</tr>
-
-  
-    
-<tr class="deep-level-1">
-  
-      <td class="name"><code>payload</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">Object</span>
-
-
-  
-  </td>
-
-  
-      <td class="attributes">
-      
-
-      
-
-      
-      </td>
-  
-
-  
-
-  <td class="description last"><p>post data send in request</p></td>
-</tr>
-
-  
-    
-<tr class="deep-level-1">
-  
-      <td class="name"><code>query</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">Object</span>
-
-
-  
-  </td>
-
-  
-      <td class="attributes">
-      
-
-      
-
-      
-      </td>
-  
-
-  
-
-  <td class="description last"><p>query string parameters</p></td>
-</tr>
-
-  
-    
-<tr class="deep-level-1">
-  
-      <td class="name"><code>method</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">String</span>
-
-
-  
-  </td>
-
-  
-      <td class="attributes">
-      
-
-      
-
-      
-      </td>
-  
-
-  
-
-  <td class="description last"><p>either 'post' or 'get'</p></td>
-</tr>
-
-  
 
 
     
@@ -985,14 +1204,6 @@ or <a href="ApiController.html#recordAction">ApiController#recordAction</a></p>
   </td>
 
   
-      <td class="attributes">
-      
-
-      
-
-      
-      </td>
-  
 
   
 
@@ -1011,20 +1222,12 @@ or <a href="ApiController.html#recordAction">ApiController#recordAction</a></p>
   <td class="type">
   
       
-<span class="param-type">Object</span>
+<span class="param-type"><a href="BaseAction.html#~Context">BaseAction~Context</a></span>
 
 
   
   </td>
 
-  
-      <td class="attributes">
-      
-
-      
-
-      
-      </td>
   
 
   
@@ -1037,157 +1240,23 @@ or <a href="ApiController.html#recordAction">ApiController#recordAction</a></p>
     
 <tr class="deep-level-1">
   
-      <td class="name"><code>_admin</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type"><a href="AdminBro.html">AdminBro</a></span>
-
-
-  
-  </td>
-
-  
-      <td class="attributes">
-      
-
-      
-
-      
-      </td>
-  
-
-  
-
-  <td class="description last"><p>current AdminBro instance</p></td>
-</tr>
-
-  
-    
-<tr class="deep-level-1">
-  
-      <td class="name"><code>resource</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type"><a href="BaseResource.html">BaseResource</a></span>
-
-
-  
-  </td>
-
-  
-      <td class="attributes">
-      
-
-      
-
-      
-      </td>
-  
-
-  
-
-  <td class="description last"><p>recource on which action was performed</p></td>
-</tr>
-
-  
-    
-<tr class="deep-level-1">
-  
       <td class="name"><code>record</code></td>
   
 
   <td class="type">
   
       
-<span class="param-type"><a href="BaseRecord.html">BaseRecord</a></span>
+<span class="param-type">Object</span>
 
 
   
   </td>
 
   
-      <td class="attributes">
-      
-          &lt;optional><br>
-      
-
-      
-
-      
-      </td>
-  
 
   
 
-  <td class="description last"><p>record - only in case of action with 'record`</p></td>
-</tr>
-
-  
-    
-<tr class="deep-level-1">
-  
-      <td class="name"><code>h</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type"><a href="ViewHelpers.html">ViewHelpers</a></span>
-
-
-  
-  </td>
-
-  
-      <td class="attributes">
-      
-
-      
-
-      
-      </td>
-  
-
-  
-
-  <td class="description last"><p>view helpers</p></td>
-</tr>
-
-  
-    
-<tr class="deep-level-1">
-  
-      <td class="name"><code>action</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type"><a href="Action.html">Action</a></span>
-
-
-  
-  </td>
-
-  
-      <td class="attributes">
-      
-
-      
-
-      
-      </td>
-  
-
-  
-
-  <td class="description last"><p>object representing particular action</p></td>
+  <td class="description last"><p>optionally record - for ['record'] action type</p></td>
 </tr>
 
   
@@ -1236,7 +1305,7 @@ or <a href="ApiController.html#recordAction">ApiController#recordAction</a></p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_actions_interfaces.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_actions_interfaces.js.html">admin-bro/src/backend/actions/interfaces.js</a>, <a href="admin-bro_src_backend_actions_interfaces.js.html#line111">line 111</a>
+                <a href="admin-bro_src_backend_actions_interfaces.js.html">admin-bro/src/backend/actions/interfaces.js</a>, <a href="admin-bro_src_backend_actions_interfaces.js.html#line153">line 153</a>
             </span>
         </p>
     
@@ -1259,6 +1328,31 @@ or <a href="ApiController.html#recordAction">ApiController#recordAction</a></p>
 
 
 
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>custom object returned by the action</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">Object</span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
 
 
 
@@ -1267,14 +1361,14 @@ or <a href="ApiController.html#recordAction">ApiController#recordAction</a></p>
                 <div class="member">
 
     
-    <h4 class="name" id=".isVisible">
+    <h4 class="name" id=".isAccessible">
         
             
                 <span class='tag'>static</span>
             
         
         <span class="code-name">
-            isVisible<span class="signature">(resource, record)</span><span class="type-signature"></span>
+            isAccessible<span class="signature">(data)</span><span class="type-signature"></span>
         </span>
     </h4>
     
@@ -1282,8 +1376,8 @@ or <a href="ApiController.html#recordAction">ApiController#recordAction</a></p>
     
     
     <div class="description">
-        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>indicates if action should be visible for given resource and record.
-It also can be a simple boolean value.</p>
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>indicates if action can be invoked for given invocation context.
+Similar to <a href="BaseAction.html#.isVisible">BaseAction.isVisible</a> - it also can be a simple boolean value.</p>
     </div>
     
 
@@ -1323,13 +1417,13 @@ It also can be a simple boolean value.</p>
         
 <tr class="deep-level-0">
   
-      <td class="name"><code>resource</code></td>
+      <td class="name"><code>data</code></td>
   
 
   <td class="type">
   
       
-<span class="param-type"><a href="BaseResource.html">BaseResource</a></span>
+<span class="param-type"><a href="BaseAction.html#~Context">BaseAction~Context</a></span>
 
 
   
@@ -1339,32 +1433,7 @@ It also can be a simple boolean value.</p>
 
   
 
-  <td class="description last"></td>
-</tr>
-
-
-    
-
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>record</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type"><a href="BaseRecord.html">BaseRecord</a></span>
-
-
-  
-  </td>
-
-  
-
-  
-
-  <td class="description last"></td>
+  <td class="description last"><p>data passed as the context of the action</p></td>
 </tr>
 
 
@@ -1411,7 +1480,7 @@ It also can be a simple boolean value.</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_actions_interfaces.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_actions_interfaces.js.html">admin-bro/src/backend/actions/interfaces.js</a>, <a href="admin-bro_src_backend_actions_interfaces.js.html#line45">line 45</a>
+                <a href="admin-bro_src_backend_actions_interfaces.js.html">admin-bro/src/backend/actions/interfaces.js</a>, <a href="admin-bro_src_backend_actions_interfaces.js.html#line82">line 82</a>
             </span>
         </p>
     
@@ -1442,7 +1511,169 @@ It also can be a simple boolean value.</p>
     
         <pre class="prettyprint"><code>{
   ...,
-  isVisible: (resource, record) => record.param('email') !== '',
+  isAccessible: (data) => data.currentAdmin.role !== 'manager',
+  ...
+}</code></pre>
+    
+
+
+</div>
+            
+                <div class="member">
+
+    
+    <h4 class="name" id=".isVisible">
+        
+            
+                <span class='tag'>static</span>
+            
+        
+        <span class="code-name">
+            isVisible<span class="signature">(data)</span><span class="type-signature"></span>
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>indicates if action should be visible for given invocation context.
+It also can be a simple boolean value.
+<code>True</code> by default.</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>data</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type"><a href="BaseAction.html#~Context">BaseAction~Context</a></span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>data passed as the context of the action</p></td>
+</tr>
+
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_actions_interfaces.js.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_actions_interfaces.js.html">admin-bro/src/backend/actions/interfaces.js</a>, <a href="admin-bro_src_backend_actions_interfaces.js.html#line65">line 65</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    
+        <pre class="prettyprint"><code>{
+  ...,
+  isVisible: (data) => data.currentAdmin.role === 'manager',
   ...
 }</code></pre>
     
@@ -1454,6 +1685,454 @@ It also can be a simple boolean value.</p>
         </div>
     
 
+    
+        <div class='vertical-section'>
+            <h3 class="title"><span>Type Definitions</span></h3>
+            <div class="members">
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Object</span>
+
+
+    </span>
+
+<h4 class="name" id="~Context">
+    
+    <span class="code-name">
+        Context
+    </span>
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>
+</div>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>_admin</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="AdminBro.html">AdminBro</a></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>current AdminBro instance</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>resource</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="BaseResource.html">BaseResource</a></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>recource on which action was performed</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>h</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="ViewHelpers.html">ViewHelpers</a></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>view helpers</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>action</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">ActionDecorator</span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>object representing particular action</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>currentAdmin</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Object</span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>logged in admin</p></td>
+</tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_actions_interfaces.js.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_actions_interfaces.js.html">admin-bro/src/backend/actions/interfaces.js</a>, <a href="admin-bro_src_backend_actions_interfaces.js.html#line39">line 39</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">Object</span>
+
+
+    </span>
+
+<h4 class="name" id="~Request">
+    
+    <span class="code-name">
+        Request
+    </span>
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>
+</div>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>request</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Object</span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>Request object passed by the backend framework</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>params</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Object</span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>passed via the URL like <em>resourceId</em>,
+                                   <em>recordId</em>, or <em>action</em> name</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>payload</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Object</span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>post data send in request</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>query</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Object</span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>query string parameters</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>method</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">String</span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>either 'post' or 'get'</p></td>
+</tr>
+
+  
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_actions_interfaces.js.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_actions_interfaces.js.html">admin-bro/src/backend/actions/interfaces.js</a>, <a href="admin-bro_src_backend_actions_interfaces.js.html#line48">line 48</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+            </div>
+        </div>
     
 
     
@@ -1471,7 +2150,7 @@ It also can be a simple boolean value.</p>
 
 <footer class="footer">
     <div class="content has-text-centered">
-        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Sat Aug 17 2019 10:55:49 GMT+0200 (Central European Summer Time)</p>
+        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Aug 20 2019 12:22:54 GMT+0200 (Central European Summer Time)</p>
         <p class="sidebar-created-by">
             <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
             <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers</a>
