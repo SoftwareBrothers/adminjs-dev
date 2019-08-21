@@ -1,8 +1,8 @@
 version: "2.1"
 services:
   app:
-    command: "yarn start"
-    # command: "yarn start:express"
+    # command: "yarn start"
+    command: "yarn start:express"
     # command: "yarn debug"
   mongo:
     logging:

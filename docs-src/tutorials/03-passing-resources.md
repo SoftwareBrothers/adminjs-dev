@@ -48,21 +48,26 @@ const mongoose = require('mongoose')
 AdminBro.registerAdapter(AdminBroMongoose)
 
 // Initializ Database along with models
-const mongooseDb = mongoose.connect('mongodb://localhost:27017/test', { useNewUrlParser: true })
 const User = mongoose.model('User', { name: String, email: String, surname: String })
 const Admin = mongoose.model('Admin', { name: String, email: String})
 
-// Passing resources by giving entire database
-const AdminBro = new AdminBro({
-  databases: [mongooseDb],
-  //... other AdminBroOptions
-})
+const run = async () => {
+  const mongooseDb = await mongoose.connect('mongodb://localhost:27017/test', { useNewUrlParser: true })
 
-// Passing resources one by one
-const AdminBro = new AdminBro({
-  resources: [User, Admin],
-  //... other AdminBroOptions
-})
+  // Passing resources by giving entire database
+  const AdminBro = new AdminBro({
+    databases: [mongooseDb],
+    //... other AdminBroOptions
+  })
+
+  // Passing resources one by one
+  const AdminBro = new AdminBro({
+    resources: [User, Admin],
+    //... other AdminBroOptions
+  })
+}
+
+run()
 // ... 
 ```
 

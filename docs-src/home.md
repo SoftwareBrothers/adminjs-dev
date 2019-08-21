@@ -62,6 +62,14 @@ Another thing are React Components which you can reuse. You can see list of them
 
 - checkout the [admin-bro git repo](https://github.com/SoftwareBrothers/admin-bro)
 
+## Screencasts
+
+There are 2 screencasts on [jscasts.tv](http://jscasts.tv) channel about an AdminBro which could guide you of how to use it. **They are quite old so bare in mind that API have changed since then**.
+
+* [Adding admin panel to node.js app](https://www.youtube.com/watch?v=7Ujn7g1JF1Q&t=4s)
+* [Customize resources](https://www.youtube.com/watch?v=1lOKKK_yrlc)
+
+
 ## Inspiration
 
 Inspired by: [django admin](https://docs.djangoproject.com), [rails admin](https://github.com/sferik/rails_admin) and [active admin](https://activeadmin.info/).
