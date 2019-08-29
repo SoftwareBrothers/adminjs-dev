@@ -1,10 +1,10 @@
-Ok - so you have everything set up and now you want to change how particular Resources looks like.
+Ok - so you have everything set up and now you want to change how a particular Resource looks.
 
 For instance you may want to show a _google map_ for _location_ fields, or even present some values as a graph.
 
 You can do this all by writing your custom components.
 
-## Example of overrinding how dashboard looks like:
+## Example of overrinding how dashboard looks:
 
 AdminBroOptions: 
 ```
@@ -27,6 +27,8 @@ const Dashboard = (props) => {
     <WrapperBox>My custom dashboard</WrapperBox>
   )
 }
+
+export default Dashboard
 ```
 
 As you can see AdminBro uses [React](https://reactjs.org/) as a frontend framework. So before
@@ -34,9 +36,9 @@ you proceed - make sure you know how [react](https://reactjs.org/) works.
 
 ## Where you can insert your custom components?
 
-Currently there are 3 places where you can inject components to alter how AdminBro looks like:
+Currently there are 3 places where you can inject components to alter how AdminBro looks:
 
-- overriding how properties are rendered in {@link PropertyOptions} by using `components` object.
+- overriding how properties are rendered in {@link PropertyOptions} by using `components` object (**PLURAL**)
 - creating new or update default actions by overriding {@link BaseAction} `component` param
 in {@link ResourceOptions}
 - changing how the dashbord looks like by using {@link AdminBroOptions} `dashboard.component` param.
@@ -46,7 +48,7 @@ in {@link ResourceOptions}
 First of all - you have to require them by using {@link AdminBro.require} function. What it does -
 it gives your comopnent an uniq ID and sends it to the __bundling__ process.
 
-You can do this like this: `{component: AdminBro.require('./path-to-your-jsx-file')}`
+You can do it like this: `{ component: AdminBro.require('./path-to-your-jsx-file') }`
 
 All files requried by AdminBro.require has to have one default export - the one with your [react](https://reactjs.org/) component.
 
@@ -100,7 +102,9 @@ Currently we have 2 controlling components:
 
 Check out their documentation to see available **props**
 
-## Reusing Components of AdminBro
+BTW - Dashboard doesn't have any controlling component.
+
+## Reusing UI Components of AdminBro
 
 AdminBro gives you the ability to reuse its components. You can do this by simply requiring them:
 
