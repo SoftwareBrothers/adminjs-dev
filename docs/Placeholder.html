@@ -1,11 +1,9 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
     <meta charset="utf-8">
-    <title>JSDoc: admin-bro/src/backend/utils/filter.js</title>
+    <title>JSDoc: Placeholder</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -69,117 +67,192 @@
             <div class="column is-9-desktop">
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
-                        <p>Source</p>
-                        <h1>admin-bro/src/backend/utils/filter.js</h1>
+                        <p>Components</p>
+                        <h1>Placeholder</h1>
                     </header>
                     
                     
 
 
 
+
+<section>
+
+<header>
     
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>const { unflatten, flatten } = require('flat')
+        <h2>
+            &ltPlaceholder  /&gt
+        </h2>
+    
+</header>
 
-/**
- * @typedef {Object} Filter~Property
- * @property {String} key
- * @property {BaseProperty} property
- * @property {Object | String} value
- * @property {Object} populated
- */
+<article>
+    <div class="container-overview">
+    
+        
+            <div class='vertical-section'>
+                <h3 class="title"><span>Constructor</span></h3>
+                <div class="members">
+                    <div class="member">
 
-/**
- * Filter object wrapping up selected filters.
- * @private
- */
-class Filter {
-  /**
-   * Changes raw nested filters to form Object&lt;path, value>.
-   *
-   * @example
-   * const filters = {
-   *  nested: {field: 'ala'},
-   *  'dataField~~from': '2019-08-14'
-   * }
-   *
-   * const normalized = Filter.normalizeFilters(filters)
-   * // {
-   * //   'nested.filter': 'ala',
-   * //   'dataField': {from: '2019-08-14'}
-   * // }
-   *
-   *
-   * @param   {Object}  filters
-   *
-   * @return  {Object}
-   */
 
-  static normalizeKeys(filters) {
-    return unflatten(flatten(filters), { delimiter: Filter.PARAM_SEPARATOR })
-  }
+    
+    <h4 class="name" id="Placeholder">
+        
+        <span class="code-name">
+            
+                &ltPlaceholder  /&gt
+            
+        </span>
+    </h4>
+    
 
-  /**
-   * @param   {Object&lt;String,Object | String>}  filters   selected filters
-   * @param   {BaseResource}                    resource    resource which is filtered
-   */
-  constructor(filters = {}, resource) {
-    this.resource = resource
-    /**
-     * @type {Object&lt;String, Filter~Property>}
-     */
-    const normalized = Filter.normalizeKeys(filters)
-    this.filters = Object.keys(normalized).reduce((memo, path) => ({
-      [path]: {
-        path,
-        property: this.resource.property(path),
-        value: normalized[path],
-      },
-      ...memo,
-    }), {})
-  }
+    
+    
+    <div class="description">
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Renders placeholder</p>
+    </div>
+    
 
-  /**
-   * Returns filter for a given property key
-   *
-   * @param {String} key      property key
-   * @returns {Filter.Property | undefined}
-   */
-  get(key) {
-    return this.filters[key]
-  }
 
-  /**
-   * Populates all filtered properties which referes to other resources
-   */
-  async populate() {
-    const keys = Object.keys(this.filters)
-    for (let index = 0; index &lt; keys.length; index += 1) {
-      const key = keys[index]
-      const referenceResource = this.resource.decorate().getPropertyByKey(key).reference()
-      if (referenceResource) {
-        this.filters[key].populated = await referenceResource.findOne(this.filters[key].value)
-      }
-    }
-    return this
-  }
 
-  reduce(callback, initial = {}) {
-    return Object.values(this.filters).reduce(callback, initial)
-  }
 
-  isVisible() {
-    return !!Object.keys(this.filters).length
-  }
-}
 
-Filter.PARAM_SEPARATOR = '~~'
 
-module.exports = Filter
-</code></pre>
-        </article>
-    </section>
+
+    
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_frontend_components_ui_placeholder.jsx.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_frontend_components_ui_placeholder.jsx.html">admin-bro/src/frontend/components/ui/placeholder.jsx</a>, <a href="admin-bro_src_frontend_components_ui_placeholder.jsx.html#line47">line 47</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Examples</h5>
+    
+        <p class="code-caption">Image placeholder</p>
+    
+    
+        
+
+<div id='vh1lou7v7ynk0tybv88'></div>
+
+<script>
+  ReactDOM.render(Wrapper({
+    example: "return (\n  <WrapperBox border>\n    <Placeholder style={{ width: 100, height: 200 }} />\n  </WrapperBox>\n)",
+    uniqId: "vh1lou7v7ynk0tybv88",
+  }), document.getElementById('vh1lou7v7ynk0tybv88'));
+</script>
+    
+
+        <p class="code-caption">Text placeholder</p>
+    
+    
+        
+
+<div id='rx4leyflajk0tybv88'></div>
+
+<script>
+  ReactDOM.render(Wrapper({
+    example: "return (\n  <WrapperBox border>\n    <Label>Some name</Label>\n    <Placeholder style={{ width: 400, height: 14 }} />\n  </WrapperBox>\n)",
+    uniqId: "rx4leyflajk0tybv88",
+  }), document.getElementById('rx4leyflajk0tybv88'));
+</script>
+    
+
+
+</div>
+                </div>
+            </div>
+        
+    
+    </div>
+    
+        
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
 
 
 

@@ -8,7 +8,7 @@ import 'regenerator-runtime/runtime';
       import ReactDOM from "react-dom";
 
 
-      import Wrapper from '../better-docs/src/react-wrapper.jsx';
+      import Wrapper from '../better-docs/lib/react-wrapper.js';
 
       window.React = React;
 
@@ -26,7 +26,7 @@ import 'regenerator-runtime/runtime';
 
       Components._CustomWrapper = _CustomWrapper;
 
-      import BaseActionComponent from '../admin-bro/src/frontend/components/app/base-action.jsx';
+      import BaseActionComponent from '../admin-bro/src/frontend/components/app/base-action-component.jsx';
 Components['BaseActionComponent'] = BaseActionComponent;
 
 import BasePropertyComponent from '../admin-bro/src/frontend/components/property-type/index.jsx';
@@ -53,6 +53,9 @@ Components['Loader'] = Loader;
 import Paginate from '../admin-bro/src/frontend/components/ui/paginate.jsx';
 Components['Paginate'] = Paginate;
 
+import Placeholder from '../admin-bro/src/frontend/components/ui/placeholder.jsx';
+Components['Placeholder'] = Placeholder;
+
 import PropertyInEdit from '../admin-bro/src/frontend/components/ui/property-in-edit.jsx';
 Components['PropertyInEdit'] = PropertyInEdit;
 
@@ -62,8 +65,14 @@ Components['PropertyInFilter'] = PropertyInFilter;
 import PropertyInShow from '../admin-bro/src/frontend/components/ui/property-in-show.jsx';
 Components['PropertyInShow'] = PropertyInShow;
 
+import RecordsTableHeader from '../admin-bro/src/frontend/components/app/records-table-header.jsx';
+Components['RecordsTableHeader'] = RecordsTableHeader;
+
 import StyledButton from '../admin-bro/src/frontend/components/ui/styled-button.jsx';
 Components['StyledButton'] = StyledButton;
+
+import StyledSection from '../admin-bro/src/frontend/components/ui/styled-section.jsx';
+Components['StyledSection'] = StyledSection;
 
 import Table from '../admin-bro/src/frontend/components/ui/table.jsx';
 Components['Table'] = Table;

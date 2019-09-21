@@ -15,6 +15,7 @@
         "jsdoc-mermaid",
         "better-docs/category",
         "better-docs/component",
+        "better-docs/typedef-import",
         "node_modules/jsdoc-typeof-plugin"
     ],
     "opts": {

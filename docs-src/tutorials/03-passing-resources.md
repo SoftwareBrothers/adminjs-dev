@@ -42,7 +42,7 @@ Both passing __entire Database__ or __each Resource__ can be done via {@link Adm
 
 ```javascript
 // ...
-const adminBro = require('admin-bro')
+const AdminBro = require('admin-bro')
 const AdminBroMongoose = require('admin-bro-mongoose')
 const mongoose = require('mongoose')
 AdminBro.registerAdapter(AdminBroMongoose)

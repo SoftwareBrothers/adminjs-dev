@@ -8,9 +8,7 @@
     "validate-docs": "jsdoc -c jsdoc-test.json",
     "debug": "nodemon --inspect=0.0.0.0:9222 --nolazy ./index.js",
     "start": "nodemon -e js,jsx --ignore 'app-bundle.js' --ignore '*.spec.js' ./index.js",
-    "start:express": "nodemon --ignore '*.spec.js' ./admin-bro-example-app/express/index.js",
-    "parcel": "parcel ./docs/entry.js -d ./docs/build",
-    "parcel:build": "parcel build ./docs/entry.js -d ./docs/build"
+    "start:express": "nodemon --ignore '*.spec.js' ./admin-bro-example-app/express/index.js"
   },
   "repository": {
     "type": "git",

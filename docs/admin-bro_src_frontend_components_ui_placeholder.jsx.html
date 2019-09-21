@@ -5,7 +5,7 @@
 <head>
     <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
     <meta charset="utf-8">
-    <title>JSDoc: admin-bro/src/backend/utils/filter.js</title>
+    <title>JSDoc: admin-bro/src/frontend/components/ui/placeholder.jsx</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -70,7 +70,7 @@
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
                         <p>Source</p>
-                        <h1>admin-bro/src/backend/utils/filter.js</h1>
+                        <h1>admin-bro/src/frontend/components/ui/placeholder.jsx</h1>
                     </header>
                     
                     
@@ -80,103 +80,55 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>const { unflatten, flatten } = require('flat')
+            <pre class="prettyprint source linenums"><code>import React from 'react'
 
-/**
- * @typedef {Object} Filter~Property
- * @property {String} key
- * @property {BaseProperty} property
- * @property {Object | String} value
- * @property {Object} populated
- */
+import styled from 'styled-components'
 
-/**
- * Filter object wrapping up selected filters.
- * @private
- */
-class Filter {
-  /**
-   * Changes raw nested filters to form Object&lt;path, value>.
-   *
-   * @example
-   * const filters = {
-   *  nested: {field: 'ala'},
-   *  'dataField~~from': '2019-08-14'
-   * }
-   *
-   * const normalized = Filter.normalizeFilters(filters)
-   * // {
-   * //   'nested.filter': 'ala',
-   * //   'dataField': {from: '2019-08-14'}
-   * // }
-   *
-   *
-   * @param   {Object}  filters
-   *
-   * @return  {Object}
-   */
-
-  static normalizeKeys(filters) {
-    return unflatten(flatten(filters), { delimiter: Filter.PARAM_SEPARATOR })
-  }
-
-  /**
-   * @param   {Object&lt;String,Object | String>}  filters   selected filters
-   * @param   {BaseResource}                    resource    resource which is filtered
-   */
-  constructor(filters = {}, resource) {
-    this.resource = resource
-    /**
-     * @type {Object&lt;String, Filter~Property>}
-     */
-    const normalized = Filter.normalizeKeys(filters)
-    this.filters = Object.keys(normalized).reduce((memo, path) => ({
-      [path]: {
-        path,
-        property: this.resource.property(path),
-        value: normalized[path],
-      },
-      ...memo,
-    }), {})
-  }
-
-  /**
-   * Returns filter for a given property key
-   *
-   * @param {String} key      property key
-   * @returns {Filter.Property | undefined}
-   */
-  get(key) {
-    return this.filters[key]
-  }
-
-  /**
-   * Populates all filtered properties which referes to other resources
-   */
-  async populate() {
-    const keys = Object.keys(this.filters)
-    for (let index = 0; index &lt; keys.length; index += 1) {
-      const key = keys[index]
-      const referenceResource = this.resource.decorate().getPropertyByKey(key).reference()
-      if (referenceResource) {
-        this.filters[key].populated = await referenceResource.findOne(this.filters[key].value)
-      }
+const StyledPlaceholder = styled.div`
+  @keyframes placeHolderShimmer{
+    0%{
+        background-position: -468px 0
     }
-    return this
+    100%{
+        background-position: 468px 0
+    }
   }
 
-  reduce(callback, initial = {}) {
-    return Object.values(this.filters).reduce(callback, initial)
-  }
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function: linear;
+  background: #f6f7f8;
+  background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+  background-size: 1000px 104px;
+  height: 338px;
+  position: relative;
+  overflow: hidden;
+`
 
-  isVisible() {
-    return !!Object.keys(this.filters).length
-  }
-}
+/**
+ * Renders placeholder
+ * @component
+ *
+ * @example &lt;caption>Image placeholder&lt;/caption>
+ * return (
+ *   &lt;WrapperBox border>
+ *     &lt;Placeholder style={{ width: 100, height: 200 }} />
+ *   &lt;/WrapperBox>
+ * )
+ *
+ * @example &lt;caption>Text placeholder&lt;/caption>
+ * return (
+ *   &lt;WrapperBox border>
+ *     &lt;Label>Some name&lt;/Label>
+ *     &lt;Placeholder style={{ width: 400, height: 14 }} />
+ *   &lt;/WrapperBox>
+ * )
+ */
+const Placeholder = props => (&lt;StyledPlaceholder {...props} />)
 
-Filter.PARAM_SEPARATOR = '~~'
-
-module.exports = Filter
+export default Placeholder
 </code></pre>
         </article>
     </section>
