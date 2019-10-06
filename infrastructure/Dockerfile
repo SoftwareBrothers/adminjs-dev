@@ -1,4 +1,4 @@
-FROM node:10.8.0
+FROM node:10.13.0
 
 WORKDIR /usr/src/app
 
@@ -46,6 +46,8 @@ RUN yarn link admin-bro-hapijs
 RUN yarn link admin-bro-expressjs
 RUN yarn link admin-bro-mongoose
 RUN yarn link admin-bro-sequelizejs
+
+RUN yarn global add ts-node typescript
 
 EXPOSE 8080
 

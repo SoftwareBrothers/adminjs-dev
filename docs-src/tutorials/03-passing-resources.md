@@ -48,8 +48,8 @@ const mongoose = require('mongoose')
 AdminBro.registerAdapter(AdminBroMongoose)
 
 // Initializ Database along with models
-const User = mongoose.model('User', { name: String, email: String, surname: String })
-const Admin = mongoose.model('Admin', { name: String, email: String})
+const User = mongoose.model('User', { name: string, email: string, surname: string })
+const Admin = mongoose.model('Admin', { name: string, email: string})
 
 const run = async () => {
   const mongooseDb = await mongoose.connect('mongodb://localhost:27017/test', { useNewUrlParser: true })

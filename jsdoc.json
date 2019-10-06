@@ -1,22 +1,25 @@
 {
     "tags": {
-        "allowUnknownTags": ["mermaid", "category", "component"]
+        "allowUnknownTags": ["mermaid", "category", "component", "optional"]
     },
     "source": {
-        "include": ["./admin-bro/src",
+        "include": [
+                    "./admin-bro/src",
                     "./admin-bro-hapijs",
                     "./admin-bro-mongoose",
                     "./admin-bro-sequelizejs",
-                    "./admin-bro-expressjs"],
-        "excludePattern": "(node_modules/|docs|app-bundle.js)"
+                    "./admin-bro-expressjs"
+                   ],
+        "includePattern": "\\.(jsx|js|ts|tsx)$",
+        "excludePattern": "(node_modules/|docs|app-bundle.js|global-bundle.js)"
     },
     "plugins": [
         "plugins/markdown",
         "jsdoc-mermaid",
         "better-docs/category",
         "better-docs/component",
-        "better-docs/typedef-import",
-        "node_modules/jsdoc-typeof-plugin"
+        "node_modules/jsdoc-typeof-plugin",
+        "better-docs/typescript"
     ],
     "opts": {
         "encoding": "utf8",
@@ -42,7 +45,7 @@
             "name": "AdminBro Documentation",
             "logo": "images/logo.png",
             "component": {
-                "wrapper": "./docs-src/options/component.jsx",
+                "wrapper": "./docs-src/options/component.tsx",
                 "entry": [
                     "import 'regenerator-runtime/runtime';"
                 ]

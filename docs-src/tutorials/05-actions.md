@@ -24,6 +24,11 @@ Default actions can be accessed right from the AdminBro class.
 
 const AdminBro = require('admin-bro)
 AdminBro.ACTIONS.show // => show action object
+
+// so to modify the availability of action for all resources
+AdminBro.ACTIONS.show.isAccessible = ({ currentAdmin, resource, record }) => {
+  return currentAdmin.isManager
+}
 ```
 
 ## Modify default action per Resource
@@ -104,6 +109,8 @@ module.exports = {
 
 If request was __get__ it returns the {@link BaseRecord~JSON JSON} object for a record. Otherwise (__post__) updates the record. Then right Component renders the action.
 
+You probably don't want to modify the default Edit action. I showed that only to show you what is possible. But if you realy want to change this action use Before and {@link Action} action hooks.
+
 ## Custom Actions
 
 Also you can define your own actions. Simply pass {@link BaseAction} under a new key to {@link ResourceOptions}.
@@ -122,7 +129,7 @@ const adminBroOptions = {
             icon: 'fas fa-eye',
             isVisible: true,
             handler: async () => {...},
-            component: AdminBro.require('./your-action-component'),
+            component: AdminBro.bundle('./your-action-component'),
           },
         },
       },
@@ -138,9 +145,6 @@ for rendering it. To see what options you have - go to the next tutorial:
 
 - {@tutorial 06-writing-react-components}
 
-## Also...
+## And much much more...
 
-...make sure to check out the following pages: 
-
-* {@link ResourceOptions} and
-* {@link BaseAction}
+Things I presented in this tutorial are just the tip of the iceberg. Make sure to check out all available options in {@link Action} interface.

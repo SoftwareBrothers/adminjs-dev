@@ -15,7 +15,7 @@ const adminBroOptions = {
     handler: async () => {
 
     },
-    component: AdminBro.require('./my-dashboard-component')
+    component: AdminBro.bundle('./my-dashboard-component')
   },
   rootPath: '/admin'
   ...

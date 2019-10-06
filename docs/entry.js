@@ -1,6 +1,8 @@
 import 'regenerator-runtime/runtime';
 
-    window.Components = {};
+    window.reactComponents = {};
+
+    window.vueComponents = {};
 
   
       import React from "react";
@@ -8,13 +10,13 @@ import 'regenerator-runtime/runtime';
       import ReactDOM from "react-dom";
 
 
-      import Wrapper from '../better-docs/lib/react-wrapper.js';
+      import ReactWrapper from '../better-docs/lib/react-wrapper.js';
 
       window.React = React;
 
       window.ReactDOM = ReactDOM;
 
-      window.Wrapper = Wrapper;
+      window.ReactWrapper = ReactWrapper;
 
     
     import './styles/reset.css';
@@ -22,63 +24,63 @@ import 'regenerator-runtime/runtime';
     import './styles/iframe.css';
 
   
-      import _CustomWrapper from '../docs-src/options/component.jsx';
+      import _CustomWrapper from '../docs-src/options/component.tsx';
 
-      Components._CustomWrapper = _CustomWrapper;
+      window._CustomWrapper = _CustomWrapper;
 
-      import BaseActionComponent from '../admin-bro/src/frontend/components/app/base-action-component.jsx';
-Components['BaseActionComponent'] = BaseActionComponent;
+      import Component0 from '../admin-bro/src/frontend/components/app/base-action-component.tsx';
+reactComponents['BaseActionComponent'] = Component0;
 
-import BasePropertyComponent from '../admin-bro/src/frontend/components/property-type/index.jsx';
-Components['BasePropertyComponent'] = BasePropertyComponent;
+import Component1 from '../admin-bro/src/frontend/components/property-type/index.tsx';
+reactComponents['BasePropertyComponent'] = Component1;
 
-import Column from '../admin-bro/src/frontend/components/ui/column.jsx';
-Components['Column'] = Column;
+import Component2 from '../admin-bro/src/frontend/components/ui/column.tsx';
+reactComponents['Column'] = Component2;
 
-import Columns from '../admin-bro/src/frontend/components/ui/columns.jsx';
-Components['Columns'] = Columns;
+import Component3 from '../admin-bro/src/frontend/components/ui/columns.tsx';
+reactComponents['Columns'] = Component3;
 
-import DashboardHeader from '../admin-bro/src/frontend/components/ui/dashboard-header.jsx';
-Components['DashboardHeader'] = DashboardHeader;
+import Component4 from '../admin-bro/src/frontend/components/ui/dashboard-header.tsx';
+reactComponents['DashboardHeader'] = Component4;
 
-import Dropdown from '../admin-bro/src/frontend/components/ui/dropdown.jsx';
-Components['Dropdown'] = Dropdown;
+import Component5 from '../admin-bro/src/frontend/components/ui/dropdown.tsx';
+reactComponents['Dropdown'] = Component5;
 
-import Label from '../admin-bro/src/frontend/components/ui/label.jsx';
-Components['Label'] = Label;
+import Component6 from '../admin-bro/src/frontend/components/ui/label.tsx';
+reactComponents['Label'] = Component6;
 
-import Loader from '../admin-bro/src/frontend/components/ui/loader.jsx';
-Components['Loader'] = Loader;
+import Component7 from '../admin-bro/src/frontend/components/ui/loader.tsx';
+reactComponents['Loader'] = Component7;
 
-import Paginate from '../admin-bro/src/frontend/components/ui/paginate.jsx';
-Components['Paginate'] = Paginate;
+import Component8 from '../admin-bro/src/frontend/components/ui/paginate.tsx';
+reactComponents['Paginate'] = Component8;
 
-import Placeholder from '../admin-bro/src/frontend/components/ui/placeholder.jsx';
-Components['Placeholder'] = Placeholder;
+import Component9 from '../admin-bro/src/frontend/components/ui/placeholder.tsx';
+reactComponents['Placeholder'] = Component9;
 
-import PropertyInEdit from '../admin-bro/src/frontend/components/ui/property-in-edit.jsx';
-Components['PropertyInEdit'] = PropertyInEdit;
+import Component10 from '../admin-bro/src/frontend/components/ui/property-in-edit.tsx';
+reactComponents['PropertyInEdit'] = Component10;
 
-import PropertyInFilter from '../admin-bro/src/frontend/components/ui/property-in-filter.jsx';
-Components['PropertyInFilter'] = PropertyInFilter;
+import Component11 from '../admin-bro/src/frontend/components/ui/property-in-filter.tsx';
+reactComponents['PropertyInFilter'] = Component11;
 
-import PropertyInShow from '../admin-bro/src/frontend/components/ui/property-in-show.jsx';
-Components['PropertyInShow'] = PropertyInShow;
+import Component12 from '../admin-bro/src/frontend/components/ui/property-in-show.tsx';
+reactComponents['PropertyInShow'] = Component12;
 
-import RecordsTableHeader from '../admin-bro/src/frontend/components/app/records-table-header.jsx';
-Components['RecordsTableHeader'] = RecordsTableHeader;
+import Component13 from '../admin-bro/src/frontend/components/app/records-table-header.tsx';
+reactComponents['RecordsTableHeader'] = Component13;
 
-import StyledButton from '../admin-bro/src/frontend/components/ui/styled-button.jsx';
-Components['StyledButton'] = StyledButton;
+import Component14 from '../admin-bro/src/frontend/components/ui/styled-button.tsx';
+reactComponents['StyledButton'] = Component14;
 
-import StyledSection from '../admin-bro/src/frontend/components/ui/styled-section.jsx';
-Components['StyledSection'] = StyledSection;
+import Component15 from '../admin-bro/src/frontend/components/ui/styled-section.tsx';
+reactComponents['StyledSection'] = Component15;
 
-import Table from '../admin-bro/src/frontend/components/ui/table.jsx';
-Components['Table'] = Table;
+import Component16 from '../admin-bro/src/frontend/components/ui/table.tsx';
+reactComponents['Table'] = Component16;
 
-import ValueBlock from '../admin-bro/src/frontend/components/ui/value-block.jsx';
-Components['ValueBlock'] = ValueBlock;
+import Component17 from '../admin-bro/src/frontend/components/ui/value-block.tsx';
+reactComponents['ValueBlock'] = Component17;
 
-import WrapperBox from '../admin-bro/src/frontend/components/ui/wrapper-box.jsx';
-Components['WrapperBox'] = WrapperBox;
+import Component18 from '../admin-bro/src/frontend/components/ui/wrapper-box.tsx';
+reactComponents['WrapperBox'] = Component18;

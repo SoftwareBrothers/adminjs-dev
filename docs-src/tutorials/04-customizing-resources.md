@@ -186,7 +186,7 @@ const adminBroOptions = {
       properties: {
         content: {
           component: {
-            list: AdminBro.require('./city-content-in-list'),
+            list: AdminBro.bundle('./city-content-in-list'),
           },
         },
       },
@@ -222,7 +222,7 @@ const adminBroOptions = {
       lng: { isVisible: { list: false, show: false, edit: true, filter: true } },
       map: {
         components: {
-          show: AdminBro.require('./city-in-a-show'),
+          show: AdminBro.bundle('./city-in-a-show'),
         },
         isVisible: {
           show: true, view: false, edit: false, filter: false,

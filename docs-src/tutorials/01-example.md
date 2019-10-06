@@ -27,7 +27,7 @@ const app = express()
 app.use(bodyParser.json())
 
 // Resources definitions
-const User = mongoose.model('User', { name: String, email: String, surname: String })
+const User = mongoose.model('User', { name: string, email: string, surname: string })
 
 // Routes definitions
 app.get('/', (req, res) => res.send('Hello World!'))
@@ -132,7 +132,7 @@ const app = express()
 app.use(bodyParser.json())
 
 // Resources definitions
-const User = mongoose.model('User', { name: String, email: String, surname: String })
+const User = mongoose.model('User', { name: string, email: string, surname: string })
 
 // Routes definitions
 app.get('/', (req, res) => res.send('Hello World!'))

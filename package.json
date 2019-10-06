@@ -7,7 +7,8 @@
     "docs": "jsdoc -c jsdoc.json",
     "validate-docs": "jsdoc -c jsdoc-test.json",
     "debug": "nodemon --inspect=0.0.0.0:9222 --nolazy ./index.js",
-    "start": "nodemon -e js,jsx --ignore 'app-bundle.js' --ignore '*.spec.js' ./index.js",
+    "start": "nodemon -e js,jsx,ts --ignore 'app-bundle.js' --ignore '*.spec.js' ./index.js",
+    "start:ts": "nodemon -e js,jsx,ts --ignore 'app-bundle.js' --ignore '*.spec.js' --exec 'ts-node' ./index.js",
     "start:express": "nodemon --ignore '*.spec.js' ./admin-bro-example-app/express/index.js"
   },
   "repository": {
@@ -21,6 +22,7 @@
   },
   "homepage": "https://github.com/SoftwareBrothers/admin-bro-dev#readme",
   "dependencies": {
+    "@babel/preset-typescript": "^7.6.0",
     "@babel/runtime": "^7.6.0",
     "@emotion/unitless": "^0.7.3",
     "admin-bro": "^0.1.2",
@@ -31,7 +33,7 @@
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "babel-runtime": "^6.26.0",
-    "bcrypt": "^3.0.2",
+    "bcrypt": "^3.0.6",
     "boom": "^7.3.0",
     "brace": "^0.11.1",
     "bulma": "^0.7.5",

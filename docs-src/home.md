@@ -8,7 +8,7 @@ Check out the example application with mongodb and postgres models here: [https:
 
 
 <a href="https://admin-bro-example-app.herokuapp.com/admin" style="margin-right: 80px" class="button is-pulled-left" target="_blank">See the demo app</a>
-- login: __ test@example.com __
+- login: __test@example.com__
 - password: __password__
 
 ### Screenshots
