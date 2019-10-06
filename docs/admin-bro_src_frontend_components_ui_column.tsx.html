@@ -82,7 +82,6 @@
         <article>
             <pre class="prettyprint source linenums"><code>import React from 'react'
 import styled from 'styled-components'
-import PropTypes from 'prop-types'
 
 const StyledColumn = styled.section.attrs&lt;Props>(({ width = 4, offset = 0 }) => ({
   className: `column is-${width}-desktop is-offset-${offset}`,
@@ -95,7 +94,7 @@ const StyledColumn = styled.section.attrs&lt;Props>(({ width = 4, offset = 0 }) 
  *
  * Example usage with {@link Column}
  * ```JavaScript
- * import { Column, Columns } from 'admin-bro/components'
+ * import { Column, Columns } from 'admin-bro'
  * //...
  * return (
  *   &lt;columns>
