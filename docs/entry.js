@@ -73,14 +73,17 @@ reactComponents['RecordsTableHeader'] = Component13;
 import Component14 from '../admin-bro/src/frontend/components/ui/styled-button.tsx';
 reactComponents['StyledButton'] = Component14;
 
-import Component15 from '../admin-bro/src/frontend/components/ui/styled-section.tsx';
-reactComponents['StyledSection'] = Component15;
+import Component15 from '../admin-bro/src/frontend/components/ui/styled-link.tsx';
+reactComponents['StyledLink'] = Component15;
 
-import Component16 from '../admin-bro/src/frontend/components/ui/table.tsx';
-reactComponents['Table'] = Component16;
+import Component16 from '../admin-bro/src/frontend/components/ui/styled-section.tsx';
+reactComponents['StyledSection'] = Component16;
 
-import Component17 from '../admin-bro/src/frontend/components/ui/value-block.tsx';
-reactComponents['ValueBlock'] = Component17;
+import Component17 from '../admin-bro/src/frontend/components/ui/table.tsx';
+reactComponents['Table'] = Component17;
 
-import Component18 from '../admin-bro/src/frontend/components/ui/wrapper-box.tsx';
-reactComponents['WrapperBox'] = Component18;
+import Component18 from '../admin-bro/src/frontend/components/ui/value-block.tsx';
+reactComponents['ValueBlock'] = Component18;
+
+import Component19 from '../admin-bro/src/frontend/components/ui/wrapper-box.tsx';
+reactComponents['WrapperBox'] = Component19;

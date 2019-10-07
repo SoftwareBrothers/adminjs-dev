@@ -106,7 +106,7 @@ AdminBro.registerAdapter(AdminBroMongoose)
 Pass resources to AdminBro like this (_express example_)
 
 ```javascript
-const User = mongoose.model('User', { name: string, email: string, surname: string })
+const User = mongoose.model('User', { name: String, email: String, surname: String })
 const AdminBroOptions = {
   resources: [User],
 }

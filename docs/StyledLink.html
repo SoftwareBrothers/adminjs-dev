@@ -1,11 +1,9 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
     <meta charset="utf-8">
-    <title>JSDoc: admin-bro-hapijs/plugin.js</title>
+    <title>JSDoc: StyledLink</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -69,179 +67,167 @@
             <div class="column is-9-desktop">
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
-                        <p>Source</p>
-                        <h1>admin-bro-hapijs/plugin.js</h1>
+                        <p>Components</p>
+                        <h1>StyledLink</h1>
                     </header>
                     
                     
 
 
 
+
+<section>
+
+<header>
     
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>const path = require('path')
-const Boom = require('boom')
-const inert = require('inert')
-const AdminBro = require('admin-bro')
-const SessionAuth = require('./extensions/session-auth')
-const pkg = require('./package.json')
+        <h2>
+            &ltStyledLink  /&gt
+        </h2>
+        
+    
+</header>
 
-/**
- * Plugin definition for Hapi.js framework.
- * @private
- */
+<article>
+    <div class="container-overview">
+    
+        
+            <div class='vertical-section'>
+                <h3 class="title"><span>Constructor</span></h3>
+                <div class="members">
+                    <div class="member">
 
-module.exports = {
-  name: pkg.name,
-  version: pkg.version,
-  /**
-   * Actual method that Hapi uses under the hood when you call
-   * server.register(plugin, options) method.
-   * Options you give in Hapi are passed back to it.
-   *
-   * @param  {Object} server                          Hapi.js server
-   * @param  {Object} options                         options passed to AdminBro
-   * @param  {Object} options.auth                    Authentication options. You can pass here
-   *                                                  options described below and any other option
-   *                                                  supported by the https://github.com/hapijs/cookie
-   * @param  {Object} [options.auth.authenticate]     function takes email and password
-   *                                                  as arguments. Should return a logged in
-   *                                                  user or null (no authorization), if given
-   *                                                  options.auth.strategy is set to 'session'
-   * @param  {Object} [options.auth.strategy]         auth strategy for hapi.js routes. By default,
-   *                                                  set to none - all admin routes will be
-   *                                                  available without authentication
-   * @param  {Object} [options.auth.cookieName=adminBro] When auth strategy is set to 'session',
-   *                                                  this will be the name of the cookie
-   * @param  {Object} [options.auth.cookiePassword]   cookie password for session strategy
-   * @param  {Object} [options.auth.isSecure=false]   if cookie should be accessible only via HTTPS,
-   *                                                  default to false
-   * @return {AdminBro}                               AdminBro instance
-   * @function register
-   * @static
-   * @memberof module:admin-bro-hapijs
-   * @example
-   * const AdminBroPlugin = require('admin-bro-hapijs')
-   * const Hapi = require('hapi')
-   *
-   * // see AdminBro documentation on database setup.
-   * const yourDatabase = require('your-database-setup-file')
-   *
-   * const ADMIN = {
-   *   email: 'text@example.com',
-   *   password: 'password',
-   * }
-   *
-   * const adminBroOptions = {
-   *   resources: [yourDatabase],
-   *
-   *   auth: {
-   *     authenticate: (email, password) => {
-   *       if (ADMIN.email === email &amp;&amp; ADMIN.password === password) {
-   *         return ADMIN
-   *       }
-   *       return null
-   *     },
-   *     strategy: 'session',
-   *     cookieName: 'adminBroCookie',
-   *     cookiePassword: process.env.COOKIE_PASSWORD || 'makesurepasswordissecure',
-   *     isSecure: true, //only https requests
-   *   },
-   * }
-   *
-   * const server = Hapi.server({ port: process.env.PORT || 8080 })
-   * const start = async () => {
-   *   await server.register({
-   *     plugin: AdminBroPlugin,
-   *     options: adminBroOptions,
-   *   })
-   *
-   *   await server.start()
-   * }
-   *
-   * start()
-   */
-  register: async (server, options) => {
-    const admin = new AdminBro(options)
-    await admin.initialize()
-    let authStrategy = options.auth &amp;&amp; options.auth.strategy
-    const { routes, assets } = AdminBro.Router
 
-    if (options.auth &amp;&amp; options.auth.authenticate) {
-      if (authStrategy &amp;&amp; authStrategy !== 'session') {
-        throw new Error(`When you give auth.authenticate as a parameter, auth strategy is set to 'session'.
-                         Please remove auth.strategy from authentication parameters.
-                        `)
-      }
-      authStrategy = 'session'
+    
+    <h4 class="name" id="StyledLink">
+        
+        <span class="code-name">
+            
+                &ltStyledLink  /&gt
+            
+        </span>
+    </h4>
+    
 
-      if (!options.auth.cookiePassword) {
-        throw new Error('You have to give auth.cookiePassword parameter if you want to use authenticate function.')
-      }
+    
+    
+    <div class="description">
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Component wrapping Link from React Router with styled. It looks exactly like <a href="StyledButton.html">StyledButton</a></p>
+    </div>
+    
 
-      await SessionAuth(server, {
-        loginPath: admin.options.loginPath,
-        logoutPath: admin.options.logoutPath,
-        rootPath: admin.options.rootPath,
-        cookieName: 'admin-bro',
-        ...options.auth,
-      }, AdminBro)
-    }
 
-    routes.forEach((route) => {
-      server.route({
-        method: route.method,
-        path: `${admin.options.rootPath}${route.path}`,
-        options: { auth: authStrategy },
-        handler: async (request, h) => {
-          try {
-            const loggedInUser = request.auth &amp;&amp; request.auth.credentials
-            const controller = new route.Controller({ admin }, loggedInUser)
-            const ret = await controller[route.action](request, h)
-            const response = h.response(ret)
-            if (route.contentType) {
-              response.type(route.contentType)
-            }
-            return response
-          } catch (e) {
-            // eslint-disable-next-line no-console
-            console.log(e)
-            throw Boom.boomify(e)
-          }
-        },
-      })
-    })
 
-    await server.register(inert)
 
-    assets.forEach((asset) => {
-      server.route({
-        method: 'GET',
-        options: { auth: false },
-        path: `${admin.options.rootPath}${asset.path}`,
-        handler: {
-          file: {
-            path: path.resolve(asset.src),
-            confine: false,
-          },
-        },
-      })
-    })
 
-    return admin
-  },
-  /**
-   * Renders login page by simply invoking {@link AdminBro.renderLogin}
-   * @memberof module:admin-bro-hapijs
-   */
-  renderLogin: async ({ action, errorMessage }) => (
-    AdminBro.renderLogin({ action, errorMessage })
-  ),
-}
-</code></pre>
-        </article>
-    </section>
+
+
+    
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="https://github.com/ReactTraining/react-router/blob/master/packages/react-router-dom/docs/api/Link.md">https://github.com/ReactTraining/react-router/blob/master/packages/react-router-dom/docs/api/Link.md</a></li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_frontend_components_ui_styled-link.tsx.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_frontend_components_ui_styled-link.tsx.html">admin-bro/src/frontend/components/ui/styled-link.tsx</a>, <a href="admin-bro_src_frontend_components_ui_styled-link.tsx.html#line11">line 11</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+                </div>
+            </div>
+        
+    
+    </div>
+    
+        
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
 
 
 
