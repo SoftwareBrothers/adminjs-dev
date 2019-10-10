@@ -19,5 +19,8 @@
   },
   "07-custom-dashboard": {
     "title": "07. Customize dashboard"
+  },
+  "08-rbac": {
+    "title": "08. Role-Based Access Control"
   }
 }
