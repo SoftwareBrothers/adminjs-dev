@@ -309,7 +309,7 @@ router = AdminBroExpress.buildRouter(adminBro, router)
         <p class="tag-source">
             <a href="admin-bro-expressjs_plugin.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro-expressjs_plugin.js.html">admin-bro-expressjs/plugin.js</a>, <a href="admin-bro-expressjs_plugin.js.html#line194">line 194</a>
+                <a href="admin-bro-expressjs_plugin.js.html">admin-bro-expressjs/plugin.js</a>, <a href="admin-bro-expressjs_plugin.js.html#line201">line 201</a>
             </span>
         </p>
     
@@ -382,7 +382,7 @@ router = AdminBroExpress.buildRouter(adminBro, router)
         <p class="tag-source">
             <a href="admin-bro-expressjs_plugin.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro-expressjs_plugin.js.html">admin-bro-expressjs/plugin.js</a>, <a href="admin-bro-expressjs_plugin.js.html#line188">line 188</a>
+                <a href="admin-bro-expressjs_plugin.js.html">admin-bro-expressjs/plugin.js</a>, <a href="admin-bro-expressjs_plugin.js.html#line195">line 195</a>
             </span>
         </p>
     
@@ -548,7 +548,7 @@ dependency.</p>
   <td class="type">
   
       
-<span class="param-type">function</span>
+<span class="param-type"><a href="module-admin-bro-expressjs.html#.Authenticate">module:admin-bro-expressjs.Authenticate</a></span>
 
 
   
@@ -570,10 +570,7 @@ dependency.</p>
       </td>
   
 
-  <td class="description last"><p>function takes 2 arguments: email
-and password. Returns authenticated
-user or null, in case of a wrong email
-and/or password</p></td>
+  <td class="description last"><p>authenticate function</p></td>
 </tr>
 
   
@@ -725,7 +722,7 @@ and/or password</p></td>
       </td>
   
 
-  <td class="description last"><p>Options that are passed to express-session</p></td>
+  <td class="description last"><p>Options that are passed to <a href="https://github.com/expressjs/session">express-session</a></p></td>
 </tr>
 
 
@@ -772,7 +769,7 @@ and/or password</p></td>
         <p class="tag-source">
             <a href="admin-bro-expressjs_plugin.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro-expressjs_plugin.js.html">admin-bro-expressjs/plugin.js</a>, <a href="admin-bro-expressjs_plugin.js.html#line123">line 123</a>
+                <a href="admin-bro-expressjs_plugin.js.html">admin-bro-expressjs/plugin.js</a>, <a href="admin-bro-expressjs_plugin.js.html#line130">line 130</a>
             </span>
         </p>
     
@@ -1072,6 +1069,235 @@ AdminBroExpress.buildAuthenticatedRouter(adminBro, {
     
 
     
+        <div class='vertical-section'>
+            <h3 class="title"><span>Type Definitions</span></h3>
+            <div class="members">
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id=".Authenticate">
+        <a class="href-link" href="#.Authenticate">#</a>
+        
+        <span class="code-name">
+            
+                Authenticate<span class="signature">(email<span class="signature-attributes">opt</span>, password<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="AdminBro.html#CurrentAdmin">CurrentAdmin</a>|null}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>function taking 2 arguments email and password</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>email</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">string</span>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
+
+      
+
+      
+      </td>
+  
+
+  
+
+  <td class="description last"><p>email given in the form</p></td>
+</tr>
+
+
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>password</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">string</span>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
+
+      
+
+      
+      </td>
+  
+
+  
+
+  <td class="description last"><p>password given in the form</p></td>
+</tr>
+
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro-expressjs_plugin.js.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro-expressjs_plugin.js.html">admin-bro-expressjs/plugin.js</a>, <a href="admin-bro-expressjs_plugin.js.html#line87">line 87</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>returns current admin or null</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type"><a href="AdminBro.html#CurrentAdmin">CurrentAdmin</a></span>
+|
+
+<span class="param-type">null</span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+            </div>
+        </div>
+    
 
     
 </article>
@@ -1086,6 +1312,7 @@ AdminBroExpress.buildAuthenticatedRouter(adminBro, {
         </div>
     </div>
 
+
 <footer class="footer">
     <div class="content has-text-centered">
         <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a></p>
@@ -1095,6 +1322,7 @@ AdminBroExpress.buildAuthenticatedRouter(adminBro, {
         </p>
     </div>
 </footer>
+
 
 <script src="scripts/app.min.js"></script>
 <script src="scripts/linenumber.js"> </script>
