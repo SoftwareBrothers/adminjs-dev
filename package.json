@@ -4,7 +4,7 @@
   "description": "wrapper repo for entire AdminBro core with couple of its plugins",
   "main": "index.js",
   "scripts": {
-    "docs": "mv ./admin-bro/package.json ./admin-bro/package.json-tmp && jsdoc -c jsdoc.json && mv ./admin-bro/package.json-tmp ./admin-bro/package.json",
+    "docs": "jsdoc -c jsdoc.json",
     "validate-docs": "jsdoc -c jsdoc-test.json",
     "debug": "nodemon --inspect=0.0.0.0:9222 --nolazy ./index.js",
     "start": "nodemon -e js,jsx,ts --ignore 'app-bundle.js' --ignore '*.spec.js' ./index.js",

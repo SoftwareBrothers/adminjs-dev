@@ -24,7 +24,7 @@ import 'regenerator-runtime/runtime';
     import './styles/iframe.css';
 
   
-      import _CustomWrapper from '../docs-src/options/component.tsx';
+      import _CustomWrapper from '../admin-bro/docs/component.tsx';
 
       window._CustomWrapper = _CustomWrapper;
 
