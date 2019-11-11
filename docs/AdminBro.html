@@ -42,11 +42,15 @@
                     <div class="navbar-end">
                     
                         <div class="navbar-item">
-                            <a href="https://github.com/SoftwareBrothers/admin-bro" target="_blank">Github</a>
+                            <a href="https://github.com/SoftwareBrothers/admin-bro" target="_blank">
+                                Github
+                            </a>
                         </div>
                     
                         <div class="navbar-item">
-                            <a href="https://admin-bro-example-app.herokuapp.com/admin" target="_blank">Example Application</a>
+                            <a href="https://admin-bro-example-app.herokuapp.com/admin" target="_blank">
+                                Example Application
+                            </a>
                         </div>
                     
                     </div>
@@ -102,6 +106,7 @@ user. Its instance is a currier - injected in all other classes.</p></div>
 
     
     <h4 class="name" id="AdminBro">
+        <a class="href-link" href="#AdminBro">#</a>
         
         <span class="code-name">
             
@@ -215,7 +220,7 @@ user. Its instance is a currier - injected in all other classes.</p></div>
         <p class="tag-source">
             <a href="admin-bro_src_admin-bro.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line45">line 45</a>
+                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line44">line 44</a>
             </span>
         </p>
     
@@ -244,7 +249,7 @@ user. Its instance is a currier - injected in all other classes.</p></div>
     <h5>Example</h5>
     
     
-        <pre class="prettyprint"><code>const { AdminBro } = require('admin-bro')
+        <pre class="prettyprint"><code>const AdminBro = require('admin-bro')
 const admin = new AdminBro(AdminBroOptions)</code></pre>
     
 
@@ -284,6 +289,7 @@ const admin = new AdminBro(AdminBroOptions)</code></pre>
     </span>
 
 <h4 class="name" id=".ACTIONS">
+    <a class="href-link" href="#.ACTIONS">#</a>
     
         
             <span class='tag'>static</span>
@@ -342,7 +348,7 @@ edit, show and delete you can do this here.</p>
         <p class="tag-source">
             <a href="admin-bro_src_admin-bro.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line252">line 252</a>
+                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line271">line 271</a>
             </span>
         </p>
     
@@ -375,9 +381,8 @@ ACTIONS.show.isAccessible = () => {...}</code></pre>
     </span>
 
 <h4 class="name" id=".BaseDatabase">
+    <a class="href-link" href="#.BaseDatabase">#</a>
     
-        
-            <span class='tag'>abstract</span>
         
             <span class='tag'>static</span>
         
@@ -393,89 +398,6 @@ ACTIONS.show.isAccessible = () => {...}</code></pre>
 
 <div class="description">
     <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>abstract class for all databases. External adapters have to implement that.</p>
-</div>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="admin-bro_src_admin-bro.ts.html" class="button">View Source</a>
-            <span>
-                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line202">line 202</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-</div>
-            
-                <div class="member">
-
-    <span class="method-parameter is-pulled-right">
-        <label>Type:</label>
-        
-<span class="param-type">Class.&lt;<a href="BaseProperty.html">BaseProperty</a>></span>
-
-
-    </span>
-
-<h4 class="name" id=".BaseProperty">
-    
-        
-            <span class='tag'>abstract</span>
-        
-            <span class='tag'>static</span>
-        
-    
-    <span class="code-name">
-        BaseProperty
-    </span>
-    
-</h4>
-
-
-
-
-<div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>abstract class for all properties. External adapters have to implement that or at least
-their BaseResource implementation should return records of this type.</p>
 </div>
 
 
@@ -534,15 +456,96 @@ their BaseResource implementation should return records of this type.</p>
     <span class="method-parameter is-pulled-right">
         <label>Type:</label>
         
+<span class="param-type">Class.&lt;<a href="BaseProperty.html">BaseProperty</a>></span>
+
+
+    </span>
+
+<h4 class="name" id=".BaseProperty">
+    <a class="href-link" href="#.BaseProperty">#</a>
+    
+        
+            <span class='tag'>static</span>
+        
+    
+    <span class="code-name">
+        BaseProperty
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>abstract class for all properties. External adapters have to implement that or at least
+their BaseResource implementation should return records of this type.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_admin-bro.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line247">line 247</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
 <span class="param-type">Class.&lt;<a href="BaseRecord.html">BaseRecord</a>></span>
 
 
     </span>
 
 <h4 class="name" id=".BaseRecord">
+    <a class="href-link" href="#.BaseRecord">#</a>
     
-        
-            <span class='tag'>abstract</span>
         
             <span class='tag'>static</span>
         
@@ -600,7 +603,7 @@ their BaseResource implementation should return records of this type.</p>
         <p class="tag-source">
             <a href="admin-bro_src_admin-bro.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line210">line 210</a>
+                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line234">line 234</a>
             </span>
         </p>
     
@@ -623,9 +626,8 @@ their BaseResource implementation should return records of this type.</p>
     </span>
 
 <h4 class="name" id=".BaseResource">
+    <a class="href-link" href="#.BaseResource">#</a>
     
-        
-            <span class='tag'>abstract</span>
         
             <span class='tag'>static</span>
         
@@ -682,7 +684,7 @@ their BaseResource implementation should return records of this type.</p>
         <p class="tag-source">
             <a href="admin-bro_src_admin-bro.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line219">line 219</a>
+                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line240">line 240</a>
             </span>
         </p>
     
@@ -705,9 +707,8 @@ their BaseResource implementation should return records of this type.</p>
     </span>
 
 <h4 class="name" id=".Filter">
+    <a class="href-link" href="#.Filter">#</a>
     
-        
-            <span class='tag'>abstract</span>
         
             <span class='tag'>static</span>
         
@@ -764,7 +765,7 @@ their BaseResource implementation should return records of this type.</p>
         <p class="tag-source">
             <a href="admin-bro_src_admin-bro.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line236">line 236</a>
+                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line253">line 253</a>
             </span>
         </p>
     
@@ -787,6 +788,7 @@ their BaseResource implementation should return records of this type.</p>
     </span>
 
 <h4 class="name" id=".Router">
+    <a class="href-link" href="#.Router">#</a>
     
         
             <span class='tag'>static</span>
@@ -845,7 +847,7 @@ It is used by external plugins.</p>
         <p class="tag-source">
             <a href="admin-bro_src_admin-bro.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line184">line 184</a>
+                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line221">line 221</a>
             </span>
         </p>
     
@@ -879,6 +881,7 @@ Router.routes.forEach(route => {
     </span>
 
 <h4 class="name" id=".UserComponents">
+    <a class="href-link" href="#.UserComponents">#</a>
     
         
             <span class='tag'>static</span>
@@ -936,7 +939,7 @@ Router.routes.forEach(route => {
         <p class="tag-source">
             <a href="admin-bro_src_admin-bro.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line273">line 273</a>
+                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line283">line 283</a>
             </span>
         </p>
     
@@ -959,6 +962,7 @@ Router.routes.forEach(route => {
     </span>
 
 <h4 class="name" id=".ValidationError">
+    <a class="href-link" href="#.ValidationError">#</a>
     
         
             <span class='tag'>static</span>
@@ -1017,7 +1021,7 @@ to use it.</p>
         <p class="tag-source">
             <a href="admin-bro_src_admin-bro.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line244">line 244</a>
+                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line260">line 260</a>
             </span>
         </p>
     
@@ -1040,6 +1044,7 @@ to use it.</p>
     </span>
 
 <h4 class="name" id=".VERSION">
+    <a class="href-link" href="#.VERSION">#</a>
     
         
             <span class='tag'>static</span>
@@ -1097,7 +1102,7 @@ to use it.</p>
         <p class="tag-source">
             <a href="admin-bro_src_admin-bro.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line266">line 266</a>
+                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line277">line 277</a>
             </span>
         </p>
     
@@ -1120,6 +1125,7 @@ to use it.</p>
     </span>
 
 <h4 class="name" id="options">
+    <a class="href-link" href="#options">#</a>
     
     <span class="code-name">
         options
@@ -1173,7 +1179,7 @@ to use it.</p>
         <p class="tag-source">
             <a href="admin-bro_src_admin-bro.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line56">line 56</a>
+                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line55">line 55</a>
             </span>
         </p>
     
@@ -1196,6 +1202,7 @@ to use it.</p>
     </span>
 
 <h4 class="name" id="resources">
+    <a class="href-link" href="#resources">#</a>
     
     <span class="code-name">
         resources
@@ -1250,7 +1257,7 @@ They can be fetched with the <a href="AdminBro.html#findResource">AdminBro#findR
         <p class="tag-source">
             <a href="admin-bro_src_admin-bro.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line51">line 51</a>
+                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line50">line 50</a>
             </span>
         </p>
     
@@ -1276,6 +1283,7 @@ They can be fetched with the <a href="AdminBro.html#findResource">AdminBro#findR
 
     
     <h4 class="name" id=".bundle">
+        <a class="href-link" href="#.bundle">#</a>
         
             
                 <span class='tag'>static</span>
@@ -1394,7 +1402,7 @@ It will be available under AdminBro.UserComponents[componentId].</p>
         <p class="tag-source">
             <a href="admin-bro_src_admin-bro.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line152">line 152</a>
+                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line151">line 151</a>
             </span>
         </p>
     
@@ -1463,6 +1471,7 @@ It will be available under AdminBro.UserComponents[componentId].</p>
 
     
     <h4 class="name" id=".registerAdapter">
+        <a class="href-link" href="#.registerAdapter">#</a>
         
             
                 <span class='tag'>static</span>
@@ -1629,7 +1638,7 @@ It will be available under AdminBro.UserComponents[componentId].</p>
         <p class="tag-source">
             <a href="admin-bro_src_admin-bro.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line76">line 76</a>
+                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line75">line 75</a>
             </span>
         </p>
     
@@ -1671,6 +1680,7 @@ AdminBro.registerAdapter(MongooseAdapter)</code></pre>
 
     
     <h4 class="name" id=".renderLogin">
+        <a class="href-link" href="#.renderLogin">#</a>
         
             
                 <span class='tag'>async</span>
@@ -1872,7 +1882,7 @@ the form</p></td>
         <p class="tag-source">
             <a href="admin-bro_src_admin-bro.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line112">line 112</a>
+                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line111">line 111</a>
             </span>
         </p>
     
@@ -1930,6 +1940,7 @@ the form</p></td>
 
     
     <h4 class="name" id="findResource">
+        <a class="href-link" href="#findResource">#</a>
         
         <span class="code-name">
             
@@ -2043,7 +2054,7 @@ the form</p></td>
         <p class="tag-source">
             <a href="admin-bro_src_admin-bro.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line126">line 126</a>
+                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line125">line 125</a>
             </span>
         </p>
     
@@ -2130,6 +2141,7 @@ await User.findOne(userId)</code></pre>
 
     
     <h4 class="name" id="initialize">
+        <a class="href-link" href="#initialize">#</a>
         
             
                 <span class='tag'>async</span>
@@ -2198,7 +2210,7 @@ all external plugins.</p>
         <p class="tag-source">
             <a href="admin-bro_src_admin-bro.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line92">line 92</a>
+                <a href="admin-bro_src_admin-bro.ts.html">admin-bro/src/admin-bro.ts</a>, <a href="admin-bro_src_admin-bro.ts.html#line91">line 91</a>
             </span>
         </p>
     
@@ -2246,6 +2258,7 @@ all external plugins.</p>
     </span>
 
 <h4 class="name" id="CurrentAdmin">
+    <a class="href-link" href="#CurrentAdmin">#</a>
     
     <span class="code-name">
         CurrentAdmin
@@ -2445,6 +2458,7 @@ all external plugins.</p>
     </span>
 
 <h4 class="name" id="RouterType">
+    <a class="href-link" href="#RouterType">#</a>
     
     <span class="code-name">
         RouterType
