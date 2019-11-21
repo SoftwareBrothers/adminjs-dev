@@ -256,13 +256,13 @@ a different <em>wrapper components</em>:</p>
     
         
 
-<div id='amsf4e6hrqsk2uyff6a'></div>
+<div id='okcmfgjkff8k38oaail'></div>
 
 <script>
   ReactDOM.render(ReactWrapper({
     example: "const booleanProperty = {\n  isTitle: false,\n  name: 'awesome',\n  isId: false,\n  position: -1,\n  label: 'I am awesome',\n  type: 'boolean',\n}\n\nconst stringProperty = {\n  isTitle: true,\n  name: 'name',\n  isId: false,\n  position: -1,\n  label: 'Name of a user',\n  type: 'string',\n}\n// Resource is taken from the database\nconst resource = {\n  id: 'User',\n  name: 'User Model',\n  titleProperty: 'name',\n  resourceActions: [],\n  listProperties: [booleanProperty, stringProperty],\n  editProperties: [booleanProperty, stringProperty],\n  showProperties: [booleanProperty, stringProperty],\n  filterProperties: [booleanProperty, stringProperty],\n}\n\nconst record = {\n  id: '1',\n  title: 'John',\n  params: {\n    name: 'John',\n    gender: 'male',\n  },\n  recordActions: [],\n}\n\nreturn (\n  <WrapperBox border>\n    <BasePropertyComponent\n      property={booleanProperty}\n      resource={resource}\n      where=\"edit\"\n      record={record}\n    />\n    <BasePropertyComponent\n      property={stringProperty}\n      resource={resource}\n      where=\"edit\"\n      record={record}\n    />\n  </WrapperBox>\n)",
-    uniqId: "amsf4e6hrqsk2uyff6a",
-  }), document.getElementById('amsf4e6hrqsk2uyff6a'));
+    uniqId: "okcmfgjkff8k38oaail",
+  }), document.getElementById('okcmfgjkff8k38oaail'));
 </script>
     
 
@@ -321,6 +321,37 @@ a different <em>wrapper components</em>:</p>
 
 <div class="description">
     <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Props which are passed to all your custom property components</p>
+<p>Example</p>
+<pre class="prettyprint source"><code>// AdminBroOptions
+const AdminBro = require('admin-bro')
+const ResourceModel = require('./resource-model')
+const AdminBroOptions = {
+  resources: [{
+    resource: ResourceModel
+    options: {
+      properties: {
+        name: {
+          components: {
+            show: AdminBro.bundle('./my-react-component'),
+          },
+        },
+      },
+    },
+  }],
+}
+
+// my-react-component.jsx
+const MyReactComponent = (props: BasePropertyProps) => {
+  const { record, property } = props
+  const value = record.params[property.name] === 'foo' ? 'bar' : 'zoe'
+  return (
+    &lt;PropertyInShow property={property}>
+      {value}
+    &lt;/PropertyInShow>
+  )
+}
+
+</code></pre>
 </div>
 
 
@@ -497,7 +528,8 @@ a different <em>wrapper components</em>:</p>
 
     
 
-    <td class="description last"><p>callback function which should indicate change of the field value.</p></td>
+    <td class="description last"><p>callback function which should indicate change of the field value. You can use it,
+when overriding edit properties.</p></td>
 </tr>
 
     
@@ -594,7 +626,7 @@ a different <em>wrapper components</em>:</p>
         
         <span class="code-name">
             
-                OnPropertyChange<span class="signature">(propertyOrRecord, value<span class="signature-attributes">opt</span>, record<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+                OnPropertyChange<span class="signature">(propertyOrRecord, value<span class="signature-attributes">opt</span>, selectedRecord<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
             
         </span>
     </h4>
@@ -605,7 +637,51 @@ a different <em>wrapper components</em>:</p>
     <div class="description">
         <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>On change callback - It takes either
 one argument which is entire <a href="RecordJSON.html">RecordJSON</a> or 2 arguments - one
-property.name and the second one: value. Used by the <em>edit</em> and <em>filter</em> components</p>
+<strong>property.name</strong> and the second one: <strong>value</strong>. Used by the <strong>edit</strong> and <strong>filter</strong> components.</p>
+<p>Lets take a looka at an example of overriding edit component:</p>
+<pre class="prettyprint source lang-typescript"><code>import React, { ReactNode } from 'react'
+import { BasePropertyProps, PropertyInEdit, StyledInput } from 'admin-bro'
+
+export default class Edit extends React.Component&lt;PropertyProps> {
+  constructor(props) {
+    super(props)
+    this.handleInputChange = this.handleInputChange.bind(this)
+  }
+
+  handleInputChange(event): void {
+    const { onChange, property, record } = this.props
+
+    // Here is the iteresting part:
+    onChange(property.name, event.target.value)
+
+    // or you can pass an entire record. This is the same as above but gives you
+    // much more flexibility
+    const newRecord = { ...record }
+    newRecord.params[property.name] = event.target.value
+    onChange(newRecord)
+  }
+
+  render(): ReactNode {
+    const { property, record } = this.props
+    const error = record.errors && record.errors[property.name]
+    const value = (record.params && typeof record.params[property.name] !== 'undefined')
+      ? record.params[property.name]
+      : ''
+    return (
+      &lt;PropertyInEdit property={property} error={error}>
+        &lt;StyledInput
+          type=&quot;text&quot;
+          className=&quot;input&quot;
+          id={property.name}
+          name={property.name}
+          onChange={this.handleInputChange}
+          value={value}
+        />
+      &lt;/PropertyInEdit>
+    )
+  }
+}
+</code></pre>
     </div>
     
 
@@ -672,7 +748,7 @@ property.name and the second one: value. Used by the <em>edit</em> and <em>filte
 
   
 
-  <td class="description last"></td>
+  <td class="description last"><p>proprty.name or updated RecordJSON object</p></td>
 </tr>
 
 
@@ -707,7 +783,7 @@ property.name and the second one: value. Used by the <em>edit</em> and <em>filte
 
   
 
-  <td class="description last"></td>
+  <td class="description last"><p>when propertyOrRecord is a property.name, here should be an updated value.</p></td>
 </tr>
 
 
@@ -716,7 +792,7 @@ property.name and the second one: value. Used by the <em>edit</em> and <em>filte
         
 <tr class="deep-level-0">
   
-      <td class="name"><code>record</code></td>
+      <td class="name"><code>selectedRecord</code></td>
   
 
   <td class="type">
@@ -742,7 +818,8 @@ property.name and the second one: value. Used by the <em>edit</em> and <em>filte
 
   
 
-  <td class="description last"></td>
+  <td class="description last"><p>In case of &quot;reference&quot; fields (with select), when they change they pass selected record object.,
+This is mostly for an internal use - you probably wont have to use that.</p></td>
 </tr>
 
 
@@ -789,7 +866,7 @@ property.name and the second one: value. Used by the <em>edit</em> and <em>filte
         <p class="tag-source">
             <a href="admin-bro_src_frontend_components_property-type_base-property-props.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_frontend_components_property-type_base-property-props.ts.html">admin-bro/src/frontend/components/property-type/base-property-props.ts</a>, <a href="admin-bro_src_frontend_components_property-type_base-property-props.ts.html#line22">line 22</a>
+                <a href="admin-bro_src_frontend_components_property-type_base-property-props.ts.html">admin-bro/src/frontend/components/property-type/base-property-props.ts</a>, <a href="admin-bro_src_frontend_components_property-type_base-property-props.ts.html#line57">line 57</a>
             </span>
         </p>
     
