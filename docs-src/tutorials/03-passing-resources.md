@@ -55,13 +55,13 @@ const run = async () => {
   const mongooseDb = await mongoose.connect('mongodb://localhost:27017/test', { useNewUrlParser: true })
 
   // Passing resources by giving entire database
-  const AdminBro = new AdminBro({
+  const adminBro = new AdminBro({
     databases: [mongooseDb],
     //... other AdminBroOptions
   })
 
   // Passing resources one by one
-  const AdminBro = new AdminBro({
+  const adminBro = new AdminBro({
     resources: [User, Admin],
     //... other AdminBroOptions
   })
