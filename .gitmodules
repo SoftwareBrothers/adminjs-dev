@@ -25,3 +25,6 @@
 [submodule "admin-bro-typeorm"]
 	path = admin-bro-typeorm
 	url = git@github.com:SoftwareBrothers/admin-bro-typeorm.git
+[submodule "admin-bro-theme-dark"]
+	path = admin-bro-theme-dark
+	url = git@github.com:SoftwareBrothers/admin-bro-theme-dark.git
