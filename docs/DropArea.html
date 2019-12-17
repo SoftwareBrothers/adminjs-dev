@@ -3,7 +3,7 @@
 <head>
     <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
     <meta charset="utf-8">
-    <title>JSDoc: ValidationError</title>
+    <title>JSDoc: DropArea</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -71,8 +71,8 @@
             <div class="column is-9-desktop">
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
-                        <p>Class</p>
-                        <h1>ValidationError</h1>
+                        <p>Components</p>
+                        <h1>DropArea</h1>
                     </header>
                     
                     
@@ -84,9 +84,9 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>ValidationError<span class="signature">(message, propertyErrors, baseError<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h2>
-        
-            <div class="class-description"><p>Error which is thrown when there are validation errors with records</p></div>
+        <h2>
+            &ltDropArea  /&gt
+        </h2>
         
     
 </header>
@@ -102,12 +102,711 @@
 
 
     
-    <h4 class="name" id="ValidationError">
-        <a class="href-link" href="#ValidationError">#</a>
+    <h4 class="name" id="DropArea">
+        <a class="href-link" href="#DropArea">#</a>
         
         <span class="code-name">
             
-                new ValidationError<span class="signature">(message, propertyErrors, baseError<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+                &ltDropArea  /&gt
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Drop Area which can be used for uploading files.</p>
+<p>how to use it in your custom component.tsx:</p>
+<pre class="prettyprint source"><code>import React, { useState } from 'react'
+import { DropArea, PropertyInEdit, BasePropertyProps } from 'admin-bro'
+import { unflatten } from 'flat'
+
+const UploadPhoto: React.FC&lt;BasePropertyProps> = (props) => {
+  const { property, record, onChange } = props
+
+  const fileObject = unflatten(record.params)[property.name]
+
+  const onUpload = (files: FileList) => {
+    const newRecord = {...record}
+    const [file] = files
+
+    onChange({
+      ...newRecord,
+      params: {
+        ...newRecord.params,
+        [`${property.name}.file`]: file,
+        [`${property.name}.name`]: file.name,
+        [`${property.name}.size`]: file.size,
+        [`${property.name}.type`]: file.type,
+      }
+    })
+    event.preventDefault()
+  }
+
+  return (
+    &lt;PropertyInEdit property={property}>
+      &lt;DropArea
+        fileObject={fileObject}
+        onUpload={onUpload}
+        propertyName={property.name}
+      />
+    &lt;/PropertyInEdit>
+  )
+}
+</code></pre>
+    </div>
+    
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_frontend_components_app_drop-area.tsx.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_frontend_components_app_drop-area.tsx.html">admin-bro/src/frontend/components/app/drop-area.tsx</a>, <a href="admin-bro_src_frontend_components_app_drop-area.tsx.html#line150">line 150</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    
+        
+
+<div id='tf9ql5mnfqqk4af73sj'></div>
+
+<script>
+  ReactDOM.render(ReactWrapper({
+    example: "const fileObject = null\nconst maxSize = 1024\nconst mimeTypes = ['application/pdf']\nconst onUpload = (files) => { alert(files[0].name) }\nconst property = {name: 'fileUpload', label: 'File Upload'}\nreturn (\n<PropertyInEdit property={property}>\n  <DropArea\n    fileObject={fileObject}\n    onUpload={onUpload}\n    propertyName={property.name}\n    validate= { { maxSize, mimeTypes } }\n  />\n</PropertyInEdit>\n)",
+    uniqId: "tf9ql5mnfqqk4af73sj",
+  }), document.getElementById('tf9ql5mnfqqk4af73sj'));
+</script>
+    
+
+
+</div>
+                </div>
+            </div>
+        
+    
+    </div>
+    
+        
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class='vertical-section'>
+            <h3 class="title"><span>Type Definitions</span></h3>
+            <div class="members">
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">object</span>
+
+
+    </span>
+
+<h4 class="name" id=".Props">
+    <a class="href-link" href="#.Props">#</a>
+    
+    <span class="code-name">
+        Props
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>
+</div>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>fileObject</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="DropArea.html#FileObject">FileObject</a></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>When given UI will show that file of this name and this size has been set.</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>onUpload</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="DropArea.html#OnUpload">OnUpload</a></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Callback performed when the file is dropped/selected</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>propertyName</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Name of the property - used as an input id.</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>validate</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">object</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Validate options</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>[validate].maxSize</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">number</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Maximum size of the uploaded file in bytes. If not defined - all files are allowed.</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>[validate].mimeTypes</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Array.&lt;string></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Avaliable mime types. When not defined - all mime types are allowed.</p></td>
+</tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_frontend_components_app_drop-area.tsx.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_frontend_components_app_drop-area.tsx.html">admin-bro/src/frontend/components/app/drop-area.tsx</a>, <a href="admin-bro_src_frontend_components_app_drop-area.tsx.html#line232">line 232</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">object</span>
+
+
+    </span>
+
+<h4 class="name" id="FileObject">
+    <a class="href-link" href="#FileObject">#</a>
+    
+    <span class="code-name">
+        FileObject
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>
+</div>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>size</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">number</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>File size in bytes</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>name</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Original file name</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>type</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Mime Type</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>file</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Buffer</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Actual file buffer.</p></td>
+</tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_frontend_components_app_drop-area.tsx.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_frontend_components_app_drop-area.tsx.html">admin-bro/src/frontend/components/app/drop-area.tsx</a>, <a href="admin-bro_src_frontend_components_app_drop-area.tsx.html#line223">line 223</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="OnUpload">
+        <a class="href-link" href="#OnUpload">#</a>
+        
+        <span class="code-name">
+            
+                OnUpload<span class="signature">(files, files)</span><span class="type-signature"> &rarr; {void}</span>
             
         </span>
     </h4>
@@ -141,8 +840,6 @@
         <th>Type</th>
 
         
-        <th>Attributes</th>
-        
 
         
 
@@ -156,301 +853,60 @@
         
 <tr class="deep-level-0">
   
-      <td class="name"><code>message</code></td>
+      <td class="name"><code>files</code></td>
   
 
   <td class="type">
   
       
-<span class="param-type">string</span>
-
-
-  
-  </td>
-
-  
-      <td class="attributes">
-      
-
-      
-
-      
-      </td>
-  
-
-  
-
-  <td class="description last"><p>custom message</p></td>
-</tr>
-
-
-    
-
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>propertyErrors</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">PropertyErrors</span>
-
-
-  
-  </td>
-
-  
-      <td class="attributes">
-      
-
-      
-
-      
-      </td>
-  
-
-  
-
-  <td class="description last"><p>error messages</p></td>
-</tr>
-
-
-    
-
-        
-<tr class="deep-level-0">
-  
-      <td class="name"><code>baseError</code></td>
-  
-
-  <td class="type">
-  
-      
-<span class="param-type">RecordError</span>
-
-
-  
-  </td>
-
-  
-      <td class="attributes">
-      
-          &lt;optional><br>
-      
-
-      
-
-      
-      </td>
-  
-
-  
-
-  <td class="description last"><p>base error</p></td>
-</tr>
-
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="admin-bro_src_backend_utils_validation-error.ts.html" class="button">View Source</a>
-            <span>
-                <a href="admin-bro_src_backend_utils_validation-error.ts.html">admin-bro/src/backend/utils/validation-error.ts</a>, <a href="admin-bro_src_backend_utils_validation-error.ts.html#line12">line 12</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-                </div>
-            </div>
-        
-    
-    </div>
-    
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <div class='vertical-section'>
-            <h3 class="title"><span>Members</span></h3>
-            <div class="members">
-            
-                <div class="member">
-
-    <span class="method-parameter is-pulled-right">
-        <label>Type:</label>
-        
-<span class="param-type">RecordError</span>
+<span class="param-type">FileList</span>
 |
 
 <span class="param-type">null</span>
 
 
-    </span>
+  
+  </td>
 
-<h4 class="name" id="baseError">
-    <a class="href-link" href="#baseError">#</a>
-    
-    <span class="code-name">
-        baseError
-    </span>
-    
-</h4>
+  
 
+  
 
+  <td class="description last"></td>
+</tr>
 
-
-<div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>One root validatin error i.e. thrown when user wants to perform
-an action which violates foreign key constraint</p>
-</div>
-
-
-
-
-
-<dl class="details">
 
     
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="admin-bro_src_backend_utils_validation-error.ts.html" class="button">View Source</a>
-            <span>
-                <a href="admin-bro_src_backend_utils_validation-error.ts.html">admin-bro/src/backend/utils/validation-error.ts</a>, <a href="admin-bro_src_backend_utils_validation-error.ts.html#line48">line 48</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-</div>
-            
-                <div class="member">
-
-    <span class="method-parameter is-pulled-right">
-        <label>Type:</label>
         
-<span class="param-type">PropertyErrors</span>
+<tr class="deep-level-0">
+  
+      <td class="name"><code>files</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">FileList</span>
+|
+
+<span class="param-type">null</span>
 
 
-    </span>
+  
+  </td>
 
-<h4 class="name" id="propertyErrors">
-    <a class="href-link" href="#propertyErrors">#</a>
+  
+
+  
+
+  <td class="description last"></td>
+</tr>
+
+
     
-    <span class="code-name">
-        propertyErrors
-    </span>
-    
-</h4>
-
-
-
-
-<div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Validation errors for all properties</p>
-</div>
+    </tbody>
+</table>
 
 
 
@@ -489,9 +945,9 @@ an action which violates foreign key constraint</p>
 
     
         <p class="tag-source">
-            <a href="admin-bro_src_backend_utils_validation-error.ts.html" class="button">View Source</a>
+            <a href="admin-bro_src_frontend_components_app_drop-area.tsx.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_utils_validation-error.ts.html">admin-bro/src/backend/utils/validation-error.ts</a>, <a href="admin-bro_src_backend_utils_validation-error.ts.html#line41">line 41</a>
+                <a href="admin-bro_src_frontend_components_app_drop-area.tsx.html">admin-bro/src/frontend/components/app/drop-area.tsx</a>, <a href="admin-bro_src_frontend_components_app_drop-area.tsx.html#line215">line 215</a>
             </span>
         </p>
     
@@ -501,294 +957,41 @@ an action which violates foreign key constraint</p>
 
 
 
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
             
-            </div>
+                    
+
+<div class="columns">
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">void</span>
+
+
+    </div>
+    
+</div>
+
+                
         </div>
-    
-
-    
-
-    
-        <div class='vertical-section'>
-            <h3 class="title"><span>Type Definitions</span></h3>
-            <div class="members">
-            
-                <div class="member">
-
-    <span class="method-parameter is-pulled-right">
-        <label>Type:</label>
-        
-<span class="param-type">object</span>
-
-
-    </span>
-
-<h4 class="name" id=".PropertyErrors">
-    <a class="href-link" href="#.PropertyErrors">#</a>
-    
-    <span class="code-name">
-        PropertyErrors
-    </span>
-    
-</h4>
-
-
-
-
-<div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Property Errors</p>
-</div>
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-        
-<tr class="deep-level-0">
-    
-        <td class="name"><code>{...}</code></td>
-    
-
-    <td class="type">
-    
-        
-<span class="param-type">RecordError</span>
-
-
-    
-    </td>
-
-    
-
-    
-
-    <td class="description last"></td>
-</tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="admin-bro_src_backend_utils_validation-error.ts.html" class="button">View Source</a>
-            <span>
-                <a href="admin-bro_src_backend_utils_validation-error.ts.html">admin-bro/src/backend/utils/validation-error.ts</a>, <a href="admin-bro_src_backend_utils_validation-error.ts.html#line29">line 29</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-</div>
-            
-                <div class="member">
-
-    <span class="method-parameter is-pulled-right">
-        <label>Type:</label>
-        
-<span class="param-type">object</span>
-
-
-    </span>
-
-<h4 class="name" id=".RecordError">
-    <a class="href-link" href="#.RecordError">#</a>
-    
-    <span class="code-name">
-        RecordError
-    </span>
-    
-</h4>
-
-
-
-
-<div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Record Error</p>
-</div>
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-        
-<tr class="deep-level-0">
-    
-        <td class="name"><code>type</code></td>
-    
-
-    <td class="type">
-    
-        
-<span class="param-type">string</span>
-
-
-    
-    </td>
-
-    
-
-    
-
-    <td class="description last"><p>error type (i.e. required)</p></td>
-</tr>
-
-    
-        
-<tr class="deep-level-0">
-    
-        <td class="name"><code>message</code></td>
-    
-
-    <td class="type">
-    
-        
-<span class="param-type">string</span>
-
-
-    
-    </td>
-
-    
-
-    
-
-    <td class="description last"><p>human readible message</p></td>
-</tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="admin-bro_src_backend_utils_validation-error.ts.html" class="button">View Source</a>
-            <span>
-                <a href="admin-bro_src_backend_utils_validation-error.ts.html">admin-bro/src/backend/utils/validation-error.ts</a>, <a href="admin-bro_src_backend_utils_validation-error.ts.html#line22">line 22</a>
-            </span>
-        </p>
-    
-</dl>
-
+    </div>
 
 
 

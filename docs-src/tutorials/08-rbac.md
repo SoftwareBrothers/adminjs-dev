@@ -25,7 +25,7 @@ yarn init -y
 Install the dependencies:
 
 ```bash
-yarn add express mongoose admin-bro admin-bro-mongoose admin-bro-expressjs
+yarn add express express-formidable mongoose admin-bro admin-bro-mongoose admin-bro-expressjs
 ```
 
 And finally, copy the example application from example app tutorial: {@tutorial 01-example}.
@@ -38,7 +38,6 @@ This is the entire 38 lines of code:
 // Requirements
 const mongoose = require('mongoose')
 const express = require('express')
-const bodyParser = require('body-parser')
 const AdminBro = require('admin-bro')
 const AdminBroExpressjs = require('admin-bro-expressjs')
 
@@ -47,7 +46,6 @@ AdminBro.registerAdapter(require('admin-bro-mongoose'))
 
 // express server definition
 const app = express()
-app.use(bodyParser.json())
 
 // Resources definitions
 const User = mongoose.model('User', {
@@ -273,7 +271,6 @@ And this is the entire code of the application:
 // Requirements
 const mongoose = require('mongoose')
 const express = require('express')
-const bodyParser = require('body-parser')
 const AdminBro = require('admin-bro')
 const AdminBroExpressjs = require('admin-bro-expressjs')
 const bcrypt = require('bcrypt')
@@ -283,7 +280,6 @@ AdminBro.registerAdapter(require('admin-bro-mongoose'))
 
 // express server definition
 const app = express()
-app.use(bodyParser.json())
 
 // Resources definitions
 const User = mongoose.model('User', {

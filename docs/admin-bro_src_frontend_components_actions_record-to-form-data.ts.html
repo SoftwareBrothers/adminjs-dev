@@ -5,7 +5,7 @@
 <head>
     <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
     <meta charset="utf-8">
-    <title>JSDoc: admin-bro/src/frontend/components/ui/styled-button.tsx</title>
+    <title>JSDoc: admin-bro/src/frontend/components/actions/record-to-form-data.ts</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -74,7 +74,7 @@
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
                         <p>Source</p>
-                        <h1>admin-bro/src/frontend/components/ui/styled-button.tsx</h1>
+                        <h1>admin-bro/src/frontend/components/actions/record-to-form-data.ts</h1>
                     </header>
                     
                     
@@ -84,128 +84,34 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { ReactNode } from 'react'
-import styled, { css } from 'styled-components'
+            <pre class="prettyprint source linenums"><code>import { flatten, unflatten } from 'flat'
 
-type OnClickHandler = () => any;
-
-/**
- * @memberof StyledButton
- */
-type Props = {
-  /**
-   * If button should be presented as a primary action
-   */
-  primary: boolean;
-  /**
-   * Body of the button
-   */
-  children: ReactNode;
-  /**
-   * clic callback
-   */
-  onClick?: OnClickHandler;
-  /**
-   * As which element it should be rentered. For example: as: 'a' or as: 'button'
-   */
-  as?: string;
-  /**
-   * Href
-   */
-  to: string;
-
-  type?: string;
-}
-
-const styles = css`
-&amp;&amp;&amp; {
-    font-size: ${({ theme }): string => theme.fonts.medium};
-    border-radius: 0;
-    border-color: ${({ theme }): string => theme.colors.primary};
-    background: ${({ theme }): string => theme.colors.bck};
-    height: 34px;
-    padding:  ${({ theme }): string => `${theme.sizes.paddingMin} ${theme.sizes.padding}`};
-    color: ${({ theme }): string => theme.colors.primary};
-    &amp; i, &amp; svg {
-      margin-right: 5px;
-    }
-    &amp;:hover {
-      border-color: ${({ theme }): string => theme.colors.primaryHover};
-    }
-
-    &amp;.is-white {
-      background-color: ${({ theme }): string => theme.colors.bck};
-      border-color: transparent;
-      color: ${({ theme }): string => theme.colors.defaultText};
-    }
-
-    &amp;.is-primary {
-      background-color: ${({ theme }): string => theme.colors.primary};
-      color: #ffffff;
-      &amp;:hover {
-        background-color: ${({ theme }): string => theme.colors.primaryHover};
-      }
-    }
-
-    &amp;.is-text {
-      background-color: transparent;
-      color: ${({ theme }): string => theme.colors.primary};
-      border: transparent;
-    }
-
-    &amp;.in-dropdown {
-      color: ${({ theme }): string => theme.colors.defaultText};
-      font-size: ${({ theme }): string => theme.fonts.base};
-      width: 100%;
-      text-align: start;
-      justify-content: flex-start;
-      height: 40px;
-      padding-left: 40px;
-      border: none;
-
-      &amp;:hover {
-        border: 4px ${({ theme }): string => theme.colors.primary};
-        padding-left: 36px;
-        border-style: none solid;
-      }
-    }
-  }
-`
+import RecordJSON from '../../../backend/decorators/record-json.interface'
 
 /**
- * Base button component
+ * Changes RecordJSON that it can be send as a FormData to the backend.
  *
- * @component
- * @example &lt;caption>Regular button&lt;/caption>
- * return (
-  *   &lt;WrapperBox border>
-  *     &lt;StyledButton>I am button&lt;/StyledButton>
-  *   &lt;/WrapperBox>
-  * )
-  *
-  * @example &lt;caption>Primary button&lt;/caption>
-  * return (
-  *   &lt;WrapperBox border>
-  *     &lt;StyledButton primary>I am primary button&lt;/StyledButton>
-  *   &lt;/WrapperBox>
-  * )
-  *
-  * @example &lt;caption>With icon&lt;/caption>
-  * return (
-  *   &lt;WrapperBox border>
-  *     &lt;StyledButton>&lt;i class="fa fa-bomb" />I am button with icon&lt;/StyledButton>
-  *   &lt;/WrapperBox>
-  * )
-  */
-const StyledButton = styled('button').attrs&lt;Props>(({ primary }) => ({
-  className: `button${primary ? ' is-primary' : ''}`,
-}))`
-  ${styles}
-`
+ * @param   {RecordJSON}  record
+ * @return  {FormData}
+ */
+export default function recordToFormData(record: RecordJSON): FormData {
+  const formData = new FormData()
 
-export {
-  StyledButton as default,
-  styles,
+  // First let make sure that all the fields in the record.params are properly flatten.
+  // That is why we unflatten all properties and create regular object, where flat
+  // overwrite prevents from having 2 keys referencing the same property. And
+  // the result is flatten again.
+  const normalisedParams = flatten&lt;string, any>(unflatten(record.params, { overwrite: true }))
+  Object.entries(normalisedParams).forEach(([key, value]) => {
+    // flatten does not change empty objects "{}" - so in order to prevent having them changed to
+    // "[object Object]" we have to set them to empty strings.
+    if (typeof value === 'object') {
+      formData.set(key, '')
+    } else {
+      formData.set(key, value as string)
+    }
+  })
+  return formData
 }
 </code></pre>
         </article>

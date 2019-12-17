@@ -2,10 +2,11 @@ At some point you would probably like to customize default views or create custo
 
 ## Default actions
 
-Admin bro has 4 major default actions defined for each resource:
+Admin bro has 5 major default actions defined for each resource:
 
 __Resource__ base actions:
 
+* {@link module:ListAction list} - list all records
 * {@link module:NewAction new} [Add new] - creates new record
 
 __Record__ base actions:
@@ -45,9 +46,9 @@ const adminBroOptions = {
 
 ### Basic properties
 
-Yes - you can modify things like: label, icon and visibility.
+Yes - you can modify things like: label, icon and visibility. List of all options can be found in {@link Action}
 
-In the folowing example we will change name of show action along with the icon, and will show it only for records with an email.
+In the folowing example we will change {@link Action#label label} of show action along with the {@link Action#icon icon}, and will show it only for records with an email.
 
 ```javascript
 const adminBroOptions = {
@@ -58,7 +59,7 @@ const adminBroOptions = {
           show: {
             label: 'Show me that',
             icon: 'fas fa-eye',
-            isVisible: (resource, record) => record.param('email') !== '',
+            isVisible: (context) => record.param('email') !== '',
           },
         },
       },
@@ -67,53 +68,19 @@ const adminBroOptions = {
 }
 ```
 
-__isVisible__ can be either a function returning boolean value or a boolean value itself.
+{@link Action#isVisible} can be either a function returning boolean value or a boolean value itself.
 
-### Action handler
+### Action handler and action hooks
 
-Each action has an {@link BaseAction.handler} function. This function is executed every time the action is invoked.
+Each action has an {@link Action#handler} function. This function is executed every time the action is invoked and all of the default actions has their handlers.
 
-Handler is an `async` fuction returning `Promise` which resolves to an JSON API response.
+You probably don't want to modify behaviour of the handler for the default Edit action. But if you realy want to change this action you can use {@link Action#before} and {@link Action#after} action hooks.
 
-This is how Edit action is defined:
-
-```
-module.exports = {
-  name: 'edit',
-  isVisible: true,
-  actionType: 'record',
-  icon: 'icomoon-edit',
-  label: 'Edit',
-  handler: async (request, response, data) => {
-    const { record } = data
-    if (request.method === 'get') {
-      return { record: record.toJSON() }
-    }
-    if (request.method === 'post') {
-      await record.update(request.payload.record)
-      if (record.isValid()) {
-        return {
-          redirectUrl: data.h.recordActionUrl({
-            resourceId: data.resource.id(), recordId: record.id(), actionName: 'show',
-          }),
-          record: record.toJSON(),
-        }
-      }
-      return { record: record.toJSON() }
-    }
-    return ''
-  },
-}
-
-```
-
-If request was __get__ it returns the {@link BaseRecord~JSON JSON} object for a record. Otherwise (__post__) updates the record. Then right Component renders the action.
-
-You probably don't want to modify the default Edit action. I showed that only to show you what is possible. But if you realy want to change this action use Before and {@link Action} action hooks.
+{@link Action#handler} has to be specified for new actions (read the next section).
 
 ## Custom Actions
 
-Also you can define your own actions. Simply pass {@link BaseAction} under a new key to {@link ResourceOptions}.
+Also you can define your own actions. Simply pass {@link Action} under a new key to {@link ResourceOptions}.
 
 Your action can be either Resource'is, Record'is or both.
 

@@ -6,7 +6,7 @@
    "password": "",
    "database": "database_development",
    "synchronize": true,
-   "logging": false,
+   "logging": ["query", "error"],
    "entities": [
       "src/entity/**/*.ts"
    ],

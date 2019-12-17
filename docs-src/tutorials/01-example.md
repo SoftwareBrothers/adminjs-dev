@@ -20,11 +20,11 @@ The code of the app looks like this.
 // Requirements
 const mongoose = require('mongoose')
 const express = require('express')
-const bodyParser = require('body-parser')
+const formidableMiddleware = require('express-formidable');
 
 // express server definition
 const app = express()
-app.use(bodyParser.json())
+app.use(formidableMiddleware());
 
 // Resources definitions
 const User = mongoose.model('User', { name: String, email: String, surname: String })
@@ -40,7 +40,7 @@ app.get('/users', async (req, res) => {
 
 // Route which creates new user
 app.post('/users', async (req, res) => {
-  const user = await new User(req.body.user).save()
+  const user = await new User(req.fields.user).save()
   res.send(user)
 })
 
@@ -56,7 +56,7 @@ run()
 To run it you have to install dependencies:
 
 ```sh
-npm install mongoose express body-parser
+npm install mongoose express express-formidable
 ```
 
 Make sure you have a [mongodb](https://www.mongodb.com/) running in the system.
@@ -120,7 +120,7 @@ This is an entire Express server with AdminBro managing Mongoose User Resource:
 // Requirements
 const mongoose = require('mongoose')
 const express = require('express')
-const bodyParser = require('body-parser')
+const formidableMiddleware = require('express-formidable');
 const AdminBro = require('admin-bro')
 const AdminBroExpressjs = require('admin-bro-expressjs')
 
@@ -129,7 +129,7 @@ AdminBro.registerAdapter(require('admin-bro-mongoose'))
 
 // express server definition
 const app = express()
-app.use(bodyParser.json())
+app.use(formidableMiddleware());
 
 // Resources definitions
 const User = mongoose.model('User', { name: String, email: String, surname: String })
@@ -145,7 +145,7 @@ app.get('/users', async (req, res) => {
 
 // Route which creates new user
 app.post('/users', async (req, res) => {
-  const user = await new User(req.body.user).save()
+  const user = await new User(req.fields.user).save()
   res.send(user)
 })
 

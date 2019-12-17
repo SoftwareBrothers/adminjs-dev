@@ -5,7 +5,7 @@
 <head>
     <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
     <meta charset="utf-8">
-    <title>JSDoc: admin-bro/src/frontend/components/ui/styled-button.tsx</title>
+    <title>JSDoc: admin-bro/src/frontend/components/app/drop-area.tsx</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -74,7 +74,7 @@
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
                         <p>Source</p>
-                        <h1>admin-bro/src/frontend/components/ui/styled-button.tsx</h1>
+                        <h1>admin-bro/src/frontend/components/app/drop-area.tsx</h1>
                     </header>
                     
                     
@@ -84,129 +84,302 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { ReactNode } from 'react'
-import styled, { css } from 'styled-components'
+            <pre class="prettyprint source linenums"><code>import React, { useState, ComponentClass } from 'react'
+import styled from 'styled-components'
 
-type OnClickHandler = () => any;
+import Label from '../ui/label'
+import withNotice, { AddNoticeProps } from '../../store/with-notice'
 
-/**
- * @memberof StyledButton
- */
-type Props = {
-  /**
-   * If button should be presented as a primary action
-   */
-  primary: boolean;
-  /**
-   * Body of the button
-   */
-  children: ReactNode;
-  /**
-   * clic callback
-   */
-  onClick?: OnClickHandler;
-  /**
-   * As which element it should be rentered. For example: as: 'a' or as: 'button'
-   */
-  as?: string;
-  /**
-   * Href
-   */
-  to: string;
+const UploadInput = styled.input`
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  bottom: 0;
+  cursor: pointer;
+  width: 100%;
+`
 
-  type?: string;
-}
-
-const styles = css`
-&amp;&amp;&amp; {
-    font-size: ${({ theme }): string => theme.fonts.medium};
-    border-radius: 0;
-    border-color: ${({ theme }): string => theme.colors.primary};
-    background: ${({ theme }): string => theme.colors.bck};
-    height: 34px;
-    padding:  ${({ theme }): string => `${theme.sizes.paddingMin} ${theme.sizes.padding}`};
-    color: ${({ theme }): string => theme.colors.primary};
-    &amp; i, &amp; svg {
-      margin-right: 5px;
-    }
-    &amp;:hover {
-      border-color: ${({ theme }): string => theme.colors.primaryHover};
-    }
-
-    &amp;.is-white {
-      background-color: ${({ theme }): string => theme.colors.bck};
-      border-color: transparent;
-      color: ${({ theme }): string => theme.colors.defaultText};
-    }
-
-    &amp;.is-primary {
-      background-color: ${({ theme }): string => theme.colors.primary};
-      color: #ffffff;
-      &amp;:hover {
-        background-color: ${({ theme }): string => theme.colors.primaryHover};
-      }
-    }
-
-    &amp;.is-text {
-      background-color: transparent;
-      color: ${({ theme }): string => theme.colors.primary};
-      border: transparent;
-    }
-
-    &amp;.in-dropdown {
-      color: ${({ theme }): string => theme.colors.defaultText};
-      font-size: ${({ theme }): string => theme.fonts.base};
-      width: 100%;
-      text-align: start;
-      justify-content: flex-start;
-      height: 40px;
-      padding-left: 40px;
-      border: none;
-
-      &amp;:hover {
-        border: 4px ${({ theme }): string => theme.colors.primary};
-        padding-left: 36px;
-        border-style: none solid;
-      }
+const ValidationInformation = styled.p`
+  &amp;&amp;&amp; {
+    font-size: ${({ theme }): string => theme.fonts.min};
+    label {
+      display: inline;
     }
   }
 `
 
-/**
- * Base button component
- *
- * @component
- * @example &lt;caption>Regular button&lt;/caption>
- * return (
-  *   &lt;WrapperBox border>
-  *     &lt;StyledButton>I am button&lt;/StyledButton>
-  *   &lt;/WrapperBox>
-  * )
-  *
-  * @example &lt;caption>Primary button&lt;/caption>
-  * return (
-  *   &lt;WrapperBox border>
-  *     &lt;StyledButton primary>I am primary button&lt;/StyledButton>
-  *   &lt;/WrapperBox>
-  * )
-  *
-  * @example &lt;caption>With icon&lt;/caption>
-  * return (
-  *   &lt;WrapperBox border>
-  *     &lt;StyledButton>&lt;i class="fa fa-bomb" />I am button with icon&lt;/StyledButton>
-  *   &lt;/WrapperBox>
-  * )
-  */
-const StyledButton = styled('button').attrs&lt;Props>(({ primary }) => ({
-  className: `button${primary ? ' is-primary' : ''}`,
-}))`
-  ${styles}
+const Wrapper = styled.div`
+  position: relative;
+  border: dashed ${({ theme }: { theme }): string => theme.colors.border} 1px;
+  text-align: center;
+  padding: ${({ theme }: { theme }): string => theme.sizes.paddingLayout};
+  &amp;:hover{
+    border-color: ${({ theme }: { theme }): string => theme.colors.borderHover};
+  }
+
+  i {
+    color: ${({ theme }: { theme }): string => theme.colors.superLightBack};
+    margin-bottom: 20px;
+  }
+  
+  .innerWrapper {
+    position: relative;
+  }
 `
 
-export {
-  StyledButton as default,
-  styles,
+const DropMessage = styled.div`
+  position: absolute;
+  border: 5px solid ${({ theme }: { theme }): string => theme.colors.primaryHover};
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  &amp; > h1 {
+    color: ${({ theme }: { theme }): string => theme.colors.filterDefaultText};
+    font-size: ${({ theme }: { theme }): string => theme.fonts.header};
+    margin-top: ${({ theme }: { theme }): string => theme.sizes.paddingLayout};
+    transition: transform 0.5s;
+  }
+
+  &amp;.active {
+    background: ${({ theme }: { theme }): string => theme.colors.primary};
+    opacity: 1;
+    transition: opacity 1s;
+    &amp; > h1 {
+      transform: rotate(2deg) scale(1.2);
+      transition: transform 0.5s;
+    }
+  }
+`
+
+const validateContentType = (
+  mimeTypes: undefined | Array&lt;string>,
+  mimeType: string,
+): boolean => {
+  if (!mimeTypes || !mimeTypes.length) { return true }
+  return mimeTypes.includes(mimeType)
 }
+
+const validateSize = (
+  maxSize: string | number | undefined,
+  size: string | number | null,
+): boolean => {
+  if (!maxSize) { return true }
+  if (!size) { return true }
+  return +maxSize >= +size
+}
+
+const inKb = (size: string | number): string => {
+  if (!size) { return '' }
+  return `${Math.round(+size / 1024)} KB`
+}
+
+/**
+ * @param {FileList | null} files
+ * @returns {void}
+ * @memberof DropArea
+ * @alias OnUpload
+ */
+type OnUpload = (files: FileList | null) => void
+
+/**
+ * @memberof DropArea
+ * @alias FileObject
+ */
+type FileObject = {
+  /**
+   * File size in bytes
+   */
+  size: number;
+  /**
+   * Original file name
+   */
+  name: string;
+  /**
+   * Mime Type
+   */
+  type?: string;
+  /**
+   * Actual file buffer.
+   */
+  file?: Buffer;
+};
+
+/**
+ * @memberof DropArea
+ */
+type Props = {
+  /**
+   * When given UI will show that file of this name and this size has been set.
+   */
+  fileObject?: FileObject;
+  /**
+   * Callback performed when the file is dropped/selected
+   */
+  onUpload: OnUpload;
+  /**
+   * Name of the property - used as an input id.
+   */
+  propertyName: string;
+  /**
+   * Validate options
+   */
+  validate?: {
+    /**
+     * Maximum size of the uploaded file in bytes. If not defined - all files are allowed.
+     */
+    maxSize?: number;
+    /**
+     * Avaliable mime types. When not defined - all mime types are allowed.
+     */
+    mimeTypes?: Array&lt;string>;
+  };
+}
+
+/**
+ * Drop Area which can be used for uploading files.
+ *
+ * how to use it in your custom component.tsx:
+ * ```
+ * import React, { useState } from 'react'
+ * import { DropArea, PropertyInEdit, BasePropertyProps } from 'admin-bro'
+ * import { unflatten } from 'flat'
+ *
+ * const UploadPhoto: React.FC&lt;BasePropertyProps> = (props) => {
+ *   const { property, record, onChange } = props
+ *
+ *   const fileObject = unflatten(record.params)[property.name]
+ *
+ *   const onUpload = (files: FileList) => {
+ *     const newRecord = {...record}
+ *     const [file] = files
+ *
+ *     onChange({
+ *       ...newRecord,
+ *       params: {
+ *         ...newRecord.params,
+ *         [`${property.name}.file`]: file,
+ *         [`${property.name}.name`]: file.name,
+ *         [`${property.name}.size`]: file.size,
+ *         [`${property.name}.type`]: file.type,
+ *       }
+ *     })
+ *     event.preventDefault()
+ *   }
+ *
+ *   return (
+ *     &lt;PropertyInEdit property={property}>
+ *       &lt;DropArea
+ *         fileObject={fileObject}
+ *         onUpload={onUpload}
+ *         propertyName={property.name}
+ *       />
+ *     &lt;/PropertyInEdit>
+ *   )
+ * }
+ * ```
+ *
+ * @component
+ *
+ * @example
+ * const fileObject = null
+ * const maxSize = 1024
+ * const mimeTypes = ['application/pdf']
+ * const onUpload = (files) => { alert(files[0].name) }
+ * const property = {name: 'fileUpload', label: 'File Upload'}
+ * return (
+ * &lt;PropertyInEdit property={property}>
+ *   &lt;DropArea
+ *     fileObject={fileObject}
+ *     onUpload={onUpload}
+ *     propertyName={property.name}
+ *     validate= { { maxSize, mimeTypes } }
+ *   />
+ * &lt;/PropertyInEdit>
+ * )
+ */
+const DropArea: React.FC&lt;Props &amp; AddNoticeProps> = (props) => {
+  const { fileObject, onUpload, propertyName, validate = {}, addNotice } = props
+
+  const [isDragging, setIsDragging] = useState(false)
+
+  const onDragEnter = (): void => setIsDragging(true)
+  const onDragLeave = (): void => setIsDragging(false)
+  const onDragOver = (): void => setIsDragging(true)
+
+  const onDrop = (event: React.DragEvent | React.SyntheticEvent): void => {
+    event.preventDefault()
+    setIsDragging(false)
+    const { files } = ((event as React.DragEvent).dataTransfer || event.target)
+    for (let i = 0; i &lt; files.length; i += 1) {
+      const file = files.item(i)
+      if (!file) { return }
+      if (!validateSize(validate.maxSize, file &amp;&amp; file.size)) {
+        addNotice({
+          message: `File: ${file.name} size is too big`,
+          type: 'error',
+        })
+        return
+      }
+      if (!validateContentType(validate.mimeTypes, file.type)) {
+        addNotice({
+          message: `File: ${file.name} has unsupported type: ${file.type}`,
+          type: 'error',
+        })
+        return
+      }
+    }
+    onUpload(files)
+  }
+
+  return (
+    &lt;Wrapper
+      onDragEnter={onDragEnter}
+      onDragOver={onDragOver}
+      onDragLeave={onDragLeave}
+      onDrop={onDrop}
+    >
+      &lt;DropMessage className={isDragging ? 'active' : 'unactive'} onDragEnter={onDragEnter}>
+        &lt;h1>Drop Here&lt;/h1>
+      &lt;/DropMessage>
+      &lt;UploadInput type="file" id={propertyName} onChange={(event): void => onDrop(event)} />
+      {fileObject ? (
+        &lt;div>
+          &lt;Label>File name&lt;/Label>
+          &lt;p>{fileObject.name}&lt;/p>
+          &lt;p>{`(${Math.round(+fileObject.size / 1024)}) KB`}&lt;/p>
+        &lt;/div>
+      ) : (
+        &lt;div>
+          &lt;p>&lt;i className="fa fa-4x fa-upload" />&lt;/p>
+          &lt;p>
+            Pick or Drop File here to upload it.
+          &lt;/p>
+          &lt;ValidationInformation>
+            {validate.maxSize ? (
+              &lt;p>
+                &lt;Label>Max size:&lt;/Label>
+                {inKb(validate.maxSize)}
+              &lt;/p>
+            ) : ''}
+            {validate.mimeTypes &amp;&amp; validate.mimeTypes.length ? (
+              &lt;p>
+                &lt;Label>Available types:&lt;/Label>
+                {validate.mimeTypes.join(', ')}
+              &lt;/p>
+            ) : ''}
+          &lt;/ValidationInformation>
+        &lt;/div>
+      )}
+    &lt;/Wrapper>
+  )
+}
+
+// TODO remove this hack
+export default withNotice(DropArea) as unknown as ComponentClass&lt;Props>
 </code></pre>
         </article>
     </section>

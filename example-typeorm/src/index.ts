@@ -2,7 +2,7 @@ import "reflect-metadata";
 import {createConnection} from "typeorm";
 import { Car } from "./entity/Car";
 import { CarDealer } from "./entity/CarDealer";
-import * as express from 'express'
+import express from 'express'
 import AdminBro, { AdminBroOptions } from 'admin-bro'
 import * as AdminBroExpress from 'admin-bro-expressjs'
 import { Database, Resource } from "admin-bro-typeorm";

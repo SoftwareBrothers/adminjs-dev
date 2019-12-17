@@ -11,7 +11,7 @@
                     "./admin-bro-expressjs"
                    ],
         "includePattern": "\\.(jsx|js|ts|tsx)$",
-        "excludePattern": "(node_modules/|docs|app-bundle.js|global-bundle.js|cli.ts)"
+        "excludePattern": "(node_modules/|docs|(bundle.*\\.js)|cli.ts)"
     },
     "plugins": [
         "plugins/markdown",
@@ -45,7 +45,7 @@
             "name": "AdminBro Documentation",
             "logo": "images/logo.png",
             "component": {
-                "wrapper": "./admin-bro/docs/component.tsx",
+                "wrapper": "./admin-bro/docs-helpers/component.tsx",
                 "entry": [
                     "import 'regenerator-runtime/runtime';"
                 ]

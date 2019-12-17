@@ -235,12 +235,6 @@ const adminBroOptions = {
 
 ## What's next?
 
-Now you can read more about creating your own components in 
+To see all available options - check out the {@link ResourceOptions} interface.
 
-- {@tutorial 06-writing-react-components}.
-
-Or just go to the next topic: 
-
-- {@tutorial 05-actions}
-
-
+You can also read more about creating your own components in {@tutorial 06-writing-react-components}.

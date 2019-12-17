@@ -20,7 +20,7 @@ const AdminBroOptions = {
 Dashboard component: `./my-dashboard-component.jsx`
 ```
 import React from 'react'
-import { WrapperBox } from 'admin-bro/components'
+import { WrapperBox } from 'admin-bro'
 
 const Dashboard = (props) => {
   return (
@@ -38,10 +38,9 @@ you proceed - make sure you know how [react](https://reactjs.org/) works.
 
 Currently there are 3 places where you can inject components to alter how AdminBro looks:
 
-- overriding how properties are rendered in {@link PropertyOptions} by using `components` object (**PLURAL**)
-- creating new or update default actions by overriding {@link Action} `component` param
-in {@link ResourceOptions}
-- changing how the dashbord looks like by using {@link AdminBroOptions} `dashboard.component` param.
+- overriding how properties are rendered in {@link PropertyOptions#components} by using `components` object (**PLURAL**)
+- creating new or update default actions by overriding {@link Action#component} param
+- changing how the dashbord looks like by using {@link AdminBroOptions#dashboard dashboard.component} param.
 
 ## Requiring component
 
@@ -51,6 +50,8 @@ it gives your comopnent an uniq ID and sends it to the __bundling__ process.
 You can do it like this: `{ component: AdminBro.bundle('./path-to-your-jsx-or-tsx-file') }`
 
 All files requried by {@link AdminBro.bundle} has to have one default export - the one with your [react](https://reactjs.org/) component.
+
+You can use either `.jsx` or `.tsx` extension for your components.
 
 ## Dependencies
 
@@ -131,6 +132,7 @@ You can choose from multiple components like:
 - {@link RecordsTableHeader},
 - {@link StyledButton},
 - {@link Table},
+- {@link DropArea},
 - {@link ValueBlock} and
 - {@link WrapperBox}
 
@@ -147,10 +149,4 @@ You can use them like this:
 
 ```
 import { ApiClient, ViewHelpers } from 'admin-bro'
-```
-
-Another interesting option is to reuse AdminBro style `colors`, `sizes` and `font` parameters
-
-```
-import { colors, sizes, fonts, breakpoints } from 'admin-bro/style'
 ```

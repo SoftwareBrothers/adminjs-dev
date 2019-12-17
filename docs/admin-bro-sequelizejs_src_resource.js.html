@@ -5,7 +5,7 @@
 <head>
     <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
     <meta charset="utf-8">
-    <title>JSDoc: admin-bro/src/frontend/components/ui/styled-button.tsx</title>
+    <title>JSDoc: admin-bro-sequelizejs/src/resource.js</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -74,7 +74,7 @@
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
                         <p>Source</p>
-                        <h1>admin-bro/src/frontend/components/ui/styled-button.tsx</h1>
+                        <h1>admin-bro-sequelizejs/src/resource.js</h1>
                     </header>
                     
                     
@@ -84,129 +84,180 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import { ReactNode } from 'react'
-import styled, { css } from 'styled-components'
+            <pre class="prettyprint source linenums"><code>/* eslint-disable no-param-reassign */
 
-type OnClickHandler = () => any;
+const {
+  BaseResource,
+  BaseRecord,
+  ValidationError,
+} = require('admin-bro')
 
-/**
- * @memberof StyledButton
- */
-type Props = {
-  /**
-   * If button should be presented as a primary action
-   */
-  primary: boolean;
-  /**
-   * Body of the button
-   */
-  children: ReactNode;
-  /**
-   * clic callback
-   */
-  onClick?: OnClickHandler;
-  /**
-   * As which element it should be rentered. For example: as: 'a' or as: 'button'
-   */
-  as?: string;
-  /**
-   * Href
-   */
-  to: string;
+const Property = require('./property')
+const convertFilter = require('./utils/convert-filter')
 
-  type?: string;
-}
+const SEQUELIZE_VALIDATION_ERROR = 'SequelizeValidationError'
 
-const styles = css`
-&amp;&amp;&amp; {
-    font-size: ${({ theme }): string => theme.fonts.medium};
-    border-radius: 0;
-    border-color: ${({ theme }): string => theme.colors.primary};
-    background: ${({ theme }): string => theme.colors.bck};
-    height: 34px;
-    padding:  ${({ theme }): string => `${theme.sizes.paddingMin} ${theme.sizes.padding}`};
-    color: ${({ theme }): string => theme.colors.primary};
-    &amp; i, &amp; svg {
-      margin-right: 5px;
-    }
-    &amp;:hover {
-      border-color: ${({ theme }): string => theme.colors.primaryHover};
-    }
+class Resource extends BaseResource {
+  static isAdapterFor(rawResource) {
+    return rawResource.sequelize &amp;&amp; rawResource.sequelize.constructor.name === 'Sequelize'
+  }
 
-    &amp;.is-white {
-      background-color: ${({ theme }): string => theme.colors.bck};
-      border-color: transparent;
-      color: ${({ theme }): string => theme.colors.defaultText};
-    }
+  constructor(SequelizeModel) {
+    super(SequelizeModel)
+    this.SequelizeModel = SequelizeModel
+  }
 
-    &amp;.is-primary {
-      background-color: ${({ theme }): string => theme.colors.primary};
-      color: #ffffff;
-      &amp;:hover {
-        background-color: ${({ theme }): string => theme.colors.primaryHover};
+  rawAttributes() {
+    // different sequelize versions stores attributes in different places
+    // .rawAttributes => sequelize ^5.0.0
+    // .attributes => sequelize ^4.0.0
+    return this.SequelizeModel.attributes || this.SequelizeModel.rawAttributes
+  }
+
+  databaseName() {
+    return this.SequelizeModel.sequelize.options.database
+      || this.SequelizeModel.sequelize.options.host
+  }
+
+  databaseType() {
+    return this.SequelizeModel.sequelize.options.dialect
+  }
+
+  name() {
+    return this.SequelizeModel.tableName
+  }
+
+  id() {
+    return this.SequelizeModel.tableName
+  }
+
+  properties() {
+    return Object.keys(this.rawAttributes()).map(key => (
+      new Property(this.rawAttributes()[key])
+    ))
+  }
+
+  property(path) {
+    return new Property(this.rawAttributes()[path])
+  }
+
+  async count(filter) {
+    return this.SequelizeModel.count(({
+      where: convertFilter(filter),
+    }))
+  }
+
+  async populate(baseRecords, property) {
+    const ids = baseRecords.map(baseRecord => (
+      baseRecord.param(property.name())
+    ))
+    const records = await this.SequelizeModel.findAll({ where: { id: ids } })
+    const recordsHash = records.reduce((memo, record) => {
+      memo[record.id] = record
+      return memo
+    }, {})
+    baseRecords.forEach((baseRecord) => {
+      const id = baseRecord.param(property.name())
+      if (recordsHash[id]) {
+        const referenceRecord = new BaseRecord(
+          recordsHash[id].toJSON(), this,
+        )
+        baseRecord.populated[property.name()] = referenceRecord
       }
-    }
+    })
+    return true
+  }
 
-    &amp;.is-text {
-      background-color: transparent;
-      color: ${({ theme }): string => theme.colors.primary};
-      border: transparent;
-    }
+  async find(filter, { limit = 20, offset = 0, sort = {} }) {
+    const { direction, sortBy } = sort
+    const sequelizeObjects = await this.SequelizeModel
+      .findAll({
+        where: convertFilter(filter),
+        limit,
+        offset,
+        order: [[sortBy, (direction || 'asc').toUpperCase()]],
+      })
+    return sequelizeObjects.map(sequelizeObject => new BaseRecord(sequelizeObject.toJSON(), this))
+  }
 
-    &amp;.in-dropdown {
-      color: ${({ theme }): string => theme.colors.defaultText};
-      font-size: ${({ theme }): string => theme.fonts.base};
-      width: 100%;
-      text-align: start;
-      justify-content: flex-start;
-      height: 40px;
-      padding-left: 40px;
-      border: none;
+  async findOne(id) {
+    const sequelizeObject = await this.findById(id)
+    return new BaseRecord(sequelizeObject.toJSON(), this)
+  }
 
-      &amp;:hover {
-        border: 4px ${({ theme }): string => theme.colors.primary};
-        padding-left: 36px;
-        border-style: none solid;
+  async findById(id) {
+    // versions of Sequelize before 5 had findById method - after that there was findByPk
+    const method = this.SequelizeModel.findByPk ? 'findByPk' : 'findById'
+    return this.SequelizeModel[method](id)
+  }
+
+  async create(params) {
+    const parsedParams = this.parseParams(params)
+    try {
+      const record = await this.SequelizeModel.create(parsedParams)
+      return record.toJSON()
+    } catch (error) {
+      if (error.name === SEQUELIZE_VALIDATION_ERROR) {
+        throw this.createValidationError(error)
       }
+      throw error
     }
   }
-`
 
-/**
- * Base button component
- *
- * @component
- * @example &lt;caption>Regular button&lt;/caption>
- * return (
-  *   &lt;WrapperBox border>
-  *     &lt;StyledButton>I am button&lt;/StyledButton>
-  *   &lt;/WrapperBox>
-  * )
-  *
-  * @example &lt;caption>Primary button&lt;/caption>
-  * return (
-  *   &lt;WrapperBox border>
-  *     &lt;StyledButton primary>I am primary button&lt;/StyledButton>
-  *   &lt;/WrapperBox>
-  * )
-  *
-  * @example &lt;caption>With icon&lt;/caption>
-  * return (
-  *   &lt;WrapperBox border>
-  *     &lt;StyledButton>&lt;i class="fa fa-bomb" />I am button with icon&lt;/StyledButton>
-  *   &lt;/WrapperBox>
-  * )
-  */
-const StyledButton = styled('button').attrs&lt;Props>(({ primary }) => ({
-  className: `button${primary ? ' is-primary' : ''}`,
-}))`
-  ${styles}
-`
+  async update(id, params) {
+    const parsedParams = this.parseParams(params)
+    try {
+      await this.SequelizeModel.update(parsedParams, {
+        where: { id },
+      })
+      const record = await this.findById(id)
+      return record.toJSON()
+    } catch (error) {
+      if (error.name === SEQUELIZE_VALIDATION_ERROR) {
+        throw this.createValidationError(error)
+      }
+      throw error
+    }
+  }
 
-export {
-  StyledButton as default,
-  styles,
+  async delete(id) {
+    return this.SequelizeModel.destroy({ where: { id } })
+  }
+
+  createValidationError(originalError) {
+    const errors = Object.keys(originalError.errors).reduce((memo, key) => {
+      const { path, message, validatorKey } = originalError.errors[key]
+      memo[path] = { message, kind: validatorKey } // eslint-disable-line no-param-reassign
+      return memo
+    }, {})
+    return new ValidationError(`${this.name()} validation failed`, errors)
+  }
+
+  /**
+   * Check all params against values they hold. In case of wrong value it corrects it.
+   *
+   * What it does esactly:
+   * - removes keys with empty strings for the `number`, `float` and 'reference' properties.
+   *
+   * @param   {Object}  params  received from AdminBro form
+   *
+   * @return  {Object}          converted params
+   */
+  parseParams(params) {
+    const parasedParams = { ...params }
+    this.properties().forEach((property) => {
+      const value = parasedParams[property.name()]
+      if (['number', 'float', 'reference'].includes(property.type())) {
+        if (value === '') {
+          delete parasedParams[property.name()]
+        }
+      }
+    })
+    return parasedParams
+  }
 }
+
+module.exports = Resource
 </code></pre>
         </article>
     </section>
