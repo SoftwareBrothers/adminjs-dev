@@ -37,6 +37,8 @@ Tutorials can be divided into 3 parts:
 3. **Customize how resources and entire AdminBro looks**
   - {@tutorial 06-writing-react-components}
   - {@tutorial 07-custom-dashboard}
+4. **Secure AdminBro**
+  - {@tutorial 08-rbac}
 
 ### Step 2. Get familiar with all the options you can pass to AdminBro
 

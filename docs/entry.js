@@ -49,44 +49,50 @@ reactComponents['DropArea'] = Component5;
 import Component6 from '../admin-bro/src/frontend/components/ui/dropdown.tsx';
 reactComponents['Dropdown'] = Component6;
 
-import Component7 from '../admin-bro/src/frontend/components/ui/label.tsx';
-reactComponents['Label'] = Component7;
+import Component7 from '../admin-bro/src/frontend/components/ui/error404.tsx';
+reactComponents['ErrorMessageBox'] = Component7;
 
-import Component8 from '../admin-bro/src/frontend/components/ui/loader.tsx';
-reactComponents['Loader'] = Component8;
+import Component8 from '../admin-bro/src/frontend/components/ui/label.tsx';
+reactComponents['Label'] = Component8;
 
-import Component9 from '../admin-bro/src/frontend/components/ui/paginate.tsx';
-reactComponents['Paginate'] = Component9;
+import Component9 from '../admin-bro/src/frontend/components/ui/loader.tsx';
+reactComponents['Loader'] = Component9;
 
-import Component10 from '../admin-bro/src/frontend/components/ui/placeholder.tsx';
-reactComponents['Placeholder'] = Component10;
+import Component10 from '../admin-bro/src/frontend/components/ui/paginate.tsx';
+reactComponents['Paginate'] = Component10;
 
-import Component11 from '../admin-bro/src/frontend/components/ui/property-in-edit.tsx';
-reactComponents['PropertyInEdit'] = Component11;
+import Component11 from '../admin-bro/src/frontend/components/ui/placeholder.tsx';
+reactComponents['Placeholder'] = Component11;
 
-import Component12 from '../admin-bro/src/frontend/components/ui/property-in-filter.tsx';
-reactComponents['PropertyInFilter'] = Component12;
+import Component12 from '../admin-bro/src/frontend/components/ui/property-in-edit.tsx';
+reactComponents['PropertyInEdit'] = Component12;
 
-import Component13 from '../admin-bro/src/frontend/components/ui/property-in-show.tsx';
-reactComponents['PropertyInShow'] = Component13;
+import Component13 from '../admin-bro/src/frontend/components/ui/property-in-filter.tsx';
+reactComponents['PropertyInFilter'] = Component13;
 
-import Component14 from '../admin-bro/src/frontend/components/app/records-table-header.tsx';
-reactComponents['RecordsTableHeader'] = Component14;
+import Component14 from '../admin-bro/src/frontend/components/ui/property-in-show.tsx';
+reactComponents['PropertyInShow'] = Component14;
 
-import Component15 from '../admin-bro/src/frontend/components/ui/styled-button.tsx';
-reactComponents['StyledButton'] = Component15;
+import Component15 from '../admin-bro/src/frontend/components/app/records-table/records-table-header.tsx';
+reactComponents['RecordsTableHeader'] = Component15;
 
-import Component16 from '../admin-bro/src/frontend/components/ui/styled-link.tsx';
-reactComponents['StyledLink'] = Component16;
+import Component16 from '../admin-bro/src/frontend/components/ui/styled-button.tsx';
+reactComponents['StyledButton'] = Component16;
 
-import Component17 from '../admin-bro/src/frontend/components/ui/styled-section.tsx';
-reactComponents['StyledSection'] = Component17;
+import Component17 from '../admin-bro/src/frontend/components/ui/styled-link.tsx';
+reactComponents['StyledLink'] = Component17;
 
-import Component18 from '../admin-bro/src/frontend/components/ui/table.tsx';
-reactComponents['Table'] = Component18;
+import Component18 from '../admin-bro/src/frontend/components/ui/styled-section.tsx';
+reactComponents['StyledSection'] = Component18;
 
-import Component19 from '../admin-bro/src/frontend/components/ui/value-block.tsx';
-reactComponents['ValueBlock'] = Component19;
+import Component19 from '../admin-bro/src/frontend/components/ui/table.tsx';
+reactComponents['Table'] = Component19;
 
-import Component20 from '../admin-bro/src/frontend/components/ui/wrapper-box.tsx';
-reactComponents['WrapperBox'] = Component20;
+import Component20 from '../admin-bro/src/frontend/components/ui/value-block.tsx';
+reactComponents['ValueBlock'] = Component20;
+
+import Component21 from '../admin-bro/src/frontend/store/with-notice.ts';
+reactComponents['withNotice'] = Component21;
+
+import Component22 from '../admin-bro/src/frontend/components/ui/wrapper-box.tsx';
+reactComponents['WrapperBox'] = Component22;

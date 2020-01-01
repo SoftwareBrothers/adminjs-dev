@@ -883,10 +883,23 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.10.58.tgz#98c14ce95a634701bd2d59d52df882c0610dd0eb"
   integrity sha512-NNcUk/rAdR7Pie7WiA5NHp345dTkD62qaxqscQXVIjCjog/ZXsrG8Wo7dZMZAzE7PSpA+qR2S3TYTeFCKuBFxQ==
 
+"@types/prop-types@*":
+  version "15.7.3"
+  resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.3.tgz#2ab0d5da2e5815f94b0b9d4b95d1e5f243ab2ca7"
+  integrity sha512-KfRL3PuHmqQLOG+2tGpRO26Ctg+Cq1E01D2DMriKEATHgWLfeNDmq9e29Q9WIky0dQ3NPkd1mzYH8Lm936Z9qw==
+
 "@types/range-parser@*":
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/@types/range-parser/-/range-parser-1.2.3.tgz#7ee330ba7caafb98090bece86a5ee44115904c2c"
   integrity sha512-ewFXqrQHlFsgc09MK5jP5iR7vumV/BYayNC6PgJO2LPe8vrnNFyjQjSppfEngITi0qvfKtzFvgKymGheFM9UOA==
+
+"@types/react@^16.9.16":
+  version "16.9.17"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.17.tgz#58f0cc0e9ec2425d1441dd7b623421a867aa253e"
+  integrity sha512-UP27In4fp4sWF5JgyV6pwVPAQM83Fj76JOcg02X5BZcpSu5Wx+fP9RMqc2v0ssBoQIFvD5JdKY41gjJJKmw6Bg==
+  dependencies:
+    "@types/prop-types" "*"
+    csstype "^2.2.0"
 
 "@types/resolve@0.0.8":
   version "0.0.8"
@@ -926,19 +939,19 @@ acorn@^7.1.0:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.1.0.tgz#949d36f2c292535da602283586c2477c57eb2d6c"
   integrity sha512-kL5CuoXA/dgxlBbVrflsflzQ3PAas7RYZB52NOm/6839iVYJgKMJ3cQJD+t2i5+qFa8h3MDpEOJiS64E8JLnSQ==
 
-admin-bro-expressjs@^0.4.0-beta.2:
-  version "0.4.0-beta.2"
-  resolved "https://registry.yarnpkg.com/admin-bro-expressjs/-/admin-bro-expressjs-0.4.0-beta.2.tgz#a09572728ec95785e3f5dc521e539968dbd4159a"
-  integrity sha512-KvhdNjxU7pJ4VVTUNJGO84xDQK9wpuK4pFCMAkrCCQ/0uaF4sY3uqLmDmkckFHcXBg0O6PC8pzH2OV4VcFdrTw==
+admin-bro-expressjs@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/admin-bro-expressjs/-/admin-bro-expressjs-0.4.0.tgz#c71ad445c1429690f6af74b9e70a2ca08806edca"
+  integrity sha512-duMrqEzWhcfzlynrB8OAOZLgaY8CeMSrXz/sA9I+czv1VuqLsfLFtinRNYzpnXN/yBeVOmwg6u8arl0FRC9nzQ==
 
-admin-bro-typeorm@SoftwareBrothers/admin-bro-typeorm#dev:
+admin-bro-typeorm@SoftwareBrothers/admin-bro-typeorm:
   version "0.1.4"
-  resolved "https://codeload.github.com/SoftwareBrothers/admin-bro-typeorm/tar.gz/79282ef9553e791c5fcc77029ee87801af5841a2"
+  resolved "https://codeload.github.com/SoftwareBrothers/admin-bro-typeorm/tar.gz/59900eccab66acd208b49f39d52f2223fc2dbdc7"
 
-admin-bro@^1.4.0-beta.14:
-  version "1.4.0-beta.14"
-  resolved "https://registry.yarnpkg.com/admin-bro/-/admin-bro-1.4.0-beta.14.tgz#34c9046c2bab62b13c06843bd394fb8ab056c8a9"
-  integrity sha512-KaNjBzEzi6FE4qPhJxs18MMQwZKjeIFr9E6SBlj90B0LLJJGq9JUmUkV0NoPnAWMlDxcJfm8GxDgWckqt5ov8g==
+admin-bro@^1.6.0-beta.5:
+  version "1.6.0-beta.5"
+  resolved "https://registry.yarnpkg.com/admin-bro/-/admin-bro-1.6.0-beta.5.tgz#6059031b1b0e781de4ba84f7b42561868aa28496"
+  integrity sha512-O13ObMavLjlaQFK5UvxK+hMEgFNB4jq1Kmy/xGZ14vv8tMeZvCSPggJUsOhXsBn9CjyVE+87Gs/900ER7hGFbA==
   dependencies:
     "@babel/core" "^7.2.0"
     "@babel/parser" "^7.6.2"
@@ -948,6 +961,7 @@ admin-bro@^1.4.0-beta.14:
     "@babel/preset-react" "^7.0.0"
     "@babel/preset-typescript" "^7.6.0"
     "@babel/register" "^7.4.0"
+    "@types/react" "^16.9.16"
     axios "^0.18.0"
     babel-plugin-styled-components "^1.10.0"
     commander "^3.0.2"
@@ -1364,6 +1378,11 @@ css-to-react-native@^2.2.2:
     camelize "^1.0.0"
     css-color-keywords "^1.0.0"
     postcss-value-parser "^3.3.0"
+
+csstype@^2.2.0:
+  version "2.6.8"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.8.tgz#0fb6fc2417ffd2816a418c9336da74d7f07db431"
+  integrity sha512-msVS9qTuMT5zwAGCVm4mxfrZ18BNc6Csd0oJAtiFMZ1FAx1CCvy2+5MDmYoix63LM/6NDbNtodCiGYGmFgO0dA==
 
 csstype@^2.5.2:
   version "2.6.7"
