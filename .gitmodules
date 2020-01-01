@@ -28,3 +28,6 @@
 [submodule "admin-bro-e2e"]
 	path = admin-bro-e2e
 	url = git@github.com:SoftwareBrothers/admin-bro-e2e.git
+[submodule "admin-bro-theme-dark"]
+	path = admin-bro-theme-dark
+	url = git@github.com:SoftwareBrothers/admin-bro-theme-dark.git
