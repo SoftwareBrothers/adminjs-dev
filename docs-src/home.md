@@ -46,7 +46,7 @@ AdminBro has dozens of different options. I suggest you to check them out
 to see what can be modified.
 
 - {@link AdminBroOptions} - list of all root level options
-- {@link ResourceOptions} - descirbe how to modify Resource
+- {@link ResourceOptions} - describe how to modify Resource
 - {@link PropertyOptions} - modify or create new Resource Properties
 
 ### Step 3. Read about the helper classes
