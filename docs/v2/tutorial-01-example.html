@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
+    <meta charset="utf-8">
+    <title>JSDoc: 02. Example App</title>
+
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="./build/entry.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Muli:100,400,700|Oswald:300|Inconsolata,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+</head>
+
+<body>
+    <div id="stickyNavbarOverlay"></div>
+    <div class="top-navbar">
+        <div class="container">
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                     
+                        <img src="images/logo.png" alt="logo">
+                    
+                     
+                        <h1 class="navbar-item">AdminBro Documentation</h1>
+                    
+                    <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                 
+                <div class="navbar-menu">
+                    <div class="navbar-end">
+                    
+                        <div class="navbar-item">
+                            <a href="https://github.com/SoftwareBrothers/admin-bro" target="_blank">
+                                Github
+                            </a>
+                        </div>
+                    
+                        <div class="navbar-item">
+                            <a href="https://admin-bro-example-app.herokuapp.com/admin" target="_blank">
+                                Example Application
+                            </a>
+                        </div>
+                    
+                    </div>
+                </div>
+                
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <div class="columns">
+            <div class="column is-3" id="sidebarNav">
+                <div class="sidebar">
+                    <nav>
+                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-00-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-01-example.html">02. Example App</a></li><li><a href="tutorial-03-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-04-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-05-actions.html">05. Customize actions</a></li><li><a href="tutorial-06-writing-react-components.html">06. Writing your own Components</a></li><li><a href="tutorial-07-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-08-rbac.html">08. Role-Based Access Control</a></li></ul><h3>Modules</h3><ul><li><a href="module-admin-bro-expressjs.html">admin-bro-expressjs</a></li><li><a href="module-admin-bro-hapijs.html">admin-bro-hapijs</a></li><li><a href="module-admin-bro-mongoose.html">admin-bro-mongoose</a></li><li><a href="module-admin-bro-sequelizejs.html">admin-bro-sequelizejs</a></li></ul><h3>Classes</h3><ul><li><a href="AdminBro.html">AdminBro</a></li><li><a href="ApiClient.html">ApiClient</a></li><li><a href="ApiController.html">ApiController</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3>Interfaces</h3><ul><li><a href="Action.html">Action</a></li><li><a href="ActionJSON.html">ActionJSON</a></li><li><a href="AdminBroOptions.html">AdminBroOptions</a></li><li><a href="DesignSystem.html">DesignSystem</a></li><li><a href="PageJSON.html">PageJSON</a></li><li><a href="PropertyJSON.html">PropertyJSON</a></li><li><a href="PropertyOptions.html">PropertyOptions</a></li><li><a href="RecordJSON.html">RecordJSON</a></li><li><a href="ResourceJSON.html">ResourceJSON</a></li><li><a href="ResourceOptions.html">ResourceOptions</a></li></ul><h3>Components</h3><ul><li><a href="Badge.html">Badge</a></li><li><a href="Box.html">Box</a></li><li><a href="Button.html">Button</a></li><li><a href="CheckBox.html">CheckBox</a></li><li><a href="DatePicker.html">DatePicker</a></li><li><a href="DropDown.html">DropDown</a></li><li><a href="DropDownItem.html">DropDownItem</a></li><li><a href="DropDownMenu.html">DropDownMenu</a></li><li><a href="DropDownTrigger.html">DropDownTrigger</a></li><li><a href="DropZone.html">DropZone</a></li><li><a href="DropZoneItem.html">DropZoneItem</a></li><li><a href="ErrorMessageBox.html">ErrorMessageBox</a></li><li><a href="Header.html">Header</a></li><li><a href="Icon.html">Icon</a></li><li><a href="InfoBox.html">InfoBox</a></li><li><a href="Input.html">Input</a></li><li><a href="Label.html">Label</a></li><li><a href="Link.html">Link</a></li><li><a href="Loader.html">Loader</a></li><li><a href="MessageBox.html">MessageBox</a></li><li><a href="NavGroup.html">NavGroup</a></li><li><a href="Pagination.html">Pagination</a></li><li><a href="Placeholder.html">Placeholder</a></li><li><a href="Radio.html">Radio</a></li><li><a href="RecordsTableHeader.html">RecordsTableHeader</a></li><li><a href="Section.html">Section</a></li><li><a href="Table.html">Table</a></li><li><a href="TableBody.html">TableBody</a></li><li><a href="TableCaption.html">TableCaption</a></li><li><a href="TableCell.html">TableCell</a></li><li><a href="TableHead.html">TableHead</a></li><li><a href="TableRow.html">TableRow</a></li><li><a href="Text.html">Text</a></li><li><a href="TextArea.html">TextArea</a></li><li><a href="withNotice.html">withNotice</a></li></ul></div><div class="category"><h2>Actions</h2><h3>Modules</h3><ul><li><a href="module-BulkDeleteAction.html">BulkDeleteAction</a></li><li><a href="module-DeleteAction.html">DeleteAction</a></li><li><a href="module-EditAction.html">EditAction</a></li><li><a href="module-ListAction.html">ListAction</a></li><li><a href="module-NewAction.html">NewAction</a></li><li><a href="module-ShowAction.html">ShowAction</a></li></ul></div><div class="category"><h2>Base</h2><h3>Classes</h3><ul><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li></ul><h3>Components</h3><ul><li><a href="BaseActionComponent.html">BaseActionComponent</a></li><li><a href="BasePropertyComponent.html">BasePropertyComponent</a></li></ul></div><div class="category"><h2>Decorators</h2><h3>Classes</h3><ul><li><a href="ActionDecorator.html">ActionDecorator</a></li><li><a href="PropertyDecorator.html">PropertyDecorator</a></li><li><a href="ResourceDecorator.html">ResourceDecorator</a></li></ul></div><div class="category"><h2>Errors</h2><h3>Classes</h3><ul><li><a href="ConfigurationError.html">ConfigurationError</a></li><li><a href="ForbiddenError.html">ForbiddenError</a></li><li><a href="NotFoundError.html">NotFoundError</a></li><li><a href="NotImplementedError.html">NotImplementedError</a></li><li><a href="ValidationError.html">ValidationError</a></li></ul></div>
+                    </nav>
+                </div>
+            </div>
+            <div class="column is-9-desktop">
+                <div class="content" id="main-content-wrapper">
+                    <header class="page-title">
+                        <p>Tutorial</p>
+                        <h1>02. Example App</h1>
+                    </header>
+                    
+                    <section>
+
+<header>
+    
+</header>
+
+<article>
+    <p>AdminBro is an <strong>automatic admin interface</strong> which allows you to manage your database resources. It can be added to almost any nodejs framework. In this short tutorial I will show you how configure AdminBro to manage <em>User</em> <a href="https://mongoosejs.com/">mongoosejs</a> resource in a simple <a href="https://expressjs.com/">express.js</a> app.</p>
+<p>We will:</p>
+<ol>
+<li>Create a simple express app</li>
+<li>Add AdminBro to it</li>
+</ol>
+<h2>Let's do this!</h2>
+<p>In the first step we will create a simple <strong>one file</strong> API server.</p>
+<h2>An example app without an AdminBro</h2>
+<p>The app is an <a href="https://expressjs.com/">express.js</a> API server which uses <a href="https://mongoosejs.com/">mongoosejs</a> to fetch data from mongodb and returns it in an JSON format.</p>
+<p>The code of the app looks like this.</p>
+<pre class="prettyprint source lang-javascript"><code>// ==========  server.js ==============
+// Requirements
+const mongoose = require('mongoose')
+const express = require('express')
+const formidableMiddleware = require('express-formidable');
+
+// express server definition
+const app = express()
+app.use(formidableMiddleware());
+
+// Resources definitions
+const User = mongoose.model('User', { name: String, email: String, surname: String })
+
+// Routes definitions
+app.get('/', (req, res) => res.send('Hello World!'))
+
+// Route which returns last 100 users from the database
+app.get('/users', async (req, res) => {
+  const users = await User.find({}).limit(10)
+  res.send(users)
+})
+
+// Route which creates new user
+app.post('/users', async (req, res) => {
+  const user = await new User(req.fields.user).save()
+  res.send(user)
+})
+
+// Running the server
+const run = async () => {
+  await mongoose.connect('mongodb://localhost:27017/test', { useNewUrlParser: true })
+  await app.listen(8080, () => console.log(`Example app listening on port 8080!`))
+}
+
+run()
+</code></pre>
+<p>To run it you have to install dependencies:</p>
+<pre class="prettyprint source lang-sh"><code>npm install mongoose express express-formidable
+</code></pre>
+<p>Make sure you have a <a href="https://www.mongodb.com/">mongodb</a> running in the system.</p>
+<p>and you can run the server via <code>node</code> command:</p>
+<pre class="prettyprint source lang-sh"><code>node server.js
+</code></pre>
+<p>Server exposes 2 routes <code>GET /users</code> and <code>POST /users</code> you can test them by using <a href="https://curl.haxx.se/">curl</a>:</p>
+<pre class="prettyprint source lang-sh"><code>curl -d '{&quot;user&quot;: {&quot;name&quot;: &quot;wojtek&quot;}}' -H &quot;Content-Type: application/json&quot; -X POST http://localhost:8080/users/
+# => {&quot;_id&quot;:&quot;5c546dcbc98f5e1923c8eef9&quot;,&quot;name&quot;:&quot;wojtek&quot;,&quot;__v&quot;:0}
+
+curl http://localhost:8080/users
+# => [{&quot;_id&quot;:&quot;5c546dcbc98f5e1923c8eef9&quot;,&quot;name&quot;:&quot;wojtek&quot;,&quot;__v&quot;:0}]
+</code></pre>
+<h2>Adding AdminBro</h2>
+<p>Ok - so now we would like to add an <strong>admin UI</strong> with the ability to manage users. Of course we will be using <strong>AdminBro</strong> in order to do that.</p>
+<p>First, let's install all dependencies. We are using mongoose so we will have to install admin-bro-mongoose database adapter. Also we use expressjs, that is why we will need admin-bro-expressjs plugin:</p>
+<pre class="prettyprint source lang-sh"><code>npm install admin-bro admin-bro-mongoose admin-bro-expressjs
+</code></pre>
+<p>So now we have to use those modules. We will:</p>
+<ul>
+<li>use AdminBroExpressjs module from 'admin-bro-expressjs' package to attach AdminBro into an express routes.</li>
+<li>use AdminBroMongoose adapter form 'admin-bro-mongoose' package to add mongoose Resources to the admin panel.</li>
+</ul>
+<p>This is how it will look like:</p>
+<pre class="prettyprint source lang-javascript"><code>const AdminBro = require('admin-bro')
+const AdminBroExpressjs = require('admin-bro-expressjs')
+
+// We have to tell AdminBro that we will manage mongoose resources with it
+AdminBro.registerAdapter(require('admin-bro-mongoose'))
+
+// Pass all configuration settings to AdminBro
+const adminBro = new AdminBro({
+  resources: [User],
+  rootPath: '/admin',
+})
+
+// Build and use a router which will handle all AdminBro routes
+const router = AdminBroExpressjs.buildRouter(adminBro)
+app.use(adminBro.options.rootPath, router)
+</code></pre>
+<h2>Full application in one file</h2>
+<p>This is an entire Express server with AdminBro managing Mongoose User Resource:</p>
+<pre class="prettyprint source lang-javascript"><code>// ==========  server.js ==============
+// Requirements
+const mongoose = require('mongoose')
+const express = require('express')
+const formidableMiddleware = require('express-formidable');
+const AdminBro = require('admin-bro')
+const AdminBroExpressjs = require('admin-bro-expressjs')
+
+// We have to tell AdminBro that we will manage mongoose resources with it
+AdminBro.registerAdapter(require('admin-bro-mongoose'))
+
+// express server definition
+const app = express()
+app.use(formidableMiddleware());
+
+// Resources definitions
+const User = mongoose.model('User', { name: String, email: String, surname: String })
+
+// Routes definitions
+app.get('/', (req, res) => res.send('Hello World!'))
+
+// Route which returns last 100 users from the database
+app.get('/users', async (req, res) => {
+  const users = await User.find({}).limit(10)
+  res.send(users)
+})
+
+// Route which creates new user
+app.post('/users', async (req, res) => {
+  const user = await new User(req.fields.user).save()
+  res.send(user)
+})
+
+// Pass all configuration settings to AdminBro
+const adminBro = new AdminBro({
+  resources: [User],
+  rootPath: '/admin',
+})
+
+// Build and use a router which will handle all AdminBro routes
+const router = AdminBroExpressjs.buildRouter(adminBro)
+app.use(adminBro.options.rootPath, router)
+
+// Running the server
+const run = async () => {
+  await mongoose.connect('mongodb://localhost:27017/test', { useNewUrlParser: true })
+  await app.listen(8080, () => console.log(`Example app listening on port 8080!`))
+}
+
+run()
+</code></pre>
+<p>To run it simply write:</p>
+<pre class="prettyprint source lang-sh"><code>node server.js
+</code></pre>
+<p>and, under <code>localhost:8080/admin</code>, you should see something like this:</p>
+<img src="./images/one-file-example.png">
+<h2>What's next?</h2>
+<p>So now you know how to add AdminBro to simple express.js app. Now let's move to modifying resources <a href="tutorial-03-passing-resources.html">03. Adding resources</a></p>
+</article>
+
+</section>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a></p>
+        <p class="sidebar-created-by">
+            <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+            <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+        </p>
+    </div>
+</footer>
+
+
+<script src="scripts/app.min.js"></script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

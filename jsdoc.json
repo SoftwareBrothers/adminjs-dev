@@ -23,7 +23,7 @@
     ],
     "opts": {
         "encoding": "utf8",
-        "destination": "docs/",
+        "destination": "docs/v2",
         "readme": "./docs-src/home.md",
         "recurse": true,
         "verbose": true,
