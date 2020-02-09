@@ -1,0 +1,233 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
+    <meta charset="utf-8">
+    <title>JSDoc: design-system/atoms/badge.tsx</title>
+
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="./build/entry.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Muli:100,400,700|Oswald:300|Inconsolata,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+</head>
+
+<body>
+    <div id="stickyNavbarOverlay"></div>
+    <div class="top-navbar">
+        <div class="container">
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                     
+                        <img src="images/logo.png" alt="logo">
+                    
+                     
+                        <h1 class="navbar-item">AdminBro Documentation</h1>
+                    
+                    <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                 
+                <div class="navbar-menu">
+                    <div class="navbar-end">
+                    
+                        <div class="navbar-item">
+                            <a href="https://github.com/SoftwareBrothers/admin-bro" target="_blank">
+                                Github
+                            </a>
+                        </div>
+                    
+                        <div class="navbar-item">
+                            <a href="https://admin-bro-example-app.herokuapp.com/admin" target="_blank">
+                                Example Application
+                            </a>
+                        </div>
+                    
+                    </div>
+                </div>
+                
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <div class="columns">
+            <div class="column is-3" id="sidebarNav">
+                <div class="sidebar">
+                    <nav>
+                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-00-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-01-example.html">02. Example App</a></li><li><a href="tutorial-03-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-04-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-05-actions.html">05. Customize actions</a></li><li><a href="tutorial-06-writing-react-components.html">06. Writing your own Components</a></li><li><a href="tutorial-07-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-08-rbac.html">08. Role-Based Access Control</a></li></ul><h3>Interfaces</h3><ul><li><a href="Theme.html">Theme</a></li></ul><h3>Components / Application</h3><ul><li><a href="ActionButton.html">ActionButton</a></li><li><a href="ActionHeader.html">ActionHeader</a></li><li><a href="RecordsTableHeader.html">RecordsTableHeader</a></li></ul><h3>Components / Atoms</h3><ul><li><a href="Badge.html">Badge</a></li><li><a href="Box.html">Box</a></li><li><a href="Button.html">Button</a></li><li><a href="CheckBox.html">CheckBox</a></li><li><a href="Header.html">Header</a></li><li><a href="Icon.html">Icon</a></li><li><a href="Input.html">Input</a></li><li><a href="Label.html">Label</a></li><li><a href="Link.html">Link</a></li><li><a href="Loader.html">Loader</a></li><li><a href="Placeholder.html">Placeholder</a></li><li><a href="Radio.html">Radio</a></li><li><a href="Section.html">Section</a></li><li><a href="Table.html">Table</a></li><li><a href="Text.html">Text</a></li><li><a href="TextArea.html">TextArea</a></li></ul><h3>Components / Molecules</h3><ul><li><a href="DatePicker.html">DatePicker</a></li><li><a href="Drawer.html">Drawer</a></li><li><a href="DropDown.html">DropDown</a></li><li><a href="DropZone.html">DropZone</a></li><li><a href="DropZoneItem.html">DropZoneItem</a></li><li><a href="FormGroup.html">FormGroup</a></li><li><a href="InfoBox.html">InfoBox</a></li><li><a href="MessageBox.html">MessageBox</a></li><li><a href="NavGroup.html">NavGroup</a></li><li><a href="Pagination.html">Pagination</a></li></ul></div><div class="category"><h2>Base</h2><h3>Components</h3><ul><li><a href="BaseActionComponent.html">BaseActionComponent</a></li><li><a href="BasePropertyComponent.html">BasePropertyComponent</a></li></ul></div>
+                    </nav>
+                </div>
+            </div>
+            <div class="column is-9-desktop">
+                <div class="content" id="main-content-wrapper">
+                    <header class="page-title">
+                        <p>Source</p>
+                        <h1>design-system/atoms/badge.tsx</h1>
+                    </header>
+                    
+                    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import styled from 'styled-components'
+import { color, space, typography, SpaceProps, TypographyProps, ColorProps, variant } from 'styled-system'
+
+/**
+ * Prop Types of an Button component.
+ * Apart from those defined below it extends all {@link ColorProps}, {@link SpaceProps}
+ * and {@link TypographyProps}
+ *
+ * @memberof Button
+ * @alias ButtonProps
+ * @property {string} [...] Other props from {@link ColorProps}, {@link SpaceProps}
+ *                          and {@link TypographyProps}
+ */
+export type BadgeProps = SpaceProps &amp; TypographyProps &amp; ColorProps &amp; {
+  /**
+   * Color variant
+   */
+  variant?: 'primary' | 'danger' | 'text' | 'success' | 'info' | 'secondary';
+  /**
+   * Outline version
+   */
+  outline?: boolean;
+  /**
+   * Size variant
+   */
+  size?: 'sm' | 'lg';
+}
+
+const variantStyle = (variantColor: string, props: BadgeProps) => ({
+  bg: variantColor,
+  borderColor: variantColor,
+  color: props.outline ? variantColor : 'white',
+})
+
+const colorVariant = (props: BadgeProps) => variant({
+  variants: {
+    primary: variantStyle('bluePrimary', props),
+    danger: variantStyle('red', props),
+    success: variantStyle('treal', props),
+    info: variantStyle('blueLight', props),
+    secondary: variantStyle('blueSecondary', props),
+  },
+})
+
+const sizeVariants = variant({
+  prop: 'size',
+  variants: {
+    sm: {
+      py: 'xs',
+    },
+    lg: {
+      py: 'default',
+      px: '10px',
+    },
+  },
+})
+
+/**
+ * Component representing a badge.
+ *
+ * Usage
+ * ```javascript
+ * import { Badge, BadgeProps } from 'admin-bro'
+ * ```
+ *
+ * @component
+ * @subcategory Atoms
+ * @example &lt;caption>Color variants&lt;/caption>
+ * const variants = ['primary', 'danger', 'success', 'info', 'secondary']
+ * return (
+ * &lt;Box py="lg">
+ *   &lt;Badge mb="default" mr="default">default&lt;/Badge>
+ *   {variants.map(variant => (
+ *     &lt;Badge mb="default" variant={variant} mr="default">{variant}&lt;/Badge>
+ *   ))}
+ * &lt;/Box>
+ * )
+ * @example &lt;caption>Outline badges&lt;/caption>
+ * const variants = ['primary', 'danger', 'success', 'info', 'secondary']
+ * return (
+ * &lt;Box py="lg">
+ *   &lt;Badge mb="default" mr="default" outline>default&lt;/Badge>
+ *   {variants.map(variant => (
+ *     &lt;Badge mb="default" variant={variant} mr="default" outline>{variant}&lt;/Badge>
+ *   ))}
+ * &lt;/Box>
+ * )
+ * @example &lt;caption>Different sizes&lt;/caption>
+ * return (
+ * &lt;Box py="lg">
+ *   &lt;Badge ml="default" variant="primary" size="sm">small&lt;/Badge>
+ *   &lt;Badge ml="default" variant="primary">regular&lt;/Badge>
+ *   &lt;Badge ml="default" variant="primary" size="lg">large&lt;/Badge>
+ * &lt;/Box>
+ * )
+ */
+export const Badge = styled.span&lt;BadgeProps>`
+  border-radius: 12px;
+  border: 1px solid ${({ theme }): string => theme.colors.greyLight};
+  color: ${({ outline, theme }): string => (outline ? theme.colors.grey : theme.colors.white)};
+  vertical-align: middle;
+  font-family: ${({ theme }): string => theme.font};
+
+  ${space};
+  ${color};
+  ${typography};
+  ${props => colorVariant(props)};
+  ${sizeVariants};
+  ${({ outline }): string => (outline ? 'background: transparent;' : '')}
+`
+
+Badge.defaultProps = {
+  px: 'default',
+  py: '6px',
+  fontSize: 'xs',
+  bg: 'greyLight',
+}
+
+export default Badge
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a></p>
+        <p class="sidebar-created-by">
+            <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+            <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+        </p>
+    </div>
+</footer>
+
+
+<script src="scripts/app.min.js"></script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

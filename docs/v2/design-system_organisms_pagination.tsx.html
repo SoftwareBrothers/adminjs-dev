@@ -1,0 +1,243 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
+    <meta charset="utf-8">
+    <title>JSDoc: design-system/organisms/pagination.tsx</title>
+
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="./build/entry.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Muli:100,400,700|Oswald:300|Inconsolata,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+</head>
+
+<body>
+    <div id="stickyNavbarOverlay"></div>
+    <div class="top-navbar">
+        <div class="container">
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                     
+                        <img src="images/logo.png" alt="logo">
+                    
+                     
+                        <h1 class="navbar-item">AdminBro Documentation</h1>
+                    
+                    <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                 
+                <div class="navbar-menu">
+                    <div class="navbar-end">
+                    
+                        <div class="navbar-item">
+                            <a href="https://github.com/SoftwareBrothers/admin-bro" target="_blank">
+                                Github
+                            </a>
+                        </div>
+                    
+                        <div class="navbar-item">
+                            <a href="https://admin-bro-example-app.herokuapp.com/admin" target="_blank">
+                                Example Application
+                            </a>
+                        </div>
+                    
+                    </div>
+                </div>
+                
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <div class="columns">
+            <div class="column is-3" id="sidebarNav">
+                <div class="sidebar">
+                    <nav>
+                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-00-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-01-example.html">02. Example App</a></li><li><a href="tutorial-03-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-04-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-05-actions.html">05. Customize actions</a></li><li><a href="tutorial-06-writing-react-components.html">06. Writing your own Components</a></li><li><a href="tutorial-07-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-08-rbac.html">08. Role-Based Access Control</a></li></ul><h3>Interfaces</h3><ul><li><a href="DesignSystem.html">DesignSystem</a></li></ul><h3>Components</h3><ul><li><a href="Badge.html">Badge</a></li><li><a href="Box.html">Box</a></li><li><a href="Button.html">Button</a></li><li><a href="CheckBox.html">CheckBox</a></li><li><a href="DatePicker.html">DatePicker</a></li><li><a href="DropDown.html">DropDown</a></li><li><a href="DropDownItem.html">DropDownItem</a></li><li><a href="DropDownMenu.html">DropDownMenu</a></li><li><a href="DropDownTrigger.html">DropDownTrigger</a></li><li><a href="DropZone.html">DropZone</a></li><li><a href="DropZoneItem.html">DropZoneItem</a></li><li><a href="ErrorMessageBox.html">ErrorMessageBox</a></li><li><a href="FormGroup.html">FormGroup</a></li><li><a href="FormMessage.html">FormMessage</a></li><li><a href="Header.html">Header</a></li><li><a href="Icon.html">Icon</a></li><li><a href="InfoBox.html">InfoBox</a></li><li><a href="Input.html">Input</a></li><li><a href="InputGroup.html">InputGroup</a></li><li><a href="Label.html">Label</a></li><li><a href="Link.html">Link</a></li><li><a href="Loader.html">Loader</a></li><li><a href="MessageBox.html">MessageBox</a></li><li><a href="NavGroup.html">NavGroup</a></li><li><a href="Pagination.html">Pagination</a></li><li><a href="Placeholder.html">Placeholder</a></li><li><a href="Radio.html">Radio</a></li><li><a href="RecordsTableHeader.html">RecordsTableHeader</a></li><li><a href="Section.html">Section</a></li><li><a href="Table.html">Table</a></li><li><a href="TableBody.html">TableBody</a></li><li><a href="TableCaption.html">TableCaption</a></li><li><a href="TableCell.html">TableCell</a></li><li><a href="TableHead.html">TableHead</a></li><li><a href="TableRow.html">TableRow</a></li><li><a href="Text.html">Text</a></li><li><a href="TextArea.html">TextArea</a></li></ul></div><div class="category"><h2>Base</h2><h3>Components</h3><ul><li><a href="BaseActionComponent.html">BaseActionComponent</a></li><li><a href="BasePropertyComponent.html">BasePropertyComponent</a></li></ul></div>
+                    </nav>
+                </div>
+            </div>
+            <div class="column is-9-desktop">
+                <div class="content" id="main-content-wrapper">
+                    <header class="page-title">
+                        <p>Source</p>
+                        <h1>design-system/organisms/pagination.tsx</h1>
+                    </header>
+                    
+                    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from 'react'
+import styled from 'styled-components'
+import JWPaginate from 'jw-paginate'
+
+import { Box } from '../atoms/box'
+import { Button, ButtonProps } from '../atoms/button'
+import { Icon } from '../atoms/icon'
+
+/**
+ * @alias PaginationProps
+ * @memberof Pagination
+ */
+export type PaginationProps = {
+  /**
+   * Current page
+   */
+  page: number;
+  /**
+   * Items per page
+   */
+  perPage: number;
+  /**
+   * Total number of items
+   */
+  total: number;
+  /**
+   * location. You can pass window.location or the location object
+   * given by ReactRouter
+   */
+  location?: Location;
+
+  /**
+   * Triggers when user clicks any of the button
+   */
+  onChange: (pageNumber: number) => void;
+}
+
+const PaginationLink = styled(Button).attrs((props: ButtonProps) => ({
+  size: 'icon',
+  variant: props.variant ? props.variant : 'text',
+}))`
+  min-width: 28px;
+  height: 28px;
+  line-height: 12px;
+  padding: 3px 6px;
+  text-align: center;
+`
+
+const PaginationWrapper = styled(Box)`
+  display: inline-block;
+  padding: 2px;
+  border: 1px solid ${({ theme }): string => theme.colors.greyPale};
+  &amp; > :first-child {
+    width: 56px;
+    border-right: 1px solid ${({ theme }): string => theme.colors.greyPale};
+  }
+  &amp; > :nth-child(2) {
+    padding-left: 16px;
+  }
+  &amp; > :last-child {
+    width: 56px;
+    border-left: 1px solid ${({ theme }): string => theme.colors.greyPale};
+  }
+  &amp; > :nth-last-child(2) {
+    padding-right: 16px;
+  }
+`
+
+/**
+ * Pagination component
+ *
+ * @component
+ * @example
+ * const location = { search: ''}
+ * return (
+ *   &lt;Text py="xl" textAlign="center">
+ *     &lt;Pagination
+ *      total={100}
+ *      page={4}
+ *      perPage={10}
+ *      location={location}
+ *      onChange={(item) => alert(`clicked ${item}`)}
+ *   />
+ *   &lt;/Text>
+ * )
+ */
+export const Pagination: React.FC&lt;PaginationProps> = (props) => {
+  const { total, page, perPage, onChange, ...rest } = props
+  const currentPage = page || 1
+  const paginate = JWPaginate(total, currentPage, perPage)
+
+  const isFirstPage = currentPage === paginate.startPage
+  const isLastPage = currentPage === paginate.endPage
+
+  const prevPage = isFirstPage ? currentPage : currentPage - 1
+  const nextPage = isLastPage ? currentPage : currentPage + 1
+
+  if (paginate.totalPages === 1 || total === 0) {
+    return null
+  }
+
+  return (
+    &lt;PaginationWrapper {...rest}>
+      &lt;PaginationLink
+        disabled={isFirstPage}
+        onClick={(): void => (!isFirstPage ? onChange(prevPage) : undefined)}
+      >
+        &lt;Icon icon="ChevronLeft" />
+      &lt;/PaginationLink>
+      {paginate.pages.map(p => (
+        &lt;PaginationLink
+          key={p}
+          onClick={(): void => onChange(p)}
+          variant={p === currentPage ? 'primary' : 'text'}
+        >
+          {p}
+        &lt;/PaginationLink>
+      ))}
+      &lt;PaginationLink
+        onClick={(): void => (!isLastPage ? onChange(nextPage) : undefined)}
+        disabled={isLastPage}
+      >
+        &lt;Icon icon="ChevronRight" />
+      &lt;/PaginationLink>
+    &lt;/PaginationWrapper>
+  )
+}
+
+export default Pagination
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a></p>
+        <p class="sidebar-created-by">
+            <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+            <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+        </p>
+    </div>
+</footer>
+
+
+<script src="scripts/app.min.js"></script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

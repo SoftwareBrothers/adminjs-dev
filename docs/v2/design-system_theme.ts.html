@@ -1,0 +1,518 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
+    <meta charset="utf-8">
+    <title>JSDoc: design-system/theme.ts</title>
+
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="./build/entry.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Muli:100,400,700|Oswald:300|Inconsolata,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+</head>
+
+<body>
+    <div id="stickyNavbarOverlay"></div>
+    <div class="top-navbar">
+        <div class="container">
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                     
+                        <img src="images/logo.png" alt="logo">
+                    
+                     
+                        <h1 class="navbar-item">AdminBro Documentation</h1>
+                    
+                    <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                 
+                <div class="navbar-menu">
+                    <div class="navbar-end">
+                    
+                        <div class="navbar-item">
+                            <a href="https://github.com/SoftwareBrothers/admin-bro" target="_blank">
+                                Github
+                            </a>
+                        </div>
+                    
+                        <div class="navbar-item">
+                            <a href="https://admin-bro-example-app.herokuapp.com/admin" target="_blank">
+                                Example Application
+                            </a>
+                        </div>
+                    
+                    </div>
+                </div>
+                
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <div class="columns">
+            <div class="column is-3" id="sidebarNav">
+                <div class="sidebar">
+                    <nav>
+                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-00-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-01-example.html">02. Example App</a></li><li><a href="tutorial-03-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-04-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-05-actions.html">05. Customize actions</a></li><li><a href="tutorial-06-writing-react-components.html">06. Writing your own Components</a></li><li><a href="tutorial-07-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-08-rbac.html">08. Role-Based Access Control</a></li></ul><h3>Interfaces</h3><ul><li><a href="Theme.html">Theme</a></li></ul><h3>Components / Application</h3><ul><li><a href="ActionButton.html">ActionButton</a></li><li><a href="ActionHeader.html">ActionHeader</a></li><li><a href="RecordsTableHeader.html">RecordsTableHeader</a></li></ul><h3>Components / Atoms</h3><ul><li><a href="Badge.html">Badge</a></li><li><a href="Box.html">Box</a></li><li><a href="Button.html">Button</a></li><li><a href="CheckBox.html">CheckBox</a></li><li><a href="Header.html">Header</a></li><li><a href="Icon.html">Icon</a></li><li><a href="Input.html">Input</a></li><li><a href="Label.html">Label</a></li><li><a href="Link.html">Link</a></li><li><a href="Loader.html">Loader</a></li><li><a href="Placeholder.html">Placeholder</a></li><li><a href="Radio.html">Radio</a></li><li><a href="Section.html">Section</a></li><li><a href="Table.html">Table</a></li><li><a href="Text.html">Text</a></li><li><a href="TextArea.html">TextArea</a></li></ul><h3>Components / Molecules</h3><ul><li><a href="DatePicker.html">DatePicker</a></li><li><a href="Drawer.html">Drawer</a></li><li><a href="DropDown.html">DropDown</a></li><li><a href="DropZone.html">DropZone</a></li><li><a href="DropZoneItem.html">DropZoneItem</a></li><li><a href="FormGroup.html">FormGroup</a></li><li><a href="InfoBox.html">InfoBox</a></li><li><a href="MessageBox.html">MessageBox</a></li><li><a href="NavGroup.html">NavGroup</a></li><li><a href="Pagination.html">Pagination</a></li></ul></div><div class="category"><h2>Base</h2><h3>Components</h3><ul><li><a href="BaseActionComponent.html">BaseActionComponent</a></li><li><a href="BasePropertyComponent.html">BasePropertyComponent</a></li></ul></div>
+                    </nav>
+                </div>
+            </div>
+            <div class="column is-9-desktop">
+                <div class="content" id="main-content-wrapper">
+                    <header class="page-title">
+                        <p>Source</p>
+                        <h1>design-system/theme.ts</h1>
+                    </header>
+                    
+                    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @interface Theme
+ * @description
+ * Entire AdminBro interface is build with
+ * [styled-components]{@link https://styled-components.com/} backed by 
+ * [styled-system]{@link https://styled-system.com/}. The core of
+ * the style information is the Theme. It is base don the
+ * [Theme Specification]{@link https://styled-system.com/theme-specification/} and
+ * it is used by almost all the components provided by AdminBro.
+ * 
+ * So let's say you would like to create a box with the same background as our
+ * bluePrimary color. This is one way of achieving that:
+ * 
+ * ```javascript
+ * import styled from 'styled-components'
+ * 
+ * const MyBlueBox = styled(Box)`
+ *   background: ${({ theme }) => theme.colors.bluePrimary};
+ *   // other css styles you want to override.
+ * `
+ * ```
+ * 
+ * But, since AdminBro uses styled-system, you also can achieve a similar result by passing
+ * a `bg` Prop to the [Box Component]{@link Box}, everything because Box supports all the {@link ColorProps}.
+ * 
+ * ```javascript
+ * import Box from 'admin-bro'
+ * 
+ * const ComponentWhereIWantToUseBlueBox = () => (
+ *   &lt;Box bg="bluePrimary">
+ *   ...
+ *   &lt;/Box>
+ * )
+ * ```
+ */
+
+/**
+ * @memberof Theme
+ * @alias colors
+ * 
+ * @property {string} bluePrimary=#4268F6       &lt;div style="background: #4268F6; height: 20px;" />
+ * @property {string} bluePrimary=#4268F6       &lt;div style="background: #4268F6; height: 20px" />
+ * @property {string} blue80=#6483F8            &lt;div style="background: #6483F8; height: 20px" />
+ * @property {string} blueLight=#879FFA         &lt;div style="background: #879FFA; height: 20px" />
+ * @property {string} blue40=#A9BAFA            &lt;div style="background: #A9BAFA; height: 20px" />
+ * @property {string} bluePale=#CBD5FD          &lt;div style="background: #CBD5FD; height: 20px" />
+ * @property {string} blueHover=#535B8E         &lt;div style="background: #535B8E; height: 20px" />
+ * @property {string} blueSecondary=#38CAF1     &lt;div style="background: #38CAF1; height: 20px" />  
+ * @property {string} blueFilter=#343F87        &lt;div style="background: #343F87; height: 20px" />
+ * @property {string} black=#1C1C38             &lt;div style="background: #1C1C38; height: 20px" />
+ * @property {string} darkGrey=#454655          &lt;div style="background: #454655; height: 20px" />
+ * @property {string} grey=#898A9A              &lt;div style="background: #898A9A; height: 20px" />
+ * @property {string} greyLight=#C0C0CA         &lt;div style="background: #C0C0CA; height: 20px" />
+ * @property {string} greyPale=#F6F7FB          &lt;div style="background: #F6F7FB; height: 20px" />
+ * @property {string} white=#fff                &lt;div style="background: #fff; height: 20px" />
+ * @property {string} red=#FF4567               &lt;div style="background: #FF4567; height: 20px" />
+ * @property {string} paleRed=#FFA5B5           &lt;div style="background: #FFA5B5; height: 20px" />
+ * @property {string} treal=#70C9B0             &lt;div style="background: #70C9B0; height: 20px" />
+ * @property {string} paleTreal=#DBF0F1         &lt;div style="background: #DBF0F1; height: 20px" />
+ * @property {string} love=#e6282b              &lt;div style="background: #e6282b; height: 20px" />
+ */
+const colors = {
+  bluePrimary: '#4268F6',
+  blue80: '#6483F8',
+  blueLight: '#879FFA',
+  blue40: '#A9BAFA',
+  bluePale: '#CBD5FD',
+  blueHover: '#535B8E',
+  blueSecondary: '#38CAF1',
+  blueFilter: '#343F87',
+
+  // Blacks
+  black: '#1C1C38',
+  darkGrey: '#454655',
+  grey: '#898A9A',
+  greyLight: '#C0C0CA',
+  greyPale: '#F6F7FB',
+  white: '#fff',
+
+  // Additional
+  red: '#FF4567',
+  paleRed: '#FFA5B5',
+  treal: '#70C9B0',
+  paleTreal: '#DBF0F1',
+  love: '#e6282b',
+}
+
+/**
+ * @memberof Theme
+ * @alias space
+
+ * @property {string} xs=2px        2px - &lt;span class="space-box" style="width: 2px;" />
+ * @property {string} sm=4px        4px - &lt;span class="space-box" style="width: 4px;" />
+ * @property {string} default=8px   8px - &lt;span class="space-box" style="width: 8px;" />
+ * @property {string} lg=16px       16px - &lt;span class="space-box" style="width: 16px;" />
+ * @property {string} xl=24px       24px - &lt;span class="space-box" style="width: 24px;" />
+ * @property {string} xxl=32px      32px - &lt;span class="space-box" style="width: 32px;" />
+ * @property {string} x3=48px       48px - &lt;span class="space-box" style="width: 48px;" />
+ * @property {string} x4=64px       64px - &lt;span class="space-box" style="width: 64px;" />
+ * @property {string} x5=80px       80px - &lt;span class="space-box" style="width: 80px;" />
+ * @property {string} x6=128px      128px - &lt;span class="space-box" style="width: 128px;" />
+ */
+const space = {
+  xs: '2px',
+  sm: '4px',
+  default: '8px',
+  lg: '16px',
+  xl: '24px',
+  xxl: '32px',
+  x3: '48px',
+  x4: '64px',
+  x5: '80px',
+  x6: '128px',
+}
+
+/**
+ * @memberof Theme
+ * @alias sizes
+ * @property {string} navbarHeight=64px
+ * @property {string} sidebarWidth=300px
+ */
+const sizes = {
+  navbarHeight: '64px',
+  sidebarWidth: '300px',
+}
+
+/**
+ * @memberof Theme
+ * @alias fontSizes
+ * @property {string} xs=10px      &lt;div style="font-size: 10px;">'xs' font size&lt;/div>
+ * @property {string} sm=12px      &lt;div style="font-size: 12px;">'sm' font size&lt;/div>
+ * @property {string} default=14px &lt;div style="font-size: 14px;">'default' font size&lt;/div>
+ * @property {string} lg=16px      &lt;div style="font-size: 16px;">'lg' font size&lt;/div>
+ * @property {string} xl=18px      &lt;div style="font-size: 18px;">'xl' font size&lt;/div>
+ * @property {string} h4=24px      &lt;div style="font-size: 24px;">'h4' font size&lt;/div>
+ * @property {string} h3=28px      &lt;div style="font-size: 28px;">'h3' font size&lt;/div>
+ * @property {string} h2=32px      &lt;div style="font-size: 32px;">'h2' font size&lt;/div>
+ * @property {string} h1=40px      &lt;div style="font-size: 40px;">'h1' font size&lt;/div>
+ */
+const fontSizes = {
+  xs: '10px',
+  sm: '12px',
+  default: '14px',
+  lg: '16px',
+  xl: '18px',
+  h4: '24px',
+  h3: '28px',
+  h2: '32px',
+  h1: '40px',
+}
+
+/**
+ * @memberof Theme
+ * @alias fontWeights
+ * @property {string} lighter=300
+ * @property {string} normal=400
+ * @property {string} bold=700
+ */
+const fontWeights = {
+  lighter: 300,
+  normal: 400,
+  bold: 700,
+}
+
+/**
+ * @memberof Theme
+ * @alias lineHeights
+ * @property {string} sm=12px
+ * @property {string} default=16px
+ * @property {string} lg=24px
+ * @property {string} xl=32px
+ * @property {string} xxl=40px
+ */
+const lineHeights = {
+  sm: '12px',
+  default: '16px',
+  lg: '24px',
+  xl: '32px',
+  xxl: '40px',
+}
+
+const font = '\'Roboto\', sans-serif'
+
+export { colors, lineHeights, fontWeights, fontSizes, sizes, space, font }
+
+/**
+ * The color utility parses a component's color and bg props and converts them into CSS
+ * declarations. By default the raw value of the prop is returned. But most often you
+ * would use one of the color from the [color palette]{@link colors}.
+ *
+ * @typedef {object} ColorProps
+ * @alias ColorProps
+ * @memberof Theme
+ * @property {string} [color]                 Text color. It could be either a #hash or
+ *                                            {@link colors} from css theme name like
+ *                                            `darkGrey`
+ * @property {string} [backgroundColor, bg]   Background color. Similar as above could be a
+ *                                            #hash or one of {@link colors}.
+ */
+
+/**
+ * The space utility converts shorthand margin and padding props to margin and padding
+ * CSS declarations.
+ *
+ * You can use as a value raw dimensions in "px" or one of the value from the
+ * [space scale]{@link space}.
+ *
+ * @typedef {object} SpaceProps
+ * @alias SpaceProps
+ * @memberof Theme
+ * @property {string} [margin, m]             margin
+ * @property {string} [marginTop, mt]         margin-top
+ * @property {string} [marginRight, mr]       margin-right
+ * @property {string} [marginBottom, mb]      margin-bottom
+ * @property {string} [marginLeft, ml]        margin-left
+ * @property {string} [marginX, mx]           margin-left and margin-right
+ * @property {string} [marginY, my]           margin-top and margin-bottom
+ * @property {string} [padding, p]            padding
+ * @property {string} [paddingTop, pt]        padding-top
+ * @property {string} [paddingRight, pr]      padding-right
+ * @property {string} [paddingBottom, pb]     padding-bottom
+ * @property {string} [paddingLeft, pl]       padding-left
+ * @property {string} [paddingX, px]          padding-left and padding-right
+ * @property {string} [paddingY, py]          padding-top and padding-bottom
+ *
+ * Set of props related to {@link space}. You can put there either string with 'px' or
+ * one of `space` properties like `sm`, `default`, `xl` etc.
+ */
+
+/**
+ * Typography props include _fontFamily_, _fontSize_, _fontWeight_, _lineHeight_, _letterSpacing_,
+ * _textAlign_, and _fontStyle_.
+ *
+ * @typedef {object} TypographyProps
+ * @alias TypographyProps
+ * @memberof Theme
+ * @property {string} [fontSize]    font-size. Could be either actual css value or key taken from
+ *                                  {@link fontSizes}
+ * @property {string} [fontWeight]  font-weight. Could be either actual css value or key taken from
+ *                                  {@link fontWeights}
+ * @property {string} [lineHeight]  line-height. Could be either actual css value or key taken from
+ *                                  {@link lineHeights}
+ * @property {string} [textAlign]   text-align
+ * @property {string} [fontFamily]  font-family
+ * @property {string} [fontStyle]   font-style
+ * @property {string} [letterSpacing]  letter-spacing
+ */
+
+/**
+ * The layout utility includes style props for width, height, display, minWidth,
+ * minHeight, maxWidth, maxHeight, size, verticalAlign, overflow, overflowX, and overflowY.
+ *
+ * The width prop is transformed based on the following:
+ *
+ * - Numbers from 0-1 are converted to percentage widths.
+ * - Numbers greater than 1 are converted to pixel values.
+ * - String values are passed as raw CSS values.
+ * - And arrays are converted to responsive width styles.
+ * - the width prop will attempt to pick up values from the {@link sizes}
+ *
+ * @example
+ * // width `50%`
+ * &lt;Box width={1/2} />
+ *
+ * // width `256px`
+ * &lt;Box width={256} />
+ *
+ * // width `'2em'`
+ * &lt;Box width='2em' />
+ *
+ * // width `100%` on all viewport and `50%` from the smallest breakpoint and up
+ * &lt;Box width={[ 1, 1/2 ]} />
+ *
+ * // width from `sizes`
+ * &lt;Box height='navbarHeight' />
+ *
+ * @typedef {object} LayoutProps
+ * @alias LayoutProps
+ * @memberof Theme
+ * @property {string} [width]         width
+ * @property {string} [height]        height
+ * @property {string} [display]       display
+ * @property {string} [minWidth]      min-width
+ * @property {string} [minHeight]     min-height
+ * @property {string} [maxWidth]      max-width
+ * @property {string} [maxHeight]     max-height
+ * @property {string} [size]          size
+ * @property {string} [verticalAlign] vertical-align
+ * @property {string} [overflow]      overflow
+ * @property {string} [overflowX]     overflow-x
+ * @property {string} [overflowY]     overflow-y
+ */
+
+
+/**
+ * The flexbox utility includes style props for alignItems, alignContent, justifyItems,
+ * justifyContent, flexWrap, flexDirection, flex, flexGrow, flexShrink, flexBasis,
+ * justifySelf, alignSelf, and order.
+ *
+ * The width prop is transformed based on the following:
+ *
+ * - Numbers from 0-1 are converted to percentage widths.
+ * - Numbers greater than 1 are converted to pixel values.
+ * - String values are passed as raw CSS values.
+ * - And arrays are converted to responsive width styles.
+ * - the width prop will attempt to pick up values from the {@link sizes}
+ *
+ * @example
+ * // alignItems
+ * &lt;Box alignItems='center' />
+ *
+ * // alignContent
+ * &lt;Box alignContent='center' />
+ *
+ * // justifyContent
+ * &lt;Box justifyContent='center' />
+ *
+ * // flexWrap
+ * &lt;Box flexWrap='wrap' />
+ *
+ * // flexBasis
+ * &lt;Box flexBasis='auto' />
+ *
+ * // flexDirection
+ * &lt;Box flexDirection='column' />
+ *
+ * // flex
+ * &lt;Box flex />
+ *
+ * // justifySelf
+ * &lt;Box justifySelf='center' />
+ *
+ * // alignSelf
+ * &lt;Box alignSelf='center' />
+ *
+ * // order
+ * &lt;Box order='2' />
+ *
+ * @typedef {object} FlexboxProps
+ * @alias FlexboxProps
+ * @memberof Theme
+ * @property {string} [alignItems]         align-items
+ * @property {string} [alignContent]       align-content
+ * @property {string} [justifyItems]       justify-items
+ * @property {string} [justifyContent]     justify-content
+ * @property {string} [flexWrap]           flex-wrap
+ * @property {string} [flexDirection]      flex-direction
+ * @property {boolean} [flex]               flex
+ * @property {number|string} [flexGrow]           flex-grow
+ * @property {number} [flexShrink]         flex-shrink
+ * @property {string} [flexBasis]          flex-basis
+ * @property {string} [justifySelf]        justify-self
+ * @property {string} [alignSelf]          align-self
+ * @property {number|string} [order]              order
+ */
+
+
+/**
+ * The border utility includes all style props related to border
+ *
+ * @typedef {object} BorderProps
+ * @alias BorderProps
+ * @memberof Theme
+ * @property {string | number} [borderWidth]
+ * @property {string} [borderStyle]
+ * @property {string} [borderColor] It could be either a #hash or {@link colors}
+ * @property {string | number} [borderRadius]
+ * @property {string | number} [borderTop]
+ * @property {string | number} [borderTopWidth]
+ * @property {string} [borderTopStyle]
+ * @property {string} [borderTopColor] It could be either a #hash or {@link colors}
+ * @property {string | number} [borderTopLeftRadius]
+ * @property {string | number} [borderTopRightRadius]
+ * @property {string | number} [borderRight]
+ * @property {string | number} [borderRightWidth]
+ * @property {string} [borderRightStyle]
+ * @property {string} [borderRightColor] It could be either a #hash or {@link colors}
+ * @property {string | number} [borderBottom]
+ * @property {string | number} [borderBottomWidth]
+ * @property {string} [borderBottomStyle]
+ * @property {string} [borderBottomColor] It could be either a #hash or {@link colors}
+ * @property {string | number} [borderBottomLeftRadius]
+ * @property {string | number} [borderBottomRightRadius]
+ * @property {string | number} [borderLeft]
+ * @property {string | number} [borderLeftWidth]
+ * @property {string} [borderLeftStyle]
+ * @property {string} [borderLeftColor] It could be either a #hash or {@link colors}
+ * @property {string | number} [borderX]
+ * @property {string | number} [borderY]
+ */
+
+/**
+ * The position utility includes style props for position, zIndex, top, right, bottom, and left.
+ *
+ * @typedef {object} PositionProps
+ * @alias PositionProps
+ * @memberof Theme
+ * property {string | number} [position]
+ * property {string | number} [zIndex]
+ * property {string | number} [top]
+ * property {string | number} [right]
+ * property {string | number} [bottom]
+ * property {string | number} [left]
+ */
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a></p>
+        <p class="sidebar-created-by">
+            <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+            <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+        </p>
+    </div>
+</footer>
+
+
+<script src="scripts/app.min.js"></script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

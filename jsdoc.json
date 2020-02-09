@@ -1,9 +1,10 @@
 {
     "tags": {
-        "allowUnknownTags": ["mermaid", "category", "component", "optional"]
+        "allowUnknownTags": ["mermaid", "category", "component", "optional", "subcategory"]
     },
     "source": {
         "include": [
+                    // "./admin-bro/src/frontend/components"
                     "./admin-bro/src",
                     "./admin-bro-hapijs",
                     "./admin-bro-mongoose",
@@ -26,6 +27,7 @@
         "destination": "docs/v2",
         "readme": "./docs-src/home.md",
         "recurse": true,
+        "private": true,
         "verbose": true,
         "tutorials": "./docs-src/tutorials",
         "template": "better-docs"

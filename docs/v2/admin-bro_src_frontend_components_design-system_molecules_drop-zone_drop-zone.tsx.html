@@ -1,0 +1,385 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
+    <meta charset="utf-8">
+    <title>JSDoc: admin-bro/src/frontend/components/design-system/molecules/drop-zone/drop-zone.tsx</title>
+
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="./build/entry.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Muli:100,400,700|Oswald:300|Inconsolata,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+</head>
+
+<body>
+    <div id="stickyNavbarOverlay"></div>
+    <div class="top-navbar">
+        <div class="container">
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                     
+                        <img src="images/logo.png" alt="logo">
+                    
+                     
+                        <h1 class="navbar-item">AdminBro Documentation</h1>
+                    
+                    <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                 
+                <div class="navbar-menu">
+                    <div class="navbar-end">
+                    
+                        <div class="navbar-item">
+                            <a href="https://github.com/SoftwareBrothers/admin-bro" target="_blank">
+                                Github
+                            </a>
+                        </div>
+                    
+                        <div class="navbar-item">
+                            <a href="https://admin-bro-example-app.herokuapp.com/admin" target="_blank">
+                                Example Application
+                            </a>
+                        </div>
+                    
+                    </div>
+                </div>
+                
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <div class="columns">
+            <div class="column is-3" id="sidebarNav">
+                <div class="sidebar">
+                    <nav>
+                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-00-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-01-example.html">02. Example App</a></li><li><a href="tutorial-03-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-04-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-05-actions.html">05. Customize actions</a></li><li><a href="tutorial-06-writing-react-components.html">06. Writing your own Components</a></li><li><a href="tutorial-07-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-08-rbac.html">08. Role-Based Access Control</a></li></ul><h3>Modules</h3><ul><li><a href="module-admin-bro-expressjs.html">admin-bro-expressjs</a></li><li><a href="module-admin-bro-hapijs.html">admin-bro-hapijs</a></li><li><a href="module-admin-bro-mongoose.html">admin-bro-mongoose</a></li><li><a href="module-admin-bro-sequelizejs.html">admin-bro-sequelizejs</a></li></ul><h3>Classes</h3><ul><li><a href="AdminBro.html">AdminBro</a></li><li><a href="ApiClient.html">ApiClient</a></li><li><a href="ApiController.html">ApiController</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3>Interfaces</h3><ul><li><a href="Action.html">Action</a></li><li><a href="AdminBroOptions.html">AdminBroOptions</a></li><li><a href="PropertyOptions.html">PropertyOptions</a></li><li><a href="ResourceOptions.html">ResourceOptions</a></li></ul><h3>Interfaces / Frontend</h3><ul><li><a href="ActionJSON.html">ActionJSON</a></li><li><a href="PageJSON.html">PageJSON</a></li><li><a href="PropertyJSON.html">PropertyJSON</a></li><li><a href="RecordJSON.html">RecordJSON</a></li><li><a href="ResourceJSON.html">ResourceJSON</a></li><li><a href="Theme.html">Theme</a></li></ul><h3>Components / Application</h3><ul><li><a href="ActionButton.html">ActionButton</a></li><li><a href="ActionHeader.html">ActionHeader</a></li><li><a href="BaseActionComponent.html">BaseActionComponent</a></li><li><a href="BasePropertyComponent.html">BasePropertyComponent</a></li><li><a href="RecordsTableHeader.html">RecordsTableHeader</a></li></ul><h3>Components / Atoms</h3><ul><li><a href="Badge.html">Badge</a></li><li><a href="Box.html">Box</a></li><li><a href="Button.html">Button</a></li><li><a href="CheckBox.html">CheckBox</a></li><li><a href="Header.html">Header</a></li><li><a href="Icon.html">Icon</a></li><li><a href="Input.html">Input</a></li><li><a href="Label.html">Label</a></li><li><a href="Link.html">Link</a></li><li><a href="Loader.html">Loader</a></li><li><a href="Placeholder.html">Placeholder</a></li><li><a href="Radio.html">Radio</a></li><li><a href="Section.html">Section</a></li><li><a href="Table.html">Table</a></li><li><a href="Text.html">Text</a></li><li><a href="TextArea.html">TextArea</a></li></ul><h3>Components / Molecules</h3><ul><li><a href="DatePicker.html">DatePicker</a></li><li><a href="Drawer.html">Drawer</a></li><li><a href="DropDown.html">DropDown</a></li><li><a href="DropZone.html">DropZone</a></li><li><a href="DropZoneItem.html">DropZoneItem</a></li><li><a href="FormGroup.html">FormGroup</a></li><li><a href="InfoBox.html">InfoBox</a></li><li><a href="MessageBox.html">MessageBox</a></li><li><a href="NavGroup.html">NavGroup</a></li><li><a href="Pagination.html">Pagination</a></li></ul><h3>Components / HOC</h3><ul><li><a href="withNotice.html">withNotice</a></li></ul></div><div class="category"><h2>Base</h2><h3>Classes</h3><ul><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li></ul></div><div class="category"><h2>Decorators</h2><h3>Classes</h3><ul><li><a href="ActionDecorator.html">ActionDecorator</a></li><li><a href="PropertyDecorator.html">PropertyDecorator</a></li><li><a href="ResourceDecorator.html">ResourceDecorator</a></li></ul></div><div class="category"><h2>Errors</h2><h3>Classes</h3><ul><li><a href="ConfigurationError.html">ConfigurationError</a></li><li><a href="ForbiddenError.html">ForbiddenError</a></li><li><a href="NotFoundError.html">NotFoundError</a></li><li><a href="NotImplementedError.html">NotImplementedError</a></li><li><a href="ValidationError.html">ValidationError</a></li></ul></div>
+                    </nav>
+                </div>
+            </div>
+            <div class="column is-9-desktop">
+                <div class="content" id="main-content-wrapper">
+                    <header class="page-title">
+                        <p>Source</p>
+                        <h1>admin-bro/src/frontend/components/design-system/molecules/drop-zone/drop-zone.tsx</h1>
+                    </header>
+                    
+                    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { useState } from 'react'
+import styled from 'styled-components'
+
+import { Label } from '../../atoms/label'
+import { Box } from '../../atoms/box'
+import { Text } from '../../atoms/text'
+import { MessageBox } from '../message-box'
+import { DropZoneItem } from './drop-zone-item'
+
+const validateContentType = (
+  mimeTypes: undefined | Array&lt;string>,
+  mimeType: string,
+): boolean => {
+  if (!mimeTypes || !mimeTypes.length) { return true }
+  return mimeTypes.includes(mimeType)
+}
+
+const validateSize = (
+  maxSize: string | number | undefined,
+  size: string | number | null,
+): boolean => {
+  if (!maxSize) { return true }
+  if (!size) { return true }
+  return +maxSize >= +size
+}
+
+const inKb = (size: string | number): string => {
+  if (!size) { return '' }
+  return `${Math.round(+size / 1024)} KB`
+}
+
+/**
+ * @returns {void}
+ * @memberof DropZone
+ * @alias OnDropDownChange
+ */
+export type OnDropZoneChange = (files: Array&lt;File>) => void
+
+/**
+ * @memberof DropZone
+ * @alias DropZoneProps
+ */
+export type DropZoneProps = {
+  multiple?: boolean;
+  /**
+   * Callback performed when the file is dropped/selected
+   */
+  onChange?: OnDropZoneChange;
+  /**
+   * Validate options
+   */
+  validate?: {
+    /**
+     * Maximum size of the uploaded file in bytes. If not defined - all files are allowed.
+     */
+    maxSize?: number;
+    /**
+     * Available mime types. When not defined - all mime types are allowed.
+     */
+    mimeTypes?: Array&lt;string>;
+  };
+}
+
+const UploadInput = styled.input`
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  bottom: 0;
+  cursor: pointer;
+  width: 100%;
+`
+
+const StyledDropZone = styled(Box)`
+  border: 1px dashed ${({ theme }): string => theme.colors.darkGrey};
+  position: relative;
+  text-align: center;
+
+  &amp; ${Label} {
+    color: ${({ theme }): string => theme.colors.grey};
+    font-size: ${({ theme }): string => theme.fontSizes.xs};
+    padding-right: 4px;
+    letter-spacing: 1px;
+  }
+`
+
+type ErrorMessage = {
+  message: string;
+  title: string;
+}
+
+/**
+ * DropZone which can be used for uploading files.
+ *
+ * General usage:
+ * ```javascript
+ * import { DropZone, DropZoneProps } from 'admin-bro'
+ * ```
+ *
+ * how to use it in your custom component.tsx (TypesScript):
+ * ```
+ * import React, { useState } from 'react'
+ * import { DropZone, Label, BasePropertyProps } from 'admin-bro'
+ * import { unflatten } from 'flat'
+ *
+ * const UploadPhoto: React.FC&lt;BasePropertyProps> = (props) => {
+ *   const { property, record, onChange } = props
+ *
+ *   const onUpload = (files: FileList) => {
+ *     const newRecord = {...record}
+ *     const file = files.length &amp;&amp; files[0]
+ *
+ *     onChange({
+ *       ...newRecord,
+ *       params: {
+ *         ...newRecord.params,
+ *         [property.name]: file,
+ *       }
+ *     })
+ *     event.preventDefault()
+ *   }
+ *
+ *   return (
+ *     &lt;Box>
+ *       &lt;Label>{property.label}&lt;/Label>
+ *       &lt;DropZone onChange={onUpload} />
+ *     &lt;/Box>
+ *   )
+ * }
+ * ```
+ *
+ * @component
+ * @subcategory Molecules
+ *
+ * @example &lt;caption>Single file with validation&lt;/caption>
+ * const maxSize = 1024 * 100
+ * const mimeTypes = ['application/pdf']
+ * const onUpload = (files) => { alert(files,length ? files[0].name : 'no files' ) }
+ * return (
+ * &lt;Box>
+ *   &lt;DropZone
+ *     onChange={onUpload}
+ *     validate= { { maxSize, mimeTypes } }
+ *   />
+ * &lt;/Box>
+ * )
+ *
+ * @example &lt;caption>Multi file of photos&lt;/caption>
+ * const mimeTypes = ['image/png']
+ * const onUpload = (files) => { alert(files.length ? files.length : 'no files' ) }
+ * return (
+ * &lt;Box>
+ *   &lt;DropZone
+ *     multiple
+ *     onChange={onUpload}
+ *     validate= { { mimeTypes } }
+ *   />
+ * &lt;/Box>
+ * )
+ */
+const DropZone: React.FC&lt;DropZoneProps> = (props) => {
+  const { validate, onChange, multiple, ...other } = props
+
+  const [isDragging, setIsDragging] = useState(false)
+  const [error, setError] = useState&lt;ErrorMessage | null>(null)
+  const [filesToUpload, setFilesToUpload] = useState&lt;Array&lt;File>>([])
+
+  const onDragEnter = (): void => setIsDragging(true)
+  const onDragLeave = (): void => setIsDragging(false)
+  const onDragOver = (): void => setIsDragging(true)
+
+  const removeItem = (index: number): void => {
+    const newItems = [...filesToUpload]
+    newItems.splice(index, 1)
+    if (onChange) {
+      onChange(newItems)
+    }
+    setFilesToUpload(newItems)
+  }
+
+  const onDrop = (event: React.DragEvent | React.SyntheticEvent): void => {
+    event.preventDefault()
+    setIsDragging(false)
+
+    const { files } = ((event as React.DragEvent).dataTransfer || event.target)
+    const validatedFiles: Array&lt;File> = []
+
+    for (let i = 0; i &lt; files.length; i += 1) {
+      const file = files.item(i) as File
+      if (!file) { return }
+      if (validate &amp;&amp; !validateSize(validate.maxSize, file &amp;&amp; file.size)) {
+        setError({ message: `File: ${file.name} size is too big`, title: 'Wrong Size' })
+        return
+      }
+      if (validate &amp;&amp; !validateContentType(validate.mimeTypes, file.type)) {
+        setError({ message: `File: ${file.name} has unsupported type: ${file.type}`, title: 'Wrong Type' })
+        return
+      }
+      validatedFiles.push(file)
+      setError(null)
+    }
+    let newFiles
+    if (!multiple &amp;&amp; validatedFiles.length) {
+      newFiles = [validatedFiles[0]]
+    } else {
+      newFiles = [
+        ...filesToUpload,
+        ...validatedFiles,
+      ]
+    }
+    if (onChange) {
+      onChange(newFiles)
+    }
+    setFilesToUpload(newFiles)
+  }
+
+  return (
+    &lt;Box>
+      &lt;StyledDropZone
+        onDragEnter={onDragEnter}
+        onDragOver={onDragOver}
+        onDragLeave={onDragLeave}
+        onDrop={onDrop}
+        {...other}
+        p="xl"
+      >
+        &lt;UploadInput type="file" onChange={(event): void => onDrop(event)} multiple={multiple} />
+        &lt;Box>
+          &lt;Text fontSize="sm">
+            Pick or Drop File here to upload it.
+          &lt;/Text>
+          &lt;Box>
+            {validate &amp;&amp; validate.maxSize ? (
+              &lt;Text variant="xs" color="grey" lineHeight="default" mt="sm">
+                &lt;Label inline uppercase>Max size:&lt;/Label>
+                {inKb(validate.maxSize)}
+              &lt;/Text>
+            ) : ''}
+            {validate &amp;&amp; validate.mimeTypes &amp;&amp; validate.mimeTypes.length ? (
+              &lt;Text variant="xs" color="grey" lineHeight="default" mt="sm">
+                &lt;Label inline uppercase>Available types:&lt;/Label>
+                {validate.mimeTypes.join(', ')}
+              &lt;/Text>
+            ) : ''}
+          &lt;/Box>
+        &lt;/Box>
+      &lt;/StyledDropZone>
+      {error ? (
+        &lt;MessageBox
+          mt="default"
+          variant="danger"
+          size="sm"
+          icon="Warning"
+          message={error.title}
+          onCloseClick={(): void => setError(null)}
+        >
+          {error.message}
+        &lt;/MessageBox>
+      ) : ''}
+      {filesToUpload.map((file, index) => (
+        // eslint-disable-next-line react/no-array-index-key
+        &lt;DropZoneItem file={file} key={index} onRemove={() => removeItem(index)} />
+      ))}
+    &lt;/Box>
+  )
+}
+
+export { DropZone }
+
+export default DropZone
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.2</a></p>
+        <p class="sidebar-created-by">
+            <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+            <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+        </p>
+    </div>
+</footer>
+
+
+<script src="scripts/app.min.js"></script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
