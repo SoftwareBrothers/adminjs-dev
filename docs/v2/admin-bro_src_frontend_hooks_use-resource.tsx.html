@@ -5,7 +5,7 @@
 <head>
     <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
     <meta charset="utf-8">
-    <title>JSDoc: admin-bro/src/frontend/components/design-system/molecules/drawer/drawer.tsx</title>
+    <title>JSDoc: admin-bro/src/frontend/hooks/use-resource.tsx</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -74,7 +74,7 @@
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
                         <p>Source</p>
-                        <h1>admin-bro/src/frontend/components/design-system/molecules/drawer/drawer.tsx</h1>
+                        <h1>admin-bro/src/frontend/hooks/use-resource.tsx</h1>
                     </header>
                     
                     
@@ -84,113 +84,102 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import styled from 'styled-components'
-import { space, SpaceProps, variant } from 'styled-system'
+            <pre class="prettyprint source linenums"><code>import { useState } from 'react'
+import { AxiosResponse } from 'axios'
+import ApiClient from '../utils/api-client'
+import RecordJSON from '../../backend/decorators/record-json.interface'
+import recordToFormData from '../components/actions/record-to-form-data'
+import useNotice from './use-notice'
+import { RecordActionResponse } from '../../backend/actions/action.interface'
 
-/**
- * Props for Drawer component. Apart from those described below it also extends all
- * {@link SpaceProps}.
- *
- * @alias DrawerProps
- * @memberof Drawer
- */
-export type DrawerProps = SpaceProps &amp; {
-  /** Indicates if drawer should be hidden */
-  isHidden?: boolean;
-  /**
-   * Drawer variant
-   */
-  variant?: 'filter';
+const api = new ApiClient()
+
+export type UseResourceResult = {
+  record: RecordJSON;
+  handleChange: (propertyOrRecord: string | RecordJSON, value?: any) => void;
+  handleSubmit: () => Promise&lt;AxiosResponse&lt;RecordActionResponse>>;
+  loading: boolean;
 }
 
-const variants = variant({
-  variants: {
-    filter: {
-      bg: 'blueFilter',
-      width: '400px',
-      color: 'white',
-      '&amp; > *': {
-        width: '400px',
-      },
-    },
-  },
-})
-
 /**
- * Drawer component renders a huge side area where {@link BaseActionComponent} renders
- * all actions where {@link Action.showInDrawer} is set to true.
- *
- * You probably don't want to use it directly in your actions, but if you decide to set
- * `showInDrawer` to true you will probably want to use `DrawerContent` or `DrawerFooter`
- * components.
- *
- * All these components: Drawer, DrawerContent and Drawer Footer extends {@link SpaceProps}.
- *
- * Usage
- * ```javascript
- * import { Drawer, DrawerProps, DrawerContent, DrawerFooter } from 'admin-bro
- * ```
- *
  * @component
- * @subcategory Molecules
- * @example
- * return (
- * &lt;Box height="500px">
- *   &lt;Drawer>
- *     &lt;DrawerContent>
- *       &lt;Header.H3>
- *         &lt;Button size="icon" rounded mr="lg">
- *           &lt;Icon icon="ChevronRight" />
- *         &lt;/Button>
- *         Edit
- *       &lt;/Header.H3>
- *       &lt;Box my="x3" p={0}>
- *         &lt;Button size="sm">
- *           &lt;Icon icon="Information" />
- *           Info
- *         &lt;/Button>
- *         &lt;Button size="sm" ml="lg">
- *           &lt;Icon icon="Delete" />
- *           Delete
- *         &lt;/Button>
- *       &lt;/Box>
- *
- *     &lt;/DrawerContent>
- *     &lt;DrawerFooter>
- *       &lt;Button variant="primary">
- *         Save
- *       &lt;/Button>
- *     &lt;/DrawerFooter>
- *   &lt;/Drawer>
- * &lt;/Box>
- * )
  */
-export const Drawer = styled.section&lt;DrawerProps>`
-  width: 500px;
-  &amp; > * {
-    width: 500px;
+export const useResource = (
+  initialRecord: RecordJSON | undefined,
+  resourceId: string,
+): UseResourceResult => {
+  const [loading, setLoading] = useState(false)
+  const [record, setRecord] = useState&lt;RecordJSON>({
+    ...initialRecord,
+    params: initialRecord?.params ?? {},
+    errors: initialRecord?.errors ?? {},
+    populated: initialRecord?.populated ?? {},
+  } as RecordJSON)
+
+  const onNotice = useNotice()
+
+  const handleChange = (
+    propertyOrRecord: RecordJSON | string,
+    value?: any,
+  ): void => {
+    if (
+      typeof value === 'undefined'
+      &amp;&amp; !(typeof propertyOrRecord === 'string')
+      &amp;&amp; propertyOrRecord.params
+    ) {
+      setRecord(propertyOrRecord)
+    } else {
+      setRecord(prev => ({
+        ...prev,
+        params: { ...prev.params, [propertyOrRecord as string]: value },
+      }))
+    }
   }
-  z-index: 100;
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  top: 0;
-  right: 0;
-  box-shadow: 0 3px 6px ${({ theme }): string => theme.colors.greyLight};
-  height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-  transition: all 500ms;
-  background: ${({ theme }): string => theme.colors.white};
-  box-sizing: border-box;
 
-  ${space};
-  ${variants};
+  const handleSubmit = (): Promise&lt;AxiosResponse&lt;RecordActionResponse>> => {
+    setLoading(true)
+    const formData = recordToFormData(record)
+    const promise = record.id
+      ? api.recordAction({
+        resourceId,
+        actionName: 'edit',
+        recordId: record.id,
+        data: formData,
+        headers: { 'Content-Type': 'multipart/form-data' },
+      })
+      : api.resourceAction({
+        resourceId,
+        actionName: 'new',
+        data: formData,
+        headers: { 'Content-Type': 'multipart/form-data' },
+      }) as Promise&lt;AxiosResponse&lt;RecordActionResponse>>
 
-  ${({ isHidden }): string => (isHidden ? 'width: 0px;' : '')};
-`
+    promise.then((response) => {
+      if (response.data.notice) {
+        onNotice(response.data.notice)
+      }
+      setRecord(prev => ({
+        ...response.data.record,
+        errors: response.data.record.errors,
+        populated: { ...prev.populated, ...response.data.record.populated },
+        params: { ...prev.params, ...response.data.record.params },
+      }))
+      setLoading(false)
+    }).catch(() => {
+      onNotice({
+        message:
+        'There was an error updating record, Check out console to see more information.',
+        type: 'error',
+      })
+      setLoading(false)
+    })
+    return promise
+  }
 
-export default Drawer
+  return { record, handleChange, handleSubmit, loading }
+}
+
+export default useResource
 </code></pre>
         </article>
     </section>

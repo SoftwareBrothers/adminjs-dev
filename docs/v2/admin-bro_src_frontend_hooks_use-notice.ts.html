@@ -5,7 +5,7 @@
 <head>
     <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
     <meta charset="utf-8">
-    <title>JSDoc: admin-bro/src/frontend/components/design-system/molecules/drawer/drawer.tsx</title>
+    <title>JSDoc: admin-bro/src/frontend/hooks/use-notice.ts</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -74,7 +74,7 @@
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
                         <p>Source</p>
-                        <h1>admin-bro/src/frontend/components/design-system/molecules/drawer/drawer.tsx</h1>
+                        <h1>admin-bro/src/frontend/hooks/use-notice.ts</h1>
                     </header>
                     
                     
@@ -84,113 +84,39 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import styled from 'styled-components'
-import { space, SpaceProps, variant } from 'styled-system'
+            <pre class="prettyprint source linenums"><code>import { useDispatch } from 'react-redux'
+import { addNotice } from '../store/store'
+import { NoticeMessage } from '../store/with-notice'
 
 /**
- * Props for Drawer component. Apart from those described below it also extends all
- * {@link SpaceProps}.
- *
- * @alias DrawerProps
- * @memberof Drawer
+ * @memberof useNotice
+ * @alias AddNotice
  */
-export type DrawerProps = SpaceProps &amp; {
-  /** Indicates if drawer should be hidden */
-  isHidden?: boolean;
-  /**
-   * Drawer variant
-   */
-  variant?: 'filter';
-}
-
-const variants = variant({
-  variants: {
-    filter: {
-      bg: 'blueFilter',
-      width: '400px',
-      color: 'white',
-      '&amp; > *': {
-        width: '400px',
-      },
-    },
-  },
-})
+export type AddNotice = (notice: NoticeMessage) => any;
 
 /**
- * Drawer component renders a huge side area where {@link BaseActionComponent} renders
- * all actions where {@link Action.showInDrawer} is set to true.
+ * Hook which allows you to add notice message to the app.
  *
- * You probably don't want to use it directly in your actions, but if you decide to set
- * `showInDrawer` to true you will probably want to use `DrawerContent` or `DrawerFooter`
- * components.
+ * ```usage
+ * import { useNotice, Button } from 'admin-bro'
  *
- * All these components: Drawer, DrawerContent and Drawer Footer extends {@link SpaceProps}.
- *
- * Usage
- * ```javascript
- * import { Drawer, DrawerProps, DrawerContent, DrawerFooter } from 'admin-bro
+ * const myComponent = () => {
+ *   const sendNotice = useNotice()
+ *   render (
+ *     &lt;Button onClick={() => sendNotice({ message: 'I am awesome' })}>I am awesome&lt;/Button>
+ *   )
+ * }
  * ```
  *
  * @component
- * @subcategory Molecules
- * @example
- * return (
- * &lt;Box height="500px">
- *   &lt;Drawer>
- *     &lt;DrawerContent>
- *       &lt;Header.H3>
- *         &lt;Button size="icon" rounded mr="lg">
- *           &lt;Icon icon="ChevronRight" />
- *         &lt;/Button>
- *         Edit
- *       &lt;/Header.H3>
- *       &lt;Box my="x3" p={0}>
- *         &lt;Button size="sm">
- *           &lt;Icon icon="Information" />
- *           Info
- *         &lt;/Button>
- *         &lt;Button size="sm" ml="lg">
- *           &lt;Icon icon="Delete" />
- *           Delete
- *         &lt;/Button>
- *       &lt;/Box>
- *
- *     &lt;/DrawerContent>
- *     &lt;DrawerFooter>
- *       &lt;Button variant="primary">
- *         Save
- *       &lt;/Button>
- *     &lt;/DrawerFooter>
- *   &lt;/Drawer>
- * &lt;/Box>
- * )
+ * @subcategory Hooks
  */
-export const Drawer = styled.section&lt;DrawerProps>`
-  width: 500px;
-  &amp; > * {
-    width: 500px;
-  }
-  z-index: 100;
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  top: 0;
-  right: 0;
-  box-shadow: 0 3px 6px ${({ theme }): string => theme.colors.greyLight};
-  height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-  transition: all 500ms;
-  background: ${({ theme }): string => theme.colors.white};
-  box-sizing: border-box;
+export const useNotice = (): AddNotice => {
+  const dispatch = useDispatch()
+  return (notice): any => dispatch(addNotice(notice))
+}
 
-  ${space};
-  ${variants};
-
-  ${({ isHidden }): string => (isHidden ? 'width: 0px;' : '')};
-`
-
-export default Drawer
+export default useNotice
 </code></pre>
         </article>
     </section>

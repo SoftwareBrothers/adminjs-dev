@@ -44,7 +44,7 @@ app.use(adminBro.options.rootPath, router)
 app.listen(8080, () => console.log('AdminBro is under localhost:8080/admin'))
 ```
 
-To see how to add authentication or other modifications - visit the {@link module:admin-bro-expressjs Express Plugin} documentation.
+To see how to add an authentication or other modifications - visit the {@link module:admin-bro-expressjs Express Plugin} documentation.
 
 ### Hapi
 
@@ -78,7 +78,7 @@ const start = async () => {
 start()
 ```
 
-To see how to add authentication or other modifications - visit the {@link module:admin-bro-hapijs Hapi Plugin} documentation.
+To see how to add an authentication or other modifications - visit the {@link module:admin-bro-hapijs Hapi Plugin} documentation.
 
 ## 02. Install the Database Adapter and add resources
 

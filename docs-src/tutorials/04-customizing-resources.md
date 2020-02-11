@@ -25,13 +25,13 @@ When not passed - AdminBro will use defaults.
 
 ## How a __Resource__ can be modified?
 
-You have lots of options. You can modify basic appearance of a resource and more complicate aspects, as how a particular field should be rendered.
+You have lots of options. You can modify the basic appearance of a resource and more complicated aspects, as to how a particular field should be rendered.
 
-In the next sections I will point out a couple of options.
+In the next sections, I will point out a couple of options.
 
 ### { __parent__ } In the sidebar
 
-By default AdminBro groups resources by the database they belong to. But you can change that and group them in a different way. It can be done by using a `parent` option.
+By default AdminBro groups resources by the database, they belong to. But you can change that and group them in a different way. It can be done by using a `parent` option.
 
 So let say you want to group all text'ish resources into a __content__ category in the sidebar.
 You can do this by passing the __parent__ as an option:
@@ -75,7 +75,7 @@ You can add your own fonts by using: { __assets.styles__ } setting in {@link Adm
 
 It defines which properties should be visible in a __list__, __edit__, __show__ and __filter__ views.
 
-Lets say that you have a resource city with 20 fields like: _name, lat, lng, population, polution, ..._.
+Let's say that you have a resource city with 20 fields like _name, lat, lng, population, pollution, ..._.
 By default AdminBro will render first DEFAULT_MAX_ITEMS_IN_LIST which is __8__. What if you want to
 present just 3 of them in a different order.
 
@@ -103,9 +103,9 @@ Everything thanks to {@link PropertyOptions}.
 
 using __xxxProperties__ is not the only way of handling which property should be seen on a list, edit, filter and show views. You can achieve a similar result by using __position__ and __isVisible__ options.
 
-Using them have more sense if you want to disable one particular field, so instead of modifying entire __xxxProperties__ array you can setup just one filed.
+Using them have more sense if you want to disable one particular field, so instead of modifying entire __xxxProperties__ array you can set up just one filed.
 
-In the following example I will hide __name__ field in the __list__, __filter__ and the __edit__, but will leave it in a __show__ view.
+In the following example, I will hide __name__ field in the __list__, __filter__ and the __edit__, but will leave it in a __show__ view.
 
 ```javascript
 const adminBroOptions = {
@@ -119,19 +119,19 @@ const adminBroOptions = {
 }
 ```
 
-You can hide entire field from all views by simply setting __isVisible__ to false.
+You can hide an entire field from all views by simply setting __isVisible__ to false.
 
-Also you can simply change position of a field by using __position__ option. By default all fields has position __100__, except the __title__ field which gets position __-1__ - means it will be in the beginning of a list.
+Also, you can simply change the position of a field by using __position__ option. By default all fields have position __100__, except the __title__ field which gets position __-1__ - means it will be at the beginning of a list.
 
 __Important notice about overriding xxxProperties__: both _{ propertyName.position }_ and _{ propertyName.isVisible }_ will be overriden by _xxxProperties_ if you set it.
 
 ### { __propertyName.type__ } of a property
 
-By default types of properties are computed by adapters, see {@tutorial 03-passing-resources} torial.
+By default types of properties are computed by adapters, see {@tutorial 03-passing-resources} tutorial.
 
 So when you have a __DATE__ field it will be rendered as a __date__ with __datepicker__ and custom __from__ - __to__ filter.
 
-You can change this behaviour by modyfying its type. So for instance you can add a richtext editor to a  __content__ like that:
+You can change this behavior by modifying its type. So, for instance, you can add a richtext editor to a  __content__ like that:
 
 ```javascript
 const adminBroOptions = {
@@ -145,18 +145,11 @@ const adminBroOptions = {
 
 And you will see {@link https://quilljs.com} editor in place of a regular text field.
 
-Those are supported types: 
-
-- **default**
-- **boolean**
-- **richtext**
-- **date**
-- **datetime**
-- **reference**
+Supported types can be found [here]{@link PropertyType}
 
 ### { __propertyName.availableValues__ } narrow down the possible values
 
-when you pass this option to a property it will render the **select** html element with all the
+when you pass this option to a property it will render the **select** HTML element with all the
 available options.
 
 ```
@@ -210,8 +203,8 @@ You can read more about creating your own components in {@tutorial 06-writing-re
 
 ## Adding new properties
 
-Also you can add a new properties to the Resource by using a { __properties.propertyName__ }. You just need to define some or all components (list, view, edit, filter).
-For example if you want to group 'lat' and 'lng' fields on the list and display them as
+Also, you can add new properties to the Resource by using a { __properties.propertyName__ }. You just need to define some or all components (list, view, edit, filter).
+For example, if you want to group 'lat' and 'lng' fields on the list and display them as
 a _google map_ in a __show__ view you can use something like this:
 
 ```javascript
@@ -232,6 +225,9 @@ const adminBroOptions = {
   ],
 }
 ```
+
+Then you will have to create `city-in-a-list.jsx` react component (or .tsx for TypeScript).
+To see how to do this visit {@tutorial 06-writing-react-components}.
 
 ## What's next?
 

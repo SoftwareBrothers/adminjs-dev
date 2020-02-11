@@ -1,25 +1,31 @@
-At some point you would probably like to customize default views or create custom actions. {@link BaseAction Actions} are the way of doing that.
+At some point you would probably like to customize default views or create custom actions. [Actions]{@link Action} are the way of doing that.
 
 ## Default actions
 
-Admin bro has 5 major default actions defined for each resource:
+Admin bro has 6 major default actions defined for each resource:
 
 __Resource__ base actions:
 
-* {@link module:ListAction list} - list all records
-* {@link module:NewAction new} [Add new] - creates new record
+* list - list all records
+* new [Add new] - creates new record
 
 __Record__ base actions:
 
-* {@link module:ShowAction show} [info] - shows details of a given record
-* {@link module:EditAction edit} [edit] - updates given record
-* {@link module:DeleteAction delete} [remove] - removes given record
+* show [info] - shows details of a given record
+* edit [edit] - updates given record
+* delete [remove] - removes given record
 
-__Resource base actions__ can be accessed in the header of the list of all the resources (next to the _filters_ button). __Record actions__ are places in the list by the resource. Take a look at the following screenshot:
+__Bulk__ actions:
+
+* bulkDelete [remove] - removes all selected records from the database
+
+__Resource base actions__ can be accessed in the header of the list of all the resources (next to the _filters_ button). __Record actions__ are places on the list by the resource. Where __Bulk actions__ appear right in the table header when you select at least one record.
+
+Take a look at the following screenshot:
 
 <img src="./images/actions.png">
 
-Default actions can be accessed right from the AdminBro class.
+Default actions can be accessed right from the AdminBro class, by using ACTIONS object.
 
 ```javascript
 
@@ -34,7 +40,7 @@ AdminBro.ACTIONS.show.isAccessible = ({ currentAdmin, resource, record }) => {
 
 ## Modify default action per Resource
 
-Each action has all the parameters defined by {@link BaseAction}. They can be modified per resource along with other {@link ResourceOptions}
+Each action has all the parameters defined by {@link Action}. They can be modified per resource along with other {@link ResourceOptions}
 
 ```javascript
 const adminBroOptions = {
@@ -48,7 +54,7 @@ const adminBroOptions = {
 
 Yes - you can modify things like: label, icon and visibility. List of all options can be found in {@link Action}
 
-In the folowing example we will change {@link Action#label label} of show action along with the {@link Action#icon icon}, and will show it only for records with an email.
+In the following example, we will change {@link Action#label label} of show action along with the {@link Action#icon icon}, and will show it only for records with an email.
 
 ```javascript
 const adminBroOptions = {
@@ -58,7 +64,7 @@ const adminBroOptions = {
         actions: {
           show: {
             label: 'Show me that',
-            icon: 'fas fa-eye',
+            icon: 'View',
             isVisible: (context) => record.param('email') !== '',
           },
         },
@@ -68,21 +74,21 @@ const adminBroOptions = {
 }
 ```
 
-{@link Action#isVisible} can be either a function returning boolean value or a boolean value itself.
+{@link Action#isVisible} can be either a function returning a boolean value or a boolean value itself.
 
 ### Action handler and action hooks
 
 Each action has an {@link Action#handler} function. This function is executed every time the action is invoked and all of the default actions has their handlers.
 
-You probably don't want to modify behaviour of the handler for the default Edit action. But if you realy want to change this action you can use {@link Action#before} and {@link Action#after} action hooks.
+You probably don't want to modify behavior of the handler for the default Edit action. But, if you really want to change this action, you can use {@link Action#before} and {@link Action#after} action hooks.
 
 {@link Action#handler} has to be specified for new actions (read the next section).
 
 ## Custom Actions
 
-Also you can define your own actions. Simply pass {@link Action} under a new key to {@link ResourceOptions}.
+Also, you can define your own actions. Simply pass {@link Action} under a new key to {@link ResourceOptions}.
 
-Your action can be either Resource'is, Record'is or both.
+Your action can be either `resource`, `record` or `bulk`.
 
 ```javascript
 const adminBroOptions = {
@@ -93,7 +99,7 @@ const adminBroOptions = {
           newAction: {
             actionType: ['record'],
             label: 'Publish',
-            icon: 'fas fa-eye',
+            icon: 'View',
             isVisible: true,
             handler: async () => {...},
             component: AdminBro.bundle('./your-action-component'),
@@ -107,7 +113,7 @@ const adminBroOptions = {
 
 ## Action components
 
-When you define your own action you have to also create **React component** responsible
+When you define your own action you have to also create a **React component** responsible
 for rendering it. To see what options you have - go to the next tutorial:
 
 - {@tutorial 06-writing-react-components}

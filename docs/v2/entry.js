@@ -85,98 +85,98 @@ reactComponents['DropZone'] = Component17;
 import Component18 from '../../admin-bro/src/frontend/components/design-system/molecules/drop-zone/drop-zone-item.tsx';
 reactComponents['DropZoneItem'] = Component18;
 
-import Component19 from '../../admin-bro/src/frontend/components/actions/edit.tsx';
-reactComponents['EditAction'] = Component19;
+import Component19 from '../../admin-bro/src/frontend/components/app/error-message.tsx';
+reactComponents['ErrorMessageBox'] = Component19;
 
-import Component20 from '../../admin-bro/src/frontend/components/app/error-message.tsx';
-reactComponents['ErrorMessageBox'] = Component20;
+import Component20 from '../../admin-bro/src/frontend/components/design-system/molecules/form-group/form-group.tsx';
+reactComponents['FormGroup'] = Component20;
 
-import Component21 from '../../admin-bro/src/frontend/components/design-system/molecules/form-group/form-group.tsx';
-reactComponents['FormGroup'] = Component21;
+import Component21 from '../../admin-bro/src/frontend/components/design-system/molecules/form-group/form-message.tsx';
+reactComponents['FormMessage'] = Component21;
 
-import Component22 from '../../admin-bro/src/frontend/components/design-system/molecules/form-group/form-message.tsx';
-reactComponents['FormMessage'] = Component22;
+import Component22 from '../../admin-bro/src/frontend/components/design-system/atoms/header.tsx';
+reactComponents['Header'] = Component22;
 
-import Component23 from '../../admin-bro/src/frontend/components/design-system/atoms/header.tsx';
-reactComponents['Header'] = Component23;
+import Component23 from '../../admin-bro/src/frontend/components/design-system/atoms/icon.tsx';
+reactComponents['Icon'] = Component23;
 
-import Component24 from '../../admin-bro/src/frontend/components/design-system/atoms/icon.tsx';
-reactComponents['Icon'] = Component24;
+import Component24 from '../../admin-bro/src/frontend/components/design-system/molecules/info-box.tsx';
+reactComponents['InfoBox'] = Component24;
 
-import Component25 from '../../admin-bro/src/frontend/components/design-system/molecules/info-box.tsx';
-reactComponents['InfoBox'] = Component25;
+import Component25 from '../../admin-bro/src/frontend/components/design-system/atoms/input.tsx';
+reactComponents['Input'] = Component25;
 
-import Component26 from '../../admin-bro/src/frontend/components/design-system/atoms/input.tsx';
-reactComponents['Input'] = Component26;
+import Component26 from '../../admin-bro/src/frontend/components/design-system/molecules/form-group/input-group.tsx';
+reactComponents['InputGroup'] = Component26;
 
-import Component27 from '../../admin-bro/src/frontend/components/design-system/molecules/form-group/Input-group.tsx';
-reactComponents['InputGroup'] = Component27;
+import Component27 from '../../admin-bro/src/frontend/components/design-system/atoms/label.tsx';
+reactComponents['Label'] = Component27;
 
-import Component28 from '../../admin-bro/src/frontend/components/design-system/atoms/label.tsx';
-reactComponents['Label'] = Component28;
+import Component28 from '../../admin-bro/src/frontend/components/design-system/atoms/link.tsx';
+reactComponents['Link'] = Component28;
 
-import Component29 from '../../admin-bro/src/frontend/components/design-system/atoms/link.tsx';
-reactComponents['Link'] = Component29;
+import Component29 from '../../admin-bro/src/frontend/components/design-system/atoms/loader.tsx';
+reactComponents['Loader'] = Component29;
 
-import Component30 from '../../admin-bro/src/frontend/components/design-system/atoms/loader.tsx';
-reactComponents['Loader'] = Component30;
+import Component30 from '../../admin-bro/src/frontend/components/design-system/molecules/message-box.tsx';
+reactComponents['MessageBox'] = Component30;
 
-import Component31 from '../../admin-bro/src/frontend/components/design-system/molecules/message-box.tsx';
-reactComponents['MessageBox'] = Component31;
+import Component31 from '../../admin-bro/src/frontend/components/design-system/molecules/nav-group.tsx';
+reactComponents['NavGroup'] = Component31;
 
-import Component32 from '../../admin-bro/src/frontend/components/design-system/molecules/nav-group.tsx';
-reactComponents['NavGroup'] = Component32;
+import Component32 from '../../admin-bro/src/frontend/components/actions/list.tsx';
+reactComponents['NewAction'] = Component32;
 
-import Component33 from '../../admin-bro/src/frontend/components/actions/new.tsx';
-reactComponents['NewAction'] = Component33;
+import Component33 from '../../admin-bro/src/frontend/components/design-system/molecules/pagination.tsx';
+reactComponents['Pagination'] = Component33;
 
-import Component34 from '../../admin-bro/src/frontend/components/actions/list.tsx';
-reactComponents['NewAction'] = Component34;
+import Component34 from '../../admin-bro/src/frontend/components/design-system/atoms/placeholder.tsx';
+reactComponents['Placeholder'] = Component34;
 
-import Component35 from '../../admin-bro/src/frontend/components/design-system/molecules/pagination.tsx';
-reactComponents['Pagination'] = Component35;
+import Component35 from '../../admin-bro/src/frontend/components/design-system/atoms/radio.tsx';
+reactComponents['Radio'] = Component35;
 
-import Component36 from '../../admin-bro/src/frontend/components/design-system/atoms/placeholder.tsx';
-reactComponents['Placeholder'] = Component36;
+import Component36 from '../../admin-bro/src/frontend/components/app/records-table/records-table-header.tsx';
+reactComponents['RecordsTableHeader'] = Component36;
 
-import Component37 from '../../admin-bro/src/frontend/components/design-system/atoms/radio.tsx';
-reactComponents['Radio'] = Component37;
+import Component37 from '../../admin-bro/src/frontend/components/design-system/atoms/section.tsx';
+reactComponents['Section'] = Component37;
 
-import Component38 from '../../admin-bro/src/frontend/components/app/records-table/records-table-header.tsx';
-reactComponents['RecordsTableHeader'] = Component38;
+import Component38 from '../../admin-bro/src/frontend/components/actions/bulk-delete.tsx';
+reactComponents['ShowAction'] = Component38;
 
-import Component39 from '../../admin-bro/src/frontend/components/design-system/atoms/section.tsx';
-reactComponents['Section'] = Component39;
+import Component39 from '../../admin-bro/src/frontend/components/actions/show.tsx';
+reactComponents['ShowAction'] = Component39;
 
-import Component40 from '../../admin-bro/src/frontend/components/actions/bulk-delete.tsx';
-reactComponents['ShowAction'] = Component40;
+import Component40 from '../../admin-bro/src/frontend/components/design-system/atoms/table/table.tsx';
+reactComponents['Table'] = Component40;
 
-import Component41 from '../../admin-bro/src/frontend/components/actions/show.tsx';
-reactComponents['ShowAction'] = Component41;
+import Component41 from '../../admin-bro/src/frontend/components/design-system/atoms/table/table-body.tsx';
+reactComponents['TableBody'] = Component41;
 
-import Component42 from '../../admin-bro/src/frontend/components/design-system/atoms/table/table.tsx';
-reactComponents['Table'] = Component42;
+import Component42 from '../../admin-bro/src/frontend/components/design-system/atoms/table/table-caption.tsx';
+reactComponents['TableCaption'] = Component42;
 
-import Component43 from '../../admin-bro/src/frontend/components/design-system/atoms/table/table-body.tsx';
-reactComponents['TableBody'] = Component43;
+import Component43 from '../../admin-bro/src/frontend/components/design-system/atoms/table/table-cell.tsx';
+reactComponents['TableCell'] = Component43;
 
-import Component44 from '../../admin-bro/src/frontend/components/design-system/atoms/table/table-caption.tsx';
-reactComponents['TableCaption'] = Component44;
+import Component44 from '../../admin-bro/src/frontend/components/design-system/atoms/table/table-head.tsx';
+reactComponents['TableHead'] = Component44;
 
-import Component45 from '../../admin-bro/src/frontend/components/design-system/atoms/table/table-cell.tsx';
-reactComponents['TableCell'] = Component45;
+import Component45 from '../../admin-bro/src/frontend/components/design-system/atoms/table/table-row.tsx';
+reactComponents['TableRow'] = Component45;
 
-import Component46 from '../../admin-bro/src/frontend/components/design-system/atoms/table/table-head.tsx';
-reactComponents['TableHead'] = Component46;
+import Component46 from '../../admin-bro/src/frontend/components/design-system/atoms/text.tsx';
+reactComponents['Text'] = Component46;
 
-import Component47 from '../../admin-bro/src/frontend/components/design-system/atoms/table/table-row.tsx';
-reactComponents['TableRow'] = Component47;
+import Component47 from '../../admin-bro/src/frontend/components/design-system/atoms/text-area.tsx';
+reactComponents['TextArea'] = Component47;
 
-import Component48 from '../../admin-bro/src/frontend/components/design-system/atoms/text.tsx';
-reactComponents['Text'] = Component48;
+import Component48 from '../../admin-bro/src/frontend/hooks/use-notice.ts';
+reactComponents['useNotice'] = Component48;
 
-import Component49 from '../../admin-bro/src/frontend/components/design-system/atoms/text-area.tsx';
-reactComponents['TextArea'] = Component49;
+import Component49 from '../../admin-bro/src/frontend/hooks/use-resource.tsx';
+reactComponents['useResource'] = Component49;
 
 import Component50 from '../../admin-bro/src/frontend/store/with-notice.ts';
 reactComponents['withNotice'] = Component50;

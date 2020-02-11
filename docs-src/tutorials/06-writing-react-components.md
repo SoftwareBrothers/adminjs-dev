@@ -1,10 +1,10 @@
 Ok - so you have everything set up and now you want to change how a particular Resource looks.
 
-For instance you may want to show a _google map_ for _location_ fields, or even present some values as a graph.
+For instance, you may want to show a _google map_ for _location_ fields, or even present some values as a graph.
 
 You can do this all by writing your custom components.
 
-## Example of overrinding how dashboard looks:
+## Example of overriding how dashboard looks:
 
 AdminBroOptions: 
 ```
@@ -20,11 +20,11 @@ const AdminBroOptions = {
 Dashboard component: `./my-dashboard-component.jsx`
 ```
 import React from 'react'
-import { WrapperBox } from 'admin-bro'
+import { Box } from 'admin-bro'
 
 const Dashboard = (props) => {
   return (
-    <WrapperBox>My custom dashboard</WrapperBox>
+    <Box>My custom dashboard</Box>
   )
 }
 
@@ -36,20 +36,21 @@ you proceed - make sure you know how [react](https://reactjs.org/) works.
 
 ## Where you can insert your custom components?
 
-Currently there are 3 places where you can inject components to alter how AdminBro looks:
+Currently, there are 4 places where you can inject components to alter how AdminBro looks:
 
 - overriding how properties are rendered in {@link PropertyOptions#components} by using `components` object (**PLURAL**)
 - creating new or update default actions by overriding {@link Action#component} param
-- changing how the dashbord looks like by using {@link AdminBroOptions#dashboard dashboard.component} param.
+- changing how the dashboard looks like by using {@link AdminBroOptions#dashboard dashboard.component} param.
+- creating new pages by using {@link AdminPage}.
 
 ## Requiring component
 
 First of all - you have to require them by using {@link AdminBro.bundle} function. What it does -
-it gives your comopnent an uniq ID and sends it to the __bundling__ process.
+it gives your component an unique ID and sends it to the __bundling__ process.
 
 You can do it like this: `{ component: AdminBro.bundle('./path-to-your-jsx-or-tsx-file') }`
 
-All files requried by {@link AdminBro.bundle} has to have one default export - the one with your [react](https://reactjs.org/) component.
+All files required by {@link AdminBro.bundle} has to have one default export - the one with your [react](https://reactjs.org/) component.
 
 You can use either `.jsx` or `.tsx` extension for your components.
 
@@ -74,6 +75,7 @@ AdminBro bundler gives you the ability to import following dependencies without 
 **Styling**
 
 - [styled-components](https://www.styled-components.com/docs)
+- [styled-system](https://www.styled-system.com)
 
 **Other**
 
@@ -94,7 +96,7 @@ export default withRouter(YourComponent)
 
 ## Props passed to components
 
-In your components you can use props passed by their controlling components.
+In your components, you can use props passed by their controlling components.
 
 Currently we have 2 controlling components: 
 
@@ -103,7 +105,7 @@ Currently we have 2 controlling components:
 
 Check out their documentation to see available **props**
 
-BTW - Dashboard doesn't have any controlling component - so no props passed there.
+BTW - Dashboard and Pages don't have any controlling component - so no props passed there.
 
 ## Reusing UI Components of AdminBro
 
@@ -117,26 +119,7 @@ const YourComponent (props) => {(
 )}
 ```
 
-You can choose from multiple components like:
-
-- {@link Column} and {@link Colums},
-- {@link DashboardHeader},
-- {@link Dropdown},
-- {@link Label},
-- {@link Loader},
-- {@link Paginate},
-- {@link Placeholder},
-- {@link PropertyInEdit},
-- {@link PropertyInShow},
-- {@link PropertyInFilter},
-- {@link RecordsTableHeader},
-- {@link StyledButton},
-- {@link Table},
-- {@link DropArea},
-- {@link ValueBlock} and
-- {@link WrapperBox}
-
-Each of the components is described with the playground option.
+Each of the components is described with the playground option, so make sure to check out all the documentation of all the components.
 
 ## Using other AdminBro frontend classes and objects
 
