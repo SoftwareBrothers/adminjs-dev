@@ -124,59 +124,59 @@ reactComponents['MessageBox'] = Component30;
 import Component31 from '../../admin-bro/src/frontend/components/design-system/molecules/nav-group.tsx';
 reactComponents['NavGroup'] = Component31;
 
-import Component32 from '../../admin-bro/src/frontend/components/actions/list.tsx';
-reactComponents['NewAction'] = Component32;
+import Component32 from '../../admin-bro/src/frontend/components/design-system/molecules/pagination.tsx';
+reactComponents['Pagination'] = Component32;
 
-import Component33 from '../../admin-bro/src/frontend/components/design-system/molecules/pagination.tsx';
-reactComponents['Pagination'] = Component33;
+import Component33 from '../../admin-bro/src/frontend/components/design-system/atoms/placeholder.tsx';
+reactComponents['Placeholder'] = Component33;
 
-import Component34 from '../../admin-bro/src/frontend/components/design-system/atoms/placeholder.tsx';
-reactComponents['Placeholder'] = Component34;
+import Component34 from '../../admin-bro/src/frontend/components/design-system/atoms/radio.tsx';
+reactComponents['Radio'] = Component34;
 
-import Component35 from '../../admin-bro/src/frontend/components/design-system/atoms/radio.tsx';
-reactComponents['Radio'] = Component35;
+import Component35 from '../../admin-bro/src/frontend/components/app/records-table/records-table-header.tsx';
+reactComponents['RecordsTableHeader'] = Component35;
 
-import Component36 from '../../admin-bro/src/frontend/components/app/records-table/records-table-header.tsx';
-reactComponents['RecordsTableHeader'] = Component36;
+import Component36 from '../../admin-bro/src/frontend/components/design-system/atoms/section.tsx';
+reactComponents['Section'] = Component36;
 
-import Component37 from '../../admin-bro/src/frontend/components/design-system/atoms/section.tsx';
-reactComponents['Section'] = Component37;
+import Component37 from '../../admin-bro/src/frontend/components/actions/bulk-delete.tsx';
+reactComponents['ShowAction'] = Component37;
 
-import Component38 from '../../admin-bro/src/frontend/components/actions/bulk-delete.tsx';
+import Component38 from '../../admin-bro/src/frontend/components/actions/show.tsx';
 reactComponents['ShowAction'] = Component38;
 
-import Component39 from '../../admin-bro/src/frontend/components/actions/show.tsx';
-reactComponents['ShowAction'] = Component39;
+import Component39 from '../../admin-bro/src/frontend/components/design-system/atoms/table/table.tsx';
+reactComponents['Table'] = Component39;
 
-import Component40 from '../../admin-bro/src/frontend/components/design-system/atoms/table/table.tsx';
-reactComponents['Table'] = Component40;
+import Component40 from '../../admin-bro/src/frontend/components/design-system/atoms/table/table-body.tsx';
+reactComponents['TableBody'] = Component40;
 
-import Component41 from '../../admin-bro/src/frontend/components/design-system/atoms/table/table-body.tsx';
-reactComponents['TableBody'] = Component41;
+import Component41 from '../../admin-bro/src/frontend/components/design-system/atoms/table/table-caption.tsx';
+reactComponents['TableCaption'] = Component41;
 
-import Component42 from '../../admin-bro/src/frontend/components/design-system/atoms/table/table-caption.tsx';
-reactComponents['TableCaption'] = Component42;
+import Component42 from '../../admin-bro/src/frontend/components/design-system/atoms/table/table-cell.tsx';
+reactComponents['TableCell'] = Component42;
 
-import Component43 from '../../admin-bro/src/frontend/components/design-system/atoms/table/table-cell.tsx';
-reactComponents['TableCell'] = Component43;
+import Component43 from '../../admin-bro/src/frontend/components/design-system/atoms/table/table-head.tsx';
+reactComponents['TableHead'] = Component43;
 
-import Component44 from '../../admin-bro/src/frontend/components/design-system/atoms/table/table-head.tsx';
-reactComponents['TableHead'] = Component44;
+import Component44 from '../../admin-bro/src/frontend/components/design-system/atoms/table/table-row.tsx';
+reactComponents['TableRow'] = Component44;
 
-import Component45 from '../../admin-bro/src/frontend/components/design-system/atoms/table/table-row.tsx';
-reactComponents['TableRow'] = Component45;
+import Component45 from '../../admin-bro/src/frontend/components/design-system/atoms/text.tsx';
+reactComponents['Text'] = Component45;
 
-import Component46 from '../../admin-bro/src/frontend/components/design-system/atoms/text.tsx';
-reactComponents['Text'] = Component46;
+import Component46 from '../../admin-bro/src/frontend/components/design-system/atoms/text-area.tsx';
+reactComponents['TextArea'] = Component46;
 
-import Component47 from '../../admin-bro/src/frontend/components/design-system/atoms/text-area.tsx';
-reactComponents['TextArea'] = Component47;
+import Component47 from '../../admin-bro/src/frontend/hooks/use-notice.ts';
+reactComponents['useNotice'] = Component47;
 
-import Component48 from '../../admin-bro/src/frontend/hooks/use-notice.ts';
-reactComponents['useNotice'] = Component48;
+import Component48 from '../../admin-bro/src/frontend/hooks/use-record.tsx';
+reactComponents['useRecord'] = Component48;
 
-import Component49 from '../../admin-bro/src/frontend/hooks/use-resource.tsx';
-reactComponents['useResource'] = Component49;
+import Component49 from '../../admin-bro/src/frontend/hooks/use-translation.ts';
+reactComponents['useTranslation'] = Component49;
 
 import Component50 from '../../admin-bro/src/frontend/store/with-notice.ts';
 reactComponents['withNotice'] = Component50;
