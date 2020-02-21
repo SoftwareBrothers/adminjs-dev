@@ -22,5 +22,8 @@
   },
   "08-rbac": {
     "title": "08. Role-Based Access Control"
+  },
+  "09-i18n": {
+    "title": "09. Internationalization (i18n)"
   }
 }

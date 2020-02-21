@@ -81,6 +81,8 @@ AdminBro bundler gives you the ability to import following dependencies without 
 
 - [axios](https://github.com/axios/axios)
 - [recharts](http://recharts.org/en-US/)
+- [flat](https://www.npmjs.com/package/flat)
+- [@carbon/icons-react](https://www.npmjs.com/package/@carbon/icons-react)
 
 So you can do something like this:
 
@@ -120,6 +122,43 @@ const YourComponent (props) => {(
 ```
 
 Each of the components is described with the playground option, so make sure to check out all the documentation of all the components.
+
+One of the most versatile component is a {@link BasePropertyComponent}. It allows you to render any property.
+Combined with {@link useRecord} is a powerful tool for building forms.
+
+## Theming
+
+We support {@link Theme} compatible with https://system-ui.com/theme standard.
+
+In order to override default colors you an put your values in {@link AdminBroOptions.branding}.
+
+### Using style props
+
+AdminBro components are supercharged with multiple props which control styling. For instance in order
+to change color of a {@link Button} you can pass backgroundColor (bg) from the {@link Theme} like that:
+
+```javascript
+<Button bg="primary60"></Button>
+```
+
+For all possible options visit the {@link Theme} description.
+
+### Adding custom css to components
+
+If using style props is not enough - you can always pass your custom CSS. So for instance let's assume
+that you would like to override CSS in a Button component. You can do this like that:
+
+```javascript
+import { Button } from 'admin-bro'
+
+const MyButton = styled(Button)`
+  background-color: #ccc;
+  color: ${({theme}) => theme.colors.grey100};
+  ...
+`
+```
+
+We use [styled-components](https://styled-components.com/) under the hood so make sure to check out their docs.
 
 ## Using other AdminBro frontend classes and objects
 

@@ -54,7 +54,7 @@ const adminBroOptions = {
 
 Yes - you can modify things like: label, icon and visibility. List of all options can be found in {@link Action}
 
-In the following example, we will change {@link Action#label label} of show action along with the {@link Action#icon icon}, and will show it only for records with an email.
+In the following example, we will change {@link Action#icon icon}, and will show it only for records with an email.
 
 ```javascript
 const adminBroOptions = {
@@ -63,7 +63,6 @@ const adminBroOptions = {
       options: {
         actions: {
           show: {
-            label: 'Show me that',
             icon: 'View',
             isVisible: (context) => record.param('email') !== '',
           },
@@ -98,7 +97,6 @@ const adminBroOptions = {
         actions: {
           newAction: {
             actionType: ['record'],
-            label: 'Publish',
             icon: 'View',
             isVisible: true,
             handler: async () => {...},
