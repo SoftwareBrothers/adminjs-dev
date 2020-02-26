@@ -120,7 +120,7 @@ const variants = variant({
  *                          {@link LayoutProps}, {@link FlexboxProps},
  *                          {@link PositionProps} and {@link BorderProps}.
  */
-export type BoxProps = SpaceProps &amp; ColorProps &amp; SizeProps &amp; LayoutProps &amp;
+export type BoxProps = SpaceProps &amp; ColorProps &amp; LayoutProps &amp;
   Omit&lt;FlexboxProps, 'flex'> &amp; BorderProps &amp; PositionProps &amp; ShadowProps &amp; {
     /** If box should be rendered as flex */
     flex?: boolean;
@@ -168,7 +168,6 @@ export const Box = styled.section&lt;BoxProps>`
 
   ${space};
   ${color};
-  ${size};
   ${layout};
   ${flexbox};
   ${border};

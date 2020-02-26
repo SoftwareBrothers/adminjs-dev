@@ -84,7 +84,8 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/**
+            <pre class="prettyprint source linenums"><code>/* eslint-disable max-len */
+/**
  * @interface Theme
  * @subcategory Frontend
  * @description
@@ -109,8 +110,8 @@
  * ```
  *
  * But, since AdminBro uses (styled-system)[https://styled-system.com/], you also can achieve
- * a similar result by passing a `bg` Prop to the [Box Component]{@link Box}, everything because Box supports
- * all the {@link ColorProps}.
+ * a similar result by passing a `bg` Prop to the [Box Component]{@link Box},
+ * everything because Box supports all the {@link ColorProps}.
  *
  * ```javascript
  * import { Box } from 'admin-bro'
@@ -121,27 +122,27 @@
  *   &lt;/Box>
  * )
  * ```
- * 
+ *
  * The last way of accessing theme is to use withTheme HOC provided by
  * (styled-components)[https://styled-components.com/]
- * 
+ *
  * ```
  * import { withTheme } from 'styled-components'
- * 
- * 
+ *
+ *
  * const MyComponent = (props) => {
  *   const { theme } = props
  *   // theme.colors.primary100
  * }
- * 
+ *
  * export default withTheme(MyComponent)
- * 
+ *
  * ```
- * 
+ *
  * {@link ColorProps} is only one of the extensions we provided. Take a look at the documentation
  * below to see all possible options, but let me give you one last example:
  *
- * ``` 
+ * ```
  * import { Box } from 'admin-bro'
  *
  * const ComponentWhereIWantToUseResponsiveStyle = () => (
@@ -151,14 +152,14 @@
  *   &lt;/Box>
  * )
  * ```
- * 
+ *
  * Above we defined that the Sidebar box should have 100% width until viewport reach the first
  * breakpoint, then 50% (until the next breakpoint) and then 1/3rd of the page for the remaining 2
  * breakpoints.
- * 
+ *
  * You can read more about responsive features on styled-system page
  * https://styled-system.com/responsive-styles
- * 
+ *
  * &lt;style>
  * .shadow-div { display: block; width: 80px; height: 80px;}
  * .space-box { display: inline-block; height: 20px; background: #4268F6; vertical-align: middle;}
@@ -167,7 +168,7 @@
 
 /**
  * Color palette.
- * 
+ *
  * @memberof Theme
  * @alias colors
  * @property {string} primary100=#4268F6      &lt;div style="background: #4268F6; height: 20px;" />
@@ -248,16 +249,16 @@ const colors = {
 
 /**
  * Sizes can be used with paddings, margins etc.
- * 
+ *
  * This is the example of using responsive margin with Box component
  *
  * ```javascript
  * &lt;Box p=['default', 'xl']>some content&lt;/Box>
  * ```
- * 
+ *
  * This component will have 8px padding for lowest breakpoint and 24px above
  * this breakpoint.
- * 
+ *
  * @memberof Theme
  * @alias space
 
@@ -355,7 +356,7 @@ const lineHeights = {
 /**
  * This dimension can be used with `testShadow` and `boxShadow` props provided
  * by {@link ShadowProps}
- * 
+ *
  * ```javascript
  * &lt;Box variant="grey" boxShadow="card">Some content...&lt;/Box>
  * ```
@@ -368,7 +369,6 @@ const lineHeights = {
  * @property {string} card               &lt;div class="shadow-div" style="box-shadow: 0 1px 6px 0 rgba(137,138,154,0.4);"/>
  * @property {string} inputFocus         &lt;div class="shadow-div" style="box-shadow: 0 2px 4px 0 rgba(135,159,250,0.4);"/>
  * @property {string} buttonFocus        &lt;div class="shadow-div" style="box-shadow: 0 4px 6px 0 rgba(56,202,241,0.3);"/>
- * 
  */
 const shadows = {
   login: '0 15px 24px 0 rgba(137,138,154,0.15)',
@@ -381,17 +381,17 @@ const shadows = {
 
 /**
  * Responsive breakpoints
- * 
+ *
  * How to use them - simply pass an array to given prop:
- * 
+ *
  * ```javascript
  * // Showing box on mobile devices
  * &lt;Box display={["block", "none"]}>...&lt;/Box>
- * 
+ *
  * // responsive width
  * &lt;Box width={[1, 1/2, 1/3, 1/4]}>...&lt;/Box>
  * ```
- * 
+ *
  * @memberof Theme
  * @alias breakpoints
  * @property {string} 0=577px

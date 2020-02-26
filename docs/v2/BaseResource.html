@@ -238,7 +238,10 @@ following methods:</p>
     
     
     <div class="description">
-        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Checks if given adapter supports resource provided by the user</p>
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Checks if given adapter supports resource provided by the user.
+This function has to be implemented only if you want to create your custom
+database adapter.</p>
+<p>For one time Admin Resource creation - it is not needed.</p>
     </div>
     
 
@@ -339,7 +342,7 @@ following methods:</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_adapters_base-resource.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line47">line 47</a>
+                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line51">line 51</a>
             </span>
         </p>
     
@@ -398,6 +401,10 @@ following methods:</p>
     
     <h4 class="name" id="assignDecorator">
         <a class="href-link" href="#assignDecorator">#</a>
+        
+            
+                <span class='tag'>private</span>
+            
         
         <span class="code-name">
             
@@ -590,7 +597,7 @@ resource.decorate() method</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_adapters_base-resource.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line230">line 230</a>
+                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line237">line 237</a>
             </span>
         </p>
     
@@ -639,6 +646,7 @@ resource.decorate() method</p>
         <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Builds new Record of given Resource.</p>
 <p>Each Record is an representation of the resource item. Before it can be saved,
 it has to be instantiated.</p>
+<p>This function has to be implemented if you want to create new records.</p>
     </div>
     
 
@@ -739,7 +747,7 @@ it has to be instantiated.</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_adapters_base-resource.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line184">line 184</a>
+                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line190">line 190</a>
             </span>
         </p>
     
@@ -915,7 +923,7 @@ it has to be instantiated.</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_adapters_base-resource.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line114">line 114</a>
+                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line118">line 118</a>
             </span>
         </p>
     
@@ -1091,7 +1099,7 @@ it has to be instantiated.</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_adapters_base-resource.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line196">line 196</a>
+                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line202">line 202</a>
             </span>
         </p>
     
@@ -1241,7 +1249,7 @@ a mongoose model it should be database name of the mongo database.</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_adapters_base-resource.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line58">line 58</a>
+                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line62">line 62</a>
             </span>
         </p>
     
@@ -1364,7 +1372,7 @@ given resource. Default: 'database'</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_adapters_base-resource.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line66">line 66</a>
+                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line70">line 70</a>
             </span>
         </p>
     
@@ -1484,7 +1492,7 @@ given resource. Default: 'database'</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_adapters_base-resource.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line237">line 237</a>
+                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line244">line 244</a>
             </span>
         </p>
     
@@ -1666,7 +1674,7 @@ given resource. Default: 'database'</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_adapters_base-resource.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line219">line 219</a>
+                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line225">line 225</a>
             </span>
         </p>
     
@@ -2051,7 +2059,7 @@ given resource. Default: 'database'</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_adapters_base-resource.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line136">line 136</a>
+                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line140">line 140</a>
             </span>
         </p>
     
@@ -2238,7 +2246,7 @@ given resource. Default: 'database'</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_adapters_base-resource.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line172">line 172</a>
+                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line176">line 176</a>
             </span>
         </p>
     
@@ -2416,7 +2424,7 @@ given resource. Default: 'database'</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_adapters_base-resource.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line162">line 162</a>
+                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line166">line 166</a>
             </span>
         </p>
     
@@ -2543,7 +2551,7 @@ For instance in <a href="global.html#Router">Router</a> path for the <code>new</
         <p class="tag-source">
             <a href="admin-bro_src_backend_adapters_base-resource.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line86">line 86</a>
+                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line90">line 90</a>
             </span>
         </p>
     
@@ -2671,7 +2679,7 @@ It could be a table name in SQL database, or collection name in mongoDB.</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_adapters_base-resource.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line77">line 77</a>
+                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line81">line 81</a>
             </span>
         </p>
     
@@ -2874,7 +2882,7 @@ So after that invoking <code>articleRecord.populated['user_id']</code> will retu
         <p class="tag-source">
             <a href="admin-bro_src_backend_adapters_base-resource.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line152">line 152</a>
+                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line156">line 156</a>
             </span>
         </p>
     
@@ -3000,7 +3008,7 @@ So after that invoking <code>articleRecord.populated['user_id']</code> will retu
         <p class="tag-source">
             <a href="admin-bro_src_backend_adapters_base-resource.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line94">line 94</a>
+                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line98">line 98</a>
             </span>
         </p>
     
@@ -3176,7 +3184,7 @@ property paths.</p></td>
         <p class="tag-source">
             <a href="admin-bro_src_backend_adapters_base-resource.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line105">line 105</a>
+                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line109">line 109</a>
             </span>
         </p>
     
@@ -3377,7 +3385,7 @@ property paths.</p></td>
         <p class="tag-source">
             <a href="admin-bro_src_backend_adapters_base-resource.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line209">line 209</a>
+                <a href="admin-bro_src_backend_adapters_base-resource.ts.html">admin-bro/src/backend/adapters/base-resource.ts</a>, <a href="admin-bro_src_backend_adapters_base-resource.ts.html#line215">line 215</a>
             </span>
         </p>
     
