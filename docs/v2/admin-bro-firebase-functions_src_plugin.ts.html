@@ -5,7 +5,7 @@
 <head>
     <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
     <meta charset="utf-8">
-    <title>JSDoc: admin-bro/src/frontend/components/actions/record-to-form-data.ts</title>
+    <title>JSDoc: admin-bro-firebase-functions/src/plugin.ts</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -74,7 +74,7 @@
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
                         <p>Source</p>
-                        <h1>admin-bro/src/frontend/components/actions/record-to-form-data.ts</h1>
+                        <h1>admin-bro-firebase-functions/src/plugin.ts</h1>
                     </header>
                     
                     
@@ -84,38 +84,192 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import flat from 'flat'
+            <pre class="prettyprint source linenums"><code>// eslint-disable-next-line import/no-extraneous-dependencies
+import { Response } from 'firebase-functions';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { Request } from 'firebase-functions/lib/providers/https';
+import AdminBro, { AdminBroOptions, CurrentAdmin } from 'admin-bro';
+import { resolve } from 'path';
+import { match } from 'path-to-regexp';
+import cookie from 'cookie';
+import jwt from 'jsonwebtoken';
 
-import RecordJSON from '../../../backend/decorators/record-json.interface'
-
-const { flatten, unflatten } = flat
+import { AppRoutes, AppAssets } from './routes';
+import { parseFiles, cleanFiles } from './parse-files';
 
 /**
- * Changes RecordJSON that it can be send as a FormData to the backend.
+ * @alias BuildHandlerReturn
  *
- * @param   {RecordJSON}  record
- * @return  {FormData}
+ * @memberof module:admin-bro-firebase-functions
  */
-export default function recordToFormData(record: RecordJSON): FormData {
-  const formData = new FormData()
+export type BuildHandlerReturn = ((req: Request, resp: Response) => Promise&lt;void>)
 
-  // First let make sure that all the fields in the record.params are properly flatten.
-  // That is why we unflatten all properties and create regular object, where flat
-  // overwrite prevents from having 2 keys referencing the same property. And
-  // the result is flatten again.
-  const normalizedParams = flatten&lt;string, any>(unflatten(record.params, { overwrite: true }))
-  Object.entries(normalizedParams).forEach(([key, value]) => {
-    // flatten does not change empty objects "{}" - so in order to prevent having them changed to
-    // "[object Object]" we have to set them to empty strings. File objects has to go through.
-    // eslint-disable-next-line no-undef
-    if (typeof value === 'object' &amp;&amp; (value as object).constructor !== File) {
-      formData.set(key, '')
-    } else {
-      formData.set(key, value as string)
-    }
-  })
-  return formData
+/**
+ * @alias BuildHandlerOptions
+ *
+ * @memberof module:admin-bro-firebase-functions
+ */
+export type BuildHandlerOptions = {
+  /** Region where function is deployed */
+  region: string;
+  /** Optional before `async` hook which can be used to initialize database */
+  before?: () => Promise&lt;any>;
+  /** 
+   * custom authentication options
+   */
+  auth?: {
+    /** 
+     * secret which is used to encrypt the session cookie
+     */
+    secret: string;
+    /** 
+     * authenticate function
+     */
+    authenticate: (
+      email: string,
+      password: string) => Promise&lt;CurrentAdmin | null> | CurrentAdmin | null;
+  };
 }
+
+/**
+ * Builds the handler which can be passed to firebase functions
+ * 
+ * usage:
+ * 
+ * ```javascript
+ * const functions = require('firebase-functions')
+ * const { buildHandler } = require('admin-bro')
+ * 
+ * const adminOptions = {...}
+ * const region = '...'
+ * 
+ * exports.app = functions.https.onRequest(buildHandler(adminOptions, { region }));
+ * 
+ * ```
+ *
+ * @alias buildHandler
+ * @param  {AdminBroOptions} adminOptions       options which are used to initialize
+ *                                              AdminBro instance
+ * @param  {BuildHandlerOptions} options        custom options for admin-bro-firebase-functions adapter
+ * @return {BuildHandlerReturn}                 function which can be passed to firebase
+ * @function
+ * @memberof module:admin-bro-firebase-functions
+*/
+export const buildHandler = (
+  adminOptions: AdminBroOptions, 
+  options: BuildHandlerOptions
+): BuildHandlerReturn => {
+  let admin: AdminBro;
+
+  let rootPath: string;
+  let loginPath: string;
+  let logoutPath: string;
+
+  const domain = process.env.FUNCTIONS_EMULATOR
+    ? `${process.env.GCLOUD_PROJECT}/${options.region}/${process.env.FUNCTION_TARGET}`
+    : process.env.FUNCTION_TARGET;
+
+  return async (req, res): Promise&lt;void> => {
+    if (!admin) {
+      if (options.before) {
+        await options.before();
+      }
+
+      admin = new AdminBro(adminOptions);
+      ({ rootPath, loginPath, logoutPath } = admin.options);
+
+      admin.options.rootPath = `/${domain}${rootPath}`;
+      admin.options.loginPath = `/${domain}${loginPath}`;
+      admin.options.logoutPath = `/${domain}${logoutPath}`;
+    }
+
+    const { method, query } = req;
+    const path = req.path.replace(rootPath, '');
+    const cookies = cookie.parse(req.headers.cookie);
+    const token = cookies &amp;&amp; cookies.__session;
+
+    const currentAdmin = options.auth &amp;&amp; token &amp;&amp; token !== ''
+      ? jwt.verify(token, options.auth.secret)
+      : null;
+
+    if (options.auth) {
+      const matchLogin = match(loginPath);
+      if (matchLogin(req.path)) {
+        if (method === 'GET') {
+          res.send(await admin.renderLogin({
+            action: admin.options.loginPath,
+            errorMessage: null,
+          }));
+        } else {
+          const { email, password } = req.body;
+          const user = await options.auth.authenticate(email, password);
+          if (user) {
+            const session = jwt.sign(user, options.auth.secret);
+            res.cookie('__session', session, { maxAge: 900000 });
+            res.redirect(admin.options.rootPath);
+          } else {
+            res.send(await admin.renderLogin({
+              action: admin.options.loginPath,
+              errorMessage: admin.translateMessage('invalidCredentials'),
+            }));
+          }
+        }
+        return;
+      }
+
+      const matchLogout = match(logoutPath);
+      if (matchLogout(req.path)) {
+        res.cookie('__session', '', { maxAge: 900000 });
+        res.redirect(admin.options.loginPath);
+        return;
+      }
+
+      if (!currentAdmin) {
+        res.redirect(admin.options.loginPath);
+        return;
+      }
+    }
+
+    const route = AppRoutes.find((r) => r.match(path) &amp;&amp; r.method === method);
+    if (route) {
+      const params = (route.match(path) as unknown as any).params as Record&lt;string, string>;
+
+      const controller = new route.Controller({ admin }, currentAdmin);
+      let fields = {};
+      let files = {};
+      if (method === 'POST') {
+        ({ fields, files } = await parseFiles(req));
+      }
+      const payload = {
+        ...fields,
+        ...files,
+      };
+      const html = await controller[route.action]({
+        ...req, params, query, payload, method: method.toLowerCase(),
+      }, res);
+      if (route.contentType) {
+        res.set({ 'Content-Type': route.contentType });
+      }
+      if (html) {
+        res.send(html);
+      }
+
+      if (files) {
+        cleanFiles(files);
+      }
+
+      return;
+    }
+
+    const asset = AppAssets.find((r) => r.match(path));
+    if (asset) {
+      res.sendFile(resolve(asset.src));
+      return;
+    }
+
+    res.status(404).send('Page not found');
+  };
+};
 </code></pre>
         </article>
     </section>

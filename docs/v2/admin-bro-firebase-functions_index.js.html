@@ -5,7 +5,7 @@
 <head>
     <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
     <meta charset="utf-8">
-    <title>JSDoc: admin-bro/src/frontend/components/actions/record-to-form-data.ts</title>
+    <title>JSDoc: admin-bro-firebase-functions/index.js</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -74,7 +74,7 @@
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
                         <p>Source</p>
-                        <h1>admin-bro/src/frontend/components/actions/record-to-form-data.ts</h1>
+                        <h1>admin-bro-firebase-functions/index.js</h1>
                     </header>
                     
                     
@@ -84,39 +84,109 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import flat from 'flat'
-
-import RecordJSON from '../../../backend/decorators/record-json.interface'
-
-const { flatten, unflatten } = flat
-
-/**
- * Changes RecordJSON that it can be send as a FormData to the backend.
+            <pre class="prettyprint source linenums"><code>/**
+ * @module admin-bro-firebase-functions
  *
- * @param   {RecordJSON}  record
- * @return  {FormData}
+ * @description
+ * Plugin that allows you to render AdminBro by Firebase Cloud Functions
+ *
+ * ## Installation
+ * 
+ * Before you start make sure you have the firebase app set up
+ * (https://firebase.google.com/docs/functions/get-started):
+ * 
+ * ```
+ * yarn global add firebase-tools
+ * firebase login
+ * firebase init functions
+ * ```
+ * 
+ *
+ * ```sh
+ * cd functions
+ * // you might need to change version of node to 10 in your package.json
+ * yarn add admin-bro admin-bro-firebase-functions
+ * ```
+ *
+ * ## Usage on emulator
+ *
+ * To run AdminBro locally use `buildHandler` factory method:
+ * 
+ * ```
+ * const functions = require('firebase-functions')
+ * const { buildHandler } = require('admin-bro-firebase-functions')
+ *
+ * // assume that you kep all you AdminBroOptions in this file
+ * const adminBroOptions = require('./admin/config')
+ * 
+ * const onRequestHandler = buildHandler(adminBroOptions, {
+ *   region: 'us-central1',
+ *   before: async () => {
+ *     // connect with database here (i.e.)
+ *   },
+ *   auth: {
+ *     secret: 'super-secret-string-which-encrypts-session',
+ *     authenticate: async (email, password) => {
+ *        // find user and check password
+ *        return foundUser
+ *     }
+ *   }
+ * })
+ * 
+ * exports.app = functions.https.onRequest(onRequestHandler);
+ * ```
+ * 
+ * And this is it - you have working AdminBro instance which can be checked by running:
+ * 
+ * ```bash
+ * yarn serve
+ * ```
+ * 
+ * ## Deploy script
+ * 
+ * AdminBro bundles custom components to `./.adminbro` folder. In other plugins
+ * (admin-bro-expressjs, admin-bro-hapijs) this is done on the server side.
+ * On firebase we cannot write files in project directory so we have to bundle
+ * files manually before the deployment.
+ * 
+ * In order to do this create a simple bundle script in `./bin/bundle.js` file:
+ * 
+ * ```
+ * // ./bin/bundle.js
+ * const AdminBro = require('admin-bro');
+ * 
+ * // assume that you kep all your AdminBroOptions in this file
+ * const adminBroOptions = require('../admin/config')
+ * 
+ * const admin = new AdminBro(adminBroOptions);
+ * admin.initialize();
+ * ```
+ * 
+ * and run this script before the deployment with NODE_ENV set to production.
+ * 
+ * To simplify it, you can update scripts in your `package.json` file like this:
+ * 
+ * ```json
+ * {
+ *   "scripts": {
+ *     "bundle": "NODE_ENV=production node bin/bundle",
+ *     "deploy": "yarn bundle &amp;&amp; firebase deploy --only functions &amp;&amp; rm .adminbro/bundle.js"
+ *   }
+ * }
+ * ```
+ * 
+ * After successful deploy we remove generated bundle.
+ * 
+ * Now simply run:
+ * 
+ * ```
+ * yarn deploy
+ * ```
+ * 
+ * and in a minute you will see your app on Google Cloud Functions for Firebase
  */
-export default function recordToFormData(record: RecordJSON): FormData {
-  const formData = new FormData()
 
-  // First let make sure that all the fields in the record.params are properly flatten.
-  // That is why we unflatten all properties and create regular object, where flat
-  // overwrite prevents from having 2 keys referencing the same property. And
-  // the result is flatten again.
-  const normalizedParams = flatten&lt;string, any>(unflatten(record.params, { overwrite: true }))
-  Object.entries(normalizedParams).forEach(([key, value]) => {
-    // flatten does not change empty objects "{}" - so in order to prevent having them changed to
-    // "[object Object]" we have to set them to empty strings. File objects has to go through.
-    // eslint-disable-next-line no-undef
-    if (typeof value === 'object' &amp;&amp; (value as object).constructor !== File) {
-      formData.set(key, '')
-    } else {
-      formData.set(key, value as string)
-    }
-  })
-  return formData
-}
-</code></pre>
+module.exports = require('./lib')</code></pre>
         </article>
     </section>
 

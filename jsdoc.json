@@ -9,7 +9,8 @@
                     "./admin-bro-hapijs",
                     "./admin-bro-mongoose",
                     "./admin-bro-sequelizejs",
-                    "./admin-bro-expressjs"
+                    "./admin-bro-expressjs",
+                    "./admin-bro-firebase-functions"
                    ],
         "includePattern": "\\.(jsx|js|ts|tsx)$",
         "excludePattern": "(node_modules/|docs|(bundle.*\\.js)|cli.ts)"

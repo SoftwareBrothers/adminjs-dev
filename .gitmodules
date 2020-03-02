@@ -31,3 +31,6 @@
 [submodule "admin-bro-theme-dark"]
 	path = admin-bro-theme-dark
 	url = git@github.com:SoftwareBrothers/admin-bro-theme-dark.git
+[submodule "admin-bro-firebase-functions"]
+	path = admin-bro-firebase-functions
+	url = git@github.com:SoftwareBrothers/admin-bro-firebase-functions.git

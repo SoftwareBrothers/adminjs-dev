@@ -3,7 +3,7 @@
 <head>
     <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
     <meta charset="utf-8">
-    <title>JSDoc: EditAction</title>
+    <title>JSDoc: admin-bro-firebase-functions</title>
 
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -72,7 +72,7 @@
                 <div class="content" id="main-content-wrapper">
                     <header class="page-title">
                         <p>Module</p>
-                        <h1>EditAction</h1>
+                        <h1>admin-bro-firebase-functions</h1>
                     </header>
                     
                     
@@ -94,7 +94,74 @@
     <div class="container-overview">
     
         
-            <div class="description"><script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Shows form for updating existing record</p></div>
+            <div class="description"><script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Plugin that allows you to render AdminBro by Firebase Cloud Functions</p>
+<h2>Installation</h2>
+<p>Before you start make sure you have the firebase app set up
+(https://firebase.google.com/docs/functions/get-started):</p>
+<pre class="prettyprint source"><code>yarn global add firebase-tools
+firebase login
+firebase init functions
+</code></pre>
+<pre class="prettyprint source lang-sh"><code>cd functions
+// you might need to change version of node to 10 in your package.json
+yarn add admin-bro admin-bro-firebase-functions
+</code></pre>
+<h2>Usage on emulator</h2>
+<p>To run AdminBro locally use <code>buildHandler</code> factory method:</p>
+<pre class="prettyprint source"><code>const functions = require('firebase-functions')
+const { buildHandler } = require('admin-bro-firebase-functions')
+
+// assume that you kep all you AdminBroOptions in this file
+const adminBroOptions = require('./admin/config')
+
+const onRequestHandler = buildHandler(adminBroOptions, {
+  region: 'us-central1',
+  before: async () => {
+    // connect with database here (i.e.)
+  },
+  auth: {
+    secret: 'super-secret-string-which-encrypts-session',
+    authenticate: async (email, password) => {
+       // find user and check password
+       return foundUser
+    }
+  }
+})
+
+exports.app = functions.https.onRequest(onRequestHandler);
+</code></pre>
+<p>And this is it - you have working AdminBro instance which can be checked by running:</p>
+<pre class="prettyprint source lang-bash"><code>yarn serve
+</code></pre>
+<h2>Deploy script</h2>
+<p>AdminBro bundles custom components to <code>./.adminbro</code> folder. In other plugins
+(admin-bro-expressjs, admin-bro-hapijs) this is done on the server side.
+On firebase we cannot write files in project directory so we have to bundle
+files manually before the deployment.</p>
+<p>In order to do this create a simple bundle script in <code>./bin/bundle.js</code> file:</p>
+<pre class="prettyprint source"><code>// ./bin/bundle.js
+const AdminBro = require('admin-bro');
+
+// assume that you kep all your AdminBroOptions in this file
+const adminBroOptions = require('../admin/config')
+
+const admin = new AdminBro(adminBroOptions);
+admin.initialize();
+</code></pre>
+<p>and run this script before the deployment with NODE_ENV set to production.</p>
+<p>To simplify it, you can update scripts in your <code>package.json</code> file like this:</p>
+<pre class="prettyprint source lang-json"><code>{
+  &quot;scripts&quot;: {
+    &quot;bundle&quot;: &quot;NODE_ENV=production node bin/bundle&quot;,
+    &quot;deploy&quot;: &quot;yarn bundle && firebase deploy --only functions && rm .adminbro/bundle.js&quot;
+  }
+}
+</code></pre>
+<p>After successful deploy we remove generated bundle.</p>
+<p>Now simply run:</p>
+<pre class="prettyprint source"><code>yarn deploy
+</code></pre>
+<p>and in a minute you will see your app on Google Cloud Functions for Firebase</p></div>
         
 
         
@@ -126,13 +193,6 @@
     
 
     
-    <dt class="implements">Implements:</dt>
-    <dd class="implements"><ul>
-        
-            <li><a href="Action.html">Action</a></li>
-        
-    </ul></dd>
-    
 
     
 
@@ -153,9 +213,9 @@
 
     
         <p class="tag-source">
-            <a href="admin-bro_src_backend_actions_edit-action.ts.html" class="button">View Source</a>
+            <a href="admin-bro-firebase-functions_index.js.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_actions_edit-action.ts.html">admin-bro/src/backend/actions/edit-action.ts</a>, <a href="admin-bro_src_backend_actions_edit-action.ts.html#line3">line 3</a>
+                <a href="admin-bro-firebase-functions_index.js.html">admin-bro-firebase-functions/index.js</a>, <a href="admin-bro-firebase-functions_index.js.html#line1">line 1</a>
             </span>
         </p>
     
@@ -209,16 +269,12 @@
 
 
     
-    <h4 class="name" id=".handler">
-        <a class="href-link" href="#.handler">#</a>
-        
-            
-                <span class='tag'>static</span>
-            
+    <h4 class="name" id="buildHandler">
+        <a class="href-link" href="#buildHandler">#</a>
         
         <span class="code-name">
             
-                handler<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="Action.html#RecordActionResponse">RecordActionResponse</a>}</span>
+                buildHandler<span class="signature">(adminOptions, options)</span><span class="type-signature"> &rarr; {BuildHandlerReturn}</span>
             
         </span>
     </h4>
@@ -227,8 +283,17 @@
     
     
     <div class="description">
-        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Responsible for updating existing record.</p>
-<p>To invoke this action use <a href="ApiClient.html#recordAction">ApiClient#recordAction</a></p>
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Builds the handler which can be passed to firebase functions</p>
+<p>usage:</p>
+<pre class="prettyprint source lang-javascript"><code>const functions = require('firebase-functions')
+const { buildHandler } = require('admin-bro')
+
+const adminOptions = {...}
+const region = '...'
+
+exports.app = functions.https.onRequest(buildHandler(adminOptions, { region }));
+
+</code></pre>
     </div>
     
 
@@ -239,6 +304,82 @@
 
 
 
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>adminOptions</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type"><a href="AdminBroOptions.html">AdminBroOptions</a></span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>options which are used to initialize
+AdminBro instance</p></td>
+</tr>
+
+
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>options</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type"><a href="module-admin-bro-firebase-functions.html#BuildHandlerOptions">BuildHandlerOptions</a></span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>custom options for admin-bro-firebase-functions adapter</p></td>
+</tr>
+
+
+    
+    </tbody>
+</table>
 
 
 
@@ -256,13 +397,6 @@
 
     
 
-    
-    <dt class="implements">Implements:</dt>
-    <dd class="implements"><ul>
-        
-            <li><a href="Action.html#handler">Action#handler</a></li>
-        
-    </ul></dd>
     
 
     
@@ -284,9 +418,9 @@
 
     
         <p class="tag-source">
-            <a href="admin-bro_src_backend_actions_edit-action.ts.html" class="button">View Source</a>
+            <a href="admin-bro-firebase-functions_src_plugin.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_actions_edit-action.ts.html">admin-bro/src/backend/actions/edit-action.ts</a>, <a href="admin-bro_src_backend_actions_edit-action.ts.html#line28">line 28</a>
+                <a href="admin-bro-firebase-functions_src_plugin.ts.html">admin-bro-firebase-functions/src/plugin.ts</a>, <a href="admin-bro-firebase-functions_src_plugin.ts.html#line33">line 33</a>
             </span>
         </p>
     
@@ -317,13 +451,13 @@
 
 <div class="columns">
     
-    <div class='param-desc column is-7'><p>populated record</p></div>
+    <div class='param-desc column is-7'><p>function which can be passed to firebase</p></div>
     
     
     <div class='column is-5 has-text-left'>
         <label>Type: </label>
         
-<span class="param-type"><a href="Action.html#RecordActionResponse">RecordActionResponse</a></span>
+<span class="param-type">BuildHandlerReturn</span>
 
 
     </div>
@@ -343,6 +477,272 @@
         </div>
     
 
+    
+        <div class='vertical-section'>
+            <h3 class="title"><span>Type Definitions</span></h3>
+            <div class="members">
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">object</span>
+
+
+    </span>
+
+<h4 class="name" id="BuildHandlerOptions">
+    <a class="href-link" href="#BuildHandlerOptions">#</a>
+    
+    <span class="code-name">
+        BuildHandlerOptions
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>
+</div>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>region</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Region where function is deployed</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>before</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">function</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Optional before <code>async</code> hook which can be used to initialize database</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>auth</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">object</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>custom authentication options</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>secret</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>secret which is used to encrypt the session cookie</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>authenticate</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">function</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>authenticate function</p></td>
+</tr>
+
+  
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro-firebase-functions_src_plugin.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro-firebase-functions_src_plugin.ts.html">admin-bro-firebase-functions/src/plugin.ts</a>, <a href="admin-bro-firebase-functions_src_plugin.ts.html#line142">line 142</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+            </div>
+        </div>
     
 
     
