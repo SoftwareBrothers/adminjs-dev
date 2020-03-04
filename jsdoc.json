@@ -25,7 +25,7 @@
     ],
     "opts": {
         "encoding": "utf8",
-        "destination": "docs/v2",
+        "destination": "docs",
         "readme": "./docs-src/home.md",
         "recurse": true,
         "private": true,

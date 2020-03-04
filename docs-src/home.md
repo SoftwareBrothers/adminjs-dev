@@ -4,17 +4,24 @@ An automatic admin interface which can be plugged into your application. You, as
 
 ## Live example
 
-Check out the example application with mongodb and postgres models here: [https://admin-bro-example-app.herokuapp.com/admin](https://admin-bro-example-app.herokuapp.com/admin)
+Check out the example application with mongodb and postgres models here: [https://admin-bro-example-app-staging.herokuapp.com/admin](https://admin-bro-example-app-staging.herokuapp.com/admin)
 
 
-<a href="https://admin-bro-example-app.herokuapp.com/admin" style="margin-right: 80px" class="button is-pulled-left" target="_blank">See the demo app</a>
+<a href="https://admin-bro-example-app-staging.herokuapp.com/admin" style="margin-right: 80px" class="button is-pulled-left" target="_blank">See the demo app</a>
 - login: __test@example.com__
 - password: __password__
 
 ### Screenshots
 
-<img src='./images/postcodes.png' style='width: 49%; float: left; margin-right: 1%; border: 1px solid #ccc'>
+<img src='./images/list.png' style='width: 49%; float: left; margin-right: 1%; border: 1px solid #ccc'>
 <img src='./images/dashboard.png' style='width: 49%; border: 1px solid #ccc'>
+
+## Versions
+
+Latest version: v2.0
+
+read the docs for older versions: 
+- [version 1.6](v1/index.html)
 
 ## How to read this documentation
 
