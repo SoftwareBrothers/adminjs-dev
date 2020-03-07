@@ -112,17 +112,20 @@ export type BuildHandlerReturn = ((req: Request, resp: Response) => Promise&lt;v
 export type BuildHandlerOptions = {
   /** Region where function is deployed */
   region: string;
-  /** Optional before `async` hook which can be used to initialize database */
-  before?: () => Promise&lt;any>;
-  /** 
-   * custom authentication options
+  /**
+   * Optional before `async` hook which can be used to initialize database.
+   * if it returns something it will be used as AdminBroOptions.
+   */
+  before?: () => Promise&lt;AdminBroOptions | undefined | null> | AdminBroOptions | undefined | null;
+  /**
+   * custom authentication option. If given AdminBro will render login page
    */
   auth?: {
-    /** 
+    /**
      * secret which is used to encrypt the session cookie
      */
     secret: string;
-    /** 
+    /**
      * authenticate function
      */
     authenticate: (
@@ -133,31 +136,32 @@ export type BuildHandlerOptions = {
 
 /**
  * Builds the handler which can be passed to firebase functions
- * 
+ *
  * usage:
- * 
+ *
  * ```javascript
  * const functions = require('firebase-functions')
  * const { buildHandler } = require('admin-bro')
- * 
+ *
  * const adminOptions = {...}
  * const region = '...'
- * 
+ *
  * exports.app = functions.https.onRequest(buildHandler(adminOptions, { region }));
- * 
+ *
  * ```
  *
  * @alias buildHandler
  * @param  {AdminBroOptions} adminOptions       options which are used to initialize
  *                                              AdminBro instance
- * @param  {BuildHandlerOptions} options        custom options for admin-bro-firebase-functions adapter
+ * @param  {BuildHandlerOptions} options        custom options for admin-bro-firebase-functions
+ *                                              adapter
  * @return {BuildHandlerReturn}                 function which can be passed to firebase
  * @function
  * @memberof module:admin-bro-firebase-functions
 */
 export const buildHandler = (
-  adminOptions: AdminBroOptions, 
-  options: BuildHandlerOptions
+  adminOptions: AdminBroOptions,
+  options: BuildHandlerOptions,
 ): BuildHandlerReturn => {
   let admin: AdminBro;
 
@@ -171,11 +175,12 @@ export const buildHandler = (
 
   return async (req, res): Promise&lt;void> => {
     if (!admin) {
+      let beforeResult: AdminBroOptions | null | undefined = null;
       if (options.before) {
-        await options.before();
+        beforeResult = await options.before();
       }
 
-      admin = new AdminBro(adminOptions);
+      admin = new AdminBro(beforeResult || adminOptions);
       ({ rootPath, loginPath, logoutPath } = admin.options);
 
       admin.options.rootPath = `/${domain}${rootPath}`;
@@ -185,7 +190,7 @@ export const buildHandler = (
 
     const { method, query } = req;
     const path = req.path.replace(rootPath, '');
-    const cookies = cookie.parse(req.headers.cookie);
+    const cookies = cookie.parse(req.headers.cookie || '');
     const token = cookies &amp;&amp; cookies.__session;
 
     const currentAdmin = options.auth &amp;&amp; token &amp;&amp; token !== ''
@@ -263,7 +268,7 @@ export const buildHandler = (
 
     const asset = AppAssets.find((r) => r.match(path));
     if (asset) {
-      res.sendFile(resolve(asset.src));
+      res.status(200).sendFile(resolve(asset.src));
       return;
     }
 

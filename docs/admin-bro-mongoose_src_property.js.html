@@ -142,7 +142,6 @@ class Property extends BaseProperty {
     case 'Decimal128':
       return 'float'
     default:
-      console.warn(`Unhandled type: ${this.mongoosePath.instance}`)
       return 'string'
     }
   }

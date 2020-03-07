@@ -314,6 +314,9 @@ class ViewHelpers {
    * @return {string}
    */
   assetPath(asset: string): string {
+    if (this.options.assetsCDN) {
+      return new URL(asset, this.options.assetsCDN).href
+    }
     return this.urlBuilder(['frontend', 'assets', asset])
   }
 }
