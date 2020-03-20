@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
+    <meta charset="utf-8">
+    <title>JSDoc: BasePropertyComponent</title>
+
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="./build/entry.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Muli:100,400,700|Oswald:300|Inconsolata,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+</head>
+
+<body>
+    <div id="stickyNavbarOverlay"></div>
+    <div class="top-navbar">
+        <div class="container">
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                     
+                        <img src="images/logo.png" alt="logo">
+                    
+                     
+                        <h1 class="navbar-item">AdminBro Documentation</h1>
+                    
+                    <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                 
+                <div class="navbar-menu">
+                    <div class="navbar-end">
+                    
+                        <div class="navbar-item">
+                            <a href="https://github.com/SoftwareBrothers/admin-bro" target="_blank">
+                                Github
+                            </a>
+                        </div>
+                    
+                        <div class="navbar-item">
+                            <a href="https://admin-bro-example-app.herokuapp.com/admin" target="_blank">
+                                Example Application
+                            </a>
+                        </div>
+                    
+                    </div>
+                </div>
+                
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <div class="columns">
+            <div class="column is-3" id="sidebarNav">
+                <div class="sidebar">
+                    <nav>
+                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-00-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-01-example.html">02. Example App</a></li><li><a href="tutorial-03-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-04-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-05-actions.html">05. Customize actions</a></li><li><a href="tutorial-06-writing-react-components.html">06. Writing your own Components</a></li><li><a href="tutorial-07-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-08-rbac.html">08. Role-Based Access Control</a></li><li><a href="tutorial-09-i18n.html">09. Internationalization (i18n)</a></li></ul><h3>Modules</h3><ul><li><a href="module-admin-bro-expressjs.html">admin-bro-expressjs</a></li><li><a href="module-admin-bro-firebase-functions.html">admin-bro-firebase-functions</a></li><li><a href="module-admin-bro-hapijs.html">admin-bro-hapijs</a></li><li><a href="module-admin-bro-mongoose.html">admin-bro-mongoose</a></li><li><a href="module-admin-bro-sequelizejs.html">admin-bro-sequelizejs</a></li></ul><h3>Classes</h3><ul><li><a href="AdminBro.html">AdminBro</a></li><li><a href="ApiClient.html">ApiClient</a></li><li><a href="ApiController.html">ApiController</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3>Interfaces</h3><ul><li><a href="Action.html">Action</a></li><li><a href="AdminBroOptions.html">AdminBroOptions</a></li><li><a href="PropertyOptions.html">PropertyOptions</a></li><li><a href="ResourceOptions.html">ResourceOptions</a></li><li><a href="TranslateFunctions.html">TranslateFunctions</a></li></ul><h3>Interfaces / Frontend</h3><ul><li><a href="ActionJSON.html">ActionJSON</a></li><li><a href="PageJSON.html">PageJSON</a></li><li><a href="PropertyJSON.html">PropertyJSON</a></li><li><a href="RecordJSON.html">RecordJSON</a></li><li><a href="ResourceJSON.html">ResourceJSON</a></li><li><a href="Theme.html">Theme</a></li></ul><h3>Components / Application</h3><ul><li><a href="ActionButton.html">ActionButton</a></li><li><a href="ActionHeader.html">ActionHeader</a></li><li><a href="BaseActionComponent.html">BaseActionComponent</a></li><li><a href="BasePropertyComponent.html">BasePropertyComponent</a></li><li><a href="DrawerPortal.html">DrawerPortal</a></li><li><a href="RecordsTableHeader.html">RecordsTableHeader</a></li></ul><h3>Components / Atoms</h3><ul><li><a href="Badge.html">Badge</a></li><li><a href="Box.html">Box</a></li><li><a href="Button.html">Button</a></li><li><a href="CheckBox.html">CheckBox</a></li><li><a href="Header.html">Header</a></li><li><a href="Icon.html">Icon</a></li><li><a href="Illustration.html">Illustration</a></li><li><a href="Input.html">Input</a></li><li><a href="Label.html">Label</a></li><li><a href="Link.html">Link</a></li><li><a href="Loader.html">Loader</a></li><li><a href="Placeholder.html">Placeholder</a></li><li><a href="Radio.html">Radio</a></li><li><a href="Section.html">Section</a></li><li><a href="Table.html">Table</a></li><li><a href="Text.html">Text</a></li><li><a href="TextArea.html">TextArea</a></li></ul><h3>Components / Molecules</h3><ul><li><a href="DatePicker.html">DatePicker</a></li><li><a href="Drawer.html">Drawer</a></li><li><a href="DropDown.html">DropDown</a></li><li><a href="DropZone.html">DropZone</a></li><li><a href="DropZoneItem.html">DropZoneItem</a></li><li><a href="FormGroup.html">FormGroup</a></li><li><a href="InfoBox.html">InfoBox</a></li><li><a href="MessageBox.html">MessageBox</a></li><li><a href="NavGroup.html">NavGroup</a></li><li><a href="Pagination.html">Pagination</a></li></ul><h3>Components / Hooks</h3><ul><li><a href="useNotice.html">useNotice</a></li><li><a href="useRecord.html">useRecord</a></li><li><a href="useTranslation.html">useTranslation</a></li></ul><h3>Components / HOC</h3><ul><li><a href="withNotice.html">withNotice</a></li></ul></div><div class="category"><h2>Base</h2><h3>Classes</h3><ul><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li></ul></div><div class="category"><h2>Decorators</h2><h3>Classes</h3><ul><li><a href="ActionDecorator.html">ActionDecorator</a></li><li><a href="PropertyDecorator.html">PropertyDecorator</a></li><li><a href="ResourceDecorator.html">ResourceDecorator</a></li></ul></div><div class="category"><h2>Errors</h2><h3>Classes</h3><ul><li><a href="ConfigurationError.html">ConfigurationError</a></li><li><a href="ForbiddenError.html">ForbiddenError</a></li><li><a href="NotFoundError.html">NotFoundError</a></li><li><a href="NotImplementedError.html">NotImplementedError</a></li><li><a href="ValidationError.html">ValidationError</a></li></ul></div>
+                    </nav>
+                </div>
+            </div>
+            <div class="column is-9-desktop">
+                <div class="content" id="main-content-wrapper">
+                    <header class="page-title">
+                        <p>Components</p>
+                        <h1>BasePropertyComponent</h1>
+                    </header>
+                    
+                    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+            &ltBasePropertyComponent  /&gt
+        </h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class='vertical-section'>
+                <h3 class="title"><span>Constructor</span></h3>
+                <div class="members">
+                    <div class="member">
+
+
+    
+    <h4 class="name" id="BasePropertyComponent">
+        <a class="href-link" href="#BasePropertyComponent">#</a>
+        
+        <span class="code-name">
+            
+                &ltBasePropertyComponent  /&gt
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Component which renders properties in all the places in the AdminBro UI. By all the
+places I mean:</p>
+<ul>
+<li><strong>list</strong>: on the List,</li>
+<li><strong>edit</strong>: on default actions where user can modify the record like: EditAction,
+and NewAction,</li>
+<li><strong>show</strong>: on the default <a href="ShowAction.html">ShowAction</a> where user can see the details of a record,</li>
+<li><strong>filter</strong>: and finally on the sidebar filter,</li>
+</ul>
+<p>Based on the type of given property and where the property is rendered <strong>BasePropertyComponent</strong>
+picks Component to use. That is how <strong>date</strong> fields are rendered as <strong>datepicker</strong>
+or <strong>boolean</strong> values as <strong>checkbox</strong>'es.</p>
+<h3>Overriding default render logic</h3>
+<p>By default BasePropertyComponent will render corresponding
+component: input for string, DatePicker for dates etc.
+But you can override this by passing a custom component to <a href="PropertyOptions.html">PropertyOptions</a>.</p>
+<p>Take a look at the following example:</p>
+<pre class="prettyprint source"><code>const AdminBro = require('admin-bro')
+const ResourceModel = require('./resource-model')
+const AdminBroOptions = {
+  resources: [{
+    resource: ResourceModel
+    options: {
+      properties: {
+        name: {
+          components: {
+            show: AdminBro.bundle('./my-react-component'),
+          },
+        },
+      },
+    },
+  }],
+}
+</code></pre>
+<p>In the example above we are altering how <strong>name</strong> property will look
+like on the Show action. We can define <strong>my-react-component.jsx</strong> like this:</p>
+<pre class="prettyprint source"><code>import React from 'react'
+import { InputGroup, Label } from 'admin-bro'
+
+const MyReactComponent = props => {
+  const { record, property } = props
+  const value = record.params[property.name]
+  return (
+    &lt;InputGroup>
+      &lt;Label>{property.name}&lt;/Label>
+      {value} [meters]
+    &lt;/InputGroup>
+  )
+}
+</code></pre>
+    </div>
+    
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_frontend_components_property-type_index.tsx.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_frontend_components_property-type_index.tsx.html">admin-bro/src/frontend/components/property-type/index.tsx</a>, <a href="admin-bro_src_frontend_components_property-type_index.tsx.html#line36">line 36</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    
+        
+
+<div id='gm2w0izjpm7k7hymxf5'></div>
+
+<script>
+  ReactDOM.render(ReactWrapper({
+    example: "const booleanProperty = {\n  isTitle: false,\n  name: 'awesome',\n  isId: false,\n  position: -1,\n  label: 'I am awesome',\n  type: 'boolean',\n}\n\nconst stringProperty = {\n  isTitle: true,\n  name: 'name',\n  isId: false,\n  position: -1,\n  label: 'Name of a user',\n  type: 'string',\n}\n// Resource is taken from the database\nconst resource = {\n  id: 'User',\n  name: 'User Model',\n  titleProperty: 'name',\n  resourceActions: [],\n  listProperties: [booleanProperty, stringProperty],\n  editProperties: [booleanProperty, stringProperty],\n  showProperties: [booleanProperty, stringProperty],\n  filterProperties: [booleanProperty, stringProperty],\n}\n\nconst initialRecord = {\n  id: '1',\n  title: 'John',\n  params: {\n    name: 'John',\n    gender: 'male',\n  },\n  recordActions: [],\n}\nconst Wrapper = () => {\n  const { record, handleChange, submit } = useRecord(initialRecord, resource.id)\n  const params = JSON.stringify(record.params)\n  return (\n    <Box py=\"lg\">\n      <BasePropertyComponent\n        property={booleanProperty}\n        resource={resource}\n        onChange={handleChange}\n        where=\"edit\"\n        record={record}\n      />\n      <BasePropertyComponent\n        property={stringProperty}\n        resource={resource}\n        onChange={handleChange}\n        where=\"edit\"\n        record={record}\n      />\n     <Box>\n       <Label>Params:</Label>\n       {params}\n     </Box>\n     <Box my=\"lg\">\n       <Button variant=\"primary\" onClick={submit}>Submit</Button>\n       <Text variant=\"sm\">\n         This will throw an error because there is no AdminBro instance running\n       </Text>\n     </Box>\n    </Box>\n  )\n}\n\nreturn (<Wrapper />)",
+    uniqId: "gm2w0izjpm7k7hymxf5",
+  }), document.getElementById('gm2w0izjpm7k7hymxf5'));
+</script>
+    
+
+
+</div>
+                </div>
+            </div>
+        
+    
+    </div>
+    
+        
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class='vertical-section'>
+            <h3 class="title"><span>Type Definitions</span></h3>
+            <div class="members">
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">object</span>
+
+
+    </span>
+
+<h4 class="name" id="BasePropertyProps">
+    <a class="href-link" href="#BasePropertyProps">#</a>
+    
+    <span class="code-name">
+        BasePropertyProps
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Props which are passed to all your custom property components</p>
+<p>Example</p>
+<pre class="prettyprint source"><code>// AdminBroOptions
+const AdminBro = require('admin-bro')
+const ResourceModel = require('./resource-model')
+const AdminBroOptions = {
+  resources: [{
+    resource: ResourceModel
+    options: {
+      properties: {
+        name: {
+          components: {
+            show: AdminBro.bundle('./my-react-component'),
+          },
+        },
+      },
+    },
+  }],
+}
+
+// my-react-component.jsx
+const MyReactComponent = (props: BasePropertyProps) => {
+  const { record, property } = props
+  const value = record.params[property.name] === 'foo' ? 'bar' : 'zoe'
+  return (
+    &lt;PropertyInShow property={property}>
+      {value}
+    &lt;/PropertyInShow>
+  )
+}
+
+</code></pre>
+</div>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>property</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="PropertyJSON.html">PropertyJSON</a></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Property JSON representation</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>resource</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="ResourceJSON.html">ResourceJSON</a></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Resource JSON representation</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>record</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="RecordJSON.html">RecordJSON</a></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Record JSON representation. Null for filter</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>onChange</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="BasePropertyComponent.html#OnPropertyChange">OnPropertyChange</a></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>callback function which should indicate change of the field value. You can use it,
+when overriding edit properties.</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>filter</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">any</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Filter object taken from the query params. It is used on the <em>filter</em> components.</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>where</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">PropertyPlace</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Where given property should be rendered. Either of 'show' | 'list' | 'edit' | 'filter'.</p></td>
+</tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_frontend_components_property-type_base-property-props.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_frontend_components_property-type_base-property-props.ts.html">admin-bro/src/frontend/components/property-type/base-property-props.ts</a>, <a href="admin-bro_src_frontend_components_property-type_base-property-props.ts.html#line7">line 7</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">object</span>
+
+
+    </span>
+
+<h4 class="name" id="EditPropertyProps">
+    <a class="href-link" href="#EditPropertyProps">#</a>
+    
+    <span class="code-name">
+        EditPropertyProps
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Props which are passed to all your custom property components in show</p>
+</div>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>onChange</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="BasePropertyComponent.html#OnPropertyChange">OnPropertyChange</a></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>callback function which should indicate change of the field value.</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>record</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="RecordJSON.html">RecordJSON</a></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>Record JSON representation. Null for filter</p></td>
+</tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_frontend_components_property-type_base-property-props.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_frontend_components_property-type_base-property-props.ts.html">admin-bro/src/frontend/components/property-type/base-property-props.ts</a>, <a href="admin-bro_src_frontend_components_property-type_base-property-props.ts.html#line66">line 66</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">object</span>
+
+
+    </span>
+
+<h4 class="name" id="FilterPropertyProps">
+    <a class="href-link" href="#FilterPropertyProps">#</a>
+    
+    <span class="code-name">
+        FilterPropertyProps
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Props which are passed to all your custom property components in filter</p>
+</div>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>filter</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">any</span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>Filter object taken from the query params. It is used on the <em>filter</em> components</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>onChange</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="BasePropertyComponent.html#OnPropertyChange">OnPropertyChange</a></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>callback function which should indicate change of the filter value.</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>record</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">undefined</span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_frontend_components_property-type_base-property-props.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_frontend_components_property-type_base-property-props.ts.html">admin-bro/src/frontend/components/property-type/base-property-props.ts</a>, <a href="admin-bro_src_frontend_components_property-type_base-property-props.ts.html#line55">line 55</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="OnPropertyChange">
+        <a class="href-link" href="#OnPropertyChange">#</a>
+        
+        <span class="code-name">
+            
+                OnPropertyChange<span class="signature">(propertyOrRecord, value<span class="signature-attributes">opt</span>, selectedRecord<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>On change callback - It takes either
+one argument which is entire <a href="RecordJSON.html">RecordJSON</a> or 2 arguments - one
+<strong>property.name</strong> and the second one: <strong>value</strong>. Used by the <strong>edit</strong> and <strong>filter</strong> components.</p>
+<p>Lets take a look at an example of overriding edit component:</p>
+<pre class="prettyprint source lang-typescript"><code>import React, { ReactNode } from 'react'
+import { BasePropertyProps, PropertyInEdit, StyledInput } from 'admin-bro'
+
+export default class Edit extends React.Component&lt;PropertyProps> {
+  constructor(props) {
+    super(props)
+    this.handleInputChange = this.handleInputChange.bind(this)
+  }
+
+  handleInputChange(event): void {
+    const { onChange, property, record } = this.props
+
+    // Here is the interesting part:
+    onChange(property.name, event.target.value)
+
+    // or you can pass an entire record. This is the same as above but gives you
+    // much more flexibility
+    const newRecord = { ...record }
+    newRecord.params[property.name] = event.target.value
+    onChange(newRecord)
+  }
+
+  render(): ReactNode {
+    const { property, record } = this.props
+    const error = record.errors && record.errors[property.name]
+    const value = (record.params && typeof record.params[property.name] !== 'undefined')
+      ? record.params[property.name]
+      : ''
+    return (
+      &lt;PropertyInEdit property={property} error={error}>
+        &lt;StyledInput
+          type=&quot;text&quot;
+          className=&quot;input&quot;
+          id={property.name}
+          name={property.name}
+          onChange={this.handleInputChange}
+          value={value}
+        />
+      &lt;/PropertyInEdit>
+    )
+  }
+}
+</code></pre>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>propertyOrRecord</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type"><a href="RecordJSON.html">RecordJSON</a></span>
+|
+
+<span class="param-type">string</span>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+
+      
+
+      
+      </td>
+  
+
+  
+
+  <td class="description last"><p>property.name or updated RecordJSON object</p></td>
+</tr>
+
+
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>value</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">any</span>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
+
+      
+
+      
+      </td>
+  
+
+  
+
+  <td class="description last"><p>when propertyOrRecord is a property.name, here should be an updated value.</p></td>
+</tr>
+
+
+    
+
+        
+<tr class="deep-level-0">
+  
+      <td class="name"><code>selectedRecord</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type"><a href="RecordJSON.html">RecordJSON</a></span>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
+
+      
+
+      
+      </td>
+  
+
+  
+
+  <td class="description last"><p>In case of &quot;reference&quot; fields (with select), when they change they pass selected record object.,
+This is mostly for an internal use - you probably wont have to use that.</p></td>
+</tr>
+
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_frontend_components_property-type_base-property-props.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_frontend_components_property-type_base-property-props.ts.html">admin-bro/src/frontend/components/property-type/base-property-props.ts</a>, <a href="admin-bro_src_frontend_components_property-type_base-property-props.ts.html#line87">line 87</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">object</span>
+
+
+    </span>
+
+<h4 class="name" id="ShowPropertyProps">
+    <a class="href-link" href="#ShowPropertyProps">#</a>
+    
+    <span class="code-name">
+        ShowPropertyProps
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Props which are passed to all your custom property components in show</p>
+</div>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>property</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="PropertyJSON.html">PropertyJSON</a></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>Property JSON representation</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>resource</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="ResourceJSON.html">ResourceJSON</a></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>Resource JSON representation</p></td>
+</tr>
+
+    
+        
+<tr class="deep-level-0">
+    
+        <td class="name"><code>record</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="RecordJSON.html">RecordJSON</a></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>Record JSON representation. Null for filter</p></td>
+</tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_frontend_components_property-type_base-property-props.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_frontend_components_property-type_base-property-props.ts.html">admin-bro/src/frontend/components/property-type/base-property-props.ts</a>, <a href="admin-bro_src_frontend_components_property-type_base-property-props.ts.html#line76">line 76</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+            </div>
+        </div>
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a></p>
+        <p class="sidebar-created-by">
+            <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+            <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+        </p>
+    </div>
+</footer>
+
+
+<script src="scripts/app.min.js"></script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
