@@ -1,0 +1,294 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
+    <meta charset="utf-8">
+    <title>AdminBro - Auto-generated admin panel for node.js with react admin-bro/src/frontend/components/design-system/molecules/drawer/drawer.tsx</title>
+
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="./build/entry.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-navbar">
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+          <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+          </a>
+           
+              <a class="navbar-item" href="index.html">
+                  <img src="images/logo.svg" alt="logo">
+              </a>
+          
+           
+              <h1 class="navbar-item"> </h1>
+          
+      </div>
+      <div class="navbar-menu">
+          <div class="navbar-end">
+              <a class="navbar-item" href="docs.html">
+                  Documentation
+              </a>
+              <div class="navbar-item has-dropdown is-hoverable">
+                  <a class="navbar-link">
+                      Tutorials
+                  </a>
+                  <div class="navbar-dropdown">
+                      
+                          
+                              <a class="navbar-item" href="tutorial-installation-instructions.html">
+                                  01. Installation instructions
+                              </a>
+                          
+                              <a class="navbar-item" href="tutorial-01-example.html">
+                                  02. Example App
+                              </a>
+                          
+                              <a class="navbar-item" href="tutorial-03-passing-resources.html">
+                                  03. Adding resources
+                              </a>
+                          
+                              <a class="navbar-item" href="tutorial-04-customizing-resources.html">
+                                  04. Customize resources
+                              </a>
+                          
+                              <a class="navbar-item" href="tutorial-05-actions.html">
+                                  05. Customize actions
+                              </a>
+                          
+                              <a class="navbar-item" href="tutorial-06-writing-react-components.html">
+                                  06. Writing your own Components
+                              </a>
+                          
+                              <a class="navbar-item" href="tutorial-07-custom-dashboard.html">
+                                  07. Customize dashboard
+                              </a>
+                          
+                              <a class="navbar-item" href="tutorial-08-rbac.html">
+                                  08. Role-Based Access Control
+                              </a>
+                          
+                              <a class="navbar-item" href="tutorial-09-i18n.html">
+                                  09. Internationalization (i18n)
+                              </a>
+                          
+                      
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- Place this tag where you want the button to render. -->
+      <div class="navbar-item github-stars">
+          <a class="github-button" href="https://github.com/SoftwareBrothers/admin-bro" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star SoftwareBrothers/admin-bro on GitHub">Star</a>
+      </div>
+       
+      <div class="buttons">
+          
+              <a  href="https://admin-bro-example-app-staging.herokuapp.com/admin"
+                  target=""
+                  class="button "
+              ?>
+                  Demo
+              </a>
+          
+              <a  href="/documentation"
+                  target="_blank"
+                  class="button is-primary"
+              ?>
+                  Get Started
+              </a>
+          
+      </div>
+      
+  </nav>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Modules</h3><ul><li><a href="module-admin-bro-expressjs.html">admin-bro-expressjs</a></li><li><a href="module-admin-bro-firebase-functions.html">admin-bro-firebase-functions</a></li><li><a href="module-admin-bro-hapijs.html">admin-bro-hapijs</a></li><li><a href="module-admin-bro-mongoose.html">admin-bro-mongoose</a></li><li><a href="module-admin-bro-sequelizejs.html">admin-bro-sequelizejs</a></li></ul><h3>Classes</h3><ul><li><a href="AdminBro.html">AdminBro</a></li><li><a href="ApiClient.html">ApiClient</a></li><li><a href="ApiController.html">ApiController</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3>Interfaces</h3><ul><li><a href="Action.html">Action</a></li><li><a href="AdminBroOptions.html">AdminBroOptions</a></li><li><a href="PropertyOptions.html">PropertyOptions</a></li><li><a href="ResourceOptions.html">ResourceOptions</a></li><li><a href="TranslateFunctions.html">TranslateFunctions</a></li></ul><h3>Interfaces / Frontend</h3><ul><li><a href="ActionJSON.html">ActionJSON</a></li><li><a href="PageJSON.html">PageJSON</a></li><li><a href="PropertyJSON.html">PropertyJSON</a></li><li><a href="RecordJSON.html">RecordJSON</a></li><li><a href="ResourceJSON.html">ResourceJSON</a></li><li><a href="Theme.html">Theme</a></li></ul><h3>Components / Application</h3><ul><li><a href="ActionButton.html">ActionButton</a></li><li><a href="ActionHeader.html">ActionHeader</a></li><li><a href="BaseActionComponent.html">BaseActionComponent</a></li><li><a href="BasePropertyComponent.html">BasePropertyComponent</a></li><li><a href="DrawerPortal.html">DrawerPortal</a></li><li><a href="RecordsTableHeader.html">RecordsTableHeader</a></li></ul><h3>Components / Atoms</h3><ul><li><a href="Badge.html">Badge</a></li><li><a href="Box.html">Box</a></li><li><a href="Button.html">Button</a></li><li><a href="CheckBox.html">CheckBox</a></li><li><a href="Header.html">Header</a></li><li><a href="Icon.html">Icon</a></li><li><a href="Illustration.html">Illustration</a></li><li><a href="Input.html">Input</a></li><li><a href="Label.html">Label</a></li><li><a href="Link.html">Link</a></li><li><a href="Loader.html">Loader</a></li><li><a href="Placeholder.html">Placeholder</a></li><li><a href="Radio.html">Radio</a></li><li><a href="Section.html">Section</a></li><li><a href="Table.html">Table</a></li><li><a href="Text.html">Text</a></li><li><a href="TextArea.html">TextArea</a></li></ul><h3>Components / Molecules</h3><ul><li><a href="DatePicker.html">DatePicker</a></li><li><a href="Drawer.html">Drawer</a></li><li><a href="DropDown.html">DropDown</a></li><li><a href="DropZone.html">DropZone</a></li><li><a href="DropZoneItem.html">DropZoneItem</a></li><li><a href="FormGroup.html">FormGroup</a></li><li><a href="InfoBox.html">InfoBox</a></li><li><a href="MessageBox.html">MessageBox</a></li><li><a href="NavGroup.html">NavGroup</a></li><li><a href="Pagination.html">Pagination</a></li><li><a href="Step.html">Step</a></li><li><a href="Stepper.html">Stepper</a></li></ul><h3>Components / Hooks</h3><ul><li><a href="useCurrentAdmin.html">useCurrentAdmin</a></li><li><a href="useNotice.html">useNotice</a></li><li><a href="useRecord.html">useRecord</a></li><li><a href="useTranslation.html">useTranslation</a></li></ul><h3>Components / HOC</h3><ul><li><a href="withNotice.html">withNotice</a></li></ul></div><div class="category"><h2>Base</h2><h3>Classes</h3><ul><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li></ul></div><div class="category"><h2>Decorators</h2><h3>Classes</h3><ul><li><a href="ActionDecorator.html">ActionDecorator</a></li><li><a href="PropertyDecorator.html">PropertyDecorator</a></li><li><a href="ResourceDecorator.html">ResourceDecorator</a></li></ul></div><div class="category"><h2>Errors</h2><h3>Classes</h3><ul><li><a href="ConfigurationError.html">ConfigurationError</a></li><li><a href="ForbiddenError.html">ForbiddenError</a></li><li><a href="NotFoundError.html">NotFoundError</a></li><li><a href="NotImplementedError.html">NotImplementedError</a></li><li><a href="ValidationError.html">ValidationError</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Source</p>
+                    <h1>admin-bro/src/frontend/components/design-system/molecules/drawer/drawer.tsx</h1>
+                </header>
+                
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/* eslint-disable no-shadow */
+import styled from 'styled-components'
+import { space, SpaceProps, LayoutProps, variant, layout } from 'styled-system'
+import DrawerFooter from './drawer-footer'
+import { cssClass } from '../../utils/css-class'
+import { DEFAULT_DRAWER_WIDTH } from '../../../../../constants'
+
+/**
+ * Props for Drawer component. Apart from those described below it also extends all
+ * {@link SpaceProps}.
+ *
+ * @alias DrawerProps
+ * @memberof Drawer
+ */
+export type DrawerProps = SpaceProps &amp; LayoutProps &amp; {
+  /** Indicates if drawer should be hidden */
+  isHidden?: boolean;
+  /**
+   * Drawer variant
+   */
+  variant?: 'filter';
+}
+
+const variants = variant({
+  variants: {
+    filter: {
+      bg: 'filterBg',
+      width: '400px',
+      color: 'white',
+      className: cssClass(['Drawer', 'Drawer_Filter']),
+    },
+  },
+})
+
+/**
+ * Drawer component renders a huge side area where {@link BaseActionComponent} renders
+ * all actions where {@link Action.showInDrawer} is set to true.
+ *
+ * You probably don't want to use it directly in your actions, but if you decide to set
+ * `showInDrawer` to true you will probably want to use `DrawerContent` or `DrawerFooter`
+ * components.
+ *
+ * All these components: Drawer, DrawerContent and Drawer Footer extends {@link SpaceProps}.
+ *
+ * Usage
+ * ```javascript
+ * import { Drawer, DrawerProps, DrawerContent, DrawerFooter } from 'admin-bro
+ * ```
+ *
+ * @component
+ * @subcategory Molecules
+ * @example
+ * return (
+ * &lt;Box height="500px">
+ *   &lt;Drawer>
+ *     &lt;DrawerContent>
+ *       &lt;Header.H3>
+ *         &lt;Button size="icon" rounded mr="lg">
+ *           &lt;Icon icon="ChevronRight" />
+ *         &lt;/Button>
+ *         Edit
+ *       &lt;/Header.H3>
+ *       &lt;Box my="x3" p={0}>
+ *         &lt;Button size="sm">
+ *           &lt;Icon icon="Information" />
+ *           Info
+ *         &lt;/Button>
+ *         &lt;Button size="sm" ml="lg">
+ *           &lt;Icon icon="Delete" />
+ *           Delete
+ *         &lt;/Button>
+ *       &lt;/Box>
+ *
+ *     &lt;/DrawerContent>
+ *     &lt;DrawerFooter>
+ *       &lt;Button variant="primary">
+ *         Save
+ *       &lt;/Button>
+ *     &lt;/DrawerFooter>
+ *   &lt;/Drawer>
+ * &lt;/Box>
+ * )
+ */
+export const Drawer = styled.section&lt;DrawerProps>`
+  z-index: 100;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  right: ${({ isHidden, width }): string => (isHidden ? `-${width?.toString()}` : '0px;')};
+  &amp;.hidden {
+    right: ${({ width }): string => (`-${width?.toString()}`)};
+  }
+  box-shadow: 0 3px 6px ${({ theme }): string => theme.colors.grey40};
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 500ms;
+  background: ${({ theme }): string => theme.colors.white};
+  box-sizing: border-box;
+  &amp; > ${DrawerFooter} {
+    ${({ variant, theme }): string => (variant === 'filter' ? `border-color: ${theme.colors.filterInputBorder}` : '')};
+    border-top: 1px solid ${({ theme }): string => theme.colors.primary20};
+  }
+  max-width: 100%;
+  
+  ${space};
+  ${layout};
+  ${variants};
+`
+
+Drawer.defaultProps = {
+  width: DEFAULT_DRAWER_WIDTH,
+  className: cssClass('Drawer'),
+}
+
+export default Drawer
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+
+
+
+<script src="scripts/app.min.js"></script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
