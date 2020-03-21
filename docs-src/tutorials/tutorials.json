@@ -1,6 +1,7 @@
 {
-  "00-installation-instructions": {
-    "title": "01. Installation instructions"
+  "installation-instructions": {
+    "title": "01. Installation instructions",
+    "position": 1
   },
   "01-example": {
     "title": "02. Example App"

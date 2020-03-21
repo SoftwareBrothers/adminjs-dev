@@ -25,7 +25,7 @@
     ],
     "opts": {
         "encoding": "utf8",
-        "destination": "docs",
+        "destination": "docs/vx",
         "readme": "./docs-src/home.md",
         "recurse": true,
         "private": true,
@@ -45,23 +45,27 @@
             }
         },
         "better-docs": {
-            "name": "AdminBro Documentation",
-            "logo": "images/logo.png",
+            "landing": "./docs-src/landing.md",
+            "name": " ",
+            "logo": "images/logo.svg",
+            "title": "AdminBro - Auto-generated admin panel for node.js with react",
             "component": {
                 "wrapper": "./admin-bro/docs-helpers/component.tsx",
                 "entry": [
                     "import 'regenerator-runtime/runtime';"
                 ]
-            },
+        },
             "trackingCode": "<!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->",
             "navigation": [
                 {
-                    "label": "Github",
-                    "href": "https://github.com/SoftwareBrothers/admin-bro"
+                    "label": "Demo",
+                    "href": "https://admin-bro-example-app-staging.herokuapp.com/admin"
                 },
                 {
-                    "label": "Example Application",
-                    "href": "https://admin-bro-example-app.herokuapp.com/admin"
+                    "label": "Get Started",
+                    "className": "is-primary",
+                    "href": "/documentation",
+                    "target": "_blank"
                 }
             ]
         }
