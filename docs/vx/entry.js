@@ -145,10 +145,10 @@ reactComponents['RecordsTableHeader'] = Component37;
 import Component38 from '../../admin-bro/src/frontend/components/design-system/atoms/section.tsx';
 reactComponents['Section'] = Component38;
 
-import Component39 from '../../admin-bro/src/frontend/components/actions/bulk-delete.tsx';
+import Component39 from '../../admin-bro/src/frontend/components/actions/show.tsx';
 reactComponents['ShowAction'] = Component39;
 
-import Component40 from '../../admin-bro/src/frontend/components/actions/show.tsx';
+import Component40 from '../../admin-bro/src/frontend/components/actions/bulk-delete.tsx';
 reactComponents['ShowAction'] = Component40;
 
 import Component41 from '../../admin-bro/src/frontend/components/design-system/molecules/stepper/step.tsx';
