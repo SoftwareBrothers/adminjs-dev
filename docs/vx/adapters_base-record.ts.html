@@ -1,0 +1,423 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
+  <meta charset="utf-8">
+  <title>AdminBro - Auto-generated admin panel for node.js with react adapters/base-record.ts</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <link rel="stylesheet" type="text/css" href="fonts.css"/>
+  
+</head>
+
+<body class="layout">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+             
+                <a class="image" href="index.html">
+                    <img src="images/logo-reg.svg" alt="logo">
+                </a>
+            
+            
+        </div>
+        <div class="menu">
+             
+                <div class="top-buttons">
+                    
+                        <a  href="https://admin-bro-example-app-staging.herokuapp.com/admin"
+                            target="_blank"
+                            class="button is-primary is-outlined"
+                        ?>
+                            Demo
+                        </a>
+                    
+                        <a  href="/tutorial-installation-instructions.html"
+                            target=""
+                            class="button is-primary is-outlined"
+                        ?>
+                            Get Started
+                        </a>
+                    
+                        <a  href="https://join.slack.com/t/adminbro/shared_invite/zt-czfb79t1-0U7pn_KCqd5Ts~lbJK0_RA"
+                            target=""
+                            class="button is-primary"
+                        ?>
+                            <i class="fab fa-slack-hash fa-lg"></i> Join the community
+                        </a>
+                    
+                </div>
+                
+            <div class="navigation">
+                <a href="docs.html" class="link">
+                    API Documentation
+                </a>
+                <div class="dropdown is-hoverable is-right">
+                    <a class="dropdown-trigger link">
+                        Tutorials
+                        <i class="fas fa-chevron-down fa-xs"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-content">
+                        
+                            
+                                <a class="dropdown-item" href="tutorial-installation-instructions.html">
+                                    01. Installation instructions
+                                </a>
+                            
+                                <a class="dropdown-item" href="tutorial-example.html">
+                                    02. Example App
+                                </a>
+                            
+                                <a class="dropdown-item" href="tutorial-passing-resources.html">
+                                    03. Adding resources
+                                </a>
+                            
+                                <a class="dropdown-item" href="tutorial-customizing-resources.html">
+                                    04. Customize resources
+                                </a>
+                            
+                                <a class="dropdown-item" href="tutorial-actions.html">
+                                    05. Customize actions
+                                </a>
+                            
+                                <a class="dropdown-item" href="tutorial-writing-react-components.html">
+                                    06. Writing your own Components
+                                </a>
+                            
+                                <a class="dropdown-item" href="tutorial-custom-dashboard.html">
+                                    07. Customize dashboard
+                                </a>
+                            
+                                <a class="dropdown-item" href="tutorial-rbac.html">
+                                    08. Role-Based Access Control
+                                </a>
+                            
+                                <a class="dropdown-item" href="tutorial-i18n.html">
+                                    09. Internationalization (i18n)
+                                </a>
+                            
+                        
+                        </div>
+                    </div>
+                </div>
+                 
+                    
+                        <a
+                            class="link no-hover"
+                            href="https://github.com/SoftwareBrothers/admin-bro"
+                        >
+                            <i class="fab fa-github fa-3x"></i>
+                        </a>
+                    
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            <nav>
+                
+                    <h2><a href="docs.html">Documentation</a></h2><div class="category"><h3>Classes</h3><ul><li><a href="ApiController.html">ApiController</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3>Interfaces</h3><ul><li><a href="Action.html">Action</a></li><li><a href="PropertyOptions.html">PropertyOptions</a></li><li><a href="ResourceOptions.html">ResourceOptions</a></li></ul><h3>Interfaces / Frontend</h3><ul><li><a href="ActionJSON.html">ActionJSON</a></li><li><a href="PageJSON.html">PageJSON</a></li><li><a href="PropertyJSON.html">PropertyJSON</a></li><li><a href="RecordJSON.html">RecordJSON</a></li><li><a href="ResourceJSON.html">ResourceJSON</a></li></ul></div><div class="category"><h2>Base</h2><h3>Classes</h3><ul><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li></ul></div><div class="category"><h2>Decorators</h2><h3>Classes</h3><ul><li><a href="ActionDecorator.html">ActionDecorator</a></li><li><a href="PropertyDecorator.html">PropertyDecorator</a></li><li><a href="ResourceDecorator.html">ResourceDecorator</a></li></ul></div><div class="category"><h2>Errors</h2><h3>Classes</h3><ul><li><a href="ConfigurationError.html">ConfigurationError</a></li><li><a href="ForbiddenError.html">ForbiddenError</a></li><li><a href="NotFoundError.html">NotFoundError</a></li><li><a href="NotImplementedError.html">NotImplementedError</a></li><li><a href="ValidationError.html">ValidationError</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Source</p>
+                    <h1>adapters/base-record.ts</h1>
+                </header>
+                
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import * as flat from 'flat'
+import _ from 'lodash'
+import BaseResource from './base-resource'
+import ValidationError, { RecordError, PropertyErrors } from '../utils/validation-error'
+import RecordJSON from '../decorators/record-json.interface'
+import { CurrentAdmin } from '../../current-admin.interface'
+
+/**
+ * @alias ParamsType
+ * @memberof BaseRecord
+ */
+export type ParamsType = Record&lt;string, any>
+
+/**
+ * Representation of an particular ORM/ODM Record in given Resource in AdminBro
+ *
+ * @category Base
+ */
+class BaseRecord {
+  /**
+   * Resource to which record belongs
+   */
+  public resource: BaseResource
+
+  /**
+   * Actual record data stored as a flatten object
+   */
+  public params: ParamsType
+
+  /**
+   * Object containing all validation errors: this.errors[path] = 'errorMessage'
+   */
+  public errors: PropertyErrors
+
+  /**
+   * Object containing all populated relations.
+   */
+  public populated: {[key: string]: BaseRecord}
+
+  /**
+   * @param  {ParamsType}   params         all resource data. I.e. field values
+   * @param  {BaseResource} resource       resource to which given record belongs
+   */
+  constructor(params: ParamsType, resource: BaseResource) {
+    this.resource = resource
+    this.params = params ? flat.flatten(params) : {}
+    this.errors = {}
+    this.populated = {}
+  }
+
+  /**
+   * Returns value for given field.
+   * @param  {string} path      path (name) for given field: i.e. 'email' or 'authentication.email'
+   *                            if email is nested within the authentication object in the data
+   *                            store
+   * @return {any}              value for given field
+   */
+  param(path: string): any {
+    if (this.params &amp;&amp; this.params[path]) {
+      return this.params[path]
+    }
+    const subParams = this.namespaceParams(path)
+    if (subParams) {
+      const unflattenSubParams = flat.unflatten(subParams) as Record&lt;string, any>
+      return path.split('.').reduce((m, v) => m[v], unflattenSubParams)
+    }
+    return undefined
+  }
+
+  /**
+   * Returns object containing all params keys starting with prefix
+   * @param   {string}  prefix
+   *
+   * @return  {object | undefined}
+   */
+  namespaceParams(prefix: string): Record&lt;string, any> | void {
+    const regex = new RegExp(`^${prefix}`)
+    const keys = Object.keys(this.params).filter(key => key.match(regex))
+    if (keys.length) {
+      return keys.reduce((memo, key) => ({ ...memo, [key]: this.params[key] }), {})
+    }
+    return undefined
+  }
+
+  /**
+   * Updates given Record in the data store. Practically it invokes
+   * {@link BaseResource.update} method.
+   *
+   * When validation error occurs it stores that to {@link BaseResource.errors}
+   *
+   * @param  {object} params all field with values which has to be updated
+   * @return {Promise&lt;BaseRecord>}        given record (this)
+   */
+  async update(params): Promise&lt;BaseRecord> {
+    try {
+      this.storeParams(params)
+      this.params = await this.resource.update(this.id(), params)
+    } catch (e) {
+      if (e instanceof ValidationError) {
+        this.errors = e.propertyErrors
+        return this
+      }
+      throw e
+    }
+    this.errors = {}
+    return this
+  }
+
+  /**
+   * Saves the record in the database. When record already exists - it updates, otherwise
+   * it creates new one.
+   *
+   * Practically it invokes
+   * {@link BaseResource#create} or {@link BaseResource#update} methods.
+   *
+   * When validation error occurs it stores that to {@link BaseResource#errors}
+   *
+   * @return {Promise&lt;BaseRecord>}        given record (this)
+   */
+  async save(): Promise&lt;BaseRecord> {
+    try {
+      if (this.id()) {
+        this.params = await this.resource.update(this.id(), this.params)
+      } else {
+        this.params = await this.resource.create(this.params)
+      }
+    } catch (e) {
+      if (e instanceof ValidationError) {
+        this.errors = e.propertyErrors
+        return this
+      }
+      throw e
+    }
+    this.errors = {}
+    return this
+  }
+
+
+  /**
+   * Returns uniq id of the Record.
+   * @return {string | number} id of the Record
+   */
+  id(): string {
+    const idProperty = this.resource.properties().find(p => p.isId())
+    if (!idProperty) {
+      throw new Error(`Resource: "${this.resource.id()}" does not have an id property`)
+    }
+    return this.param(idProperty.name())
+  }
+
+  /**
+   * Returns title of the record. Usually title is an value for fields like: email, topic,
+   * title etc.
+   *
+   * Title will be shown in the breadcrumbs for example.
+   *
+   * @return {string} title of the record
+   */
+  title(): string {
+    const nameProperty = this.resource.properties().find(p => p.isTitle())
+    return nameProperty ? this.param(nameProperty.name()) : this.id()
+  }
+
+  /**
+   * Return state of validation for given record
+   * @return {boolean} if record is valid or not.
+   */
+  isValid(): boolean {
+    return Object.keys(this.errors).length === 0
+  }
+
+  /**
+   * Returns error message for given property path (name)
+   * @param  {string} path        (name) of property which we want to check if is valid
+   * @return {RecordError | null}      validation message of null
+   */
+  error(path: string): RecordError | null {
+    return this.errors[path]
+  }
+
+  /**
+   * Populate record relations
+   *
+   * @param   {string}  propertyName  name of the property which should be populated
+   * @param   {BaseRecord}  record    record to which property relates
+   */
+  populate(propertyName: string, record: BaseRecord): void {
+    this.populated[propertyName] = record
+  }
+
+  /**
+   * Returns JSON representation of an record
+   * @param {CurrentAdmin} [currentAdmin]
+   * @return  {RecordJSON}
+   */
+  toJSON(currentAdmin?: CurrentAdmin): RecordJSON {
+    const populated = Object.keys(this.populated).reduce((m, key) => ({
+      ...m,
+      [key]: this.populated[key].toJSON(currentAdmin),
+    }), {})
+    return {
+      params: this.params,
+      populated,
+      errors: this.errors,
+      id: this.id(),
+      title: this.resource.decorate().titleOf(this),
+      recordActions: this.resource.decorate().recordActions(
+        this, currentAdmin,
+      ).map(recordAction => recordAction.toJSON()),
+      bulkActions: this.resource.decorate().bulkActions(
+        this, currentAdmin,
+      ).map(recordAction => recordAction.toJSON()),
+    }
+  }
+
+  /**
+   * Stores incoming payloadData in record params
+   *
+   * @param {object} [payloadData]
+   */
+  storeParams(payloadData?: object): void {
+    this.params = _.merge(this.params, payloadData ? flat.flatten(payloadData) : {})
+  }
+}
+
+export default BaseRecord
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+
+
+
+<script src="scripts/app.min.js"></script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

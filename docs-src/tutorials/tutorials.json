@@ -3,28 +3,28 @@
     "title": "01. Installation instructions",
     "position": 1
   },
-  "01-example": {
+  "example": {
     "title": "02. Example App"
   },
-  "03-passing-resources": {
+  "passing-resources": {
     "title": "03. Adding resources"
   },
-  "04-customizing-resources": {
+  "customizing-resources": {
     "title": "04. Customize resources"
   },
-  "05-actions": {
+  "actions": {
     "title": "05. Customize actions"
   },
-  "06-writing-react-components": {
+  "writing-react-components": {
     "title": "06. Writing your own Components"
   },
-  "07-custom-dashboard": {
+  "custom-dashboard": {
     "title": "07. Customize dashboard"
   },
-  "08-rbac": {
+  "rbac": {
     "title": "08. Role-Based Access Control"
   },
-  "09-i18n": {
+  "i18n": {
     "title": "09. Internationalization (i18n)"
   }
 }

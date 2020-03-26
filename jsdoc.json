@@ -46,8 +46,7 @@
         },
         "better-docs": {
             "landing": "./docs-src/landing.html",
-            "name": " ",
-            "logo": "images/logo.svg",
+            "logo": "images/logo-reg.svg",
             "title": "AdminBro - Auto-generated admin panel for node.js with react",
             "component": {
                 "wrapper": "./admin-bro/docs-helpers/component.tsx",
@@ -57,7 +56,8 @@
         },
             "trackingCode": "<!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->",
             "head": "<link rel=\"stylesheet\" type=\"text/css\" href=\"fonts.css\"/>",
-            "navigation": [
+
+            "navButtons": [
                 {
                     "label": "Demo",
                     "href": "https://admin-bro-example-app-staging.herokuapp.com/admin",
@@ -74,7 +74,12 @@
                     "href": "https://join.slack.com/t/adminbro/shared_invite/zt-czfb79t1-0U7pn_KCqd5Ts~lbJK0_RA",
                     "className": "is-primary"
                 }
-            ]
+            ],
+            "navLinks": [{
+                "label": "<i class=\"fab fa-github fa-3x\"></i>",
+                "href": "https://github.com/SoftwareBrothers/admin-bro",
+                "className": "no-hover"
+            }]
         }
     }
 }
