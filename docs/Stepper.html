@@ -289,13 +289,13 @@ Stepper makes sense when you use it along with <a href="Step.html">Step</a> comp
     
         
 
-<div id='7zh70jcnrw4k8apbnkl'></div>
+<div id='xtj2u1eimvrk8as7sej'></div>
 
 <script>
   ReactDOM.render(ReactWrapper({
     example: "const { useState } = React\nconst steps = [{\n  number: 1, label: \"Do this first\",\n}, {\n  number: 2, label: \"Don't forget this\",\n}, {\n  number: 3, label: \"And finally this\",\n}]\nconst ComponentWithStepper = () => {\n  const [currentStep, setCurrentStep] = useState(1)\n  return (\n  <Box>\n    <Stepper>\n    {steps.map(step => (\n       <Step\n         active={currentStep === step.number}\n         completed={currentStep > step.number}\n         onClick={setCurrentStep}\n         number={step.number}\n       >\n         {step.label}\n       </Step>\n    ))}\n    </Stepper>\n  </Box>\n  )\n}\n\nreturn (<ComponentWithStepper />)",
-    uniqId: "7zh70jcnrw4k8apbnkl",
-  }), document.getElementById('7zh70jcnrw4k8apbnkl'));
+    uniqId: "xtj2u1eimvrk8as7sej",
+  }), document.getElementById('xtj2u1eimvrk8as7sej'));
 </script>
     
 
@@ -304,13 +304,13 @@ Stepper makes sense when you use it along with <a href="Step.html">Step</a> comp
     
         
 
-<div id='f436gxgrqllk8apbnkl'></div>
+<div id='5e0pzac35h3k8as7sej'></div>
 
 <script>
   ReactDOM.render(ReactWrapper({
     example: "const { useState } = React\nconst steps = [{\n  number: 1, label: \"Do this first\",\n}, {\n  number: 2, label: \"Don't forget this\",\n}, {\n  number: 3, label: \"And finally this\",\n}]\nconst ComponentWithStepper = () => {\n  const [currentStep, setCurrentStep] = useState(1)\n  return (\n  <Box>\n    <Stepper>\n    {steps.map(step => (\n       <Step\n         active={currentStep === step.number}\n         completed={currentStep > step.number}\n         number={step.number}\n       >\n         {step.label}\n       </Step>\n    ))}\n    </Stepper>\n    <Box mt=\"xl\">\n      <Button\n        disabled={currentStep === 1}\n        mr=\"default\"\n        onClick={() => setCurrentStep(currentStep - 1)}\n      >\n        Previous Step\n      </Button>\n      <Button\n        disabled={currentStep === 3}\n        variant=\"primary\"\n        onClick={() => setCurrentStep(currentStep + 1)}\n      >\n        Next Step\n      </Button>\n    </Box>\n  </Box>\n  )\n}\n\nreturn (<ComponentWithStepper />)",
-    uniqId: "f436gxgrqllk8apbnkl",
-  }), document.getElementById('f436gxgrqllk8apbnkl'));
+    uniqId: "5e0pzac35h3k8as7sej",
+  }), document.getElementById('5e0pzac35h3k8as7sej'));
 </script>
     
 
