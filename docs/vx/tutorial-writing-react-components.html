@@ -128,7 +128,7 @@
                  
                     
                         <a
-                            class="link no-hover"
+                            class="link user-link no-hover"
                             href="https://github.com/SoftwareBrothers/admin-bro"
                         >
                             <i class="fab fa-github fa-3x"></i>
@@ -196,14 +196,14 @@ you proceed - make sure you know how <a href="https://reactjs.org/">react</a> wo
 <ul>
 <li>overriding how properties are rendered in <a href="PropertyOptions.html#components">PropertyOptions#components</a> by using <code>components</code> object (<strong>PLURAL</strong>)</li>
 <li>creating new or update default actions by overriding <a href="Action.html#component">Action#component</a> param</li>
-<li>changing how the dashboard looks like by using <a href="AdminBroOptions.html#dashboard">dashboard.component</a> param.</li>
-<li>creating new pages by using <a href="AdminBroOptions.html#AdminPage">AdminPage</a>.</li>
+<li>changing how the dashboard looks like by using dashboard.component param.</li>
+<li>creating new pages by using AdminPage.</li>
 </ul>
 <h2>Requiring component</h2>
-<p>First of all - you have to require them by using <a href="AdminBro.html#.bundle">AdminBro.bundle</a> function. What it does -
+<p>First of all - you have to require them by using AdminBro.bundle function. What it does -
 it gives your component an unique ID and sends it to the <strong>bundling</strong> process.</p>
 <p>You can do it like this: <code>{ component: AdminBro.bundle('./path-to-your-jsx-or-tsx-file') }</code></p>
-<p>All files required by <a href="AdminBro.html#.bundle">AdminBro.bundle</a> has to have one default export - the one with your <a href="https://reactjs.org/">react</a> component.</p>
+<p>All files required by AdminBro.bundle has to have one default export - the one with your <a href="https://reactjs.org/">react</a> component.</p>
 <p>You can use either <code>.jsx</code> or <code>.tsx</code> extension for your components.</p>
 <h2>Dependencies</h2>
 <p>AdminBro bundler gives you the ability to import following dependencies without the need of requiring them in your <code>package.json</code> file:</p>
@@ -247,8 +247,8 @@ export default withRouter(YourComponent)
 <p>In your components, you can use props passed by their controlling components.</p>
 <p>Currently we have 2 controlling components:</p>
 <ul>
-<li>one for an action: <a href="BaseActionComponent.html">BaseActionComponent</a> with <a href="BaseActionComponent.html#ActionProps">ActionProps</a></li>
-<li>and one for custom property field: <a href="BasePropertyComponent.html">BasePropertyComponent</a> with <a href="BasePropertyComponent.html#BasePropertyProps">BasePropertyProps</a></li>
+<li>one for an action: BaseActionComponent with ActionProps</li>
+<li>and one for custom property field: BasePropertyComponent with BasePropertyProps</li>
 </ul>
 <p>Check out their documentation to see available <strong>props</strong></p>
 <p>BTW - Dashboard and Pages don't have any controlling component - so no props passed there.</p>
@@ -261,17 +261,17 @@ const YourComponent (props) => {(
 )}
 </code></pre>
 <p>Each of the components is described with the playground option, so make sure to check out all the documentation of all the components.</p>
-<p>One of the most versatile component is a <a href="BasePropertyComponent.html">BasePropertyComponent</a>. It allows you to render any property.
-Combined with <a href="useRecord.html">useRecord</a> is a powerful tool for building forms.</p>
+<p>One of the most versatile component is a BasePropertyComponent. It allows you to render any property.
+Combined with useRecord is a powerful tool for building forms.</p>
 <h2>Theming</h2>
-<p>We support <a href="Theme.html">Theme</a> compatible with https://system-ui.com/theme standard.</p>
+<p>We support Theme compatible with https://system-ui.com/theme standard.</p>
 <p>In order to override default colors you an put your values in AdminBroOptions.branding.</p>
 <h3>Using style props</h3>
 <p>AdminBro components are supercharged with multiple props which control styling. For instance in order
-to change color of a <a href="Button.html">Button</a> you can pass backgroundColor (bg) from the <a href="Theme.html">Theme</a> like that:</p>
+to change color of a Button you can pass backgroundColor (bg) from the Theme like that:</p>
 <pre class="prettyprint source lang-javascript"><code>&lt;Button bg=&quot;primary60&quot;>&lt;/Button>
 </code></pre>
-<p>For all possible options visit the <a href="Theme.html">Theme</a> description.</p>
+<p>For all possible options visit the Theme description.</p>
 <h3>Adding custom css to components</h3>
 <p>If using style props is not enough - you can always pass your custom CSS. So for instance let's assume
 that you would like to override CSS in a Button component. You can do this like that:</p>
@@ -287,7 +287,7 @@ const MyButton = styled(Button)`
 <h2>Using other AdminBro frontend classes and objects</h2>
 <p>AdminBro also exposes following classes:</p>
 <ul>
-<li><a href="ApiClient.html">ApiClient</a></li>
+<li>ApiClient</li>
 <li><a href="ViewHelpers.html">ViewHelpers</a></li>
 </ul>
 <p>You can use them like this:</p>

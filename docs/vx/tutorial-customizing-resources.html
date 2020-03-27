@@ -128,7 +128,7 @@
                  
                     
                         <a
-                            class="link no-hover"
+                            class="link user-link no-hover"
                             href="https://github.com/SoftwareBrothers/admin-bro"
                         >
                             <i class="fab fa-github fa-3x"></i>
@@ -203,7 +203,7 @@ const adminBroOptions = {
 }
 </code></pre>
 <p>This will group all Resources together in a &quot;Content&quot; category in a sidebar - and it assigns Accessibility
-icon to it. Shat you give here is passed to <a href="Icon.html">Icon</a> Component.</p>
+icon to it. Shat you give here is passed to Icon Component.</p>
 <p>By default all the texts are &quot;Start Cased&quot;. You can provide any translation text to it by using
 translation label: 09-i18n.</p>
 <h3>Renaming a <strong>Resource</strong></h3>
@@ -261,7 +261,7 @@ present just 3 of them in a different order.</p>
 <p><strong>Important notice about overriding xxxProperties</strong>: both <em>{ propertyName.position }</em> and <em>{ propertyName.isVisible }</em> will be overriden by <em>xxxProperties</em> if you set it.</p>
 <h3>{ <strong>[propertyName].type</strong> } of a property</h3>
 <p>By default types of properties are computed by adapters, see 03-passing-resources tutorial.</p>
-<p>So when you have a <strong>DATE</strong> field it will be rendered as a <strong>date</strong> with <a href="DatePicker.html">DatePicker</a> and custom <strong>from</strong> - <strong>to</strong> filter.</p>
+<p>So when you have a <strong>DATE</strong> field it will be rendered as a <strong>date</strong> with DatePicker and custom <strong>from</strong> - <strong>to</strong> filter.</p>
 <p>You can change this behavior by modifying its type. So, for instance, you can add a richtext editor to a  <strong>content</strong> like that:</p>
 <pre class="prettyprint source lang-javascript"><code>const adminBroOptions = {
   resources: [
