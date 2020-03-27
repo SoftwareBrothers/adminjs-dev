@@ -1,81 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
-    <meta charset="utf-8">
-    <title>JSDoc: Theme</title>
 
-    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="./build/entry.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link href="https://fonts.googleapis.com/css?family=Muli:100,400,700|Oswald:300|Inconsolata,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
-    <link type="text/css" rel="stylesheet" href="styles/app.min.css">
-    <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+<head>
+  <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminBro - Auto-generated admin panel for node.js with react Theme</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <link rel="stylesheet" type="text/css" href="fonts.css"/>
+  
 </head>
 
-<body>
+<body class="layout">
     <div id="stickyNavbarOverlay"></div>
-    <div class="top-navbar">
-        <div class="container">
-            <nav class="navbar" role="navigation" aria-label="main navigation">
-                <div class="navbar-brand">
-                     
-                        <img src="images/logo.png" alt="logo">
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+             
+                <a class="image" href="index.html">
+                    <img src="images/logo-reg.svg" alt="logo">
+                </a>
+            
+            
+        </div>
+        <div class="menu">
+             
+                <div class="top-buttons">
                     
-                     
-                        <h1 class="navbar-item">AdminBro Documentation</h1>
+                        <a  href="https://admin-bro-example-app-staging.herokuapp.com/admin"
+                            target="_blank"
+                            class="button is-primary is-outlined"
+                        ?>
+                            Demo
+                        </a>
                     
-                    <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                        <span aria-hidden="true"></span>
-                    </a>
+                        <a  href="/tutorial-installation-instructions.html"
+                            target=""
+                            class="button is-primary is-outlined"
+                        ?>
+                            Get Started
+                        </a>
+                    
+                        <a  href="https://join.slack.com/t/adminbro/shared_invite/zt-czfb79t1-0U7pn_KCqd5Ts~lbJK0_RA"
+                            target=""
+                            class="button is-primary"
+                        ?>
+                            <i class="fab fa-slack-hash fa-lg"></i> Join the community
+                        </a>
+                    
                 </div>
-                 
-                <div class="navbar-menu">
-                    <div class="navbar-end">
-                    
-                        <div class="navbar-item">
-                            <a href="https://github.com/SoftwareBrothers/admin-bro" target="_blank">
-                                Github
-                            </a>
+                
+            <div class="navigation">
+                <a href="docs.html" class="link">
+                    API Documentation
+                </a>
+                <div class="dropdown is-hoverable is-right">
+                    <a class="dropdown-trigger link">
+                        Tutorials
+                        <i class="fas fa-chevron-down fa-xs"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-content">
+                        
+                            
+                                <a class="dropdown-item" href="tutorial-installation-instructions.html">
+                                    01. Installation instructions
+                                </a>
+                            
+                                <a class="dropdown-item" href="tutorial-example.html">
+                                    02. Example App
+                                </a>
+                            
+                                <a class="dropdown-item" href="tutorial-passing-resources.html">
+                                    03. Adding resources
+                                </a>
+                            
+                                <a class="dropdown-item" href="tutorial-customizing-resources.html">
+                                    04. Customize resources
+                                </a>
+                            
+                                <a class="dropdown-item" href="tutorial-actions.html">
+                                    05. Customize actions
+                                </a>
+                            
+                                <a class="dropdown-item" href="tutorial-writing-react-components.html">
+                                    06. Writing your own Components
+                                </a>
+                            
+                                <a class="dropdown-item" href="tutorial-custom-dashboard.html">
+                                    07. Customize dashboard
+                                </a>
+                            
+                                <a class="dropdown-item" href="tutorial-rbac.html">
+                                    08. Role-Based Access Control
+                                </a>
+                            
+                                <a class="dropdown-item" href="tutorial-i18n.html">
+                                    09. Internationalization (i18n)
+                                </a>
+                            
+                        
                         </div>
-                    
-                        <div class="navbar-item">
-                            <a href="https://admin-bro-example-app.herokuapp.com/admin" target="_blank">
-                                Example Application
-                            </a>
-                        </div>
-                    
                     </div>
                 </div>
+                 
+                    
+                        <a
+                            class="link user-link no-hover"
+                            href="https://github.com/SoftwareBrothers/admin-bro"
+                        >
+                            <i class="fab fa-github fa-3x"></i>
+                        </a>
+                    
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            <nav>
+                
+                    <h2><a href="docs.html">Documentation</a></h2><div class="category"><h3>Modules</h3><ul><li><a href="module-admin-bro-expressjs.html">admin-bro-expressjs</a></li><li><a href="module-admin-bro-firebase-functions.html">admin-bro-firebase-functions</a></li><li><a href="module-admin-bro-hapijs.html">admin-bro-hapijs</a></li><li><a href="module-admin-bro-mongoose.html">admin-bro-mongoose</a></li><li><a href="module-admin-bro-sequelizejs.html">admin-bro-sequelizejs</a></li></ul><h3>Classes</h3><ul><li><a href="AdminBro.html">AdminBro</a></li><li><a href="ApiClient.html">ApiClient</a></li><li><a href="ApiController.html">ApiController</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3>Interfaces</h3><ul><li><a href="Action.html">Action</a></li><li><a href="AdminBroOptions.html">AdminBroOptions</a></li><li><a href="PropertyOptions.html">PropertyOptions</a></li><li><a href="ResourceOptions.html">ResourceOptions</a></li><li><a href="TranslateFunctions.html">TranslateFunctions</a></li></ul><h3>Interfaces / Frontend</h3><ul><li><a href="ActionJSON.html">ActionJSON</a></li><li><a href="PageJSON.html">PageJSON</a></li><li><a href="PropertyJSON.html">PropertyJSON</a></li><li><a href="RecordJSON.html">RecordJSON</a></li><li><a href="ResourceJSON.html">ResourceJSON</a></li><li><a href="Theme.html">Theme</a></li></ul><h3>Components / Application</h3><ul><li><a href="ActionButton.html">ActionButton</a></li><li><a href="ActionHeader.html">ActionHeader</a></li><li><a href="BaseActionComponent.html">BaseActionComponent</a></li><li><a href="BasePropertyComponent.html">BasePropertyComponent</a></li><li><a href="DrawerPortal.html">DrawerPortal</a></li><li><a href="RecordsTableHeader.html">RecordsTableHeader</a></li></ul><h3>Components / Atoms</h3><ul><li><a href="Badge.html">Badge</a></li><li><a href="Box.html">Box</a></li><li><a href="Button.html">Button</a></li><li><a href="CheckBox.html">CheckBox</a></li><li><a href="Header.html">Header</a></li><li><a href="Icon.html">Icon</a></li><li><a href="Illustration.html">Illustration</a></li><li><a href="Input.html">Input</a></li><li><a href="Label.html">Label</a></li><li><a href="Link.html">Link</a></li><li><a href="Loader.html">Loader</a></li><li><a href="Placeholder.html">Placeholder</a></li><li><a href="Radio.html">Radio</a></li><li><a href="Section.html">Section</a></li><li><a href="Table.html">Table</a></li><li><a href="Text.html">Text</a></li><li><a href="TextArea.html">TextArea</a></li></ul><h3>Components / Molecules</h3><ul><li><a href="DatePicker.html">DatePicker</a></li><li><a href="Drawer.html">Drawer</a></li><li><a href="DropDown.html">DropDown</a></li><li><a href="DropZone.html">DropZone</a></li><li><a href="DropZoneItem.html">DropZoneItem</a></li><li><a href="FormGroup.html">FormGroup</a></li><li><a href="InfoBox.html">InfoBox</a></li><li><a href="MessageBox.html">MessageBox</a></li><li><a href="NavGroup.html">NavGroup</a></li><li><a href="Pagination.html">Pagination</a></li><li><a href="Step.html">Step</a></li><li><a href="Stepper.html">Stepper</a></li></ul><h3>Components / Hooks</h3><ul><li><a href="useCurrentAdmin.html">useCurrentAdmin</a></li><li><a href="useNotice.html">useNotice</a></li><li><a href="useRecord.html">useRecord</a></li><li><a href="useTranslation.html">useTranslation</a></li></ul><h3>Components / HOC</h3><ul><li><a href="withNotice.html">withNotice</a></li></ul></div><div class="category"><h2>Base</h2><h3>Classes</h3><ul><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li></ul></div><div class="category"><h2>Decorators</h2><h3>Classes</h3><ul><li><a href="ActionDecorator.html">ActionDecorator</a></li><li><a href="PropertyDecorator.html">PropertyDecorator</a></li><li><a href="ResourceDecorator.html">ResourceDecorator</a></li></ul></div><div class="category"><h2>Errors</h2><h3>Classes</h3><ul><li><a href="ConfigurationError.html">ConfigurationError</a></li><li><a href="ForbiddenError.html">ForbiddenError</a></li><li><a href="NotFoundError.html">NotFoundError</a></li><li><a href="NotImplementedError.html">NotImplementedError</a></li><li><a href="ValidationError.html">ValidationError</a></li></ul></div>
                 
             </nav>
         </div>
-    </div>
-    <div class="container">
-        <div class="columns">
-            <div class="column is-3" id="sidebarNav">
-                <div class="sidebar">
-                    <nav>
-                        <h2><a href="index.html">Home</a></h2><div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-00-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-01-example.html">02. Example App</a></li><li><a href="tutorial-03-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-04-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-05-actions.html">05. Customize actions</a></li><li><a href="tutorial-06-writing-react-components.html">06. Writing your own Components</a></li><li><a href="tutorial-07-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-08-rbac.html">08. Role-Based Access Control</a></li><li><a href="tutorial-09-i18n.html">09. Internationalization (i18n)</a></li></ul><h3>Modules</h3><ul><li><a href="module-admin-bro-expressjs.html">admin-bro-expressjs</a></li><li><a href="module-admin-bro-firebase-functions.html">admin-bro-firebase-functions</a></li><li><a href="module-admin-bro-hapijs.html">admin-bro-hapijs</a></li><li><a href="module-admin-bro-mongoose.html">admin-bro-mongoose</a></li><li><a href="module-admin-bro-sequelizejs.html">admin-bro-sequelizejs</a></li></ul><h3>Classes</h3><ul><li><a href="AdminBro.html">AdminBro</a></li><li><a href="ApiClient.html">ApiClient</a></li><li><a href="ApiController.html">ApiController</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3>Interfaces</h3><ul><li><a href="Action.html">Action</a></li><li><a href="AdminBroOptions.html">AdminBroOptions</a></li><li><a href="PropertyOptions.html">PropertyOptions</a></li><li><a href="ResourceOptions.html">ResourceOptions</a></li><li><a href="TranslateFunctions.html">TranslateFunctions</a></li></ul><h3>Interfaces / Frontend</h3><ul><li><a href="ActionJSON.html">ActionJSON</a></li><li><a href="PageJSON.html">PageJSON</a></li><li><a href="PropertyJSON.html">PropertyJSON</a></li><li><a href="RecordJSON.html">RecordJSON</a></li><li><a href="ResourceJSON.html">ResourceJSON</a></li><li><a href="Theme.html">Theme</a></li></ul><h3>Components / Application</h3><ul><li><a href="ActionButton.html">ActionButton</a></li><li><a href="ActionHeader.html">ActionHeader</a></li><li><a href="BaseActionComponent.html">BaseActionComponent</a></li><li><a href="BasePropertyComponent.html">BasePropertyComponent</a></li><li><a href="DrawerPortal.html">DrawerPortal</a></li><li><a href="RecordsTableHeader.html">RecordsTableHeader</a></li></ul><h3>Components / Atoms</h3><ul><li><a href="Badge.html">Badge</a></li><li><a href="Box.html">Box</a></li><li><a href="Button.html">Button</a></li><li><a href="CheckBox.html">CheckBox</a></li><li><a href="Header.html">Header</a></li><li><a href="Icon.html">Icon</a></li><li><a href="Illustration.html">Illustration</a></li><li><a href="Input.html">Input</a></li><li><a href="Label.html">Label</a></li><li><a href="Link.html">Link</a></li><li><a href="Loader.html">Loader</a></li><li><a href="Placeholder.html">Placeholder</a></li><li><a href="Radio.html">Radio</a></li><li><a href="Section.html">Section</a></li><li><a href="Table.html">Table</a></li><li><a href="Text.html">Text</a></li><li><a href="TextArea.html">TextArea</a></li></ul><h3>Components / Molecules</h3><ul><li><a href="DatePicker.html">DatePicker</a></li><li><a href="Drawer.html">Drawer</a></li><li><a href="DropDown.html">DropDown</a></li><li><a href="DropZone.html">DropZone</a></li><li><a href="DropZoneItem.html">DropZoneItem</a></li><li><a href="FormGroup.html">FormGroup</a></li><li><a href="InfoBox.html">InfoBox</a></li><li><a href="MessageBox.html">MessageBox</a></li><li><a href="NavGroup.html">NavGroup</a></li><li><a href="Pagination.html">Pagination</a></li><li><a href="Step.html">Step</a></li><li><a href="Stepper.html">Stepper</a></li></ul><h3>Components / Hooks</h3><ul><li><a href="useCurrentAdmin.html">useCurrentAdmin</a></li><li><a href="useNotice.html">useNotice</a></li><li><a href="useRecord.html">useRecord</a></li><li><a href="useTranslation.html">useTranslation</a></li></ul><h3>Components / HOC</h3><ul><li><a href="withNotice.html">withNotice</a></li></ul></div><div class="category"><h2>Base</h2><h3>Classes</h3><ul><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li></ul></div><div class="category"><h2>Decorators</h2><h3>Classes</h3><ul><li><a href="ActionDecorator.html">ActionDecorator</a></li><li><a href="PropertyDecorator.html">PropertyDecorator</a></li><li><a href="ResourceDecorator.html">ResourceDecorator</a></li></ul></div><div class="category"><h2>Errors</h2><h3>Classes</h3><ul><li><a href="ConfigurationError.html">ConfigurationError</a></li><li><a href="ForbiddenError.html">ForbiddenError</a></li><li><a href="NotFoundError.html">NotFoundError</a></li><li><a href="NotImplementedError.html">NotImplementedError</a></li><li><a href="ValidationError.html">ValidationError</a></li></ul></div>
-                    </nav>
-                </div>
-            </div>
-            <div class="column is-9-desktop">
-                <div class="content" id="main-content-wrapper">
-                    <header class="page-title">
-                        <p>Interface</p>
-                        <h1>Theme</h1>
-                    </header>
-                    
-                    
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Interface</p>
+                    <h1>Theme</h1>
+                </header>
+                
 
 
 
@@ -218,7 +300,7 @@ https://styled-system.com/responsive-styles</p>
 
     
         <div class='vertical-section'>
-            <h3 class="title"><span>Members</span></h3>
+            <h1>Members</h1>
             <div class="members">
             
                 <div class="member">
@@ -257,29 +339,29 @@ https://styled-system.com/responsive-styles</p>
     <h5 class="subsection-title">Properties:</h5>
 
     
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
 
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
+            <th>Type</th>
 
-        <th>Type</th>
+            
 
-        
+            
+            <th>Default</th>
+            
 
-        
-        <th>Default</th>
-        
+            <th class="last">Description</th>
+        </tr>
+        </thead>
 
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
+        <tbody>
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>0</code></td>
@@ -307,8 +389,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>1</code></td>
@@ -336,8 +418,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>2</code></td>
@@ -365,8 +447,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>3</code></td>
@@ -394,10 +476,10 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"></td>
 </tr>
 
-    
-    </tbody>
-</table>
-
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -477,29 +559,29 @@ https://styled-system.com/responsive-styles</p>
     <h5 class="subsection-title">Properties:</h5>
 
     
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
 
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
+            <th>Type</th>
 
-        <th>Type</th>
+            
 
-        
+            
+            <th>Default</th>
+            
 
-        
-        <th>Default</th>
-        
+            <th class="last">Description</th>
+        </tr>
+        </thead>
 
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
+        <tbody>
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>primary100</code></td>
@@ -527,8 +609,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="background: #4268F6; height: 20px;" /></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>primary80</code></td>
@@ -556,8 +638,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="background: #6483F8; height: 20px;" /></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>primary60</code></td>
@@ -585,8 +667,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="background: #879FFA; height: 20px;" /></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>primary40</code></td>
@@ -614,8 +696,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="background: #A9BAFA; height: 20px;" /></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>primary20</code></td>
@@ -643,8 +725,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="background: #CBD5FD; height: 20px;" /></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>accent</code></td>
@@ -672,8 +754,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="background: #38CAF1; height: 20px;" /></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>love</code></td>
@@ -701,8 +783,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="background: #e6282b; height: 20px;" /></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>grey100</code></td>
@@ -730,8 +812,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="background: #1C1C38; height: 20px;" /></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>grey80</code></td>
@@ -759,8 +841,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="background: #454655; height: 20px;" /></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>grey60</code></td>
@@ -788,8 +870,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="background: #898A9A; height: 20px;" /></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>grey40</code></td>
@@ -817,8 +899,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="background: #C0C0CA; height: 20px;" /></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>grey20</code></td>
@@ -846,8 +928,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="background: #F6F7FB; height: 20px;" /></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>white</code></td>
@@ -875,8 +957,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="background: #fff; height: 20px;" /></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>errorDark</code></td>
@@ -904,8 +986,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="background: #DE405D; height: 20px;" /></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>error</code></td>
@@ -933,8 +1015,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="background: #FF4567; height: 20px;" /></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>errorLight</code></td>
@@ -962,8 +1044,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="background: #FFA5B5; height: 20px;" /></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>successDark</code></td>
@@ -991,8 +1073,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="background: #32A887; height: 20px;" /></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>success</code></td>
@@ -1020,8 +1102,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="background: #70C9B0; height: 20px;" /></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>successLight</code></td>
@@ -1049,8 +1131,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="background: #DBF0F1; height: 20px;" /></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>infoDark</code></td>
@@ -1078,8 +1160,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="background: #4268F6; height: 20px;" /></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>info</code></td>
@@ -1107,8 +1189,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="background: #879FFA; height: 20px;" /></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>infoLight</code></td>
@@ -1136,8 +1218,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="background: #CBD5FD; height: 20px;" /></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>filterBg</code></td>
@@ -1165,8 +1247,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="background: #343F87; height: 20px;" /></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>hoverBg</code></td>
@@ -1194,8 +1276,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="background: #535B8E; height: 20px;" /></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>inputBorder</code></td>
@@ -1223,8 +1305,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="background: #898A9A; height: 20px;" /></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>separator</code></td>
@@ -1252,8 +1334,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="background: #C0C0CA; height: 20px;" /></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>highlight</code></td>
@@ -1281,8 +1363,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="background: #F6F7FB; height: 20px;" /></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>filterInputBorder</code></td>
@@ -1310,8 +1392,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="background: rgba(255,255,255,0.15); height: 20px;" /></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>filterDisabled</code></td>
@@ -1339,8 +1421,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="background: rgba(83,91,142,0.05); height: 20px;" /></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>bg</code></td>
@@ -1368,10 +1450,10 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="background: #F6F7FB; height: 20px;" /></td>
 </tr>
 
-    
-    </tbody>
-</table>
-
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -1451,29 +1533,29 @@ https://styled-system.com/responsive-styles</p>
     <h5 class="subsection-title">Properties:</h5>
 
     
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
 
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
+            <th>Type</th>
 
-        <th>Type</th>
+            
 
-        
+            
+            <th>Default</th>
+            
 
-        
-        <th>Default</th>
-        
+            <th class="last">Description</th>
+        </tr>
+        </thead>
 
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
+        <tbody>
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>xs</code></td>
@@ -1501,8 +1583,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="font-size: 10px;">'xs' font size</div></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>sm</code></td>
@@ -1530,8 +1612,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="font-size: 12px;">'sm' font size</div></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>default</code></td>
@@ -1559,8 +1641,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="font-size: 14px;">'default' font size</div></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>lg</code></td>
@@ -1588,8 +1670,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="font-size: 16px;">'lg' font size</div></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>xl</code></td>
@@ -1617,8 +1699,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="font-size: 18px;">'xl' font size</div></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>h4</code></td>
@@ -1646,8 +1728,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="font-size: 24px;">'h4' font size</div></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>h3</code></td>
@@ -1675,8 +1757,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="font-size: 28px;">'h3' font size</div></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>h2</code></td>
@@ -1704,8 +1786,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="font-size: 32px;">'h2' font size</div></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>h1</code></td>
@@ -1733,10 +1815,10 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"><div style="font-size: 40px;">'h1' font size</div></td>
 </tr>
 
-    
-    </tbody>
-</table>
-
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -1816,29 +1898,29 @@ https://styled-system.com/responsive-styles</p>
     <h5 class="subsection-title">Properties:</h5>
 
     
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
 
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
+            <th>Type</th>
 
-        <th>Type</th>
+            
 
-        
+            
+            <th>Default</th>
+            
 
-        
-        <th>Default</th>
-        
+            <th class="last">Description</th>
+        </tr>
+        </thead>
 
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
+        <tbody>
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>lighter</code></td>
@@ -1866,8 +1948,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>normal</code></td>
@@ -1895,8 +1977,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>bold</code></td>
@@ -1924,10 +2006,10 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"></td>
 </tr>
 
-    
-    </tbody>
-</table>
-
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -2007,29 +2089,29 @@ https://styled-system.com/responsive-styles</p>
     <h5 class="subsection-title">Properties:</h5>
 
     
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
 
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
+            <th>Type</th>
 
-        <th>Type</th>
+            
 
-        
+            
+            <th>Default</th>
+            
 
-        
-        <th>Default</th>
-        
+            <th class="last">Description</th>
+        </tr>
+        </thead>
 
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
+        <tbody>
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>sm</code></td>
@@ -2057,8 +2139,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>default</code></td>
@@ -2086,8 +2168,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>lg</code></td>
@@ -2115,8 +2197,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>xl</code></td>
@@ -2144,8 +2226,8 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>xxl</code></td>
@@ -2173,10 +2255,10 @@ https://styled-system.com/responsive-styles</p>
     <td class="description last"></td>
 </tr>
 
-    
-    </tbody>
-</table>
-
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -2259,27 +2341,27 @@ by <a href="Theme.html">ShadowProps</a></p>
     <h5 class="subsection-title">Properties:</h5>
 
     
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
 
-<table class="props">
-    <thead>
-    <tr>
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
         
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-        
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>login</code></td>
@@ -2301,8 +2383,8 @@ by <a href="Theme.html">ShadowProps</a></p>
     <td class="description last"><div class="shadow-div" style="box-shadow: 0 15px 24px 0 rgba(137,138,154,0.15);"/></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>cardHover</code></td>
@@ -2324,8 +2406,8 @@ by <a href="Theme.html">ShadowProps</a></p>
     <td class="description last"><div class="shadow-div" style="box-shadow: 0 4px 12px 0 rgba(137,138,154,0.4);"/></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>drawer</code></td>
@@ -2347,8 +2429,8 @@ by <a href="Theme.html">ShadowProps</a></p>
     <td class="description last"><div class="shadow-div" style="box-shadow: -2px 0 8px 0 rgba(137,138,154,0.2);"/></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>card</code></td>
@@ -2370,8 +2452,8 @@ by <a href="Theme.html">ShadowProps</a></p>
     <td class="description last"><div class="shadow-div" style="box-shadow: 0 1px 6px 0 rgba(137,138,154,0.4);"/></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>inputFocus</code></td>
@@ -2393,8 +2475,8 @@ by <a href="Theme.html">ShadowProps</a></p>
     <td class="description last"><div class="shadow-div" style="box-shadow: 0 2px 4px 0 rgba(135,159,250,0.4);"/></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>buttonFocus</code></td>
@@ -2416,10 +2498,10 @@ by <a href="Theme.html">ShadowProps</a></p>
     <td class="description last"><div class="shadow-div" style="box-shadow: 0 4px 6px 0 rgba(56,202,241,0.3);"/></td>
 </tr>
 
-    
-    </tbody>
-</table>
-
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -2499,29 +2581,29 @@ by <a href="Theme.html">ShadowProps</a></p>
     <h5 class="subsection-title">Properties:</h5>
 
     
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
 
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
+            <th>Type</th>
 
-        <th>Type</th>
+            
 
-        
+            
+            <th>Default</th>
+            
 
-        
-        <th>Default</th>
-        
+            <th class="last">Description</th>
+        </tr>
+        </thead>
 
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
+        <tbody>
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>navbarHeight</code></td>
@@ -2549,8 +2631,8 @@ by <a href="Theme.html">ShadowProps</a></p>
     <td class="description last"></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>sidebarWidth</code></td>
@@ -2578,10 +2660,10 @@ by <a href="Theme.html">ShadowProps</a></p>
     <td class="description last"></td>
 </tr>
 
-    
-    </tbody>
-</table>
-
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -2666,29 +2748,29 @@ this breakpoint.</p>
     <h5 class="subsection-title">Properties:</h5>
 
     
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
 
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
+            <th>Type</th>
 
-        <th>Type</th>
+            
 
-        
+            
+            <th>Default</th>
+            
 
-        
-        <th>Default</th>
-        
+            <th class="last">Description</th>
+        </tr>
+        </thead>
 
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
+        <tbody>
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>xs</code></td>
@@ -2716,8 +2798,8 @@ this breakpoint.</p>
     <td class="description last"><p>2px - <span class="space-box" style="width: 2px;" /></p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>sm</code></td>
@@ -2745,8 +2827,8 @@ this breakpoint.</p>
     <td class="description last"><p>4px - <span class="space-box" style="width: 4px;" /></p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>default</code></td>
@@ -2774,8 +2856,8 @@ this breakpoint.</p>
     <td class="description last"><p>8px - <span class="space-box" style="width: 8px;" /></p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>lg</code></td>
@@ -2803,8 +2885,8 @@ this breakpoint.</p>
     <td class="description last"><p>16px - <span class="space-box" style="width: 16px;" /></p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>xl</code></td>
@@ -2832,8 +2914,8 @@ this breakpoint.</p>
     <td class="description last"><p>24px - <span class="space-box" style="width: 24px;" /></p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>xxl</code></td>
@@ -2861,8 +2943,8 @@ this breakpoint.</p>
     <td class="description last"><p>32px - <span class="space-box" style="width: 32px;" /></p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>x3</code></td>
@@ -2890,8 +2972,8 @@ this breakpoint.</p>
     <td class="description last"><p>48px - <span class="space-box" style="width: 48px;" /></p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>x4</code></td>
@@ -2919,8 +3001,8 @@ this breakpoint.</p>
     <td class="description last"><p>64px - <span class="space-box" style="width: 64px;" /></p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>x5</code></td>
@@ -2948,8 +3030,8 @@ this breakpoint.</p>
     <td class="description last"><p>80px - <span class="space-box" style="width: 80px;" /></p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>x6</code></td>
@@ -2977,10 +3059,10 @@ this breakpoint.</p>
     <td class="description last"><p>128px - <span class="space-box" style="width: 128px;" /></p></td>
 </tr>
 
-    
-    </tbody>
-</table>
-
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -3039,7 +3121,7 @@ this breakpoint.</p>
 
     
         <div class='vertical-section'>
-            <h3 class="title"><span>Type Definitions</span></h3>
+            <h1>Type Definitions</h1>
             <div class="members">
             
                 <div class="member">
@@ -3075,29 +3157,29 @@ this breakpoint.</p>
     <h5 class="subsection-title">Properties:</h5>
 
     
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
 
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
+            <th>Type</th>
 
-        <th>Type</th>
+            
+            <th>Attributes</th>
+            
 
-        
-        <th>Attributes</th>
-        
+            
 
-        
+            <th class="last">Description</th>
+        </tr>
+        </thead>
 
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
+        <tbody>
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>borderWidth</code></td>
@@ -3130,8 +3212,8 @@ this breakpoint.</p>
     <td class="description last"></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>borderStyle</code></td>
@@ -3161,8 +3243,8 @@ this breakpoint.</p>
     <td class="description last"></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>borderColor</code></td>
@@ -3192,8 +3274,8 @@ this breakpoint.</p>
     <td class="description last"><p>It could be either a #hash or <a href="Theme.html">colors</a></p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>borderRadius</code></td>
@@ -3226,8 +3308,8 @@ this breakpoint.</p>
     <td class="description last"></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>borderTop</code></td>
@@ -3260,8 +3342,8 @@ this breakpoint.</p>
     <td class="description last"></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>borderTopWidth</code></td>
@@ -3294,8 +3376,8 @@ this breakpoint.</p>
     <td class="description last"></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>borderTopStyle</code></td>
@@ -3325,8 +3407,8 @@ this breakpoint.</p>
     <td class="description last"></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>borderTopColor</code></td>
@@ -3356,8 +3438,8 @@ this breakpoint.</p>
     <td class="description last"><p>It could be either a #hash or <a href="Theme.html">colors</a></p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>borderTopLeftRadius</code></td>
@@ -3390,8 +3472,8 @@ this breakpoint.</p>
     <td class="description last"></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>borderTopRightRadius</code></td>
@@ -3424,8 +3506,8 @@ this breakpoint.</p>
     <td class="description last"></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>borderRight</code></td>
@@ -3458,8 +3540,8 @@ this breakpoint.</p>
     <td class="description last"></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>borderRightWidth</code></td>
@@ -3492,8 +3574,8 @@ this breakpoint.</p>
     <td class="description last"></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>borderRightStyle</code></td>
@@ -3523,8 +3605,8 @@ this breakpoint.</p>
     <td class="description last"></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>borderRightColor</code></td>
@@ -3554,8 +3636,8 @@ this breakpoint.</p>
     <td class="description last"><p>It could be either a #hash or <a href="Theme.html">colors</a></p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>borderBottom</code></td>
@@ -3588,8 +3670,8 @@ this breakpoint.</p>
     <td class="description last"></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>borderBottomWidth</code></td>
@@ -3622,8 +3704,8 @@ this breakpoint.</p>
     <td class="description last"></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>borderBottomStyle</code></td>
@@ -3653,8 +3735,8 @@ this breakpoint.</p>
     <td class="description last"></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>borderBottomColor</code></td>
@@ -3684,8 +3766,8 @@ this breakpoint.</p>
     <td class="description last"><p>It could be either a #hash or <a href="Theme.html">colors</a></p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>borderBottomLeftRadius</code></td>
@@ -3718,8 +3800,8 @@ this breakpoint.</p>
     <td class="description last"></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>borderBottomRightRadius</code></td>
@@ -3752,8 +3834,8 @@ this breakpoint.</p>
     <td class="description last"></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>borderLeft</code></td>
@@ -3786,8 +3868,8 @@ this breakpoint.</p>
     <td class="description last"></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>borderLeftWidth</code></td>
@@ -3820,8 +3902,8 @@ this breakpoint.</p>
     <td class="description last"></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>borderLeftStyle</code></td>
@@ -3851,8 +3933,8 @@ this breakpoint.</p>
     <td class="description last"></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>borderLeftColor</code></td>
@@ -3882,8 +3964,8 @@ this breakpoint.</p>
     <td class="description last"><p>It could be either a #hash or <a href="Theme.html">colors</a></p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>borderX</code></td>
@@ -3916,8 +3998,8 @@ this breakpoint.</p>
     <td class="description last"></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>borderY</code></td>
@@ -3950,10 +4032,10 @@ this breakpoint.</p>
     <td class="description last"></td>
 </tr>
 
-    
-    </tbody>
-</table>
-
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -4039,29 +4121,29 @@ would use one of the color from the <a href="Theme.html">color palette</a>.</p>
     <h5 class="subsection-title">Properties:</h5>
 
     
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
 
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
+            <th>Type</th>
 
-        <th>Type</th>
+            
+            <th>Attributes</th>
+            
 
-        
-        <th>Attributes</th>
-        
+            
 
-        
+            <th class="last">Description</th>
+        </tr>
+        </thead>
 
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
+        <tbody>
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>color</code></td>
@@ -4093,8 +4175,8 @@ would use one of the color from the <a href="Theme.html">color palette</a>.</p>
 <code>grey80</code></p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>backgroundColor, bg</code></td>
@@ -4125,10 +4207,10 @@ would use one of the color from the <a href="Theme.html">color palette</a>.</p>
 #hash or one of <a href="Theme.html">colors</a>.</p></td>
 </tr>
 
-    
-    </tbody>
-</table>
-
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -4222,29 +4304,29 @@ justifySelf, alignSelf, and order.</p>
     <h5 class="subsection-title">Properties:</h5>
 
     
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
 
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
+            <th>Type</th>
 
-        <th>Type</th>
+            
+            <th>Attributes</th>
+            
 
-        
-        <th>Attributes</th>
-        
+            
 
-        
+            <th class="last">Description</th>
+        </tr>
+        </thead>
 
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
+        <tbody>
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>alignItems</code></td>
@@ -4274,8 +4356,8 @@ justifySelf, alignSelf, and order.</p>
     <td class="description last"><p>align-items</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>alignContent</code></td>
@@ -4305,8 +4387,8 @@ justifySelf, alignSelf, and order.</p>
     <td class="description last"><p>align-content</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>justifyItems</code></td>
@@ -4336,8 +4418,8 @@ justifySelf, alignSelf, and order.</p>
     <td class="description last"><p>justify-items</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>justifyContent</code></td>
@@ -4367,8 +4449,8 @@ justifySelf, alignSelf, and order.</p>
     <td class="description last"><p>justify-content</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>flexWrap</code></td>
@@ -4398,8 +4480,8 @@ justifySelf, alignSelf, and order.</p>
     <td class="description last"><p>flex-wrap</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>flexDirection</code></td>
@@ -4429,8 +4511,8 @@ justifySelf, alignSelf, and order.</p>
     <td class="description last"><p>flex-direction</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>flex</code></td>
@@ -4460,8 +4542,8 @@ justifySelf, alignSelf, and order.</p>
     <td class="description last"><p>flex</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>flexGrow</code></td>
@@ -4494,8 +4576,8 @@ justifySelf, alignSelf, and order.</p>
     <td class="description last"><p>flex-grow</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>flexShrink</code></td>
@@ -4525,8 +4607,8 @@ justifySelf, alignSelf, and order.</p>
     <td class="description last"><p>flex-shrink</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>flexBasis</code></td>
@@ -4556,8 +4638,8 @@ justifySelf, alignSelf, and order.</p>
     <td class="description last"><p>flex-basis</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>justifySelf</code></td>
@@ -4587,8 +4669,8 @@ justifySelf, alignSelf, and order.</p>
     <td class="description last"><p>justify-self</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>alignSelf</code></td>
@@ -4618,8 +4700,8 @@ justifySelf, alignSelf, and order.</p>
     <td class="description last"><p>align-self</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>order</code></td>
@@ -4652,10 +4734,10 @@ justifySelf, alignSelf, and order.</p>
     <td class="description last"><p>order</p></td>
 </tr>
 
-    
-    </tbody>
-</table>
-
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -4783,29 +4865,29 @@ minHeight, maxWidth, maxHeight, size, verticalAlign, overflow, overflowX, and ov
     <h5 class="subsection-title">Properties:</h5>
 
     
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
 
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
+            <th>Type</th>
 
-        <th>Type</th>
+            
+            <th>Attributes</th>
+            
 
-        
-        <th>Attributes</th>
-        
+            
 
-        
+            <th class="last">Description</th>
+        </tr>
+        </thead>
 
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
+        <tbody>
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>width</code></td>
@@ -4835,8 +4917,8 @@ minHeight, maxWidth, maxHeight, size, verticalAlign, overflow, overflowX, and ov
     <td class="description last"><p>width</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>height</code></td>
@@ -4866,8 +4948,8 @@ minHeight, maxWidth, maxHeight, size, verticalAlign, overflow, overflowX, and ov
     <td class="description last"><p>height</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>display</code></td>
@@ -4897,8 +4979,8 @@ minHeight, maxWidth, maxHeight, size, verticalAlign, overflow, overflowX, and ov
     <td class="description last"><p>display</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>minWidth</code></td>
@@ -4928,8 +5010,8 @@ minHeight, maxWidth, maxHeight, size, verticalAlign, overflow, overflowX, and ov
     <td class="description last"><p>min-width</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>minHeight</code></td>
@@ -4959,8 +5041,8 @@ minHeight, maxWidth, maxHeight, size, verticalAlign, overflow, overflowX, and ov
     <td class="description last"><p>min-height</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>maxWidth</code></td>
@@ -4990,8 +5072,8 @@ minHeight, maxWidth, maxHeight, size, verticalAlign, overflow, overflowX, and ov
     <td class="description last"><p>max-width</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>maxHeight</code></td>
@@ -5021,8 +5103,8 @@ minHeight, maxWidth, maxHeight, size, verticalAlign, overflow, overflowX, and ov
     <td class="description last"><p>max-height</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>size</code></td>
@@ -5052,8 +5134,8 @@ minHeight, maxWidth, maxHeight, size, verticalAlign, overflow, overflowX, and ov
     <td class="description last"><p>size</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>verticalAlign</code></td>
@@ -5083,8 +5165,8 @@ minHeight, maxWidth, maxHeight, size, verticalAlign, overflow, overflowX, and ov
     <td class="description last"><p>vertical-align</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>overflow</code></td>
@@ -5114,8 +5196,8 @@ minHeight, maxWidth, maxHeight, size, verticalAlign, overflow, overflowX, and ov
     <td class="description last"><p>overflow</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>overflowX</code></td>
@@ -5145,8 +5227,8 @@ minHeight, maxWidth, maxHeight, size, verticalAlign, overflow, overflowX, and ov
     <td class="description last"><p>overflow-x</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>overflowY</code></td>
@@ -5176,10 +5258,10 @@ minHeight, maxWidth, maxHeight, size, verticalAlign, overflow, overflowX, and ov
     <td class="description last"><p>overflow-y</p></td>
 </tr>
 
-    
-    </tbody>
-</table>
-
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -5286,29 +5368,29 @@ CSS declarations.</p>
     <h5 class="subsection-title">Properties:</h5>
 
     
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
 
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
+            <th>Type</th>
 
-        <th>Type</th>
+            
+            <th>Attributes</th>
+            
 
-        
-        <th>Attributes</th>
-        
+            
 
-        
+            <th class="last">Description</th>
+        </tr>
+        </thead>
 
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
+        <tbody>
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>margin, m</code></td>
@@ -5338,8 +5420,8 @@ CSS declarations.</p>
     <td class="description last"><p>margin</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>marginTop, mt</code></td>
@@ -5369,8 +5451,8 @@ CSS declarations.</p>
     <td class="description last"><p>margin-top</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>marginRight, mr</code></td>
@@ -5400,8 +5482,8 @@ CSS declarations.</p>
     <td class="description last"><p>margin-right</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>marginBottom, mb</code></td>
@@ -5431,8 +5513,8 @@ CSS declarations.</p>
     <td class="description last"><p>margin-bottom</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>marginLeft, ml</code></td>
@@ -5462,8 +5544,8 @@ CSS declarations.</p>
     <td class="description last"><p>margin-left</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>marginX, mx</code></td>
@@ -5493,8 +5575,8 @@ CSS declarations.</p>
     <td class="description last"><p>margin-left and margin-right</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>marginY, my</code></td>
@@ -5524,8 +5606,8 @@ CSS declarations.</p>
     <td class="description last"><p>margin-top and margin-bottom</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>padding, p</code></td>
@@ -5555,8 +5637,8 @@ CSS declarations.</p>
     <td class="description last"><p>padding</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>paddingTop, pt</code></td>
@@ -5586,8 +5668,8 @@ CSS declarations.</p>
     <td class="description last"><p>padding-top</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>paddingRight, pr</code></td>
@@ -5617,8 +5699,8 @@ CSS declarations.</p>
     <td class="description last"><p>padding-right</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>paddingBottom, pb</code></td>
@@ -5648,8 +5730,8 @@ CSS declarations.</p>
     <td class="description last"><p>padding-bottom</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>paddingLeft, pl</code></td>
@@ -5679,8 +5761,8 @@ CSS declarations.</p>
     <td class="description last"><p>padding-left</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>paddingX, px</code></td>
@@ -5710,8 +5792,8 @@ CSS declarations.</p>
     <td class="description last"><p>padding-left and padding-right</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>paddingY, py</code></td>
@@ -5743,10 +5825,10 @@ CSS declarations.</p>
 one of <code>space</code> properties like <code>sm</code>, <code>default</code>, <code>xl</code> etc.</p></td>
 </tr>
 
-    
-    </tbody>
-</table>
-
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -5831,29 +5913,29 @@ one of <code>space</code> properties like <code>sm</code>, <code>default</code>,
     <h5 class="subsection-title">Properties:</h5>
 
     
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
 
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
+            <th>Type</th>
 
-        <th>Type</th>
+            
+            <th>Attributes</th>
+            
 
-        
-        <th>Attributes</th>
-        
+            
 
-        
+            <th class="last">Description</th>
+        </tr>
+        </thead>
 
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
+        <tbody>
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>fontSize</code></td>
@@ -5884,8 +5966,8 @@ one of <code>space</code> properties like <code>sm</code>, <code>default</code>,
 <a href="Theme.html">fontSizes</a></p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>fontWeight</code></td>
@@ -5916,8 +5998,8 @@ one of <code>space</code> properties like <code>sm</code>, <code>default</code>,
 <a href="Theme.html">fontWeights</a></p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>lineHeight</code></td>
@@ -5948,8 +6030,8 @@ one of <code>space</code> properties like <code>sm</code>, <code>default</code>,
 <a href="Theme.html">lineHeights</a></p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>textAlign</code></td>
@@ -5979,8 +6061,8 @@ one of <code>space</code> properties like <code>sm</code>, <code>default</code>,
     <td class="description last"><p>text-align</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>fontFamily</code></td>
@@ -6010,8 +6092,8 @@ one of <code>space</code> properties like <code>sm</code>, <code>default</code>,
     <td class="description last"><p>font-family</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>fontStyle</code></td>
@@ -6041,8 +6123,8 @@ one of <code>space</code> properties like <code>sm</code>, <code>default</code>,
     <td class="description last"><p>font-style</p></td>
 </tr>
 
-    
         
+            
 <tr class="deep-level-0">
     
         <td class="name"><code>letterSpacing</code></td>
@@ -6072,10 +6154,10 @@ one of <code>space</code> properties like <code>sm</code>, <code>default</code>,
     <td class="description last"><p>letter-spacing</p></td>
 </tr>
 
-    
-    </tbody>
-</table>
-
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -6138,21 +6220,23 @@ one of <code>space</code> properties like <code>sm</code>, <code>default</code>,
 
 
 
-                </div>
             </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
         </div>
     </div>
 
-
-<footer class="footer">
-    <div class="content has-text-centered">
-        <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a></p>
-        <p class="sidebar-created-by">
-            <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
-            <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
-        </p>
-    </div>
-</footer>
 
 
 <script src="scripts/app.min.js"></script>

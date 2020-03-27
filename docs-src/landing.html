@@ -329,7 +329,7 @@
         </div>
       </div>
       <div class="column is-5-widescreen is-offset-1-widescreen is-6-desktop">
-        <form action="/" class="form">
+        <form action="/" class="form" method="POST">
           <h2>Let's talk!</h2>
           <div class="field">
             <label class="label" for="name">Name</label>
@@ -432,21 +432,21 @@
         <div class="column is-6-widescreen is-10-tablet is-offset-1-tablet is-7-desktop is-offset-0-desktop">
           <h4>Join open source Software Brothers community</h4>
           <p>News from Software Brothers team & open source initiatives.</p>
-          <form action="/" class="form columns">
+          <form action="https://www.getrevue.co/profile/adminbro/add_subscriber" method="post" id="revue-form" name="revue-form"  target="_blank" class="form columns">
             <div class="field column is-4">
-              <label class="label" for="com-name">First name</label>
+              <label class="label" for="member_first_name">First name <span class="optional">(Optional)</span></label>
               <div class="control">
-                <input name="name" class="input" type="text" id="com-name">
+                <input class="input revue-form-field" type="text" name="member[first_name]" id="member_first_name">
               </div>
             </div>
             <div class="field column is-6">
-              <label class="label" for="com-email">E-mail address</label>
+              <label class="label" for="member_email">Email address</label>
               <div class="control">
-                <input name="email" class="input" type="email" id="com-email">
+                <input class="input revue-form-field" type="email" name="member[email]" id="member_email">
               </div>
             </div>
             <div class="column is-6">
-              <button class="button is-success" type="submit">Join</button>
+              <button class="button is-success" type="submit" value="Subscribe" name="member[subscribe]" id="member_submit">Join</button>
             </div>
           </form>
         </div>
