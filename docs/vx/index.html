@@ -338,7 +338,7 @@
       <div class="column is-4-widescreen is-6-tablet">
         <a class="box" href="Theme.html">
           <img src="./images/icon-branding.svg" alt="branding">
-          <h4>Branding</h4>
+          <h4>Adjust branding</h4>
           <p>
             The entire User Interface is based on a finite set of colors.
             You can easily modify them to match your brand identity.
@@ -601,6 +601,28 @@
   </div>
 </div>
 
+<script>
+  const nav = $('.top-nav')
+  const body = $('body')
+  let oldPosition = 0
+  body.on('scroll', () => {
+    const position = body.scrollTop()
+
+    if (position > 10) {
+      nav.addClass('sticky')
+    } else {
+      nav.removeClass('sticky')
+    }
+
+    if (position > oldPosition && position > 10) {
+      nav.addClass('hidden')
+    } else {
+      nav.removeClass('hidden')
+    }
+
+    oldPosition = position
+  })
+</script>
     </div>
 
 <script src="scripts/app.min.js"></script>

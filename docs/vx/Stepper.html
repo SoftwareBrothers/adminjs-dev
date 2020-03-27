@@ -128,7 +128,7 @@
                  
                     
                         <a
-                            class="link no-hover"
+                            class="link user-link no-hover"
                             href="https://github.com/SoftwareBrothers/admin-bro"
                         >
                             <i class="fab fa-github fa-3x"></i>
@@ -289,13 +289,13 @@ Stepper makes sense when you use it along with <a href="Step.html">Step</a> comp
     
         
 
-<div id='a0pauww1m4rk899183e'></div>
+<div id='bzo9aox6ybk8aaip0t'></div>
 
 <script>
   ReactDOM.render(ReactWrapper({
     example: "const { useState } = React\nconst steps = [{\n  number: 1, label: \"Do this first\",\n}, {\n  number: 2, label: \"Don't forget this\",\n}, {\n  number: 3, label: \"And finally this\",\n}]\nconst ComponentWithStepper = () => {\n  const [currentStep, setCurrentStep] = useState(1)\n  return (\n  <Box>\n    <Stepper>\n    {steps.map(step => (\n       <Step\n         active={currentStep === step.number}\n         completed={currentStep > step.number}\n         onClick={setCurrentStep}\n         number={step.number}\n       >\n         {step.label}\n       </Step>\n    ))}\n    </Stepper>\n  </Box>\n  )\n}\n\nreturn (<ComponentWithStepper />)",
-    uniqId: "a0pauww1m4rk899183e",
-  }), document.getElementById('a0pauww1m4rk899183e'));
+    uniqId: "bzo9aox6ybk8aaip0t",
+  }), document.getElementById('bzo9aox6ybk8aaip0t'));
 </script>
     
 
@@ -304,13 +304,13 @@ Stepper makes sense when you use it along with <a href="Step.html">Step</a> comp
     
         
 
-<div id='ki79r4cg4wek899183e'></div>
+<div id='e397dnzkaz8k8aaip0t'></div>
 
 <script>
   ReactDOM.render(ReactWrapper({
     example: "const { useState } = React\nconst steps = [{\n  number: 1, label: \"Do this first\",\n}, {\n  number: 2, label: \"Don't forget this\",\n}, {\n  number: 3, label: \"And finally this\",\n}]\nconst ComponentWithStepper = () => {\n  const [currentStep, setCurrentStep] = useState(1)\n  return (\n  <Box>\n    <Stepper>\n    {steps.map(step => (\n       <Step\n         active={currentStep === step.number}\n         completed={currentStep > step.number}\n         number={step.number}\n       >\n         {step.label}\n       </Step>\n    ))}\n    </Stepper>\n    <Box mt=\"xl\">\n      <Button\n        disabled={currentStep === 1}\n        mr=\"default\"\n        onClick={() => setCurrentStep(currentStep - 1)}\n      >\n        Previous Step\n      </Button>\n      <Button\n        disabled={currentStep === 3}\n        variant=\"primary\"\n        onClick={() => setCurrentStep(currentStep + 1)}\n      >\n        Next Step\n      </Button>\n    </Box>\n  </Box>\n  )\n}\n\nreturn (<ComponentWithStepper />)",
-    uniqId: "ki79r4cg4wek899183e",
-  }), document.getElementById('ki79r4cg4wek899183e'));
+    uniqId: "e397dnzkaz8k8aaip0t",
+  }), document.getElementById('e397dnzkaz8k8aaip0t'));
 </script>
     
 
