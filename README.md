@@ -4,6 +4,11 @@ parcel watch ./src/frontend/app.jsx --out-dir ./src/frontend/assets/scripts --ou
 
 This is a wrapper repo for the entire AdminBro core with a couple of plugins. If you are a developer and you want to work on the AdminBro infrastructure - this is the right repository.
 
+## OpenSource SoftwareBrothers community
+
+- [Join the community](https://join.slack.com/t/adminbro/shared_invite/zt-czfb79t1-0U7pn_KCqd5Ts~lbJK0_RA) to get help and be inspired.
+- subscribe to our [newsletter](https://www.getrevue.co/profile/adminbro)
+
 ## Setting up
 
 All AdminBro plugins are embedded as git submodules. To clone the entire repo with all the dependencies simply run:
@@ -61,5 +66,5 @@ AdminBro is Copyright © 2019 SoftwareBrothers.co. It is free software, and may 
 
 We’re an open, friendly team that helps clients from all over the world to transform their businesses and create astonishing products.
 
-* We are available to [hire](https://softwarebrothers.co/contact).
+* We are available for [hire](https://softwarebrothers.co/contact).
 * If you want to work for us - check out the [career page](https://softwarebrothers.co/career).
