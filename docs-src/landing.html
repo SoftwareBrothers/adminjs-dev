@@ -329,52 +329,65 @@
         </div>
       </div>
       <div class="column is-5-widescreen is-offset-1-widescreen is-6-desktop">
-        <form action="/" class="form" method="POST">
-          <h2>Let's talk!</h2>
-          <div class="field">
-            <label class="label" for="name">Name</label>
-            <div class="control">
-              <input name="name" class="input" type="text" id="name">
+        <form action="http://localhost:5001/softbros-bi/us-central1/needHelp"
+          class="form"
+          method="POST"
+          id='quote-form'
+        >
+          <div class="success-msg has-text-centered">
+            <h2>Thank you!</h2>
+            <img src="./images/check.svg" alt="sent">
+            <h4>
+              We will get back to you very soon...
+            </h4>
+          </div>
+          <div class="form-fields">
+            <h2>Let's talk!</h2>
+            <div class="field">
+              <label class="label" for="name">Name</label>
+              <div class="control">
+                <input name="name" class="input" type="text" id="name">
+              </div>
             </div>
-          </div>
-          <div class="field">
-            <label class="label" for="email">E-mail address</label>
-            <div class="control">
-              <input name="email" class="input" type="email" id="email">
+            <div class="field">
+              <label class="label" for="email">E-mail address</label>
+              <div class="control">
+                <input name="email" class="input" type="email" id="email" required>
+              </div>
             </div>
-          </div>
-          <div class="interested">
-            <label class="label">I'm interested in:</label>
-            <label class="checkbox">
-              <input type="checkbox" name="interested" value="bi">
-              business intelligence
-            </label>
-            <label class="checkbox">
-              <input type="checkbox" name="interested" value="e-commerce">
-              e-commerce solution
-            </label>
-            <label class="checkbox">
-              <input type="checkbox" name="interested" value="startup">
-              help with my startup
-            </label>
-            <label class="checkbox">
-              <input type="checkbox" name="interested" value="other">
-              other
-            </label>
-          </div>
-          <div class="field">
-            <label class="label" for="content">Message</label>
-            <div class="control">
-              <textarea name="content" class="textarea" id="content"></textarea>
+            <div class="interested">
+              <label class="label">I'm interested in:</label>
+              <label class="checkbox">
+                <input type="checkbox" name="interested" value="bi">
+                business intelligence
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" name="interested" value="e-commerce">
+                e-commerce solution
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" name="interested" value="startup">
+                help with my startup
+              </label>
+              <label class="checkbox">
+                <input type="checkbox" name="interested" value="other">
+                other
+              </label>
             </div>
-          </div>
-          <div class="action-buttons has-text-centered">
-            <button class="button is-success" type="submit">
-              Send
-            </button>
-            <p class="notice">
-              By clicking "Send", you agree with the processing of personal data according to the Privacy Policy.
-            </p>
+            <div class="field">
+              <label class="label" for="content">Message</label>
+              <div class="control">
+                <textarea name="content" class="textarea" id="content" required></textarea>
+              </div>
+            </div>
+            <div class="action-buttons has-text-centered">
+              <button class="button is-success" type="submit">
+                Send
+              </button>
+              <p class="notice">
+                By clicking "Send", you agree with the processing of personal data according to the Privacy Policy.
+              </p>
+            </div>
           </div>
         </form>
       </div>
@@ -397,12 +410,12 @@
       </div>
       <div class="columns">
         <div class="column is-4 is-offset-2 is-offset-3-widescreen is-3-widescreen">
-          <a class="button is-link">
+          <a class="button is-link" href="https://github.com/SoftwareBrothers/admin-bro">
             <i class="fab fa-github fa-2x"></i> <span>AdminBro GitHub Repository</span>
           </a>
         </div>
         <div class="column is-4 is-3-widescreen">
-          <a class="button is-link">
+          <a class="button is-link" href="https://join.slack.com/t/adminbro/shared_invite/zt-czfb79t1-0U7pn_KCqd5Ts~lbJK0_RA">
             <i class="fab fa-slack-hash fa-2x"></i> <span>AdminBro Slack Community</span>
           </a>
         </div>
@@ -478,5 +491,27 @@
     }
 
     oldPosition = position
+  })
+
+  const quote = $('#quote-form')
+  quote.submit(() => {
+    quote.find('button').addClass('is-loading')
+    
+    const dataArray = quote.serializeArray()
+    const data = dataArray.reduce((memo, el) => ({
+      ...memo,
+      [el.name]: memo[el.name] ? [[memo[el.name], el.value]].join(', ') : el.value
+    }), {})
+
+    const url = window.location.host === 'localhost:3000'
+    ? 'http://localhost:5001/softbros-bi/us-central1/needHelp'
+    : 'https://us-central1-softbros-bi.cloudfunctions.net/needHelp'
+
+    $.ajax(url, { data, method: 'POST' }).then(res => {
+      quote.addClass('completed')
+      quote.find('button').removeClass('is-loading')
+    })
+
+    return false
   })
 </script>
