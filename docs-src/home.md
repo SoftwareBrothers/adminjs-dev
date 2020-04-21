@@ -18,7 +18,7 @@ Check out the example application with mongodb and postgres models here: [https:
 
 ## Versions
 
-Latest version: v2.1
+Latest version: v2.2
 
 read the docs for older versions: 
 - [version 2.0](v2/index.html)
@@ -36,17 +36,17 @@ about the panel and points other places in the documentation where you can find 
 Tutorials can be divided into 3 parts:
 
 1. **Setup AdminBro in your app.**
-  - {@tutorial 00-installation-instructions} - adding AdminBro to your already existing project
-  - {@tutorial 01-example} - starting from scratch with an example AdminBro application
-  - {@tutorial 03-passing-resources} - adding resources to the sidebar of AdminBro
+  - {@tutorial installation-instructions} - adding AdminBro to your already existing project
+  - {@tutorial example} - starting from scratch with an example AdminBro application
+  - {@tutorial passing-resources} - adding resources to the sidebar of AdminBro
 2. **Customize how resources behave**
-  - {@tutorial 04-customizing-resources} - how to use {@link ResourceOptions} to modify how resources
-  - {@tutorial 05-actions} - adding custom actions to resources.
+  - {@tutorial customizing-resources} - how to use {@link ResourceOptions} to modify how resources
+  - {@tutorial actions} - adding custom actions to resources.
 3. **Customize how resources and entire AdminBro looks**
-  - {@tutorial 06-writing-react-components}
-  - {@tutorial 07-custom-dashboard}
+  - {@tutorial writing-react-components}
+  - {@tutorial custom-dashboard}
 4. **Secure AdminBro**
-  - {@tutorial 08-rbac}
+  - {@tutorial rbac}
 
 ### Step 2. Get familiar with all the options you can pass to AdminBro
 
