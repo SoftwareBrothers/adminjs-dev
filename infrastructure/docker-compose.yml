@@ -26,10 +26,10 @@ services:
     depends_on:
       mongo:
         condition: service_healthy
-
   mongo:
     container_name: mongo
     image: mongo
+    env_file: '.env'
     volumes:
       - mongodata:/data/db
     ports:
@@ -43,6 +43,7 @@ services:
   postgres:
     container_name: postgres
     image: postgres
+    env_file: '.env'
     restart: always
 
   mysql:

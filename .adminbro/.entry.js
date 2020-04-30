@@ -5,5 +5,5 @@ import Component2 from '../admin-bro-example-app/admin/components/dont-touch-thi
 AdminBro.UserComponents.Component2 = Component2
 import Component3 from '../admin-bro-example-app/admin/components/article-in-list'
 AdminBro.UserComponents.Component3 = Component3
-import Component4 from '../admin-bro-example-app/admin/components/dashboard'
+import Component4 from '../admin-bro-example-app/admin/components/some-stats'
 AdminBro.UserComponents.Component4 = Component4
