@@ -47,7 +47,7 @@ const AdminBroMongoose = require('admin-bro-mongoose')
 const mongoose = require('mongoose')
 AdminBro.registerAdapter(AdminBroMongoose)
 
-// Initializ Database along with models
+// Initialize Database along with models
 const User = mongoose.model('User', { name: String, email: String, surname: String })
 const Admin = mongoose.model('Admin', { name: String, email: String})
 
@@ -80,4 +80,4 @@ Currently we support following Database Adapters:
 
 ## Resources customization
 
-Each resource could be customised in AdminBro - to see how to do this go to {@tutorial 04-customizing-resources}
+Each resource could be customized in AdminBro - to see how to do this go to {@tutorial customizing-resources}

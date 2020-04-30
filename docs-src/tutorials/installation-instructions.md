@@ -1,3 +1,7 @@
+> Prefer watching instead of reading?
+> 
+> check out at [this video tutorial](https://www.youtube.com/watch?v=n0IuXnL_cWs) which shows you how you can create an AdminPanel from scratch.
+
 Installation of an __AdminBro__ consist of 2 steps.
 
 ## 01. Install the fremework plugin
@@ -37,12 +41,16 @@ const adminBro = new AdminBro({
 const router = AdminBroExpress.buildRouter(adminBro)
 ```
 
-Use this router in expres.js `app`
+Use this router in express.js `app`
 
 ```javascript
 app.use(adminBro.options.rootPath, router)
 app.listen(8080, () => console.log('AdminBro is under localhost:8080/admin'))
 ```
+
+> If you are adding AdminBro to an application which already has any other middleware, it is good to put the AdminBro setup on top.
+> 
+> This is because other middleware can transform **requests** so that AdminBro wont be able to handle them.
 
 To see how to add an authentication or other modifications - visit the {@link module:admin-bro-expressjs Express Plugin} documentation.
 
@@ -117,6 +125,6 @@ const router = AdminBroExpress.buildRouter(adminBro)
 
 ## What's next?
 
-- To find more information about passing resources visit the {@tutorial 03-passing-resources} tutorial
-- See how you can customize resources: {@tutorial 04-customizing-resources}
-- Or add custom actions: {@tutorial 05-actions}
+- To find more information about passing resources visit the {@tutorial passing-resources} tutorial
+- See how you can customize resources: {@tutorial customizing-resources}
+- Or add custom actions: {@tutorial actions}

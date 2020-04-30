@@ -64,7 +64,7 @@ const adminBroOptions = {
         actions: {
           show: {
             icon: 'View',
-            isVisible: (context) => record.param('email') !== '',
+            isVisible: (context) => context.record.param('email') !== '',
           },
         },
       },
@@ -96,7 +96,7 @@ const adminBroOptions = {
       options: {
         actions: {
           newAction: {
-            actionType: ['record'],
+            actionType: 'record',
             icon: 'View',
             isVisible: true,
             handler: async () => {...},
@@ -114,7 +114,7 @@ const adminBroOptions = {
 When you define your own action you have to also create a **React component** responsible
 for rendering it. To see what options you have - go to the next tutorial:
 
-- {@tutorial 06-writing-react-components}
+- {@tutorial writing-react-components}
 
 ## And much much more...
 

@@ -164,7 +164,7 @@ available options.
   ...
   name: 'genre',
   label: 'Genre'
-  availableOptions: [
+  availableValues: [
     {value: 'male', label: 'Male'},
     {value: 'female', label: 'Female'},
   ],
@@ -172,9 +172,9 @@ available options.
 }
 ```
 
-### { __[propertyName].component__ } property appearance
+### { __[propertyName].components__ } property appearance
 
-You can also totally change the way of how property is rendered. The only thing you have to do is to change __component__ responsible for rendering given field.
+You can also totally change the way of how property is rendered. The only thing you have to do is to change __components__ responsible for rendering given field.
 
 So let say we want to change the way how __content__ property is rendered on the list:
 
@@ -185,7 +185,7 @@ const adminBroOptions = {
     options: {
       properties: {
         content: {
-          component: {
+          components: {
             list: AdminBro.bundle('./city-content-in-list'),
           },
         },
@@ -240,4 +240,4 @@ To see how to do this visit {@tutorial 06-writing-react-components}.
 
 To see all available options - check out the {@link ResourceOptions} interface.
 
-You can also read more about creating your own components in {@tutorial 06-writing-react-components}.
+You can also read more about creating your own components in {@tutorial writing-react-components}.

@@ -73,7 +73,10 @@
                 </div>
                 
             <div class="navigation">
-                <a href="docs.html" class="link">
+                <a
+                    href="docs.html"
+                    class="link"
+                >
                     API Documentation
                 </a>
                 <div class="dropdown is-hoverable is-right">
@@ -145,6 +148,11 @@
             class="sidebar tutorials"
             id="sidebarNav"
         >
+            
+                <div class="search-wrapper">
+                    <input id="search" type="text" placeholder="Search docs..." class="input">
+                </div>
+            
             <nav>
                 
                     <div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-example.html">02. Example App</a></li><li><a href="tutorial-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-actions.html">05. Customize actions</a></li><li><a href="tutorial-writing-react-components.html">06. Writing your own Components</a></li><li><a href="tutorial-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-rbac.html">08. Role-Based Access Control</a></li><li><a href="tutorial-i18n.html">09. Internationalization (i18n)</a></li></ul></div>
@@ -200,7 +208,7 @@ const AdminBroMongoose = require('admin-bro-mongoose')
 const mongoose = require('mongoose')
 AdminBro.registerAdapter(AdminBroMongoose)
 
-// Initializ Database along with models
+// Initialize Database along with models
 const User = mongoose.model('User', { name: String, email: String, surname: String })
 const Admin = mongoose.model('Admin', { name: String, email: String})
 
@@ -230,7 +238,7 @@ run()
 <li><a href="module-admin-bro-sequelizejs.html">admin-bro-sequelizejs</a> - adapter to <a href="http://sequelize.com">sequelize</a> for SQL Databases</li>
 </ul>
 <h2>Resources customization</h2>
-<p>Each resource could be customised in AdminBro - to see how to do this go to 04-customizing-resources</p>
+<p>Each resource could be customized in AdminBro - to see how to do this go to <a href="tutorial-customizing-resources.html">04. Customize resources</a></p>
 </article>
 
 </section>
@@ -251,10 +259,11 @@ run()
         <div id="side-nav" class="side-nav">
         </div>
     </div>
-
-
-
 <script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
 <script src="scripts/linenumber.js"> </script>
+
+<script src="scripts/search.js"> </script>
+
 </body>
 </html>

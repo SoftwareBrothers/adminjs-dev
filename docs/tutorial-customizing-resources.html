@@ -73,7 +73,10 @@
                 </div>
                 
             <div class="navigation">
-                <a href="docs.html" class="link">
+                <a
+                    href="docs.html"
+                    class="link"
+                >
                     API Documentation
                 </a>
                 <div class="dropdown is-hoverable is-right">
@@ -145,6 +148,11 @@
             class="sidebar tutorials"
             id="sidebarNav"
         >
+            
+                <div class="search-wrapper">
+                    <input id="search" type="text" placeholder="Search docs..." class="input">
+                </div>
+            
             <nav>
                 
                     <div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-example.html">02. Example App</a></li><li><a href="tutorial-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-actions.html">05. Customize actions</a></li><li><a href="tutorial-writing-react-components.html">06. Writing your own Components</a></li><li><a href="tutorial-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-rbac.html">08. Role-Based Access Control</a></li><li><a href="tutorial-i18n.html">09. Internationalization (i18n)</a></li></ul></div>
@@ -280,15 +288,15 @@ available options.</p>
   ...
   name: 'genre',
   label: 'Genre'
-  availableOptions: [
+  availableValues: [
     {value: 'male', label: 'Male'},
     {value: 'female', label: 'Female'},
   ],
   ...
 }
 </code></pre>
-<h3>{ <strong>[propertyName].component</strong> } property appearance</h3>
-<p>You can also totally change the way of how property is rendered. The only thing you have to do is to change <strong>component</strong> responsible for rendering given field.</p>
+<h3>{ <strong>[propertyName].components</strong> } property appearance</h3>
+<p>You can also totally change the way of how property is rendered. The only thing you have to do is to change <strong>components</strong> responsible for rendering given field.</p>
 <p>So let say we want to change the way how <strong>content</strong> property is rendered on the list:</p>
 <pre class="prettyprint source lang-javascript"><code>const adminBroOptions = {
   resources: [{
@@ -296,7 +304,7 @@ available options.</p>
     options: {
       properties: {
         content: {
-          component: {
+          components: {
             list: AdminBro.bundle('./city-content-in-list'),
           },
         },
@@ -340,7 +348,7 @@ a <em>google map</em> in a <strong>show</strong> view you can use something like
 To see how to do this visit 06-writing-react-components.</p>
 <h2>What's next?</h2>
 <p>To see all available options - check out the <a href="ResourceOptions.html">ResourceOptions</a> interface.</p>
-<p>You can also read more about creating your own components in 06-writing-react-components.</p>
+<p>You can also read more about creating your own components in <a href="tutorial-writing-react-components.html">06. Writing your own Components</a>.</p>
 </article>
 
 </section>
@@ -361,10 +369,11 @@ To see how to do this visit 06-writing-react-components.</p>
         <div id="side-nav" class="side-nav">
         </div>
     </div>
-
-
-
 <script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
 <script src="scripts/linenumber.js"> </script>
+
+<script src="scripts/search.js"> </script>
+
 </body>
 </html>

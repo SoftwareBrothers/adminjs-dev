@@ -1,3 +1,7 @@
+> Prefer watching instead of reading?
+> 
+> check out at [this video tutorial](https://www.youtube.com/watch?v=n0IuXnL_cWs) which shows you how you can create an AdminPanel from scratch.
+
 AdminBro is an __automatic admin interface__ which allows you to manage your database resources. It can be added to almost any nodejs framework. In this short tutorial I will show you how configure AdminBro to manage _User_ [mongoosejs](https://mongoosejs.com/) resource in a simple [express.js](https://expressjs.com/) app.
 
 We will:
@@ -180,4 +184,4 @@ and, under `localhost:8080/admin`, you should see something like this:
 
 ## What's next?
 
-So now you know how to add AdminBro to simple express.js app. Now let's move to modifying resources {@tutorial 03-passing-resources}
+So now you know how to add AdminBro to simple express.js app. Now let's move to modifying resources {@tutorial passing-resources}

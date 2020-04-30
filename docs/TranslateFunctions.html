@@ -73,7 +73,10 @@
                 </div>
                 
             <div class="navigation">
-                <a href="docs.html" class="link">
+                <a
+                    href="docs.html"
+                    class="link"
+                >
                     API Documentation
                 </a>
                 <div class="dropdown is-hoverable is-right">
@@ -145,6 +148,11 @@
             class="sidebar "
             id="sidebarNav"
         >
+            
+                <div class="search-wrapper">
+                    <input id="search" type="text" placeholder="Search docs..." class="input">
+                </div>
+            
             <nav>
                 
                     <h2><a href="docs.html">Documentation</a></h2><div class="category"><h3>Modules</h3><ul><li><a href="module-admin-bro-expressjs.html">admin-bro-expressjs</a></li><li><a href="module-admin-bro-firebase-functions.html">admin-bro-firebase-functions</a></li><li><a href="module-admin-bro-hapijs.html">admin-bro-hapijs</a></li><li><a href="module-admin-bro-mongoose.html">admin-bro-mongoose</a></li><li><a href="module-admin-bro-sequelizejs.html">admin-bro-sequelizejs</a></li></ul><h3>Classes</h3><ul><li><a href="AdminBro.html">AdminBro</a></li><li><a href="ApiClient.html">ApiClient</a></li><li><a href="ApiController.html">ApiController</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3>Interfaces</h3><ul><li><a href="Action.html">Action</a></li><li><a href="AdminBroOptions.html">AdminBroOptions</a></li><li><a href="PropertyOptions.html">PropertyOptions</a></li><li><a href="ResourceOptions.html">ResourceOptions</a></li><li><a href="TranslateFunctions.html">TranslateFunctions</a></li></ul><h3>Interfaces / Frontend</h3><ul><li><a href="ActionJSON.html">ActionJSON</a></li><li><a href="PageJSON.html">PageJSON</a></li><li><a href="PropertyJSON.html">PropertyJSON</a></li><li><a href="RecordJSON.html">RecordJSON</a></li><li><a href="ResourceJSON.html">ResourceJSON</a></li><li><a href="Theme.html">Theme</a></li></ul><h3>Components / Application</h3><ul><li><a href="ActionButton.html">ActionButton</a></li><li><a href="ActionHeader.html">ActionHeader</a></li><li><a href="BaseActionComponent.html">BaseActionComponent</a></li><li><a href="BasePropertyComponent.html">BasePropertyComponent</a></li><li><a href="DrawerPortal.html">DrawerPortal</a></li><li><a href="RecordsTableHeader.html">RecordsTableHeader</a></li></ul><h3>Components / Atoms</h3><ul><li><a href="Badge.html">Badge</a></li><li><a href="Box.html">Box</a></li><li><a href="Button.html">Button</a></li><li><a href="CheckBox.html">CheckBox</a></li><li><a href="Header.html">Header</a></li><li><a href="Icon.html">Icon</a></li><li><a href="Illustration.html">Illustration</a></li><li><a href="Input.html">Input</a></li><li><a href="Label.html">Label</a></li><li><a href="Link.html">Link</a></li><li><a href="Loader.html">Loader</a></li><li><a href="Placeholder.html">Placeholder</a></li><li><a href="Radio.html">Radio</a></li><li><a href="Section.html">Section</a></li><li><a href="Table.html">Table</a></li><li><a href="Text.html">Text</a></li><li><a href="TextArea.html">TextArea</a></li></ul><h3>Components / Molecules</h3><ul><li><a href="DatePicker.html">DatePicker</a></li><li><a href="Drawer.html">Drawer</a></li><li><a href="DropDown.html">DropDown</a></li><li><a href="DropZone.html">DropZone</a></li><li><a href="DropZoneItem.html">DropZoneItem</a></li><li><a href="FormGroup.html">FormGroup</a></li><li><a href="InfoBox.html">InfoBox</a></li><li><a href="MessageBox.html">MessageBox</a></li><li><a href="NavGroup.html">NavGroup</a></li><li><a href="Pagination.html">Pagination</a></li><li><a href="Step.html">Step</a></li><li><a href="Stepper.html">Stepper</a></li></ul><h3>Components / Hooks</h3><ul><li><a href="useCurrentAdmin.html">useCurrentAdmin</a></li><li><a href="useNotice.html">useNotice</a></li><li><a href="useRecord.html">useRecord</a></li><li><a href="useTranslation.html">useTranslation</a></li></ul><h3>Components / HOC</h3><ul><li><a href="withNotice.html">withNotice</a></li></ul></div><div class="category"><h2>Base</h2><h3>Classes</h3><ul><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li></ul></div><div class="category"><h2>Decorators</h2><h3>Classes</h3><ul><li><a href="ActionDecorator.html">ActionDecorator</a></li><li><a href="PropertyDecorator.html">PropertyDecorator</a></li><li><a href="ResourceDecorator.html">ResourceDecorator</a></li></ul></div><div class="category"><h2>Errors</h2><h3>Classes</h3><ul><li><a href="ConfigurationError.html">ConfigurationError</a></li><li><a href="ForbiddenError.html">ForbiddenError</a></li><li><a href="NotFoundError.html">NotFoundError</a></li><li><a href="NotImplementedError.html">NotImplementedError</a></li><li><a href="ValidationError.html">ValidationError</a></li></ul></div>
@@ -219,7 +227,7 @@ they are injected to any <a href="AdminBro.html">AdminBro</a> instance and <a hr
         <p class="tag-source">
             <a href="admin-bro_src_utils_translate-functions.factory.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_utils_translate-functions.factory.ts.html">admin-bro/src/utils/translate-functions.factory.ts</a>, <a href="admin-bro_src_utils_translate-functions.factory.ts.html#line45">line 45</a>
+                <a href="admin-bro_src_utils_translate-functions.factory.ts.html">admin-bro/src/utils/translate-functions.factory.ts</a>, <a href="admin-bro_src_utils_translate-functions.factory.ts.html#line48">line 48</a>
             </span>
         </p>
     
@@ -319,7 +327,7 @@ they are injected to any <a href="AdminBro.html">AdminBro</a> instance and <a hr
         <p class="tag-source">
             <a href="admin-bro_src_utils_translate-functions.factory.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_utils_translate-functions.factory.ts.html">admin-bro/src/utils/translate-functions.factory.ts</a>, <a href="admin-bro_src_utils_translate-functions.factory.ts.html#line53">line 53</a>
+                <a href="admin-bro_src_utils_translate-functions.factory.ts.html">admin-bro/src/utils/translate-functions.factory.ts</a>, <a href="admin-bro_src_utils_translate-functions.factory.ts.html#line56">line 56</a>
             </span>
         </p>
     
@@ -396,7 +404,7 @@ they are injected to any <a href="AdminBro.html">AdminBro</a> instance and <a hr
         <p class="tag-source">
             <a href="admin-bro_src_utils_translate-functions.factory.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_utils_translate-functions.factory.ts.html">admin-bro/src/utils/translate-functions.factory.ts</a>, <a href="admin-bro_src_utils_translate-functions.factory.ts.html#line65">line 65</a>
+                <a href="admin-bro_src_utils_translate-functions.factory.ts.html">admin-bro/src/utils/translate-functions.factory.ts</a>, <a href="admin-bro_src_utils_translate-functions.factory.ts.html#line68">line 68</a>
             </span>
         </p>
     
@@ -473,7 +481,7 @@ they are injected to any <a href="AdminBro.html">AdminBro</a> instance and <a hr
         <p class="tag-source">
             <a href="admin-bro_src_utils_translate-functions.factory.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_utils_translate-functions.factory.ts.html">admin-bro/src/utils/translate-functions.factory.ts</a>, <a href="admin-bro_src_utils_translate-functions.factory.ts.html#line79">line 79</a>
+                <a href="admin-bro_src_utils_translate-functions.factory.ts.html">admin-bro/src/utils/translate-functions.factory.ts</a>, <a href="admin-bro_src_utils_translate-functions.factory.ts.html#line82">line 82</a>
             </span>
         </p>
     
@@ -550,7 +558,7 @@ they are injected to any <a href="AdminBro.html">AdminBro</a> instance and <a hr
         <p class="tag-source">
             <a href="admin-bro_src_utils_translate-functions.factory.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_utils_translate-functions.factory.ts.html">admin-bro/src/utils/translate-functions.factory.ts</a>, <a href="admin-bro_src_utils_translate-functions.factory.ts.html#line93">line 93</a>
+                <a href="admin-bro_src_utils_translate-functions.factory.ts.html">admin-bro/src/utils/translate-functions.factory.ts</a>, <a href="admin-bro_src_utils_translate-functions.factory.ts.html#line96">line 96</a>
             </span>
         </p>
     
@@ -627,7 +635,7 @@ they are injected to any <a href="AdminBro.html">AdminBro</a> instance and <a hr
         <p class="tag-source">
             <a href="admin-bro_src_utils_translate-functions.factory.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_utils_translate-functions.factory.ts.html">admin-bro/src/utils/translate-functions.factory.ts</a>, <a href="admin-bro_src_utils_translate-functions.factory.ts.html#line135">line 135</a>
+                <a href="admin-bro_src_utils_translate-functions.factory.ts.html">admin-bro/src/utils/translate-functions.factory.ts</a>, <a href="admin-bro_src_utils_translate-functions.factory.ts.html#line138">line 138</a>
             </span>
         </p>
     
@@ -704,7 +712,7 @@ they are injected to any <a href="AdminBro.html">AdminBro</a> instance and <a hr
         <p class="tag-source">
             <a href="admin-bro_src_utils_translate-functions.factory.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_utils_translate-functions.factory.ts.html">admin-bro/src/utils/translate-functions.factory.ts</a>, <a href="admin-bro_src_utils_translate-functions.factory.ts.html#line109">line 109</a>
+                <a href="admin-bro_src_utils_translate-functions.factory.ts.html">admin-bro/src/utils/translate-functions.factory.ts</a>, <a href="admin-bro_src_utils_translate-functions.factory.ts.html#line112">line 112</a>
             </span>
         </p>
     
@@ -788,7 +796,7 @@ they are injected to any <a href="AdminBro.html">AdminBro</a> instance and <a hr
         <p class="tag-source">
             <a href="admin-bro_src_utils_translate-functions.factory.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_utils_translate-functions.factory.ts.html">admin-bro/src/utils/translate-functions.factory.ts</a>, <a href="admin-bro_src_utils_translate-functions.factory.ts.html#line59">line 59</a>
+                <a href="admin-bro_src_utils_translate-functions.factory.ts.html">admin-bro/src/utils/translate-functions.factory.ts</a>, <a href="admin-bro_src_utils_translate-functions.factory.ts.html#line62">line 62</a>
             </span>
         </p>
     
@@ -869,7 +877,7 @@ Finally, when that also fails, it returns startCase of the action name.</p>
         <p class="tag-source">
             <a href="admin-bro_src_utils_translate-functions.factory.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_utils_translate-functions.factory.ts.html">admin-bro/src/utils/translate-functions.factory.ts</a>, <a href="admin-bro_src_utils_translate-functions.factory.ts.html#line70">line 70</a>
+                <a href="admin-bro_src_utils_translate-functions.factory.ts.html">admin-bro/src/utils/translate-functions.factory.ts</a>, <a href="admin-bro_src_utils_translate-functions.factory.ts.html#line73">line 73</a>
             </span>
         </p>
     
@@ -950,7 +958,7 @@ Finally, when that also fails, it returns startCase of the given button name.</p
         <p class="tag-source">
             <a href="admin-bro_src_utils_translate-functions.factory.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_utils_translate-functions.factory.ts.html">admin-bro/src/utils/translate-functions.factory.ts</a>, <a href="admin-bro_src_utils_translate-functions.factory.ts.html#line84">line 84</a>
+                <a href="admin-bro_src_utils_translate-functions.factory.ts.html">admin-bro/src/utils/translate-functions.factory.ts</a>, <a href="admin-bro_src_utils_translate-functions.factory.ts.html#line87">line 87</a>
             </span>
         </p>
     
@@ -1033,7 +1041,7 @@ Finally, when that also fails, it returns startCase of the given label.</p>
         <p class="tag-source">
             <a href="admin-bro_src_utils_translate-functions.factory.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_utils_translate-functions.factory.ts.html">admin-bro/src/utils/translate-functions.factory.ts</a>, <a href="admin-bro_src_utils_translate-functions.factory.ts.html#line98">line 98</a>
+                <a href="admin-bro_src_utils_translate-functions.factory.ts.html">admin-bro/src/utils/translate-functions.factory.ts</a>, <a href="admin-bro_src_utils_translate-functions.factory.ts.html#line101">line 101</a>
             </span>
         </p>
     
@@ -1114,7 +1122,7 @@ Finally, when that also fails, it returns startCase of the given message name.</
         <p class="tag-source">
             <a href="admin-bro_src_utils_translate-functions.factory.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_utils_translate-functions.factory.ts.html">admin-bro/src/utils/translate-functions.factory.ts</a>, <a href="admin-bro_src_utils_translate-functions.factory.ts.html#line140">line 140</a>
+                <a href="admin-bro_src_utils_translate-functions.factory.ts.html">admin-bro/src/utils/translate-functions.factory.ts</a>, <a href="admin-bro_src_utils_translate-functions.factory.ts.html#line143">line 143</a>
             </span>
         </p>
     
@@ -1204,7 +1212,7 @@ case you have to pass dotted path:</p>
         <p class="tag-source">
             <a href="admin-bro_src_utils_translate-functions.factory.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_utils_translate-functions.factory.ts.html">admin-bro/src/utils/translate-functions.factory.ts</a>, <a href="admin-bro_src_utils_translate-functions.factory.ts.html#line114">line 114</a>
+                <a href="admin-bro_src_utils_translate-functions.factory.ts.html">admin-bro/src/utils/translate-functions.factory.ts</a>, <a href="admin-bro_src_utils_translate-functions.factory.ts.html#line117">line 117</a>
             </span>
         </p>
     
@@ -1430,7 +1438,7 @@ case you have to pass dotted path:</p>
         <p class="tag-source">
             <a href="admin-bro_src_utils_translate-functions.factory.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_utils_translate-functions.factory.ts.html">admin-bro/src/utils/translate-functions.factory.ts</a>, <a href="admin-bro_src_utils_translate-functions.factory.ts.html#line37">line 37</a>
+                <a href="admin-bro_src_utils_translate-functions.factory.ts.html">admin-bro/src/utils/translate-functions.factory.ts</a>, <a href="admin-bro_src_utils_translate-functions.factory.ts.html#line40">line 40</a>
             </span>
         </p>
     
@@ -1486,10 +1494,11 @@ case you have to pass dotted path:</p>
         <div id="side-nav" class="side-nav">
         </div>
     </div>
-
-
-
 <script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
 <script src="scripts/linenumber.js"> </script>
+
+<script src="scripts/search.js"> </script>
+
 </body>
 </html>

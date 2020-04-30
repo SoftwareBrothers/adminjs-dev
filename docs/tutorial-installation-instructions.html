@@ -73,7 +73,10 @@
                 </div>
                 
             <div class="navigation">
-                <a href="docs.html" class="link">
+                <a
+                    href="docs.html"
+                    class="link"
+                >
                     API Documentation
                 </a>
                 <div class="dropdown is-hoverable is-right">
@@ -145,6 +148,11 @@
             class="sidebar tutorials"
             id="sidebarNav"
         >
+            
+                <div class="search-wrapper">
+                    <input id="search" type="text" placeholder="Search docs..." class="input">
+                </div>
+            
             <nav>
                 
                     <div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-example.html">02. Example App</a></li><li><a href="tutorial-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-actions.html">05. Customize actions</a></li><li><a href="tutorial-writing-react-components.html">06. Writing your own Components</a></li><li><a href="tutorial-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-rbac.html">08. Role-Based Access Control</a></li><li><a href="tutorial-i18n.html">09. Internationalization (i18n)</a></li></ul></div>
@@ -164,7 +172,11 @@
 </header>
 
 <article>
-    <p>Installation of an <strong>AdminBro</strong> consist of 2 steps.</p>
+    <blockquote>
+<p>Prefer watching instead of reading?</p>
+<p>check out at <a href="https://www.youtube.com/watch?v=n0IuXnL_cWs">this video tutorial</a> which shows you how you can create an AdminPanel from scratch.</p>
+</blockquote>
+<p>Installation of an <strong>AdminBro</strong> consist of 2 steps.</p>
 <h2>01. Install the fremework plugin</h2>
 <p>Since <strong>AdminBro</strong> uses your existing framework to render its routes - you have to use one of our plugins.</p>
 <p>There are plugins for:</p>
@@ -192,10 +204,14 @@ const adminBro = new AdminBro({
 
 const router = AdminBroExpress.buildRouter(adminBro)
 </code></pre>
-<p>Use this router in expres.js <code>app</code></p>
+<p>Use this router in express.js <code>app</code></p>
 <pre class="prettyprint source lang-javascript"><code>app.use(adminBro.options.rootPath, router)
 app.listen(8080, () => console.log('AdminBro is under localhost:8080/admin'))
 </code></pre>
+<blockquote>
+<p>If you are adding AdminBro to an application which already has any other middleware, it is good to put the AdminBro setup on top.</p>
+<p>This is because other middleware can transform <strong>requests</strong> so that AdminBro wont be able to handle them.</p>
+</blockquote>
 <p>To see how to add an authentication or other modifications - visit the <a href="module-admin-bro-expressjs.html">Express Plugin</a> documentation.</p>
 <h3>Hapi</h3>
 <p>If you use <a href="https://hapijs.com/">Hapi framework</a> instead of express - follow this installation instructions:</p>
@@ -247,9 +263,9 @@ const router = AdminBroExpress.buildRouter(adminBro)
 </code></pre>
 <h2>What's next?</h2>
 <ul>
-<li>To find more information about passing resources visit the 03-passing-resources tutorial</li>
-<li>See how you can customize resources: 04-customizing-resources</li>
-<li>Or add custom actions: 05-actions</li>
+<li>To find more information about passing resources visit the <a href="tutorial-passing-resources.html">03. Adding resources</a> tutorial</li>
+<li>See how you can customize resources: <a href="tutorial-customizing-resources.html">04. Customize resources</a></li>
+<li>Or add custom actions: <a href="tutorial-actions.html">05. Customize actions</a></li>
 </ul>
 </article>
 
@@ -271,10 +287,11 @@ const router = AdminBroExpress.buildRouter(adminBro)
         <div id="side-nav" class="side-nav">
         </div>
     </div>
-
-
-
 <script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
 <script src="scripts/linenumber.js"> </script>
+
+<script src="scripts/search.js"> </script>
+
 </body>
 </html>

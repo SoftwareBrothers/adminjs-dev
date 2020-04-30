@@ -73,7 +73,10 @@
                 </div>
                 
             <div class="navigation">
-                <a href="docs.html" class="link">
+                <a
+                    href="docs.html"
+                    class="link"
+                >
                     API Documentation
                 </a>
                 <div class="dropdown is-hoverable is-right">
@@ -145,6 +148,11 @@
             class="sidebar tutorials"
             id="sidebarNav"
         >
+            
+                <div class="search-wrapper">
+                    <input id="search" type="text" placeholder="Search docs..." class="input">
+                </div>
+            
             <nav>
                 
                     <div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-example.html">02. Example App</a></li><li><a href="tutorial-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-actions.html">05. Customize actions</a></li><li><a href="tutorial-writing-react-components.html">06. Writing your own Components</a></li><li><a href="tutorial-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-rbac.html">08. Role-Based Access Control</a></li><li><a href="tutorial-i18n.html">09. Internationalization (i18n)</a></li></ul></div>
@@ -213,7 +221,7 @@ AdminBro.ACTIONS.show.isAccessible = ({ currentAdmin, resource, record }) => {
         actions: {
           show: {
             icon: 'View',
-            isVisible: (context) => record.param('email') !== '',
+            isVisible: (context) => context.record.param('email') !== '',
           },
         },
       },
@@ -235,7 +243,7 @@ AdminBro.ACTIONS.show.isAccessible = ({ currentAdmin, resource, record }) => {
       options: {
         actions: {
           newAction: {
-            actionType: ['record'],
+            actionType: 'record',
             icon: 'View',
             isVisible: true,
             handler: async () => {...},
@@ -251,7 +259,7 @@ AdminBro.ACTIONS.show.isAccessible = ({ currentAdmin, resource, record }) => {
 <p>When you define your own action you have to also create a <strong>React component</strong> responsible
 for rendering it. To see what options you have - go to the next tutorial:</p>
 <ul>
-<li>06-writing-react-components</li>
+<li><a href="tutorial-writing-react-components.html">06. Writing your own Components</a></li>
 </ul>
 <h2>And much much more...</h2>
 <p>Things I presented in this tutorial are just the tip of the iceberg. Make sure to check out all available options in <a href="Action.html">Action</a> interface.</p>
@@ -275,10 +283,11 @@ for rendering it. To see what options you have - go to the next tutorial:</p>
         <div id="side-nav" class="side-nav">
         </div>
     </div>
-
-
-
 <script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
 <script src="scripts/linenumber.js"> </script>
+
+<script src="scripts/search.js"> </script>
+
 </body>
 </html>

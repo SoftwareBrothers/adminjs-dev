@@ -36,6 +36,7 @@
     "templates": {
         "cleverLinks": false,
         "monospaceLinks": false,
+        "search": true,
         "default": {
             "includeDate": false,
             "staticFiles": {
