@@ -1,6 +1,6 @@
 > Prefer watching instead of reading?
 > 
-> check out at [this video tutorial](https://www.youtube.com/watch?v=n0IuXnL_cWs) which shows you how you can create an AdminPanel from scratch.
+> check out [this video tutorial](https://www.youtube.com/watch?v=n0IuXnL_cWs) which shows you how you can create an Admin Panel from scratch.
 
 AdminBro is an __automatic admin interface__ which allows you to manage your database resources. It can be added to almost any nodejs framework. In this short tutorial I will show you how configure AdminBro to manage _User_ [mongoosejs](https://mongoosejs.com/) resource in a simple [express.js](https://expressjs.com/) app.
 
