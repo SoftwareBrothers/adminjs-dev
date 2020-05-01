@@ -24,7 +24,13 @@ Install the AdminBro along with the {@link module:admin-bro-expressjs express pl
 npm install admin-bro admin-bro-expressjs
 ```
 
-Create an express router which will handle all AdminBro routes
+If you don't have `express` or `express-formidable` already installed, you will have to add that too. This is because they are `peerDependencies` of `admin-bro-expressjs`:
+
+```
+npm install express express-formidable
+```
+
+Now create an express router which will handle all AdminBro routes
 
 ```javascript
 const AdminBro = require('admin-bro')

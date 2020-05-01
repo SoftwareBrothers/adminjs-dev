@@ -190,7 +190,10 @@ want to know more - visit their corresponding pages (above).</p>
 <p>Install the AdminBro along with the <a href="module-admin-bro-expressjs.html">express plugin</a></p>
 <pre class="prettyprint source"><code>npm install admin-bro admin-bro-expressjs
 </code></pre>
-<p>Create an express router which will handle all AdminBro routes</p>
+<p>If you don't have <code>express</code> or <code>express-formidable</code> already installed, you will have to add that too. This is because they are <code>peerDependencies</code> of <code>admin-bro-expressjs</code>:</p>
+<pre class="prettyprint source"><code>npm install express express-formidable
+</code></pre>
+<p>Now create an express router which will handle all AdminBro routes</p>
 <pre class="prettyprint source lang-javascript"><code>const AdminBro = require('admin-bro')
 const AdminBroExpress = require('admin-bro-expressjs')
 

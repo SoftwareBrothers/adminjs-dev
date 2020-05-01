@@ -189,7 +189,9 @@
 <pre class="prettyprint source lang-sh"><code>npm install admin-bro-expressjs
 </code></pre>
 <p>It has 2 peerDependencies: <code>express-formidable</code> and <code>express</code>,
-so you have to install them as well.</p>
+so you have to install them as well (if they are not installed already)</p>
+<pre class="prettyprint source"><code>npm install express express-formidable
+</code></pre>
 <h2>Usage</h2>
 <pre class="prettyprint source"><code>const AdminBroExpress = require('admin-bro-expressjs')
 </code></pre>
@@ -972,7 +974,7 @@ AdminBroExpress.buildAuthenticatedRouter(adminBro, {
     return null
   },
   cookieName: 'adminbro',
-  cookiePassword: 'somepassword',
+  cookiePassword: 'somePassword',
 }, [router])</code></pre>
     
 
