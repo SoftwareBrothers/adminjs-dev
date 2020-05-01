@@ -5,7 +5,7 @@
   <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminBro - Auto-generated admin panel for node.js with react CheckBox</title>
+  <title>AdminBro - Auto-generated admin panel for node.js with react DropDown</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -163,7 +163,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Components</p>
-                    <h1>CheckBox</h1>
+                    <h1>DropDown</h1>
                 </header>
                 
 
@@ -175,7 +175,7 @@
 <header>
     
         <h2>
-            &ltCheckBox  /&gt
+            &ltDropDown  /&gt
         </h2>
         
     
@@ -195,12 +195,12 @@
 
 
     
-    <h4 class="name" id="CheckBox">
-        <a class="href-link" href="#CheckBox">#</a>
+    <h4 class="name" id="DropDown">
+        <a class="href-link" href="#DropDown">#</a>
         
         <span class="code-name">
             
-                &ltCheckBox  /&gt
+                &ltDropDown  /&gt
             
         </span>
     </h4>
@@ -209,10 +209,26 @@
     
     
     <div class="description">
-        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Wrapped checkbox input.</p>
-<p>Usage:</p>
-<pre class="prettyprint source lang-javascript"><code>import { CheckBox, CheckBoxProps } from 'admin-bro'
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Simple set of components allowing you to create a dropdowns.
+Usage</p>
+<pre class="prettyprint source lang-javascript"><code>import { DropDown, DropDownTrigger, DropDownMenu, DropDownItem } from 'admin-bro'
 </code></pre>
+<p>It contains couple of sub components:</p>
+<ul>
+<li>DropDown - an actual wrapper for entire DropDown</li>
+<li>DropDownTrigger - it has to be right inside the DropDown.
+It is what user sees when the DropDown is not hovered</li>
+<li>DropDownMenu - wraps elements which are hidden by default.
+Shown after hovering Trigger</li>
+<li>DropDownMenuItem - it is a wrapper for a menu item list.
+It can next contain either Link or Button.</li>
+</ul>
+<p>Props:</p>
+<ul>
+<li>DropDownMenu extends <a href="Theme%250Aproperty%2520%257Bstring%2520_%2520number%257D%2520%255Bposition%255D%250Aproperty%2520%257Bstring%2520_%2520number%257D%2520%255BzIndex%255D%250Aproperty%2520%257Bstring%2520_%2520number%257D%2520%255Btop%255D%250Aproperty%2520%257Bstring%2520_%2520number%257D%2520%255Bright%255D%250Aproperty%2520%257Bstring%2520_%2520number%257D%2520%255Bbottom%255D%250Aproperty%2520%257Bstring%2520_%2520number%257D%2520%255Bleft%255D.html#PositionProps">PositionProps</a>, so you can add prop like <code>top=&quot;xl&quot;</code></li>
+<li>DropDownItem extends <a href="Theme.html#SpaceProps">SpaceProps</a></li>
+<li>DropDownTrigger also extends <a href="Theme.html#SpaceProps">SpaceProps</a></li>
+</ul>
     </div>
     
 
@@ -263,9 +279,9 @@
 
     
         <p class="tag-source">
-            <a href="admin-bro_src_frontend_components_design-system_atoms_check-box.tsx.html" class="button">View Source</a>
+            <a href="admin-bro_src_frontend_components_design-system_molecules_drop-down_drop-down.tsx.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_frontend_components_design-system_atoms_check-box.tsx.html">admin-bro/src/frontend/components/design-system/atoms/check-box.tsx</a>, <a href="admin-bro_src_frontend_components_design-system_atoms_check-box.tsx.html#line100">line 100</a>
+                <a href="admin-bro_src_frontend_components_design-system_molecules_drop-down_drop-down.tsx.html">admin-bro/src/frontend/components/design-system/molecules/drop-down/drop-down.tsx</a>, <a href="admin-bro_src_frontend_components_design-system_molecules_drop-down_drop-down.tsx.html#line55">line 55</a>
             </span>
         </p>
     
@@ -296,13 +312,13 @@
     
         
 
-<div id='p1rnh0ifdgkk9ngnryy'></div>
+<div id='lm6y9u9kwvk9ngns40'></div>
 
 <script>
   ReactDOM.render(ReactWrapper({
-    example: "return (\n  <Box p=\"xl\">\n     <CheckBox id=\"checkbox1\"/>\n     <Label inline htmlFor=\"checkbox1\" ml=\"default\">Some example label</Label>\n  </Box>\n)",
-    uniqId: "p1rnh0ifdgkk9ngnryy",
-  }), document.getElementById('p1rnh0ifdgkk9ngnryy'));
+    example: "return (\n  <Box px=\"300px\" pt=\"lg\" pb=\"200px\">\n    <DropDown>\n      <DropDownTrigger p=\"default\">\n        <Text as=\"span\">This is trigger -> </Text>\n        <Icon icon=\"OverflowMenuHorizontal\" />\n      </DropDownTrigger>\n      <DropDownMenu top=\"xxl\">\n        <DropDownItem>\n          <Link href=\"/some\">\n            <Icon icon=\"Video\" />\n            Some menu item\n          </Link>\n        </DropDownItem>\n        <DropDownItem>\n          <Link href=\"/some\">Other item</Link>\n        </DropDownItem>\n      </DropDownMenu>\n    </DropDown>\n  </Box>\n)",
+    uniqId: "lm6y9u9kwvk9ngns40",
+  }), document.getElementById('lm6y9u9kwvk9ngns40'));
 </script>
     
 
@@ -333,153 +349,6 @@
 
     
 
-    
-        <div class='vertical-section'>
-            <h1>Type Definitions</h1>
-            <div class="members">
-            
-                <div class="member">
-
-    <span class="method-parameter is-pulled-right">
-        <label>Type:</label>
-        
-<span class="param-type">object</span>
-
-
-    </span>
-
-<h4 class="name" id="CheckBoxProps">
-    <a class="href-link" href="#CheckBoxProps">#</a>
-    
-    <span class="code-name">
-        CheckBoxProps
-    </span>
-    
-</h4>
-
-
-
-
-<div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>
-</div>
-
-
-
-
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    
-<div class="table-container">
-    <table class="props table">
-        <thead>
-        <tr>
-            
-            <th>Name</th>
-            
-
-            <th>Type</th>
-
-            
-            <th>Attributes</th>
-            
-
-            
-
-            <th class="last">Description</th>
-        </tr>
-        </thead>
-
-        <tbody>
-        
-            
-<tr class="deep-level-0">
-    
-        <td class="name"><code>...</code></td>
-    
-
-    <td class="type">
-    
-        
-<span class="param-type">string</span>
-
-
-    
-    </td>
-
-    
-        <td class="attributes">
-        
-            &lt;optional><br>
-        
-
-        
-        </td>
-    
-
-    
-
-    <td class="description last"><p>All props default to <em>checkbox</em> html input like <code>onChange</code>,
-<code>checked</code> etc.</p></td>
-</tr>
-
-        
-        </tbody>
-    </table>
-</div>
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    
-
-    
-
-    
-
-    
-        <p class="tag-source">
-            <a href="admin-bro_src_frontend_components_design-system_atoms_check-box.tsx.html" class="button">View Source</a>
-            <span>
-                <a href="admin-bro_src_frontend_components_design-system_atoms_check-box.tsx.html">admin-bro/src/frontend/components/design-system/atoms/check-box.tsx</a>, <a href="admin-bro_src_frontend_components_design-system_atoms_check-box.tsx.html#line75">line 75</a>
-            </span>
-        </p>
-    
-</dl>
-
-
-
-
-
-</div>
-            
-            </div>
-        </div>
     
 
     
