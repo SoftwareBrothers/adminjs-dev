@@ -223,6 +223,11 @@ Labels are used to translate resource names.</li>
 <h2>More detailed example</h2>
 <p>Let's assume that you want to translate your admin panel to polish.</p>
 <p>This is how it could look like:</p>
+<blockquote>
+<p>Take a closer look at this example because it contains a different
+edge cases like translating &quot;add new item&quot; button for particular property,
+or translating labels for your database enums.</p>
+</blockquote>
 <pre class="prettyprint source lang-javascript"><code>const options = {
   locale: {
     language: 'pl',
@@ -247,6 +252,16 @@ Labels are used to translate resource names.</li>
         nested: 'Zagniezdzone',
         // this is how nested properties (for nested schemas) can be provided
         'nested.width': 'Szerokość',
+        // translate values of boolean property
+        'isAdmin.true': 'admin',
+        'isAdmin.false': 'normalny'
+        // translate values of enums:
+        'companySize.small': 'mała',
+        'companySize.medium': 'średnia',
+        'companySize.big': 'duza',
+        // tags is an array and we translate button for this array:
+        'tags.addNewItem': 'Dodaj nowy tag',
+
       },
       labels: {
         // here we translate the name of a resource.

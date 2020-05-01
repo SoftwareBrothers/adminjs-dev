@@ -290,7 +290,7 @@ export interface TranslateFunctions {
   translateMessage: TranslateFunction;
 }
 
-export const formatName = (name: string): string => name.replace('.', '&amp;#46;')
+export const formatName = (name: string): string => name.split('.').join('&amp;#46;')
 
 const translate = (
   i18n: I18n,
