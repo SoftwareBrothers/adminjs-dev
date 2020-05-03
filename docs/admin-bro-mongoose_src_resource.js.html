@@ -365,7 +365,7 @@ class Resource extends BaseResource {
   }
 
   async delete(id) {
-    return this.MongooseModel.deleteOne({ _id: id })
+    return this.MongooseModel.findOneAndRemove({ _id: id })
   }
 
   static stringifyId(mongooseObj) {
