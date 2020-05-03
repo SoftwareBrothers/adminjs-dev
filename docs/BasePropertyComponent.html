@@ -342,13 +342,13 @@ const MyReactComponent = props => {
     
         
 
-<div id='qhrvsm8yz28k9ot40u5'></div>
+<div id='component0'></div>
 
 <script>
   ReactDOM.render(ReactWrapper({
     example: "const booleanProperty = {\n  isTitle: false,\n  name: 'awesome',\n  isId: false,\n  position: -1,\n  label: 'I am awesome',\n  type: 'boolean',\n}\n\nconst stringProperty = {\n  isTitle: true,\n  name: 'name',\n  isId: false,\n  position: -1,\n  label: 'Name of a user',\n  type: 'string',\n}\n// Resource is taken from the database\nconst resource = {\n  id: 'User',\n  name: 'User Model',\n  titleProperty: 'name',\n  resourceActions: [],\n  listProperties: [booleanProperty, stringProperty],\n  editProperties: [booleanProperty, stringProperty],\n  showProperties: [booleanProperty, stringProperty],\n  filterProperties: [booleanProperty, stringProperty],\n}\n\nconst initialRecord = {\n  id: '1',\n  title: 'John',\n  params: {\n    name: 'John',\n    gender: 'male',\n  },\n  recordActions: [],\n}\nconst Wrapper = () => {\n  const { record, handleChange, submit } = useRecord(initialRecord, resource.id)\n  const params = JSON.stringify(record.params)\n  return (\n    <Box py=\"lg\">\n      <BasePropertyComponent\n        property={booleanProperty}\n        resource={resource}\n        onChange={handleChange}\n        where=\"edit\"\n        record={record}\n      />\n      <BasePropertyComponent\n        property={stringProperty}\n        resource={resource}\n        onChange={handleChange}\n        where=\"edit\"\n        record={record}\n      />\n     <Box>\n       <Label>Params:</Label>\n       {params}\n     </Box>\n     <Box my=\"lg\">\n       <Button variant=\"primary\" onClick={submit}>Submit</Button>\n       <Text variant=\"sm\">\n         This will throw an error because there is no AdminBro instance running\n       </Text>\n     </Box>\n    </Box>\n  )\n}\n\nreturn (<Wrapper />)",
-    uniqId: "qhrvsm8yz28k9ot40u5",
-  }), document.getElementById('qhrvsm8yz28k9ot40u5'));
+    uniqId: "component0",
+  }), document.getElementById('component0'));
 </script>
     
 

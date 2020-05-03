@@ -1,0 +1,3673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminBro - Auto-generated admin panel for node.js with react Action</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <link rel="stylesheet" type="text/css" href="fonts.css"/>
+  
+</head>
+
+<body class="layout">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+             
+                <a class="image" href="index.html">
+                    <img src="images/logo-reg.svg" alt="logo">
+                </a>
+            
+            
+        </div>
+        <div class="menu">
+             
+                <div class="top-buttons">
+                    
+                        <a  href="https://admin-bro-example-app-staging.herokuapp.com/admin"
+                            target="_blank"
+                            class="button is-primary is-outlined"
+                        ?>
+                            Demo
+                        </a>
+                    
+                        <a  href="/tutorial-installation-instructions.html"
+                            target=""
+                            class="button is-primary is-outlined"
+                        ?>
+                            Get Started
+                        </a>
+                    
+                        <a  href="https://join.slack.com/t/adminbro/shared_invite/zt-djsqxxpz-_YCS8UMtQ9Ade6DPuLR7Zw"
+                            target=""
+                            class="button is-primary"
+                        ?>
+                            <i class="fab fa-slack-hash fa-lg"></i> Join the community
+                        </a>
+                    
+                </div>
+                
+            <div class="navigation">
+                <a
+                    href="docs.html"
+                    class="link"
+                >
+                    API Documentation
+                </a>
+                <div class="dropdown is-hoverable is-right">
+                    <a class="dropdown-trigger link">
+                        Tutorials
+                        <i class="fas fa-chevron-down fa-xs"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-content">
+                        
+                            
+                                <a class="dropdown-item" href="tutorial-installation-instructions.html">
+                                    01. Installation instructions
+                                </a>
+                            
+                                <a class="dropdown-item" href="tutorial-example.html">
+                                    02. Example App
+                                </a>
+                            
+                                <a class="dropdown-item" href="tutorial-passing-resources.html">
+                                    03. Adding resources
+                                </a>
+                            
+                                <a class="dropdown-item" href="tutorial-customizing-resources.html">
+                                    04. Customize resources
+                                </a>
+                            
+                                <a class="dropdown-item" href="tutorial-actions.html">
+                                    05. Customize actions
+                                </a>
+                            
+                                <a class="dropdown-item" href="tutorial-writing-react-components.html">
+                                    06. Writing your own Components
+                                </a>
+                            
+                                <a class="dropdown-item" href="tutorial-custom-dashboard.html">
+                                    07. Customize dashboard
+                                </a>
+                            
+                                <a class="dropdown-item" href="tutorial-rbac.html">
+                                    08. Role-Based Access Control
+                                </a>
+                            
+                                <a class="dropdown-item" href="tutorial-i18n.html">
+                                    09. Internationalization (i18n)
+                                </a>
+                            
+                        
+                        </div>
+                    </div>
+                </div>
+                 
+                    
+                        <a
+                            class="link user-link no-hover"
+                            href="https://github.com/SoftwareBrothers/admin-bro"
+                        >
+                            <i class="fab fa-github fa-3x"></i>
+                        </a>
+                    
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+                <div class="search-wrapper">
+                    <input id="search" type="text" placeholder="Search docs..." class="input">
+                </div>
+            
+            <nav>
+                
+                    <h2><a href="docs.html">Documentation</a></h2><div class="category"><h3>Modules</h3><ul><li><a href="module-admin-bro-expressjs.html">admin-bro-expressjs</a></li><li><a href="module-admin-bro-firebase-functions.html">admin-bro-firebase-functions</a></li><li><a href="module-admin-bro-hapijs.html">admin-bro-hapijs</a></li><li><a href="module-admin-bro-mongoose.html">admin-bro-mongoose</a></li><li><a href="module-admin-bro-sequelizejs.html">admin-bro-sequelizejs</a></li></ul><h3>Classes</h3><ul><li><a href="AdminBro.html">AdminBro</a></li><li><a href="ApiClient.html">ApiClient</a></li><li><a href="ApiController.html">ApiController</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3>Interfaces</h3><ul><li><a href="Action.html">Action</a></li><li><a href="AdminBroOptions.html">AdminBroOptions</a></li><li><a href="PropertyOptions.html">PropertyOptions</a></li><li><a href="ResourceOptions.html">ResourceOptions</a></li><li><a href="TranslateFunctions.html">TranslateFunctions</a></li></ul><h3>Interfaces / Frontend</h3><ul><li><a href="ActionJSON.html">ActionJSON</a></li><li><a href="PageJSON.html">PageJSON</a></li><li><a href="PropertyJSON.html">PropertyJSON</a></li><li><a href="RecordJSON.html">RecordJSON</a></li><li><a href="ResourceJSON.html">ResourceJSON</a></li><li><a href="Theme.html">Theme</a></li></ul><h3>Components / Application</h3><ul><li><a href="ActionButton.html">ActionButton</a></li><li><a href="ActionHeader.html">ActionHeader</a></li><li><a href="BaseActionComponent.html">BaseActionComponent</a></li><li><a href="BasePropertyComponent.html">BasePropertyComponent</a></li><li><a href="DrawerPortal.html">DrawerPortal</a></li><li><a href="RecordsTableHeader.html">RecordsTableHeader</a></li></ul><h3>Components / Atoms</h3><ul><li><a href="Badge.html">Badge</a></li><li><a href="Box.html">Box</a></li><li><a href="Button.html">Button</a></li><li><a href="CheckBox.html">CheckBox</a></li><li><a href="Header.html">Header</a></li><li><a href="Icon.html">Icon</a></li><li><a href="Illustration.html">Illustration</a></li><li><a href="Input.html">Input</a></li><li><a href="Label.html">Label</a></li><li><a href="Link.html">Link</a></li><li><a href="Loader.html">Loader</a></li><li><a href="Placeholder.html">Placeholder</a></li><li><a href="Radio.html">Radio</a></li><li><a href="Section.html">Section</a></li><li><a href="Table.html">Table</a></li><li><a href="Text.html">Text</a></li><li><a href="TextArea.html">TextArea</a></li></ul><h3>Components / Molecules</h3><ul><li><a href="DatePicker.html">DatePicker</a></li><li><a href="Drawer.html">Drawer</a></li><li><a href="DropDown.html">DropDown</a></li><li><a href="DropZone.html">DropZone</a></li><li><a href="DropZoneItem.html">DropZoneItem</a></li><li><a href="FormGroup.html">FormGroup</a></li><li><a href="InfoBox.html">InfoBox</a></li><li><a href="MessageBox.html">MessageBox</a></li><li><a href="NavGroup.html">NavGroup</a></li><li><a href="Pagination.html">Pagination</a></li><li><a href="Step.html">Step</a></li><li><a href="Stepper.html">Stepper</a></li></ul><h3>Components / Hooks</h3><ul><li><a href="useCurrentAdmin.html">useCurrentAdmin</a></li><li><a href="useNotice.html">useNotice</a></li><li><a href="useRecord.html">useRecord</a></li><li><a href="useTranslation.html">useTranslation</a></li></ul><h3>Components / HOC</h3><ul><li><a href="withNotice.html">withNotice</a></li></ul></div><div class="category"><h2>Base</h2><h3>Classes</h3><ul><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li></ul></div><div class="category"><h2>Decorators</h2><h3>Classes</h3><ul><li><a href="ActionDecorator.html">ActionDecorator</a></li><li><a href="PropertyDecorator.html">PropertyDecorator</a></li><li><a href="ResourceDecorator.html">ResourceDecorator</a></li></ul></div><div class="category"><h2>Errors</h2><h3>Classes</h3><ul><li><a href="ConfigurationError.html">ConfigurationError</a></li><li><a href="ForbiddenError.html">ForbiddenError</a></li><li><a href="NotFoundError.html">NotFoundError</a></li><li><a href="NotImplementedError.html">NotImplementedError</a></li><li><a href="ValidationError.html">ValidationError</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Interface</p>
+                    <h1>Action</h1>
+                </header>
+                
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>Action</h2>
+        
+            <div class="class-description"><p>Interface representing an Action in AdminBro.
+Look at 05-actions to see where you can use this interface.</p>
+<h4>Example Action</h4>
+<pre class="prettyprint source"><code>const action = {
+  actionType: 'record',
+  icon: 'View',
+  isVisible: true,
+  handler: async () => {...},
+  component: AdminBro.bundle('./my-action-component'),
+}
+</code></pre>
+<p>There are 3 kinds of actions:</p>
+<ol>
+<li>Resource action, which is performed for an entire resource.</li>
+<li>Record action, invoked for an record in a resource</li>
+<li>Bulk action, invoked for an set of records in a resource</li>
+</ol>
+<p>...and there are 6 actions predefined in AdminBro</p>
+<ol>
+<li><a href="module-NewAction.html">new</a> (resource action) - create new records in a resource</li>
+<li><a href="module-ListAction.html">list</a> (resource action) - list all records within a resource</li>
+<li><a href="module-EditAction.html">edit</a> (record action) - update records in a resource</li>
+<li><a href="module-ShowAction.html">show</a> (record action) - show details of given record</li>
+<li><a href="module-DeleteAction.html">delete</a> (record action) - delete given record</li>
+<li><a href="module-BulkDeleteAction.html">bulkDelete</a> (bulk action) - delete given records</li>
+</ol>
+<p>Users can also create their own actions or override those already existing by using
+<a href="ResourceOptions.html">ResourceOptions</a></p>
+<pre class="prettyprint source lang-javascript"><code>const AdminBroOptions = {
+  resources: [{
+    resource: User,
+    options: {
+      actions: {
+        // example of overriding existing 'new' action for
+        // User resource.
+        new: {
+          icon: 'Add'
+        },
+        // Example of creating a new 'myNewAction' which will be
+        // a resource action available for User model
+        myNewAction: {
+          actionType: 'resource',
+          handler: async (request, response, context) => {...}
+        }
+      }
+    }
+  }]
+}
+
+const { ACTIONS } = require('admin-bro')
+// example of adding after filter for 'show' action for all resources
+ACTIONS.show.after = async () => {...}
+</code></pre></div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_actions_action.interface.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_actions_action.interface.ts.html">admin-bro/src/backend/actions/action.interface.ts</a>, <a href="admin-bro_src_backend_actions_action.interface.ts.html#line127">line 127</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+        
+    
+    </div>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class='vertical-section'>
+            <h1>Members</h1>
+            <div class="members">
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">'resource'</span>
+|
+
+<span class="param-type">'record'</span>
+|
+
+<span class="param-type">'bulk'</span>
+
+
+    </span>
+
+<h4 class="name" id="actionType">
+    <a class="href-link" href="#actionType">#</a>
+    
+    <span class="code-name">
+        actionType
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Type of an action - could be either <em>resource</em>, <em>record</em> or <em>bulk</em>.</p>
+<img src="./images/actions.png">
+<p>When you define a new action - it is required.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_actions_action.interface.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_actions_action.interface.ts.html">admin-bro/src/backend/actions/action.interface.ts</a>, <a href="admin-bro_src_backend_actions_action.interface.ts.html#line284">line 284</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type"><a href="Action.html#After">After</a>.&lt;T></span>
+
+
+    </span>
+
+<h4 class="name" id="after">
+    <a class="href-link" href="#after">#</a>
+    
+    <span class="code-name">
+        after
+    </span>
+    
+        <span class='tag'>Optional</span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>After action hook. When it is given - it is performed on the returned,
+by <a href="Action.html#handler">handler</a> function response.</p>
+<p>You can use it to (just an idea)</p>
+<ul>
+<li>create log of changes done in the app</li>
+<li>prefetch additional data after original Handler is being performed</li>
+</ul>
+<p>Creating a changelog example:</p>
+<pre class="prettyprint source lang-javascript"><code>// example mongoose model
+const ChangeLog = mongoose.model('ChangeLog', mongoose.Schema({
+  // what action
+  action: { type: String },
+  // who
+  userId: { type: mongoose.Types.ObjectId, ref: 'User' },
+  // on which resource
+  resource: { type: String },
+  // was record involved (resource and recordId creates to polymorphic relation)
+  recordId: { type: mongoose.Types.ObjectId },
+}, { timestamps: true }))
+
+// actual after function
+const createLog = async (originalResponse, request, context) => {
+  // checking if object doesn't have any errors or is a delete action
+  if ((request.method === 'post'
+       && originalResponse.record
+       && !Object.keys(originalResponse.record.errors).length)
+       || context.action.name === 'delete') {
+    await ChangeLog.create({
+      action: context.action.name,
+      // assuming in the session we store _id of the current admin
+      userId: context.currentAdmin && context.currentAdmin._id,
+      resource: context.resource.id(),
+      recordId: context.record && context.record.id(),
+    })
+  }
+  return originalResponse
+}
+
+// and attaching this function to actions for all resources
+const { ACTIONS } = require('admin-bro')
+
+ACTIONS.edit.after = createLog
+ACTIONS.delete.after = createLog
+ACTIONS.new.after = createLog
+</code></pre>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_actions_action.interface.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_actions_action.interface.ts.html">admin-bro/src/backend/actions/action.interface.ts</a>, <a href="admin-bro_src_backend_actions_action.interface.ts.html#line397">line 397</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type"><a href="Action.html#Before">Before</a></span>
+
+
+    </span>
+
+<h4 class="name" id="before">
+    <a class="href-link" href="#before">#</a>
+    
+    <span class="code-name">
+        before
+    </span>
+    
+        <span class='tag'>Optional</span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Before action hook. When it is given - it is performed before the <a href="Action.html#handler">Action#handler</a>
+method.</p>
+<p>Example of hashing password before creating it:</p>
+<pre class="prettyprint source lang-javascript"><code>actions: {
+  new: {
+    before: async (request) => {
+      if(request.payload.password) {
+        request.payload = {
+          ...request.payload,
+          encryptedPassword: await bcrypt.hash(request.payload.password, 10),
+          password: undefined,
+        }
+      }
+      return request
+    },
+  }
+}
+</code></pre>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_actions_action.interface.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_actions_action.interface.ts.html">admin-bro/src/backend/actions/action.interface.ts</a>, <a href="admin-bro_src_backend_actions_action.interface.ts.html#line371">line 371</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">string</span>
+|
+
+<span class="param-type">false</span>
+
+
+    </span>
+
+<h4 class="name" id="component">
+    <a class="href-link" href="#component">#</a>
+    
+    <span class="code-name">
+        component
+    </span>
+    
+        <span class='tag'>Optional</span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Component which will be used to render the action. To pass the component
+use <a href="AdminBro.html#.bundle">AdminBro.bundle</a> method.</p>
+<p>Action components accepts <a href="BaseActionComponent.html#ActionProps">ActionProps</a> and are rendered by the
+<a href="BaseActionComponent.html">BaseActionComponent</a></p>
+<p>When component is set to <code>false</code> then action doesn't have it's own view.
+Instead after clicking button it is immediately performed. Example of
+an action without a view is <a href="module-DeleteAction.html">module:DeleteAction</a>.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_actions_action.interface.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_actions_action.interface.ts.html">admin-bro/src/backend/actions/action.interface.ts</a>, <a href="admin-bro_src_backend_actions_action.interface.ts.html#line328">line 328</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">string</span>
+|
+
+<span class="param-type">number</span>
+|
+
+<span class="param-type">Array.&lt;(string|number)></span>
+
+
+    </span>
+
+<h4 class="name" id="containerWidth">
+    <a class="href-link" href="#containerWidth">#</a>
+    
+    <span class="code-name">
+        containerWidth
+    </span>
+    
+        <span class='tag'>Optional</span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>The max width of action HTML container.
+You can put here an actual size in px or an array wf widths, where different values
+will be responsible for different breakpoints.
+It is directly passed to action's wrapping <a href="Box.html">Box</a> component, to its <code>width</code> property.</p>
+<p>Examples</p>
+<pre class="prettyprint source lang-javascript"><code>
+// passing regular string
+containerWidth: '800px'
+
+// passing number for 100% width
+containerWidth: 1
+
+// passing values for different <a href="Theme.html">breakpoints</a>
+containerWidth: [1, 1/2, 1/3]
+</code></pre>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_actions_action.interface.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_actions_action.interface.ts.html">admin-bro/src/backend/actions/action.interface.ts</a>, <a href="admin-bro_src_backend_actions_action.interface.ts.html#line466">line 466</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">string</span>
+
+
+    </span>
+
+<h4 class="name" id="guard">
+    <a class="href-link" href="#guard">#</a>
+    
+    <span class="code-name">
+        guard
+    </span>
+    
+        <span class='tag'>Optional</span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>guard message - user will have to confirm it before executing an action.</p>
+<pre class="prettyprint source lang-javascript"><code>new AdminBro({ resources: [{
+  resource: Car,
+  options: { actions: {
+    delete: {
+      guard: 'doYouReallyWantToDoThis',
+    }
+  }}
+}]})
+</code></pre>
+<p>What you enter there goes to <a href="TranslateFunctions.html#translateMessage">TranslateFunctions#translateMessage</a> function,
+so in order to define the actual message you will have to specify its
+translation in AdminBroOptions.Locale</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_actions_action.interface.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_actions_action.interface.ts.html">admin-bro/src/backend/actions/action.interface.ts</a>, <a href="admin-bro_src_backend_actions_action.interface.ts.html#line307">line 307</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type"><a href="Action.html#ActionHandler">ActionHandler</a>.&lt;T></span>
+
+
+    </span>
+
+<h4 class="name" id="handler">
+    <a class="href-link" href="#handler">#</a>
+    
+    <span class="code-name">
+        handler
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>handler function which will be invoked by either:</p>
+<ul>
+<li><a href="ApiController.html#resourceAction">ApiController#resourceAction</a></li>
+<li><a href="ApiController.html#recordAction">ApiController#recordAction</a></li>
+<li>or <a href="ApiController.html#bulkAction">ApiController#bulkAction</a>
+when user visits clicks action link.</li>
+</ul>
+<p>If you are defining this action for a record it has to return:</p>
+<ul>
+<li><a href="Action.html#ActionResponse">ActionResponse</a> for resource action</li>
+<li><a href="Action.html#RecordActionResponse">RecordActionResponse</a> for record action</li>
+<li><a href="Action.html#BulkActionResponse">BulkActionResponse</a> for bulk action</li>
+</ul>
+<pre class="prettyprint source lang-javascript"><code>// Handler of a 'record' action
+handler: async (request, response, context) {
+  const user = context.record
+  const Cars = context._admin.findResource('Car')
+  const userCar = Car.findOne(context.record.param('carId'))
+  return {
+    record: user.toJSON(context.currentAdmin),
+  }
+}
+</code></pre>
+<p>Required for new actions. For modifying already defined actions
+like new and edit we suggest using <a href="Action.html#before">Action#before</a> and <a href="Action.html#after">Action#after</a> hooks.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_actions_action.interface.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_actions_action.interface.ts.html">admin-bro/src/backend/actions/action.interface.ts</a>, <a href="admin-bro_src_backend_actions_action.interface.ts.html#line342">line 342</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">boolean</span>
+
+
+    </span>
+
+<h4 class="name" id="hideActionHeader">
+    <a class="href-link" href="#hideActionHeader">#</a>
+    
+    <span class="code-name">
+        hideActionHeader
+    </span>
+    
+        <span class='tag'>Optional</span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Indicates if Action Header should be hidden.
+Action header consist of:</p>
+<ul>
+<li>breadcrumbs</li>
+<li>action buttons</li>
+<li>action title</li>
+</ul>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_actions_action.interface.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_actions_action.interface.ts.html">admin-bro/src/backend/actions/action.interface.ts</a>, <a href="admin-bro_src_backend_actions_action.interface.ts.html#line456">line 456</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">string</span>
+
+
+    </span>
+
+<h4 class="name" id="icon">
+    <a class="href-link" href="#icon">#</a>
+    
+    <span class="code-name">
+        icon
+    </span>
+    
+        <span class='tag'>Optional</span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>icon name for the action. Take a look <a href="Icon.html">Icon</a> component,
+because what you put here is passed down to it.</p>
+<pre class="prettyprint source lang-javascript"><code>new AdminBro({ resources: [{
+  resource: Car,
+  options: { actions: { edit: { icon: 'Add' } } },
+}]})
+</code></pre>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_actions_action.interface.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_actions_action.interface.ts.html">admin-bro/src/backend/actions/action.interface.ts</a>, <a href="admin-bro_src_backend_actions_action.interface.ts.html#line293">line 293</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">boolean</span>
+|
+
+<span class="param-type"><a href="Action.html#IsFunction">IsFunction</a></span>
+
+
+    </span>
+
+<h4 class="name" id="isAccessible">
+    <a class="href-link" href="#isAccessible">#</a>
+    
+    <span class="code-name">
+        isAccessible
+    </span>
+    
+        <span class='tag'>Optional</span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Indicates if the action can be invoked for given invocation context.
+You can pass a boolean or function of type <a href="Action.html#IsFunction">IsFunction</a>, which
+takes <a href="Action.html#ActionContext">ActionContext</a> as an argument.</p>
+<p>You can use it as a carrier between the hooks.</p>
+<p>Example for isVisible function which allows the user to edit cars which belongs only
+to her:</p>
+<pre class="prettyprint source lang-javascript"><code>const canEditCars = ({ currentAdmin, record }) => {
+  return currentAdmin && (
+    currentAdmin.role === 'admin'
+    || currentAdmin._id === record.param('ownerId')
+  )
+}
+
+new AdminBro({ resources: [{
+  resource: Car,
+  options: { actions: { edit: { isAccessible: canEditCars } } }
+}]})
+</code></pre>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Action.html#ActionContext">ActionContext</a>   parameter passed to isAccessible</li>
+        
+            <li><a href="Action.html#IsFunction">IsFunction</a>      exact type of the function</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_actions_action.interface.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_actions_action.interface.ts.html">admin-bro/src/backend/actions/action.interface.ts</a>, <a href="admin-bro_src_backend_actions_action.interface.ts.html#line234">line 234</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">boolean</span>
+|
+
+<span class="param-type"><a href="Action.html#IsFunction">IsFunction</a></span>
+
+
+    </span>
+
+<h4 class="name" id="isVisible">
+    <a class="href-link" href="#isVisible">#</a>
+    
+    <span class="code-name">
+        isVisible
+    </span>
+    
+        <span class='tag'>Optional</span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>indicates if action should be visible for given invocation context.
+It also can be a simple boolean value.
+<code>True</code> by default.
+The most common example of usage is to hide resources from the UI.
+So let say we have 2 resources <strong>User</strong> and <strong>Cars</strong>:</p>
+<pre class="prettyprint source lang-javascript"><code>const User = mongoose.model('User', mongoose.Schema({
+  email: String,
+  encryptedPassword: String,
+}))
+const Car = mongoose.model('Car', mongoose.Schema({
+  name: String,
+  ownerId: { type: mongoose.Types.ObjectId, ref: 'User' },
+})
+</code></pre>
+<p>so if we want to hide Users collection, but allow people to pick user when
+creating cars. We can do this like this:</p>
+<pre class="prettyprint source lang-javascript"><code>new AdminBro({ resources: [{
+  resource: User,
+  options: { actions: { list: { isVisible: false } } }
+}]})
+</code></pre>
+<p>In contrast - when we use <a href="Action.html#isAccessible">Action#isAccessible</a> instead - user wont be able to
+pick car owner.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Action.html#ActionContext">ActionContext</a>   parameter passed to isAccessible</li>
+        
+            <li><a href="Action.html#IsFunction">IsFunction</a>      exact type of the function</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_actions_action.interface.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_actions_action.interface.ts.html">admin-bro/src/backend/actions/action.interface.ts</a>, <a href="admin-bro_src_backend_actions_action.interface.ts.html#line198">line 198</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">string</span>
+
+
+    </span>
+
+<h4 class="name" id="name">
+    <a class="href-link" href="#name">#</a>
+    
+    <span class="code-name">
+        name
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Name of an action which is its uniq key.
+If you use one of <em>list</em>, <em>edit</em>, <em>new</em>, <em>show</em>, <em>delete</em> or
+<em>bulkDelete</em> you override existing actions.
+For all other keys you create a new action.</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_actions_action.interface.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_actions_action.interface.ts.html">admin-bro/src/backend/actions/action.interface.ts</a>, <a href="admin-bro_src_backend_actions_action.interface.ts.html#line190">line 190</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">boolean</span>
+
+
+    </span>
+
+<h4 class="name" id="showFilter">
+    <a class="href-link" href="#showFilter">#</a>
+    
+    <span class="code-name">
+        showFilter
+    </span>
+    
+        <span class='tag'>Optional</span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>if filter should be visible on the sidebar. Only for <em>resource</em> actions</p>
+<p>Example of creating new resource action with filter</p>
+<pre class="prettyprint source lang-javascript"><code>new AdminBro({ resources: [{
+  resource: Car,
+  options: { actions: {
+    newAction: {
+      type: 'resource',
+      showFilter: true,
+    }
+  }}
+}]})
+</code></pre>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_actions_action.interface.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_actions_action.interface.ts.html">admin-bro/src/backend/actions/action.interface.ts</a>, <a href="admin-bro_src_backend_actions_action.interface.ts.html#line264">line 264</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">boolean</span>
+
+
+    </span>
+
+<h4 class="name" id="showInDrawer">
+    <a class="href-link" href="#showInDrawer">#</a>
+    
+    <span class="code-name">
+        showInDrawer
+    </span>
+    
+        <span class='tag'>Optional</span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Indicates if given action should be seen in a drawer or in a full screen. Default to false</p>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_actions_action.interface.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_actions_action.interface.ts.html">admin-bro/src/backend/actions/action.interface.ts</a>, <a href="admin-bro_src_backend_actions_action.interface.ts.html#line450">line 450</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+            </div>
+        </div>
+    
+
+    
+
+    
+        <div class='vertical-section'>
+            <h1>Type Definitions</h1>
+            <div class="members">
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">object</span>
+
+
+    </span>
+
+<h4 class="name" id="ActionContext">
+    <a class="href-link" href="#ActionContext">#</a>
+    
+    <span class="code-name">
+        ActionContext
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Execution context for an action. It is passed to the <a href="Action.html#handler">Action#handler</a>,
+<a href="Action.html#before">Action#before</a> and <a href="Action.html#after">Action#after</a> functions.</p>
+<p>Apart from the properties defined below it also extends <a href="TranslateFunctions.html">TranslateFunctions</a>.
+So you can use i.e. context.translateMessage(...) and others...</p>
+</div>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+            <th>Attributes</th>
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>{...}</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="TranslateFunctions.html#TranslateFunction">TranslateFunction</a></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>all functions from <a href="TranslateFunctions.html">TranslateFunctions</a>
+interface.</p></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>_admin</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="AdminBro.html">AdminBro</a></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>current instance of AdminBro. You may use it to fetch other Resources by their names:</p></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>resource</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="BaseResource.html">BaseResource</a></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Resource on which action has been invoked. Null for dashboard handler.</p></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>record</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="BaseRecord.html">BaseRecord</a></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Record on which action has been invoked (only for actionType === 'record')</p></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>records</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Array.&lt;<a href="BaseRecord.html">BaseRecord</a>></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Records on which action has been invoked (only for actionType === 'bulk')</p></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>h</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="ViewHelpers.html">ViewHelpers</a></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>view helpers</p></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>action</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="ActionDecorator.html">ActionDecorator</a></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Object of currently invoked function. Not present for dashboard action</p></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>currentAdmin</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="AdminBro.html#CurrentAdmin">CurrentAdmin</a></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Currently logged in admin</p></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>{...}</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">any</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Any custom property which you can add to context</p></td>
+</tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_actions_action.interface.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_actions_action.interface.ts.html">admin-bro/src/backend/actions/action.interface.ts</a>, <a href="admin-bro_src_backend_actions_action.interface.ts.html#line12">line 12</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="ActionHandler">
+        <a class="href-link" href="#ActionHandler">#</a>
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            
+                ActionHandler<span class="signature">(request, response, context)</span><span class="type-signature"> &rarr; {Promise.&lt;T>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Type of a handler function. It has to return response compatible
+with <a href="Action.html#ActionResponse">ActionResponse</a>, <a href="Action.html#BulkActionResponse">BulkActionResponse</a> or <a href="Action.html#RecordActionResponse">RecordActionResponse</a></p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>request</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type"><a href="Action.html#ActionRequest">ActionRequest</a></span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"></td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>response</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">any</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"></td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>context</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type"><a href="Action.html#ActionContext">ActionContext</a></span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_actions_action.interface.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_actions_action.interface.ts.html">admin-bro/src/backend/actions/action.interface.ts</a>, <a href="admin-bro_src_backend_actions_action.interface.ts.html#line92">line 92</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">Promise.&lt;T></span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">object</span>
+
+
+    </span>
+
+<h4 class="name" id="ActionRequest">
+    <a class="href-link" href="#ActionRequest">#</a>
+    
+    <span class="code-name">
+        ActionRequest
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>ActionRequest</p>
+</div>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+            <th>Attributes</th>
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>params</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">object</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>parameters passed in an URL</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>resourceId</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Id of current resource</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>recordId</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Id of current record (in case of record action)</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>recordIds</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Id of selected records (in case of bulk action) divided by commas</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>action</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Name of an action</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>{...}</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">any</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+  
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>payload</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Record.&lt;string, any></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>POST data passed to the backend</p></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>query</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Record.&lt;string, any></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Elements of query string</p></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>method</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">'post'</span>
+|
+
+<span class="param-type">'get'</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>HTTP method</p></td>
+</tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_actions_action.interface.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_actions_action.interface.ts.html">admin-bro/src/backend/actions/action.interface.ts</a>, <a href="admin-bro_src_backend_actions_action.interface.ts.html#line44">line 44</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">object</span>
+
+
+    </span>
+
+<h4 class="name" id="ActionResponse">
+    <a class="href-link" href="#ActionResponse">#</a>
+    
+    <span class="code-name">
+        ActionResponse
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Base response for all actions</p>
+</div>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+            <th>Attributes</th>
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>notice</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="withNotice.html#NoticeMessage">NoticeMessage</a></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Notice message which should be presented to the end user after showing the action</p></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>redirectUrl</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>redirect path</p></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>{...}</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">any</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Any other custom parameter</p></td>
+</tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_actions_action.interface.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_actions_action.interface.ts.html">admin-bro/src/backend/actions/action.interface.ts</a>, <a href="admin-bro_src_backend_actions_action.interface.ts.html#line59">line 59</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="After">
+        <a class="href-link" href="#After">#</a>
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            
+                After<span class="signature">(response, request, context)</span><span class="type-signature"></span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Type of an after hook action.</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>response</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">T</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Response returned by the default ActionHandler</p></td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>request</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type"><a href="Action.html#ActionRequest">ActionRequest</a></span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Original request which has been sent to ActionHandler</p></td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>context</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type"><a href="Action.html#ActionContext">ActionContext</a></span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Invocation context</p></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_actions_action.interface.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_actions_action.interface.ts.html">admin-bro/src/backend/actions/action.interface.ts</a>, <a href="admin-bro_src_backend_actions_action.interface.ts.html#line116">line 116</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="Before">
+        <a class="href-link" href="#Before">#</a>
+        
+            
+                <span class='tag'>async</span>
+            
+        
+        <span class="code-name">
+            
+                Before<span class="signature">(request, context)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="Action.html#ActionRequest">ActionRequest</a>>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Before action hook. When it is given - it is performed before the <a href="Action.html#ActionHandler">ActionHandler</a>
+method.</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>request</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type"><a href="Action.html#ActionRequest">ActionRequest</a></span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Request object</p></td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>context</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type"><a href="Action.html#ActionContext">ActionContext</a></span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Invocation context</p></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_actions_action.interface.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_actions_action.interface.ts.html">admin-bro/src/backend/actions/action.interface.ts</a>, <a href="admin-bro_src_backend_actions_action.interface.ts.html#line105">line 105</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">Promise.&lt;<a href="Action.html#ActionRequest">ActionRequest</a>></span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">object</span>
+
+
+    </span>
+
+<h4 class="name" id="BulkActionResponse">
+    <a class="href-link" href="#BulkActionResponse">#</a>
+    
+    <span class="code-name">
+        BulkActionResponse
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Required response of a Record action. Extends <a href="Action.html#ActionResponse">ActionResponse</a></p>
+</div>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>records</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Array.&lt;<a href="RecordJSON.html">RecordJSON</a>></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>Array of RecordJSON objects.</p></td>
+</tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_actions_action.interface.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_actions_action.interface.ts.html">admin-bro/src/backend/actions/action.interface.ts</a>, <a href="admin-bro_src_backend_actions_action.interface.ts.html#line84">line 84</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="IsFunction">
+        <a class="href-link" href="#IsFunction">#</a>
+        
+        <span class="code-name">
+            
+                IsFunction<span class="signature">(context)</span><span class="type-signature"></span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Defines the type of <a href="Action.html#isAccessible">Action#isAccessible</a> and <a href="Action.html#isVisible">Action#isVisible</a> functions</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>context</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type"><a href="Action.html#ActionContext">ActionContext</a></span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_actions_action.interface.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_actions_action.interface.ts.html">admin-bro/src/backend/actions/action.interface.ts</a>, <a href="admin-bro_src_backend_actions_action.interface.ts.html#line68">line 68</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">object</span>
+
+
+    </span>
+
+<h4 class="name" id="RecordActionResponse">
+    <a class="href-link" href="#RecordActionResponse">#</a>
+    
+    <span class="code-name">
+        RecordActionResponse
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Required response of a Record action. Extends <a href="Action.html#ActionResponse">ActionResponse</a></p>
+</div>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>record</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="RecordJSON.html">RecordJSON</a></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>Record object.</p></td>
+</tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro_src_backend_actions_action.interface.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro_src_backend_actions_action.interface.ts.html">admin-bro/src/backend/actions/action.interface.ts</a>, <a href="admin-bro_src_backend_actions_action.interface.ts.html#line76">line 76</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+            </div>
+        </div>
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+<script src="scripts/search.js"> </script>
+
+</body>
+</html>

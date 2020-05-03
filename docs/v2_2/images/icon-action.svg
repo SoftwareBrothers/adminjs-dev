@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="170px" height="177px" viewBox="0 0 170 177" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Group 19</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M39.3652504,100.870208 L4.05909138,81.9015075 L4.05909138,81.9015075 C1.54701753,80.3983931 0,77.6238593 0,74.6216375 L0,30.4717779 C0,27.4695562 1.54701753,24.6950223 4.05909138,23.1919079 L40.9300591,1.12994456 C43.4479462,-0.376648186 46.5520538,-0.376648186 49.0699409,1.12994456 L85.9409086,23.1919079 C88.4529825,24.6950223 90,27.4695562 90,30.4717779 L90,74.6216375 C90,77.6238593 88.4529825,80.3983931 85.9409086,81.9015075 L50.9483881,100.857139 C49.7783215,101.49097 48.4686266,101.822917 47.1379132,101.822917 L43.1515005,101.822917 C41.830104,101.822917 40.5292836,101.4956 39.3652504,100.870208 Z" id="path-1"></path>
+        <filter x="-66.7%" y="-58.9%" width="233.3%" height="217.9%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="20" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.450980392   0 0 0 0 0.525490196   0 0 0 0 0.62745098  0 0 0 0.24 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Landingpage" transform="translate(-625.000000, -4227.000000)">
+            <g id="Group-19" transform="translate(665.000000, 4264.583333)">
+                <g id="Path-Copy-6">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#69D6D4" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <g id="Group-14" transform="translate(18.000000, 22.416667)" stroke="#FFFFFF" stroke-width="1.5">
+                    <path d="M44.561807,32.8500952 C44.9591106,31.3953314 45.1712162,29.8641198 45.1712162,28.2833683 C45.1712162,18.7331401 37.4292266,10.9911504 27.8789984,10.9911504 C18.3287702,10.9911504 10.5867805,18.7331401 10.5867805,28.2833683 C10.5867805,36.0132258 15.6586498,42.5584847 22.6560711,44.7728276" id="Path" stroke-linecap="round"></path>
+                    <path d="M27.8789984,45.5755862 C29.6081234,45.5755862 31.2779722,45.3217942 32.8533264,44.8494284 C35.4869228,44.0597516 37.8564313,42.6592172 39.7973086,40.8123684" id="Path" stroke-linecap="round"></path>
+                    <circle id="Oval-Copy" fill-opacity="0.196268575" fill="#718AF4" cx="42.2891799" cy="36.9294772" r="4.6112581"></circle>
+                    <path d="M49.9967483,30.3288689 C53.9070012,32.4200209 56.0877917,34.3600505 55.7173314,35.7426272 C55.316554,37.2383489 52.0036918,37.8061346 46.9370875,37.5206892" id="Path" stroke-linecap="round"></path>
+                    <path d="M37.4770284,36.3414044 C34.0334852,35.7283806 30.2823037,34.8947391 26.3871466,33.8510349 C11.0124598,29.7314 -0.783261661,23.8990468 0.0406653215,20.8241094 C0.413408487,19.433013 3.30508604,18.8445753 7.78382587,18.998697" id="Path" stroke-linecap="round"></path>
+                    <line x1="38.6443311" y1="0.238938053" x2="38.6443311" y2="6.46464987" id="Line-6" stroke-linecap="round"></line>
+                    <line x1="38.6443311" y1="0.238938053" x2="38.6443311" y2="6.46464987" id="Line-6-Copy" stroke-linecap="round" transform="translate(38.644331, 3.345133) rotate(-270.000000) translate(-38.644331, -3.345133) "></line>
+                    <line x1="10.9275169" y1="7.78938053" x2="10.9275169" y2="11.5248076" id="Line-6" stroke-linecap="round"></line>
+                    <line x1="10.9235202" y1="7.7853838" x2="10.9235202" y2="11.5208109" id="Line-6-Copy" stroke-linecap="round" transform="translate(10.923520, 9.653097) rotate(-270.000000) translate(-10.923520, -9.653097) "></line>
+                    <line x1="39.3611452" y1="47.9150442" x2="39.3611452" y2="51.2354239" id="Line-6" stroke-linecap="round"></line>
+                    <line x1="39.3575926" y1="47.9114916" x2="39.3575926" y2="51.2318712" id="Line-6-Copy" stroke-linecap="round" transform="translate(39.357593, 49.571681) rotate(-270.000000) translate(-39.357593, -49.571681) "></line>
+                    <line x1="11.8832691" y1="47.9946903" x2="11.8832691" y2="53.3903072" id="Line-6" stroke-linecap="round"></line>
+                    <line x1="11.8774961" y1="47.9889172" x2="11.8774961" y2="53.3845341" id="Line-6-Copy" stroke-linecap="round" transform="translate(11.877496, 50.686726) rotate(-270.000000) translate(-11.877496, -50.686726) "></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

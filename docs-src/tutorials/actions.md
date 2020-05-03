@@ -2,11 +2,12 @@ At some point you would probably like to customize default views or create custo
 
 ## Default actions
 
-Admin bro has 6 major default actions defined for each resource:
+Admin bro has 7 major default actions defined for each resource:
 
 __Resource__ base actions:
 
 * list - list all records
+* search - search record by query string
 * new [Add new] - creates new record
 
 __Record__ base actions:
