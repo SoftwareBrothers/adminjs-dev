@@ -1,32 +1,5 @@
 version: "2.1"
 services:
-  app:
-    container_name: app
-    restart: always
-    build: 
-      context: ../
-      dockerfile: ./infrastructure/Dockerfile
-    image: 'admin-bro'
-    ports:
-      - "8080:8080"
-      - "8081:8081"
-      - "9222:9222"
-    links:
-      - mongo
-    volumes:
-      - ../:/usr/src/app
-      - /usr/src/app/admin-bro-example-app/node_modules
-      - /usr/src/app/admin-bro-hapijs/node_modules
-      - /usr/src/app/admin-bro-mongoose/node_modules
-      - /usr/src/app/admin-bro-sequelizejs/node_modules
-      - /usr/src/app/admin-bro/node_modules
-      - /usr/src/app/node_modules
-    command: "./node_modules/.bin/gulp"
-    env_file: '.env'
-    depends_on:
-      mongo:
-        condition: service_healthy
-
   mongo:
     container_name: mongo
     image: mongo
@@ -44,11 +17,16 @@ services:
     container_name: postgres
     image: postgres
     restart: always
+  ports:
+    - "5432:5432"
 
   mysql:
     container_name: mysql
     image: mysql:5
     env_file: '.env'
+  restart: always
+  ports:
+    - "3306:3306"
 
 volumes:
   mongodata:

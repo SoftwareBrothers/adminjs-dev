@@ -17,14 +17,37 @@ All AdminBro plugins are embedded as git submodules. To clone the entire repo wi
 git clone --recurse-submodules https://github.com/SoftwareBrothers/admin-bro-dev
 ```
 
-After that enter the `./infrastructure` directory and run docker:
+First of all you need databases. If you have already running MySQL, PostgreSQL and MongoDB on your host machine then skip this step. Otherwise we made it easier for you with docker-compose. Enter the `./infrastructure` directory and run docker:
 
 ```
 cd infrastructure
 docker-compose up
 ```
 
-and this is it. Now you have the entire dev environment set up.
+After this enter the admin-bro directory:
+```
+>> cd admin-bro
+```
+
+and run there following commands:
+
+```
+>> yarn install && yarn link && NODE_ENV=development yarn bundle:globals && yarn dev
+```
+
+And finally on the other tab of console enter the directory of our example app:
+
+```
+>> cd admin-bro-example-app
+```
+
+and run following commands:
+
+```
+>> yarn install && yarn link admin-bro && yarn dev
+```
+
+That's all. You can now open admin panel on your browser: http://localhost:8080/admin
 
 ## Note about the git
 
