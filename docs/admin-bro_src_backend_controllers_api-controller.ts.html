@@ -21,12 +21,15 @@
   <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
   <link type="text/css" rel="stylesheet" href="styles/app.min.css">
   <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
   <script async defer src="https://buttons.github.io/buttons.js"></script>
 
   
     <link rel="stylesheet" type="text/css" href="fonts.css"/>
   
 </head>
+
+
 
 <body class="layout">
     <div id="stickyNavbarOverlay"></div>
@@ -81,6 +84,7 @@
                 >
                     API Documentation
                 </a>
+                
                 <div class="dropdown is-hoverable is-right">
                     <a class="dropdown-trigger link">
                         Tutorials
@@ -89,47 +93,46 @@
                     <div class="dropdown-menu">
                         <div class="dropdown-content">
                         
-                            
-                                <a class="dropdown-item" href="tutorial-installation-instructions.html">
-                                    01. Installation instructions
-                                </a>
-                            
-                                <a class="dropdown-item" href="tutorial-example.html">
-                                    02. Example App
-                                </a>
-                            
-                                <a class="dropdown-item" href="tutorial-passing-resources.html">
-                                    03. Adding resources
-                                </a>
-                            
-                                <a class="dropdown-item" href="tutorial-customizing-resources.html">
-                                    04. Customize resources
-                                </a>
-                            
-                                <a class="dropdown-item" href="tutorial-actions.html">
-                                    05. Customize actions
-                                </a>
-                            
-                                <a class="dropdown-item" href="tutorial-writing-react-components.html">
-                                    06. Writing your own Components
-                                </a>
-                            
-                                <a class="dropdown-item" href="tutorial-custom-dashboard.html">
-                                    07. Customize dashboard
-                                </a>
-                            
-                                <a class="dropdown-item" href="tutorial-rbac.html">
-                                    08. Role-Based Access Control
-                                </a>
-                            
-                                <a class="dropdown-item" href="tutorial-i18n.html">
-                                    09. Internationalization (i18n)
-                                </a>
-                            
+                            <a class="dropdown-item" href="tutorial-installation-instructions.html">
+                                01. Installation instructions
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-example.html">
+                                02. Example App
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-passing-resources.html">
+                                03. Adding resources
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-customizing-resources.html">
+                                04. Customize resources
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-actions.html">
+                                05. Customize actions
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-writing-react-components.html">
+                                06. Writing your own Components
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-custom-dashboard.html">
+                                07. Customize dashboard
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-rbac.html">
+                                08. Role-Based Access Control
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-i18n.html">
+                                09. Internationalization (i18n)
+                            </a>
                         
                         </div>
                     </div>
                 </div>
+                
                  
                     
                         <a
@@ -183,6 +186,7 @@ import AdminBro from '../../admin-bro'
 import { ActionContext, ActionRequest, RecordActionResponse, ActionResponse, BulkActionResponse } from '../actions/action.interface'
 import ConfigurationError from '../utils/configuration-error'
 import NotFoundError from '../utils/not-found-error'
+import requestParser from '../utils/request-parser'
 import { SearchActionResponse } from '../actions/search-action'
 
 /**
@@ -280,13 +284,14 @@ class ApiController {
    *
    * Handler function responsible for a _.../api/resources/{resourceId}/actions/{action}_
    *
-   * @param   {ActionRequest}  request
+   * @param   {ActionRequest}  originalRequest
    * @param   {any}            response object from the plugin (i.e. admin-bro-expressjs)
    *
    * @return  {Promise&lt;ActionResponse>}  action response
    */
-  async resourceAction(request: ActionRequest, response: any): Promise&lt;ActionResponse> {
-    const actionContext = await this.getActionContext(request)
+  async resourceAction(originalRequest: ActionRequest, response: any): Promise&lt;ActionResponse> {
+    const actionContext = await this.getActionContext(originalRequest)
+    const request = requestParser(originalRequest, actionContext.resource)
     return actionContext.action.handler(request, response, actionContext)
   }
 
@@ -296,16 +301,17 @@ class ApiController {
    *
    * Handler function responsible for a _.../api/resources/{resourceId}/records/{recordId}/{action}_
    *
-   * @param   {ActionRequest}  request
+   * @param   {ActionRequest}  originalRequest
    * @param   {any}  response
    *
    * @return  {Promise&lt;RecordActionResponse>}  action response
    * @throws  ConfigurationError      When given record action doesn't return {@link RecordJSON}
    * @throws  ConfigurationError      when action handler doesn't return Promise&lt;{@link RecordActionResponse}>
    */
-  async recordAction(request: ActionRequest, response: any): Promise&lt;RecordActionResponse> {
-    const { recordId, resourceId } = request.params
-    const actionContext = await this.getActionContext(request)
+  async recordAction(originalRequest: ActionRequest, response: any): Promise&lt;RecordActionResponse> {
+    const { recordId, resourceId } = originalRequest.params
+    const actionContext = await this.getActionContext(originalRequest)
+    const request = requestParser(originalRequest, actionContext.resource)
 
     if (!recordId) {
       throw new NotFoundError([
@@ -347,10 +353,11 @@ class ApiController {
    *                                  the database
    * @throws  ConfigurationError      when action handler doesn't return Promise&lt;{@link BulkActionResponse}>
    */
-  async bulkAction(request: ActionRequest, response: any): Promise&lt;BulkActionResponse> {
-    const { resourceId } = request.params
-    const { recordIds } = request.query || {}
-    const actionContext = await this.getActionContext(request)
+  async bulkAction(originalRequest: ActionRequest, response: any): Promise&lt;BulkActionResponse> {
+    const { resourceId } = originalRequest.params
+    const { recordIds } = originalRequest.query || {}
+    const actionContext = await this.getActionContext(originalRequest)
+    const request = requestParser(originalRequest, actionContext.resource)
 
     if (!recordIds) {
       throw new NotFoundError([
@@ -451,7 +458,7 @@ export default ApiController
             
             <footer class="footer">
                 <div class="content has-text-centered">
-                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a></p>
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a></p>
                     <p class="sidebar-created-by">
                         <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
                         <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>

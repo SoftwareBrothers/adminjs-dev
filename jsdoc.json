@@ -21,7 +21,8 @@
         "better-docs/category",
         "better-docs/component",
         "node_modules/jsdoc-typeof-plugin",
-        "better-docs/typescript"
+        "better-docs/typescript",
+        "better-docs/typedef-import"
     ],
     "opts": {
         "encoding": "utf8",

@@ -1,7 +1,6 @@
 {
   "installation-instructions": {
-    "title": "01. Installation instructions",
-    "position": 1
+    "title": "01. Installation instructions"
   },
   "example": {
     "title": "02. Example App"
@@ -13,7 +12,12 @@
     "title": "04. Customize resources"
   },
   "actions": {
-    "title": "05. Customize actions"
+    "title": "05. Customize actions",
+    "children": {
+      "actions-validations": {
+        "title": "Custom validations"
+      }
+    }
   },
   "writing-react-components": {
     "title": "06. Writing your own Components"

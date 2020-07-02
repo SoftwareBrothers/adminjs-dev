@@ -21,12 +21,15 @@
   <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
   <link type="text/css" rel="stylesheet" href="styles/app.min.css">
   <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
   <script async defer src="https://buttons.github.io/buttons.js"></script>
 
   
     <link rel="stylesheet" type="text/css" href="fonts.css"/>
   
 </head>
+
+
 
 <body class="layout">
     <div id="stickyNavbarOverlay"></div>
@@ -81,6 +84,7 @@
                 >
                     API Documentation
                 </a>
+                
                 <div class="dropdown is-hoverable is-right">
                     <a class="dropdown-trigger link">
                         Tutorials
@@ -89,47 +93,46 @@
                     <div class="dropdown-menu">
                         <div class="dropdown-content">
                         
-                            
-                                <a class="dropdown-item" href="tutorial-installation-instructions.html">
-                                    01. Installation instructions
-                                </a>
-                            
-                                <a class="dropdown-item" href="tutorial-example.html">
-                                    02. Example App
-                                </a>
-                            
-                                <a class="dropdown-item" href="tutorial-passing-resources.html">
-                                    03. Adding resources
-                                </a>
-                            
-                                <a class="dropdown-item" href="tutorial-customizing-resources.html">
-                                    04. Customize resources
-                                </a>
-                            
-                                <a class="dropdown-item" href="tutorial-actions.html">
-                                    05. Customize actions
-                                </a>
-                            
-                                <a class="dropdown-item" href="tutorial-writing-react-components.html">
-                                    06. Writing your own Components
-                                </a>
-                            
-                                <a class="dropdown-item" href="tutorial-custom-dashboard.html">
-                                    07. Customize dashboard
-                                </a>
-                            
-                                <a class="dropdown-item" href="tutorial-rbac.html">
-                                    08. Role-Based Access Control
-                                </a>
-                            
-                                <a class="dropdown-item" href="tutorial-i18n.html">
-                                    09. Internationalization (i18n)
-                                </a>
-                            
+                            <a class="dropdown-item" href="tutorial-installation-instructions.html">
+                                01. Installation instructions
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-example.html">
+                                02. Example App
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-passing-resources.html">
+                                03. Adding resources
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-customizing-resources.html">
+                                04. Customize resources
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-actions.html">
+                                05. Customize actions
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-writing-react-components.html">
+                                06. Writing your own Components
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-custom-dashboard.html">
+                                07. Customize dashboard
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-rbac.html">
+                                08. Role-Based Access Control
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-i18n.html">
+                                09. Internationalization (i18n)
+                            </a>
                         
                         </div>
                     </div>
                 </div>
+                
                  
                     
                         <a
@@ -357,7 +360,7 @@ type ErrorMessage = {
 export const DropZone: React.FC&lt;DropZoneProps> = (props) => {
   const { validate, onChange, multiple, files: filesFromProps, uploadLimitIn, ...other } = props
 
-  const [isDragging, setIsDragging] = useState(false)
+  const [, setIsDragging] = useState(false)
   const [error, setError] = useState&lt;ErrorMessage | null>(null)
   const [filesToUpload, setFilesToUpload] = useState&lt;Array&lt;File>>(filesFromProps ?? [])
 
@@ -467,7 +470,7 @@ export const DropZone: React.FC&lt;DropZoneProps> = (props) => {
       ) : ''}
       {filesToUpload.map((file, index) => (
         // eslint-disable-next-line react/no-array-index-key
-        &lt;DropZoneItem file={file} key={index} onRemove={() => removeItem(index)} />
+        &lt;DropZoneItem file={file} key={index} onRemove={(): void => removeItem(index)} />
       ))}
     &lt;/Box>
   )
@@ -485,7 +488,7 @@ export default DropZone
             
             <footer class="footer">
                 <div class="content has-text-centered">
-                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a></p>
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a></p>
                     <p class="sidebar-created-by">
                         <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
                         <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminBro - Auto-generated admin panel for node.js with react 03. Adding resources</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <link rel="stylesheet" type="text/css" href="fonts.css"/>
+  
+</head>
+
+<body class="layout">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+             
+                <a class="image" href="index.html">
+                    <img src="images/logo-reg.svg" alt="logo">
+                </a>
+            
+            
+        </div>
+        <div class="menu">
+             
+                <div class="top-buttons">
+                    
+                        <a  href="https://admin-bro-example-app-staging.herokuapp.com/admin"
+                            target="_blank"
+                            class="button is-primary is-outlined"
+                        ?>
+                            Demo
+                        </a>
+                    
+                        <a  href="/tutorial-installation-instructions.html"
+                            target=""
+                            class="button is-primary is-outlined"
+                        ?>
+                            Get Started
+                        </a>
+                    
+                        <a  href="https://join.slack.com/t/adminbro/shared_invite/zt-djsqxxpz-_YCS8UMtQ9Ade6DPuLR7Zw"
+                            target=""
+                            class="button is-primary"
+                        ?>
+                            <i class="fab fa-slack-hash fa-lg"></i> Join the community
+                        </a>
+                    
+                </div>
+                
+            <div class="navigation">
+                <a
+                    href="docs.html"
+                    class="link"
+                >
+                    API Documentation
+                </a>
+                <div class="dropdown is-hoverable is-right">
+                    <a class="dropdown-trigger link">
+                        Tutorials
+                        <i class="fas fa-chevron-down fa-xs"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-content">
+                        
+                            
+                                <a class="dropdown-item" href="tutorial-installation-instructions.html">
+                                    01. Installation instructions
+                                </a>
+                            
+                                <a class="dropdown-item" href="tutorial-example.html">
+                                    02. Example App
+                                </a>
+                            
+                                <a class="dropdown-item" href="tutorial-passing-resources.html">
+                                    03. Adding resources
+                                </a>
+                            
+                                <a class="dropdown-item" href="tutorial-customizing-resources.html">
+                                    04. Customize resources
+                                </a>
+                            
+                                <a class="dropdown-item" href="tutorial-actions.html">
+                                    05. Customize actions
+                                </a>
+                            
+                                <a class="dropdown-item" href="tutorial-writing-react-components.html">
+                                    06. Writing your own Components
+                                </a>
+                            
+                                <a class="dropdown-item" href="tutorial-custom-dashboard.html">
+                                    07. Customize dashboard
+                                </a>
+                            
+                                <a class="dropdown-item" href="tutorial-rbac.html">
+                                    08. Role-Based Access Control
+                                </a>
+                            
+                                <a class="dropdown-item" href="tutorial-i18n.html">
+                                    09. Internationalization (i18n)
+                                </a>
+                            
+                        
+                        </div>
+                    </div>
+                </div>
+                 
+                    
+                        <a
+                            class="link user-link no-hover"
+                            href="https://github.com/SoftwareBrothers/admin-bro"
+                        >
+                            <i class="fab fa-github fa-3x"></i>
+                        </a>
+                    
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar tutorials"
+            id="sidebarNav"
+        >
+            
+                <div class="search-wrapper">
+                    <input id="search" type="text" placeholder="Search docs..." class="input">
+                </div>
+            
+            <nav>
+                
+                    <div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-example.html">02. Example App</a></li><li><a href="tutorial-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-actions.html">05. Customize actions</a></li><li><a href="tutorial-writing-react-components.html">06. Writing your own Components</a></li><li><a href="tutorial-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-rbac.html">08. Role-Based Access Control</a></li><li><a href="tutorial-i18n.html">09. Internationalization (i18n)</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Tutorial</p>
+                    <h1>03. Adding resources</h1>
+                </header>
+                <section>
+
+<header>
+    
+</header>
+
+<article>
+    <h2>Idea of Resources</h2>
+<p>What is a <strong>Resource</strong> in AdmiBro? - <strong>Resource is everything that you can manage</strong>
+(CRUD - create, read, update, destroy). Most often it is a Model from your ORM.</p>
+<p>The entire idea od AdminBro is to manage resources of all kinds. It doesn't matter if you
+use MongoDB with <a href="http://mongoosejs.com">mongoose</a> or PostgreSQL with <a href="http://sequelizejs.com">Sequelize</a>.
+AdminBro should give you the ability to manage records in those resources.</p>
+<h2>Adapters</h2>
+<p>AdminBro uses different database adapters in order to handle different kind of resources.</p>
+<h3>How to use an adapter</h3>
+<ol>
+<li>First, you have to install adapter locally using the <strong>npm/yarn</strong>.</li>
+<li>Next, you have to <strong>register this adapter</strong> using the <a href="AdminBro.html#.registerAdapter">AdminBro.registerAdapter</a>
+that AdminBro could recognize resources of its type.</li>
+</ol>
+<pre class="prettyprint source lang-javascript"><code>const AdminBro = require('admin-bro')
+const AdminBroMongoose = require('admin-bro-mongoose')
+
+AdminBro.registerAdapter(AdminBroMongoose)
+</code></pre>
+<h2>Passing resources to AminBro</h2>
+<p>So you know how to register an adapter - now let's take a look of how to add resources that
+they can be seen in AdminBro.</p>
+<p>You have 2 options:</p>
+<ol>
+<li>you can either add an <strong>entire Database</strong> and AdminBro will fetch all resources from it,</li>
+<li>or you can pass <strong>each Resource</strong> one by one.</li>
+</ol>
+<p>The first option is very easy, but the second allows you to modify the resources, see: 04-customizing-resources.</p>
+<p>Both passing <strong>entire Database</strong> or <strong>each Resource</strong> can be done via AdminBro options</p>
+<h3>Example by using the mongoose adapter:</h3>
+<pre class="prettyprint source lang-javascript"><code>// ...
+const AdminBro = require('admin-bro')
+const AdminBroMongoose = require('admin-bro-mongoose')
+const mongoose = require('mongoose')
+AdminBro.registerAdapter(AdminBroMongoose)
+
+// Initialize Database along with models
+const User = mongoose.model('User', { name: String, email: String, surname: String })
+const Admin = mongoose.model('Admin', { name: String, email: String})
+
+const run = async () => {
+  const mongooseDb = await mongoose.connect('mongodb://localhost:27017/test', { useNewUrlParser: true })
+
+  // Passing resources by giving entire database
+  const adminBro = new AdminBro({
+    databases: [mongooseDb],
+    //... other AdminBroOptions
+  })
+
+  // Passing resources one by one
+  const adminBro = new AdminBro({
+    resources: [User, Admin],
+    //... other AdminBroOptions
+  })
+}
+
+run()
+// ... 
+</code></pre>
+<h2>Available adapters</h2>
+<p>Currently we support following Database Adapters:</p>
+<ul>
+<li><a href="module-admin-bro-mongoose.html">admin-bro-mongoose</a> - adapter to <a href="http://mongoosejs.com">mongoose</a> for MongoDB</li>
+<li><a href="module-admin-bro-sequelizejs.html">admin-bro-sequelizejs</a> - adapter to <a href="http://sequelize.com">sequelize</a> for SQL Databases</li>
+</ul>
+<h2>Resources customization</h2>
+<p>Each resource could be customized in AdminBro - to see how to do this go to <a href="tutorial-customizing-resources.html">04. Customize resources</a></p>
+</article>
+
+</section>
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+<script src="scripts/search.js"> </script>
+
+</body>
+</html>

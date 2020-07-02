@@ -1,0 +1,165 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3882838, 2020-03-23T18:14:21-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: TTNormsPro-BlackItalic by TypeType
+ * URL: https://www.myfonts.com/fonts/type-type/tt-norms/black-ital/
+ * 
+ * Webfont: TTNormsPro-ExtraLightItalic by TypeType
+ * URL: https://www.myfonts.com/fonts/type-type/tt-norms/exlight-ital/
+ * 
+ * Webfont: TTNormsPro-Regular by TypeType
+ * URL: https://www.myfonts.com/fonts/type-type/tt-norms/regular/
+ * 
+ * Webfont: TTNormsPro-MediumItalic by TypeType
+ * URL: https://www.myfonts.com/fonts/type-type/tt-norms/med-ital/
+ * 
+ * Webfont: TTNormsPro-ExtraLight by TypeType
+ * URL: https://www.myfonts.com/fonts/type-type/tt-norms/exlight/
+ * 
+ * Webfont: TTNormsPro-Light by TypeType
+ * URL: https://www.myfonts.com/fonts/type-type/tt-norms/light/
+ * 
+ * Webfont: TTNormsPro-LightItalic by TypeType
+ * URL: https://www.myfonts.com/fonts/type-type/tt-norms/light-ital/
+ * 
+ * Webfont: TTNormsPro-ExtraBold by TypeType
+ * URL: https://www.myfonts.com/fonts/type-type/tt-norms/exbold/
+ * 
+ * Webfont: TTNormsPro-ExtraBoldItalic by TypeType
+ * URL: https://www.myfonts.com/fonts/type-type/tt-norms/exbold-ital/
+ * 
+ * Webfont: TTNormsPro-Black by TypeType
+ * URL: https://www.myfonts.com/fonts/type-type/tt-norms/black/
+ * 
+ * Webfont: TTNormsPro-ExtraBlack by TypeType
+ * URL: https://www.myfonts.com/fonts/type-type/tt-norms/heavy/
+ * 
+ * Webfont: TTNormsPro-Thin by TypeType
+ * URL: https://www.myfonts.com/fonts/type-type/tt-norms/thin/
+ * 
+ * Webfont: TTNormsPro-Italic by TypeType
+ * URL: https://www.myfonts.com/fonts/type-type/tt-norms/ital/
+ * 
+ * Webfont: TTNormsPro-Medium by TypeType
+ * URL: https://www.myfonts.com/fonts/type-type/tt-norms/medium/
+ * 
+ * Webfont: TTNormsPro-ThinItalic by TypeType
+ * URL: https://www.myfonts.com/fonts/type-type/tt-norms/thin-ital/
+ * 
+ * Webfont: TTNormsPro-BoldItalic by TypeType
+ * URL: https://www.myfonts.com/fonts/type-type/tt-norms/bold-ital/
+ * 
+ * Webfont: TTNormsPro-Bold by TypeType
+ * URL: https://www.myfonts.com/fonts/type-type/tt-norms/bold/
+ * 
+ * Webfont: TTNormsPro-ExtraBlackItalic by TypeType
+ * URL: https://www.myfonts.com/fonts/type-type/tt-norms/heavy-ital/
+ * 
+ * 
+ * Webfonts copyright: Copyright (c) 2016-2019 by TypeType. Designers Ivan Gladkikh, Pavel Emelyanov. Technical designers Vika Usmanova, Olexa Volochay, Nadyr Rakhimov, Yuri Nakonechny. All rights reserved.
+ * 
+ * © 2020 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/3b3f56");
+  
+@font-face {
+  src: url('webFonts/TTNormsPro-MediumItalic/font.eot');
+  font-family: 'TTNormsPro-MediumItalic';
+  src: url('webFonts/TTNormsPro-MediumItalic/font.woff2') format('woff2'), url('webFonts/TTNormsPro-MediumItalic/font.woff') format('woff'), url('webFonts/TTNormsPro-MediumItalic/font.eot?#iefix') format('embedded-opentype'), url('webFonts/TTNormsPro-MediumItalic/font.ttf') format('truetype');
+}
+@font-face {
+  src: url('webFonts/TTNormsPro-Regular/font.eot');
+  font-family: 'TTNormsPro-Regular';
+  src: url('webFonts/TTNormsPro-Regular/font.woff2') format('woff2'), url('webFonts/TTNormsPro-Regular/font.woff') format('woff'), url('webFonts/TTNormsPro-Regular/font.eot?#iefix') format('embedded-opentype'), url('webFonts/TTNormsPro-Regular/font.ttf') format('truetype');
+}
+@font-face {
+  src: url('webFonts/TTNormsPro-ExtraLightItalic/font.eot');
+  font-family: 'TTNormsPro-ExtraLightItalic';
+  src: url('webFonts/TTNormsPro-ExtraLightItalic/font.woff2') format('woff2'), url('webFonts/TTNormsPro-ExtraLightItalic/font.woff') format('woff'), url('webFonts/TTNormsPro-ExtraLightItalic/font.eot?#iefix') format('embedded-opentype'), url('webFonts/TTNormsPro-ExtraLightItalic/font.ttf') format('truetype');
+}
+@font-face {
+  src: url('webFonts/TTNormsPro-ExtraLight/font.eot');
+  font-family: 'TTNormsPro-ExtraLight';
+  src: url('webFonts/TTNormsPro-ExtraLight/font.woff2') format('woff2'), url('webFonts/TTNormsPro-ExtraLight/font.woff') format('woff'), url('webFonts/TTNormsPro-ExtraLight/font.eot?#iefix') format('embedded-opentype'), url('webFonts/TTNormsPro-ExtraLight/font.ttf') format('truetype');
+}
+@font-face {
+  src: url('webFonts/TTNormsPro-ExtraBlackItalic/font.eot');
+  font-family: 'TTNormsPro-ExtraBlackItalic';
+  src: url('webFonts/TTNormsPro-ExtraBlackItalic/font.woff2') format('woff2'), url('webFonts/TTNormsPro-ExtraBlackItalic/font.woff') format('woff'), url('webFonts/TTNormsPro-ExtraBlackItalic/font.eot?#iefix') format('embedded-opentype'), url('webFonts/TTNormsPro-ExtraBlackItalic/font.ttf') format('truetype');
+}
+@font-face {
+  src: url('webFonts/TTNormsPro-BoldItalic/font.eot');
+  font-family: 'TTNormsPro-BoldItalic';
+  src: url('webFonts/TTNormsPro-BoldItalic/font.woff2') format('woff2'), url('webFonts/TTNormsPro-BoldItalic/font.woff') format('woff'), url('webFonts/TTNormsPro-BoldItalic/font.eot?#iefix') format('embedded-opentype'), url('webFonts/TTNormsPro-BoldItalic/font.ttf') format('truetype');
+}
+@font-face {
+  src: url('webFonts/TTNormsPro-Bold/font.eot');
+  font-family: 'TTNormsPro-Bold';
+  src: url('webFonts/TTNormsPro-Bold/font.woff2') format('woff2'), url('webFonts/TTNormsPro-Bold/font.woff') format('woff'), url('webFonts/TTNormsPro-Bold/font.eot?#iefix') format('embedded-opentype'), url('webFonts/TTNormsPro-Bold/font.ttf') format('truetype');
+}
+@font-face {
+  src: url('webFonts/TTNormsPro-BlackItalic/font.eot');
+  font-family: 'TTNormsPro-BlackItalic';
+  src: url('webFonts/TTNormsPro-BlackItalic/font.woff2') format('woff2'), url('webFonts/TTNormsPro-BlackItalic/font.woff') format('woff'), url('webFonts/TTNormsPro-BlackItalic/font.eot?#iefix') format('embedded-opentype'), url('webFonts/TTNormsPro-BlackItalic/font.ttf') format('truetype');
+}
+@font-face {
+  src: url('webFonts/TTNormsPro-ThinItalic/font.eot');
+  font-family: 'TTNormsPro-ThinItalic';
+  src: url('webFonts/TTNormsPro-ThinItalic/font.woff2') format('woff2'), url('webFonts/TTNormsPro-ThinItalic/font.woff') format('woff'), url('webFonts/TTNormsPro-ThinItalic/font.eot?#iefix') format('embedded-opentype'), url('webFonts/TTNormsPro-ThinItalic/font.ttf') format('truetype');
+}
+@font-face {
+  src: url('webFonts/TTNormsPro-Medium/font.eot');
+  font-family: 'TTNormsPro-Medium';
+  src: url('webFonts/TTNormsPro-Medium/font.woff2') format('woff2'), url('webFonts/TTNormsPro-Medium/font.woff') format('woff'), url('webFonts/TTNormsPro-Medium/font.eot?#iefix') format('embedded-opentype'), url('webFonts/TTNormsPro-Medium/font.ttf') format('truetype');
+}
+@font-face {
+  src: url('webFonts/TTNormsPro-Italic/font.eot');
+  font-family: 'TTNormsPro-Italic';
+  src: url('webFonts/TTNormsPro-Italic/font.woff2') format('woff2'), url('webFonts/TTNormsPro-Italic/font.woff') format('woff'), url('webFonts/TTNormsPro-Italic/font.eot?#iefix') format('embedded-opentype'), url('webFonts/TTNormsPro-Italic/font.ttf') format('truetype');
+}
+@font-face {
+  src: url('webFonts/TTNormsPro-ExtraBlack/font.eot');
+  font-family: 'TTNormsPro-ExtraBlack';
+  src: url('webFonts/TTNormsPro-ExtraBlack/font.woff2') format('woff2'), url('webFonts/TTNormsPro-ExtraBlack/font.woff') format('woff'), url('webFonts/TTNormsPro-ExtraBlack/font.eot?#iefix') format('embedded-opentype'), url('webFonts/TTNormsPro-ExtraBlack/font.ttf') format('truetype');
+}
+@font-face {
+  src: url('webFonts/TTNormsPro-Thin/font.eot');
+  font-family: 'TTNormsPro-Thin';
+  src: url('webFonts/TTNormsPro-Thin/font.woff2') format('woff2'), url('webFonts/TTNormsPro-Thin/font.woff') format('woff'), url('webFonts/TTNormsPro-Thin/font.eot?#iefix') format('embedded-opentype'), url('webFonts/TTNormsPro-Thin/font.ttf') format('truetype');
+}
+@font-face {
+  src: url('webFonts/TTNormsPro-ExtraBoldItalic/font.eot');
+  font-family: 'TTNormsPro-ExtraBoldItalic';
+  src: url('webFonts/TTNormsPro-ExtraBoldItalic/font.woff2') format('woff2'), url('webFonts/TTNormsPro-ExtraBoldItalic/font.woff') format('woff'), url('webFonts/TTNormsPro-ExtraBoldItalic/font.eot?#iefix') format('embedded-opentype'), url('webFonts/TTNormsPro-ExtraBoldItalic/font.ttf') format('truetype');
+}
+@font-face {
+  src: url('webFonts/TTNormsPro-Black/font.eot');
+  font-family: 'TTNormsPro-Black';
+  src: url('webFonts/TTNormsPro-Black/font.woff2') format('woff2'), url('webFonts/TTNormsPro-Black/font.woff') format('woff'), url('webFonts/TTNormsPro-Black/font.eot?#iefix') format('embedded-opentype'), url('webFonts/TTNormsPro-Black/font.ttf') format('truetype');
+}
+@font-face {
+  src: url('webFonts/TTNormsPro-ExtraBold/font.eot');
+  font-family: 'TTNormsPro-ExtraBold';
+  src: url('webFonts/TTNormsPro-ExtraBold/font.woff2') format('woff2'), url('webFonts/TTNormsPro-ExtraBold/font.woff') format('woff'), url('webFonts/TTNormsPro-ExtraBold/font.eot?#iefix') format('embedded-opentype'), url('webFonts/TTNormsPro-ExtraBold/font.ttf') format('truetype');
+}
+@font-face {
+  src: url('webFonts/TTNormsPro-LightItalic/font.eot');
+  font-family: 'TTNormsPro-LightItalic';
+  src: url('webFonts/TTNormsPro-LightItalic/font.woff2') format('woff2'), url('webFonts/TTNormsPro-LightItalic/font.woff') format('woff'), url('webFonts/TTNormsPro-LightItalic/font.eot?#iefix') format('embedded-opentype'), url('webFonts/TTNormsPro-LightItalic/font.ttf') format('truetype');
+}
+@font-face {
+  src: url('webFonts/TTNormsPro-Light/font.eot');
+  font-family: 'TTNormsPro-Light';
+  src: url('webFonts/TTNormsPro-Light/font.woff2') format('woff2'), url('webFonts/TTNormsPro-Light/font.woff') format('woff'), url('webFonts/TTNormsPro-Light/font.eot?#iefix') format('embedded-opentype'), url('webFonts/TTNormsPro-Light/font.ttf') format('truetype');
+}
+

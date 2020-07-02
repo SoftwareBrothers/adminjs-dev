@@ -87,7 +87,7 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.1",
-    "jsdoc": "^3.5.5",
+    "jsdoc": "^3.6.4",
     "jsdoc-mermaid": "^1.0.0",
     "jsdoc-typeof-plugin": "^1.0.0",
     "parcel-bundler": "^1.12.4"
