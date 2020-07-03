@@ -40,7 +40,7 @@ The most versatile way of adding custom validation errors is by throwing {@link 
 - {@link Action#after after action hook} or in the
 - {@link Action#handler action handler}
 
-You can us your custom validator like [ClassValidator](https://github.com/typestack/class-validator) or validate data yourself.
+You can use your custom validator like [ClassValidator](https://github.com/typestack/class-validator) or validate data yourself.
 
 This is an example of throwing validation error in `before` `new` action hook:
 
@@ -66,7 +66,7 @@ const resourceOptions = {
 }
 ```
 
-when user gives "forbidden name" in the input for `name` property - it will trigger validation error.
+when the user gives "forbidden name" in the input for `name` property - it will trigger a validation error.
 
 {@link ValidationError} takes 2 arguments:
 
@@ -75,7 +75,7 @@ when user gives "forbidden name" in the input for `name` property - it will trig
 
 They are optional so you can show only one of them or both.
 
-The downside of this approach is that it clears all the other validation errors. So if database adapter spotted problems and you thrown error in after hook - those previous errors wont get to the response.
+The downside of this approach is that it clears all the other validation errors. So if database adapter spotted problems and you threw an error in after hook - those previous errors won't get to the response.
 
 ### Manually filling response with validation errors
 
