@@ -30,5 +30,8 @@
   },
   "i18n": {
     "title": "09. Internationalization (i18n)"
+  },
+  "cms": {
+    "title": "10. Content Management System"
   }
 }

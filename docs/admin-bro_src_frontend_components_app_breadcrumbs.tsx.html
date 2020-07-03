@@ -129,6 +129,10 @@
                                 09. Internationalization (i18n)
                             </a>
                         
+                            <a class="dropdown-item" href="tutorial-cms.html">
+                                10. Content Management System
+                            </a>
+                        
                         </div>
                     </div>
                 </div>
@@ -244,7 +248,7 @@ const Breadcrumbs: React.FC&lt;Props> = (props) => {
       &lt;BreadcrumbLink to={resource.href ? resource.href : '/'} className={record ? 'is-active' : ''}>
         {resource.name}
       &lt;/BreadcrumbLink>
-      {action &amp;&amp; record ? (&lt;BreadcrumbLink to="#">{action.label}&lt;/BreadcrumbLink>) : null}
+      { action &amp;&amp; action.name !== 'list' &amp;&amp; &lt;BreadcrumbLink to="#">{action.label}&lt;/BreadcrumbLink>}
     &lt;/Box>
   )
 }

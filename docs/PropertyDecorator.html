@@ -127,6 +127,10 @@
                                 09. Internationalization (i18n)
                             </a>
                         
+                            <a class="dropdown-item" href="tutorial-cms.html">
+                                10. Content Management System
+                            </a>
+                        
                         </div>
                     </div>
                 </div>
@@ -611,7 +615,7 @@ property has to be updated</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_decorators_property-decorator.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_decorators_property-decorator.ts.html">admin-bro/src/backend/decorators/property-decorator.ts</a>, <a href="admin-bro_src_backend_decorators_property-decorator.ts.html#line236">line 236</a>
+                <a href="admin-bro_src_backend_decorators_property-decorator.ts.html">admin-bro/src/backend/decorators/property-decorator.ts</a>, <a href="admin-bro_src_backend_decorators_property-decorator.ts.html#line240">line 240</a>
             </span>
         </p>
     
@@ -878,7 +882,7 @@ it changes property name to the nested property key.</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_decorators_property-decorator.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_decorators_property-decorator.ts.html">admin-bro/src/backend/decorators/property-decorator.ts</a>, <a href="admin-bro_src_backend_decorators_property-decorator.ts.html#line209">line 209</a>
+                <a href="admin-bro_src_backend_decorators_property-decorator.ts.html">admin-bro/src/backend/decorators/property-decorator.ts</a>, <a href="admin-bro_src_backend_decorators_property-decorator.ts.html#line213">line 213</a>
             </span>
         </p>
     
@@ -1420,7 +1424,7 @@ in the list view and in the breadcrumbs</p>
         
         <span class="code-name">
             
-                isVisible<span class="signature">(element)</span><span class="type-signature"></span>
+                isVisible<span class="signature">(where)</span><span class="type-signature"></span>
             
         </span>
     </h4>
@@ -1467,13 +1471,22 @@ in the list view and in the breadcrumbs</p>
             
 <tr class="deep-level-0">
   
-      <td class="name"><code>element</code></td>
+      <td class="name"><code>where</code></td>
   
 
   <td class="type">
   
       
-<span class="param-type">boolean</span>
+<span class="param-type">'list'</span>
+|
+
+<span class="param-type">'edit'</span>
+|
+
+<span class="param-type">'show'</span>
+|
+
+<span class="param-type">'filter'</span>
 
 
   
@@ -1483,7 +1496,7 @@ in the list view and in the breadcrumbs</p>
 
   
 
-  <td class="description last"><p>it could be either &quot;list&quot;, &quot;edit&quot; or &quot;show&quot;</p></td>
+  <td class="description last"></td>
 </tr>
 
 
@@ -2110,7 +2123,7 @@ in the list view and in the breadcrumbs</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_decorators_property-decorator.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_decorators_property-decorator.ts.html">admin-bro/src/backend/decorators/property-decorator.ts</a>, <a href="admin-bro_src_backend_decorators_property-decorator.ts.html#line188">line 188</a>
+                <a href="admin-bro_src_backend_decorators_property-decorator.ts.html">admin-bro/src/backend/decorators/property-decorator.ts</a>, <a href="admin-bro_src_backend_decorators_property-decorator.ts.html#line192">line 192</a>
             </span>
         </p>
     
@@ -2172,7 +2185,7 @@ in the list view and in the breadcrumbs</p>
         
         <span class="code-name">
             
-                toJSON<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="PropertyJSON.html">PropertyJSON</a>}</span>
+                toJSON<span class="signature">(where<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="PropertyJSON.html">PropertyJSON</a>}</span>
             
         </span>
     </h4>
@@ -2192,6 +2205,69 @@ in the list view and in the breadcrumbs</p>
 
 
 
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+            <th>Attributes</th>
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>where</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">PropertyPlace</span>
+
+
+  
+  </td>
+
+  
+      <td class="attributes">
+      
+          &lt;optional><br>
+      
+
+      
+
+      
+      </td>
+  
+
+  
+
+  <td class="description last"></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -2232,7 +2308,7 @@ in the list view and in the breadcrumbs</p>
         <p class="tag-source">
             <a href="admin-bro_src_backend_decorators_property-decorator.ts.html" class="button">View Source</a>
             <span>
-                <a href="admin-bro_src_backend_decorators_property-decorator.ts.html">admin-bro/src/backend/decorators/property-decorator.ts</a>, <a href="admin-bro_src_backend_decorators_property-decorator.ts.html#line163">line 163</a>
+                <a href="admin-bro_src_backend_decorators_property-decorator.ts.html">admin-bro/src/backend/decorators/property-decorator.ts</a>, <a href="admin-bro_src_backend_decorators_property-decorator.ts.html#line165">line 165</a>
             </span>
         </p>
     

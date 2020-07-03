@@ -127,6 +127,10 @@
                                 09. Internationalization (i18n)
                             </a>
                         
+                            <a class="dropdown-item" href="tutorial-cms.html">
+                                10. Content Management System
+                            </a>
+                        
                         </div>
                     </div>
                 </div>
@@ -158,7 +162,7 @@
             
             <nav>
                 
-                    <div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-example.html">02. Example App</a></li><li><a href="tutorial-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-actions.html">05. Customize actions</a><ul><li><a href="tutorial-actions-validations.html">Custom validations</a></li></ul></li><li><a href="tutorial-writing-react-components.html">06. Writing your own Components</a></li><li><a href="tutorial-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-rbac.html">08. Role-Based Access Control</a></li><li><a href="tutorial-i18n.html">09. Internationalization (i18n)</a></li></ul></div>
+                    <div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-example.html">02. Example App</a></li><li><a href="tutorial-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-actions.html">05. Customize actions</a><ul><li><a href="tutorial-actions-validations.html">Custom validations</a></li></ul></li><li><a href="tutorial-writing-react-components.html">06. Writing your own Components</a></li><li><a href="tutorial-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-rbac.html">08. Role-Based Access Control</a></li><li><a href="tutorial-i18n.html">09. Internationalization (i18n)</a></li><li><a href="tutorial-cms.html">10. Content Management System</a></li></ul></div>
                 
             </nav>
         </div>
@@ -202,7 +206,7 @@
 <li><a href="Action.html#after">after action hook</a> or in the</li>
 <li><a href="Action.html#handler">action handler</a></li>
 </ul>
-<p>You can us your custom validator like <a href="https://github.com/typestack/class-validator">ClassValidator</a> or validate data yourself.</p>
+<p>You can use your custom validator like <a href="https://github.com/typestack/class-validator">ClassValidator</a> or validate data yourself.</p>
 <p>This is an example of throwing validation error in <code>before</code> <code>new</code> action hook:</p>
 <pre class="prettyprint source"><code>const resourceOptions = {
   actions: {
@@ -224,14 +228,14 @@
   }
 }
 </code></pre>
-<p>when user gives &quot;forbidden name&quot; in the input for <code>name</code> property - it will trigger validation error.</p>
+<p>when the user gives &quot;forbidden name&quot; in the input for <code>name</code> property - it will trigger a validation error.</p>
 <p><a href="ValidationError.html">ValidationError</a> takes 2 arguments:</p>
 <ul>
 <li>map with errors for each field</li>
 <li><code>notice</code> error which will appear on the top of the UI</li>
 </ul>
 <p>They are optional so you can show only one of them or both.</p>
-<p>The downside of this approach is that it clears all the other validation errors. So if database adapter spotted problems and you thrown error in after hook - those previous errors wont get to the response.</p>
+<p>The downside of this approach is that it clears all the other validation errors. So if database adapter spotted problems and you threw an error in after hook - those previous errors won't get to the response.</p>
 <h3>Manually filling response with validation errors</h3>
 <p>Sometimes you might want to manually adjust the errors returned by the database adapter. You can do this manually by modifying the response.</p>
 <p>As I wrote in the beginning errors are stored inside the <a href="RecordJSON.html">RecordJSON</a> object. So in order to change that - you have to modify it.</p>
