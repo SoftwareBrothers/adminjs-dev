@@ -75,8 +75,8 @@ run()
 
 Currently we support following Database Adapters:
 
-- {@link module:admin-bro-mongoose admin-bro-mongoose} - adapter to [mongoose](http://mongoosejs.com) for MongoDB
-- {@link module:admin-bro-sequelizejs admin-bro-sequelizejs} - adapter to [sequelize](http://sequelize.com) for SQL Databases
+- {@link module:@admin-bro/mongoose} - adapter to [mongoose](http://mongoosejs.com) for MongoDB
+- {@link module:@admin-bro/sequelize} - adapter to [sequelize](http://sequelize.com) for SQL Databases
 
 ## Resources customization
 

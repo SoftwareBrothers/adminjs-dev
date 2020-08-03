@@ -10,15 +10,15 @@ Since __AdminBro__ uses your existing framework to render its routes - you have 
 
 There are plugins for:
 
-* {@link module:admin-bro-expressjs Express}
-* {@link module:admin-bro-hapijs Hapi}
+* {@link module:@admin-bro/express Express}
+* {@link module:@admin-bro/hapi Hapi}
 
 In this tutorial I will present the simplest way of adding AdminBro to those frameworks. If you
 want to know more - visit their corresponding pages (above).
 
 ### Express
 
-Install the AdminBro along with the {@link module:admin-bro-expressjs express plugin}
+Install the AdminBro along with the {@link module:@admin-bro/express express plugin}
 
 ```
 npm install admin-bro admin-bro-expressjs
@@ -58,7 +58,7 @@ app.listen(8080, () => console.log('AdminBro is under localhost:8080/admin'))
 > 
 > This is because other middleware can transform **requests** so that AdminBro wont be able to handle them.
 
-To see how to add an authentication or other modifications - visit the {@link module:admin-bro-expressjs Express Plugin} documentation.
+To see how to add an authentication or other modifications - visit the {@link module:@admin-bro/express Express Plugin} documentation.
 
 ### Hapi
 
@@ -92,7 +92,7 @@ const start = async () => {
 start()
 ```
 
-To see how to add an authentication or other modifications - visit the {@link module:admin-bro-hapijs Hapi Plugin} documentation.
+To see how to add an authentication or other modifications - visit the {@link module:@admin-bro/hapi Hapi Plugin} documentation.
 
 ## 02. Install the Database Adapter and add resources
 

@@ -298,7 +298,7 @@ const adminBro = new AdminBro({
 <p>Ok, now is the time to create some real users! So open the Admin Panel and create 2 users: one with the <em>admin</em> role and the other with the <em>restricted</em> role.</p>
 <p>Remember their passwords because in the next paragraph we will add a login page.</p>
 <h2>Adding login page</h2>
-<p><a href="module-admin-bro-expressjs.html">module:admin-bro-expressjs</a> plugin, which we use for attaching admin to express framework, has the option to authenticate AdminBro users. In order to use it, we have to change the <em>buildRouter</em> function to the <em>buildAuthenticatedRouter</em>. Now we can pass the authentication method which will verify an email and a password.</p>
+<p><a href="module-@admin-bro_express.html">module:@admin-bro/express</a> plugin, which we use for attaching admin to express framework, has the option to authenticate AdminBro users. In order to use it, we have to change the <em>buildRouter</em> function to the <em>buildAuthenticatedRouter</em>. Now we can pass the authentication method which will verify an email and a password.</p>
 <pre class="prettyprint source lang-javascript"><code>// Build and use a router which will handle all AdminBro routes
 const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
   authenticate: async (email, password) => {

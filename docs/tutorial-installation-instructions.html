@@ -184,13 +184,13 @@
 <p>Since <strong>AdminBro</strong> uses your existing framework to render its routes - you have to use one of our plugins.</p>
 <p>There are plugins for:</p>
 <ul>
-<li><a href="module-admin-bro-expressjs.html">Express</a></li>
-<li><a href="module-admin-bro-hapijs.html">Hapi</a></li>
+<li><a href="module-@admin-bro_express.html">Express</a></li>
+<li><a href="module-@admin-bro_hapi.html">Hapi</a></li>
 </ul>
 <p>In this tutorial I will present the simplest way of adding AdminBro to those frameworks. If you
 want to know more - visit their corresponding pages (above).</p>
 <h3>Express</h3>
-<p>Install the AdminBro along with the <a href="module-admin-bro-expressjs.html">express plugin</a></p>
+<p>Install the AdminBro along with the <a href="module-@admin-bro_express.html">express plugin</a></p>
 <pre class="prettyprint source"><code>npm install admin-bro admin-bro-expressjs
 </code></pre>
 <p>If you don't have <code>express</code> or <code>express-formidable</code> already installed, you will have to add that too. This is because they are <code>peerDependencies</code> of <code>admin-bro-expressjs</code>:</p>
@@ -218,7 +218,7 @@ app.listen(8080, () => console.log('AdminBro is under localhost:8080/admin'))
 <p>If you are adding AdminBro to an application which already has any other middleware, it is good to put the AdminBro setup on top.</p>
 <p>This is because other middleware can transform <strong>requests</strong> so that AdminBro wont be able to handle them.</p>
 </blockquote>
-<p>To see how to add an authentication or other modifications - visit the <a href="module-admin-bro-expressjs.html">Express Plugin</a> documentation.</p>
+<p>To see how to add an authentication or other modifications - visit the <a href="module-@admin-bro_express.html">Express Plugin</a> documentation.</p>
 <h3>Hapi</h3>
 <p>If you use <a href="https://hapijs.com/">Hapi framework</a> instead of express - follow this installation instructions:</p>
 <pre class="prettyprint source lang-bash"><code>npm install admin-bro-hapijs boom inert
@@ -244,7 +244,7 @@ const start = async () => {
 
 start()
 </code></pre>
-<p>To see how to add an authentication or other modifications - visit the <a href="module-admin-bro-hapijs.html">Hapi Plugin</a> documentation.</p>
+<p>To see how to add an authentication or other modifications - visit the <a href="module-@admin-bro_hapi.html">Hapi Plugin</a> documentation.</p>
 <h2>02. Install the Database Adapter and add resources</h2>
 <p><strong>AdminBro</strong> can be connected to many different types of resources. Right now we support <a href="https://mongoosejs.com/">mongoose ODM</a> and <a href="http://sequelizejs.com">sequelize ORM</a>.</p>
 <p>To add resources to <strong>AdminBro</strong> you first have to register an adapter for the resource type you will be using.</p>

@@ -18,11 +18,10 @@ Check out the example application with mongodb and postgres models here: [https:
 
 ## Versions
 
-Latest version: v2.5
+Latest version: v3
 
 read the docs for older versions:
-- [version 2.3 and 2.4](v2_4-2_3/index.html)
-- [version 2.2](v2_2/index.html)
+
 - [version 2.0](v2/index.html)
 - [version 1.6](v1/index.html)
 

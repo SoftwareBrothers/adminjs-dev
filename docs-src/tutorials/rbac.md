@@ -162,7 +162,7 @@ Remember their passwords because in the next paragraph we will add a login page.
 
 ## Adding login page
 
-{@link module:admin-bro-expressjs} plugin, which we use for attaching admin to express framework, has the option to authenticate AdminBro users. In order to use it, we have to change the _buildRouter_ function to the _buildAuthenticatedRouter_. Now we can pass the authentication method which will verify an email and a password.
+{@link module:@admin-bro/express} plugin, which we use for attaching admin to express framework, has the option to authenticate AdminBro users. In order to use it, we have to change the _buildRouter_ function to the _buildAuthenticatedRouter_. Now we can pass the authentication method which will verify an email and a password.
 
 ```javascript
 // Build and use a router which will handle all AdminBro routes

@@ -1,0 +1,395 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminBro - Auto-generated admin panel for node.js with react admin-bro-design-system/src/index.ts</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <link rel="stylesheet" type="text/css" href="fonts.css"/>
+  
+</head>
+
+
+
+<body class="layout">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+             
+                <a class="image" href="index.html">
+                    <img src="images/logo-reg.svg" alt="logo">
+                </a>
+            
+            
+        </div>
+        <div class="menu">
+             
+                <div class="top-buttons">
+                    
+                        <a  href="https://admin-bro-example-app-staging.herokuapp.com/admin"
+                            target="_blank"
+                            class="button is-primary is-outlined"
+                        ?>
+                            Demo
+                        </a>
+                    
+                        <a  href="/tutorial-installation-instructions.html"
+                            target=""
+                            class="button is-primary is-outlined"
+                        ?>
+                            Get Started
+                        </a>
+                    
+                        <a  href="https://join.slack.com/t/adminbro/shared_invite/zt-djsqxxpz-_YCS8UMtQ9Ade6DPuLR7Zw"
+                            target=""
+                            class="button is-primary"
+                        ?>
+                            <i class="fab fa-slack-hash fa-lg"></i> Join the community
+                        </a>
+                    
+                </div>
+                
+            <div class="navigation">
+                <a
+                    href="docs.html"
+                    class="link"
+                >
+                    API Documentation
+                </a>
+                
+                <div class="dropdown is-hoverable is-right">
+                    <a class="dropdown-trigger link">
+                        Tutorials
+                        <i class="fas fa-chevron-down fa-xs"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-content">
+                        
+                            <a class="dropdown-item" href="tutorial-installation-instructions.html">
+                                01. Installation instructions
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-example.html">
+                                02. Example App
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-passing-resources.html">
+                                03. Adding resources
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-customizing-resources.html">
+                                04. Customize resources
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-actions.html">
+                                05. Customize actions
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-writing-react-components.html">
+                                06. Writing your own Components
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-custom-dashboard.html">
+                                07. Customize dashboard
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-rbac.html">
+                                08. Role-Based Access Control
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-i18n.html">
+                                09. Internationalization (i18n)
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-cms.html">
+                                10. Content Management System
+                            </a>
+                        
+                        </div>
+                    </div>
+                </div>
+                
+                 
+                    
+                        <a
+                            class="link user-link no-hover"
+                            href="https://github.com/SoftwareBrothers/admin-bro"
+                        >
+                            <i class="fab fa-github fa-3x"></i>
+                        </a>
+                    
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+                <div class="search-wrapper">
+                    <input id="search" type="text" placeholder="Search docs..." class="input">
+                </div>
+            
+            <nav>
+                
+                    <h2><a href="docs.html">Documentation</a></h2><div class="category"><h3>Modules</h3><ul><li><a href="module-@admin-bro_design-system.html">@admin-bro/design-system</a></li><li><a href="module-@admin-bro_express.html">@admin-bro/express</a></li><li><a href="module-@admin-bro_firebase-functions.html">@admin-bro/firebase-functions</a></li><li><a href="module-@admin-bro_hapi.html">@admin-bro/hapi</a></li><li><a href="module-@admin-bro_mongoose.html">@admin-bro/mongoose</a></li><li><a href="module-@admin-bro_sequelize.html">@admin-bro/sequelize</a></li></ul><h3>Classes</h3><ul><li><a href="AdminBro.html">AdminBro</a></li><li><a href="ApiClient.html">ApiClient</a></li><li><a href="ApiController.html">ApiController</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3>Interfaces</h3><ul><li><a href="Action.html">Action</a></li><li><a href="AdminBroOptions.html">AdminBroOptions</a></li><li><a href="PropertyOptions.html">PropertyOptions</a></li><li><a href="ResourceOptions.html">ResourceOptions</a></li><li><a href="TranslateFunctions.html">TranslateFunctions</a></li></ul><h3>Interfaces / Frontend</h3><ul><li><a href="ActionJSON.html">ActionJSON</a></li><li><a href="PageJSON.html">PageJSON</a></li><li><a href="PropertyJSON.html">PropertyJSON</a></li><li><a href="RecordJSON.html">RecordJSON</a></li><li><a href="ResourceJSON.html">ResourceJSON</a></li><li><a href="Theme.html">Theme</a></li></ul><h3>Components / Application</h3><ul><li><a href="ActionButton.html">ActionButton</a></li><li><a href="ActionHeader.html">ActionHeader</a></li><li><a href="BaseActionComponent.html">BaseActionComponent</a></li><li><a href="BasePropertyComponent.html">BasePropertyComponent</a></li><li><a href="DrawerPortal.html">DrawerPortal</a></li><li><a href="RecordsTableHeader.html">RecordsTableHeader</a></li></ul><h3>Components / Atoms</h3><ul><li><a href="module-@admin-bro_design-system.Badge.html">Badge</a></li><li><a href="module-@admin-bro_design-system.Box.html">Box</a></li><li><a href="module-@admin-bro_design-system.Button.html">Button</a></li><li><a href="module-@admin-bro_design-system.CheckBox.html">CheckBox</a></li><li><a href="module-@admin-bro_design-system.Header.html">Header</a></li><li><a href="module-@admin-bro_design-system.Icon.html">Icon</a></li><li><a href="module-@admin-bro_design-system.Illustration.html">Illustration</a></li><li><a href="module-@admin-bro_design-system.Input.html">Input</a></li><li><a href="module-@admin-bro_design-system.Label.html">Label</a></li><li><a href="module-@admin-bro_design-system.Link.html">Link</a></li><li><a href="module-@admin-bro_design-system.Loader.html">Loader</a></li><li><a href="module-@admin-bro_design-system.Placeholder.html">Placeholder</a></li><li><a href="module-@admin-bro_design-system.Radio.html">Radio</a></li><li><a href="module-@admin-bro_design-system.Section.html">Section</a></li><li><a href="module-@admin-bro_design-system.Table.html">Table</a></li><li><a href="module-@admin-bro_design-system.Text.html">Text</a></li><li><a href="module-@admin-bro_design-system.TextArea.html">TextArea</a></li></ul><h3>Components / Molecules</h3><ul><li><a href="module-@admin-bro_design-system.DatePicker.html">DatePicker</a></li><li><a href="module-@admin-bro_design-system.Drawer.html">Drawer</a></li><li><a href="module-@admin-bro_design-system.DropDown.html">DropDown</a></li><li><a href="module-@admin-bro_design-system.DropZone.html">DropZone</a></li><li><a href="module-@admin-bro_design-system.DropZoneItem.html">DropZoneItem</a></li><li><a href="module-@admin-bro_design-system.FormGroup.html">FormGroup</a></li><li><a href="module-@admin-bro_design-system.InfoBox.html">InfoBox</a></li><li><a href="module-@admin-bro_design-system.MessageBox.html">MessageBox</a></li><li><a href="module-@admin-bro_design-system.NavGroup.html">NavGroup</a></li><li><a href="module-@admin-bro_design-system.Pagination.html">Pagination</a></li><li><a href="module-@admin-bro_design-system.Step.html">Step</a></li><li><a href="module-@admin-bro_design-system.Stepper.html">Stepper</a></li><li><a href="SidebarResourceSection.html">SidebarResourceSection</a></li></ul><h3>Components / Hooks</h3><ul><li><a href="useCurrentAdmin.html">useCurrentAdmin</a></li><li><a href="useNotice.html">useNotice</a></li><li><a href="useRecord.html">useRecord</a></li><li><a href="useTranslation.html">useTranslation</a></li></ul><h3>Components / HOC</h3><ul><li><a href="withNotice.html">withNotice</a></li></ul><h3>Global</h3><ul><li><a href="global.html#buildFeature">buildFeature</a></li><li><a href="global.html#mergeResourceOptions">mergeResourceOptions</a></li></ul></div><div class="category"><h2>Base</h2><h3>Classes</h3><ul><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li></ul></div><div class="category"><h2>Decorators</h2><h3>Classes</h3><ul><li><a href="ActionDecorator.html">ActionDecorator</a></li><li><a href="PropertyDecorator.html">PropertyDecorator</a></li><li><a href="ResourceDecorator.html">ResourceDecorator</a></li></ul></div><div class="category"><h2>Errors</h2><h3>Classes</h3><ul><li><a href="ConfigurationError.html">ConfigurationError</a></li><li><a href="ForbiddenError.html">ForbiddenError</a></li><li><a href="NotFoundError.html">NotFoundError</a></li><li><a href="NotImplementedError.html">NotImplementedError</a></li><li><a href="ValidationError.html">ValidationError</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Source</p>
+                    <h1>admin-bro-design-system/src/index.ts</h1>
+                </header>
+                
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module @admin-bro/design-system
+ * 
+ * @description
+ * This package consist of all DesignSystem components from [AdminBro](adminbro.com)
+ * so you can use all of them inside and outside the AdminBro environment.
+ * 
+ * It was created with the help of 2 amazing packages:
+ * 
+ * - [styled-components](styled-components.com) which is a peerDependency
+ * - [styled-system](styled-stystem.com)
+ * 
+ * make sure to check them out in order to use full potential of this design system
+ * 
+ * ## Usage within the AdminBro
+ * 
+ * If you are using this module inside AdminBro there is no need to install anything,
+ * just use its components like this:
+ * 
+ * ```
+ * import { Box, Button } from '@admin-bro/design-system'
+ * 
+ * // and here you can use them
+ * ```
+ * 
+ * ## Usage outside the AdminBro
+ * 
+ * Nothing stays in a way of using @admin-bro/design-system in your project which doesn't
+ * require AdminBro. This is how you can do this:
+ * 
+ * ### Installation
+ * 
+ * ```bash
+ * yarn add styled-components @admin-bro/design-system
+ * ```
+ * 
+ * Optionally, if you use typescript, you might want to install types for `styled-components`
+ * 
+ * ```bash
+ * yarn add --dev @types/styled-components
+ * ```
+ * 
+ * Design System needs a `theme` so in order to use it you have to use `ThemeProvider` from `styled-components` like this:
+ * 
+ * ```
+ * import { ThemeProvider } from 'styled-components'
+ * 
+ * // theme is the default theme, which you can alter
+ * import { theme, Button, Box, Icon } from '@admin-bro/design-system'
+ * 
+ * function App() {
+ *   return (
+ *     &lt;ThemeProvider theme={theme}>
+ *       &lt;Box variant="grey">
+ *         &lt;Button>&lt;Icon icon="Add" />Click Me&lt;/Button>
+ *         &lt;Button variant='primary' ml="xl">I am important&lt;/Button>
+ *       &lt;/Box>
+ *     &lt;/ThemeProvider>
+ *   );
+ * }
+ * 
+ * export default App;
+ * ```
+ * 
+ * ## Changing theme
+ * 
+ * Design System provides you with the default [theme](https://adminbro.com/Theme.html).
+ * It contains all the parameters like paddings, colors, font sizes etc.
+ * For the list of all available parameters take a look at the
+ * [Theme spec](https://adminbro.com/Theme.html).
+ * 
+ * But nothing stands in a way for you to change the default theme.
+ * 
+ * ### Changing theme inside the AdminBro
+ * 
+ * In order to override the Theme or its selected parameters use {@link AdminBroOptions.branding}
+ * theme property.
+ * 
+ * ### Changing theme outside AdminBro
+ * 
+ * In order to do that you can use `combineStyles` method:
+ * 
+ * ```javascript
+ * import { combineStyles } from '@admin-bro/design-system'
+ * 
+ * const myTheme = combineStyles({
+ *   colors: {
+ *     primary100: '#000'
+ *   }
+ * })
+ * 
+ * //....
+ * &lt;ThemeProvider theme={myTheme}>
+ * //....
+ * ```
+ * 
+ * ## Changing particular components
+ * 
+ * Sometimes you might want to change the look and feel of a particular component - not the entire theme. You can achieve that with `styled` method:
+ * 
+ * ```
+ * import { Button } from '@admin-bro/design-system'
+ * import styled from 'styled-components'
+ * 
+ * const MyRoundedButton = styled(Button)`
+ *   border-radius: 10px;
+ * `
+ * ```
+ * 
+ * and then you can use it like a normal button component:
+ * 
+ * ```javascript
+ * &lt;MyRoundedButton variant="primary">Rounded I am&lt;/MyRoundedButton>
+ * ```
+ * 
+ * ## Components
+ * 
+ * For the list off all the components and their documentation go to [adminbro.com](adminbro.com)
+ * 
+ * ## Bundled packages
+ * 
+ * This npm package comes with the bundled versions as well. You can find them under:
+ * 
+ * - `node_modules/@admin-bro/design-system/bundle.development.js`
+ * - `node_modules/@admin-bro/design-system/bundle.production.js` (minified)
+ * 
+ * (they can also be bundled by using `bundle` script: `yarn bundle` or `NODE_ENV=production yarn bundle`)
+ * 
+ * In order to use them you will have to host them (put to your 'public' folder) and then put them into the HEAD of your page:
+ * 
+ * ```javascript
+ * &lt;head>
+ * &lt;!-- ... -->
+ * &lt;script crossorigin src="https://unpkg.com/react@16/umd/react.development.js">&lt;/script>
+ * &lt;script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/styled-components/5.1.1/styled-components.js">&lt;/script>
+ * &lt;script crossorigin src="/bundle.development.js">&lt;/script>
+ * &lt;!-- ... -->
+ * &lt;/head>
+ * ```
+ * 
+ */
+
+import * as theme from './theme'
+
+export * from './utils/default-theme.interface'
+export * from './atoms/badge'
+export * from './atoms/button'
+export * from './atoms/check-box'
+export * from './atoms/radio'
+export * from './atoms/text'
+export * from './atoms/label'
+export * from './atoms/link'
+export * from './atoms/input'
+export * from './atoms/text-area'
+export * from './atoms/illustration'
+export * from './atoms/overlay'
+export * from './atoms/box'
+export * from './atoms/table/index'
+export * from './atoms/header'
+export * from './atoms/icon'
+export * from './atoms/section'
+export * from './atoms/loader'
+export * from './atoms/placeholder'
+export * from './molecules/form-group/index'
+export * from './molecules/date-picker'
+export * from './molecules/drop-zone/index'
+export * from './molecules/info-box'
+export * from './molecules/message-box'
+export * from './molecules/drop-down/index'
+export * from './molecules/pagination'
+export * from './molecules/drawer/index'
+export * from './molecules/logged-user'
+export * from './molecules/nav-group'
+export * from './molecules/stepper/index'
+export * from './templates/navigation'
+export * from './constants'
+
+export * from './utils/index'
+export * from './utils/combine-styles'
+
+export { theme }
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+<script src="scripts/search.js"> </script>
+
+</body>
+</html>
