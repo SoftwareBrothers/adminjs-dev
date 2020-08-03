@@ -25,12 +25,6 @@
 [submodule "admin-bro-typeorm"]
 	path = admin-bro-typeorm
 	url = git@github.com:SoftwareBrothers/admin-bro-typeorm.git
-[submodule "admin-bro-e2e"]
-	path = admin-bro-e2e
-	url = git@github.com:SoftwareBrothers/admin-bro-e2e.git
-[submodule "admin-bro-theme-dark"]
-	path = admin-bro-theme-dark
-	url = git@github.com:SoftwareBrothers/admin-bro-theme-dark.git
 [submodule "admin-bro-firebase-functions"]
 	path = admin-bro-firebase-functions
 	url = git@github.com:SoftwareBrothers/admin-bro-firebase-functions.git
