@@ -22,6 +22,9 @@
 [submodule "admin-bro-expressjs"]
 	path = admin-bro-expressjs
 	url = git@github.com:SoftwareBrothers/admin-bro-expressjs.git
+[submodule "admin-bro-typeorm"]
+	path = admin-bro-typeorm
+	url = git@github.com:SoftwareBrothers/admin-bro-typeorm.git
 [submodule "admin-bro-firebase-functions"]
 	path = admin-bro-firebase-functions
 	url = git@github.com:SoftwareBrothers/admin-bro-firebase-functions.git
