@@ -95,24 +95,24 @@
                                 01. Installation instructions
                             </a>
                         
-                            <a class="dropdown-item" href="tutorial-example.html">
-                                02. Example App
-                            </a>
-                        
                             <a class="dropdown-item" href="tutorial-passing-resources.html">
-                                03. Adding resources
+                                02. Adding resources
                             </a>
                         
                             <a class="dropdown-item" href="tutorial-customizing-resources.html">
-                                04. Customize resources
+                                03. Customize resources
                             </a>
                         
                             <a class="dropdown-item" href="tutorial-actions.html">
-                                05. Customize actions
+                                04. Customize actions
                             </a>
                         
                             <a class="dropdown-item" href="tutorial-writing-react-components.html">
-                                06. Writing your own Components
+                                05. Writing your own Components
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-features.html">
+                                06. Using AdminBro features
                             </a>
                         
                             <a class="dropdown-item" href="tutorial-custom-dashboard.html">
@@ -128,7 +128,7 @@
                             </a>
                         
                             <a class="dropdown-item" href="tutorial-cms.html">
-                                10. Content Management System
+                                11. Content Management System
                             </a>
                         
                         </div>
@@ -162,7 +162,7 @@
             
             <nav>
                 
-                    <div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-example.html">02. Example App</a></li><li><a href="tutorial-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-actions.html">05. Customize actions</a><ul><li><a href="tutorial-actions-validations.html">Custom validations</a></li></ul></li><li><a href="tutorial-writing-react-components.html">06. Writing your own Components</a></li><li><a href="tutorial-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-rbac.html">08. Role-Based Access Control</a></li><li><a href="tutorial-i18n.html">09. Internationalization (i18n)</a></li><li><a href="tutorial-cms.html">10. Content Management System</a></li></ul></div>
+                    <div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-passing-resources.html">02. Adding resources</a></li><li><a href="tutorial-customizing-resources.html">03. Customize resources</a></li><li><a href="tutorial-actions.html">04. Customize actions</a><ul><li><a href="tutorial-actions-validations.html">Custom validations</a></li></ul></li><li><a href="tutorial-writing-react-components.html">05. Writing your own Components</a></li><li><a href="tutorial-features.html">06. Using AdminBro features</a></li><li><a href="tutorial-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-rbac.html">08. Role-Based Access Control</a></li><li><a href="tutorial-i18n.html">09. Internationalization (i18n)</a></li><li><a href="tutorial-cms.html">11. Content Management System</a></li></ul></div>
                 
             </nav>
         </div>
@@ -184,21 +184,21 @@
 <p>Since <strong>AdminBro</strong> uses your existing framework to render its routes - you have to use one of our plugins.</p>
 <p>There are plugins for:</p>
 <ul>
-<li><a href="module-admin-bro-expressjs.html">Express</a></li>
-<li><a href="module-admin-bro-hapijs.html">Hapi</a></li>
+<li><a href="module-@admin-bro_express.html">Express</a></li>
+<li><a href="module-@admin-bro_hapi.html">Hapi</a></li>
 </ul>
-<p>In this tutorial I will present the simplest way of adding AdminBro to those frameworks. If you
-want to know more - visit their corresponding pages (above).</p>
-<h3>Express</h3>
-<p>Install the AdminBro along with the <a href="module-admin-bro-expressjs.html">express plugin</a></p>
-<pre class="prettyprint source"><code>npm install admin-bro admin-bro-expressjs
+<p>In this tutorial I will present the simplest way of adding AdminBro to an express framework. If you
+want to launch AdminBro by other framework - see its documentation (above)</p>
+<h3>Express installation</h3>
+<p>Install the AdminBro along with the <a href="module-@admin-bro_express.html">express plugin</a></p>
+<pre class="prettyprint source"><code>npm install admin-bro @admin-bro/express
 </code></pre>
-<p>If you don't have <code>express</code> or <code>express-formidable</code> already installed, you will have to add that too. This is because they are <code>peerDependencies</code> of <code>admin-bro-expressjs</code>:</p>
+<p>If you don't have <code>express</code> or <code>express-formidable</code> already installed, you will have to add that too. This is because they are <code>peerDependencies</code> of <code>@admin-bro/express</code>:</p>
 <pre class="prettyprint source"><code>npm install express express-formidable
 </code></pre>
 <p>Now create an express router which will handle all AdminBro routes</p>
 <pre class="prettyprint source lang-javascript"><code>const AdminBro = require('admin-bro')
-const AdminBroExpress = require('admin-bro-expressjs')
+const AdminBroExpress = require('@admin-bro/express')
 
 const express = require('express')
 const app = express()
@@ -216,45 +216,24 @@ app.listen(8080, () => console.log('AdminBro is under localhost:8080/admin'))
 </code></pre>
 <blockquote>
 <p>If you are adding AdminBro to an application which already has any other middleware, it is good to put the AdminBro setup on top.</p>
-<p>This is because other middleware can transform <strong>requests</strong> so that AdminBro wont be able to handle them.</p>
+<p>This is because other middleware can transform <strong>requests</strong> so that AdminBro wont be able to handle it.</p>
 </blockquote>
-<p>To see how to add an authentication or other modifications - visit the <a href="module-admin-bro-expressjs.html">Express Plugin</a> documentation.</p>
-<h3>Hapi</h3>
-<p>If you use <a href="https://hapijs.com/">Hapi framework</a> instead of express - follow this installation instructions:</p>
-<pre class="prettyprint source lang-bash"><code>npm install admin-bro-hapijs boom inert
-</code></pre>
-<p>Register plugin and start server</p>
-<pre class="prettyprint source lang-javascript"><code>const AdminBroPlugin = require('admin-bro-hapijs')
-const Hapi = require('hapi')
-
-const adminBroOptions = {
-  resources: [],
-  rootPath: '/admin',
-}
-
-const server = Hapi.server({ port: process.env.PORT || 8080 })
-const start = async () => {
-  await server.register({
-    plugin: AdminBroPlugin,
-    options: adminBroOptions,
-  })
-
-  await server.start()
-}
-
-start()
-</code></pre>
-<p>To see how to add an authentication or other modifications - visit the <a href="module-admin-bro-hapijs.html">Hapi Plugin</a> documentation.</p>
+<p>To see how to add an authentication or other modifications - visit the <a href="module-@admin-bro_express.html">Express Plugin</a> documentation.</p>
 <h2>02. Install the Database Adapter and add resources</h2>
-<p><strong>AdminBro</strong> can be connected to many different types of resources. Right now we support <a href="https://mongoosejs.com/">mongoose ODM</a> and <a href="http://sequelizejs.com">sequelize ORM</a>.</p>
-<p>To add resources to <strong>AdminBro</strong> you first have to register an adapter for the resource type you will be using.</p>
+<p><strong>AdminBro</strong> can be connected to many different types of resources. Right now we support:</p>
+<ul>
+<li><a href="module-@admin-bro_mongoose.html">Mongoose</a></li>
+<li><a href="module-@admin-bro_sequelize.html">Sequelize</a></li>
+<li><a href="module-@admin-bro_typeorm.html">TypeORM</a></li>
+</ul>
+<p>To add resources to <strong>AdminBro</strong> you first have to <strong>register adapter</strong> for the resource you want to use.</p>
 <p>Example for a mongoose setup:</p>
 <p>Installation</p>
-<pre class="prettyprint source lang-bash"><code>npm install admin-bro-mongoose
+<pre class="prettyprint source lang-bash"><code>npm install @admin-bro/mongoose
 </code></pre>
-<p>Register adapter</p>
+<p>Registration of the adapter</p>
 <pre class="prettyprint source lang-javascript"><code>const AdminBro = require('admin-bro')
-const AdminBroMongoose = require('admin-bro-mongoose')
+const AdminBroMongoose = require('@admin-bro/mongoose')
 
 AdminBro.registerAdapter(AdminBroMongoose)
 </code></pre>
@@ -269,9 +248,9 @@ const router = AdminBroExpress.buildRouter(adminBro)
 </code></pre>
 <h2>What's next?</h2>
 <ul>
-<li>To find more information about passing resources visit the <a href="tutorial-passing-resources.html">03. Adding resources</a> tutorial</li>
-<li>See how you can customize resources: <a href="tutorial-customizing-resources.html">04. Customize resources</a></li>
-<li>Or add custom actions: <a href="tutorial-actions.html">05. Customize actions</a></li>
+<li>To find out more information about passing resources visit the <a href="tutorial-passing-resources.html">02. Adding resources</a> tutorial</li>
+<li>See how you can customize resources: <a href="tutorial-customizing-resources.html">03. Customize resources</a></li>
+<li>Or add custom actions: <a href="tutorial-actions.html">04. Customize actions</a></li>
 </ul>
 </article>
 

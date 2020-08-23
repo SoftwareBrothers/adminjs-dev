@@ -60,7 +60,21 @@ have to inform npm/yarn about that. It is done via `yarn link` command (you can 
 
 ## Documentation
 
-Repo also contains documentation of the project. To regenerate it just run
+Repo also contains documentation of the project. To regenerate it you need to make some preparation:
+
+1. make sure you have all submodules on the master branch.
+2. documentation generates previews of react components which is not well handled.
+Documentation (parcel bundler to be exact) has to have one package.json
+from which it takes all dependencies like react, react-dom etc. In submodules each package
+has its own react dependency which causes multiple react versions to be bundled and previews
+wont work.
+
+In order to fix that:
+- remove node_modules from all of the packages `rm -fR */node_modules`
+- rename `admin-bro/package.json` to `admin-bro/package2.json` (or something else)
+- do the same thing with `admin-bro-design-system/package.json`
+
+3. Run docs command
 
 ```
 yarn run docs
@@ -68,7 +82,10 @@ yarn run docs
 
 Documentation uses jsdoc along with the better-docs documentation template. Better-docs is included inside this repo as a submodule.
 
-You can enter the `better-docs` folder and develop documentation with live reload
+You can enter the `better-docs` folder and develop documentation with live reload.
+
+In case of any problems you might need to remove the .cache folder form the root repo (created
+by parcel bundler)
 
 ```bash
 yarn install
@@ -77,6 +94,16 @@ yarn install
 
 DOCS=../admin-bro/src/**/*,../docs-src/**/*,../admin-bro-mongoose/**/*,../admin-bro-hapijs/**/*,../admin-bro-expressjs/**/*,../admin-bro-sequelizejs/**/* gulp
 ```
+
+## Publishing the documentation
+
+Docs are published on the firebase hosting. There is a current version (sitting in `docs` folder)
+and old versions (sitting in `docs-old` folder).
+
+In order to deploy it run `firebase deploy` (after generating documentation of course) :) It will
+deploy all firebase hosting targets stored in `.fireabserc`
+
+Documentation is 
 
 ## License
 

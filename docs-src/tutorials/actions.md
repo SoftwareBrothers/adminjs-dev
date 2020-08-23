@@ -2,58 +2,68 @@ At some point you would probably like to customize default views or create custo
 
 ## Default actions
 
-Admin bro has 7 major default actions defined for each resource:
+AdminBro has 7 major _default actions_ defined for each resource:
 
 __Resource__ base actions:
 
-* list - list all records
-* search - search record by query string
-* new [Add new] - creates new record
+they don't require `recordId` in params
 
-__Record__ base actions:
+* **list** - list all records
+* **search** - search record by query string
+* **new** [Add new] - creates new record
 
-* show [info] - shows details of a given record
-* edit [edit] - updates given record
-* delete [remove] - removes given record
+__Record__ base actions
 
-__Bulk__ actions:
+they require `recordId` in params
 
-* bulkDelete [remove] - removes all selected records from the database
+* **show** [info] - shows details of a given record
+* **edit** [edit] - updates given record
+* **delete** [remove] - removes given record
+
+__Bulk__ actions
+
+they require `recordIds[]` in params
+
+* **bulkDelete** [remove] - removes all selected records from the database
 
 __Resource base actions__ can be accessed in the header of the list of all the resources (next to the _filters_ button). __Record actions__ are places on the list by the resource. Where __Bulk actions__ appear right in the table header when you select at least one record.
 
-Take a look at the following screenshot:
+Take a look at the following screenshot explaining which action type is where:
 
 <img src="./images/actions.png">
-
-Default actions can be accessed right from the AdminBro class, by using ACTIONS object.
-
-```javascript
-
-const AdminBro = require('admin-bro)
-AdminBro.ACTIONS.show // => show action object
-
-// so to modify the availability of action for all resources
-AdminBro.ACTIONS.show.isAccessible = ({ currentAdmin, resource, record }) => {
-  return currentAdmin.isManager
-}
-```
 
 ## Modify default action per Resource
 
 Each action has all the parameters defined by {@link Action}. They can be modified per resource along with other {@link ResourceOptions}
 
+This is how modifying __show__ action and creating a new __myNewAction__ can
+look like:
+
 ```javascript
 const adminBroOptions = {
   resources: [
-    { resource: Article, options: { actions: {show: {}, edit: {}, ...} } },
+    { 
+      resource: Article,
+      options: {
+        actions: {
+          show: {
+            // change the behavior of show action
+          },
+          myNewAction: {
+            // create a totally new action
+            actionType: 'record',
+            handler: () => {},
+          },
+        },
+      },
+    },
   ],
 }
 ```
 
 ### Basic properties
 
-Yes - you can modify things like: label, icon and visibility. List of all options can be found in {@link Action}
+Yes - you can modify things like: _label_, _icon_ _and visibility_. List of all options can be found in {@link Action}
 
 In the following example, we will change {@link Action#icon icon}, and will show it only for records with an email.
 
@@ -74,7 +84,8 @@ const adminBroOptions = {
 }
 ```
 
-{@link Action#isVisible} can be either a function returning a boolean value or a boolean value itself.
+{@link Action#isVisible} can be either a function returning a boolean value or a boolean value itself. There is also another method: {@link Action#isAccessible} which not only hides given action but also totally
+disables it.
 
 ### Action handler and action hooks
 
@@ -82,13 +93,28 @@ Each action has an {@link Action#handler} function. This function is executed ev
 
 You probably don't want to modify behavior of the handler for the default Edit action. But, if you really want to change this action, you can use {@link Action#before} and {@link Action#after} action hooks.
 
-{@link Action#handler} has to be specified for new actions (read the next section).
+Nevertheless, {@link Action#handler} has to be specified for new actions (read the next section).
 
-## Custom Actions
+## Modifying actions for all resources
+
+Default actions templates can be accessed right from the AdminBro class, by using ACTIONS object.
+
+```javascript
+
+const AdminBro = require('admin-bro')
+AdminBro.ACTIONS.show // => show action object
+
+// so to modify the availability of action for all resources
+AdminBro.ACTIONS.show.isAccessible = ({ currentAdmin, resource, record }) => {
+  return currentAdmin.isManager
+}
+```
+
+## Create a new, custom actions
 
 Also, you can define your own actions. Simply pass {@link Action} under a new key to {@link ResourceOptions}.
 
-Your action can be either `resource`, `record` or `bulk`.
+Your action can be either `resource`, `record` or `bulk` type.
 
 ```javascript
 const adminBroOptions = {
@@ -112,8 +138,8 @@ const adminBroOptions = {
 
 ## Action components
 
-When you define your own action you have to also create a **React component** responsible
-for rendering it. To see what options you have - go to the next tutorial:
+When you define your own action you have to create a **React component** 
+responsible for rendering it. To see what options you have - go to the next tutorial:
 
 - {@tutorial writing-react-components}
 

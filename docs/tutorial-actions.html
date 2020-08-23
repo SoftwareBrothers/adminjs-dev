@@ -5,7 +5,7 @@
   <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminBro - Auto-generated admin panel for node.js with react 05. Customize actions</title>
+  <title>AdminBro - Auto-generated admin panel for node.js with react 04. Customize actions</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -95,24 +95,24 @@
                                 01. Installation instructions
                             </a>
                         
-                            <a class="dropdown-item" href="tutorial-example.html">
-                                02. Example App
-                            </a>
-                        
                             <a class="dropdown-item" href="tutorial-passing-resources.html">
-                                03. Adding resources
+                                02. Adding resources
                             </a>
                         
                             <a class="dropdown-item" href="tutorial-customizing-resources.html">
-                                04. Customize resources
+                                03. Customize resources
                             </a>
                         
                             <a class="dropdown-item" href="tutorial-actions.html">
-                                05. Customize actions
+                                04. Customize actions
                             </a>
                         
                             <a class="dropdown-item" href="tutorial-writing-react-components.html">
-                                06. Writing your own Components
+                                05. Writing your own Components
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-features.html">
+                                06. Using AdminBro features
                             </a>
                         
                             <a class="dropdown-item" href="tutorial-custom-dashboard.html">
@@ -128,7 +128,7 @@
                             </a>
                         
                             <a class="dropdown-item" href="tutorial-cms.html">
-                                10. Content Management System
+                                11. Content Management System
                             </a>
                         
                         </div>
@@ -162,7 +162,7 @@
             
             <nav>
                 
-                    <div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-example.html">02. Example App</a></li><li><a href="tutorial-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-actions.html">05. Customize actions</a><ul><li><a href="tutorial-actions-validations.html">Custom validations</a></li></ul></li><li><a href="tutorial-writing-react-components.html">06. Writing your own Components</a></li><li><a href="tutorial-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-rbac.html">08. Role-Based Access Control</a></li><li><a href="tutorial-i18n.html">09. Internationalization (i18n)</a></li><li><a href="tutorial-cms.html">10. Content Management System</a></li></ul></div>
+                    <div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-passing-resources.html">02. Adding resources</a></li><li><a href="tutorial-customizing-resources.html">03. Customize resources</a></li><li><a href="tutorial-actions.html">04. Customize actions</a><ul><li><a href="tutorial-actions-validations.html">Custom validations</a></li></ul></li><li><a href="tutorial-writing-react-components.html">05. Writing your own Components</a></li><li><a href="tutorial-features.html">06. Using AdminBro features</a></li><li><a href="tutorial-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-rbac.html">08. Role-Based Access Control</a></li><li><a href="tutorial-i18n.html">09. Internationalization (i18n)</a></li><li><a href="tutorial-cms.html">11. Content Management System</a></li></ul></div>
                 
             </nav>
         </div>
@@ -170,53 +170,62 @@
             <div class="content">
                 <header class="page-title">
                     <p>Tutorial</p>
-                    <h1>05. Customize actions</h1>
+                    <h1>04. Customize actions</h1>
                 </header>
                 <section>
 
 <article>
     <p>At some point you would probably like to customize default views or create custom actions. <a href="Action.html">Actions</a> are the way of doing that.</p>
 <h2>Default actions</h2>
-<p>Admin bro has 7 major default actions defined for each resource:</p>
+<p>AdminBro has 7 major <em>default actions</em> defined for each resource:</p>
 <p><strong>Resource</strong> base actions:</p>
+<p>they don't require <code>recordId</code> in params</p>
 <ul>
-<li>list - list all records</li>
-<li>search - search record by query string</li>
-<li>new [Add new] - creates new record</li>
+<li><strong>list</strong> - list all records</li>
+<li><strong>search</strong> - search record by query string</li>
+<li><strong>new</strong> [Add new] - creates new record</li>
 </ul>
-<p><strong>Record</strong> base actions:</p>
+<p><strong>Record</strong> base actions</p>
+<p>they require <code>recordId</code> in params</p>
 <ul>
-<li>show [info] - shows details of a given record</li>
-<li>edit [edit] - updates given record</li>
-<li>delete [remove] - removes given record</li>
+<li><strong>show</strong> [info] - shows details of a given record</li>
+<li><strong>edit</strong> [edit] - updates given record</li>
+<li><strong>delete</strong> [remove] - removes given record</li>
 </ul>
-<p><strong>Bulk</strong> actions:</p>
+<p><strong>Bulk</strong> actions</p>
+<p>they require <code>recordIds[]</code> in params</p>
 <ul>
-<li>bulkDelete [remove] - removes all selected records from the database</li>
+<li><strong>bulkDelete</strong> [remove] - removes all selected records from the database</li>
 </ul>
 <p><strong>Resource base actions</strong> can be accessed in the header of the list of all the resources (next to the <em>filters</em> button). <strong>Record actions</strong> are places on the list by the resource. Where <strong>Bulk actions</strong> appear right in the table header when you select at least one record.</p>
-<p>Take a look at the following screenshot:</p>
+<p>Take a look at the following screenshot explaining which action type is where:</p>
 <img src="./images/actions.png">
-<p>Default actions can be accessed right from the AdminBro class, by using ACTIONS object.</p>
-<pre class="prettyprint source lang-javascript"><code>
-const AdminBro = require('admin-bro)
-AdminBro.ACTIONS.show // => show action object
-
-// so to modify the availability of action for all resources
-AdminBro.ACTIONS.show.isAccessible = ({ currentAdmin, resource, record }) => {
-  return currentAdmin.isManager
-}
-</code></pre>
 <h2>Modify default action per Resource</h2>
 <p>Each action has all the parameters defined by <a href="Action.html">Action</a>. They can be modified per resource along with other <a href="ResourceOptions.html">ResourceOptions</a></p>
+<p>This is how modifying <strong>show</strong> action and creating a new <strong>myNewAction</strong> can
+look like:</p>
 <pre class="prettyprint source lang-javascript"><code>const adminBroOptions = {
   resources: [
-    { resource: Article, options: { actions: {show: {}, edit: {}, ...} } },
+    { 
+      resource: Article,
+      options: {
+        actions: {
+          show: {
+            // change the behavior of show action
+          },
+          myNewAction: {
+            // create a totally new action
+            actionType: 'record',
+            handler: () => {},
+          },
+        },
+      },
+    },
   ],
 }
 </code></pre>
 <h3>Basic properties</h3>
-<p>Yes - you can modify things like: label, icon and visibility. List of all options can be found in <a href="Action.html">Action</a></p>
+<p>Yes - you can modify things like: <em>label</em>, <em>icon</em> <em>and visibility</em>. List of all options can be found in <a href="Action.html">Action</a></p>
 <p>In the following example, we will change <a href="Action.html#icon">icon</a>, and will show it only for records with an email.</p>
 <pre class="prettyprint source lang-javascript"><code>const adminBroOptions = {
   resources: [
@@ -233,14 +242,26 @@ AdminBro.ACTIONS.show.isAccessible = ({ currentAdmin, resource, record }) => {
   ],
 }
 </code></pre>
-<p><a href="Action.html#isVisible">Action#isVisible</a> can be either a function returning a boolean value or a boolean value itself.</p>
+<p><a href="Action.html#isVisible">Action#isVisible</a> can be either a function returning a boolean value or a boolean value itself. There is also another method: <a href="Action.html#isAccessible">Action#isAccessible</a> which not only hides given action but also totally
+disables it.</p>
 <h3>Action handler and action hooks</h3>
 <p>Each action has an <a href="Action.html#handler">Action#handler</a> function. This function is executed every time the action is invoked and all of the default actions has their handlers.</p>
 <p>You probably don't want to modify behavior of the handler for the default Edit action. But, if you really want to change this action, you can use <a href="Action.html#before">Action#before</a> and <a href="Action.html#after">Action#after</a> action hooks.</p>
-<p><a href="Action.html#handler">Action#handler</a> has to be specified for new actions (read the next section).</p>
-<h2>Custom Actions</h2>
+<p>Nevertheless, <a href="Action.html#handler">Action#handler</a> has to be specified for new actions (read the next section).</p>
+<h2>Modifying actions for all resources</h2>
+<p>Default actions templates can be accessed right from the AdminBro class, by using ACTIONS object.</p>
+<pre class="prettyprint source lang-javascript"><code>
+const AdminBro = require('admin-bro')
+AdminBro.ACTIONS.show // => show action object
+
+// so to modify the availability of action for all resources
+AdminBro.ACTIONS.show.isAccessible = ({ currentAdmin, resource, record }) => {
+  return currentAdmin.isManager
+}
+</code></pre>
+<h2>Create a new, custom actions</h2>
 <p>Also, you can define your own actions. Simply pass <a href="Action.html">Action</a> under a new key to <a href="ResourceOptions.html">ResourceOptions</a>.</p>
-<p>Your action can be either <code>resource</code>, <code>record</code> or <code>bulk</code>.</p>
+<p>Your action can be either <code>resource</code>, <code>record</code> or <code>bulk</code> type.</p>
 <pre class="prettyprint source lang-javascript"><code>const adminBroOptions = {
   resources: [
     { resource: Article,
@@ -260,10 +281,10 @@ AdminBro.ACTIONS.show.isAccessible = ({ currentAdmin, resource, record }) => {
 }
 </code></pre>
 <h2>Action components</h2>
-<p>When you define your own action you have to also create a <strong>React component</strong> responsible
-for rendering it. To see what options you have - go to the next tutorial:</p>
+<p>When you define your own action you have to create a <strong>React component</strong>
+responsible for rendering it. To see what options you have - go to the next tutorial:</p>
 <ul>
-<li><a href="tutorial-writing-react-components.html">06. Writing your own Components</a></li>
+<li><a href="tutorial-writing-react-components.html">05. Writing your own Components</a></li>
 </ul>
 <h2>And much much more...</h2>
 <p>Things I presented in this tutorial are just the tip of the iceberg. Make sure to check out all available options in <a href="Action.html">Action</a> interface.</p>

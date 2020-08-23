@@ -95,24 +95,24 @@
                                 01. Installation instructions
                             </a>
                         
-                            <a class="dropdown-item" href="tutorial-example.html">
-                                02. Example App
-                            </a>
-                        
                             <a class="dropdown-item" href="tutorial-passing-resources.html">
-                                03. Adding resources
+                                02. Adding resources
                             </a>
                         
                             <a class="dropdown-item" href="tutorial-customizing-resources.html">
-                                04. Customize resources
+                                03. Customize resources
                             </a>
                         
                             <a class="dropdown-item" href="tutorial-actions.html">
-                                05. Customize actions
+                                04. Customize actions
                             </a>
                         
                             <a class="dropdown-item" href="tutorial-writing-react-components.html">
-                                06. Writing your own Components
+                                05. Writing your own Components
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-features.html">
+                                06. Using AdminBro features
                             </a>
                         
                             <a class="dropdown-item" href="tutorial-custom-dashboard.html">
@@ -128,7 +128,7 @@
                             </a>
                         
                             <a class="dropdown-item" href="tutorial-cms.html">
-                                10. Content Management System
+                                11. Content Management System
                             </a>
                         
                         </div>
@@ -162,7 +162,7 @@
             
             <nav>
                 
-                    <div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-example.html">02. Example App</a></li><li><a href="tutorial-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-actions.html">05. Customize actions</a><ul><li><a href="tutorial-actions-validations.html">Custom validations</a></li></ul></li><li><a href="tutorial-writing-react-components.html">06. Writing your own Components</a></li><li><a href="tutorial-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-rbac.html">08. Role-Based Access Control</a></li><li><a href="tutorial-i18n.html">09. Internationalization (i18n)</a></li><li><a href="tutorial-cms.html">10. Content Management System</a></li></ul></div>
+                    <div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-passing-resources.html">02. Adding resources</a></li><li><a href="tutorial-customizing-resources.html">03. Customize resources</a></li><li><a href="tutorial-actions.html">04. Customize actions</a><ul><li><a href="tutorial-actions-validations.html">Custom validations</a></li></ul></li><li><a href="tutorial-writing-react-components.html">05. Writing your own Components</a></li><li><a href="tutorial-features.html">06. Using AdminBro features</a></li><li><a href="tutorial-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-rbac.html">08. Role-Based Access Control</a></li><li><a href="tutorial-i18n.html">09. Internationalization (i18n)</a></li><li><a href="tutorial-cms.html">11. Content Management System</a></li></ul></div>
                 
             </nav>
         </div>
@@ -192,19 +192,17 @@ cd my-admin-app
 yarn init -y
 </code></pre>
 <p>Install the dependencies:</p>
-<pre class="prettyprint source lang-bash"><code>yarn add express express-formidable mongoose admin-bro admin-bro-mongoose admin-bro-expressjs
+<pre class="prettyprint source lang-bash"><code>yarn add express express-formidable mongoose admin-bro @admin-bro/mongoose @admin-bro/express
 </code></pre>
-<p>And finally, copy the example application from example app tutorial: 01-example.</p>
-<p>I also modified the User model by adding password and role fields. The role can be either admin or restricted.</p>
-<p>This is the entire 38 lines of code:</p>
+<p>and copy this example app:</p>
 <pre class="prettyprint source lang-javascript"><code>// Requirements
 const mongoose = require('mongoose')
 const express = require('express')
 const AdminBro = require('admin-bro')
-const AdminBroExpressjs = require('admin-bro-expressjs')
+const AdminBroExpressjs = require('@admin-bro/express')
 
 // We have to tell AdminBro that we will manage mongoose resources with it
-AdminBro.registerAdapter(require('admin-bro-mongoose'))
+AdminBro.registerAdapter(require('@admin-bro/mongoose'))
 
 // express server definition
 const app = express()
@@ -278,10 +276,10 @@ const adminBro = new AdminBro({
       actions: {
         new: {
           before: async (request) => {
-            if(request.payload.record.password) {
-              request.payload.record = {
-                ...request.payload.record,
-                encryptedPassword: await bcrypt.hash(request.payload.record.password, 10),
+            if(request.payload.password) {
+              request.payload = {
+                ...request.payload,
+                encryptedPassword: await bcrypt.hash(request.payload.password, 10),
                 password: undefined,
               }
             }
@@ -298,7 +296,7 @@ const adminBro = new AdminBro({
 <p>Ok, now is the time to create some real users! So open the Admin Panel and create 2 users: one with the <em>admin</em> role and the other with the <em>restricted</em> role.</p>
 <p>Remember their passwords because in the next paragraph we will add a login page.</p>
 <h2>Adding login page</h2>
-<p><a href="module-admin-bro-expressjs.html">module:admin-bro-expressjs</a> plugin, which we use for attaching admin to express framework, has the option to authenticate AdminBro users. In order to use it, we have to change the <em>buildRouter</em> function to the <em>buildAuthenticatedRouter</em>. Now we can pass the authentication method which will verify an email and a password.</p>
+<p><a href="module-@admin-bro_express.html">module:@admin-bro/express</a> plugin, which we use for attaching admin to express framework, has the option to authenticate AdminBro users. In order to use it, we have to change the <em>buildRouter</em> function to the <em>buildAuthenticatedRouter</em>. Now we can pass the authentication method which will verify an email and a password.</p>
 <pre class="prettyprint source lang-javascript"><code>// Build and use a router which will handle all AdminBro routes
 const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
   authenticate: async (email, password) => {
@@ -362,8 +360,8 @@ const Cars = mongoose.model('Car', {
 </code></pre>
 <p>and add a before hook to new action:</p>
 <pre class="prettyprint source lang-javascript"><code>before: async (request, { currentAdmin }) => {
-  request.payload.record = {
-    ...request.payload.record,
+  request.payload = {
+    ...request.payload,
     ownerId: currentAdmin._id,
   }  
   return request
@@ -375,11 +373,11 @@ const Cars = mongoose.model('Car', {
 const mongoose = require('mongoose')
 const express = require('express')
 const AdminBro = require('admin-bro')
-const AdminBroExpressjs = require('admin-bro-expressjs')
+const AdminBroExpressjs = require('@admin-bro/express')
 const bcrypt = require('bcrypt')
 
 // We have to tell AdminBro that we will manage mongoose resources with it
-AdminBro.registerAdapter(require('admin-bro-mongoose'))
+AdminBro.registerAdapter(require('@admin-bro/mongoose'))
 
 // express server definition
 const app = express()
@@ -423,8 +421,8 @@ const adminBro = new AdminBro({
         delete: { isAccessible: canEditCars },
         new: {
           before: async (request, { currentAdmin }) => {
-            request.payload.record = {
-              ...request.payload.record,
+            request.payload = {
+              ...request.payload,
               ownerId: currentAdmin._id,
             }
             return request
@@ -448,10 +446,10 @@ const adminBro = new AdminBro({
       actions: {
         new: {
           before: async (request) => {
-            if(request.payload.record.password) {
-              request.payload.record = {
-                ...request.payload.record,
-                encryptedPassword: await bcrypt.hash(request.payload.record.password, 10),
+            if(request.payload.password) {
+              request.payload = {
+                ...request.payload,
+                encryptedPassword: await bcrypt.hash(request.payload.password, 10),
                 password: undefined,
               }
             }

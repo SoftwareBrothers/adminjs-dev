@@ -5,7 +5,7 @@
   <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminBro - Auto-generated admin panel for node.js with react 03. Adding resources</title>
+  <title>AdminBro - Auto-generated admin panel for node.js with react 02. Adding resources</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -95,24 +95,24 @@
                                 01. Installation instructions
                             </a>
                         
-                            <a class="dropdown-item" href="tutorial-example.html">
-                                02. Example App
-                            </a>
-                        
                             <a class="dropdown-item" href="tutorial-passing-resources.html">
-                                03. Adding resources
+                                02. Adding resources
                             </a>
                         
                             <a class="dropdown-item" href="tutorial-customizing-resources.html">
-                                04. Customize resources
+                                03. Customize resources
                             </a>
                         
                             <a class="dropdown-item" href="tutorial-actions.html">
-                                05. Customize actions
+                                04. Customize actions
                             </a>
                         
                             <a class="dropdown-item" href="tutorial-writing-react-components.html">
-                                06. Writing your own Components
+                                05. Writing your own Components
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-features.html">
+                                06. Using AdminBro features
                             </a>
                         
                             <a class="dropdown-item" href="tutorial-custom-dashboard.html">
@@ -128,7 +128,7 @@
                             </a>
                         
                             <a class="dropdown-item" href="tutorial-cms.html">
-                                10. Content Management System
+                                11. Content Management System
                             </a>
                         
                         </div>
@@ -162,7 +162,7 @@
             
             <nav>
                 
-                    <div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-example.html">02. Example App</a></li><li><a href="tutorial-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-actions.html">05. Customize actions</a><ul><li><a href="tutorial-actions-validations.html">Custom validations</a></li></ul></li><li><a href="tutorial-writing-react-components.html">06. Writing your own Components</a></li><li><a href="tutorial-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-rbac.html">08. Role-Based Access Control</a></li><li><a href="tutorial-i18n.html">09. Internationalization (i18n)</a></li><li><a href="tutorial-cms.html">10. Content Management System</a></li></ul></div>
+                    <div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-passing-resources.html">02. Adding resources</a></li><li><a href="tutorial-customizing-resources.html">03. Customize resources</a></li><li><a href="tutorial-actions.html">04. Customize actions</a><ul><li><a href="tutorial-actions-validations.html">Custom validations</a></li></ul></li><li><a href="tutorial-writing-react-components.html">05. Writing your own Components</a></li><li><a href="tutorial-features.html">06. Using AdminBro features</a></li><li><a href="tutorial-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-rbac.html">08. Role-Based Access Control</a></li><li><a href="tutorial-i18n.html">09. Internationalization (i18n)</a></li><li><a href="tutorial-cms.html">11. Content Management System</a></li></ul></div>
                 
             </nav>
         </div>
@@ -170,7 +170,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Tutorial</p>
-                    <h1>03. Adding resources</h1>
+                    <h1>02. Adding resources</h1>
                 </header>
                 <section>
 
@@ -180,9 +180,9 @@
 (CRUD - create, read, update, destroy). Most often it is a Model from your ORM.</p>
 <p>The entire idea od AdminBro is to manage resources of all kinds. It doesn't matter if you
 use MongoDB with <a href="http://mongoosejs.com">mongoose</a> or PostgreSQL with <a href="http://sequelizejs.com">Sequelize</a>.
-AdminBro should give you the ability to manage records in those resources.</p>
+AdminBro should give you the ability to manage records in all these resources.</p>
 <h2>Adapters</h2>
-<p>AdminBro uses different database adapters in order to handle different kind of resources.</p>
+<p>AdminBro uses Database Adapters in order to handle different kind of resources.</p>
 <h3>How to use an adapter</h3>
 <ol>
 <li>First, you have to install adapter locally using the <strong>npm/yarn</strong>.</li>
@@ -190,7 +190,7 @@ AdminBro should give you the ability to manage records in those resources.</p>
 that AdminBro could recognize resources of its type.</li>
 </ol>
 <pre class="prettyprint source lang-javascript"><code>const AdminBro = require('admin-bro')
-const AdminBroMongoose = require('admin-bro-mongoose')
+const AdminBroMongoose = require('@admin-bro/mongoose')
 
 AdminBro.registerAdapter(AdminBroMongoose)
 </code></pre>
@@ -199,19 +199,20 @@ AdminBro.registerAdapter(AdminBroMongoose)
 they can be seen in AdminBro.</p>
 <p>You have 2 options:</p>
 <ol>
-<li>you can either add an <strong>entire Database</strong> and AdminBro will fetch all resources from it,</li>
+<li>you can either add an <strong>entire Database</strong> so given Adapter can fetch all resources from it,</li>
 <li>or you can pass <strong>each Resource</strong> one by one.</li>
 </ol>
-<p>The first option is very easy, but the second allows you to modify the resources, see: 04-customizing-resources.</p>
+<p>The first option is very easy, but the second allows you to modify the resources, see tutorial: <a href="tutorial-customizing-resources.html">03. Customize resources</a>.</p>
 <p>Both passing <strong>entire Database</strong> or <strong>each Resource</strong> can be done via AdminBro options</p>
 <h3>Example by using the mongoose adapter:</h3>
 <pre class="prettyprint source lang-javascript"><code>// ...
 const AdminBro = require('admin-bro')
-const AdminBroMongoose = require('admin-bro-mongoose')
+const AdminBroMongoose = require('@admin-bro/mongoose')
 const mongoose = require('mongoose')
 AdminBro.registerAdapter(AdminBroMongoose)
 
-// Initialize Database along with models
+// Initialize Database along with models - this is how Mongoose does this.
+// Most probably you will have them defined in a separate file
 const User = mongoose.model('User', { name: String, email: String, surname: String })
 const Admin = mongoose.model('Admin', { name: String, email: String})
 
@@ -224,24 +225,53 @@ const run = async () => {
     //... other AdminBroOptions
   })
 
-  // Passing resources one by one
+  // Passing resources one by one,
+  // also with an additional options for admin resource
   const adminBro = new AdminBro({
-    resources: [User, Admin],
-    //... other AdminBroOptions
+    resources: [User, {
+      resource: Admin,
+      options: {
+        //...
+      },
+    }],
   })
 }
 
 run()
-// ... 
+// ...
 </code></pre>
-<h2>Available adapters</h2>
-<p>Currently we support following Database Adapters:</p>
-<ul>
-<li><a href="module-admin-bro-mongoose.html">admin-bro-mongoose</a> - adapter to <a href="http://mongoosejs.com">mongoose</a> for MongoDB</li>
-<li><a href="module-admin-bro-sequelizejs.html">admin-bro-sequelizejs</a> - adapter to <a href="http://sequelize.com">sequelize</a> for SQL Databases</li>
-</ul>
+<p>Way how each Adapter handles initialization differs. That is why make sure to read it's documentation first.</p>
 <h2>Resources customization</h2>
-<p>Each resource could be customized in AdminBro - to see how to do this go to <a href="tutorial-customizing-resources.html">04. Customize resources</a></p>
+<p>The biggest advantage of using AdminBro is the ability to fully customize how it works. Visit <a href="tutorial-customizing-resources.html">03. Customize resources</a> to see how you can change the behavior of selected resources.</p>
+<h2>[Advanced] how it works a.k.a. writing your own Adapters.</h2>
+<p>Adapter is an object with 2 properties:</p>
+<ul>
+<li><strong>database</strong> (class extending <a href="BaseDatabase.html">BaseDatabase</a>)</li>
+<li><strong>resource</strong> (class extending <a href="BaseResource.html">BaseResource</a>)</li>
+</ul>
+<p>When you pass <strong>SomeDataModel</strong> to <a href="AdminBroOptions.html#databases">databases[]</a> or <a href="AdminBroOptions.html#resources">resources[]</a>, AdminBro will automatically run all the registered adapters and check
+their corresponding <a href="BaseDatabase.html#.isAdapterFor">BaseDatabase.isAdapterFor</a> or <a href="BaseResource.html#.isAdapterFor">BaseResource.isAdapterFor</a> methods. If Adapter returns <code>true</code> AdminBro feeds it (in the constructor) with <strong>SomeDataModel</strong>.</p>
+<p>In order to write your own adapter you have to create these 2 classes and write implementation for all
+methods like find, create, etc.</p>
+<p>HINT: You can also write only a <strong>Resource</strong> class (extending <a href="BaseResource.html">BaseResource</a>) and pass its instance
+to <a href="AdminBroOptions.html#resources">AdminBroOptions#resources</a> like this:</p>
+<pre class="prettyprint source lang-javascript"><code>
+class MyApiAdapter extends BaseResource {
+  //... all abstract methods from BaseResource
+}
+
+const adminBro = new AdminBro({
+  resources: [User, {
+    resource: new MyApiAdapter(),
+    options: {
+      //...
+    },
+  }],
+})
+</code></pre>
+<p>AdminBro will see that what you passed is already a BaseDatabase so it wont need to be wrapped by an Adapter.</p>
+<h2>What's next?</h2>
+<p>Now let see how you can modify the resource in tutorial <a href="tutorial-customizing-resources.html">03. Customize resources</a>.</p>
 </article>
 
 </section>
