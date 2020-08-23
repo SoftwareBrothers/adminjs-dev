@@ -22,8 +22,8 @@ Latest version: v3
 
 read the docs for older versions:
 
-- [version 2.0](v2/index.html)
-- [version 1.6](v1/index.html)
+- [version 2](https://v2.adminbro.com/docs.html)
+- [version 1.6](https://v1.adminbro.com)
 
 ## How to read this documentation
 
@@ -38,16 +38,19 @@ Tutorials can be divided into 3 parts:
 
 1. **Setup AdminBro in your app.**
   - {@tutorial installation-instructions} - adding AdminBro to your already existing project
-  - {@tutorial example} - starting from scratch with an example AdminBro application
   - {@tutorial passing-resources} - adding resources to the sidebar of AdminBro
 2. **Customize how resources behave**
   - {@tutorial customizing-resources} - how to use {@link ResourceOptions} to modify how resources
   - {@tutorial actions} - adding custom actions to resources.
 3. **Customize how resources and entire AdminBro looks**
   - {@tutorial writing-react-components}
+  - {@tutorial features}
   - {@tutorial custom-dashboard}
 4. **Secure AdminBro**
   - {@tutorial rbac}
+5. **Content**
+  - {@tutorial i18n}
+  - {@tutorial cms}
 
 ### Step 2. Get familiar with all the options you can pass to AdminBro
 
@@ -57,6 +60,7 @@ to see what can be modified.
 - {@link AdminBroOptions} - list of all root level options
 - {@link ResourceOptions} - describe how to modify Resource
 - {@link PropertyOptions} - modify or create new Resource Properties
+- {@link Action} - modify existing or create new actions
 
 ### Step 3. Read about the helper classes
 

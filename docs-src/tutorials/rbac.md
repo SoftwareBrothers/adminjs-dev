@@ -25,24 +25,20 @@ yarn init -y
 Install the dependencies:
 
 ```bash
-yarn add express express-formidable mongoose admin-bro admin-bro-mongoose admin-bro-expressjs
+yarn add express express-formidable mongoose admin-bro @admin-bro/mongoose @admin-bro/express
 ```
 
-And finally, copy the example application from example app tutorial: {@tutorial 01-example}.
-
-I also modified the User model by adding password and role fields. The role can be either admin or restricted.
-
-This is the entire 38 lines of code:
+and copy this example app:
 
 ```javascript
 // Requirements
 const mongoose = require('mongoose')
 const express = require('express')
 const AdminBro = require('admin-bro')
-const AdminBroExpressjs = require('admin-bro-expressjs')
+const AdminBroExpressjs = require('@admin-bro/express')
 
 // We have to tell AdminBro that we will manage mongoose resources with it
-AdminBro.registerAdapter(require('admin-bro-mongoose'))
+AdminBro.registerAdapter(require('@admin-bro/mongoose'))
 
 // express server definition
 const app = express()
@@ -137,10 +133,10 @@ const adminBro = new AdminBro({
       actions: {
         new: {
           before: async (request) => {
-            if(request.payload.record.password) {
-              request.payload.record = {
-                ...request.payload.record,
-                encryptedPassword: await bcrypt.hash(request.payload.record.password, 10),
+            if(request.payload.password) {
+              request.payload = {
+                ...request.payload,
+                encryptedPassword: await bcrypt.hash(request.payload.password, 10),
                 password: undefined,
               }
             }
@@ -255,8 +251,8 @@ and add a before hook to new action:
 
 ```javascript
 before: async (request, { currentAdmin }) => {
-  request.payload.record = {
-    ...request.payload.record,
+  request.payload = {
+    ...request.payload,
     ownerId: currentAdmin._id,
   }  
   return request
@@ -272,11 +268,11 @@ And this is the entire code of the application:
 const mongoose = require('mongoose')
 const express = require('express')
 const AdminBro = require('admin-bro')
-const AdminBroExpressjs = require('admin-bro-expressjs')
+const AdminBroExpressjs = require('@admin-bro/express')
 const bcrypt = require('bcrypt')
 
 // We have to tell AdminBro that we will manage mongoose resources with it
-AdminBro.registerAdapter(require('admin-bro-mongoose'))
+AdminBro.registerAdapter(require('@admin-bro/mongoose'))
 
 // express server definition
 const app = express()
@@ -320,8 +316,8 @@ const adminBro = new AdminBro({
         delete: { isAccessible: canEditCars },
         new: {
           before: async (request, { currentAdmin }) => {
-            request.payload.record = {
-              ...request.payload.record,
+            request.payload = {
+              ...request.payload,
               ownerId: currentAdmin._id,
             }
             return request
@@ -345,10 +341,10 @@ const adminBro = new AdminBro({
       actions: {
         new: {
           before: async (request) => {
-            if(request.payload.record.password) {
-              request.payload.record = {
-                ...request.payload.record,
-                encryptedPassword: await bcrypt.hash(request.payload.record.password, 10),
+            if(request.payload.password) {
+              request.payload = {
+                ...request.payload,
+                encryptedPassword: await bcrypt.hash(request.payload.password, 10),
                 password: undefined,
               }
             }

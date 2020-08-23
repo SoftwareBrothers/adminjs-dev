@@ -1,5 +1,20 @@
 {
   "projects": {
     "default": "admin-bro-docs"
+  },
+  "targets": {
+    "admin-bro-docs": {
+      "hosting": {
+        "docs-v1": [
+          "admin-bro-docs-v1"
+        ],
+        "docs-v2": [
+          "admin-bro-docs-v2"
+        ],
+        "default": [
+          "admin-bro-docs"
+        ]
+      }
+    }
   }
 }

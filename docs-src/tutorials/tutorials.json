@@ -2,17 +2,14 @@
   "installation-instructions": {
     "title": "01. Installation instructions"
   },
-  "example": {
-    "title": "02. Example App"
-  },
   "passing-resources": {
-    "title": "03. Adding resources"
+    "title": "02. Adding resources"
   },
   "customizing-resources": {
-    "title": "04. Customize resources"
+    "title": "03. Customize resources"
   },
   "actions": {
-    "title": "05. Customize actions",
+    "title": "04. Customize actions",
     "children": {
       "actions-validations": {
         "title": "Custom validations"
@@ -20,7 +17,10 @@
     }
   },
   "writing-react-components": {
-    "title": "06. Writing your own Components"
+    "title": "05. Writing your own Components"
+  },
+  "features": {
+    "title": "06. Using AdminBro features"
   },
   "custom-dashboard": {
     "title": "07. Customize dashboard"
@@ -32,6 +32,6 @@
     "title": "09. Internationalization (i18n)"
   },
   "cms": {
-    "title": "10. Content Management System"
+    "title": "11. Content Management System"
   }
 }

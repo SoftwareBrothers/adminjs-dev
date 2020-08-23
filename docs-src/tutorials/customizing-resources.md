@@ -11,7 +11,9 @@ const Article = require('./models/article')
 
 const adminBroOptions = {
   resources: [
-    { resource: Article, options: {'...your options go here'} },
+    { resource: Article, options: {
+       // ...your options go here
+    }},
   ],
   branding: {
     companyName: 'Amazing c.o.',
@@ -21,13 +23,13 @@ const adminBroOptions = {
 ...
 ```
 
-When not passed - AdminBro will use defaults.
+> AdminBro will use defaults setting whey you wont pass any options.
 
 ## How a __Resource__ can be modified?
 
 You have lots of options. You can modify the basic appearance of a resource and more complicated aspects, as to how a particular field should be rendered.
 
-In the next sections, I will point out a couple of options.
+In the next sections, I will point out a couple of options. For the full list visit the {@link ResourceOptions} interface.
 
 ### { __parent__ } In the sidebar
 
@@ -51,10 +53,11 @@ const adminBroOptions = {
 ```
 
 This will group all Resources together in a "Content" category in a sidebar - and it assigns Accessibility
-icon to it. Shat you give here is passed to {@link Icon} Component.
+icon to it. Shat you give here is passed to {@link module:@admin-bro/design-system.Icon Icon Component}.
 
-By default all the texts are "Start Cased". You can provide any translation text to it by using
-translation label: {@tutorial 09-i18n}.
+As you see we passed name: 'content' but AdminBro changed that to 'Content'. This is because, by default, all texts are "Start Cased".
+
+You can provide any translation text to it by using translation label: see tutorial {@tutorial i18n}.
 
 ### Renaming a __Resource__
 
@@ -76,14 +79,14 @@ const adminBroOptions = {
 ```
 
 
-Take a look at {@tutorial 09-i18n} to read more about internationalization in AdminBro.
+Take a look at tutorial: {@tutorial i18n} and read more about internationalization in AdminBro.
 
 ### { __xxxProperties__ } - visibility of properties
 
 It defines which properties should be visible in a __list__, __edit__, __show__ and __filter__ views.
 
 Let's say that you have a resource city with 20 fields like _name, lat, lng, population, pollution, ..._.
-By default AdminBro will render first DEFAULT_MAX_ITEMS_IN_LIST which is __8__. What if you want to
+By default AdminBro will render first *DEFAULT_MAX_ITEMS_IN_LIST* which is __8__. What if you want to
 present just 3 of them in a different order.
 
 You can do this by using __listProperties__ option:
@@ -130,13 +133,19 @@ You can hide an entire field from all views by simply setting __isVisible__ to f
 
 Also, you can simply change the position of a field by using __position__ option. By default all fields have position __100__, except the __title__ field which gets position __-1__ - means it will be at the beginning of a list.
 
-__Important notice about overriding xxxProperties__: both _{ propertyName.position }_ and _{ propertyName.isVisible }_ will be overriden by _xxxProperties_ if you set it.
+__Important notice about overriding xxxProperties__: both _{ propertyName.position }_ and _{ propertyName.isVisible }_ will be overwritten by _xxxProperties_ if you set it.
+
+### { __[propertyName].isTitle__ }
+
+As I mentioned a **title** property goes first in the list of all properties, and in smaller screens, only this property stays. Also title property is the property on which you can search in autocomplete (by default).
+
+AdminBro tries to pick **title** property automatically. It is property with name "name" or "email". You can change this behavior by setting {@link PropertyOptions#isTitle} for default property to `false` and for the new property to `true`.
 
 ### { __[propertyName].type__ } of a property
 
-By default types of properties are computed by adapters, see {@tutorial 03-passing-resources} tutorial.
+By default types of properties are computed by adapters, see tutorial: {@tutorial passing-resources} tutorial.
 
-So when you have a __DATE__ field it will be rendered as a __date__ with {@link DatePicker} and custom __from__ - __to__ filter.
+So when you have a __DATE__ field it will be rendered as a __date__ with {@link module:@admin-bro/design-system.DatePicker DatePicker} and custom __from__ - __to__ filter.
 
 You can change this behavior by modifying its type. So, for instance, you can add a richtext editor to a  __content__ like that:
 
@@ -206,7 +215,7 @@ const CityContentInList = (props) => (
 export default CityContentInList
 ```
 
-You can read more about creating your own components in {@tutorial 06-writing-react-components}.
+You can read more about creating your own components in this tutorial: {@tutorial writing-react-components}.
 
 ## Adding new properties
 
@@ -234,10 +243,16 @@ const adminBroOptions = {
 ```
 
 Then you will have to create `city-in-a-list.jsx` react component (or .tsx for TypeScript).
-To see how to do this visit {@tutorial 06-writing-react-components}.
+To see how to do this visit tutorial: {@tutorial writing-react-components}.
 
 ## What's next?
 
-To see all available options - check out the {@link ResourceOptions} interface.
+To see all available options - check out the
 
-You can also read more about creating your own components in {@tutorial writing-react-components}.
+* {@link ResourceOptions} interface.
+* {@link PropertyOptions} interface.
+
+There is an another very important section in {@link ResourceOptions} - **actions**. It gives you the ability
+to modify existing actions like `edit` or `delete` or add new **actions**. Go to the next tutorial: {@tutorial actions} to read more about them.
+
+You can also read more about creating your own components in this tutorial: {@tutorial writing-react-components}.

@@ -38,6 +38,7 @@
     "@carbon/icons-react": "^10.14.0",
     "cssnano": "^4.1.10",
     "jsdoc": "^3.6.4",
+    "jsdoc-escape-at": "^1.0.1",
     "jsdoc-mermaid": "^1.0.0",
     "jsdoc-typeof-plugin": "^1.0.0",
     "jw-paginate": "^1.0.4",

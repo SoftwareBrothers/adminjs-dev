@@ -98,28 +98,36 @@ export default withRouter(YourComponent)
 
 ## Props passed to components
 
-In your components, you can use props passed by their controlling components.
+In your components, you can use props passed by their _controlling components_.
 
-Currently we have 2 controlling components: 
+Currently we have 2 _controlling components_: 
 
 - one for an action: {@link BaseActionComponent} with {@link ActionProps}
 - and one for custom property field: {@link BasePropertyComponent} with {@link BasePropertyProps}
 
 Check out their documentation to see available **props**
 
-BTW - Dashboard and Pages don't have any controlling component - so no props passed there.
+> Dashboard and Pages don't have any controlling component, so they don't receive any props.
 
 ## Reusing UI Components of AdminBro
 
 AdminBro gives you the ability to reuse its components. You can do this by simply requiring them:
 
 ```
-import { Label } from 'admin-bro'
+import { Label } from '@admin-bro/design-system'
 
 const YourComponent (props) => {(
   <Label>Some styled text<Label>
 )}
 ```
+
+> We divide components internally to 2 groups:
+> 
+> * _application components_ - which requires AdminBro, you can think about them as "smart components"
+> * and _design system components_ - they don't require AdminBro and you can use them outside of the AdminBro setup.
+> 
+> That is why sometimes you have to import components from 'admin-bro'
+> package and sometimes from '@admin-bro/design-system'.
 
 Each of the components is described with the playground option, so make sure to check out all the documentation of all the components.
 
@@ -130,12 +138,12 @@ Combined with {@link useRecord} is a powerful tool for building forms.
 
 We support {@link Theme} compatible with https://system-ui.com/theme standard.
 
-In order to override default colors you an put your values in {@link AdminBroOptions.branding}.
+In order to override default colors, fonts, sizes etc., you can put your values in {@link AdminBroOptions.branding}.
 
 ### Using style props
 
-AdminBro components are supercharged with multiple props which control styling. For instance in order
-to change color of a {@link Button} you can pass backgroundColor (bg) from the {@link Theme} like that:
+AdminBro components are supercharged with multiple props controlling styles. For instance in order
+to change color of a {@link module:@admin-bro/design-system.Button} you can pass _backgroundColor_ (bg) from the {@link  module:@admin-bro/design-system.Theme} like that:
 
 ```javascript
 <Button bg="primary60"></Button>
@@ -146,10 +154,10 @@ For all possible options visit the {@link Theme} description.
 ### Adding custom css to components
 
 If using style props is not enough - you can always pass your custom CSS. So for instance let's assume
-that you would like to override CSS in a Button component. You can do this like that:
+that you would like to overwrite CSS in a Button component. You can do this like that:
 
 ```javascript
-import { Button } from 'admin-bro'
+import { Button } from '@admin-bro/design-system'
 
 const MyButton = styled(Button)`
   background-color: #ccc;

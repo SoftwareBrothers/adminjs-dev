@@ -5,7 +5,7 @@
   <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminBro - Auto-generated admin panel for node.js with react 06. Writing your own Components</title>
+  <title>AdminBro - Auto-generated admin panel for node.js with react 05. Writing your own Components</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -95,24 +95,24 @@
                                 01. Installation instructions
                             </a>
                         
-                            <a class="dropdown-item" href="tutorial-example.html">
-                                02. Example App
-                            </a>
-                        
                             <a class="dropdown-item" href="tutorial-passing-resources.html">
-                                03. Adding resources
+                                02. Adding resources
                             </a>
                         
                             <a class="dropdown-item" href="tutorial-customizing-resources.html">
-                                04. Customize resources
+                                03. Customize resources
                             </a>
                         
                             <a class="dropdown-item" href="tutorial-actions.html">
-                                05. Customize actions
+                                04. Customize actions
                             </a>
                         
                             <a class="dropdown-item" href="tutorial-writing-react-components.html">
-                                06. Writing your own Components
+                                05. Writing your own Components
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-features.html">
+                                06. Using AdminBro features
                             </a>
                         
                             <a class="dropdown-item" href="tutorial-custom-dashboard.html">
@@ -128,7 +128,7 @@
                             </a>
                         
                             <a class="dropdown-item" href="tutorial-cms.html">
-                                10. Content Management System
+                                11. Content Management System
                             </a>
                         
                         </div>
@@ -162,7 +162,7 @@
             
             <nav>
                 
-                    <div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-example.html">02. Example App</a></li><li><a href="tutorial-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-actions.html">05. Customize actions</a><ul><li><a href="tutorial-actions-validations.html">Custom validations</a></li></ul></li><li><a href="tutorial-writing-react-components.html">06. Writing your own Components</a></li><li><a href="tutorial-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-rbac.html">08. Role-Based Access Control</a></li><li><a href="tutorial-i18n.html">09. Internationalization (i18n)</a></li><li><a href="tutorial-cms.html">10. Content Management System</a></li></ul></div>
+                    <div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-passing-resources.html">02. Adding resources</a></li><li><a href="tutorial-customizing-resources.html">03. Customize resources</a></li><li><a href="tutorial-actions.html">04. Customize actions</a><ul><li><a href="tutorial-actions-validations.html">Custom validations</a></li></ul></li><li><a href="tutorial-writing-react-components.html">05. Writing your own Components</a></li><li><a href="tutorial-features.html">06. Using AdminBro features</a></li><li><a href="tutorial-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-rbac.html">08. Role-Based Access Control</a></li><li><a href="tutorial-i18n.html">09. Internationalization (i18n)</a></li><li><a href="tutorial-cms.html">11. Content Management System</a></li></ul></div>
                 
             </nav>
         </div>
@@ -170,7 +170,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Tutorial</p>
-                    <h1>06. Writing your own Components</h1>
+                    <h1>05. Writing your own Components</h1>
                 </header>
                 <section>
 
@@ -255,38 +255,49 @@ const YourComponent (props) => {...}
 export default withRouter(YourComponent)
 </code></pre>
 <h2>Props passed to components</h2>
-<p>In your components, you can use props passed by their controlling components.</p>
-<p>Currently we have 2 controlling components:</p>
+<p>In your components, you can use props passed by their <em>controlling components</em>.</p>
+<p>Currently we have 2 <em>controlling components</em>:</p>
 <ul>
 <li>one for an action: <a href="BaseActionComponent.html">BaseActionComponent</a> with <a href="BaseActionComponent.html#ActionProps">ActionProps</a></li>
 <li>and one for custom property field: <a href="BasePropertyComponent.html">BasePropertyComponent</a> with <a href="BasePropertyComponent.html#BasePropertyProps">BasePropertyProps</a></li>
 </ul>
 <p>Check out their documentation to see available <strong>props</strong></p>
-<p>BTW - Dashboard and Pages don't have any controlling component - so no props passed there.</p>
+<blockquote>
+<p>Dashboard and Pages don't have any controlling component, so they don't receive any props.</p>
+</blockquote>
 <h2>Reusing UI Components of AdminBro</h2>
 <p>AdminBro gives you the ability to reuse its components. You can do this by simply requiring them:</p>
-<pre class="prettyprint source"><code>import { Label } from 'admin-bro'
+<pre class="prettyprint source"><code>import { Label } from '@admin-bro/design-system'
 
 const YourComponent (props) => {(
   &lt;Label>Some styled text&lt;Label>
 )}
 </code></pre>
+<blockquote>
+<p>We divide components internally to 2 groups:</p>
+<ul>
+<li><em>application components</em> - which requires AdminBro, you can think about them as &quot;smart components&quot;</li>
+<li>and <em>design system components</em> - they don't require AdminBro and you can use them outside of the AdminBro setup.</li>
+</ul>
+<p>That is why sometimes you have to import components from 'admin-bro'
+package and sometimes from '@admin-bro/design-system'.</p>
+</blockquote>
 <p>Each of the components is described with the playground option, so make sure to check out all the documentation of all the components.</p>
 <p>One of the most versatile component is a <a href="BasePropertyComponent.html">BasePropertyComponent</a>. It allows you to render any property.
 Combined with <a href="useRecord.html">useRecord</a> is a powerful tool for building forms.</p>
 <h2>Theming</h2>
 <p>We support <a href="Theme.html">Theme</a> compatible with https://system-ui.com/theme standard.</p>
-<p>In order to override default colors you an put your values in AdminBroOptions.branding.</p>
+<p>In order to override default colors, fonts, sizes etc., you can put your values in AdminBroOptions.branding.</p>
 <h3>Using style props</h3>
-<p>AdminBro components are supercharged with multiple props which control styling. For instance in order
-to change color of a <a href="Button.html">Button</a> you can pass backgroundColor (bg) from the <a href="Theme.html">Theme</a> like that:</p>
+<p>AdminBro components are supercharged with multiple props controlling styles. For instance in order
+to change color of a <a href="module-@admin-bro_design-system.Button.html">module:@admin-bro/design-system.Button</a> you can pass <em>backgroundColor</em> (bg) from the module:@admin-bro/design-system.Theme like that:</p>
 <pre class="prettyprint source lang-javascript"><code>&lt;Button bg=&quot;primary60&quot;>&lt;/Button>
 </code></pre>
 <p>For all possible options visit the <a href="Theme.html">Theme</a> description.</p>
 <h3>Adding custom css to components</h3>
 <p>If using style props is not enough - you can always pass your custom CSS. So for instance let's assume
-that you would like to override CSS in a Button component. You can do this like that:</p>
-<pre class="prettyprint source lang-javascript"><code>import { Button } from 'admin-bro'
+that you would like to overwrite CSS in a Button component. You can do this like that:</p>
+<pre class="prettyprint source lang-javascript"><code>import { Button } from '@admin-bro/design-system'
 
 const MyButton = styled(Button)`
   background-color: #ccc;

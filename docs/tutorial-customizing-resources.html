@@ -5,7 +5,7 @@
   <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminBro - Auto-generated admin panel for node.js with react 04. Customize resources</title>
+  <title>AdminBro - Auto-generated admin panel for node.js with react 03. Customize resources</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -95,24 +95,24 @@
                                 01. Installation instructions
                             </a>
                         
-                            <a class="dropdown-item" href="tutorial-example.html">
-                                02. Example App
-                            </a>
-                        
                             <a class="dropdown-item" href="tutorial-passing-resources.html">
-                                03. Adding resources
+                                02. Adding resources
                             </a>
                         
                             <a class="dropdown-item" href="tutorial-customizing-resources.html">
-                                04. Customize resources
+                                03. Customize resources
                             </a>
                         
                             <a class="dropdown-item" href="tutorial-actions.html">
-                                05. Customize actions
+                                04. Customize actions
                             </a>
                         
                             <a class="dropdown-item" href="tutorial-writing-react-components.html">
-                                06. Writing your own Components
+                                05. Writing your own Components
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-features.html">
+                                06. Using AdminBro features
                             </a>
                         
                             <a class="dropdown-item" href="tutorial-custom-dashboard.html">
@@ -128,7 +128,7 @@
                             </a>
                         
                             <a class="dropdown-item" href="tutorial-cms.html">
-                                10. Content Management System
+                                11. Content Management System
                             </a>
                         
                         </div>
@@ -162,7 +162,7 @@
             
             <nav>
                 
-                    <div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-example.html">02. Example App</a></li><li><a href="tutorial-passing-resources.html">03. Adding resources</a></li><li><a href="tutorial-customizing-resources.html">04. Customize resources</a></li><li><a href="tutorial-actions.html">05. Customize actions</a><ul><li><a href="tutorial-actions-validations.html">Custom validations</a></li></ul></li><li><a href="tutorial-writing-react-components.html">06. Writing your own Components</a></li><li><a href="tutorial-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-rbac.html">08. Role-Based Access Control</a></li><li><a href="tutorial-i18n.html">09. Internationalization (i18n)</a></li><li><a href="tutorial-cms.html">10. Content Management System</a></li></ul></div>
+                    <div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-passing-resources.html">02. Adding resources</a></li><li><a href="tutorial-customizing-resources.html">03. Customize resources</a></li><li><a href="tutorial-actions.html">04. Customize actions</a><ul><li><a href="tutorial-actions-validations.html">Custom validations</a></li></ul></li><li><a href="tutorial-writing-react-components.html">05. Writing your own Components</a></li><li><a href="tutorial-features.html">06. Using AdminBro features</a></li><li><a href="tutorial-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-rbac.html">08. Role-Based Access Control</a></li><li><a href="tutorial-i18n.html">09. Internationalization (i18n)</a></li><li><a href="tutorial-cms.html">11. Content Management System</a></li></ul></div>
                 
             </nav>
         </div>
@@ -170,7 +170,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Tutorial</p>
-                    <h1>04. Customize resources</h1>
+                    <h1>03. Customize resources</h1>
                 </header>
                 <section>
 
@@ -184,7 +184,9 @@ const Article = require('./models/article')
 
 const adminBroOptions = {
   resources: [
-    { resource: Article, options: {'...your options go here'} },
+    { resource: Article, options: {
+       // ...your options go here
+    }},
   ],
   branding: {
     companyName: 'Amazing c.o.',
@@ -193,10 +195,12 @@ const adminBroOptions = {
 }
 ...
 </code></pre>
-<p>When not passed - AdminBro will use defaults.</p>
+<blockquote>
+<p>AdminBro will use defaults setting whey you wont pass any options.</p>
+</blockquote>
 <h2>How a <strong>Resource</strong> can be modified?</h2>
 <p>You have lots of options. You can modify the basic appearance of a resource and more complicated aspects, as to how a particular field should be rendered.</p>
-<p>In the next sections, I will point out a couple of options.</p>
+<p>In the next sections, I will point out a couple of options. For the full list visit the <a href="ResourceOptions.html">ResourceOptions</a> interface.</p>
 <h3>{ <strong>parent</strong> } In the sidebar</h3>
 <p>By default AdminBro groups resources by the database, they belong to. But you can change that and group them in a different way. It can be done by using a <code>parent</code> option.</p>
 <p>So let say you want to group all text'ish resources into a <strong>content</strong> category in the sidebar.
@@ -214,9 +218,9 @@ const adminBroOptions = {
 }
 </code></pre>
 <p>This will group all Resources together in a &quot;Content&quot; category in a sidebar - and it assigns Accessibility
-icon to it. Shat you give here is passed to Icon Component.</p>
-<p>By default all the texts are &quot;Start Cased&quot;. You can provide any translation text to it by using
-translation label: 09-i18n.</p>
+icon to it. Shat you give here is passed to <a href="module-@admin-bro_design-system.Icon.html">Icon Component</a>.</p>
+<p>As you see we passed name: 'content' but AdminBro changed that to 'Content'. This is because, by default, all texts are &quot;Start Cased&quot;.</p>
+<p>You can provide any translation text to it by using translation label: see tutorial <a href="tutorial-i18n.html">09. Internationalization (i18n)</a>.</p>
 <h3>Renaming a <strong>Resource</strong></h3>
 <p>By default - the name of a Resource is taken from the database <em>collection/table</em> - you can change that by setting a i18n label</p>
 <pre class="prettyprint source lang-javascript"><code>const adminBroOptions = {
@@ -232,11 +236,11 @@ translation label: 09-i18n.</p>
   },
 }
 </code></pre>
-<p>Take a look at 09-i18n to read more about internationalization in AdminBro.</p>
+<p>Take a look at tutorial: <a href="tutorial-i18n.html">09. Internationalization (i18n)</a> and read more about internationalization in AdminBro.</p>
 <h3>{ <strong>xxxProperties</strong> } - visibility of properties</h3>
 <p>It defines which properties should be visible in a <strong>list</strong>, <strong>edit</strong>, <strong>show</strong> and <strong>filter</strong> views.</p>
 <p>Let's say that you have a resource city with 20 fields like <em>name, lat, lng, population, pollution, ...</em>.
-By default AdminBro will render first DEFAULT_MAX_ITEMS_IN_LIST which is <strong>8</strong>. What if you want to
+By default AdminBro will render first <em>DEFAULT_MAX_ITEMS_IN_LIST</em> which is <strong>8</strong>. What if you want to
 present just 3 of them in a different order.</p>
 <p>You can do this by using <strong>listProperties</strong> option:</p>
 <pre class="prettyprint source lang-javascript"><code>const adminBroOptions = {
@@ -269,10 +273,13 @@ present just 3 of them in a different order.</p>
 </code></pre>
 <p>You can hide an entire field from all views by simply setting <strong>isVisible</strong> to false.</p>
 <p>Also, you can simply change the position of a field by using <strong>position</strong> option. By default all fields have position <strong>100</strong>, except the <strong>title</strong> field which gets position <strong>-1</strong> - means it will be at the beginning of a list.</p>
-<p><strong>Important notice about overriding xxxProperties</strong>: both <em>{ propertyName.position }</em> and <em>{ propertyName.isVisible }</em> will be overriden by <em>xxxProperties</em> if you set it.</p>
+<p><strong>Important notice about overriding xxxProperties</strong>: both <em>{ propertyName.position }</em> and <em>{ propertyName.isVisible }</em> will be overwritten by <em>xxxProperties</em> if you set it.</p>
+<h3>{ <strong>[propertyName].isTitle</strong> }</h3>
+<p>As I mentioned a <strong>title</strong> property goes first in the list of all properties, and in smaller screens, only this property stays. Also title property is the property on which you can search in autocomplete (by default).</p>
+<p>AdminBro tries to pick <strong>title</strong> property automatically. It is property with name &quot;name&quot; or &quot;email&quot;. You can change this behavior by setting <a href="PropertyOptions.html#isTitle">PropertyOptions#isTitle</a> for default property to <code>false</code> and for the new property to <code>true</code>.</p>
 <h3>{ <strong>[propertyName].type</strong> } of a property</h3>
-<p>By default types of properties are computed by adapters, see 03-passing-resources tutorial.</p>
-<p>So when you have a <strong>DATE</strong> field it will be rendered as a <strong>date</strong> with DatePicker and custom <strong>from</strong> - <strong>to</strong> filter.</p>
+<p>By default types of properties are computed by adapters, see tutorial: <a href="tutorial-passing-resources.html">02. Adding resources</a> tutorial.</p>
+<p>So when you have a <strong>DATE</strong> field it will be rendered as a <strong>date</strong> with <a href="module-@admin-bro_design-system.DatePicker.html">DatePicker</a> and custom <strong>from</strong> - <strong>to</strong> filter.</p>
 <p>You can change this behavior by modifying its type. So, for instance, you can add a richtext editor to a  <strong>content</strong> like that:</p>
 <pre class="prettyprint source lang-javascript"><code>const adminBroOptions = {
   resources: [
@@ -325,7 +332,7 @@ const CityContentInList = (props) => (
 
 export default CityContentInList
 </code></pre>
-<p>You can read more about creating your own components in 06-writing-react-components.</p>
+<p>You can read more about creating your own components in this tutorial: <a href="tutorial-writing-react-components.html">05. Writing your own Components</a>.</p>
 <h2>Adding new properties</h2>
 <p>Also, you can add new properties to the Resource by using a { <strong>properties.propertyName</strong> }. You just need to define some or all components (list, view, edit, filter).
 For example, if you want to group 'lat' and 'lng' fields on the list and display them as
@@ -348,10 +355,16 @@ a <em>google map</em> in a <strong>show</strong> view you can use something like
 }
 </code></pre>
 <p>Then you will have to create <code>city-in-a-list.jsx</code> react component (or .tsx for TypeScript).
-To see how to do this visit 06-writing-react-components.</p>
+To see how to do this visit tutorial: <a href="tutorial-writing-react-components.html">05. Writing your own Components</a>.</p>
 <h2>What's next?</h2>
-<p>To see all available options - check out the <a href="ResourceOptions.html">ResourceOptions</a> interface.</p>
-<p>You can also read more about creating your own components in <a href="tutorial-writing-react-components.html">06. Writing your own Components</a>.</p>
+<p>To see all available options - check out the</p>
+<ul>
+<li><a href="ResourceOptions.html">ResourceOptions</a> interface.</li>
+<li><a href="PropertyOptions.html">PropertyOptions</a> interface.</li>
+</ul>
+<p>There is an another very important section in <a href="ResourceOptions.html">ResourceOptions</a> - <strong>actions</strong>. It gives you the ability
+to modify existing actions like <code>edit</code> or <code>delete</code> or add new <strong>actions</strong>. Go to the next tutorial: <a href="tutorial-actions.html">04. Customize actions</a> to read more about them.</p>
+<p>You can also read more about creating your own components in this tutorial: <a href="tutorial-writing-react-components.html">05. Writing your own Components</a>.</p>
 </article>
 
 </section>

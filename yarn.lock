@@ -1100,6 +1100,11 @@ js2xmlparser@^4.0.1:
   dependencies:
     xmlcreate "^2.0.3"
 
+jsdoc-escape-at@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/jsdoc-escape-at/-/jsdoc-escape-at-1.0.1.tgz#a1264683a32f3e03a589c85d6e92769718c7ab90"
+  integrity sha1-oSZGg6MvPgOlichdbpJ2lxjHq5A=
+
 jsdoc-mermaid@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/jsdoc-mermaid/-/jsdoc-mermaid-1.0.0.tgz#793f319d9f8658c6a15d1ce77f77de4c50fd5905"

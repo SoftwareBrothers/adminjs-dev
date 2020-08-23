@@ -100,4 +100,4 @@ const resourceOptions = {
 }
 ```
 
-(You can take a look at this video: https://www.youtube.com/watch?v=wOSPDtvJcyQ&feature=youtu.be where this particular example is used)
+(You can take a look at this [video](https://www.youtube.com/watch?v=wOSPDtvJcyQ&feature=youtu.be) where this particular example is used).
