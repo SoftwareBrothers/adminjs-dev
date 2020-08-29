@@ -4,7 +4,7 @@ For instance, you may want to show a _google map_ for _location_ fields, or even
 
 You can do this all by writing your custom components.
 
-## Example of overriding how dashboard looks:
+## Example of overriding how the dashboard looks:
 
 AdminBroOptions: 
 ```

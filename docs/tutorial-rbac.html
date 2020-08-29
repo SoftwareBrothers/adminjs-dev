@@ -245,7 +245,7 @@ Example app listening on port 8080!
 <p>We will use (bcrypt)[https://www.npmjs.com/package/bcrypt] library for hashing passwords:</p>
 <pre class="prettyprint source lang-bash"><code>yarn add bcrypt
 </code></pre>
-<p>Now we have to intercept the new action and change the <em>password</em> to encrypted one.</p>
+<p>Now we have to intercept the new action and change the <em>password</em> to the encrypted one.</p>
 <p>So let’s prepare our model first by renaming the password field in the database to <em>encryptedPassword</em>:</p>
 <pre class="prettyprint source lang-javascript"><code>// Resources definitions
 const User = mongoose.model('User', {

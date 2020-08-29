@@ -94,7 +94,7 @@ We will use (bcrypt)[https://www.npmjs.com/package/bcrypt] library for hashing p
 yarn add bcrypt
 ```
 
-Now we have to intercept the new action and change the _password_ to encrypted one.
+Now we have to intercept the new action and change the _password_ to the encrypted one.
 
 So let’s prepare our model first by renaming the password field in the database to _encryptedPassword_:
 

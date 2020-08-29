@@ -236,7 +236,7 @@ AdminBro.ACTIONS.show.isAccessible = ({ currentAdmin, resource, record }) => {
 <p><a href="Action.html#isVisible">Action#isVisible</a> can be either a function returning a boolean value or a boolean value itself.</p>
 <h3>Action handler and action hooks</h3>
 <p>Each action has an <a href="Action.html#handler">Action#handler</a> function. This function is executed every time the action is invoked and all of the default actions has their handlers.</p>
-<p>You probably don't want to modify behavior of the handler for the default Edit action. But, if you really want to change this action, you can use <a href="Action.html#before">Action#before</a> and <a href="Action.html#after">Action#after</a> action hooks.</p>
+<p>You probably don't want to modify the behavior of the handler for the default Edit action. But, if you really want to change this action, you can use <a href="Action.html#before">Action#before</a> and <a href="Action.html#after">Action#after</a> action hooks.</p>
 <p><a href="Action.html#handler">Action#handler</a> has to be specified for new actions (read the next section).</p>
 <h2>Custom Actions</h2>
 <p>Also, you can define your own actions. Simply pass <a href="Action.html">Action</a> under a new key to <a href="ResourceOptions.html">ResourceOptions</a>.</p>
