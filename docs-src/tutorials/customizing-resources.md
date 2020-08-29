@@ -139,7 +139,7 @@ __Important notice about overriding xxxProperties__: both _{ propertyName.positi
 
 As I mentioned a **title** property goes first in the list of all properties, and in smaller screens, only this property stays. Also title property is the property on which you can search in autocomplete (by default).
 
-AdminBro tries to pick **title** property automatically. It is property with name "name" or "email". You can change this behavior by setting {@link PropertyOptions#isTitle} for default property to `false` and for the new property to `true`.
+AdminBro tries to pick **title** property automatically. It is property with name "name" or "email". You can change this behavior by setting {@link PropertyOptions#isTitle} for default property to `false` and the new property to `true`.
 
 ### { __[propertyName].type__ } of a property
 
