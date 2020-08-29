@@ -46,7 +46,7 @@ Currently, there are 4 places where you can inject components to alter how Admin
 ## Requiring component
 
 First of all - you have to require them by using {@link AdminBro.bundle} function. What it does -
-it gives your component an unique ID and sends it to the __bundling__ process.
+it gives your component a unique ID and sends it to the __bundling__ process.
 
 You can do it like this: `{ component: AdminBro.bundle('./path-to-your-jsx-or-tsx-file') }`
 
