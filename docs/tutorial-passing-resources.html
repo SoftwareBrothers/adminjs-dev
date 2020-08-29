@@ -182,7 +182,7 @@
 use MongoDB with <a href="http://mongoosejs.com">mongoose</a> or PostgreSQL with <a href="http://sequelizejs.com">Sequelize</a>.
 AdminBro should give you the ability to manage records in all these resources.</p>
 <h2>Adapters</h2>
-<p>AdminBro uses Database Adapters in order to handle different kind of resources.</p>
+<p>AdminBro uses Database Adapters in order to handle different kinds of resources.</p>
 <h3>How to use an adapter</h3>
 <ol>
 <li>First, you have to install adapter locally using the <strong>npm/yarn</strong>.</li>
@@ -195,7 +195,7 @@ const AdminBroMongoose = require('@admin-bro/mongoose')
 AdminBro.registerAdapter(AdminBroMongoose)
 </code></pre>
 <h2>Passing resources to AminBro</h2>
-<p>So you know how to register an adapter - now let's take a look of how to add resources that
+<p>So you know how to register an adapter - now let's take a look at how to add resources that
 they can be seen in AdminBro.</p>
 <p>You have 2 options:</p>
 <ol>
@@ -269,7 +269,7 @@ const adminBro = new AdminBro({
   }],
 })
 </code></pre>
-<p>AdminBro will see that what you passed is already a BaseDatabase so it wont need to be wrapped by an Adapter.</p>
+<p>AdminBro will see that what you passed is already a BaseDatabase so it won't need to be wrapped by an Adapter.</p>
 <h2>What's next?</h2>
 <p>Now let see how you can modify the resource in tutorial <a href="tutorial-customizing-resources.html">03. Customize resources</a>.</p>
 </article>
