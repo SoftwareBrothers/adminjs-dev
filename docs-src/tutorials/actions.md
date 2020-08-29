@@ -91,7 +91,7 @@ disables it.
 
 Each action has an {@link Action#handler} function. This function is executed every time the action is invoked and all of the default actions has their handlers.
 
-You probably don't want to modify behavior of the handler for the default Edit action. But, if you really want to change this action, you can use {@link Action#before} and {@link Action#after} action hooks.
+You probably don't want to modify the behavior of the handler for the default Edit action. But, if you really want to change this action, you can use {@link Action#before} and {@link Action#after} action hooks.
 
 Nevertheless, {@link Action#handler} has to be specified for new actions (read the next section).
 
