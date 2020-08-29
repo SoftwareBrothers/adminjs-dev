@@ -114,13 +114,13 @@ you proceed - make sure you know how <a href="https://reactjs.org/">react</a> wo
 <ul>
 <li>overriding how properties are rendered in <a href="PropertyOptions.html#components">PropertyOptions#components</a> by using <code>components</code> object (<strong>PLURAL</strong>)</li>
 <li>creating new or update default actions by overriding <a href="Action.html#component">Action#component</a> param</li>
-<li>changing how the dashbord looks like by using <a href="AdminBroOptions.html#dashboard">dashboard.component</a> param.</li>
+<li>changing how the dashboard looks like by using <a href="AdminBroOptions.html#dashboard">dashboard.component</a> param.</li>
 </ul>
 <h2>Requiring component</h2>
 <p>First of all - you have to require them by using <a href="AdminBro.html#.bundle">AdminBro.bundle</a> function. What it does -
-it gives your comopnent an uniq ID and sends it to the <strong>bundling</strong> process.</p>
+it gives your component a unique ID and sends it to the <strong>bundling</strong> process.</p>
 <p>You can do it like this: <code>{ component: AdminBro.bundle('./path-to-your-jsx-or-tsx-file') }</code></p>
-<p>All files requried by <a href="AdminBro.html#.bundle">AdminBro.bundle</a> has to have one default export - the one with your <a href="https://reactjs.org/">react</a> component.</p>
+<p>All files required by <a href="AdminBro.html#.bundle">AdminBro.bundle</a> has to have one default export - the one with your <a href="https://reactjs.org/">react</a> component.</p>
 <p>You can use either <code>.jsx</code> or <code>.tsx</code> extension for your components.</p>
 <h2>Dependencies</h2>
 <p>AdminBro bundler gives you the ability to import following dependencies without the need of requiring them in your <code>package.json</code> file:</p>
@@ -176,7 +176,7 @@ const YourComponent (props) => {(
 </code></pre>
 <p>You can choose from multiple components like:</p>
 <ul>
-<li><a href="Column.html">Column</a> and Colums,</li>
+<li><a href="Column.html">Column</a> and Columns,</li>
 <li><a href="DashboardHeader.html">DashboardHeader</a>,</li>
 <li><a href="Dropdown.html">Dropdown</a>,</li>
 <li><a href="Label.html">Label</a>,</li>
