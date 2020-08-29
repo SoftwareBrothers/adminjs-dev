@@ -6,7 +6,7 @@ AdminBro by default validates properties based on rules defined by the database 
 
 AdminBro validates fields on the backend and sends errors back to the react frontend.
 
-Information about the errors is send inside the {@link RecordJSON} object in the {@link RecordActionResponse}.
+Information about the errors is sent inside the {@link RecordJSON} object in the {@link RecordActionResponse}.
 
 **Example**
 
