@@ -252,7 +252,7 @@ To see all available options - check out the
 * {@link ResourceOptions} interface.
 * {@link PropertyOptions} interface.
 
-There is an another very important section in {@link ResourceOptions} - **actions**. It gives you the ability
+There is another very important section in {@link ResourceOptions} - **actions**. It gives you the ability
 to modify existing actions like `edit` or `delete` or add new **actions**. Go to the next tutorial: {@tutorial actions} to read more about them.
 
 You can also read more about creating your own components in this tutorial: {@tutorial writing-react-components}.
