@@ -170,7 +170,7 @@ We use [styled-components](https://styled-components.com/) under the hood so mak
 
 ## Using other AdminBro frontend classes and objects
 
-AdminBro also exposes following classes:
+AdminBro also exposes the following classes:
 
 - {@link ApiClient}
 - {@link ViewHelpers}
