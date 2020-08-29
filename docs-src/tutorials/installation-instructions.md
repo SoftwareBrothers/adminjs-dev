@@ -57,7 +57,7 @@ app.listen(8080, () => console.log('AdminBro is under localhost:8080/admin'))
 
 > If you are adding AdminBro to an application which already has any other middleware, it is good to put the AdminBro setup on top.
 > 
-> This is because other middleware can transform **requests** so that AdminBro wont be able to handle it.
+> This is because other middleware can transform **requests** so that AdminBro won't be able to handle it.
 
 To see how to add an authentication or other modifications - visit the {@link module:@admin-bro/express Express Plugin} documentation.
 
