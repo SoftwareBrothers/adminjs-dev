@@ -1,4 +1,4 @@
-By default AdminBro comes with the simple dashboard. You can easily modify it by adding some widgets.
+By default AdminBro comes with a simple dashboard. You can easily modify it by adding some widgets.
 
 ### how to change default dashboard
 
