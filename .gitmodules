@@ -40,3 +40,6 @@
 [submodule "admin-bro-extension-template"]
 	path = admin-bro-nestjs
 	url = git@github.com:SoftwareBrothers/admin-bro-extension-template.git
+[submodule "admin-bro-upload"]
+	path = admin-bro-upload
+	url = git@github.com:SoftwareBrothers/admin-bro-upload.git
