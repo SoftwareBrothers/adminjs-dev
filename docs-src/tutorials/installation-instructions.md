@@ -59,7 +59,7 @@ app.listen(8080, () => console.log('AdminBro is under localhost:8080/admin'))
 > 
 > This is because other middleware can transform **requests** so that AdminBro won't be able to handle it.
 
-To see how to add an authentication or other modifications - visit the {@link module:@admin-bro/express Express Plugin} documentation.
+To see how to add authentication or other modifications - visit the {@link module:@admin-bro/express Express Plugin} documentation.
 
 ## 02. Install the Database Adapter and add resources
 
