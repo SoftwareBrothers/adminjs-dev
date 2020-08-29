@@ -14,8 +14,8 @@ There are plugins for:
 * {@link module:@admin-bro/hapi Hapi}
 * {@link module:@admin-bro/koa Koajs}
 
-In this tutorial I will present the simplest way of adding AdminBro to an express framework. If you
-want to launch AdminBro by other framework - see its documentation (above)
+In this tutorial, I will present the simplest way of adding AdminBro to an express framework. If you
+want to launch AdminBro by another framework - see its documentation (above)
 
 ### Express installation
 
