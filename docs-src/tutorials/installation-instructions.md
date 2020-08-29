@@ -69,7 +69,7 @@ __AdminBro__ can be connected to many different types of resources. Right now we
 * {@link module:@admin-bro/sequelize Sequelize}
 * {@link module:@admin-bro/typeorm TypeORM}
 
-To add resources to __AdminBro__ you first have to **register adapter** for the resource you want to use.
+To add resources to __AdminBro__ you first have to **register an adapter** for the resource you want to use.
 
 Example for a mongoose setup:
 
