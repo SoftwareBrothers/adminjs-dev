@@ -4,7 +4,7 @@
 
 Installation of an __AdminBro__ consist of 2 steps.
 
-## 01. Install the fremework plugin
+## 01. Install the framework plugin
 
 Since __AdminBro__ uses your existing framework to render its routes - you have to use one of our plugins.
 
@@ -12,6 +12,7 @@ There are plugins for:
 
 * {@link module:@admin-bro/express Express}
 * {@link module:@admin-bro/hapi Hapi}
+* {@link module:@admin-bro/koa Koajs}
 
 In this tutorial I will present the simplest way of adding AdminBro to an express framework. If you
 want to launch AdminBro by other framework - see its documentation (above)

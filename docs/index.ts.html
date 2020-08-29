@@ -164,7 +164,7 @@
             
             <nav>
                 
-                    <h2><a href="docs.html">Documentation</a></h2><div class="category"><h3>Modules</h3><ul><li><a href="module-@admin-bro_koa.html">@admin-bro/koa</a></li></ul></div>
+                    <h2><a href="docs.html">Documentation</a></h2><div class="category"><h3>Modules</h3><ul><li><a href="module-@admin-bro_upload.html">@admin-bro/upload</a></li></ul></div>
                 
             </nav>
         </div>
@@ -182,98 +182,84 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @module @admin-bro/koa
- * @description
+ * @module @admin-bro/upload
+ * @classdesc
+ * AdminBro feature allowing you to upload files to a given resource.
  *
- * This is an official plugin allowing you to run AdminBro on
- * [koa framework](https://koajs.com/).
+ * ## Installation
  *
- * ## installation
+ * To install the upload feature run:
  *
- * Assuming you have koa installed, you have to also install this
- * package along with its peerDependencies:
- *
+ * ```bash
+ * yarn add @admin-bro/upload
  * ```
- * yarn add admin-bro @admin-bro/koa @koa/router koa2-formidable
- * ```
- *
- * now you can use either {@link module:@admin-bro/koa.buildRouter} or
- * {@link module:@admin-bro/koa.buildAuthenticatedRouter} functions.
  *
  * ## Usage
  *
- * ```javascript
- * const { buildRouter } = require('@admin-bro/koa')
- * // or
- * const { buildAuthenticatedRouter } = require('@admin-bro/koa')
- * ```
- *
- * As you can see it exposes 2 methods that create an Koa Router, which can be attached
- * to a given url in the API. Each method takes a pre-configured instance
- * of {@link AdminBro}.
- *
- * If you want to use a router you have already created - not a problem. Just pass it
- * as a `predefinedRouter` parameter.
- *
- * You may want to use this option when you want to include
- * some custom auth middleware for you AdminBro routes.
- *
- * ## Example without an authentication
+ * As any feature you have to pass it to the resource in {@link AdminBroOptions#resources}
+ * property:
  *
  * ```
  * const AdminBro = require('admin-bro')
- * const { buildRouter } = require('@admin-bro/koa')
+ * const uploadFeature = require('@admin-bro/upload')
  *
- * const Koa = require('koa');
- * const app = new Koa();
+ * // part where you load adapter and models
+ * const User = require('./user')
  *
- * const adminBro = new AdminBro({
- *   databases: [],
- *   rootPath: '/admin',
- * })
+ * const options = {
+ *   resources: [{
+ *     resource: User,
+ *     features: [uploadFeature({
+ *       credentials: { aws: { region, bucket, secretAccessKey ... } },
+ *       properties: {
+ *         key: 'fileUrl' // to this db field feature will safe S3 key
+ *       },
+ *       validation: {
+ *         mimeTypes: 'application/pdf'
+ *       }
+ *     })]
+ *   }]
+ * }
  *
- * const router = buildRouter(adminBro, app)
- *
- * app
- *   .use(router.routes())
- *   .use(router.allowedMethods())
- *
- * app.listen(3000)
+ * const adminBro = new AdminBro(options)
+ * // and the rest of your app
  * ```
  *
- * ## Using build in authentication
+ * ## Providers
  *
- * To protect the routes with a session authentication, you can use any
- * middleware you want, and then simply pass `buildRouter` to the app.
+ * Right now plugin supports only AWS S3 as a file hosting.
+ * New providers will come soon.
  *
- * ## Adding custom authentication
+ * ### AWS setup
  *
- * You can add your custom authentication setup by firstly creating the router and then
- * passing it via the `predefinedRouter` option.
+ * In order to upload files to AWS S3, you have to
+ * - [create a S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/create-bucket.html)
+ * - [get your access keys](https://docs.aws.amazon.com/powershell/latest/userguide/pstools-appendix-sign-up.html)
+ *
+ * Then fill all these data in {@link module:@admin-bro/upload.AWSOptions AWSOptions}
+ * and you are ready to go.
+ *
+ * ## Storing data
+ *
+ * By default, @admin-bro/upload feature require just the one field in the database to store the
+ * path (S3 key) of the uploaded file.
+ *
+ * But it also can store more data like `bucket`, 'mimeType', 'size' etc.
+ * For the list of all available properties take a look at
+ * {@link module:@admin-bro/upload.UploadOptions UploadOptions}
+ *
+ * ## Validation
+ *
+ * The feature can validate both:
+ * - maximum size of the file
+ * - available mime types
+ *
+ * Take a look at {@link module:@admin-bro/upload.UploadOptions UploadOptions} here as well.
  */
 
-import buildRouter from './buildRouter'
-import buildAuthenticatedRouter from './buildAuthenticatedRouter'
+import uploadFileFeature from './features/upload-file/upload-file.feature'
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const { version } = require('../package.json')
-
-const name = 'AdminBroKoa'
-
-const defaultExport = {
-  buildRouter,
-  buildAuthenticatedRouter,
-  version,
-  name,
-}
-
-export {
-  buildRouter,
-  buildAuthenticatedRouter,
-  version,
-  name,
-  defaultExport as default,
-}
+export default uploadFileFeature
 </code></pre>
         </article>
     </section>

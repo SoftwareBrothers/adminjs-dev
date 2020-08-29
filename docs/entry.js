@@ -189,7 +189,7 @@ reactComponents['useCurrentAdmin'] = Component52;
 import Component53 from '../admin-bro/src/frontend/hooks/use-notice.ts';
 reactComponents['useNotice'] = Component53;
 
-import Component54 from '../admin-bro/src/frontend/hooks/use-record.tsx';
+import Component54 from '../admin-bro/src/frontend/hooks/use-record/use-record.tsx';
 reactComponents['useRecord'] = Component54;
 
 import Component55 from '../admin-bro/src/frontend/hooks/use-translation.ts';

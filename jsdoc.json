@@ -4,7 +4,7 @@
     },
     "source": {
         "include": [
-                    // "./admin-bro-koa/src"
+                    // "./admin-bro-upload/src"
                     "./admin-bro/src",
                     "./admin-bro-hapijs",
                     "./admin-bro-mongoose",
@@ -12,7 +12,8 @@
                     "./admin-bro-typeorm/src",
                     "./admin-bro-design-system/src",
                     "./admin-bro-expressjs",
-                    "./admin-bro-firebase-functions"
+                    "./admin-bro-firebase-functions",
+                    "./admin-bro-koa/src"
                    ],
         "includePattern": "\\.(jsx|js|ts|tsx)$",
         "excludePattern": "(node_modules/|docs|(bundle.*\\.js)|cli.ts)"
