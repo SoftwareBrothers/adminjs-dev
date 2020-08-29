@@ -131,7 +131,7 @@ const YourComponent (props) => {(
 
 Each of the components is described with the playground option, so make sure to check out all the documentation of all the components.
 
-One of the most versatile component is a {@link BasePropertyComponent}. It allows you to render any property.
+One of the most versatile components is a {@link BasePropertyComponent}. It allows you to render any property.
 Combined with {@link useRecord} is a powerful tool for building forms.
 
 ## Theming
