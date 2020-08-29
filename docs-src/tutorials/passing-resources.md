@@ -26,7 +26,7 @@ AdminBro.registerAdapter(AdminBroMongoose)
 
 ## Passing resources to AminBro
 
-So you know how to register an adapter - now let's take a look of how to add resources that
+So you know how to register an adapter - now let's take a look at how to add resources that
 they can be seen in AdminBro.
 
 You have 2 options:
