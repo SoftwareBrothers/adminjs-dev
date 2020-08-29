@@ -113,4 +113,4 @@ const feature = buildFeature({
 We've just added **features** to admin-bro@3. On this page we will write all the things which we, or
 the community, will create.
 
-So let's create first feature!!!
+So let's create first the feature!!!
