@@ -2,7 +2,7 @@
 > 
 > check out [this video tutorial](https://www.youtube.com/watch?v=n0IuXnL_cWs) which shows you how you can create an Admin Panel from scratch.
 
-Installation of an __AdminBro__ consist of 2 steps.
+Installation of an __AdminBro__ consists of 2 steps.
 
 ## 01. Install the framework plugin
 
