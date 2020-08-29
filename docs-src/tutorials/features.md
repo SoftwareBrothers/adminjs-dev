@@ -90,7 +90,7 @@ export { feature }
 As you can see, in the example above, you have to take care of merging previous options,
 which could be problematic.
 
-Fortunately AdminBro gives you the helper functions for that:
+Fortunately, AdminBro gives you the helper functions for that:
 
 - factory function {@link buildFeature}
 - and optional helper {@link mergeResourceOptions}, when you need more control.
