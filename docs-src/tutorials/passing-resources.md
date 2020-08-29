@@ -115,7 +115,7 @@ const adminBro = new AdminBro({
 })
 ```
 
-AdminBro will see that what you passed is already a BaseDatabase so it wont need to be wrapped by an Adapter.
+AdminBro will see that what you passed is already a BaseDatabase so it won't need to be wrapped by an Adapter.
 
 ## What's next?
 
