@@ -9,7 +9,7 @@ AdminBro should give you the ability to manage records in all these resources.
 
 ## Adapters
 
-AdminBro uses Database Adapters in order to handle different kind of resources.
+AdminBro uses Database Adapters in order to handle different kinds of resources.
 
 ### How to use an adapter
 
