@@ -77,7 +77,7 @@ run()
 // ...
 ```
 
-Way how each Adapter handles initialization differs. That is why make sure to read it's documentation first.
+The Way how each Adapter handles initialization differs. That is why make sure to read it's documentation first.
 
 ## Resources customization
 
