@@ -93,7 +93,7 @@ Adapter is an object with 2 properties:
 When you pass **SomeDataModel** to {@link AdminBroOptions#databases databases[]} or {@link AdminBroOptions#resources resources[]}, AdminBro will automatically run all the registered adapters and check
 their corresponding {@link BaseDatabase.isAdapterFor} or {@link BaseResource.isAdapterFor} methods. If Adapter returns `true` AdminBro feeds it (in the constructor) with **SomeDataModel**.
 
-In order to write your own adapter you have to create these 2 classes and write implementation for all
+In order to write your own adapter, you have to create these 2 classes and write the implementation for all
 methods like {@link BaseDatabase#find find}, {@link BaseDatabase#create create}, etc.
 
 HINT: You can also write only a **Resource** class (extending {@link BaseResource}) and pass its instance
