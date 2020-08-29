@@ -23,7 +23,7 @@ const adminBroOptions = {
 ...
 ```
 
-> AdminBro will use defaults setting whey you wont pass any options.
+> AdminBro will use defaults setting when you won't pass any options.
 
 ## How a __Resource__ can be modified?
 
