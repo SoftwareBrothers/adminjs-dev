@@ -121,7 +121,7 @@ const YourComponent (props) => {(
 )}
 ```
 
-> We divide components internally to 2 groups:
+> We divide components internally into 2 groups:
 > 
 > * _application components_ - which requires AdminBro, you can think about them as "smart components"
 > * and _design system components_ - they don't require AdminBro and you can use them outside of the AdminBro setup.
