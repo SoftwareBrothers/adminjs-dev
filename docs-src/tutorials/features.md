@@ -20,38 +20,26 @@ Features are passed to configuration along with the resources and its options.
 
 Let me show you an example:
 
+
 ```javascript
-...
 const User = require('./models/user')
-const { feature: hashPassword } = require('@admin-bro/passwords')
+const argon2 = require('argon2')
+const hashPassword = require('@admin-bro/passwords')
 
 const adminBroOptions = {
   resources: [
     {
       resource: User,
       options: {
-        //...your options go here'
-      },
-      features: [hashPassword]
-    },
-  ],
-  //...
-}
-```
-
-Depending on a feature, you can also pass options to it:
-
-```javascript
-const adminBroOptions = {
-  resources: [
-    {
-      resource: User,
-      options: {
-        //...your options go here'
+        //...your regular options go here'
+        properties: { encryptedPassword: { isVisible: false } },
       },
       features: [hashPassword({
-        dbPropertyName: 'hashedPassword',
-        propertyName: 'password',
+        properties: {
+          encryptedPassword: 'myDbField',
+          password: 'password'
+        }
+        hash: argon2.hash,
       })]
     },
   ],
@@ -87,7 +75,7 @@ const feature = (prevResourceOptions) {
 export { feature }
 ```
 
-As you can see, in the example above, you have to take care of merging previous options,
+As you can see, in the example above, that you have to take care of merging previous options,
 which could be problematic.
 
 Fortunately AdminBro gives you the helper functions for that:
