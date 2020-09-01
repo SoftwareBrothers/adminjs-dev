@@ -13,7 +13,8 @@
                     "./admin-bro-design-system/src",
                     "./admin-bro-expressjs",
                     "./admin-bro-firebase-functions",
-                    "./admin-bro-koa/src"
+                    "./admin-bro-koa/src",
+                    "./admin-bro-passwords/src"
                    ],
         "includePattern": "\\.(jsx|js|ts|tsx)$",
         "excludePattern": "(node_modules/|docs|(bundle.*\\.js)|cli.ts)"

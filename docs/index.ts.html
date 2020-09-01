@@ -164,7 +164,7 @@
             
             <nav>
                 
-                    <h2><a href="docs.html">Documentation</a></h2><div class="category"><h3>Modules</h3><ul><li><a href="module-@admin-bro_upload.html">@admin-bro/upload</a></li></ul></div>
+                    <h2><a href="docs.html">Documentation</a></h2><div class="category"><h3>Modules</h3><ul><li><a href="module-@admin-bro_passwords.html">@admin-bro/passwords</a></li></ul></div>
                 
             </nav>
         </div>
@@ -182,26 +182,45 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @module @admin-bro/upload
+ * @module @admin-bro/passwords
  * @classdesc
- * AdminBro feature allowing you to upload files to a given resource.
+ * AdminBro feature allowing you to hash passwords in a a given resource.
  *
  * ## Installation
  *
- * To install the upload feature run:
+ * To install the passwords feature run:
  *
  * ```bash
- * yarn add @admin-bro/upload
+ * yarn add @admin-bro/passwords
  * ```
+ *
+ * And install password hashing library if you don't have it yet.
+ * I suggest using [argon2](https://www.npmjs.com/package/argon2) or
+ * [Bcrypt](https://www.npmjs.com/package/bcrypt)..
+ *
+ * ```
+ * yarn add argon2
+ * ```
+ *
+ * You can also implement your own hashing function.
  *
  * ## Usage
  *
- * As any feature you have to pass it to the resource in {@link AdminBroOptions#resources}
- * property:
+ * As any feature, you have to pass it to the resource in {@link AdminBroOptions#resources}.
+ *
+ * In the example below we will use `argon2` as a hashing function.
+ * We will also use `encrypted` property from the `User` model, where we will store the
+ * hashed password.
+ *
+ * Furthermore, we will hide the encrypted field in the UI. We will do this by the help of the
+ * standard {@link PropertyOptions#isVisible}
+ *
+ * Feature creates virtual `password` property. You can change that in {@link PasswordsOptions}.
  *
  * ```
  * const AdminBro = require('admin-bro')
- * const uploadFeature = require('@admin-bro/upload')
+ * const passwordFeature = require('@admin-bro/passwords')
+ * const argon2 = require('argon2')
  *
  * // part where you load adapter and models
  * const User = require('./user')
@@ -209,14 +228,16 @@
  * const options = {
  *   resources: [{
  *     resource: User,
- *     features: [uploadFeature({
- *       credentials: { aws: { region, bucket, secretAccessKey ... } },
+ *     options: {
+ *       properties: { encrypted: { isVisible: false } },
+ *     },
+ *     features: [passwordFeature({
+ *       // PasswordsOptions
  *       properties: {
- *         key: 'fileUrl' // to this db field feature will safe S3 key
+ *         // to this field will save the hashed password
+ *         encryptedPassword: 'encrypted'
  *       },
- *       validation: {
- *         mimeTypes: 'application/pdf'
- *       }
+ *       hash: argon2.hash,
  *     })]
  *   }]
  * }
@@ -225,41 +246,14 @@
  * // and the rest of your app
  * ```
  *
- * ## Providers
+ * ## Options
  *
- * Right now plugin supports only AWS S3 as a file hosting.
- * New providers will come soon.
- *
- * ### AWS setup
- *
- * In order to upload files to AWS S3, you have to
- * - [create a S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/user-guide/create-bucket.html)
- * - [get your access keys](https://docs.aws.amazon.com/powershell/latest/userguide/pstools-appendix-sign-up.html)
- *
- * Then fill all these data in {@link module:@admin-bro/upload.AWSOptions AWSOptions}
- * and you are ready to go.
- *
- * ## Storing data
- *
- * By default, @admin-bro/upload feature require just the one field in the database to store the
- * path (S3 key) of the uploaded file.
- *
- * But it also can store more data like `bucket`, 'mimeType', 'size' etc.
- * For the list of all available properties take a look at
- * {@link module:@admin-bro/upload.UploadOptions UploadOptions}
- *
- * ## Validation
- *
- * The feature can validate both:
- * - maximum size of the file
- * - available mime types
- *
- * Take a look at {@link module:@admin-bro/upload.UploadOptions UploadOptions} here as well.
+ * For the lits of available options take see at {@link PasswordsOptions}.
  */
 
-import uploadFileFeature from './features/upload-file/upload-file.feature'
+import passwordsFeature from './passwords.feature'
 
-export default uploadFileFeature
+export default passwordsFeature
 </code></pre>
         </article>
     </section>

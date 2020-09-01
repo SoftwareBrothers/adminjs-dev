@@ -110,6 +110,8 @@ const feature = buildFeature({
 
 ## Available features
 
+- {@link module:@admin-bro/passwords Password Hashing Feature}
+
 We've just added **features** to admin-bro@3. On this page we will write all the things which we, or
 the community, will create.
 

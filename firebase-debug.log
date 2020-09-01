@@ -1,0 +1,70 @@
+[debug] [2020-09-01T16:44:35.866Z] ----------------------------------------------------------------------
+[debug] [2020-09-01T16:44:35.868Z] Command:       /usr/local/bin/firebase /Users/wojciechkrysiak/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2020-09-01T16:44:35.869Z] CLI Version:   8.9.2
+[debug] [2020-09-01T16:44:35.869Z] Platform:      darwin
+[debug] [2020-09-01T16:44:35.869Z] Node Version:  v12.18.1
+[debug] [2020-09-01T16:44:35.870Z] Time:          Tue Sep 01 2020 18:44:35 GMT+0200 (Central European Summer Time)
+[debug] [2020-09-01T16:44:35.870Z] ----------------------------------------------------------------------
+[debug] [2020-09-01T16:44:35.870Z] 
+[debug] [2020-09-01T16:44:35.879Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-09-01T16:44:35.884Z] > authorizing via signed-in user
+[debug] [2020-09-01T16:44:35.884Z] [iam] checking project admin-bro-docs for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-09-01T16:44:35.887Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-09-01T16:44:35.887Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-09-01T16:44:39.216Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 01 Sep 2020 16:44:39 GMT","server":"scaffolding on HTTPServer2","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-09-01T16:44:39.231Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/admin-bro-docs:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-09-01T16:44:40.177Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 01 Sep 2020 16:44:40 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=709","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-09-01T16:44:40.180Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/admin-bro-docs  
+ 
+[debug] [2020-09-01T16:44:40.649Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 01 Sep 2020 16:44:40 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] 
+[info] === Deploying to 'admin-bro-docs'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2020-09-01T16:44:40.656Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/admin-bro-docs/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2020-09-01T16:44:40.656Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/admin-bro-docs-v1/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2020-09-01T16:44:40.657Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/admin-bro-docs-v2/versions  
+ {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2020-09-01T16:44:43.125Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 01 Sep 2020 16:44:43 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-09-01T16:44:43.127Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 01 Sep 2020 16:44:43 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-09-01T16:44:43.129Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 01 Sep 2020 16:44:43 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting[admin-bro-docs]: beginning deploy... 
+[info] i  hosting[admin-bro-docs]: found 522 files in docs 
+[debug] [2020-09-01T16:44:47.285Z] [hosting] hash cache [ZG9jcw] stored for 522 files
+[debug] [2020-09-01T16:44:47.285Z] [hosting][hash queue][FINAL] {"max":3585,"min":25,"avg":84.85632183908056,"active":0,"complete":522,"success":522,"errored":0,"retried":0,"total":522,"elapsed":4090}
+[debug] [2020-09-01T16:44:47.285Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/admin-bro-docs/versions/a87aa7101d5b8b1a:populateFiles  
+ <request body omitted>
+[debug] [2020-09-01T16:44:49.449Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 01 Sep 2020 16:44:49 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-09-01T16:44:49.550Z] [hosting][populate queue][FINAL] {"max":2176,"min":2176,"avg":2176,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":2268}
+[debug] [2020-09-01T16:44:49.550Z] [hosting] uploads queued: 255
+[debug] [2020-09-01T16:44:54.819Z] [hosting][upload] {"max":0,"min":9999999999,"avg":0,"active":200,"complete":0,"success":0,"errored":0,"retried":0,"total":255,"elapsed":5369}
+[debug] [2020-09-01T16:45:04.545Z] [hosting][upload queue][FINAL] {"max":15094,"min":1515,"avg":6684.949019607838,"active":0,"complete":255,"success":255,"errored":0,"retried":0,"total":255,"elapsed":15095}
+[info] ✔  hosting[admin-bro-docs]: file upload complete 
+[debug] [2020-09-01T16:45:04.547Z] [hosting] deploy completed after 21417ms
+[info] i  hosting[admin-bro-docs-v1]: beginning deploy... 
+[info] i  hosting[admin-bro-docs-v1]: found 334 files in docs-old/v1 
+[debug] [2020-09-01T16:45:04.712Z] [hosting] hash cache [ZG9jcy1vbGQvdjE] not populated
+[debug] [2020-09-01T16:45:06.151Z] [hosting] hash cache [ZG9jcy1vbGQvdjE] stored for 334 files
+[debug] [2020-09-01T16:45:06.151Z] [hosting][hash queue][FINAL] {"max":1051,"min":37,"avg":69.311377245509,"active":0,"complete":334,"success":334,"errored":0,"retried":0,"total":334,"elapsed":1439}
+[debug] [2020-09-01T16:45:06.152Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/admin-bro-docs-v1/versions/f2d1792f404103b7:populateFiles  
+ <request body omitted>
+[debug] [2020-09-01T16:45:08.034Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 01 Sep 2020 16:45:07 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-09-01T16:45:08.037Z] [hosting][populate queue][FINAL] {"max":1887,"min":1887,"avg":1887,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1889}
+[debug] [2020-09-01T16:45:08.037Z] [hosting] uploads queued: 1
+[debug] [2020-09-01T16:45:16.836Z] [hosting][upload queue][FINAL] {"max":8801,"min":8801,"avg":8801,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":8801}
+[info] ✔  hosting[admin-bro-docs-v1]: file upload complete 
+[debug] [2020-09-01T16:45:16.837Z] [hosting] deploy completed after 12181ms
+[info] i  hosting[admin-bro-docs-v2]: beginning deploy... 
+[info] i  hosting[admin-bro-docs-v2]: found 372 files in docs-old/v2 
+[debug] [2020-09-01T16:45:17.241Z] [hosting] hash cache [ZG9jcy1vbGQvdjI] not populated
+[debug] [2020-09-01T16:45:19.357Z] [hosting] hash cache [ZG9jcy1vbGQvdjI] stored for 372 files
+[debug] [2020-09-01T16:45:19.357Z] [hosting][hash queue][FINAL] {"max":1905,"min":26,"avg":94.86290322580645,"active":0,"complete":372,"success":372,"errored":0,"retried":0,"total":372,"elapsed":2116}
+[debug] [2020-09-01T16:45:19.357Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/admin-bro-docs-v2/versions/7803b4dab6a7f539:populateFiles  
+ <request body omitted>
+[debug] [2020-09-01T16:45:21.035Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 01 Sep 2020 16:45:20 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-27=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-09-01T16:45:21.036Z] [hosting][populate queue][FINAL] {"max":1680,"min":1680,"avg":1680,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1680}
+[debug] [2020-09-01T16:45:21.036Z] [hosting] uploads queued: 1
