@@ -43,3 +43,6 @@
 [submodule "admin-bro-upload"]
 	path = admin-bro-upload
 	url = git@github.com:SoftwareBrothers/admin-bro-upload.git
+[submodule "admin-bro-passwords"]
+	path = admin-bro-passwords
+	url = git@github.com:SoftwareBrothers/admin-bro-passwords.git
