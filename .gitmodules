@@ -40,3 +40,6 @@
 [submodule "admin-bro-passwords"]
 	path = admin-bro-passwords
 	url = git@github.com:SoftwareBrothers/admin-bro-passwords.git
+[submodule "admin-bro-nestjs"]
+	path = admin-bro-nestjs
+	url = https://github.com/SoftwareBrothers/admin-bro-nestjs
