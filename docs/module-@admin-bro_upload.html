@@ -25,6 +25,25 @@
   
     <link rel="stylesheet" type="text/css" href="fonts.css"/>
   
+  
+    
+      <meta property="og:image" content="https://adminbro.com/splash/admin-bro.png" />
+    
+  
+    
+      <meta property="og:title" content="An Auto-generated Admin Panel for your Node.js Application" />
+    
+  
+    
+      <meta property="og:description" content="You, as a developer, provide database models, and AdminBro generates ReactJS UI which allows you (or other trusted users) to manage content." />
+    
+  
+    
+  
+    
+  
+    
+  
 </head>
 
 
@@ -76,12 +95,6 @@
                 </div>
                 
             <div class="navigation">
-                <a
-                    href="docs.html"
-                    class="link"
-                >
-                    API Documentation
-                </a>
                 
                 <div class="dropdown is-hoverable is-right">
                     <a class="dropdown-trigger link">
@@ -135,6 +148,29 @@
                     </div>
                 </div>
                 
+                <a
+                    href="docs.html"
+                    class="link"
+                >
+                    API
+                </a>
+                
+                    
+                        <a
+                            href="section-design-system.html"
+                            class="link"
+                        >
+                            Design System
+                        </a>
+                    
+                        <a
+                            href="section-modules.html"
+                            class="link"
+                        >
+                            Modules
+                        </a>
+                    
+                
                  
                     
                         <a
@@ -144,7 +180,6 @@
                             <i class="fab fa-github fa-3x"></i>
                         </a>
                     
-                
                 
             </div>
         </div>
@@ -162,7 +197,9 @@
             
             <nav>
                 
-                    <h2><a href="docs.html">Documentation</a></h2><div class="category"><h3>Modules</h3><ul><li><a href="module-@admin-bro_upload.html">@admin-bro/upload</a></li></ul></div>
+                    
+                    <h2><a href="section-modules.html">Modules</a></h2><div class="category"><h3>Modules / Plugins</h3><ul><li><a href="module-@admin-bro_express.html">@admin-bro/express</a></li><li><a href="module-@admin-bro_firebase-functions.html">@admin-bro/firebase-functions</a></li><li><a href="module-@admin-bro_hapi.html">@admin-bro/hapi</a></li><li><a href="module-@admin-bro_koa.html">@admin-bro/koa</a></li></ul><h3>Modules / Adapters</h3><ul><li><a href="module-@admin-bro_mongoose.html">@admin-bro/mongoose</a></li><li><a href="module-@admin-bro_sequelize.html">@admin-bro/sequelize</a></li><li><a href="module-@admin-bro_typeorm.html">@admin-bro/typeorm</a></li></ul><h3>Modules / Features</h3><ul><li><a href="module-@admin-bro_passwords.html">@admin-bro/passwords</a></li><li><a href="module-@admin-bro_upload.html">@admin-bro/upload</a></li></ul></div>
+                    
                 
             </nav>
         </div>
@@ -189,10 +226,10 @@
 <pre class="prettyprint source lang-bash"><code>yarn add @admin-bro/upload
 </code></pre>
 <h2>Usage</h2>
-<p>As any feature you have to pass it to the resource in AdminBroOptions#resources
+<p>As any feature you have to pass it to the resource in <a href="AdminBroOptions.html#resources">AdminBroOptions#resources</a>
 property:</p>
 <pre class="prettyprint source"><code>const AdminBro = require('admin-bro')
-const uploadFeature = require('@admin-bro/upload')
+const AdminBroExpress = require('@admin-bro/express')
 
 // part where you load adapter and models
 const User = require('./user')
@@ -200,10 +237,14 @@ const User = require('./user')
 const options = {
   resources: [{
     resource: User,
+    options: {
+      listProperties: ['fileUrl', 'mimeType'],
+    },
     features: [uploadFeature({
-      credentials: { aws: { region, bucket, secretAccessKey ... } },
+      provider: { aws: { region, bucket, secretAccessKey ... } },
       properties: {
         key: 'fileUrl' // to this db field feature will safe S3 key
+        mimeType: 'mimeType' // this property is important because allows to have previews
       },
       validation: {
         mimeTypes: 'application/pdf'
@@ -215,19 +256,85 @@ const options = {
 const adminBro = new AdminBro(options)
 // and the rest of your app
 </code></pre>
+<h2>Previews</h2>
+<p>Feature support previews for both <strong>audio</strong> and <strong>images</strong>.
+In order to make it work you have to have <code>mimeType</code> property mapped in the options.</p>
+<p>Here we define that mime type will be save under a property <code>mimeType</code>:</p>
+<pre class="prettyprint source"><code>const options = {
+  resources: [{
+    resource: User,
+    options: { properties: { mimeType: { n} }},
+    features: [uploadFeature({
+      provider: {},
+      properties: {
+        key: 'fileUrl'
+        mimeType: 'mimeType'
+      },
+    })]
+  }]
+}
+</code></pre>
 <h2>Providers</h2>
 <p>Right now plugin supports only AWS S3 as a file hosting.
 New providers will come soon.</p>
 <h3>AWS setup</h3>
+<p>Make sure you have AWS-SDK installed</p>
+<pre class="prettyprint source"><code>yarn add aws-sdk
+</code></pre>
 <p>In order to upload files to AWS S3, you have to</p>
 <ul>
 <li><a href="https://docs.aws.amazon.com/AmazonS3/latest/user-guide/create-bucket.html">create a S3 bucket</a></li>
 <li><a href="https://docs.aws.amazon.com/powershell/latest/userguide/pstools-appendix-sign-up.html">get your access keys</a></li>
 </ul>
-<p>Then fill all these data in <a href="module-@admin-bro_upload.html#.AWSOptions">AWSOptions</a>
+<p>Then, fill all these data in <a href="module-@admin-bro_upload.html#.AWSOptions">AWSOptions</a>
 and you are ready to go.</p>
+<p>By default upload plugin generates urls valid for 24h, if you want them to be always <code>public</code>
+(<code>public-acl</code>), you need to create a <code>public</code> bucket. Then set <code>expires</code> to <code>0</code>.</p>
+<h3>Local Storage setup</h3>
+<p>Local storage will save files to the local folder.</p>
+<p>There are 2 things you have to do before using this Provider.</p>
+<h4>1. create the <strong>folder</strong> (<code>bucket</code>) for the files (i.e. <code>public</code>)</h4>
+<pre class="prettyprint source"><code>cd your-app
+mkdir public
+</code></pre>
+<h4>2. tell your http framework to host this folder</h4>
+<p>This is an example for the <a href="https://expressjs.com">express</a> server</p>
+<pre class="prettyprint source"><code>app.use('/uploads', express.static('uploads'));
+</code></pre>
+<p>Next you have to add @admin-bro/upload to given resource:</p>
+<pre class="prettyprint source"><code>* const options = {
+  resources: [{
+    resource: User,
+    features: [uploadFeature({
+      provider: { local: { bucket: 'public' } },
+    })]
+  }]
+}
+</code></pre>
+<h3>Custom Provider</h3>
+<p>Plugin allows you also to pass your own provider. In such case you have to pass to the <code>provider</code>
+option an instance of the class extended from <a href="BaseProvider.html">BaseProvider</a>.</p>
+<pre class="prettyprint source"><code>const { BaseProvider } = require('@admin-bro/upload')
+
+class MyProvider extends BaseProvider {
+  constructor() {
+     // it requires bucket as a parameter to properly pass it to other methods
+     super('public')
+  }
+  // your implementation goes here
+}
+
+const provider = new MyProvider()
+
+const options = {
+  resources: [{
+    resource: User,
+    features: [uploadFeature({ provider })]
+  }]
+}
+</code></pre>
 <h2>Storing data</h2>
-<p>By default, @admin-bro/upload feature require just the one field in the database to store the
+<p>This feature require just the one field in the database to store the
 path (S3 key) of the uploaded file.</p>
 <p>But it also can store more data like <code>bucket</code>, 'mimeType', 'size' etc.
 For the list of all available properties take a look at
@@ -300,9 +407,9 @@ For the list of all available properties take a look at
 
     
         <p class="tag-source">
-            <a href="index.ts.html" class="button">View Source</a>
+            <a href="admin-bro-upload_src_index.ts.html" class="button">View Source</a>
             <span>
-                <a href="index.ts.html">index.ts</a>, <a href="index.ts.html#line2">line 2</a>
+                <a href="admin-bro-upload_src_index.ts.html">admin-bro-upload/src/index.ts</a>, <a href="admin-bro-upload_src_index.ts.html#line2">line 2</a>
             </span>
         </p>
     
@@ -338,6 +445,13 @@ For the list of all available properties take a look at
     
 
     
+        <h3 class="subsection-title">Classes</h3>
+
+        <dl>
+            <dt><a href="BaseProvider.html">BaseProvider</a></dt>
+            <dd></dd>
+        </dl>
+    
 
     
 
@@ -353,6 +467,271 @@ For the list of all available properties take a look at
         <div class='vertical-section'>
             <h1>Type Definitions</h1>
             <div class="members">
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">object</span>
+
+
+    </span>
+
+<h4 class="name" id=".AWSOptions">
+    <a class="href-link" href="#.AWSOptions">#</a>
+    
+    <span class="code-name">
+        AWSOptions
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>AWS Credentials which can be set for S3 file upload.
+If not given 'aws-sdk' will try to fetch them from
+environmental variables.</p>
+</div>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+            <th>Attributes</th>
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>accessKeyId</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>AWS IAM accessKeyId. By default its value is taken from AWS_ACCESS_KEY_ID env variable</p></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>secretAccessKey</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>AWS IAM secretAccessKey. By default its value is taken from AWS_SECRET_ACCESS_KEY env variable</p></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>region</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>AWS region where your bucket was created.</p></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>bucket</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>S3 Bucket where files will be stored</p></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>expires</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">number</span>
+|
+
+<span class="param-type">null</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>indicates how long links should be available after page load (in minutes).,
+Default to 24h. If set to <code>0</code> or <code>null</code> adapter will mark uploaded files as PUBLIC ACL.</p></td>
+</tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro-upload_src_features_upload-file_providers_aws-adapter.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro-upload_src_features_upload-file_providers_aws-adapter.ts.html">admin-bro-upload/src/features/upload-file/providers/aws-adapter.ts</a>, <a href="admin-bro-upload_src_features_upload-file_providers_aws-adapter.ts.html#line54">line 54</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
             
                 <div class="member">
 
@@ -559,7 +938,7 @@ environmental variables.</p>
     
 
     <td class="description last"><p>indicates how long links should be available after page load (in minutes).,
-Default to 24h</p></td>
+Default to 24h. If set to 0 adapter will mark uploaded files as PUBLIC ACL.</p></td>
 </tr>
 
         
@@ -602,9 +981,138 @@ Default to 24h</p></td>
 
     
         <p class="tag-source">
-            <a href="features_upload-file_adapters_aws-adapter.ts.html" class="button">View Source</a>
+            <a href="admin-bro-upload_src_features_upload-file_providers_aws-provider.ts.html" class="button">View Source</a>
             <span>
-                <a href="features_upload-file_adapters_aws-adapter.ts.html">features/upload-file/adapters/aws-adapter.ts</a>, <a href="features_upload-file_adapters_aws-adapter.ts.html#line32">line 32</a>
+                <a href="admin-bro-upload_src_features_upload-file_providers_aws-provider.ts.html">admin-bro-upload/src/features/upload-file/providers/aws-provider.ts</a>, <a href="admin-bro-upload_src_features_upload-file_providers_aws-provider.ts.html#line51">line 51</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">object</span>
+
+
+    </span>
+
+<h4 class="name" id=".LocalUploadOptions">
+    <a class="href-link" href="#.LocalUploadOptions">#</a>
+    
+    <span class="code-name">
+        LocalUploadOptions
+    </span>
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Options required by the LocalAdapter</p>
+</div>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>bucket</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>Path where files will be stored. For example: <code>path.join(__dirname, '../public')</code></p></td>
+</tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro-upload_src_features_upload-file_providers_local-provider.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro-upload_src_features_upload-file_providers_local-provider.ts.html">admin-bro-upload/src/features/upload-file/providers/local-provider.ts</a>, <a href="admin-bro-upload_src_features_upload-file_providers_local-provider.ts.html#line30">line 30</a>
             </span>
         </p>
     
@@ -681,6 +1189,9 @@ Default to 24h</p></td>
     
         
 <span class="param-type">object</span>
+|
+
+<span class="param-type"><a href="BaseProvider.html">BaseProvider</a></span>
 
 
     
@@ -718,6 +1229,8 @@ Default to 24h</p></td>
     
         <td class="attributes">
         
+            &lt;optional><br>
+        
 
         
         </td>
@@ -726,6 +1239,37 @@ Default to 24h</p></td>
     
 
     <td class="description last"><p>AWS Credentials</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>local</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">LocalUploadOptions</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Storage on the local drive</p></td>
 </tr>
 
   
@@ -1117,9 +1661,9 @@ uploaded file</p></td>
 
     
         <p class="tag-source">
-            <a href="features_upload-file_upload-config.type.ts.html" class="button">View Source</a>
+            <a href="admin-bro-upload_src_features_upload-file_upload-options.type.ts.html" class="button">View Source</a>
             <span>
-                <a href="features_upload-file_upload-config.type.ts.html">features/upload-file/upload-config.type.ts</a>, <a href="features_upload-file_upload-config.type.ts.html#line5">line 5</a>
+                <a href="admin-bro-upload_src_features_upload-file_upload-options.type.ts.html">admin-bro-upload/src/features/upload-file/upload-options.type.ts</a>, <a href="admin-bro-upload_src_features_upload-file_upload-options.type.ts.html#line7">line 7</a>
             </span>
         </p>
     

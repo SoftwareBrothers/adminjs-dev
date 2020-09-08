@@ -85,6 +85,17 @@
                     API Documentation
                 </a>
                 
+                    
+                        <a
+                            href="section-design-system.html"
+                            class="link"
+                        >
+                            Design System
+                        </a>
+                    
+                
+
+                
                 <div class="dropdown is-hoverable is-right">
                     <a class="dropdown-trigger link">
                         Tutorials
@@ -164,7 +175,9 @@
             
             <nav>
                 
-                    <h2><a href="docs.html">Documentation</a></h2><div class="category"><h3>Modules</h3><ul><li><a href="module-@admin-bro_passwords.html">@admin-bro/passwords</a></li></ul></div>
+                    
+                        <h2><a href="docs.html">Documentation</a></h2><div class="category"></div>
+                    
                 
             </nav>
         </div>
@@ -182,78 +195,165 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * @module @admin-bro/passwords
- * @classdesc
- * AdminBro feature allowing you to hash passwords in a a given resource.
+ * @module @admin-bro/design-system
+ * @section design-system
  *
- * ## Installation
- *
- * To install the passwords feature run:
- *
- * ```bash
- * yarn add @admin-bro/passwords
+ * @description
+ * This package consist of all DesignSystem components from [AdminBro](adminbro.com) so you can use all of them outside the `admin-bro` core.
+ * 
+ * ## Installation outside the AdminBro
+ * 
  * ```
- *
- * And install password hashing library if you don't have it yet.
- * I suggest using [argon2](https://www.npmjs.com/package/argon2) or
- * [Bcrypt](https://www.npmjs.com/package/bcrypt)..
- *
+ * yarn add styled-components @admin-bro/design-system
  * ```
- * yarn add argon2
+ * 
+ * Optionally, if you use typescript, you might want to install types for `styled-components`
+ * 
  * ```
- *
- * You can also implement your own hashing function.
- *
- * ## Usage
- *
- * As any feature, you have to pass it to the resource in {@link AdminBroOptions#resources}.
- *
- * In the example below we will use `argon2` as a hashing function.
- * We will also use `encrypted` property from the `User` model, where we will store the
- * hashed password.
- *
- * Furthermore, we will hide the encrypted field in the UI. We will do this by the help of the
- * standard {@link PropertyOptions#isVisible}
- *
- * Feature creates virtual `password` property. You can change that in {@link PasswordsOptions}.
- *
+ * yarn add --dev @types/styled-components
  * ```
- * const AdminBro = require('admin-bro')
- * const passwordFeature = require('@admin-bro/passwords')
- * const argon2 = require('argon2')
- *
- * // part where you load adapter and models
- * const User = require('./user')
- *
- * const options = {
- *   resources: [{
- *     resource: User,
- *     options: {
- *       properties: { encrypted: { isVisible: false } },
- *     },
- *     features: [passwordFeature({
- *       // PasswordsOptions
- *       properties: {
- *         // to this field will save the hashed password
- *         encryptedPassword: 'encrypted'
- *       },
- *       hash: argon2.hash,
- *     })]
- *   }]
+ * 
+ * Design System needs a `theme` so in order to use it you have to use `ThemeProvider` from `styled-components` like this:
+ * 
+ * ```
+ * import { ThemeProvider } from 'styled-components'
+ * 
+ * // theme is the default theme, which you can alter
+ * import { theme, Button, Box, Icon } from '@admin-bro/design-system'
+ * 
+ * function App() {
+ *   return (
+ *     &lt;ThemeProvider theme={theme}>
+ *       &lt;Box variant="grey">
+ *         &lt;Button>&lt;Icon icon="Add" />Click Me&lt;/Button>
+ *         &lt;Button variant='primary' ml="xl">I am important&lt;/Button>
+ *       &lt;/Box>
+ *     &lt;/ThemeProvider>
+ *   );
  * }
- *
- * const adminBro = new AdminBro(options)
- * // and the rest of your app
+ * 
+ * export default App;
  * ```
- *
- * ## Options
- *
- * For the lits of available options take see at {@link PasswordsOptions}.
+ * 
+ * ## Changing theme
+ * 
+ * Design System provides you with the default [theme](https://adminbro.com/Theme.html). It contains all the parameters like paddings, colors, font sizes etc. For the list of all available parameters take a look at the [Theme spec](https://adminbro.com/Theme.html).
+ * 
+ * But nothing stands in a way for you to change the default theme. In order to do that you can use `combineStyles` method:
+ * 
+ * ```
+ * import { combineStyles } from '@admin-bro/design-system`
+ * 
+ * const myTheme = combineStyles({
+ *   colors: {
+ *     primary100: '#000'
+ *   }
+ * })
+ * 
+ * //....
+ * &lt;ThemeProvider theme={myTheme}>
+ * //....
+ * ```
+ * 
+ * ## Changing particular components
+ * 
+ * Sometimes you might want to change the look and feel of a particular component - not the entire theme. You can achieve that with `styled` method:
+ * 
+ * ```
+ * import { Button } from '@admin-bro/design-system'
+ * import styled from 'styled-components'
+ * 
+ * const MyRoundedButton = styled(Button)`
+ *   border-radius: 10px;
+ * `
+ * ```
+ * 
+ * and then you can use it like a normal button component:
+ * 
+ * ```
+ * &lt;MyRoundedButton variant="primary">Rounded I am&lt;/MyRoundedButton>
+ * ```
+ * 
+ * ## Components
+ * 
+ * For the list off all the components and their documentation go to [adminbro.com](adminbro.com)
+ * 
+ * ## Bundled packages
+ * 
+ * This npm package comes with the bundled versions as well. You can find them under:
+ * 
+ * - `node_modules/@admin-bro/design-system/bundle.development.js`
+ * - `node_modules/@admin-bro/design-system/bundle.production.js` (minified)
+ * 
+ * (they can also be bundled by using `bundle` script: `yarn bundle` or `NODE_ENV=production yarn bundle`)
+ * 
+ * In order to use them you will have to host them (put to your 'public' folder) and then put them into the HEAD of your page:
+ * 
+ * ```
+ * &lt;head>
+ * &lt;!-- ... -->
+ * &lt;script crossorigin src="https://unpkg.com/react@16/umd/react.development.js">&lt;/script>
+ * &lt;script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/styled-components/5.1.1/styled-components.js">&lt;/script>
+ * &lt;script crossorigin src="/bundle.development.js">&lt;/script>
+ * &lt;!-- ... -->
+ * &lt;/head>
+ * ```
+ * 
+ * ## Contribute
+ * 
+ * If you find any UI errors - feel free to create a PR.
+ * 
+ * ## Storybook
+ * 
+ * Inside the repo there is a storybook folder containing all the stories. In order to run it go inside and:
+ * 
+ * ```
+ * yarn install
+ * yarn storybook
+ * ```
  */
 
-import passwordsFeature from './passwords.feature'
+import * as theme from './theme'
 
-export default passwordsFeature
+export * from './utils/default-theme.interface'
+export * from './atoms/badge'
+export * from './atoms/button'
+export * from './atoms/check-box'
+export * from './atoms/radio'
+export * from './atoms/text'
+export * from './atoms/label'
+export * from './atoms/link'
+export * from './atoms/input'
+export * from './atoms/text-area'
+export * from './atoms/illustration'
+export * from './atoms/overlay'
+export * from './atoms/box'
+export * from './atoms/table/index'
+export * from './atoms/header'
+export * from './atoms/icon'
+export * from './atoms/section'
+export * from './atoms/loader'
+export * from './atoms/placeholder'
+export * from './atoms/tooltip'
+export * from './molecules/form-group/index'
+export * from './molecules/date-picker'
+export * from './molecules/drop-zone/index'
+export * from './molecules/info-box'
+export * from './molecules/message-box'
+export * from './molecules/modal'
+export * from './molecules/drop-down/index'
+export * from './molecules/pagination'
+export * from './molecules/drawer/index'
+export * from './molecules/logged-user'
+export * from './molecules/nav-group'
+export * from './molecules/stepper/index'
+export * from './templates/navigation'
+export * from './constants'
+
+export * from './utils/index'
+export * from './utils/combine-styles'
+
+export { theme }
 </code></pre>
         </article>
     </section>

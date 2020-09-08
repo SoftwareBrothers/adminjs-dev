@@ -1,20 +1,20 @@
 {
     "tags": {
-        "allowUnknownTags": ["mermaid", "category", "component", "optional", "subcategory"]
+        "allowUnknownTags": true
     },
     "source": {
         "include": [
-                    // "./admin-bro-upload/src"
                     "./admin-bro/src",
                     "./admin-bro-hapijs",
                     "./admin-bro-mongoose",
                     "./admin-bro-sequelizejs",
                     "./admin-bro-typeorm/src",
-                    "./admin-bro-design-system/src",
                     "./admin-bro-expressjs",
                     "./admin-bro-firebase-functions",
                     "./admin-bro-koa/src",
-                    "./admin-bro-passwords/src"
+                    "./admin-bro-upload/src",
+                    "./admin-bro-passwords/src",
+                    "./admin-bro-design-system/src"
                    ],
         "includePattern": "\\.(jsx|js|ts|tsx)$",
         "excludePattern": "(node_modules/|docs|(bundle.*\\.js)|cli.ts)"
@@ -22,7 +22,7 @@
     "plugins": [
         "plugins/markdown",
         "jsdoc-mermaid",
-        "better-docs/category",
+        "better-docs/navigation",
         "better-docs/component",
         "node_modules/jsdoc-typeof-plugin",
         "better-docs/typescript",
@@ -37,6 +37,7 @@
         "private": true,
         "verbose": true,
         "tutorials": "./docs-src/tutorials",
+        "sections": "./docs-src/sections",
         "template": "better-docs"
     },
     "templates": {
@@ -60,7 +61,11 @@
         },
             "trackingCode": "<!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->",
             "head": "<link rel=\"stylesheet\" type=\"text/css\" href=\"fonts.css\"/>",
-
+            "ogTags": {
+                "title": "An Auto-generated Admin Panel for your Node.js Application",
+                "description": "You, as a developer, provide database models, and AdminBro generates ReactJS UI which allows you (or other trusted users) to manage content.",
+                "image": "https://adminbro.com/splash/admin-bro.png"
+            },
             "navButtons": [
                 {
                     "label": "Demo",
