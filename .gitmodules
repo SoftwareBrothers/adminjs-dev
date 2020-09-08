@@ -34,9 +34,6 @@
 [submodule "admin-bro-koa"]
 	path = admin-bro-koa
 	url = git@github.com:SoftwareBrothers/admin-bro-koa.git
-[submodule "admin-bro-nestjs"]
-	path = admin-bro-nestjs
-	url = git@github.com:SoftwareBrothers/admin-bro-nestjs.git
 [submodule "admin-bro-upload"]
 	path = admin-bro-upload
 	url = git@github.com:SoftwareBrothers/admin-bro-upload.git
