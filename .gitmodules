@@ -43,3 +43,6 @@
 [submodule "admin-bro-nestjs"]
 	path = admin-bro-nestjs
 	url = https://github.com/SoftwareBrothers/admin-bro-nestjs
+[submodule "admin-bro-firebase"]
+	path = admin-bro-firebase
+	url = git@github.com:SoftwareBrothers/admin-bro-firebase.git

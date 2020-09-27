@@ -1,4 +1,4 @@
-This package consist of all DesignSystem components from [AdminBro](adminbro.com)
+This package consists of all DesignSystem components from [AdminBro](adminbro.com)
 so you can use all of them inside and outside the AdminBro environment.
  
 It was created with the help of 2 amazing packages:
@@ -6,14 +6,14 @@ It was created with the help of 2 amazing packages:
 - [styled-components](styled-components.com) which is a peerDependency
 - [styled-system](styled-system.com)
  
-make sure to check them out in order to use full potential of this design system
+make sure to check them out to use the full potential of this design system
  
 ## Usage within the AdminBro
  
 If you are using this module inside AdminBro there is no need to install anything,
 just use its components like this:
  
-```
+```typescript
 import { Box, Button } from '@admin-bro/design-system'
  
 // and here you can use them
@@ -21,12 +21,12 @@ import { Box, Button } from '@admin-bro/design-system'
  
 ## Usage outside the AdminBro
  
-Nothing stays in a way of using @admin-bro/design-system in your project which doesn't
-require AdminBro. Simply {@link module:@admin-bro/design-system visit the module page} and follow installation instructions
+Nothing stays in a way of using `@admin-bro/design-system` in your project which doesn't
+require AdminBro. Simply {@link module:@admin-bro/design-system visit the module page} and follow installation instructions.
  
-## Changing theme
+## Changing the theme
  
-Design System provides you with the default [theme](https://adminbro.com/Theme.html).
+The Design System provides you with the default [theme](https://adminbro.com/Theme.html).
 It contains all the parameters like paddings, colors, font sizes etc.
 For the list of all available parameters take a look at the
 [Theme spec](https://adminbro.com/Theme.html).
@@ -37,9 +37,9 @@ theme property.
 ## Changing particular components
  
 Sometimes you might want to change the look and feel of a
-particular component - not the entire theme. You can achieve that with `styled` method:
+particular component - not the entire theme. You can achieve that with the `styled` method:
  
-```
+```typescript
 import { Button } from '@admin-bro/design-system'
 import styled from 'styled-components'
  
@@ -50,7 +50,7 @@ const MyRoundedButton = styled(Button)`
  
 and then you can use it like a normal button component:
  
-```javascript
+```jsx
 <MyRoundedButton variant="primary">Rounded I am</MyRoundedButton>
 ```
  
@@ -137,6 +137,10 @@ This is the list of all our components
       <h5>{@link TextArea}</h5>
     </td>
     <td class="has-text-centered">
+      [<img src="components/tooltip.png" />]{@link Tooltip}
+      <h5>{@link Tooltip}</h5>
+    </td>
+    <td class="has-text-centered">
       [<img src="components/table.png" />]{@link Table}
       <h5>{@link Table}</h5>
     </td>
@@ -156,18 +160,18 @@ This is the list of all our components
       <h5>{@link InfoBox}</h5>
     </td>
     <td class="has-text-centered">
-      [<img src="components/logged-user.png" />]{@link LoggedUser}
-      <h5>{@link LoggedUser}</h5>
+      [<img src="components/message-box.png" />]{@link MessageBox}
+      <h5>{@link MessageBox}</h5>
     </td>
   </tr>
   <tr>
     <td class="has-text-centered">
-      [<img src="components/message-box.png" />]{@link MessageBox}
-      <h5>{@link MessageBox}</h5>
+      [<img src="components/modal.png" />]{@link Modal}
+      <h5>{@link Modal}</h5>
     </td>
     <td class="has-text-centered">
-      [<img src="components/navgroup.png" />]{@link NavGroup}
-      <h5>{@link NavGroup}</h5>
+      [<img src="components/navigation-element.png" />]{@link NavigationElement}
+      <h5>{@link NavigationElement}</h5>
     </td>
     <td class="has-text-centered">
       [<img src="components/pagination.png" />]{@link Pagination}
@@ -207,6 +211,28 @@ This is the list of all our components
       [<img src="components/drawer.png" />]{@link Drawer}
       <h5>{@link Drawer}</h5>
     </td>
+    <td class="has-text-centered">
+      [<img src="components/rich-text.png" />]{@link RichText}
+      <h5>{@link RichText}</h5>
+    </td>
+    <td class="has-text-centered">
+      [<img src="components/value-group.png" />]{@link ValueGroup}
+      <h5>{@link ValueGroup}</h5>
+    </td>
   </tr>
+</table>
 
+### Organisms
+
+<table>
+  <tr>
+    <td class="has-text-centered">
+      [<img src="components/current-user-nav.png" />]{@link CurrentUserNav}
+      <h5>{@link CurrentUserNav}</h5>
+    </td>
+    <td class="has-text-centered">
+      [<img src="components/navigation.png" />]{@link Navigation}
+      <h5>{@link Navigation}</h5>
+    </td>
+  </tr>
 </table>

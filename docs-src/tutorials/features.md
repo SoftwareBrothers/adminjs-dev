@@ -1,12 +1,12 @@
-in v3 of AdminBro we introduced **AdminBro features**.
+in v3 of AdminBro, we introduced **AdminBro features**.
 
-From business perspective **Feature** is a chunk of code which solves one business problem and it can be applied to selected resource / resources.
+From business perspective **Feature** is a chunk of code which solves one business problem and it can be applied to selected resource/resources.
 
 From the technical perspective **Feature** is a function returning {@link ResourceOptions}.
 
-> We wrote them because we want sharing functionalities among projects to be super easy.
+> We wrote them because we want the sharing functionalities among projects to be super easy.
 
-Feature can be:
+The feature can be:
 
 * file upload
 * blog
@@ -16,7 +16,7 @@ Feature can be:
 
 ## Using features
 
-Features are passed to configuration along with the resources and its options.
+Features are passed to configuration along with the resources and their options.
 
 Let me show you an example:
 
@@ -98,9 +98,16 @@ const feature = buildFeature({
 
 ## Available features
 
-- {@link module:@admin-bro/passwords Password Hashing Feature}
+### Supported by SoftwareBrothers
 
-We've just added **features** to admin-bro@3. On this page we will write all the things which we, or
+- {@link module:@admin-bro/passwords Password Hashing Feature}
+- {@link module:@admin-bro/upload Uploading files}
+
+### Community plugins
+
+- {@link https://github.com/johnyvelho/admin-bro-users-permissions UserPermissions}
+
+We've just added **features** to admin-bro@3. On this page, we will write all the things which we, or
 the community, will create.
 
-So let's create first feature!!!
+So let's create the first feature!!!

@@ -4,17 +4,18 @@
     },
     "source": {
         "include": [
-                    "./admin-bro/src",
-                    "./admin-bro-hapijs",
-                    "./admin-bro-mongoose",
-                    "./admin-bro-sequelizejs",
-                    "./admin-bro-typeorm/src",
-                    "./admin-bro-expressjs",
-                    "./admin-bro-firebase-functions",
-                    "./admin-bro-koa/src",
-                    "./admin-bro-upload/src",
-                    "./admin-bro-passwords/src",
+                    // "./admin-bro/src",
+                    // "./admin-bro-hapijs",
+                    // "./admin-bro-mongoose",
+                    // "./admin-bro-sequelizejs",
+                    // "./admin-bro-typeorm/src",
+                    // "./admin-bro-expressjs",
+                    // "./admin-bro-firebase-functions",
+                    // "./admin-bro-koa/src",
+                    // "./admin-bro-upload/src",
+                    // "./admin-bro-passwords/src",
                     "./admin-bro-design-system/src"
+                    // "./admin-bro-nestjs/src"
                    ],
         "includePattern": "\\.(jsx|js|ts|tsx)$",
         "excludePattern": "(node_modules/|docs|(bundle.*\\.js)|cli.ts)"
@@ -26,6 +27,7 @@
         "better-docs/component",
         "node_modules/jsdoc-typeof-plugin",
         "better-docs/typescript",
+        "better-docs/load",
         "node_modules/jsdoc-escape-at",
         "better-docs/typedef-import"
     ],
@@ -88,7 +90,8 @@
                 "label": "<i class=\"fab fa-github fa-3x\"></i>",
                 "href": "https://github.com/SoftwareBrothers/admin-bro",
                 "className": "no-hover"
-            }]
+            }],
+            "softwareBrothers": "paranoid"
         }
     }
 }

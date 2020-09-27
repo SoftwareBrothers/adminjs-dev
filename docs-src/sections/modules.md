@@ -12,8 +12,10 @@ This is the default flow from your data, to an actual rendering of the UI.
   <div class="mermaid" style="margin: 40px 0;">
     graph LR
       O(ORM/ODM) --> C
-      A[[AdminBro]] --> |rendering| B[Plugins]
-      C[Adapters]  --> |data fetching| A
+      subgraph core [AdminBro]
+        A[[AdminBro]] --> |rendering| B[Plugins]
+        C[Adapters]  --> |data fetching| A
+      end
       B --> D(HTTP framework) 
   </div>
 </div>
@@ -21,8 +23,10 @@ This is the default flow from your data, to an actual rendering of the UI.
   <div class="mermaid" style="margin: 40px 0;">
     graph TB
       O(ORM/ODM) --> C
-      A[[AdminBro]] --> |rendering| B[Plugins]
-      C[Adapters]  --> |data fetching| A
+      subgraph core [AdminBro]
+        A[[AdminBro]] --> |rendering| B[Plugins]
+        C[Adapters]  --> |data fetching| A
+      end
       B --> D(HTTP framework) 
   </div>
 </div>
