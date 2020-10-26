@@ -1,0 +1,15 @@
+.bd__button {
+  padding: 10px 0;
+  text-align: right;
+}
+.bd__button > a{
+  transition: all 0.2s;
+  border-radius: 4px;
+  padding: 8px 24px;
+  height: 40px;
+  border: 1px solid #4268F6;
+  color: #4268F6;
+}
+.bd__button > a:hover {
+  color: #798897;
+}

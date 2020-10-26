@@ -11,6 +11,9 @@
         "docs-v2": [
           "admin-bro-docs-v2"
         ],
+        "docs-beta": [
+          "admin-bro-docs-beta"
+        ],
         "default": [
           "admin-bro-docs"
         ]

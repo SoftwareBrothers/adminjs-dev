@@ -18,7 +18,7 @@ Check out the example application with mongodb and postgres models here: [https:
 
 ## Versions
 
-Latest version: v3.1
+Latest version: v3.3@beta
 
 read the docs for older versions:
 

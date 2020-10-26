@@ -4,18 +4,19 @@
     },
     "source": {
         "include": [
-                    // "./admin-bro/src",
-                    // "./admin-bro-hapijs",
-                    // "./admin-bro-mongoose",
-                    // "./admin-bro-sequelizejs",
-                    // "./admin-bro-typeorm/src",
-                    // "./admin-bro-expressjs",
-                    // "./admin-bro-firebase-functions",
-                    // "./admin-bro-koa/src",
-                    // "./admin-bro-upload/src",
-                    // "./admin-bro-passwords/src",
-                    "./admin-bro-design-system/src"
-                    // "./admin-bro-nestjs/src"
+                    "./admin-bro/src",
+                    "./admin-bro-hapijs",
+                    "./admin-bro-mongoose/src",
+                    "./admin-bro-sequelizejs",
+                    "./admin-bro-typeorm/src",
+                    "./admin-bro-expressjs",
+                    "./admin-bro-firebase-functions",
+                    "./admin-bro-koa/src",
+                    "./admin-bro-upload/src",
+                    "./admin-bro-blog/src",
+                    "./admin-bro-passwords/src",
+                    "./admin-bro-design-system/src",
+                    "./admin-bro-nestjs/src"
                    ],
         "includePattern": "\\.(jsx|js|ts|tsx)$",
         "excludePattern": "(node_modules/|docs|(bundle.*\\.js)|cli.ts)"
@@ -33,7 +34,7 @@
     ],
     "opts": {
         "encoding": "utf8",
-        "destination": "docs",
+        "destination": "docs-beta",
         "readme": "./docs-src/home.md",
         "recurse": true,
         "private": true,

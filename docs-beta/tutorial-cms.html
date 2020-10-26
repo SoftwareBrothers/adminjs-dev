@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminBro - Auto-generated admin panel for node.js with react 11. Content Management System</title>
+
+  <script src="scripts/prism.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/night-owl-light.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <link rel="stylesheet" type="text/css" href="fonts.css"/>
+  
+  
+    
+      <meta property="og:image" content="https://adminbro.com/splash/admin-bro.png" />
+    
+  
+    
+      <meta property="og:title" content="An Auto-generated Admin Panel for your Node.js Application" />
+    
+  
+    
+      <meta property="og:description" content="You, as a developer, provide database models, and AdminBro generates ReactJS UI which allows you (or other trusted users) to manage content." />
+    
+  
+    
+  
+    
+  
+    
+  
+</head>
+
+
+
+<body class="layout">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+             
+                <a class="image" href="index.html">
+                    <img src="images/logo-reg.svg" alt="logo">
+                </a>
+            
+            
+        </div>
+        <div class="menu">
+             
+                <div class="top-buttons">
+                    
+                        <a  href="https://admin-bro-example-app-staging.herokuapp.com/admin"
+                            target="_blank"
+                            class="button is-primary is-outlined"
+                        ?>
+                            Demo
+                        </a>
+                    
+                        <a  href="/tutorial-installation-instructions.html"
+                            target=""
+                            class="button is-primary is-outlined"
+                        ?>
+                            Get Started
+                        </a>
+                    
+                        <a  href="https://join.slack.com/t/adminbro/shared_invite/zt-djsqxxpz-_YCS8UMtQ9Ade6DPuLR7Zw"
+                            target=""
+                            class="button is-primary"
+                        ?>
+                            <i class="fab fa-slack-hash fa-lg"></i> Join the community
+                        </a>
+                    
+                </div>
+                
+            <div class="navigation">
+                
+                <div class="dropdown is-hoverable is-right">
+                    <a class="dropdown-trigger link">
+                        Tutorials
+                        <i class="fas fa-chevron-down fa-xs"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-content">
+                        
+                            <a class="dropdown-item" href="tutorial-installation-instructions.html">
+                                01. Installation instructions
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-passing-resources.html">
+                                02. Adding resources
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-customizing-resources.html">
+                                03. Customize resources
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-actions.html">
+                                04. Customize actions
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-writing-react-components.html">
+                                05. Writing your own Components
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-features.html">
+                                06. Using AdminBro features
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-custom-dashboard.html">
+                                07. Customize dashboard
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-rbac.html">
+                                08. Role-Based Access Control
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-i18n.html">
+                                09. Internationalization (i18n)
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-cms.html">
+                                11. Content Management System
+                            </a>
+                        
+                        </div>
+                    </div>
+                </div>
+                
+                <a
+                    href="docs.html"
+                    class="link"
+                >
+                    API
+                </a>
+                
+                    
+                        <a
+                            href="section-design-system.html"
+                            class="link"
+                        >
+                            Design System
+                        </a>
+                    
+                        <a
+                            href="section-modules.html"
+                            class="link"
+                        >
+                            Modules
+                        </a>
+                    
+                
+                 
+                    
+                        <a
+                            class="link user-link no-hover"
+                            href="https://github.com/SoftwareBrothers/admin-bro"
+                        >
+                            <i class="fab fa-github fa-3x"></i>
+                        </a>
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar tutorials"
+            id="sidebarNav"
+        >
+            
+                <div class="search-wrapper">
+                    <input id="search" type="text" placeholder="Search docs..." class="input">
+                </div>
+            
+            <nav>
+                
+                    <div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-passing-resources.html">02. Adding resources</a></li><li><a href="tutorial-customizing-resources.html">03. Customize resources</a></li><li><a href="tutorial-actions.html">04. Customize actions</a><ul><li><a href="tutorial-actions-validations.html">Custom validations</a></li></ul></li><li><a href="tutorial-writing-react-components.html">05. Writing your own Components</a></li><li><a href="tutorial-features.html">06. Using AdminBro features</a></li><li><a href="tutorial-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-rbac.html">08. Role-Based Access Control</a></li><li><a href="tutorial-i18n.html">09. Internationalization (i18n)</a></li><li><a href="tutorial-cms.html">11. Content Management System</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Tutorial</p>
+                    <h1>11. Content Management System</h1>
+                </header>
+                <section>
+
+<article>
+    <p>By default, AdminBro is equipped with a powerful <a href="https://quilljs.com/">quill</a> editor, which makes it a perfect tool as a Content Management System</p>
+<h3>AdminBro as a Content Management System</h3>
+<p>To add quill to the AdminBro setup you need to change the type of the property holding content to the <code>richtext</code>.</p>
+<p>Assuming this is your DB schema (mongoose example)</p>
+<pre class="prettyprint source"><code>const PageSchema = new mongoose.Schema({
+  title: String,
+  content: String,
+})
+const Page = mongoose.model('Page', PageSchema)
+</code></pre>
+<p>you can setup content to be a Quill instance like that:</p>
+<pre class="prettyprint source"><code>const pageResourceOptions = {
+  properties: {
+    content: {
+      type: 'richtext',
+      custom: {
+        // some custom options
+      },
+    },
+  },
+}
+
+new AdminBro({
+  resources: [{ resource: Page, options: pageResourceOptions }]
+})
+</code></pre>
+<h3>About the options</h3>
+<p>As you saw in the previous example the property takes also a <code>custom</code> object. In the case of <code>richtext</code> these are the quill options used to initialize the editor:</p>
+<pre class="prettyprint source"><code>const editor = new Quill('#editor', custom)
+</code></pre>
+<p>So to change the toolbar you can pass <code>modules.toolbar</code> option:</p>
+<pre class="prettyprint source"><code>    content: {
+      type: 'richtext',
+      custom: {
+        modules: {
+          toolbar: [['bold', 'italic'], ['link', 'image']],
+        },
+      },
+    },
+</code></pre>
+<p>There is a very important restriction though. You can pass to <code>custom</code> only things which can be stringified (because they are passed to the frontend). So this won't work:</p>
+<pre class="prettyprint source"><code>custom: {
+  modules: { toolbar: {
+    handlers: {link: () => {...}}
+  }}
+}
+</code></pre>
+<p>because the <code>link</code> function cannot be stringified.</p>
+<p>To bypass this restriction you will have to write your Edit Component. You can use <a href="https://github.com/SoftwareBrothers/admin-bro/blob/master/src/frontend/components/property-type/richtext/edit.tsx">This Example</a> as a starting point.</p>
+</article>
+
+</section>
+
+            </div>
+            
+                <div class="software-brothers-paranoid">
+                    <div class="columns">
+                        <div class="side column is-4-tablet is-2-desktop">
+                            <a href="https://softwarebrothers.co" target="_blank"><img src="images/software-brothers.svg" alt="SoftwareBrothers"></a>
+                            <p>Proudly built and maintained by SoftwareBrothers</p>
+                        </div>
+                        <div class="main column is-8-tablet is-10-desktop">
+                            <h4>
+                                Software House with a passion for both JavaScript and TypeScript.
+                            </h4>
+                            <p class="buttons">
+                                <a class="button what-we-do" href="https://softwarebrothers.co/services">See what we do</a>
+                                <a class="button what-we-believe is-outlined" href="https://softwarebrothers.co/about-us">See what we believe in</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a></p>
+                    
+                        <p class="sidebar-created-by">
+                            <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+                            <a href="https://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Software House</a>
+                        </p>
+                    
+                </div>
+            </footer>
+            
+        </div>
+            <div id="side-nav" class="side-nav">
+                <div class="side-menu"></div>
+                
+                <div class="software-brothers">
+                    <p>Proudly built and maintained by</p>
+                    <a href="https://softwarebrothers.co" target="_blank"><img src="images/software-brothers-sidebar.svg" alt="SoftwareBrothers"></a>
+                </div>
+                
+            </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script src="scripts/linenumber.js"> </script>
+
+<script src="scripts/search.js"> </script>
+
+</body>
+</html>

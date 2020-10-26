@@ -1,0 +1,2223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminBro - Auto-generated admin panel for node.js with react @admin-bro/upload</title>
+
+  <script src="scripts/prism.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/night-owl-light.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <link rel="stylesheet" type="text/css" href="fonts.css"/>
+  
+  
+    
+      <meta property="og:image" content="https://adminbro.com/splash/admin-bro.png" />
+    
+  
+    
+      <meta property="og:title" content="An Auto-generated Admin Panel for your Node.js Application" />
+    
+  
+    
+      <meta property="og:description" content="You, as a developer, provide database models, and AdminBro generates ReactJS UI which allows you (or other trusted users) to manage content." />
+    
+  
+    
+  
+    
+  
+    
+  
+</head>
+
+
+
+<body class="layout">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+             
+                <a class="image" href="index.html">
+                    <img src="images/logo-reg.svg" alt="logo">
+                </a>
+            
+            
+        </div>
+        <div class="menu">
+             
+                <div class="top-buttons">
+                    
+                        <a  href="https://admin-bro-example-app-staging.herokuapp.com/admin"
+                            target="_blank"
+                            class="button is-primary is-outlined"
+                        ?>
+                            Demo
+                        </a>
+                    
+                        <a  href="/tutorial-installation-instructions.html"
+                            target=""
+                            class="button is-primary is-outlined"
+                        ?>
+                            Get Started
+                        </a>
+                    
+                        <a  href="https://join.slack.com/t/adminbro/shared_invite/zt-djsqxxpz-_YCS8UMtQ9Ade6DPuLR7Zw"
+                            target=""
+                            class="button is-primary"
+                        ?>
+                            <i class="fab fa-slack-hash fa-lg"></i> Join the community
+                        </a>
+                    
+                </div>
+                
+            <div class="navigation">
+                
+                <div class="dropdown is-hoverable is-right">
+                    <a class="dropdown-trigger link">
+                        Tutorials
+                        <i class="fas fa-chevron-down fa-xs"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-content">
+                        
+                            <a class="dropdown-item" href="tutorial-installation-instructions.html">
+                                01. Installation instructions
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-passing-resources.html">
+                                02. Adding resources
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-customizing-resources.html">
+                                03. Customize resources
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-actions.html">
+                                04. Customize actions
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-writing-react-components.html">
+                                05. Writing your own Components
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-features.html">
+                                06. Using AdminBro features
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-custom-dashboard.html">
+                                07. Customize dashboard
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-rbac.html">
+                                08. Role-Based Access Control
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-i18n.html">
+                                09. Internationalization (i18n)
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-cms.html">
+                                11. Content Management System
+                            </a>
+                        
+                        </div>
+                    </div>
+                </div>
+                
+                <a
+                    href="docs.html"
+                    class="link"
+                >
+                    API
+                </a>
+                
+                    
+                        <a
+                            href="section-design-system.html"
+                            class="link"
+                        >
+                            Design System
+                        </a>
+                    
+                        <a
+                            href="section-modules.html"
+                            class="link"
+                        >
+                            Modules
+                        </a>
+                    
+                
+                 
+                    
+                        <a
+                            class="link user-link no-hover"
+                            href="https://github.com/SoftwareBrothers/admin-bro"
+                        >
+                            <i class="fab fa-github fa-3x"></i>
+                        </a>
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+                <div class="search-wrapper">
+                    <input id="search" type="text" placeholder="Search docs..." class="input">
+                </div>
+            
+            <nav>
+                
+                    
+                    <h2><a href="section-modules.html">Modules</a></h2><div class="category"><h3>Modules / Plugins</h3><ul><li><a href="module-@admin-bro_express.html">@admin-bro/express</a></li><li><a href="module-@admin-bro_firebase-functions.html">@admin-bro/firebase-functions</a></li><li><a href="module-@admin-bro_hapi.html">@admin-bro/hapi</a></li><li><a href="module-@admin-bro_koa.html">@admin-bro/koa</a></li><li><a href="module-@admin-bro_nestjs.html">@admin-bro/nestjs</a></li></ul><h3>Modules / Adapters</h3><ul><li><a href="module-@admin-bro_mongoose.html">@admin-bro/mongoose</a></li><li><a href="module-@admin-bro_sequelize.html">@admin-bro/sequelize</a></li><li><a href="module-@admin-bro_typeorm.html">@admin-bro/typeorm</a></li></ul><h3>Modules / Features</h3><ul><li><a href="module-@admin-bro_passwords.html">@admin-bro/passwords</a></li><li><a href="module-@admin-bro_upload.html">@admin-bro/upload</a></li></ul><h3>Modules / Paid Addons</h3><ul><li><a href="module-@softwarebrothers_admin-bro-blog.html">@softwarebrothers/admin-bro-blog</a></li></ul></div>
+                    
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Module</p>
+                    <h1>@admin-bro/upload</h1>
+                </header>
+                
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        <div class="class-description"><p>AdminBro feature allowing you to upload files to a given resource.</p>
+<h2>Features</h2>
+<ul>
+<li>Upload files by using different providers (all included):
+<ul>
+<li>AWS S3</li>
+<li>Google Cloud Storage</li>
+<li>Local file system</li>
+</ul>
+</li>
+<li>You can create Upload Provider and handle saving on your own with 3 methods</li>
+<li>Uploading more than one file to one resource to different fields</li>
+<li>Uploading multiple files to an array</li>
+<li>Configuration options allowing you to define which fields should be persisted and their names
+in the database</li>
+<li>Previews of uploaded files</li>
+</ul>
+<h2>Installation</h2>
+<p>To install the upload feature run:</p>
+<pre class="prettyprint source lang-bash"><code>yarn add @admin-bro/upload
+</code></pre>
+<h2>Storing data</h2>
+<p>The main concept of the upload plugin is that it sends uploaded files to an external source via
+the class called UploadProvider (we have 3 of them out of the box). And then it stores in the
+database path and folder name where the file was stored. Where:</p>
+<ul>
+<li><strong>key</strong> is the path of the stored file</li>
+<li><strong>bucket</strong> is the name of the folder.</li>
+</ul>
+<p>Next, base on the <code>expires</code> option, the system generates either a public URL or a time-constrained URL.</p>
+<blockquote>
+<p>Example: for</p>
+<ul>
+<li><code>key: '927292/my-pinky-sweater.png'</code></li>
+<li><code>bucket: 'aee-products'</code> and</li>
+<li><code>expires: 0</code></li>
+</ul>
+<p>path for the file in AWS S3 will be
+<code>https://aee-product.s3.amazonaws.com/927292/my-pinky-sweater.png</code> and it will be
+always available (not time-constrained)</p>
+</blockquote>
+<p>Usually, buckets are the same for all the files handled by the feature it is optional
+to store them in the database. But this might be handy if you want to change the bucket when the
+project grows and have a reference where the old files went.</p>
+<blockquote>
+<p>To summarize: an important part is that <strong>we don't store the actual URL</strong> of the file -
+we store <code>key</code> and based on that we compute path on every request.</p>
+</blockquote>
+<h2>Usage</h2>
+<p>After that short introduction, let's go back to the feature itself.</p>
+<p>As any feature you have to pass it to the resource in <a href="AdminBroOptions.html#resources">AdminBroOptions#resources</a>
+property:</p>
+<pre class="prettyprint source lang-javascript"><code>const AdminBro = require('admin-bro')
+const AdminBroExpress = require('@admin-bro/express')
+const uploadFeature = require('@admin-bro/upload')
+
+// part where you load adapter and models
+const User = require('./user')
+
+const options = {
+  resources: [{
+    resource: User,
+    options: {
+      listProperties: ['fileUrl', 'mimeType'],
+    },
+    features: [uploadFeature({
+      provider: { aws: { region, bucket, secretAccessKey ... } },
+      properties: {
+        key: 'fileUrl' // to this db field feature will safe S3 key
+        mimeType: 'mimeType' // this property is important because allows to have previews
+      },
+      validation: {
+        mimeTypes: 'application/pdf'
+      }
+    })]
+  }]
+}
+
+const adminBro = new AdminBro(options)
+// and the rest of your app
+</code></pre>
+<h2>Previews</h2>
+<p>Feature support previews for both <strong>audio</strong> and 8*images**.
+To make it work you have to have <code>mimeType</code> property mapped in the options.</p>
+<p>Here we define that mime type will be save under a property <code>mimeType</code>:</p>
+<pre class="prettyprint source lang-javascript"><code>const options = {
+  resources: [{
+    resource: User,
+    options: { properties: { mimeType: { /** ... **/ } }},
+    features: [uploadFeature({
+      provider: {},
+      properties: {
+        key: 'fileUrl',
+        mimeType: 'mimeType'
+      },
+    })]
+  }]
+}
+</code></pre>
+<h2>Providers</h2>
+<p>Right now plugin supports both AWS S3 and Google Storage as a cloud hosting. Apart from that
+you can store files locally.</p>
+<h3>AWS setup</h3>
+<p>Make sure you have AWS-SDK installed</p>
+<pre class="prettyprint source lang-bash"><code>yarn add aws-sdk
+</code></pre>
+<p>To upload files to AWS S3, you have to</p>
+<ul>
+<li><a href="https://docs.aws.amazon.com/AmazonS3/latest/user-guide/create-bucket.html">create a S3 bucket</a></li>
+<li><a href="https://docs.aws.amazon.com/powershell/latest/userguide/pstools-appendix-sign-up.html">get your access keys</a></li>
+</ul>
+<p>Then, fill all these data in <a href="module-@admin-bro_upload.html#.AWSOptions">AWSOptions</a>
+and you are ready to go.</p>
+<p>By default upload plugin generates a URL which is valid for 24h, if you want them to be always
+<code>public</code> (<code>public-acl</code>), you need to create a <code>public</code> bucket. Then set <code>expires</code> to <code>0</code>.</p>
+<h3>Google Storage setup</h3>
+<p>Make sure you have Google Storage <a href="https://github.com/googleapis/nodejs-storage">Node SDK</a>
+installed:</p>
+<pre class="prettyprint source lang-sh"><code>yarn add @google-cloud/storage
+</code></pre>
+<p>and you are authenticated. follow <a href="https://cloud.google.com/docs/authentication/getting-started">this tutorial</a>.</p>
+<p>To upload files to AWS Google Storage, you have to follow all the instructions from:
+<a href="https://github.com/googleapis/nodejs-storage#before-you-begin">https://github.com/googleapis/nodejs-storage#before-you-begin</a></p>
+<p>Then, fill the bucket you created in <a href="module-@admin-bro_upload.html#.GCPOptions">GCPOptions</a>
+and you are ready to go.</p>
+<p>By default upload plugin generates a URL which is valid for 24h, if you want them to be always
+<code>public</code>, you need to pass 0 as for <code>expire</code> parameter. Then set <code>expires</code> to <code>0</code>.</p>
+<h3>Local Storage setup</h3>
+<p>Local storage will save files to the local folder.</p>
+<p>There are 2 things you have to do before using this Provider.</p>
+<h4>1. create the*folder** (<code>bucket</code>) for the files (i.e. <code>public</code>)</h4>
+<pre class="prettyprint source lang-sh"><code>cd your-app
+mkdir public
+</code></pre>
+<h4>2. tell your HTTP framework to host this folder</h4>
+<p>This is an example for the <a href="https://expressjs.com">express</a> server</p>
+<pre class="prettyprint source"><code>app.use('/uploads', express.static('uploads'));
+</code></pre>
+<p>Next you have to add @admin-bro/upload to given resource:</p>
+<pre class="prettyprint source lang-javascript"><code>* const options = {
+  resources: [{
+    resource: User,
+    features: [uploadFeature({
+      provider: { local: { bucket: 'public' } },
+    })]
+  }]
+}
+</code></pre>
+<h3>Custom Provider</h3>
+<p>The plugin allows you also to pass your provider. In such a case, you have to pass to the <code>provider</code>
+option an instance of the class extended from <a href="BaseProvider.html">BaseProvider</a>.</p>
+<pre class="prettyprint source"><code>const { BaseProvider } = require('@admin-bro/upload')
+
+class MyProvider extends BaseProvider {
+  constructor() {
+     // it requires bucket as a parameter to properly pass it to other methods
+     super('public')
+  }
+  // your implementation goes here
+}
+
+const provider = new MyProvider()
+
+const options = {
+  resources: [{
+    resource: User,
+    features: [uploadFeature({ provider })]
+  }]
+}
+</code></pre>
+<h2>Options</h2>
+<p>This feature requires just one field in the database to store the
+path (Bucket key) of the uploaded file.</p>
+<p>But it also can store more data like <code>bucket</code>, 'mimeType', 'size' etc. Fields mapping can be done
+in <code>options.properties</code>.</p>
+<p>Mapping fields is a process of telling @admin-bro/upload that data from the field on the left
+should go to the database under the field on the right.</p>
+<blockquote>
+<p>So below <code>key</code> property will be stored under the <code>mixed</code> property <code>uploadedFile</code> in its
+sub-property <code>key</code> (mixed properties are JSONB properties in SQL databases or nested
+schemas in MongoDB).</p>
+</blockquote>
+<p>Some properties are stored in the database, but some of them serve as the couriers in the
+request/response cycle. So for example, <code>file</code> property is used to send actual File objects from
+the Fronted to the Backend. Then, the File is uploaded and its <code>key</code> (and <code>bucket</code>) are stored.
+But the value of property <code>file</code> itself is not being saved in the database, meaning you don't have
+to have it in your DB schema.</p>
+<h3>Example setup for mapping properties</h3>
+<pre class="prettyprint source lang-javascript"><code>uploadFeature({
+  provider: {},
+  properties: {
+    // virtual properties, created by this plugin on the go. They are not stored in the database
+    // this is where frontend will send info to the backend
+    file: `uploadedFile.file`,
+    // here is where backend will send path to the file to the frontend [virtual property]
+    filePath: `uploadedFile.file`,
+    // here backend will send information which files has to be deleted
+    // It is required only in `multiple` mode, but cannot overlap any other property
+    filesToDelete: `uploadedFile.filesToDelete`,
+
+    // DB properties: have to be in your schema
+    // where bucket key will be stored
+    key: `uploadedFile.key`,
+    // where mime type will be stored
+    mimeType: `uploadedFile.mime`,
+    // where bucket name will be stored
+    bucket: `uploadedFile.bucket`,
+    // where size will be stored
+    size: `uploadedFile.size`,
+  },
+})
+</code></pre>
+<p>In the example above we nest all the properties under <code>uploadedFile</code>, <code>mixed</code> property.
+This convention is a convenient way of storing multiple files in one record.</p>
+<p>For the list of all options take a look at
+<a href="module-@admin-bro_upload.html#UploadOptions">UploadOptions</a></p>
+<h2>Storing multiple files in one model by invoking <code>uploadFeature</code> more than once</h2>
+<p>You can pass an array of features to AdminBro so that it allows you to define uploads multiple times
+for one model. In other words you can have an <code>avatar</code> and <code>familyPhoto</code> in your User Resource.</p>
+<p>In order to make that work you have to make sure that all the properties passed by each
+<code>uploadFeature</code> invocation are different so they don't steal data from each other.</p>
+<p>So:</p>
+<ul>
+<li>make sure to map at least <code>file</code>, <code>filePath</code> and <code>filesToDelete</code> properties to different values
+in each upload.</li>
+<li>if you store other fields like <code>mimeType</code> they also should be stored under different paths.</li>
+<li>define the <a href="module-@admin-bro_upload.html#UploadPathFunction">UploadPathFunction</a> for each upload so that files do not override each other.</li>
+</ul>
+<h3>Example:</h3>
+<pre class="prettyprint source lang-javascript"><code>
+features = [
+  uploadFeature({
+    provider: {},
+    properties: {
+      file: `avatarFile`,
+      filePath: `avatarFilePath`,
+      filesToDelete: `avatarFilesToDelete`,
+      key: `avatarKey`,
+      mimeType: `avatarMime`,
+      bucket: `avatarBucket`,
+      size: `avatarSize`,
+    },
+  }),
+  uploadFeature({
+  provider: {},
+  properties: {
+    file: `familyPhoto.file`,
+    filePath: `familyPhoto.file`,
+    filesToDelete: `familyPhoto.filesToDelete`,
+    key: `familyPhoto.key`,
+    mimeType: `familyPhoto.mime`,
+    bucket: `familyPhoto.bucket`,
+    size: `familyPhoto.size`,
+  },
+  uploadPath: (record, filename) => (
+    `${record.id()}/family-photos/${filename}`
+  ),
+})]
+</code></pre>
+<p>In the example above, all the fields are stored under different paths so during the
+Frontend &lt;-&gt; Backend data transmission they don't overlap.</p>
+<h2>Storing multiple files in one model by using <code>multiple</code> option</h2>
+<p>The feature allows you to store multiple files as an array. To do this you have to:</p>
+<ul>
+<li>set <code>multiple</code> option to true</li>
+<li>make sure that all your mapped properties are arrays of strings.</li>
+</ul>
+<p>If you use let say sequelize adapter you can set the type of the property to JSONB and, in admin-bro
+options, define that this property is an array with PropertyOptions.isArray</p>
+<h2>Validation</h2>
+<p>The feature can validate both:</p>
+<ul>
+<li>maximum size of the file</li>
+<li>available mime types</li>
+</ul>
+<p>Take a look at <a href="module-@admin-bro_upload.html#UploadOptions">UploadOptions</a> here as well.</p>
+<h2>Example models and addon configurations</h2>
+<p>Take a look at this database model working with google cloud for a reference:</p>
+<h3>Sequelize database with Google Cloud</h3>
+<p>Take a look at an example product upload schema:</p>
+<pre class="prettyprint source lang-javascript"><code>export const ProductModel = sequelize.define('Products', {
+  // Model attributes are defined here
+  id: {
+    primaryKey: true,
+    type: DataTypes.UUID,
+    defaultValue: UUIDV4,
+  },
+  name: {
+    allowNull: false,
+    type: DataTypes.STRING,
+  },
+  description: {
+    type: DataTypes.TEXT,
+    allowNull: true,
+  },
+  images: {
+    type: DataTypes.JSONB,
+    allowNull: true,
+  },
+  mainImage: {
+    type: DataTypes.JSONB,
+    allowNull: true,
+  }
+}, {
+  // Other model options go here
+})
+</code></pre>
+<p>It has 2 fields <code>images</code> and <code>topImage</code>. Let's define that images will have a multi-upload
+feature and <code>topImage</code> single-upload feature.</p>
+<p>By setting them as JSONB type we ensure that the plugin will setup their sub-properties as regular
+strings (single-upload) or arrays (multi-upload).</p>
+<p>To setup upload for 2 files we have to invoke <code>uploadFeature</code> twice as well:</p>
+<pre class="prettyprint source lang-javascript"><code>
+const validation = {
+  mimeTypes: ['image/jpeg', 'image/png'],
+}
+
+const features = [
+  uploadFileFeature({
+    properties: {
+      file: 'images.file',
+      filePath: 'images.path',
+      filename: 'images.filename',
+      filesToDelete: 'images.toDelete',
+      key: 'images.key',
+      mimeType: 'images.mimeType',
+      bucket: 'images.bucket',
+    },
+    multiple: true,
+    provider: {
+      gcp: {
+        bucket: process.env.PRODUCTS_BUCKET as string,
+        expires: 0,
+      },
+    },
+    validation,
+  }),
+  uploadFeature({
+    properties: {
+      file: 'topImage.file',
+      filePath: 'topImage.path',
+      filename: 'topImage.filename',
+      filesToDelete: 'topImage.toDelete',
+      key: 'topImage.key',
+      mimeType: 'topImage.mimeType',
+      bucket: 'topImage.bucket',
+    },
+    provider: {
+      gcp: {
+        bucket: process.env.TOP_IMAGE_BUCKET as string,
+        expires: 0,
+      },
+    },
+    validation,
+  }),
+]
+</code></pre>
+<p>To see more examples, you can take a look at the example_app inside the repository.</p></div>
+    
+
+    
+        
+            <div class="description"><script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script></div>
+        
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro-upload_src_index.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro-upload_src_index.ts.html">admin-bro-upload/src/index.ts</a>, <a href="admin-bro-upload_src_index.ts.html#line2">line 2</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+    </div>
+    
+    
+
+    
+
+    
+        <div class="vertical-section">
+            <h1 class="subsection-title">Classes</h1>
+            <div class="members class-members">
+                
+                    <div class="class-member">
+                        <h4 class="name" id="BaseProvider">
+                            <div class="is-hidden"><a href="BaseProvider.html">BaseProvider</a></div>
+                            <span class="code-name">
+                                BaseProvider
+                            </span>
+                        </h4>
+                        
+                        <a href="BaseProvider.html" class="button">See Details</a>
+                    </div>
+                
+            </div>
+        </div>
+        <dl></dl>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class='vertical-section'>
+            <h1>Type Definitions</h1>
+            <div class="members">
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">object</span>
+
+
+    </span>
+
+<h4 class="name" id=".AWSOptions">
+    <a class="href-link" href="#.AWSOptions">#</a>
+    
+    <span class="code-name">
+        AWSOptions
+    </span>
+    
+    
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>AWS Credentials which can be set for S3 file upload.
+If not given, 'aws-sdk' will try to fetch them from
+environmental variables.</p>
+</div>
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+            <th>Attributes</th>
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>accessKeyId</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>AWS IAM accessKeyId. By default its value is taken from AWS_ACCESS_KEY_ID env variable</p></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>secretAccessKey</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>AWS IAM secretAccessKey. By default its value is taken from AWS_SECRET_ACCESS_KEY env variable</p></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>region</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>AWS region where your bucket was created.</p></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>bucket</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>S3 Bucket where files will be stored</p></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>expires</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">number</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>indicates how long links should be available after page load (in minutes).,
+Default to 24h. If set to 0 adapter will mark uploaded files as PUBLIC ACL.</p></td>
+</tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro-upload_src_features_upload-file_providers_aws-provider.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro-upload_src_features_upload-file_providers_aws-provider.ts.html">admin-bro-upload/src/features/upload-file/providers/aws-provider.ts</a>, <a href="admin-bro-upload_src_features_upload-file_providers_aws-provider.ts.html#line54">line 54</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">object</span>
+
+
+    </span>
+
+<h4 class="name" id=".GCPOptions">
+    <a class="href-link" href="#.GCPOptions">#</a>
+    
+    <span class="code-name">
+        GCPOptions
+    </span>
+    
+    
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Google Storage options which can be set for GCP file upload.
+In order to setup GCP credentials you have to follow this
+<a href="https://cloud.google.com/docs/authentication/getting-started">tutorial</a>.
+Basically it comes down to downloading service account and setting GOOGLE_APPLICATION_CREDENTIALS
+env variable. After that you are ready to go.</p>
+</div>
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+            <th>Attributes</th>
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>bucket</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Google Storage Bucket name, where files will be stored</p></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>expires</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">number</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>indicates how long links should be available after page load (in minutes).,
+Default to 24h. If set to 0 adapter will mark uploaded files as public.</p></td>
+</tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro-upload_src_features_upload-file_providers_gcp-provider.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro-upload_src_features_upload-file_providers_gcp-provider.ts.html">admin-bro-upload/src/features/upload-file/providers/gcp-provider.ts</a>, <a href="admin-bro-upload_src_features_upload-file_providers_gcp-provider.ts.html#line52">line 52</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">object</span>
+
+
+    </span>
+
+<h4 class="name" id=".LocalUploadOptions">
+    <a class="href-link" href="#.LocalUploadOptions">#</a>
+    
+    <span class="code-name">
+        LocalUploadOptions
+    </span>
+    
+    
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Options required by the LocalAdapter</p>
+</div>
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>bucket</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"><p>Path where files will be stored. For example: <code>path.join(__dirname, '../public')</code></p></td>
+</tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro-upload_src_features_upload-file_providers_local-provider.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro-upload_src_features_upload-file_providers_local-provider.ts.html">admin-bro-upload/src/features/upload-file/providers/local-provider.ts</a>, <a href="admin-bro-upload_src_features_upload-file_providers_local-provider.ts.html#line32">line 32</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">object</span>
+
+
+    </span>
+
+<h4 class="name" id="UploadOptions">
+    <a class="href-link" href="#UploadOptions">#</a>
+    
+    <span class="code-name">
+        UploadOptions
+    </span>
+    
+    
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Configuration options for @admin-bro/upload feature</p>
+</div>
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+            <th>Attributes</th>
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>provider</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">object</span>
+|
+
+<span class="param-type"><a href="BaseProvider.html">BaseProvider</a></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Options for the provider</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>aws</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">AWSOptions</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>AWS Credentials</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>gcp</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">GCPOptions</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>GCP Credentials</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>local</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">LocalUploadOptions</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Storage on the local drive</p></td>
+</tr>
+
+  
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>properties</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">object</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>key</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Property under which file key (path) will be stored</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>file</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Virtual property where uploaded file will be passed to from,
+frontend to the backend in the request payload. Default to <code>file</code></p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>filesToDelete</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Virtual property needed used when upload works in <code>multiple</code> mode. It contains all the keys,
+of the files which should be deleted. Default to <code>filesToDelete</code></p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>filePath</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Virtual property where path for uploaded file will be,
+generated and accessible on the frontend.,
+Default to <code>filePath</code></p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>bucket</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Property under which file bucket (folder) will be stored</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>mimeType</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Property under which file mime type will be stored.,
+When you give this system will show a correct icon by the,
+uploaded file</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>size</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Property under which file size will be stored</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>filename</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Property under which file name will be stored</p></td>
+</tr>
+
+  
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>uploadPath</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="module-@admin-bro_upload.html#UploadPathFunction">UploadPathFunction</a></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Function which defines where the file should be placed inside the bucket.,
+Default to <code>${record.id()}/${filename}</code>.</p></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>multiple</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">boolean</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Indicates if feature should handle uploading multiple files</p></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>validation</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">object</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Validation rules</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>mimeTypes</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Array.&lt;string></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Available mime types</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>maxSize</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">number</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Maximum size in bytes</p></td>
+</tr>
+
+  
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro-upload_src_features_upload-file_types_upload-options.type.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro-upload_src_features_upload-file_types_upload-options.type.ts.html">admin-bro-upload/src/features/upload-file/types/upload-options.type.ts</a>, <a href="admin-bro-upload_src_features_upload-file_types_upload-options.type.ts.html#line8">line 8</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="UploadPathFunction">
+        <a class="href-link" href="#UploadPathFunction">#</a>
+        
+        <span class="code-name">
+            
+                UploadPathFunction<span class="signature">(record, filename)</span><span class="type-signature"></span>
+            
+        </span>
+        
+        
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Function which defines where in the bucket file should be stored.
+If we have 2 uploads in one resource we might need to set them to</p>
+<ul>
+<li><code>${record.id()}/upload1/${filename}</code></li>
+<li><code>${record.id()}/upload2/${filename}</code></li>
+</ul>
+<p>By default system uploads files to: <code>${record.id()}/${filename}</code></p>
+    </div>
+    
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>record</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type"><a href="BaseRecord.html">BaseRecord</a></span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>Record for which file is uploaded</p></td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>filename</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">string</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>filename with extension</p></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro-upload_src_features_upload-file_types_upload-options.type.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro-upload_src_features_upload-file_types_upload-options.type.ts.html">admin-bro-upload/src/features/upload-file/types/upload-options.type.ts</a>, <a href="admin-bro-upload_src_features_upload-file_types_upload-options.type.ts.html#line42">line 42</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+            
+            </div>
+        </div>
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+            </div>
+            
+                <div class="software-brothers-paranoid">
+                    <div class="columns">
+                        <div class="side column is-4-tablet is-2-desktop">
+                            <a href="https://softwarebrothers.co" target="_blank"><img src="images/software-brothers.svg" alt="SoftwareBrothers"></a>
+                            <p>Proudly built and maintained by SoftwareBrothers</p>
+                        </div>
+                        <div class="main column is-8-tablet is-10-desktop">
+                            <h4>
+                                Software House with a passion for both JavaScript and TypeScript.
+                            </h4>
+                            <p class="buttons">
+                                <a class="button what-we-do" href="https://softwarebrothers.co/services">See what we do</a>
+                                <a class="button what-we-believe is-outlined" href="https://softwarebrothers.co/about-us">See what we believe in</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a></p>
+                    
+                        <p class="sidebar-created-by">
+                            <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+                            <a href="https://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Software House</a>
+                        </p>
+                    
+                </div>
+            </footer>
+            
+        </div>
+            <div id="side-nav" class="side-nav">
+                <div class="side-menu"></div>
+                
+                <div class="software-brothers">
+                    <p>Proudly built and maintained by</p>
+                    <a href="https://softwarebrothers.co" target="_blank"><img src="images/software-brothers-sidebar.svg" alt="SoftwareBrothers"></a>
+                </div>
+                
+            </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script src="scripts/linenumber.js"> </script>
+
+<script src="scripts/search.js"> </script>
+
+</body>
+</html>

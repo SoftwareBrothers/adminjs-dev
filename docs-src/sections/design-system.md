@@ -220,6 +220,7 @@ This is the list of all our components
       <h5>{@link ValueGroup}</h5>
     </td>
   </tr>
+  
 </table>
 
 ### Organisms
@@ -233,6 +234,10 @@ This is the list of all our components
     <td class="has-text-centered">
       [<img src="components/navigation.png" />]{@link Navigation}
       <h5>{@link Navigation}</h5>
+    </td>
+    <td class="has-text-centered">
+      [<img src="components/button-group.png" />]{@link ButtonGroup}
+      <h5>{@link ButtonGroup}</h5>
     </td>
   </tr>
 </table>

@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminBro - Auto-generated admin panel for node.js with react Modal</title>
+
+  <script src="scripts/prism.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/night-owl-light.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <link rel="stylesheet" type="text/css" href="fonts.css"/>
+  
+  
+    
+      <meta property="og:image" content="https://adminbro.com/splash/admin-bro.png" />
+    
+  
+    
+      <meta property="og:title" content="An Auto-generated Admin Panel for your Node.js Application" />
+    
+  
+    
+      <meta property="og:description" content="You, as a developer, provide database models, and AdminBro generates ReactJS UI which allows you (or other trusted users) to manage content." />
+    
+  
+    
+  
+    
+  
+    
+  
+</head>
+
+
+
+<body class="layout">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+             
+                <a class="image" href="index.html">
+                    <img src="images/logo-reg.svg" alt="logo">
+                </a>
+            
+            
+        </div>
+        <div class="menu">
+             
+                <div class="top-buttons">
+                    
+                        <a  href="https://admin-bro-example-app-staging.herokuapp.com/admin"
+                            target="_blank"
+                            class="button is-primary is-outlined"
+                        ?>
+                            Demo
+                        </a>
+                    
+                        <a  href="/tutorial-installation-instructions.html"
+                            target=""
+                            class="button is-primary is-outlined"
+                        ?>
+                            Get Started
+                        </a>
+                    
+                        <a  href="https://join.slack.com/t/adminbro/shared_invite/zt-djsqxxpz-_YCS8UMtQ9Ade6DPuLR7Zw"
+                            target=""
+                            class="button is-primary"
+                        ?>
+                            <i class="fab fa-slack-hash fa-lg"></i> Join the community
+                        </a>
+                    
+                </div>
+                
+            <div class="navigation">
+                
+                <div class="dropdown is-hoverable is-right">
+                    <a class="dropdown-trigger link">
+                        Tutorials
+                        <i class="fas fa-chevron-down fa-xs"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-content">
+                        
+                            <a class="dropdown-item" href="tutorial-installation-instructions.html">
+                                01. Installation instructions
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-passing-resources.html">
+                                02. Adding resources
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-customizing-resources.html">
+                                03. Customize resources
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-actions.html">
+                                04. Customize actions
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-writing-react-components.html">
+                                05. Writing your own Components
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-features.html">
+                                06. Using AdminBro features
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-custom-dashboard.html">
+                                07. Customize dashboard
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-rbac.html">
+                                08. Role-Based Access Control
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-i18n.html">
+                                09. Internationalization (i18n)
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-cms.html">
+                                11. Content Management System
+                            </a>
+                        
+                        </div>
+                    </div>
+                </div>
+                
+                <a
+                    href="docs.html"
+                    class="link"
+                >
+                    API
+                </a>
+                
+                    
+                        <a
+                            href="section-design-system.html"
+                            class="link"
+                        >
+                            Design System
+                        </a>
+                    
+                        <a
+                            href="section-modules.html"
+                            class="link"
+                        >
+                            Modules
+                        </a>
+                    
+                
+                 
+                    
+                        <a
+                            class="link user-link no-hover"
+                            href="https://github.com/SoftwareBrothers/admin-bro"
+                        >
+                            <i class="fab fa-github fa-3x"></i>
+                        </a>
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+                <div class="search-wrapper">
+                    <input id="search" type="text" placeholder="Search docs..." class="input">
+                </div>
+            
+            <nav>
+                
+                    
+                    <h2><a href="section-design-system.html">Design System</a></h2><div class="category"><h3>Interfaces</h3><ul><li><a href="Theme.html">Theme</a></li></ul><h3>Modules</h3><ul><li><a href="module-@admin-bro_design-system.html">@admin-bro/design-system</a></li></ul><h3>Components / Atoms</h3><ul><li><a href="Badge.html">Badge</a></li><li><a href="Box.html">Box</a></li><li><a href="Button.html">Button</a></li><li><a href="CheckBox.html">CheckBox</a></li><li><a href="Header.html">Header</a></li><li><a href="Icon.html">Icon</a></li><li><a href="Illustration.html">Illustration</a></li><li><a href="Input.html">Input</a></li><li><a href="Label.html">Label</a></li><li><a href="Link.html">Link</a></li><li><a href="Loader.html">Loader</a></li><li><a href="Placeholder.html">Placeholder</a></li><li><a href="Radio.html">Radio</a></li><li><a href="Section.html">Section</a></li><li><a href="Table.html">Table</a></li><li><a href="Text.html">Text</a></li><li><a href="TextArea.html">TextArea</a></li><li><a href="Tooltip.html" class="new">Tooltip</a></li></ul><h3>Components / Organisms</h3><ul><li><a href="ButtonGroup.html" class="new">ButtonGroup</a></li><li><a href="CurrentUserNav.html" class="new">CurrentUserNav</a></li><li><a href="Navigation.html" class="new">Navigation</a></li></ul><h3>Components / Molecules</h3><ul><li><a href="DatePicker.html">DatePicker</a></li><li><a href="Drawer.html">Drawer</a></li><li><a href="DropDown.html">DropDown</a></li><li><a href="DropZone.html">DropZone</a></li><li><a href="DropZoneItem.html">DropZoneItem</a></li><li><a href="FormGroup.html">FormGroup</a></li><li><a href="InfoBox.html">InfoBox</a></li><li><a href="LoggedUser.html" class="deprecated">LoggedUser</a></li><li><a href="MessageBox.html">MessageBox</a></li><li><a href="Modal.html" class="new">Modal</a></li><li><a href="NavGroup.html" class="deprecated">NavGroup</a></li><li><a href="NavigationElement.html" class="new">NavigationElement</a></li><li><a href="Pagination.html">Pagination</a></li><li><a href="RichText.html" class="new">RichText</a></li><li><a href="Step.html">Step</a></li><li><a href="Stepper.html">Stepper</a></li><li><a href="ValueGroup.html" class="new">ValueGroup</a></li></ul></div>
+                    
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Components</p>
+                    <h1>Modal</h1>
+                </header>
+                
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+            &ltModal  /&gt
+        </h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        <div class="class-description"><img src="components/modal.png" />
+<p>Renders Modal</p>
+<h3>Usage:</h3>
+<pre class="prettyprint source lang-javascript"><code>import { Modal, ModalProps, ModalInline } from '@admin-bro/design-system'
+</code></pre>
+<p>Modal can be rendered either inline or as a regular Modal.</p>
+<h4>Inline usage</h4>
+<pre class="prettyprint source lang-jsx"><code>  &lt;ModalInline {...modalProps} />
+</code></pre>
+<h4>Modal usage</h4>
+<pre class="prettyprint source lang-jsx"><code>const [isVisible, setIsVisible] = useState(false)
+modalProps = {
+  /** ... **/
+  onOverlayClick: () => setIsVisible(false),
+  onClose: () => setIsVisible(false),
+}
+
+&lt;Box>
+  &lt;Label>Modal Trigger&lt;/Label>
+  &lt;Button
+    onClick={() => setIsVisible(!isVisible)}
+  >
+    Toggle Modal
+  &lt;/Button>
+  {isVisible && &lt;Modal {...modalProps} />}
+&lt;/Box>
+</code></pre>
+<h3>Passing content</h3>
+<p>You can also pass the values in 2 ways:</p>
+<ol>
+<li>by using just the <a href="Modal.html#ModalProps">ModalProps</a> - as shown in the previous examples.</li>
+<li>by using the <strong>Children</strong></li>
+</ol>
+<h3>Playground</h3>
+<p>Let me show you 3 live examples of using the Modal component:</p>
+<h4>Passing children</h4>
+<p>The most versatile way, but, the one, which requires you to &quot;design&quot; the modal</p>
+<p>
+      <div id="BetterDocsPreviewComponent1"></div>
+
+      <script>
+        ReactDOM.render(ReactWrapper({
+          example: "return (\n  <Box variant=\"grey\">\n    <Box py=\"xxl\" width={1}>\n      <ModalInline>\n        <Header.H4>I am header</Header.H4>\n        <Text>\n          I am info text\n        </Text>\n        <Box>\n          <Button>Confirm?</Button>\n        </Box>\n      </ModalInline>\n    </Box>\n  </Box>\n)",
+          uniqId: "BetterDocsPreviewComponent1",
+        }), document.getElementById('BetterDocsPreviewComponent1'));
+      </script>
+    </p>
+<h4>Passing props</h4>
+<p>You have everything out of the box</p>
+<p>
+      <div id="BetterDocsPreviewComponent2"></div>
+
+      <script>
+        ReactDOM.render(ReactWrapper({
+          example: "const variant = 'danger'\n\nconst modalProps = {\n  label: 'Someone broke your car',\n  icon: 'Car',\n  title: 'Behold',\n  variant,\n  subTitle: 'Something wrong is happening!!!',\n  buttons: [\n    { label: 'Cancel' },\n    { label: 'Delete', variant },\n  ],\n}\n\nreturn (\n  <Box variant=\"grey\">\n    <Box py=\"xxl\" width={1}>\n      <ModalInline {...modalProps} />\n    </Box>\n  </Box>\n)",
+          uniqId: "BetterDocsPreviewComponent2",
+        }), document.getElementById('BetterDocsPreviewComponent2'));
+      </script>
+    </p>
+<h4>Real modal</h4>
+<p>Handling modal visibility with the <code>useState</code> hook.</p>
+<p>
+      <div id="BetterDocsPreviewComponent3"></div>
+
+      <script>
+        ReactDOM.render(ReactWrapper({
+          example: "const Wrapper = () => {\n  const [isVisible, setIsVisible] = React.useState(false)\n\n  const variant = 'success'\n\n  const modalProps = {\n    label: 'Your car is 100% fine',\n    icon: 'Car',\n    title: 'It is ok',\n    variant,\n    subTitle: 'Something wrong is NOT happening!!!',\n    buttons: [\n      { label: 'Cancel' },\n      { label: 'Delete', variant },\n    ],\n    onOverlayClick: () => setIsVisible(false),\n    onClose: () => setIsVisible(false),\n  }\n  return (\n    <Box py=\"100px\">\n      <Button\n        onClick={() => setIsVisible(!isVisible)}\n      >\n        Toggle Modal\n      </Button>\n      {isVisible && <Modal {...modalProps} />}\n    </Box>\n   )\n}\n\nreturn <Wrapper />",
+          uniqId: "BetterDocsPreviewComponent3",
+        }), document.getElementById('BetterDocsPreviewComponent3'));
+      </script>
+    </p></div>
+    
+
+    
+        
+            
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <dt class="important tag-new">New:</dt><dd><ul class="dummy"><li>In version 3.3</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro-design-system_src_molecules_modal_modal.tsx.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro-design-system_src_molecules_modal_modal.tsx.html">admin-bro-design-system/src/molecules/modal/modal.tsx</a>, <a href="admin-bro-design-system_src_molecules_modal_modal.tsx.html#line15">line 15</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+    </div>
+    
+        
+    
+    
+
+    
+
+    
+        <div class="vertical-section">
+            <h1 class="subsection-title">Classes</h1>
+            <div class="members class-members">
+                
+                    <div class="class-member">
+                        <h4 class="name" id="Modal.ModalInline">
+                            <div class="is-hidden"><a href="Modal.ModalInline.html">Modal.ModalInline</a></div>
+                            <span class="code-name">
+                                ModalInline
+                            </span>
+                        </h4>
+                        
+                        <a href="Modal.ModalInline.html" class="button">See Details</a>
+                    </div>
+                
+            </div>
+        </div>
+        <dl></dl>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class='vertical-section'>
+            <h1>Type Definitions</h1>
+            <div class="members">
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">object</span>
+
+
+    </span>
+
+<h4 class="name" id="ModalProps">
+    <a class="href-link" href="#ModalProps">#</a>
+    
+    <span class="code-name">
+        ModalProps
+    </span>
+    
+    
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Props passed to Modal Component</p>
+</div>
+
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+            <th>Attributes</th>
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>title</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>dialog title</p></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>subTitle</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>optional subtitle</p></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>variant</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="Theme.html#VariantType">VariantType</a></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>color variant</p></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>buttons</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Array.&lt;<a href="Button.html#ButtonProps">ButtonProps</a>></span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Modal footer buttons</p></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>label</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Label which is seen above the text</p></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>icon</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Icon near the label</p></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>onOverlayClick</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">function</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Handler function triggered when overlay is clicked</p></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>onClose</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">function</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Function triggered when user clicks close button.,
+If it is given - close button will appear.</p></td>
+</tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="admin-bro-design-system_src_molecules_modal_modal-props.ts.html" class="button">View Source</a>
+            <span>
+                <a href="admin-bro-design-system_src_molecules_modal_modal-props.ts.html">admin-bro-design-system/src/molecules/modal/modal-props.ts</a>, <a href="admin-bro-design-system_src_molecules_modal_modal-props.ts.html#line4">line 4</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+            </div>
+        </div>
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+            </div>
+            
+                <div class="software-brothers-paranoid">
+                    <div class="columns">
+                        <div class="side column is-4-tablet is-2-desktop">
+                            <a href="https://softwarebrothers.co" target="_blank"><img src="images/software-brothers.svg" alt="SoftwareBrothers"></a>
+                            <p>Proudly built and maintained by SoftwareBrothers</p>
+                        </div>
+                        <div class="main column is-8-tablet is-10-desktop">
+                            <h4>
+                                Software House with a passion for both JavaScript and TypeScript.
+                            </h4>
+                            <p class="buttons">
+                                <a class="button what-we-do" href="https://softwarebrothers.co/services">See what we do</a>
+                                <a class="button what-we-believe is-outlined" href="https://softwarebrothers.co/about-us">See what we believe in</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a></p>
+                    
+                        <p class="sidebar-created-by">
+                            <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+                            <a href="https://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Software House</a>
+                        </p>
+                    
+                </div>
+            </footer>
+            
+        </div>
+            <div id="side-nav" class="side-nav">
+                <div class="side-menu"></div>
+                
+                <div class="software-brothers">
+                    <p>Proudly built and maintained by</p>
+                    <a href="https://softwarebrothers.co" target="_blank"><img src="images/software-brothers-sidebar.svg" alt="SoftwareBrothers"></a>
+                </div>
+                
+            </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script src="scripts/linenumber.js"> </script>
+
+<script src="scripts/search.js"> </script>
+
+</body>
+</html>

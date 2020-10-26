@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminBro - Auto-generated admin panel for node.js with react @admin-bro/blog</title>
+
+  <script src="scripts/prism.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/night-owl-light.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <link rel="stylesheet" type="text/css" href="fonts.css"/>
+  
+  
+    
+      <meta property="og:image" content="https://adminbro.com/splash/admin-bro.png" />
+    
+  
+    
+      <meta property="og:title" content="An Auto-generated Admin Panel for your Node.js Application" />
+    
+  
+    
+      <meta property="og:description" content="You, as a developer, provide database models, and AdminBro generates ReactJS UI which allows you (or other trusted users) to manage content." />
+    
+  
+    
+  
+    
+  
+    
+  
+</head>
+
+
+
+<body class="layout">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+             
+                <a class="image" href="index.html">
+                    <img src="images/logo-reg.svg" alt="logo">
+                </a>
+            
+            
+        </div>
+        <div class="menu">
+             
+                <div class="top-buttons">
+                    
+                        <a  href="https://admin-bro-example-app-staging.herokuapp.com/admin"
+                            target="_blank"
+                            class="button is-primary is-outlined"
+                        ?>
+                            Demo
+                        </a>
+                    
+                        <a  href="/tutorial-installation-instructions.html"
+                            target=""
+                            class="button is-primary is-outlined"
+                        ?>
+                            Get Started
+                        </a>
+                    
+                        <a  href="https://join.slack.com/t/adminbro/shared_invite/zt-djsqxxpz-_YCS8UMtQ9Ade6DPuLR7Zw"
+                            target=""
+                            class="button is-primary"
+                        ?>
+                            <i class="fab fa-slack-hash fa-lg"></i> Join the community
+                        </a>
+                    
+                </div>
+                
+            <div class="navigation">
+                
+                <div class="dropdown is-hoverable is-right">
+                    <a class="dropdown-trigger link">
+                        Tutorials
+                        <i class="fas fa-chevron-down fa-xs"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-content">
+                        
+                            <a class="dropdown-item" href="tutorial-installation-instructions.html">
+                                01. Installation instructions
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-passing-resources.html">
+                                02. Adding resources
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-customizing-resources.html">
+                                03. Customize resources
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-actions.html">
+                                04. Customize actions
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-writing-react-components.html">
+                                05. Writing your own Components
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-features.html">
+                                06. Using AdminBro features
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-custom-dashboard.html">
+                                07. Customize dashboard
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-rbac.html">
+                                08. Role-Based Access Control
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-i18n.html">
+                                09. Internationalization (i18n)
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-cms.html">
+                                11. Content Management System
+                            </a>
+                        
+                        </div>
+                    </div>
+                </div>
+                
+                <a
+                    href="docs.html"
+                    class="link"
+                >
+                    API
+                </a>
+                
+                    
+                        <a
+                            href="section-modules.html"
+                            class="link"
+                        >
+                            Modules
+                        </a>
+                    
+                
+                 
+                    
+                        <a
+                            class="link user-link no-hover"
+                            href="https://github.com/SoftwareBrothers/admin-bro"
+                        >
+                            <i class="fab fa-github fa-3x"></i>
+                        </a>
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+                <div class="search-wrapper">
+                    <input id="search" type="text" placeholder="Search docs..." class="input">
+                </div>
+            
+            <nav>
+                
+                    
+                    <h2><a href="section-modules.html">Modules</a></h2><div class="category"><h3>Modules / Features</h3><ul><li><a href="module-@admin-bro_blog.html">@admin-bro/blog</a></li></ul></div>
+                    
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Module</p>
+                    <h1>@admin-bro/blog</h1>
+                </header>
+                
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        <div class="class-description"><p>AdminBro feature allowing you to add an amazing blog to your project.</p>
+<h2>Demo</h2>
+<p>To see the demo visit: <a href="http://premium.adminbro.com">http://premium.adminbro.com</a></p>
+<h2>Note about premium addon</h2>
+<p>In our strategy to keep maintaining AdminBro is to build premium addons profit on which we could
+spend on maintaining the open-source core. Read more about premium addons here.</p>
+<h2>Where to buy this addon?</h2>
+<p>The price of the addon is 100 USD. It covers:</p>
+<ul>
+<li>addon itself with the license to host it on 1 site</li>
+<li>access addon updates for 1 year</li>
+<li>our support</li>
+</ul>
+<p>To buy it - contact us on slack on #premium addons channel or the email: premium@adminbro.com</p>
+<h2>Installation</h2>
+<p>To install the addon (after buying it) run:</p>
+<pre class="prettyprint source lang-bash"><code>yarn add @admin-bro/blog
+</code></pre>
+<p>and install addons peer dependency <code>@admin-bro/upload</code></p>
+<pre class="prettyprint source lang-bash"><code>yarn add @admin-bro/upload
+</code></pre>
+<h2>Usage</h2>
+<p>As with other features - this one also has to be passed to the resource in
+AdminBroOptions#resources option:</p>
+<pre class="prettyprint source lang-typescript"><code>import AdminBro from 'admin-bro'
+import AdminBroExpress from '@admin-bro/express'
+import blogFeature from '@admin-bro/blog'
+
+// part where you load adapter and models
+import BlogPost from './blog-post'
+
+const options = {
+  resources: [{
+    resource: BlogPost,
+    options: {},
+    features: [blogFeature({
+      // your options goes here
+    })]
+  }]
+}
+
+const adminBro = new AdminBro(options)
+// and the rest of your app
+</code></pre>
+<h3>The simplest case</h3>
+<p>@admin-bro/blog has lot's of configuration options but let's start with something super simple:
+an article with the following properties:</p>
+<ul>
+<li><strong>title</strong>, for storing post title</li>
+<li><strong>postUrl</strong>, for post URLs</li>
+<li><strong>body</strong>, here we will put content</li>
+<li><strong>excerpt</strong>, here we will put article excerpt</li>
+<li><strong>ogTags</strong>, here we will put metadata of open graph tags</li>
+<li><strong>status</strong>, and finally - blog post status: either 'published' or a 'draft'</li>
+</ul>
+<p>Let's imagine that we already have a <code>simple-blog</code> model defined and this is our schema (typeorm
+example writtten in typescript):</p>
+<pre class="prettyprint source lang-typescript"><code>
+import { BlogPostMeta } from '@admin-bro/blog'
+
+@Entity({ name: 'simple-blogs' })
+export class SimpleBlog extends BaseEntity {
+  @PrimaryGeneratedColumn()
+  public id: number;
+
+  @Column({ nullable: false })
+  public caption: string; // this is title
+
+  @Column({ type: 'text' })
+  public document: string; // this is body
+
+  @Column()
+  public status: string; // this is status
+
+  @Column({ nullable: false })
+  public slug: string; // this is postUrl
+
+  @Column({ nullable: true })
+  public shortDescription?: string; // this is excerpt
+
+  @Column({ type: 'jsonb', nullable: true })
+  public metaTags?: BlogPostMeta; // ogTags
+
+  @CreateDateColumn()
+  public createdAt: Date;
+
+  @UpdateDateColumn()
+  public updatedAt: Date;
+}
+
+type BlogPostMeta = {
+  title?: string;
+  description?: string;
+}
+</code></pre>
+<p>Now go back to the settings section and lets map all these fields to the <code>blogFeature()</code></p>
+<pre class="prettyprint source lang-typescript"><code>  {
+    features: [blogFeature({
+      properties: {
+        title: 'caption',
+        body: 'document',
+        status: 'status',
+        postUrl: 'slug',
+        excerpt: 'shortDescription',
+        ogTags: 'metaTags',
+      },
+    })]
+  }
+
+</code></pre>
+<p>And this is it. You have a running blog engine.</p>
+<h3>photo upload</h3>
+<p>The basic case uses the native Quill Editor feature to add images to the content of a blog post as
+Base64 strings.
+This is ok for some cases but in general, you would like to change that to a regular upload.
+So let's add:</p>
+<ul>
+<li>option to upload post &quot;splash&quot; image (aka. <code>postImage</code>)</li>
+<li>options to upload multiple images to the blog post content.</li>
+</ul>
+<p>To do this we have to add to our schema 2 new 'mixed' (type <code>jsob</code>) properties:</p>
+<pre class="prettyprint source lang-typescript"><code>
+import { BlogPostImage, BlogPostImages } from '@admin-bro/upload'
+
+@Entity({ name: 'simple-blogs' })
+export class SimpleBlog extends BaseEntity {
+  // ... new properties
+  @Column({type: 'jsonb', nullable: true  })
+  public image?: BlogPostImage; // this will be an image
+
+  @Column({ type: 'jsonb', nullable: true })
+  public inlineImages?: BlogPostImages; // this will hold all inline images
+}
+</code></pre>
+<p>and alter the ResourceOptions by defining your upload provider. For reference check out the
+@admin-bro/upload plugin. In the example, I will use Google Storage so I had to add to environmental
+variables 2 properties:</p>
+<ul>
+<li>GOOGLE_APPLICATION_CREDENTIALS='path-to-your-json-file'</li>
+<li>GOOGLE_STORAGE_MEDIA_BUCKET=name-of-your-bucket</li>
+</ul>
+<p>Next, I have to install Google Cloud SDK for storage</p>
+<pre class="prettyprint source lang-sh"><code>yarn add @google-cloud/storage
+</code></pre>
+<p>and now I can go back to setup @admin-bro/blog</p>
+<blockquote>
+<p>Here you might want to go to the documentation of @admin-bro/upload to see how, step by step,
+do this.</p>
+</blockquote>
+<pre class="prettyprint source lang-typescript"><code>  {
+    features: [blogFeature({
+      properties: {
+        title: 'caption',
+        body: 'document',
+        status: 'status',
+        postUrl: 'slug',
+        excerpt: 'shortDescription',
+        ogTags: 'metaTags',
+        postImage: 'image', // we mapped postImage to the image `mixed` property in db
+        inlineImages: 'image', // we mapped postImage to the image `mixed` property in db
+      },
+      // this will be passed to @admin-bro/upload fature
+      uploadProvider: {
+        gcp: {
+          bucket: process.env.GOOGLE_STORAGE_MEDIA_BUCKET as string,
+        },
+      },
+    })]
+  }
+</code></pre>
+<p>And this was it - now we can upload both splash image and also images inside the editor.</p>
+<h2>Tags</h2>
+<p>The last things are tags. To add them you will have to have Tags model in the database and
+set <code>tags</code> property in the <code>BlogOptions</code>.</p>
+<p>Let's start with tags model (typeorm example):</p>
+<pre class="prettyprint source lang-typescript"><code>@Entity({ name: 'tags' })
+export class Tag extends BaseEntity {
+  @PrimaryGeneratedColumn()
+  public id: number;
+
+  @Column({ nullable: true })
+  public name: string;
+
+  @CreateDateColumn()
+  public createdAt: Date;
+
+  @UpdateDateColumn()
+  public updatedAt: Date;
+}
+</code></pre>
+<p>Having it, you can now add tags to BlogOptions:</p>
+<pre class="prettyprint source lang-typescript"><code>  {
+    features: [blogFeature({
+      properties: {
+        title: 'caption',
+        body: 'document',
+        status: 'status',
+        postUrl: 'slug',
+        excerpt: 'shortDescription',
+        ogTags: 'metaTags',
+        postImage: 'image', // we mapped postImage to the image `mixed` property in db
+        inlineImages: 'image', // we mapped postImage to the image `mixed` property in db
+      },
+      // this will be passed to @admin-bro/upload fature
+      uploadProvider: {
+        gcp: {
+          bucket: process.env.GOOGLE_STORAGE_MEDIA_BUCKET as string,
+        },
+      },
+      tags: {
+        // under this property AdminBro will store all tags in BlogPost
+        property: 'tags',
+        // we created `Tag` model in typeorm. Basically this is what
+        // you see when you click tags in the path: `admin/resources/__HERE__/records`
+        resourceId: 'Tag',
+        // column responsible for holding tag name
+        nameColumn: 'name',
+      },
+    })]
+  }
+</code></pre>
+<p>Lastly, we have to update the <code>SimpleBlog</code> entity by adding tags array:</p>
+<pre class="prettyprint source lang-typescript"><code>@Entity({ name: 'simple-blogs' })
+export class SimpleBlog extends BaseEntity {
+  // this will be array of numbers because we hold references in this format.
+  @Column({type: 'jsonb', nullable: true  })
+  public tags?: Array&lt;number>;
+}
+</code></pre>
+<h2>All options</h2>
+<p>For the list of all available options, you can take a look at BlogOptions below.</p>
+<h2>Example</h2>
+<p>in the repository there is an <code>example-app</code> folder - check it out if you need more information.</p></div>
+    
+
+    
+        
+            <div class="description"><script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script></div>
+        
+
+        
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="index.ts.html" class="button">View Source</a>
+            <span>
+                <a href="index.ts.html">index.ts</a>, <a href="index.ts.html#line2">line 2</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+    
+    </div>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class='vertical-section'>
+            <h1>Type Definitions</h1>
+            <div class="members">
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">object</span>
+
+
+    </span>
+
+<h4 class="name" id=".BlogOptions">
+    <a class="href-link" href="#.BlogOptions">#</a>
+    
+    <span class="code-name">
+        BlogOptions
+    </span>
+    
+    
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Configuration options for @admin-bro/blog feature</p>
+</div>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+            <th>Attributes</th>
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>properties</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">object</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>title</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Database property holding post title: should be a string type</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>body</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Database property holding html body: should allow to save long texts</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>status</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Property holding post status</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>postUrl</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>URL of the post - so called slug. It is optional but highly recommended.</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>excerpt</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>A brief information regarding the Blog post. Blog excerpts give your readers a taste or,
+teaser of a full blog post. When visitors see an excerpt that grabs their attention,,
+they can click the title, image, or Read More link to open the full post.</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>ogTags</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>OpenGraph Tags which should be placed in the head of the page. @admin-bro/blog assumes that,
+this property will be of type 'mixed', because we will have to store there both <code>title</code> and,
+<code>description</code>. In order to achieve that set type to <code>jsonb</code> in SQL or define schema,
+containing title and description in MongoDB.</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>facebookMeta</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Similar to ogTags - facebook meta also has to be of type <code>mixed</code> which allows to add title,
+and description sub-properties</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>twitterMeta</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Similar to ogTags - twitter meta also has to be of type <code>mixed</code> which allows to add title,
+and description sub-properties</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>postImage</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Post image holds the main image which will be assigned to the post. You should use here,
+a <code>mixed</code> type which will hold: 'key', 'mimeType', 'bucket', 'size' sub-properties, required,
+by @admin-bro/upload. To use postImage you have to fill <code>uploadProvider</code> options as well.</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>inlineImages</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Inline images holds the images uploaded by the editor. Property selected here should be,
+a <code>mixed</code> type which will hold: 'key', 'mimeType', 'bucket', 'size' sub-properties as arrays.,
+This is required by @admin-bro/upload.,
+To use inlineImages you have to fill <code>uploadProvider</code> options as well.</p></td>
+</tr>
+
+  
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>tags</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">object</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"><p>Set in case blog should have tags. Tags are implemented as one to many</p></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>property</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>resourceId</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+  
+      
+<tr class="deep-level-1">
+    
+        <td class="name"><code>nameColumn</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+  
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code></code></td>
+    
+
+    <td class="type">
+    
+    </td>
+
+    
+        <td class="attributes">
+        
+
+        
+        </td>
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="types_blog-options.type.ts.html" class="button">View Source</a>
+            <span>
+                <a href="types_blog-options.type.ts.html">types/blog-options.type.ts</a>, <a href="types_blog-options.type.ts.html#line18">line 18</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">object</span>
+
+
+    </span>
+
+<h4 class="name" id=".BlogPostImage">
+    <a class="href-link" href="#.BlogPostImage">#</a>
+    
+    <span class="code-name">
+        BlogPostImage
+    </span>
+    
+    
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Type for an mixed property stored in the database responsible for <code>photoImage</code></p>
+</div>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>key</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>mime</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>bucket</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>size</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">number</span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="types_blog-post-image.type.ts.html" class="button">View Source</a>
+            <span>
+                <a href="types_blog-post-image.type.ts.html">types/blog-post-image.type.ts</a>, <a href="types_blog-post-image.type.ts.html#line12">line 12</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">object</span>
+
+
+    </span>
+
+<h4 class="name" id=".BlogPostImages">
+    <a class="href-link" href="#.BlogPostImages">#</a>
+    
+    <span class="code-name">
+        BlogPostImages
+    </span>
+    
+    
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Type for an mixed property stored in the database responsible for <code>inlineImages</code></p>
+</div>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>key</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Array.&lt;string></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>mimeType</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Array.&lt;string></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>bucket</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Array.&lt;string></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>size</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">Array.&lt;number></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="types_blog-post-image.type.ts.html" class="button">View Source</a>
+            <span>
+                <a href="types_blog-post-image.type.ts.html">types/blog-post-image.type.ts</a>, <a href="types_blog-post-image.type.ts.html#line21">line 21</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">object</span>
+
+
+    </span>
+
+<h4 class="name" id=".BlogPostMeta">
+    <a class="href-link" href="#.BlogPostMeta">#</a>
+    
+    <span class="code-name">
+        BlogPostMeta
+    </span>
+    
+    
+    
+</h4>
+
+
+
+
+<div class="description">
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Type for an mixed property stored in the database responsible for meta tags like ogTags,
+facebookMeta and twitterMeta</p>
+</div>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+<div class="table-container">
+    <table class="props table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>title</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>description</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type">string</span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="types_blog-post-meta.type.ts.html" class="button">View Source</a>
+            <span>
+                <a href="types_blog-post-meta.type.ts.html">types/blog-post-meta.type.ts</a>, <a href="types_blog-post-meta.type.ts.html#line3">line 3</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+</div>
+            
+            </div>
+        </div>
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+            </div>
+            
+                <div class="software-brothers-paranoid">
+                    <div class="columns">
+                        <div class="side column is-4-tablet is-2-desktop">
+                            <a href="https://softwarebrothers.co" target="_blank"><img src="images/software-brothers.svg" alt="SoftwareBrothers"></a>
+                            <p>Proudly built and maintained by SoftwareBrothers</p>
+                        </div>
+                        <div class="main column is-8-tablet is-10-desktop">
+                            <h4>
+                                Software House with a passion for both JavaScript and TypeScript.
+                            </h4>
+                            <p class="buttons">
+                                <a class="button what-we-do" href="https://softwarebrothers.co/services">See what we do</a>
+                                <a class="button what-we-believe is-outlined" href="https://softwarebrothers.co/about-us">See what we believe in</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a></p>
+                    
+                        <p class="sidebar-created-by">
+                            <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+                            <a href="https://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Software House</a>
+                        </p>
+                    
+                </div>
+            </footer>
+            
+        </div>
+            <div id="side-nav" class="side-nav">
+                <div class="side-menu"></div>
+                
+                <div class="software-brothers">
+                    <p>Proudly built and maintained by</p>
+                    <a href="https://softwarebrothers.co" target="_blank"><img src="images/software-brothers-sidebar.svg" alt="SoftwareBrothers"></a>
+                </div>
+                
+            </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script src="scripts/linenumber.js"> </script>
+
+<script src="scripts/search.js"> </script>
+
+</body>
+</html>
