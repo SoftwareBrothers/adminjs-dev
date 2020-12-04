@@ -20,7 +20,7 @@ const AdminBroOptions = {
 Dashboard component: `./my-dashboard-component.jsx`
 ```
 import React from 'react'
-import { Box } from 'admin-bro'
+import { Box } from '@admin-bro/design-system'
 
 const Dashboard = (props) => {
   return (
