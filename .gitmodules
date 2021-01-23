@@ -46,9 +46,6 @@
 [submodule "admin-bro-firebase"]
 	path = admin-bro-firebase
 	url = git@github.com:SoftwareBrothers/admin-bro-firebase.git
-[submodule "admin-bro-blog"]
-	path = admin-bro-blog
-	url = git@github.com:SoftwareBrothers/admin-bro-blog.git
 [submodule "admin-bro-logger"]
 	path = admin-bro-logger
 	url = git@github.com:SoftwareBrothers/admin-bro-logger.git
