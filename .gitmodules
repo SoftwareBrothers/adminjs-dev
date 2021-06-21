@@ -1,54 +1,39 @@
-[submodule "admin-bro"]
-	path = admin-bro
-	url = git@github.com:SoftwareBrothers/admin-bro.git
-	master = master
-[submodule "admin-bro-hapijs"]
-	path = admin-bro-hapijs
-	url = git@github.com:SoftwareBrothers/admin-bro-hapijs.git
-	master = master
-[submodule "admin-bro-mongoose"]
-	path = admin-bro-mongoose
-	url = git@github.com:SoftwareBrothers/admin-bro-mongoose.git
-	master = master
-[submodule "admin-bro-sequelizejs"]
-	path = admin-bro-sequelizejs
-	url = git@github.com:SoftwareBrothers/admin-bro-sequelizejs.git
-[submodule "admin-bro-example-app"]
-	path = admin-bro-example-app
-	url = git@github.com:SoftwareBrothers/admin-bro-example-app.git
 [submodule "better-docs"]
 	path = better-docs
 	url = git@github.com:SoftwareBrothers/better-docs.git
-[submodule "admin-bro-expressjs"]
-	path = admin-bro-expressjs
-	url = git@github.com:SoftwareBrothers/admin-bro-expressjs.git
-[submodule "admin-bro-typeorm"]
-	path = admin-bro-typeorm
-	url = git@github.com:SoftwareBrothers/admin-bro-typeorm.git
-[submodule "admin-bro-firebase-functions"]
-	path = admin-bro-firebase-functions
-	url = git@github.com:SoftwareBrothers/admin-bro-firebase-functions.git
-[submodule "admin-bro-design-system"]
-	path = admin-bro-design-system
-	url = git@github.com:SoftwareBrothers/admin-bro-design-system.git
-[submodule "admin-bro-koa"]
-	path = admin-bro-koa
-	url = git@github.com:SoftwareBrothers/admin-bro-koa.git
-[submodule "admin-bro-upload"]
-	path = admin-bro-upload
-	url = git@github.com:SoftwareBrothers/admin-bro-upload.git
-[submodule "admin-bro-passwords"]
-	path = admin-bro-passwords
-	url = git@github.com:SoftwareBrothers/admin-bro-passwords.git
-[submodule "admin-bro-nestjs"]
-	path = admin-bro-nestjs
-	url = https://github.com/SoftwareBrothers/admin-bro-nestjs
-[submodule "admin-bro-firebase"]
-	path = admin-bro-firebase
-	url = git@github.com:SoftwareBrothers/admin-bro-firebase.git
-[submodule "admin-bro-blog"]
-	path = admin-bro-blog
-	url = git@github.com:SoftwareBrothers/admin-bro-blog.git
-[submodule "admin-bro-logger"]
-	path = admin-bro-logger
-	url = git@github.com:SoftwareBrothers/admin-bro-logger.git
+[submodule "adminjs"]
+	path = adminjs
+	url = git@github.com:SoftwareBrothers/adminjs.git
+[submodule "adminjs-hapijs"]
+	path = adminjs-hapijs
+	url = git@github.com:SoftwareBrothers/adminjs-hapijs.git
+[submodule "adminjs-mongoose"]
+	path = adminjs-mongoose
+	url = git@github.com:SoftwareBrothers/adminjs-mongoose.git
+[submodule "adminjs-sequelizejs"]
+	path = adminjs-sequelizejs
+	url = git@github.com:SoftwareBrothers/adminjs-sequelizejs.git
+[submodule "adminjs-example-app"]
+	path = adminjs-example-app
+	url = git@github.com:SoftwareBrothers/adminjs-example-app.git
+[submodule "adminjs-expressjs"]
+	path = adminjs-expressjs
+	url = git@github.com:SoftwareBrothers/adminjs-expressjs.git
+[submodule "adminjs-typeorm"]
+	path = adminjs-typeorm
+	url = git@github.com:SoftwareBrothers/adminjs-typeorm.git
+[submodule "adminjs-firebase-functions"]
+	path = adminjs-firebase-functions
+	url = git@github.com:SoftwareBrothers/adminjs-firebase-functions.git
+[submodule "adminjs-design-system"]
+	path = adminjs-design-system
+	url = git@github.com:SoftwareBrothers/adminjs-design-system.git
+[submodule "adminjs-upload"]
+	path = adminjs-upload
+	url = git@github.com:SoftwareBrothers/adminjs-upload.git
+[submodule "adminjs-passwords"]
+	path = adminjs-passwords
+	url = git@github.com:SoftwareBrothers/adminjs-passwords.git
+[submodule "adminjs-nestjs"]
+	path = adminjs-nestjs
+	url = git@github.com:SoftwareBrothers/adminjs-nestjs.git
