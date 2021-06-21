@@ -8,7 +8,7 @@ These are the things we will use
 
 * as a router, we will use an Express framework
 * for persistent storage, we will use MongoDB with mongoose ODM
-* and of course - admin-bro
+* and of course - adminjs
 
 So let’s start!
 
@@ -25,7 +25,7 @@ yarn init -y
 Install the dependencies:
 
 ```bash
-yarn add express express-formidable mongoose admin-bro @admin-bro/mongoose @admin-bro/express
+yarn add express express-formidable mongoose adminjs @adminjs/mongoose @adminjs/express
 ```
 
 and copy this example app:
@@ -34,11 +34,11 @@ and copy this example app:
 // Requirements
 const mongoose = require('mongoose')
 const express = require('express')
-const AdminBro = require('admin-bro')
-const AdminBroExpressjs = require('@admin-bro/express')
+const AdminJS = require('adminjs')
+const AdminJSExpress = require('@adminjs/express')
 
-// We have to tell AdminBro that we will manage mongoose resources with it
-AdminBro.registerAdapter(require('@admin-bro/mongoose'))
+// We have to tell AdminJS that we will manage mongoose resources with it
+AdminJS.registerAdapter(require('@adminjs/mongoose'))
 
 // express server definition
 const app = express()
@@ -50,15 +50,15 @@ const User = mongoose.model('User', {
   role: { type: String, enum: ['admin', 'restricted'], required: true },
 })
 
-// Pass all configuration settings to AdminBro
-const adminBro = new AdminBro({
+// Pass all configuration settings to AdminJS
+const adminJs = new AdminJS({
   resources: [User],
   rootPath: '/admin',
 })
 
-// Build and use a router which will handle all AdminBro routes
-const router = AdminBroExpressjs.buildRouter(adminBro)
-app.use(adminBro.options.rootPath, router)
+// Build and use a router which will handle all AdminJS routes
+const router = AdminJSExpress.buildRouter(adminJs)
+app.use(adminJs.options.rootPath, router)
 
 // Running the server
 const run = async () => {
@@ -78,7 +78,7 @@ node index.js
 You should see:
 
 ```
-AdminBro: bundle ready
+AdminJS: bundle ready
 Example app listening on port 8080!
 ```
 
@@ -107,15 +107,15 @@ const User = mongoose.model('User', {
 })
 ```
 
-Next, add some options to the AdminBro _User_ model. We will create a new virtual property called _password_ (because we don’t have a password in the database anymore). And we will show it only on an edit page.
+Next, add some options to the AdminJS _User_ model. We will create a new virtual property called _password_ (because we don’t have a password in the database anymore). And we will show it only on an edit page.
 
 Secondly, we create a before action hook which will hash the password.
 
 This is how all of this will look:
 
 ```javascript
-// Pass all configuration settings to AdminBro
-const adminBro = new AdminBro({
+// Pass all configuration settings to AdminJS
+const adminJs = new AdminJS({
   resources: [{
     resource: User,
     options: {
@@ -158,11 +158,11 @@ Remember their passwords because in the next paragraph we will add a login page.
 
 ## Adding login page
 
-{@link module:@admin-bro/express} plugin, which we use for attaching admin to express framework, has the option to authenticate AdminBro users. In order to use it, we have to change the _buildRouter_ function to the _buildAuthenticatedRouter_. Now we can pass the authentication method which will verify an email and a password.
+{@link module:@adminjs/express} plugin, which we use for attaching admin to express framework, has the option to authenticate AdminJS users. In order to use it, we have to change the _buildRouter_ function to the _buildAuthenticatedRouter_. Now we can pass the authentication method which will verify an email and a password.
 
 ```javascript
-// Build and use a router which will handle all AdminBro routes
-const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
+// Build and use a router which will handle all AdminJS routes
+const router = AdminJSExpress.buildAuthenticatedRouter(adminJs, {
   authenticate: async (email, password) => {
     const user = await User.findOne({ email })
     if (user) {
@@ -267,12 +267,12 @@ And this is the entire code of the application:
 // Requirements
 const mongoose = require('mongoose')
 const express = require('express')
-const AdminBro = require('admin-bro')
-const AdminBroExpressjs = require('@admin-bro/express')
+const AdminJS = require('adminjs')
+const AdminJSExpress = require('@adminjs/express')
 const bcrypt = require('bcrypt')
 
-// We have to tell AdminBro that we will manage mongoose resources with it
-AdminBro.registerAdapter(require('@admin-bro/mongoose'))
+// We have to tell AdminJS that we will manage mongoose resources with it
+AdminJS.registerAdapter(require('@adminjs/mongoose'))
 
 // express server definition
 const app = express()
@@ -303,8 +303,8 @@ const canEditCars = ({ currentAdmin, record }) => {
 }
 const canModifyUsers = ({ currentAdmin }) => currentAdmin && currentAdmin.role === 'admin'
 
-// Pass all configuration settings to AdminBro
-const adminBro = new AdminBro({
+// Pass all configuration settings to AdminJS
+const adminJs = new AdminJS({
   resources: [{
     resource: Cars,
     options: {
@@ -360,8 +360,8 @@ const adminBro = new AdminBro({
   rootPath: '/admin',
 })
 
-// Build and use a router which will handle all AdminBro routes
-const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
+// Build and use a router which will handle all AdminJS routes
+const router = AdminJSExpress.buildAuthenticatedRouter(adminJs, {
   authenticate: async (email, password) => {
     const user = await User.findOne({ email })
     if (user) {
@@ -375,7 +375,7 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
   cookiePassword: 'some-secret-password-used-to-secure-cookie',
 })
 
-app.use(adminBro.options.rootPath, router)
+app.use(adminJs.options.rootPath, router)
 
 // Running the server
 const run = async () => {

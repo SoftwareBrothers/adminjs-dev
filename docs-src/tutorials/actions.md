@@ -2,7 +2,7 @@ At some point you would probably like to customize default views or create custo
 
 ## Default actions
 
-AdminBro has 7 major _default actions_ defined for each resource:
+AdminJS has 7 major _default actions_ defined for each resource:
 
 __Resource__ base actions:
 
@@ -40,7 +40,7 @@ This is how modifying __show__ action and creating a new __myNewAction__ can
 look like:
 
 ```javascript
-const adminBroOptions = {
+const adminJsOptions = {
   resources: [
     { 
       resource: Article,
@@ -68,7 +68,7 @@ Yes - you can modify things like: _label_, _icon_ _and visibility_. List of all 
 In the following example, we will change {@link Action#icon icon}, and will show it only for records with an email.
 
 ```javascript
-const adminBroOptions = {
+const adminJsOptions = {
   resources: [
     { resource: Article,
       options: {
@@ -97,15 +97,15 @@ Nevertheless, {@link Action#handler} has to be specified for new actions (read t
 
 ## Modifying actions for all resources
 
-Default actions templates can be accessed right from the AdminBro class, by using ACTIONS object.
+Default actions templates can be accessed right from the AdminJS class, by using ACTIONS object.
 
 ```javascript
 
-const AdminBro = require('admin-bro')
-AdminBro.ACTIONS.show // => show action object
+const AdminJS = require('adminjs')
+AdminJS.ACTIONS.show // => show action object
 
 // so to modify the availability of action for all resources
-AdminBro.ACTIONS.show.isAccessible = ({ currentAdmin, resource, record }) => {
+AdminJS.ACTIONS.show.isAccessible = ({ currentAdmin, resource, record }) => {
   return currentAdmin.isManager
 }
 ```
@@ -117,7 +117,7 @@ Also, you can define your own actions. Simply pass {@link Action} under a new ke
 Your action can be either `resource`, `record` or `bulk` type.
 
 ```javascript
-const adminBroOptions = {
+const adminJsOptions = {
   resources: [
     { resource: Article,
       options: {
@@ -127,7 +127,7 @@ const adminBroOptions = {
             icon: 'View',
             isVisible: true,
             handler: async () => {...},
-            component: AdminBro.bundle('./your-action-component'),
+            component: AdminJS.bundle('./your-action-component'),
           },
         },
       },

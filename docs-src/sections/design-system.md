@@ -1,5 +1,5 @@
-This package consists of all DesignSystem components from [AdminBro](adminbro.com)
-so you can use all of them inside and outside the AdminBro environment.
+This package consists of all DesignSystem components from [AdminJS](adminjs.co)
+so you can use all of them inside and outside the AdminJS environment.
  
 It was created with the help of 2 amazing packages:
  
@@ -8,30 +8,30 @@ It was created with the help of 2 amazing packages:
  
 make sure to check them out to use the full potential of this design system
  
-## Usage within the AdminBro
+## Usage within the AdminJS
  
-If you are using this module inside AdminBro there is no need to install anything,
+If you are using this module inside AdminJS there is no need to install anything,
 just use its components like this:
  
 ```typescript
-import { Box, Button } from '@admin-bro/design-system'
+import { Box, Button } from '@adminjs/design-system'
  
 // and here you can use them
 ```
  
-## Usage outside the AdminBro
+## Usage outside the AdminJS
  
-Nothing stays in a way of using `@admin-bro/design-system` in your project which doesn't
-require AdminBro. Simply {@link module:@admin-bro/design-system visit the module page} and follow installation instructions.
+Nothing stays in a way of using `@adminjs/design-system` in your project which doesn't
+require AdminJS. Simply {@link module:@adminjs/design-system visit the module page} and follow installation instructions.
  
 ## Changing the theme
  
-The Design System provides you with the default [theme](https://adminbro.com/Theme.html).
+The Design System provides you with the default [theme](https://adminjs.co/Theme.html).
 It contains all the parameters like paddings, colors, font sizes etc.
 For the list of all available parameters take a look at the
-[Theme spec](https://adminbro.com/Theme.html).
+[Theme spec](https://adminjs.co/Theme.html).
  
-But nothing stands in a way for you to change the default theme. In order to override the Theme or its selected parameters use {@link AdminBroOptions.branding}
+But nothing stands in a way for you to change the default theme. In order to override the Theme or its selected parameters use {@link AdminJSOptions.branding}
 theme property.
 
 ## Changing particular components
@@ -40,7 +40,7 @@ Sometimes you might want to change the look and feel of a
 particular component - not the entire theme. You can achieve that with the `styled` method:
  
 ```typescript
-import { Button } from '@admin-bro/design-system'
+import { Button } from '@adminjs/design-system'
 import styled from 'styled-components'
  
 const MyRoundedButton = styled(Button)`

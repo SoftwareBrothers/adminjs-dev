@@ -1,20 +1,19 @@
-## Admin-bro-dev
+## AdminJS Dev/Documentation
 
 parcel watch ./src/frontend/app.jsx --out-dir ./src/frontend/assets/scripts --out-file app.bundle.js --no-hmr
 
-This is a wrapper repo for the entire AdminBro core with a couple of plugins. If you are a developer and you want to work on the AdminBro infrastructure - this is the right repository.
+This is a wrapper repo for the entire AdminJS core with a couple of plugins. If you are a developer and you want to work on the AdminJS infrastructure - this is the right repository.
 
 ## OpenSource SoftwareBrothers community
 
 - [Join the community](https://join.slack.com/t/adminbro/shared_invite/zt-djsqxxpz-_YCS8UMtQ9Ade6DPuLR7Zw) to get help and be inspired.
-- subscribe to our [newsletter](https://www.getrevue.co/profile/adminbro)
 
 ## Setting up
 
-All AdminBro plugins are embedded as git submodules. To clone the entire repo with all the dependencies simply run:
+All AdminJS plugins are embedded as git submodules. To clone the entire repo with all the dependencies simply run:
 
 ```bash
-git clone --recurse-submodules https://github.com/SoftwareBrothers/admin-bro-dev
+git clone --recurse-submodules https://github.com/SoftwareBrothers/adminjs-dev
 ```
 
 First of all you need databases. If you have already running MySQL, PostgreSQL and MongoDB on your host machine then skip this step. Otherwise we made it easier for you with docker-compose. Enter the `./infrastructure` directory and run docker:
@@ -24,9 +23,9 @@ cd infrastructure
 docker-compose up
 ```
 
-After this enter the admin-bro directory:
+After this enter the adminjs directory:
 ```
->> cd admin-bro
+>> cd adminjs
 ```
 
 and run there following commands:
@@ -38,13 +37,13 @@ and run there following commands:
 And finally on the other tab of console enter the directory of our example app:
 
 ```
->> cd admin-bro-example-app
+>> cd adminjs-example-app
 ```
 
 and run following commands:
 
 ```
->> yarn install && yarn link admin-bro && yarn dev
+>> yarn install && yarn link adminjs && yarn dev
 ```
 
 That's all. You can now open admin panel on your browser: http://localhost:8080/admin
@@ -71,8 +70,8 @@ wont work.
 
 In order to fix that:
 - remove node_modules from all of the packages `rm -fR */node_modules`
-- rename `admin-bro/package.json` to `admin-bro/package2.json` (or something else)
-- do the same thing with `admin-bro-design-system/package.json`
+- rename `adminjs/package.json` to `adminjs/package2.json` (or something else)
+- do the same thing with `adminjs-design-system/package.json`
 
 3. Run docs command
 
@@ -92,7 +91,7 @@ yarn install
 cd better-docs
 yarn install
 
-DOCS=../admin-bro/src/**/*,../docs-src/**/*,../admin-bro-mongoose/**/*,../admin-bro-hapijs/**/*,../admin-bro-expressjs/**/*,../admin-bro-sequelizejs/**/* gulp
+DOCS=../adminjs/src/**/*,../docs-src/**/*,../adminjs-mongoose/**/*,../adminjs-hapijs/**/*,../adminjs-expressjs/**/*,../adminjs-sequelizejs/**/* gulp
 ```
 
 ## Publishing the documentation
@@ -107,7 +106,7 @@ Documentation is
 
 ## License
 
-AdminBro is Copyright © 2019 SoftwareBrothers.co. It is free software, and may be redistributed under the terms specified in the [LICENSE](LICENSE) file.
+AdminJS is Copyright © 2021 SoftwareBrothers.co. It is free software, and may be redistributed under the terms specified in the [LICENSE](LICENSE) file.
 
 ## About SoftwareBrothers.co
 

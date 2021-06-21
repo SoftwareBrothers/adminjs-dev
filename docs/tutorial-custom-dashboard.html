@@ -5,7 +5,7 @@
   <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminBro - Auto-generated admin panel for node.js with react 07. Customize dashboard</title>
+  <title>AdminJS - Auto-generated admin panel for node.js with react 07. Customize dashboard</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -24,25 +24,6 @@
 
   
     <link rel="stylesheet" type="text/css" href="fonts.css"/>
-  
-  
-    
-      <meta property="og:image" content="https://adminbro.com/splash/admin-bro.png" />
-    
-  
-    
-      <meta property="og:title" content="An Auto-generated Admin Panel for your Node.js Application" />
-    
-  
-    
-      <meta property="og:description" content="You, as a developer, provide database models, and AdminBro generates ReactJS UI which allows you (or other trusted users) to manage content." />
-    
-  
-    
-  
-    
-  
-    
   
 </head>
 
@@ -71,7 +52,7 @@
              
                 <div class="top-buttons">
                     
-                        <a  href="https://admin-bro-example-app-staging.herokuapp.com/admin"
+                        <a  href="https://demo.adminjs.co/admin"
                             target="_blank"
                             class="button is-primary is-outlined"
                         ?>
@@ -95,6 +76,12 @@
                 </div>
                 
             <div class="navigation">
+                <a
+                    href="docs.html"
+                    class="link"
+                >
+                    API Documentation
+                </a>
                 
                 <div class="dropdown is-hoverable is-right">
                     <a class="dropdown-trigger link">
@@ -125,7 +112,7 @@
                             </a>
                         
                             <a class="dropdown-item" href="tutorial-features.html">
-                                06. Using AdminBro features
+                                06. Using AdminJS features
                             </a>
                         
                             <a class="dropdown-item" href="tutorial-custom-dashboard.html">
@@ -148,38 +135,16 @@
                     </div>
                 </div>
                 
-                <a
-                    href="docs.html"
-                    class="link"
-                >
-                    API
-                </a>
-                
-                    
-                        <a
-                            href="section-design-system.html"
-                            class="link"
-                        >
-                            Design System
-                        </a>
-                    
-                        <a
-                            href="section-modules.html"
-                            class="link"
-                        >
-                            Modules
-                        </a>
-                    
-                
                  
                     
                         <a
                             class="link user-link no-hover"
-                            href="https://github.com/SoftwareBrothers/admin-bro"
+                            href="https://github.com/SoftwareBrothers/adminjs"
                         >
                             <i class="fab fa-github fa-3x"></i>
                         </a>
                     
+                
                 
             </div>
         </div>
@@ -197,7 +162,7 @@
             
             <nav>
                 
-                    <div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-passing-resources.html">02. Adding resources</a></li><li><a href="tutorial-customizing-resources.html">03. Customize resources</a></li><li><a href="tutorial-actions.html">04. Customize actions</a><ul><li><a href="tutorial-actions-validations.html">Custom validations</a></li></ul></li><li><a href="tutorial-writing-react-components.html">05. Writing your own Components</a></li><li><a href="tutorial-features.html">06. Using AdminBro features</a></li><li><a href="tutorial-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-rbac.html">08. Role-Based Access Control</a></li><li><a href="tutorial-i18n.html">09. Internationalization (i18n)</a></li><li><a href="tutorial-cms.html">11. Content Management System</a></li></ul></div>
+                    <div class="category"><h3>Tutorials</h3><ul><li><a href="tutorial-installation-instructions.html">01. Installation instructions</a></li><li><a href="tutorial-passing-resources.html">02. Adding resources</a></li><li><a href="tutorial-customizing-resources.html">03. Customize resources</a></li><li><a href="tutorial-actions.html">04. Customize actions</a><ul><li><a href="tutorial-actions-validations.html">Custom validations</a></li></ul></li><li><a href="tutorial-writing-react-components.html">05. Writing your own Components</a></li><li><a href="tutorial-features.html">06. Using AdminJS features</a></li><li><a href="tutorial-custom-dashboard.html">07. Customize dashboard</a></li><li><a href="tutorial-rbac.html">08. Role-Based Access Control</a></li><li><a href="tutorial-i18n.html">09. Internationalization (i18n)</a></li><li><a href="tutorial-cms.html">11. Content Management System</a></li></ul></div>
                 
             </nav>
         </div>
@@ -210,12 +175,12 @@
                 <section>
 
 <article>
-    <p>By default AdminBro comes with the simple dashboard. You can easily modify it by adding some widgets.</p>
+    <p>By default AdminJS comes with the simple dashboard. You can easily modify it by adding some widgets.</p>
 <h3>how to change default dashboard</h3>
-<p>You can pass your own dashboard class to the AdminBro via <a href="AdminBroOptions.html">options</a></p>
+<p>You can pass your own dashboard class to the AdminJS via <a href="AdminJSOptions.html">options</a></p>
 <pre class="prettyprint source"><code>const DashboardPage = require('./dashboard-page')
 
-const adminBroOptions = {
+const adminJsOptions = {
   ...
   databases: [...],
   resources: [...],
@@ -223,7 +188,7 @@ const adminBroOptions = {
     handler: async () => {
 
     },
-    component: AdminBro.bundle('./my-dashboard-component')
+    component: AdminJS.bundle('./my-dashboard-component')
   },
   rootPath: '/admin'
   ...

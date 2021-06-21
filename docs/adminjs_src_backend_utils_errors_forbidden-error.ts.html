@@ -1,0 +1,243 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminJS - Auto-generated admin panel for node.js with react adminjs/src/backend/utils/errors/forbidden-error.ts</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <link rel="stylesheet" type="text/css" href="fonts.css"/>
+  
+</head>
+
+
+
+<body class="layout">
+    <div id="stickyNavbarOverlay"></div>
+    
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+             
+                <a class="image" href="index.html">
+                    <img src="images/logo-reg.svg" alt="logo">
+                </a>
+            
+            
+        </div>
+        <div class="menu">
+             
+                <div class="top-buttons">
+                    
+                        <a  href="https://demo.adminjs.co/admin"
+                            target="_blank"
+                            class="button is-primary is-outlined"
+                        ?>
+                            Demo
+                        </a>
+                    
+                        <a  href="/tutorial-installation-instructions.html"
+                            target=""
+                            class="button is-primary is-outlined"
+                        ?>
+                            Get Started
+                        </a>
+                    
+                        <a  href="https://join.slack.com/t/adminbro/shared_invite/zt-djsqxxpz-_YCS8UMtQ9Ade6DPuLR7Zw"
+                            target=""
+                            class="button is-primary"
+                        ?>
+                            <i class="fab fa-slack-hash fa-lg"></i> Join the community
+                        </a>
+                    
+                </div>
+                
+            <div class="navigation">
+                <a
+                    href="docs.html"
+                    class="link"
+                >
+                    API Documentation
+                </a>
+                
+                <div class="dropdown is-hoverable is-right">
+                    <a class="dropdown-trigger link">
+                        Tutorials
+                        <i class="fas fa-chevron-down fa-xs"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-content">
+                        
+                            <a class="dropdown-item" href="tutorial-installation-instructions.html">
+                                01. Installation instructions
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-passing-resources.html">
+                                02. Adding resources
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-customizing-resources.html">
+                                03. Customize resources
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-actions.html">
+                                04. Customize actions
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-writing-react-components.html">
+                                05. Writing your own Components
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-features.html">
+                                06. Using AdminJS features
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-custom-dashboard.html">
+                                07. Customize dashboard
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-rbac.html">
+                                08. Role-Based Access Control
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-i18n.html">
+                                09. Internationalization (i18n)
+                            </a>
+                        
+                            <a class="dropdown-item" href="tutorial-cms.html">
+                                11. Content Management System
+                            </a>
+                        
+                        </div>
+                    </div>
+                </div>
+                
+                 
+                    
+                        <a
+                            class="link user-link no-hover"
+                            href="https://github.com/SoftwareBrothers/adminjs"
+                        >
+                            <i class="fab fa-github fa-3x"></i>
+                        </a>
+                    
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+                <div class="search-wrapper">
+                    <input id="search" type="text" placeholder="Search docs..." class="input">
+                </div>
+            
+            <nav>
+                
+                    <h2><a href="docs.html">Documentation</a></h2><div class="category"><h3>Modules</h3><ul><li><a href="module-@adminjs_design-system.html">@adminjs/design-system</a></li><li><a href="module-@adminjs_hapi.html">@adminjs/hapi</a></li><li><a href="module-@adminjs_passwords.html">@adminjs/passwords</a></li><li><a href="module-flat.html">flat</a></li></ul><h3>Modules / Plugins</h3><ul><li><a href="module-@adminjs_express.html">@adminjs/express</a></li><li><a href="module-@adminjs_firebase-functions.html">@adminjs/firebase-functions</a></li><li><a href="module-@adminjs_nestjs.html">@adminjs/nestjs</a></li></ul><h3>Modules / Adapters</h3><ul><li><a href="module-@adminjs_mongoose.html">@adminjs/mongoose</a></li><li><a href="module-@adminjs_sequelize.html">@adminjs/sequelize</a></li><li><a href="module-@adminjs_typeorm.html">@adminjs/typeorm</a></li></ul><h3>Modules / Features</h3><ul><li><a href="module-@adminjs_upload.html">@adminjs/upload</a></li></ul><h3>Namespaces</h3><ul><li><a href="Router.html">Router</a></li></ul><h3>Classes</h3><ul><li><a href="AdminJS.html">AdminJS</a></li><li><a href="ApiClient.html">ApiClient</a></li><li><a href="ApiController.html">ApiController</a></li><li><a href="module-@adminjs_nestjs-AdminModule.html">AdminModule</a></li><li><a href="ViewHelpers.html">ViewHelpers</a></li></ul><h3>Classes / Hooks</h3><ul><li><a href="useAction.html">useAction</a></li><li><a href="useCurrentAdmin.html">useCurrentAdmin</a></li><li><a href="useLocalStorage.html">useLocalStorage</a></li><li><a href="useNotice.html">useNotice</a></li><li><a href="useRecord.html">useRecord</a></li><li><a href="useRecords.html">useRecords</a></li><li><a href="useResource.html">useResource</a></li><li><a href="useSelectedRecords.html">useSelectedRecords</a></li><li><a href="useTranslation.html">useTranslation</a></li></ul><h3>Interfaces</h3><ul><li><a href="Action.html">Action</a></li><li><a href="AdminJSOptions.html">AdminJSOptions</a></li><li><a href="PropertyOptions.html">PropertyOptions</a></li><li><a href="ResourceOptions.html">ResourceOptions</a></li><li><a href="Theme.html">Theme</a></li><li><a href="TranslateFunctions.html">TranslateFunctions</a></li></ul><h3>Interfaces / Frontend</h3><ul><li><a href="ActionJSON.html">ActionJSON</a></li><li><a href="PageJSON.html">PageJSON</a></li><li><a href="PropertyJSON.html">PropertyJSON</a></li><li><a href="RecordJSON.html">RecordJSON</a></li><li><a href="ResourceJSON.html">ResourceJSON</a></li></ul><h3>Components / Application</h3><ul><li><a href="ActionButton.html">ActionButton</a></li><li><a href="ActionHeader.html">ActionHeader</a></li><li><a href="BaseActionComponent.html">BaseActionComponent</a></li><li><a href="BasePropertyComponent.html">BasePropertyComponent</a></li><li><a href="DrawerPortal.html">DrawerPortal</a></li><li><a href="RecordsTable.html">RecordsTable</a></li><li><a href="RecordsTableHeader.html">RecordsTableHeader</a></li><li><a href="SidebarResourceSection.html">SidebarResourceSection</a></li></ul><h3>Components / Atoms</h3><ul><li><a href="Badge.html">Badge</a></li><li><a href="Box.html">Box</a></li><li><a href="Button.html">Button</a></li><li><a href="CheckBox.html">CheckBox</a></li><li><a href="Header.html">Header</a></li><li><a href="Icon.html">Icon</a></li><li><a href="Illustration.html">Illustration</a></li><li><a href="Input.html">Input</a></li><li><a href="Label.html">Label</a></li><li><a href="Link.html">Link</a></li><li><a href="Loader.html">Loader</a></li><li><a href="Placeholder.html">Placeholder</a></li><li><a href="Radio.html">Radio</a></li><li><a href="Section.html">Section</a></li><li><a href="Table.html">Table</a></li><li><a href="Text.html">Text</a></li><li><a href="TextArea.html">TextArea</a></li><li><a href="Tooltip.html">Tooltip</a></li></ul><h3>Components / Organisms</h3><ul><li><a href="ButtonGroup.html">ButtonGroup</a></li><li><a href="CurrentUserNav.html">CurrentUserNav</a></li><li><a href="Navigation.html">Navigation</a></li></ul><h3>Components / Molecules</h3><ul><li><a href="DatePicker.html">DatePicker</a></li><li><a href="Drawer.html">Drawer</a></li><li><a href="DropDown.html">DropDown</a></li><li><a href="DropZone.html">DropZone</a></li><li><a href="DropZoneItem.html">DropZoneItem</a></li><li><a href="FormGroup.html">FormGroup</a></li><li><a href="InfoBox.html">InfoBox</a></li><li><a href="LoggedUser.html">LoggedUser</a></li><li><a href="MessageBox.html">MessageBox</a></li><li><a href="Modal.html">Modal</a></li><li><a href="NavGroup.html">NavGroup</a></li><li><a href="NavigationElement.html">NavigationElement</a></li><li><a href="Pagination.html">Pagination</a></li><li><a href="RichText.html">RichText</a></li><li><a href="Step.html">Step</a></li><li><a href="Stepper.html">Stepper</a></li><li><a href="ValueGroup.html">ValueGroup</a></li></ul><h3>Components / HOC</h3><ul><li><a href="withNotice.html">withNotice</a></li></ul><h3>Global</h3><ul><li><a href="global.html#buildFeature">buildFeature</a></li><li><a href="global.html#CustomParser">CustomParser</a></li><li><a href="global.html#mergeResourceOptions">mergeResourceOptions</a></li><li><a href="global.html#populator">populator</a></li><li><a href="global.html#validatePropertiesGlobally">validatePropertiesGlobally</a></li></ul></div><div class="category"><h2>Base</h2><h3>Classes</h3><ul><li><a href="BaseDatabase.html">BaseDatabase</a></li><li><a href="BaseProperty.html">BaseProperty</a></li><li><a href="BaseRecord.html">BaseRecord</a></li><li><a href="BaseResource.html">BaseResource</a></li></ul></div><div class="category"><h2>Decorators</h2><h3>Classes</h3><ul><li><a href="ActionDecorator.html">ActionDecorator</a></li><li><a href="PropertyDecorator.html">PropertyDecorator</a></li><li><a href="ResourceDecorator.html">ResourceDecorator</a></li></ul></div><div class="category"><h2>Errors</h2><h3>Classes</h3><ul><li><a href="ConfigurationError.html">ConfigurationError</a></li><li><a href="ForbiddenError.html">ForbiddenError</a></li><li><a href="NotFoundError.html">NotFoundError</a></li><li><a href="NotImplementedError.html">NotImplementedError</a></li><li><a href="ValidationError.html">ValidationError</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Source</p>
+                    <h1>adminjs/src/backend/utils/errors/forbidden-error.ts</h1>
+                </header>
+                
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Error which is thrown when user
+ * doesn't have an access to a given resource/action.
+ *
+ * @category Errors
+ */
+export class ForbiddenError extends Error {
+  /**
+   * HTTP Status code: 403
+   */
+  public statusCode: number
+
+  /**
+   * Any custom message which should be seen in the UI
+   */
+  public baseMessage?: string
+
+  /**
+   * @param {string} [message]
+   */
+  constructor(message?: string) {
+    super('You cannot perform this action')
+    this.statusCode = 403
+    this.baseMessage = message
+    this.name = 'ForbiddenError'
+  }
+}
+
+export default ForbiddenError
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
+<script src="scripts/linenumber.js"> </script>
+
+<script src="scripts/search.js"> </script>
+
+</body>
+</html>

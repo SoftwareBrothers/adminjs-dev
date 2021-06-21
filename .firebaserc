@@ -1,21 +1,12 @@
 {
   "projects": {
-    "default": "admin-bro-docs"
+    "default": "adminjs-docs"
   },
   "targets": {
-    "admin-bro-docs": {
+    "adminjs-docs": {
       "hosting": {
-        "docs-v1": [
-          "admin-bro-docs-v1"
-        ],
-        "docs-v2": [
-          "admin-bro-docs-v2"
-        ],
-        "docs-beta": [
-          "admin-bro-docs-beta"
-        ],
         "default": [
-          "admin-bro-docs"
+          "adminjs-docs"
         ]
       }
     }

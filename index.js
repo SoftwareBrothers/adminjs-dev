@@ -1,1 +1,1 @@
-require('./admin-bro-example-app/index.js') 
+require('./adminjs-example-app/index.js') 

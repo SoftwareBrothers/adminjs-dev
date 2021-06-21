@@ -2,101 +2,101 @@
 > 
 > check out [this video tutorial](https://www.youtube.com/watch?v=n0IuXnL_cWs) which shows you how you can create an Admin Panel from scratch.
 
-Installation of an __AdminBro__ consist of 2 steps.
+Installation of an __AdminJS__ consist of 2 steps.
 
 ## 01. Install the framework plugin
 
-Since __AdminBro__ uses your existing framework to render its routes - you have to use one of our plugins.
+Since __AdminJS__ uses your existing framework to render its routes - you have to use one of our plugins.
 
 There are plugins for:
 
-* {@link module:@admin-bro/express Express}
-* {@link module:@admin-bro/hapi Hapi}
-* {@link module:@admin-bro/koa Koajs}
+* {@link module:@adminjs/express Express}
+* {@link module:@adminjs/hapi Hapi}
+* {@link module:@adminjs/koa Koajs}
 
-In this tutorial I will present the simplest way of adding AdminBro to an express framework. If you
-want to launch AdminBro by other framework - see its documentation (above)
+In this tutorial I will present the simplest way of adding AdminJS to an express framework. If you
+want to launch AdminJS by other framework - see its documentation (above)
 
 ### Express installation
 
-Install the AdminBro along with the {@link module:@admin-bro/express express plugin}
+Install the AdminJS along with the {@link module:@adminjs/express express plugin}
 
 ```
-npm install admin-bro @admin-bro/express
+npm install adminjs @adminjs/express
 ```
 
-If you don't have `express` or `express-formidable` already installed, you will have to add that too. This is because they are `peerDependencies` of `@admin-bro/express`:
+If you don't have `express` or `express-formidable` already installed, you will have to add that too. This is because they are `peerDependencies` of `@adminjs/express`:
 
 ```
 npm install express express-formidable
 ```
 
-Now create an express router which will handle all AdminBro routes
+Now create an express router which will handle all AdminJS routes
 
 ```javascript
-const AdminBro = require('admin-bro')
-const AdminBroExpress = require('@admin-bro/express')
+const AdminJS = require('adminjs')
+const AdminJSExpress = require('@adminjs/express')
 
 const express = require('express')
 const app = express()
 
-const adminBro = new AdminBro({
+const adminJs = new AdminJS({
   databases: [],
   rootPath: '/admin',
 })
 
-const router = AdminBroExpress.buildRouter(adminBro)
+const router = AdminJSExpress.buildRouter(adminJs)
 ```
 
 Use this router in express.js `app`
 
 ```javascript
-app.use(adminBro.options.rootPath, router)
-app.listen(8080, () => console.log('AdminBro is under localhost:8080/admin'))
+app.use(adminJs.options.rootPath, router)
+app.listen(8080, () => console.log('AdminJS is under localhost:8080/admin'))
 ```
 
-> If you are adding AdminBro to an application which already has any other middleware, it is good to put the AdminBro setup on top.
+> If you are adding AdminJS to an application which already has any other middleware, it is good to put the AdminJS setup on top.
 > 
-> This is because other middleware can transform **requests** so that AdminBro wont be able to handle it.
+> This is because other middleware can transform **requests** so that AdminJS wont be able to handle it.
 
-To see how to add an authentication or other modifications - visit the {@link module:@admin-bro/express Express Plugin} documentation.
+To see how to add an authentication or other modifications - visit the {@link module:@adminjs/express Express Plugin} documentation.
 
 ## 02. Install the Database Adapter and add resources
 
-__AdminBro__ can be connected to many different types of resources. Right now we support:
+__AdminJS__ can be connected to many different types of resources. Right now we support:
 
-* {@link module:@admin-bro/mongoose Mongoose}
-* {@link module:@admin-bro/sequelize Sequelize}
-* {@link module:@admin-bro/typeorm TypeORM}
+* {@link module:@adminjs/mongoose Mongoose}
+* {@link module:@adminjs/sequelize Sequelize}
+* {@link module:@adminjs/typeorm TypeORM}
 
-To add resources to __AdminBro__ you first have to **register adapter** for the resource you want to use.
+To add resources to __AdminJS__ you first have to **register adapter** for the resource you want to use.
 
 Example for a mongoose setup:
 
 Installation
 
 ```bash
-npm install @admin-bro/mongoose
+npm install @adminjs/mongoose
 ```
 
 Registration of the adapter
 
 ```javascript
-const AdminBro = require('admin-bro')
-const AdminBroMongoose = require('@admin-bro/mongoose')
+const AdminJS = require('adminjs')
+const AdminJSMongoose = require('@adminjs/mongoose')
 
-AdminBro.registerAdapter(AdminBroMongoose)
+AdminJS.registerAdapter(AdminJSMongoose)
 ```
 
-Pass resources to AdminBro like this (_express example_)
+Pass resources to AdminJS like this (_express example_)
 
 ```javascript
 const User = mongoose.model('User', { name: String, email: String, surname: String })
-const AdminBroOptions = {
+const adminJsOptions = {
   resources: [User],
 }
-const AdminBro = new AdminBro(AdminBroOptions)
-const router = AdminBroExpress.buildRouter(adminBro)
+const AdminJS = new AdminJS(adminJsOptions)
+const router = AdminJSExpress.buildRouter(adminJs)
 // and add router to express
 ```
 

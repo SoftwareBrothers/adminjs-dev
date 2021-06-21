@@ -1,10 +1,10 @@
 ## Validate form properties
 
-AdminBro by default validates properties based on rules defined by the database schema. But sometimes you might need to adjust it to your particular needs.
+AdminJS by default validates properties based on rules defined by the database schema. But sometimes you might need to adjust it to your particular needs.
 
-### How validation works in AdminBro
+### How validation works in AdminJS
 
-AdminBro validates fields on the backend and sends errors back to the react frontend.
+AdminJS validates fields on the backend and sends errors back to the react frontend.
 
 Information about the errors is send inside the {@link RecordJSON} object in the {@link RecordActionResponse}.
 

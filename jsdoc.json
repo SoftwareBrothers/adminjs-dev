@@ -4,19 +4,17 @@
     },
     "source": {
         "include": [
-                    "./admin-bro/src",
-                    "./admin-bro-hapijs",
-                    "./admin-bro-mongoose/src",
-                    "./admin-bro-sequelizejs",
-                    "./admin-bro-typeorm/src",
-                    "./admin-bro-expressjs",
-                    "./admin-bro-firebase-functions",
-                    "./admin-bro-koa/src",
-                    "./admin-bro-upload/src",
-                    "./admin-bro-blog/src",
-                    "./admin-bro-passwords/src",
-                    "./admin-bro-design-system/src",
-                    "./admin-bro-nestjs/src"
+                    "./adminjs/src",
+                    "./adminjs-hapijs",
+                    "./adminjs-mongoose/src",
+                    "./adminjs-sequelizejs",
+                    "./adminjs-typeorm/src",
+                    "./adminjs-expressjs",
+                    "./adminjs-firebase-functions",
+                    "./adminjs-upload/src",
+                    "./adminjs-passwords/src",
+                    "./adminjs-design-system/src",
+                    "./adminjs-nestjs/src"
                    ],
         "includePattern": "\\.(jsx|js|ts|tsx)$",
         "excludePattern": "(node_modules/|docs|(bundle.*\\.js)|cli.ts)"
@@ -34,7 +32,7 @@
     ],
     "opts": {
         "encoding": "utf8",
-        "destination": "docs-beta",
+        "destination": "docs",
         "readme": "./docs-src/home.md",
         "recurse": true,
         "private": true,
@@ -51,28 +49,28 @@
             "includeDate": false,
             "staticFiles": {
               "include": [
-                  "./docs-src/statics", "./admin-bro/src/frontend/assets/styles", "./admin-bro/src/frontend/assets/fonts"
+                  "./docs-src/statics", "./adminjs/src/frontend/assets/styles", "./adminjs/src/frontend/assets/fonts"
               ]
             }
         },
         "better-docs": {
             "landing": "./docs-src/landing.html",
             "logo": "images/logo-reg.svg",
-            "title": "AdminBro - Auto-generated admin panel for node.js with react",
+            "title": "AdminJS - Auto-generated admin panel for node.js with react",
             "component": {
-                "wrapper": "./admin-bro/docs-helpers/component.tsx"
+                "wrapper": "./adminjs/docs-helpers/component.tsx"
         },
             "trackingCode": "<!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5L24P7Z');</script><!-- End Google Tag Manager -->",
             "head": "<link rel=\"stylesheet\" type=\"text/css\" href=\"fonts.css\"/>",
             "ogTags": {
                 "title": "An Auto-generated Admin Panel for your Node.js Application",
-                "description": "You, as a developer, provide database models, and AdminBro generates ReactJS UI which allows you (or other trusted users) to manage content.",
-                "image": "https://adminbro.com/splash/admin-bro.png"
+                "description": "You, as a developer, provide database models, and AdminJS generates ReactJS UI which allows you (or other trusted users) to manage content.",
+                "image": "https://adminbro.com/splash/adminjs.png"
             },
             "navButtons": [
                 {
                     "label": "Demo",
-                    "href": "https://admin-bro-example-app-staging.herokuapp.com/admin",
+                    "href": "https://demo.adminjs.co/admin",
                     "target": "_blank",
                     "className": "is-primary is-outlined"
                 },
@@ -89,7 +87,7 @@
             ],
             "navLinks": [{
                 "label": "<i class=\"fab fa-github fa-3x\"></i>",
-                "href": "https://github.com/SoftwareBrothers/admin-bro",
+                "href": "https://github.com/SoftwareBrothers/adminjs",
                 "className": "no-hover"
             }],
             "softwareBrothers": "paranoid"

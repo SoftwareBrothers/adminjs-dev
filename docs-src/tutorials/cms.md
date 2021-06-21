@@ -1,8 +1,8 @@
-By default, AdminBro is equipped with a powerful [quill](https://quilljs.com/) editor, which makes it a perfect tool as a Content Management System
+By default, AdminJS is equipped with a powerful [quill](https://quilljs.com/) editor, which makes it a perfect tool as a Content Management System
 
-### AdminBro as a Content Management System
+### AdminJS as a Content Management System
 
-To add quill to the AdminBro setup you need to change the type of the property holding content to the `richtext`.
+To add quill to the AdminJS setup you need to change the type of the property holding content to the `richtext`.
 
 Assuming this is your DB schema (mongoose example)
 
@@ -28,7 +28,7 @@ const pageResourceOptions = {
   },
 }
 
-new AdminBro({
+new AdminJS({
   resources: [{ resource: Page, options: pageResourceOptions }]
 })
 ```
@@ -66,4 +66,4 @@ custom: {
 
 because the `link` function cannot be stringified.
 
-To bypass this restriction you will have to write your Edit Component. You can use [This Example](https://github.com/SoftwareBrothers/admin-bro/blob/master/src/frontend/components/property-type/richtext/edit.tsx) as a starting point. 
+To bypass this restriction you will have to write your Edit Component. You can use [This Example](https://github.com/SoftwareBrothers/adminjs/blob/master/src/frontend/components/property-type/richtext/edit.tsx) as a starting point. 

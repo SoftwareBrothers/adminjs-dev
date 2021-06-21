@@ -1,6 +1,3 @@
-[submodule "better-docs"]
-	path = better-docs
-	url = git@github.com:SoftwareBrothers/better-docs.git
 [submodule "adminjs"]
 	path = adminjs
 	url = git@github.com:SoftwareBrothers/adminjs.git
@@ -37,3 +34,6 @@
 [submodule "adminjs-nestjs"]
 	path = adminjs-nestjs
 	url = git@github.com:SoftwareBrothers/adminjs-nestjs.git
+[submodule "better-docs"]
+	path = better-docs
+	url = git@github.com:SoftwareBrothers/better-docs.git

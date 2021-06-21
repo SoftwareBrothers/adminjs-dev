@@ -1,7 +1,7 @@
 {
-  "name": "admin-bro-dev",
+  "name": "adminjs-dev",
   "version": "0.1.0",
-  "description": "wrapper repo for entire AdminBro core with couple of its plugins",
+  "description": "wrapper repo for entire AdminJS core with couple of its plugins",
   "main": "index.js",
   "scripts": {
     "docs": "jsdoc -c jsdoc.json",
@@ -9,20 +9,20 @@
     "debug": "nodemon --inspect=0.0.0.0:9222 --nolazy ./index.js",
     "start": "nodemon -e js,jsx,ts --ignore 'app-bundle.js' --ignore '*.spec.js' ./index.js",
     "start:ts": "nodemon -e js,jsx,ts --ignore 'app-bundle.js' --ignore '*.spec.js' --exec 'ts-node' ./index.js",
-    "start:express": "nodemon --ignore '*.spec.js' ./admin-bro-example-app/express/index.js"
+    "start:express": "nodemon --ignore '*.spec.js' ./adminjs-example-app/express/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SoftwareBrothers/admin-bro-dev.git"
+    "url": "git+https://github.com/SoftwareBrothers/adminjs-dev.git"
   },
   "author": "Wojciech Krysiak",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/SoftwareBrothers/admin-bro-dev/issues"
+    "url": "https://github.com/SoftwareBrothers/adminjs-dev/issues"
   },
-  "homepage": "https://github.com/SoftwareBrothers/admin-bro-dev#readme",
+  "homepage": "https://github.com/SoftwareBrothers/adminjs-dev#readme",
   "dependencies": {
-    "@admin-bro/design-system": "^1.3.2",
+    "@adminjs/design-system": "^1.3.2",
     "axios": "^0.19.2",
     "better-docs": "2.4.0-beta.4",
     "flat": "^5.0.0",

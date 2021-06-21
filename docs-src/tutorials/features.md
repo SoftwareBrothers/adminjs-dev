@@ -1,4 +1,4 @@
-in v3 of AdminBro, we introduced **AdminBro features**.
+in v3 of AdminJS, we introduced **AdminJS features**.
 
 From business perspective **Feature** is a chunk of code which solves one business problem and it can be applied to selected resource/resources.
 
@@ -24,9 +24,9 @@ Let me show you an example:
 ```javascript
 const User = require('./models/user')
 const argon2 = require('argon2')
-const hashPassword = require('@admin-bro/passwords')
+const hashPassword = require('@adminjs/passwords')
 
-const adminBroOptions = {
+const adminJsOptions = {
   resources: [
     {
       resource: User,
@@ -78,7 +78,7 @@ export { feature }
 As you can see, in the example above, that you have to take care of merging previous options,
 which could be problematic.
 
-Fortunately AdminBro gives you the helper functions for that:
+Fortunately AdminJS gives you the helper functions for that:
 
 - factory function {@link buildFeature}
 - and optional helper {@link mergeResourceOptions}, when you need more control.
@@ -86,7 +86,7 @@ Fortunately AdminBro gives you the helper functions for that:
 This is how a feature could look when we use {@link buildFeature} function:
 
 ```javascript
-const { buildFeature } = require('admin-bro')
+const { buildFeature } = require('adminjs')
 
 const feature = buildFeature({
   actions: {
@@ -100,14 +100,14 @@ const feature = buildFeature({
 
 ### Supported by SoftwareBrothers
 
-- {@link module:@admin-bro/passwords Password Hashing Feature}
-- {@link module:@admin-bro/upload Uploading files}
+- {@link module:@adminjs/passwords Password Hashing Feature}
+- {@link module:@adminjs/upload Uploading files}
 
 ### Community plugins
 
-- {@link https://github.com/johnyvelho/admin-bro-users-permissions UserPermissions}
+- {@link https://github.com/johnyvelho/adminjs-users-permissions UserPermissions}
 
-We've just added **features** to admin-bro@3. On this page, we will write all the things which we, or
+We've just added **features** to adminjs@3. On this page, we will write all the things which we, or
 the community, will create.
 
 So let's create the first feature!!!
