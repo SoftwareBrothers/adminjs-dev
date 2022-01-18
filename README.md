@@ -91,7 +91,7 @@ yarn install
 cd better-docs
 yarn install
 
-DOCS=../adminjs/src/**/*,../docs-src/**/*,../adminjs-mongoose/**/*,../adminjs-hapijs/**/*,../adminjs-expressjs/**/*,../adminjs-sequelizejs/**/* gulp
+DOCS=../adminjs/src/**/*,../docs-src/**/*,../adminjs-mongoose/**/*,../adminjs-hapijs/**/*,../adminjs-expressjs/**/*,../adminjs-sequelizejs/**/*,../adminjs-prisma/**/* yarn  --cwd better-docs/ gulp
 ```
 
 ## Publishing the documentation

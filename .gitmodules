@@ -37,3 +37,6 @@
 [submodule "better-docs"]
 	path = better-docs
 	url = git@github.com:SoftwareBrothers/better-docs.git
+[submodule "adminjs-prisma"]
+	path = adminjs-prisma
+	url = git@github.com:SoftwareBrothers/adminjs-prisma.git

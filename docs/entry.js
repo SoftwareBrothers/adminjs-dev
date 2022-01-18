@@ -23,7 +23,7 @@
     import './styles/iframe.css';
 
   
-      import _CustomWrapper from '../adminjs/docs-helpers/component.tsx';
+      import _CustomWrapper from '../adminjs/docs/component.tsx';
 
       window._CustomWrapper = _CustomWrapper;
 
@@ -171,10 +171,10 @@ reactComponents['RichText'] = Component46;
 import Component47 from '../adminjs-design-system/src/atoms/section.tsx';
 reactComponents['Section'] = Component47;
 
-import Component48 from '../adminjs/src/frontend/components/actions/show.tsx';
+import Component48 from '../adminjs/src/frontend/components/actions/bulk-delete.tsx';
 reactComponents['ShowAction'] = Component48;
 
-import Component49 from '../adminjs/src/frontend/components/actions/bulk-delete.tsx';
+import Component49 from '../adminjs/src/frontend/components/actions/show.tsx';
 reactComponents['ShowAction'] = Component49;
 
 import Component50 from '../adminjs/src/frontend/components/app/sidebar/sidebar-resource-section.tsx';
