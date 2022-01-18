@@ -72,7 +72,7 @@
       "navButtons": [
         {
           "label": "Demo",
-          "href": "https://demo.adminjs.co/admin",
+          "href": "https://admin-bro-example-app-staging.herokuapp.com/admin",
           "target": "_blank",
           "className": "is-primary is-outlined"
         },
