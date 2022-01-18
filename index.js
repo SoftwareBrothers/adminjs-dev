@@ -11030,6 +11030,80 @@ const $177797048784fb52$export$16e5ed149a4f9b50 = (i18n)=>{
 
 
 
+const $cf878fce331ff1e5$export$51cb4a1dbeddc712 = '.';
+
+
+
+const $f7a11ebc1be6b0d3$export$e2175660c636793b = (value, propertyType)=>{
+    if (propertyType === 'number') return Number(value);
+    if (propertyType === 'boolean') return Boolean(value);
+    if ([
+        'datetime',
+        'date'
+    ].includes(propertyType) && value !== null) return new Date(value);
+    return value;
+};
+
+
+const $aca80d2efdf54493$export$1396a613e17fc5f6 = (parentValue, subProperty)=>{
+    const path = subProperty.propertyPath.split($cf878fce331ff1e5$export$51cb4a1dbeddc712).slice(-1)[0];
+    const { type: type = 'string'  } = subProperty;
+    let value = parentValue[path];
+    if (type === 'mixed') {
+        const nestedSubProperties = subProperty.subProperties;
+        for (const nestedSubProperty of nestedSubProperties)if (subProperty.isArray) value = [
+            ...value
+        ].map((element)=>$aca80d2efdf54493$export$1396a613e17fc5f6(element, nestedSubProperty)
+        );
+        else value = $aca80d2efdf54493$export$1396a613e17fc5f6(value, nestedSubProperty);
+    } else value = $f7a11ebc1be6b0d3$export$e2175660c636793b(value, subProperty.type);
+    return {
+        ...parentValue,
+        [path]: value
+    };
+};
+
+
+
+
+
+
+const $f257a9106952eee9$export$7f3c467e21819f91 = (params, resource)=>{
+    const properties = resource.properties();
+    const preparedParams = {
+    };
+    for (const property of properties){
+        var ref;
+        let param = $c83b12262b3384be$export$40fa977508bcf282.get(params, property.path());
+        const key = property.path();
+        const propertyDecorator = (ref = resource._decorated) === null || ref === void 0 ? void 0 : ref.properties[key].toJSON();
+        // eslint-disable-next-line no-continue
+        if (param === undefined) continue;
+        if (property.type() !== 'mixed') preparedParams[key] = $f7a11ebc1be6b0d3$export$e2175660c636793b(param, property.type());
+        else {
+            if (propertyDecorator === null || propertyDecorator === void 0 ? void 0 : propertyDecorator.subProperties.length) {
+                const { subProperties: subProperties  } = propertyDecorator;
+                for (const subProperty of subProperties)if (propertyDecorator.isArray) param = param.map((p)=>$aca80d2efdf54493$export$1396a613e17fc5f6(p, subProperty)
+                );
+                else param = $aca80d2efdf54493$export$1396a613e17fc5f6(param, subProperty);
+            }
+            preparedParams[key] = param;
+        }
+    }
+    return preparedParams;
+};
+
+
+const $048ae133ceb576d7$export$de766f46bb7b9ea5 = {
+    convertParam: $f7a11ebc1be6b0d3$export$e2175660c636793b,
+    convertNestedParam: $aca80d2efdf54493$export$1396a613e17fc5f6,
+    DELIMITER: $cf878fce331ff1e5$export$51cb4a1dbeddc712,
+    prepareParams: $f257a9106952eee9$export$7f3c467e21819f91
+};
+
+
+
+
 
 
 const $e1192e4912f51733$export$2eb2128d6458539c = function(record, options = {
@@ -11199,7 +11273,9 @@ const $30cf2d580f3a6628$export$5002a7fa61628c70 = (onActionCall)=>{
         if (data.notice) addNotice(data.notice);
         if (data.redirectUrl && location.pathname !== data.redirectUrl) {
             const appended = $974f1534ed0256d1$export$5873a8025a5d100f(data.redirectUrl);
-            history.push(appended);
+            history.push(appended, {
+                previousPage: window.location.href
+            });
         }
         if (onActionCall) onActionCall(data);
     };
@@ -11339,7 +11415,9 @@ function $0dd229611dcc9113$export$8dda0c21d4d87ce9(resources) {
                 onClick: (event)=>{
                     if (resource.href) {
                         event.preventDefault();
-                        history.push(resource.href);
+                        history.push(resource.href, {
+                            previousPage: window.location.href
+                        });
                     }
                 }
             })
@@ -11348,9 +11426,11 @@ function $0dd229611dcc9113$export$8dda0c21d4d87ce9(resources) {
         history
     ]);
     // grouping resources into parents
-    const map = resources.filter((res)=>res.href
-    ) // first filter out resource which are not visible
-    .reduce((memo, resource)=>{
+    const map = resources// first filter out resources which are not visible
+    .filter((res)=>{
+        var ref;
+        return res.href && ((ref = res.navigation) === null || ref === void 0 ? void 0 : ref.show) !== false;
+    }).reduce((memo, resource)=>{
         var ref, ref1, ref2, ref3, ref4;
         // in case resource has the same name as parent we namespace it wit "resource-""
         const key = ((ref = resource.navigation) === null || ref === void 0 ? void 0 : ref.name) || [
@@ -11439,7 +11519,9 @@ const $7013cfa172558aeb$var$api = new $9f4269f78c13d196$export$2e2bcd8739ae039()
             const listActionResponse = response.data;
             if (listActionResponse.notice) onNotice(listActionResponse.notice);
             if (listActionResponse.redirectUrl) {
-                history.push(listActionResponse.redirectUrl);
+                history.push(listActionResponse.redirectUrl, {
+                    previousPage: window.location.href
+                });
                 return;
             }
             setRecords(listActionResponse.records);
@@ -11458,14 +11540,20 @@ const $7013cfa172558aeb$var$api = new $9f4269f78c13d196$export$2e2bcd8739ae039()
         return promise;
     };
     $bdtG2$react.useEffect(()=>{
-        if ($974f1534ed0256d1$export$3b1f529bc94220e1(location.search)) history.replace([
-            location.pathname,
-            $974f1534ed0256d1$export$a9f0f911fa12ec10(location.search).toString(), 
-        ].join('?'));
-        else fetchData();
+        if ($974f1534ed0256d1$export$3b1f529bc94220e1(location.search)) {
+            const locationState = location.state || {
+            };
+            if (!locationState.previousPage) locationState.previousPage = window.location.href;
+            history.replace({
+                pathname: location.pathname,
+                state: locationState,
+                search: $974f1534ed0256d1$export$a9f0f911fa12ec10(location.search).toString()
+            });
+        } else fetchData();
     }, [
         resourceId,
-        location.search
+        location.search,
+        location.state
     ]);
     return {
         records: records,
@@ -11695,13 +11783,18 @@ const $5e9d4c3e3d44d148$var$StyledLink = ($parcel$interopDefault($bdtG2$styledco
 const $5e9d4c3e3d44d148$var$h = new $b992f9c849e9d14a$export$2e2bcd8739ae039();
 const $5e9d4c3e3d44d148$export$184973cf4273d4e0 = (props)=>{
     const { resourceId: resourceId , showInDrawer: showInDrawer  } = props;
+    const location = $bdtG2$reactrouterdom.useLocation();
     const cssCloseIcon = showInDrawer ? 'ChevronRight' : 'ChevronLeft';
+    const { previousPage: previousPage  } = location.state || {
+    };
+    const previousPageUrl = previousPage ? new URL(previousPage) : null;
+    const backButtonUrl = previousPageUrl ? previousPageUrl.pathname + previousPageUrl.search : $5e9d4c3e3d44d148$var$h.resourceUrl({
+        resourceId: resourceId,
+        search: window.location.search
+    });
     return(/*#__PURE__*/ ($parcel$interopDefault($bdtG2$react)).createElement($5e9d4c3e3d44d148$var$StyledLink, {
         size: "icon",
-        to: $5e9d4c3e3d44d148$var$h.resourceUrl({
-            resourceId: resourceId,
-            search: window.location.search
-        }),
+        to: backButtonUrl,
         rounded: true,
         mr: "lg",
         type: "button"
@@ -12062,10 +12155,12 @@ const $626b3c3b5f447732$export$2e2bcd8739ae039 = (props)=>{
 
 
 
+
 const $f93fe4697f27fb35$var$List = (props)=>{
     const { property: property , record: record  } = props;
     const values = $c83b12262b3384be$export$40fa977508bcf282.get(record.params, property.path) || [];
-    return(/*#__PURE__*/ ($parcel$interopDefault($bdtG2$react)).createElement("span", null, `length: ${values.length}`));
+    const { translateProperty: translateProperty  } = $90a7b0831dd0c2e0$export$9fc83ad70ead8663();
+    return(/*#__PURE__*/ ($parcel$interopDefault($bdtG2$react)).createElement("span", null, `${translateProperty('length')}: ${values.length}`));
 };
 var $f93fe4697f27fb35$export$2e2bcd8739ae039 = $f93fe4697f27fb35$var$List;
 
@@ -12271,6 +12366,7 @@ const $ece84af00c23d10c$var$SelectEdit = (props)=>{
         isClearable: true,
         styles: styles,
         value: selected,
+        required: property.isRequired,
         options: property.availableValues,
         onChange: (s)=>{
             return onChange(property.path, (ref2 = s === null || s === void 0 ? void 0 : s.value) !== null && ref2 !== void 0 ? ref2 : '');
@@ -12293,6 +12389,7 @@ const $ece84af00c23d10c$var$TextEdit = (props)=>{
     return(/*#__PURE__*/ ($parcel$interopDefault($bdtG2$react)).createElement($bdtG2$adminjsdesignsystem.Input, {
         id: property.path,
         name: property.path,
+        required: property.isRequired,
         onChange: (e)=>setValue(e.target.value)
         ,
         onBlur: ()=>onChange(property.path, value)
@@ -12646,23 +12743,25 @@ class $f379f90d10e90907$export$ec91da630f36d5ea {
 var $f379f90d10e90907$export$2e2bcd8739ae039 = $f379f90d10e90907$export$ec91da630f36d5ea;
 
 
+
 const { PARAM_SEPARATOR: $9e2821c481c3735d$var$PARAM_SEPARATOR  } = $f379f90d10e90907$exports;
 const $9e2821c481c3735d$var$Filter = (props)=>{
     const { property: property , filter: filter , onChange: onChange  } = props;
+    const { translateProperty: translateProperty  } = $90a7b0831dd0c2e0$export$9fc83ad70ead8663();
     const fromKey = `${property.path}${$9e2821c481c3735d$var$PARAM_SEPARATOR}from`;
     const toKey = `${property.path}${$9e2821c481c3735d$var$PARAM_SEPARATOR}to`;
     const fromValue = filter[fromKey];
     const toValue = filter[toKey];
     return(/*#__PURE__*/ ($parcel$interopDefault($bdtG2$react)).createElement(($parcel$interopDefault($bdtG2$react)).Fragment, null, /*#__PURE__*/ ($parcel$interopDefault($bdtG2$react)).createElement($bdtG2$adminjsdesignsystem.FormGroup, {
         variant: "filter"
-    }, /*#__PURE__*/ ($parcel$interopDefault($bdtG2$react)).createElement($bdtG2$adminjsdesignsystem.Label, null, property.label), /*#__PURE__*/ ($parcel$interopDefault($bdtG2$react)).createElement($bdtG2$adminjsdesignsystem.Label, null, "- From: "), /*#__PURE__*/ ($parcel$interopDefault($bdtG2$react)).createElement($bdtG2$adminjsdesignsystem.DatePicker, {
+    }, /*#__PURE__*/ ($parcel$interopDefault($bdtG2$react)).createElement($bdtG2$adminjsdesignsystem.Label, null, property.label), /*#__PURE__*/ ($parcel$interopDefault($bdtG2$react)).createElement($bdtG2$adminjsdesignsystem.Label, null, `- ${translateProperty('from')}: `), /*#__PURE__*/ ($parcel$interopDefault($bdtG2$react)).createElement($bdtG2$adminjsdesignsystem.DatePicker, {
         value: fromValue,
         onChange: (data)=>onChange(fromKey, data)
         ,
         propertyType: property.type
     }), /*#__PURE__*/ ($parcel$interopDefault($bdtG2$react)).createElement($bdtG2$adminjsdesignsystem.Label, {
         mt: "default"
-    }, "- To: "), /*#__PURE__*/ ($parcel$interopDefault($bdtG2$react)).createElement($bdtG2$adminjsdesignsystem.DatePicker, {
+    }, `- ${translateProperty('to')}: `), /*#__PURE__*/ ($parcel$interopDefault($bdtG2$react)).createElement($bdtG2$adminjsdesignsystem.DatePicker, {
         value: toValue,
         onChange: (data)=>onChange(toKey, data)
         ,
@@ -13248,9 +13347,11 @@ const $fc571d75e2259f9e$export$2e2bcd8739ae039 = (props)=>{
     const submit = (event)=>{
         event.preventDefault();
         handleSubmit().then((response)=>{
-            if (response.data.redirectUrl) history.push($974f1534ed0256d1$export$5873a8025a5d100f(response.data.redirectUrl));
+            if (response.data.redirectUrl) history.push($974f1534ed0256d1$export$5873a8025a5d100f(response.data.redirectUrl), {
+                previousPage: window.location.href
+            });
             // if record has id === has been created
-            if (response.data.record.id) handleChange({
+            if (response.data.record.id && !Object.keys(response.data.record.errors).length) handleChange({
                 params: {
                 },
                 populated: {
@@ -13288,7 +13389,8 @@ const $fc571d75e2259f9e$export$2e2bcd8739ae039 = (props)=>{
         variant: "primary",
         size: "lg",
         type: "submit",
-        "data-testid": "button-save"
+        "data-testid": "button-save",
+        disabled: loading
     }, loading ? /*#__PURE__*/ ($parcel$interopDefault($bdtG2$react)).createElement($bdtG2$adminjsdesignsystem.Icon, {
         icon: "Fade",
         spin: true
@@ -13318,7 +13420,9 @@ const $7e38640a3e4c1b63$export$2e2bcd8739ae039 = (props)=>{
     const submit = (event)=>{
         event.preventDefault();
         handleSubmit().then((response)=>{
-            if (response.data.redirectUrl) history.push($974f1534ed0256d1$export$5873a8025a5d100f(response.data.redirectUrl));
+            if (response.data.redirectUrl) history.push($974f1534ed0256d1$export$5873a8025a5d100f(response.data.redirectUrl), {
+                previousPage: window.location.href
+            });
         });
         return false;
     };
@@ -13349,7 +13453,8 @@ const $7e38640a3e4c1b63$export$2e2bcd8739ae039 = (props)=>{
         variant: "primary",
         size: "lg",
         type: "submit",
-        "data-testid": "button-save"
+        "data-testid": "button-save",
+        disabled: loading
     }, loading ? /*#__PURE__*/ ($parcel$interopDefault($bdtG2$react)).createElement($bdtG2$adminjsdesignsystem.Icon, {
         icon: "Fade",
         spin: true
@@ -13773,7 +13878,10 @@ const $d814d0800de096d0$export$2e2bcd8739ae039 = ({ resource: resource , setTag:
         const search = new URLSearchParams(location.search);
         search.set('page', pageNumber.toString());
         history.push({
-            search: search.toString()
+            search: search.toString(),
+            state: {
+                previousPage: window.location.href
+            }
         });
     };
     return(/*#__PURE__*/ ($parcel$interopDefault($bdtG2$react)).createElement($bdtG2$adminjsdesignsystem.Box, {
@@ -13868,7 +13976,9 @@ const $7fe12c84e209a12e$var$mapDispatchToProps = (dispatch)=>({
                 const search = new URLSearchParams(window.location.search);
                 // bulk function have recordIds in the URL so it has to be stripped before redirect
                 search.delete('recordIds');
-                history.push($974f1534ed0256d1$export$5873a8025a5d100f(response.data.redirectUrl, search.toString()));
+                history.push($974f1534ed0256d1$export$5873a8025a5d100f(response.data.redirectUrl, search.toString()), {
+                    previousPage: window.location.href
+                });
             }
         }).catch((error)=>{
             setLoading(false);
@@ -13899,7 +14009,8 @@ const $7fe12c84e209a12e$var$mapDispatchToProps = (dispatch)=>({
     )))), /*#__PURE__*/ ($parcel$interopDefault($bdtG2$react)).createElement($bdtG2$adminjsdesignsystem.DrawerFooter, null, /*#__PURE__*/ ($parcel$interopDefault($bdtG2$react)).createElement($bdtG2$adminjsdesignsystem.Button, {
         variant: "primary",
         size: "lg",
-        onClick: handleClick
+        onClick: handleClick,
+        disabled: loading
     }, loading ? /*#__PURE__*/ ($parcel$interopDefault($bdtG2$react)).createElement($bdtG2$adminjsdesignsystem.Icon, {
         icon: "Fade",
         spin: true

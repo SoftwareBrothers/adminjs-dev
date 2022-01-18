@@ -40,3 +40,4 @@
 [submodule "adminjs-prisma"]
 	path = adminjs-prisma
 	url = git@github.com:SoftwareBrothers/adminjs-prisma.git
+	branch = main
