@@ -56,7 +56,6 @@
       }
     },
     "better-docs": {
-      "landing": "./docs-src/landing.html",
       "logo": "images/logo-reg.svg",
       "title": "AdminJS - Auto-generated admin panel for node.js with react",
       "component": {
