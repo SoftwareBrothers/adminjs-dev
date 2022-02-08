@@ -1,22 +1,38 @@
 {
   "name": "adminjs-dev",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "wrapper repo for entire AdminJS core with couple of its plugins",
   "main": "index.js",
+  "author": "Wojciech Krysiak",
+  "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
   "scripts": {
     "docs": "jsdoc -c jsdoc.json",
     "validate-docs": "jsdoc -c jsdoc-test.json",
     "debug": "nodemon --inspect=0.0.0.0:9222 --nolazy ./index.js",
     "start": "nodemon -e js,jsx,ts --ignore 'app-bundle.js' --ignore '*.spec.js' ./index.js",
     "start:ts": "nodemon -e js,jsx,ts --ignore 'app-bundle.js' --ignore '*.spec.js' --exec 'ts-node' ./index.js",
-    "start:express": "nodemon --ignore '*.spec.js' ./adminjs-example-app/express/index.js"
+    "start:express": "nodemon --ignore '*.spec.js' ./adminjs-example-app/express/index.js",
+    "start:example": "yarn workspace example dev:watch",
+    "bootstrap:adminjs": "yarn workspace adminjs build && yarn workspace adminjs bundle && yarn workspace adminjs types",
+    "bootstrap:design-system": "yarn workspace @adminjs/design-system build && yarn workspace @adminjs/design-system bundle",
+    "bootstrap:mongoose": "yarn workspace @adminjs/mongoose build",
+    "bootstrap:sequelize": "yarn workspace @adminjs/sequelize build",
+    "bootstrap:express": "yarn workspace @adminjs/express build",
+    "bootstrap:example": "npm-run-all bootstrap:adminjs bootstrap:design-system bootstrap:mongoose bootstrap:sequelize bootstrap:express",
+    "dev:adminjs": "yarn workspace adminjs dev",
+    "dev:example": "npm-run-all --parallel start:example dev:adminjs",
+    "docker:up": "docker-compose -f infrastructure/docker-compose.yml up"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SoftwareBrothers/adminjs-dev.git"
   },
-  "author": "Wojciech Krysiak",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/SoftwareBrothers/adminjs-dev/issues"
   },
@@ -26,6 +42,7 @@
     "axios": "^0.19.2",
     "better-docs": "2.4.0-beta.4",
     "flat": "^5.0.0",
+    "hapi": "^18.1.0",
     "quill": "^1.3.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -43,6 +60,7 @@
     "@babel/preset-typescript": "^7.16.7",
     "@carbon/icons-react": "^10.44.0",
     "cssnano": "^5.0.15",
+    "eslint-plugin-node": "^11.1.0",
     "jsdoc": "^3.6.7",
     "jsdoc-escape-at": "^1.0.1",
     "jsdoc-mermaid": "^1.0.0",
@@ -52,7 +70,7 @@
     "polished": "^4.1.3",
     "react-datepicker": "^4.6.0",
     "styled-system": "^5.1.5",
-    "typescript": "^4.5.4"
+    "typescript": "^4.5.5"
   },
   "engines": {
     "node": ">=12"
