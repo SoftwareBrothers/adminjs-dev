@@ -8,14 +8,15 @@
       "./adminjs-hapijs",
       "./adminjs-mongoose/src",
       "./adminjs-sequelizejs",
-      "./adminjs-typeorm/src",
+      "./adminjs-typeorm",
       "./adminjs-expressjs",
       "./adminjs-firebase-functions",
       "./adminjs-upload/src",
       "./adminjs-passwords/src",
       "./adminjs-design-system/src",
       "./adminjs-nestjs/src",
-      "./adminjs-prisma"
+      "./adminjs-prisma",
+      "./adminjs-mikroorm"
     ],
     "includePattern": "\\.(jsx|js|ts|tsx)$",
     "excludePattern": "(node_modules/|docs|(bundle.*\\.js)|cli.ts)"
