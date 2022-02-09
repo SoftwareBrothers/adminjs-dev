@@ -1,55 +1,72 @@
 [submodule "adminjs"]
 	path = adminjs
 	url = git@github.com:SoftwareBrothers/adminjs.git
+	branch = master
 [submodule "adminjs-hapijs"]
 	path = adminjs-hapijs
 	url = git@github.com:SoftwareBrothers/adminjs-hapijs.git
+	branch = master
 [submodule "adminjs-mongoose"]
 	path = adminjs-mongoose
 	url = git@github.com:SoftwareBrothers/adminjs-mongoose.git
+	branch = master
 [submodule "adminjs-sequelizejs"]
 	path = adminjs-sequelizejs
 	url = git@github.com:SoftwareBrothers/adminjs-sequelizejs.git
+	branch = master
 [submodule "adminjs-example-app"]
 	path = adminjs-example-app
 	url = git@github.com:SoftwareBrothers/adminjs-example-app.git
+	branch = master
 [submodule "adminjs-expressjs"]
 	path = adminjs-expressjs
 	url = git@github.com:SoftwareBrothers/adminjs-expressjs.git
+	branch = master
 [submodule "adminjs-typeorm"]
 	path = adminjs-typeorm
 	url = git@github.com:SoftwareBrothers/adminjs-typeorm.git
+	branch = master
 [submodule "adminjs-firebase-functions"]
 	path = adminjs-firebase-functions
 	url = git@github.com:SoftwareBrothers/adminjs-firebase-functions.git
+	branch = master
 [submodule "adminjs-design-system"]
 	path = adminjs-design-system
 	url = git@github.com:SoftwareBrothers/adminjs-design-system.git
+	branch = master
 [submodule "adminjs-upload"]
 	path = adminjs-upload
 	url = git@github.com:SoftwareBrothers/adminjs-upload.git
+	branch = master
 [submodule "adminjs-passwords"]
 	path = adminjs-passwords
 	url = git@github.com:SoftwareBrothers/adminjs-passwords.git
+	branch = master
 [submodule "adminjs-nestjs"]
 	path = adminjs-nestjs
 	url = git@github.com:SoftwareBrothers/adminjs-nestjs.git
+	branch = master
 [submodule "better-docs"]
 	path = better-docs
 	url = git@github.com:SoftwareBrothers/better-docs.git
+	branch = master
 [submodule "adminjs-prisma"]
 	path = adminjs-prisma
 	url = git@github.com:SoftwareBrothers/adminjs-prisma.git
 	branch = main
-[submodule "adminjs-mikroorm"]
-	path = adminjs-mikroorm
-	url = git@github.com:SoftwareBrothers/adminjs-mikroorm.git
-[submodule "adminjs-fastify"]
-	path = adminjs-fastify
-	url = git@github.com:SoftwareBrothers/adminjs-fastify.git
-[submodule "adminjs-import-export"]
-	path = adminjs-import-export
-	url = git@github.com:SoftwareBrothers/adminjs-import-export.git
 [submodule "adminjs-logger"]
 	path = adminjs-logger
 	url = git@github.com:SoftwareBrothers/adminjs-logger.git
+	branch = master
+[submodule "adminjs-import-export"]
+	path = adminjs-import-export
+	url = git@github.com:SoftwareBrothers/adminjs-import-export.git
+	branch = main
+[submodule "adminjs-mikroorm"]
+	path = adminjs-mikroorm
+	url = git@github.com:SoftwareBrothers/adminjs-mikroorm.git
+	branch = master
+[submodule "adminjs-fastify"]
+	path = adminjs-fastify
+	url = git@github.com:SoftwareBrothers/adminjs-fastify.git
+	branch = main
