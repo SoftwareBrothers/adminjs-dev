@@ -70,3 +70,7 @@
 	path = better-docs
 	url = git@github.com:SoftwareBrothers/better-docs.git
 	branch = master
+[submodule "packages/adminjs-bundler"]
+	path = packages/adminjs-bundler
+	url = git@github.com:SoftwareBrothers/adminjs-bundler.git
+	branch = main

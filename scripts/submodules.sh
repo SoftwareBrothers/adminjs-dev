@@ -20,3 +20,4 @@ git submodule add -b master git@github.com:SoftwareBrothers/adminjs-logger.git p
 git submodule add -b main git@github.com:SoftwareBrothers/adminjs-import-export.git packages/adminjs-import-export
 git submodule add -b master git@github.com:SoftwareBrothers/adminjs-mikroorm.git packages/adminjs-mikroorm
 git submodule add -b main git@github.com:SoftwareBrothers/adminjs-fastify.git packages/adminjs-fastify
+git submodule add -b main git@github.com:SoftwareBrothers/adminjs-bundler.git packages/adminjs-bundler
