@@ -1,7 +1,5 @@
 ## AdminJS Dev/Documentation
 
-parcel watch ./src/frontend/app.jsx --out-dir ./src/frontend/assets/scripts --out-file app.bundle.js --no-hmr
-
 This is a wrapper repo for the entire AdminJS core with a couple of plugins. If you are a developer and you want to work on the AdminJS infrastructure - this is the right repository.
 
 ## OpenSource SoftwareBrothers community
@@ -10,52 +8,88 @@ This is a wrapper repo for the entire AdminJS core with a couple of plugins. If 
 
 ## Setting up
 
-All AdminJS plugins are embedded as git submodules. To clone the entire repo with all the dependencies simply run:
+### Clone
 
-```bash
-git clone --recurse-submodules https://github.com/SoftwareBrothers/adminjs-dev
+All AdminJS plugins are embedded as git submodules in `packages` with yarn workspace structure.
+To clone the entire repo with all the dependencies (`--recurse-submodules`) simply run:
+
+```sh
+$ git clone --recurse-submodules https://github.com/SoftwareBrothers/adminjs-dev
 ```
 
-First of all you need databases. If you have already running MySQL, PostgreSQL and MongoDB on your host machine then skip this step. Otherwise we made it easier for you with docker-compose. Enter the `./infrastructure` directory and run docker:
+### Bootstrap
 
-```
-cd infrastructure
-docker-compose up
-```
+At the very beginning you have to bootstrap all project dependencies. Please use yarn `bootstrap` script, VSCode task or just run `bootstrap.sh` script from console.
 
-After this enter the adminjs directory:
-```
->> cd adminjs
+```sh
+$ yarn bootstrap
+# or
+$ chmod +x ./scripts/bootstrap.sh && ./scripts/bootstrap.sh
 ```
 
-and run there following commands:
+### Development
 
-```
->> yarn install && yarn link && NODE_ENV=development yarn bundle:globals && yarn dev
-```
+Your local environment should bootstrap successfully. Then to work on example app you need databases. **If you have already running MySQL, PostgreSQL and MongoDB on your host machine then skip this step.** Otherwise we made it easier for you with docker-compose. Enter the `./infrastructure` directory and run docker:
 
-And finally on the other tab of console enter the directory of our example app:
-
-```
->> cd adminjs-example-app
+```sh
+$ yarn docker:up
 ```
 
-and run following commands:
+You will work on example app so to run it in dev mode with dev mode of AdminJS too just run:
 
-```
->> yarn install && yarn link adminjs && yarn dev
+```sh
+$ yarn dev
 ```
 
-That's all. You can now open admin panel on your browser: http://localhost:8080/admin
+or in two separate terminals
+
+```sh
+# first console
+$ yarn workspace adminjs dev
+# second console
+$ yarn workspace example dev:watch
+```
+
+**That's all**. You can now open admin panel on your browser: http://localhost:8080/admin. All changes you will make in AdminJS will be available after refresh page.
+
+## Working on plugins
+
+If you want to work on some plugins with auto re-build just modify `watch` directories in main `package.json` (`start:example`) eg. to work on `adminjs-design-system`
+
+```json
+{
+  "scripts": {
+    "start:example": "yarn workspace example dev:watch --watch ../../packages/adminjs-design-system/build",
+  }
+}
+```
+or use two terminals with watch parameter of example app
+
+```sh
+# first console
+$ yarn workspace @adminjs/design-system dev
+# second console
+$ yarn workspace example dev:watch --watch ../../packages/adminjs-design-system/build
+```
+
+## Note about workspaces
+
+This monorepo contains packages as git submodules. If you want to run script from package just use `yarn workspace [name] [script]` command.
+To list available workspaces run `yarn workspaces info`.
+
+For example to build AdminJS or some plugin run
+```sh
+# Build AdminJS
+$ yarn workspace adminjs build
+# Build AdminJS.Typeorm
+$ yarn workspace @adminjs/design-system build
+```
+
+_You don't have to use `yarn link` anymore._
 
 ## Note about the git
 
 As mentioned before, this repo contains other repositories as git submodules. You can change their branches, modify the content and commit changes to them separately. Committing to this repo won't affect any submodule.
-
-## Note about yarn linking
-
-Since we are using local versions of the packages (via git submodules) we 
-have to inform npm/yarn about that. It is done via `yarn link` command (you can also use `npm link`). Take a look at the [dockerfile](infrastructure/Dockerfile) to see how it's used if you want to do the same thing without the docker.
 
 ## Documentation
 
@@ -86,7 +120,7 @@ You can enter the `better-docs` folder and develop documentation with live reloa
 In case of any problems you might need to remove the .cache folder form the root repo (created
 by parcel bundler)
 
-```bash
+```sh
 yarn install
 cd better-docs
 yarn install
@@ -102,7 +136,7 @@ and old versions (sitting in `docs-old` folder).
 In order to deploy it run `firebase deploy` (after generating documentation of course) :) It will
 deploy all firebase hosting targets stored in `.fireabserc`
 
-Documentation is 
+Documentation is
 
 ## License
 

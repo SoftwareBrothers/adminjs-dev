@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "coenraads.bracket-pair-colorizer",
+    "dbaeumer.vscode-eslint",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "msjsdiag.debugger-for-chrome",
+    "quicktype.quicktype",
+  ]
+}

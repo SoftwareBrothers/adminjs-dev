@@ -10,35 +10,35 @@ const concat = require('gulp-concat')
 const path = require('path')
 
 gulp.task('sass', () => {
-  gulp.src('adminjs/src/frontend/styles/**/*.sass')
+  gulp.src('packages/adminjs/src/frontend/styles/**/*.sass')
     .pipe(sass({
       outputStyle: 'compressed',
     }))
     .pipe(autoprefixer())
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('adminjs/src/frontend/assets/styles'))
+    .pipe(gulp.dest('packages/adminjs/src/frontend/assets/styles'))
 })
 
 gulp.task('js', () => {
-  gulp.src(path.join('adminjs/src/frontend/scripts/', '*.js'), { base: 'app' })
+  gulp.src(path.join('packages/adminjs/src/frontend/scripts/', '*.js'), { base: 'app' })
     .pipe(concat('app.js'))
     .pipe(babel({
       presets: ['@babel/env'],
     }))
     .pipe(uglify())
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('adminjs/src/frontend/assets/scripts'))
+    .pipe(gulp.dest('packages/adminjs/src/frontend/assets/scripts'))
 })
 
 gulp.task('react', () => {
-  gulp.src(path.join('adminjs/src/frontend/app.js'), { base: 'app' })
+  gulp.src(path.join('packages/adminjs/src/frontend/app.js'), { base: 'app' })
     .pipe(concat('app.bundle.js'))
     .pipe(babel({
       presets: ['@babel/env', '@babel/react'],
     }))
     .pipe(uglify())
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('adminjs/src/frontend/assets/scripts'))
+    .pipe(gulp.dest('packages/adminjs/src/frontend/assets/scripts'))
 })
 
 gulp.task('debug', () => {
@@ -46,16 +46,16 @@ gulp.task('debug', () => {
 })
 
 gulp.task('dbCreate', (done) => {
-  spawn('yarn', ['run', 'sequelize', 'db:create'], { cwd: 'adminjs-example-app/', stdio: 'inherit' })
+  spawn('yarn', ['run', 'sequelize', 'db:create'], { cwd: 'packages/adminjs-example-app/', stdio: 'inherit' })
     .on('close', () => {
-      spawn('yarn', ['run', 'sequelize', 'db:migrate'], { cwd: 'adminjs-example-app/', stdio: 'inherit' })
+      spawn('yarn', ['run', 'sequelize', 'db:migrate'], { cwd: 'packages/adminjs-example-app/', stdio: 'inherit' })
       .on('close', done)
     });
 });
 
 gulp.task('watch', () => {
-  gulp.watch('adminjs/src/frontend/styles/**/*.sass', ['sass'])
-  gulp.watch('adminjs/src/frontend/scripts/**/*.js', ['js'])
+  gulp.watch('packages/adminjs/src/frontend/styles/**/*.sass', ['sass'])
+  gulp.watch('packages/adminjs/src/frontend/scripts/**/*.js', ['js'])
 })
 
 gulp.task('default', ['dbCreate', 'sass', 'js', 'watch', 'debug'])

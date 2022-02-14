@@ -8,6 +8,20 @@
       "script": "cover",
       "path": "adminjs/",
       "problemMatcher": []
+    },
+    {
+      "type": "shell",
+      "command": "${workspaceFolder}/scripts/bootstrap.sh",
+      "problemMatcher": [],
+      "label": "Bootstrap monorepo",
+      "detail": "Run script for bootstrap all project for development"
+    },
+    {
+      "type": "npm",
+      "script": "dev",
+      "problemMatcher": [],
+      "label": "Run dev",
+      "detail": "Run project in development mode"
     }
   ]
 }

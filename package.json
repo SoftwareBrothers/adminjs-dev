@@ -1,7 +1,7 @@
 {
   "name": "adminjs-dev",
   "version": "0.2.0",
-  "description": "wrapper repo for entire AdminJS core with couple of its plugins",
+  "description": "Monorepo for AdminJS core with plugins",
   "author": "Wojciech Krysiak",
   "license": "MIT",
   "private": true,
@@ -14,19 +14,13 @@
     "docs": "jsdoc -c jsdoc.json",
     "validate-docs": "jsdoc -c jsdoc-test.json",
     "debug": "nodemon --inspect=0.0.0.0:9222 --nolazy ./index.js",
-    "start": "nodemon -e js,jsx,ts --ignore 'app-bundle.js' --ignore '*.spec.js' ./index.js",
-    "start:ts": "nodemon -e js,jsx,ts --ignore 'app-bundle.js' --ignore '*.spec.js' --exec 'ts-node' ./index.js",
-    "start:express": "nodemon --ignore '*.spec.js' ./adminjs-example-app/express/index.js",
-    "start:example": "yarn workspace example dev:watch",
-    "bootstrap:adminjs": "yarn workspace adminjs build && yarn workspace adminjs bundle && yarn workspace adminjs types",
-    "bootstrap:design-system": "yarn workspace @adminjs/design-system build && yarn workspace @adminjs/design-system bundle",
-    "bootstrap:mongoose": "yarn workspace @adminjs/mongoose build",
-    "bootstrap:sequelize": "yarn workspace @adminjs/sequelize build",
-    "bootstrap:express": "yarn workspace @adminjs/express build",
-    "bootstrap:example": "npm-run-all bootstrap:adminjs bootstrap:design-system bootstrap:mongoose bootstrap:sequelize bootstrap:express",
+    "bootstrap": "./scripts/bootstrap.sh",
+    "start": "yarn start:example",
+    "start:example": "yarn workspace example dev:watch --watch ../../packages/adminjs/lib",
+    "dev": "npm-run-all --parallel start:example dev:adminjs",
     "dev:adminjs": "yarn workspace adminjs dev",
-    "dev:example": "npm-run-all --parallel start:example dev:adminjs",
-    "docker:up": "docker-compose -f infrastructure/docker-compose.yml up"
+    "dev:design-system": "yarn workspace @adminjs/design-system dev",
+    "docker:up": "docker-compose -f infrastructure/docker-compose.yml up -d"
   },
   "repository": {
     "type": "git",
@@ -36,40 +30,14 @@
     "url": "https://github.com/SoftwareBrothers/adminjs-dev/issues"
   },
   "homepage": "https://github.com/SoftwareBrothers/adminjs-dev#readme",
-  "dependencies": {
-    "@adminjs/design-system": "^2.0.4",
-    "axios": "^0.19.2",
-    "better-docs": "2.4.0-beta.4",
-    "flat": "^5.0.0",
-    "hapi": "^18.1.0",
-    "quill": "^1.3.7",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-i18next": "^11.7.0",
-    "react-redux": "^7.2.1",
-    "react-router-dom": "^5.2.0",
-    "react-select": "^2.4.2",
-    "redux": "^4.0.5",
-    "styled-components": "^5.1.1"
-  },
   "devDependencies": {
-    "@babel/core": "^7.16.7",
-    "@babel/preset-env": "^7.16.8",
-    "@babel/preset-react": "^7.16.7",
-    "@babel/preset-typescript": "^7.16.7",
-    "@carbon/icons-react": "^10.44.0",
-    "cssnano": "^5.0.15",
-    "eslint-plugin-node": "^11.1.0",
-    "jsdoc": "^3.6.7",
+    "better-docs": "2.4.0-beta.4",
+    "jsdoc": "3.6.7",
     "jsdoc-escape-at": "^1.0.1",
     "jsdoc-mermaid": "^1.0.0",
     "jsdoc-typeof-plugin": "^1.0.0",
-    "jw-paginate": "^1.0.4",
-    "parcel": "^2.2.0",
-    "polished": "^4.1.3",
     "react-datepicker": "^4.6.0",
-    "styled-system": "^5.1.5",
-    "typescript": "^4.5.5"
+    "rollup": "2.32.1"
   },
   "engines": {
     "node": ">=12"
