@@ -4,22 +4,26 @@
   },
   "source": {
     "include": [
-      "./adminjs-design-system/src",
-      "./adminjs-expressjs",
-      "./adminjs-firebase-functions",
-      "./adminjs-hapijs",
-      "./adminjs-mikroorm",
-      "./adminjs-mongoose/src",
-      "./adminjs-nestjs/src",
-      "./adminjs-passwords/src",
-      "./adminjs-prisma",
-      "./adminjs-sequelizejs",
-      "./adminjs-typeorm",
-      "./adminjs-upload/src",
-      "./adminjs/src"
+      "./packages/adminjs/src",
+      "./packages/adminjs-bundler/src",
+      "./packages/adminjs-design-system/src",
+      "./packages/adminjs-expressjs/src",
+      "./packages/adminjs-fastify/src",
+      "./packages/adminjs-firebase-functions/src",
+      "./packages/adminjs-hapijs",
+      "./packages/adminjs-import-export/src",
+      "./packages/adminjs-logger/src",
+      "./packages/adminjs-mikroorm/src",
+      "./packages/adminjs-mongoose/src",
+      "./packages/adminjs-nestjs/src",
+      "./packages/adminjs-passwords/src",
+      "./packages/adminjs-prisma/src",
+      "./packages/adminjs-sequelizejs/src",
+      "./packages/adminjs-typeorm/src",
+      "./packages/adminjs-upload/src"
     ],
     "includePattern": "\\.(jsx|js|ts|tsx)$",
-    "excludePattern": "(node_modules/|docs|(bundle.*\\.js)|cli.ts)"
+    "excludePattern": "node_modules/|(bundle.*\\.js)|cli.ts|adminjs/docs|(\\.spec.ts)$"
   },
   "plugins": [
     "plugins/markdown",
