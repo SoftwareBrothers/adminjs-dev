@@ -1,6 +1,6 @@
 ## Idea of Resources
 
-What is a __Resource__ in AdmiBro? - __Resource is everything that you can manage__
+What is a __Resource__ in AdminJS? - __Resource is everything that you can manage__
 (CRUD - create, read, update, destroy). Most often it is a Model from your ORM.
 
 The entire idea od AdminJS is to manage resources of all kinds. It doesn't matter if you
@@ -24,7 +24,7 @@ const AdminJSMongoose = require('@adminjs/mongoose')
 AdminJS.registerAdapter(AdminJSMongoose)
 ```
 
-## Passing resources to AminBro
+## Passing resources to AdminJS
 
 So you know how to register an adapter - now let's take a look of how to add resources that
 they can be seen in AdminJS.

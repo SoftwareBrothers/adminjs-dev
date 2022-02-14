@@ -4,18 +4,19 @@
   },
   "source": {
     "include": [
-      "./adminjs/src",
-      "./adminjs-hapijs",
-      "./adminjs-mongoose/src",
-      "./adminjs-sequelizejs",
-      "./adminjs-typeorm/src",
+      "./adminjs-design-system/src",
       "./adminjs-expressjs",
       "./adminjs-firebase-functions",
-      "./adminjs-upload/src",
-      "./adminjs-passwords/src",
-      "./adminjs-design-system/src",
+      "./adminjs-hapijs",
+      "./adminjs-mikroorm",
+      "./adminjs-mongoose/src",
       "./adminjs-nestjs/src",
-      "./adminjs-prisma"
+      "./adminjs-passwords/src",
+      "./adminjs-prisma",
+      "./adminjs-sequelizejs",
+      "./adminjs-typeorm",
+      "./adminjs-upload/src",
+      "./adminjs/src"
     ],
     "includePattern": "\\.(jsx|js|ts|tsx)$",
     "excludePattern": "(node_modules/|docs|(bundle.*\\.js)|cli.ts)"

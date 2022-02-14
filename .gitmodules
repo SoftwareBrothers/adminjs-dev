@@ -73,4 +73,5 @@
 [submodule "packages/adminjs-bundler"]
 	path = packages/adminjs-bundler
 	url = git@github.com:SoftwareBrothers/adminjs-bundler.git
-	branch = main
+    branch = main
+    
