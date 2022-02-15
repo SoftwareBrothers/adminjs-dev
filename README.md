@@ -10,6 +10,29 @@ This is a wrapper repo for the entire AdminJS core with a couple of plugins. If 
 
 [Join the community](https://join.slack.com/t/adminbro/shared_invite/zt-djsqxxpz-_YCS8UMtQ9Ade6DPuLR7Zw) to get help and be inspired.
 
+## GitHub workflows
+
+| Package                     | CI/CD                                                                                                                                                                                            |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| @adminjs                    | <a href="https://github.com/SoftwareBrothers/adminjs/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs/workflows/CI/CD/badge.svg"></a>                                       |
+| @adminjs/bundler            | <a href="https://github.com/SoftwareBrothers/adminjs-bundler/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-bundler/workflows/CI/CD/badge.svg"></a>                       |
+| @adminjs/design-system      | <a href="https://github.com/SoftwareBrothers/adminjs-design-system/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-design-system/workflows/CI/CD/badge.svg"></a>           |
+| @adminjs/example-app        | <a href="https://github.com/SoftwareBrothers/adminjs-example-app/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-example-app/workflows/CI/CD/badge.svg"></a>               |
+| @adminjs/expressjs          | <a href="https://github.com/SoftwareBrothers/adminjs-expressjs/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-expressjs/workflows/CI/CD/badge.svg"></a>                   |
+| @adminjs/fastify            | <a href="https://github.com/SoftwareBrothers/adminjs-fastify/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-fastify/workflows/CI/CD/badge.svg"></a>                       |
+| @adminjs/firebase-functions | <a href="https://github.com/SoftwareBrothers/adminjs-firebase-functions/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-firebase-functions/workflows/CI/CD/badge.svg"></a> |
+| @adminjs/hapijs             | <a href="https://github.com/SoftwareBrothers/adminjs-hapijs/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-hapijs/workflows/CI/CD/badge.svg"></a>                         |
+| @adminjs/import             | <a href="https://github.com/SoftwareBrothers/adminjs-import-export/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-import-export/workflows/CI/CD/badge.svg"></a>           |
+| @adminjs/logger             | <a href="https://github.com/SoftwareBrothers/adminjs-logger/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-logger/workflows/CI/CD/badge.svg"></a>                         |
+| @adminjs/mikroorm           | <a href="https://github.com/SoftwareBrothers/adminjs-mikroorm/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-mikroorm/workflows/CI/CD/badge.svg"></a>                     |
+| @adminjs/mongoose           | <a href="https://github.com/SoftwareBrothers/adminjs-mongoose/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-mongoose/workflows/CI/CD/badge.svg"></a>                     |
+| @adminjs/nestjs             | <a href="https://github.com/SoftwareBrothers/adminjs-nestjs/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-nestjs/workflows/CI/CD/badge.svg"></a>                         |
+| @adminjs/passwords          | <a href="https://github.com/SoftwareBrothers/adminjs-passwords/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-passwords/workflows/CI/CD/badge.svg"></a>                   |
+| @adminjs/prisma             | <a href="https://github.com/SoftwareBrothers/adminjs-prisma/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-prisma/workflows/CI/CD/badge.svg"></a>                         |
+| @adminjs/sequelizejs        | <a href="https://github.com/SoftwareBrothers/adminjs-sequelizejs/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-sequelizejs/workflows/CI/CD/badge.svg"></a>               |
+| @adminjs/typeorm            | <a href="https://github.com/SoftwareBrothers/adminjs-typeorm/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-typeorm/workflows/CI/CD/badge.svg"></a>                       |
+| @adminjs/upload             | <a href="https://github.com/SoftwareBrothers/adminjs-upload/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-upload/workflows/CI/CD/badge.svg"></a>                         |
+
 ## Setting up
 
 ### Clone
@@ -142,29 +165,6 @@ and old versions (sitting in `docs-old` folder).
 
 In order to deploy it run `firebase deploy` (after generating documentation of course) :) It will
 deploy all firebase hosting targets stored in `.fireabserc`
-
-## GitHub workflows
-
-| Package                     | CI/CD                                                                                                                                                                                            |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| @adminjs                    | <a href="https://github.com/SoftwareBrothers/adminjs/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs/workflows/CI/CD/badge.svg"></a>                                       |
-| @adminjs/bundler            | <a href="https://github.com/SoftwareBrothers/adminjs-bundler/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-bundler/workflows/CI/CD/badge.svg"></a>                       |
-| @adminjs/design-system      | <a href="https://github.com/SoftwareBrothers/adminjs-design-system/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-design-system/workflows/CI/CD/badge.svg"></a>           |
-| @adminjs/example-app        | <a href="https://github.com/SoftwareBrothers/adminjs-example-app/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-example-app/workflows/CI/CD/badge.svg"></a>               |
-| @adminjs/expressjs          | <a href="https://github.com/SoftwareBrothers/adminjs-expressjs/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-expressjs/workflows/CI/CD/badge.svg"></a>                   |
-| @adminjs/fastify            | <a href="https://github.com/SoftwareBrothers/adminjs-fastify/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-fastify/workflows/CI/CD/badge.svg"></a>                       |
-| @adminjs/firebase-functions | <a href="https://github.com/SoftwareBrothers/adminjs-firebase-functions/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-firebase-functions/workflows/CI/CD/badge.svg"></a> |
-| @adminjs/hapijs             | <a href="https://github.com/SoftwareBrothers/adminjs-hapijs/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-hapijs/workflows/CI/CD/badge.svg"></a>                         |
-| @adminjs/import             | <a href="https://github.com/SoftwareBrothers/adminjs-import-export/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-import-export/workflows/CI/CD/badge.svg"></a>           |
-| @adminjs/logger             | <a href="https://github.com/SoftwareBrothers/adminjs-logger/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-logger/workflows/CI/CD/badge.svg"></a>                         |
-| @adminjs/mikroorm           | <a href="https://github.com/SoftwareBrothers/adminjs-mikroorm/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-mikroorm/workflows/CI/CD/badge.svg"></a>                     |
-| @adminjs/mongoose           | <a href="https://github.com/SoftwareBrothers/adminjs-mongoose/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-mongoose/workflows/CI/CD/badge.svg"></a>                     |
-| @adminjs/nestjs             | <a href="https://github.com/SoftwareBrothers/adminjs-nestjs/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-nestjs/workflows/CI/CD/badge.svg"></a>                         |
-| @adminjs/passwords          | <a href="https://github.com/SoftwareBrothers/adminjs-passwords/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-passwords/workflows/CI/CD/badge.svg"></a>                   |
-| @adminjs/prisma             | <a href="https://github.com/SoftwareBrothers/adminjs-prisma/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-prisma/workflows/CI/CD/badge.svg"></a>                         |
-| @adminjs/sequelizejs        | <a href="https://github.com/SoftwareBrothers/adminjs-sequelizejs/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-sequelizejs/workflows/CI/CD/badge.svg"></a>               |
-| @adminjs/typeorm            | <a href="https://github.com/SoftwareBrothers/adminjs-typeorm/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-typeorm/workflows/CI/CD/badge.svg"></a>                       |
-| @adminjs/upload             | <a href="https://github.com/SoftwareBrothers/adminjs-upload/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-upload/workflows/CI/CD/badge.svg"></a>                         |
 
 ## License
 
