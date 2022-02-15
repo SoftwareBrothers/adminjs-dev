@@ -1,10 +1,14 @@
+<h1 align="center">AdminJS Dev</h1>
+
+<p align="center">Monorepo for AdminJS and plugins</p>
+
 ## AdminJS Dev/Documentation
 
 This is a wrapper repo for the entire AdminJS core with a couple of plugins. If you are a developer and you want to work on the AdminJS infrastructure - this is the right repository.
 
 ## OpenSource SoftwareBrothers community
 
-- [Join the community](https://join.slack.com/t/adminbro/shared_invite/zt-djsqxxpz-_YCS8UMtQ9Ade6DPuLR7Zw) to get help and be inspired.
+[Join the community](https://join.slack.com/t/adminbro/shared_invite/zt-djsqxxpz-_YCS8UMtQ9Ade6DPuLR7Zw) to get help and be inspired.
 
 ## Setting up
 
@@ -59,10 +63,11 @@ If you want to work on some plugins with auto re-build just modify `watch` direc
 ```json
 {
   "scripts": {
-    "start:example": "yarn workspace example dev:watch --watch ../../packages/adminjs-design-system/build",
+    "start:example": "yarn workspace example dev:watch --watch ../../packages/adminjs-design-system/build"
   }
 }
 ```
+
 or use two terminals with watch parameter of example app
 
 ```sh
@@ -78,6 +83,7 @@ This monorepo contains packages as git submodules. If you want to run script fro
 To list available workspaces run `yarn workspaces info`.
 
 For example to build AdminJS or some plugin run
+
 ```sh
 # Build AdminJS
 $ yarn workspace adminjs build
@@ -87,7 +93,7 @@ $ yarn workspace @adminjs/design-system build
 
 _You don't have to use `yarn link` anymore._
 
-## Note about the git
+## Note about the Git
 
 As mentioned before, this repo contains other repositories as git submodules. You can change their branches, modify the content and commit changes to them separately. Committing to this repo won't affect any submodule.
 
@@ -97,12 +103,13 @@ Repo also contains documentation of the project. To regenerate it you need to ma
 
 1. make sure you have all submodules on the master branch.
 2. documentation generates previews of react components which is not well handled.
-Documentation (parcel bundler to be exact) has to have one package.json
-from which it takes all dependencies like react, react-dom etc. In submodules each package
-has its own react dependency which causes multiple react versions to be bundled and previews
-wont work.
+   Documentation (parcel bundler to be exact) has to have one package.json
+   from which it takes all dependencies like react, react-dom etc. In submodules each package
+   has its own react dependency which causes multiple react versions to be bundled and previews
+   wont work.
 
 In order to fix that:
+
 - remove node_modules from all of the packages `rm -fR */node_modules`
 - rename `adminjs/package.json` to `adminjs/package2.json` (or something else)
 - do the same thing with `adminjs-design-system/package.json`
@@ -136,7 +143,28 @@ and old versions (sitting in `docs-old` folder).
 In order to deploy it run `firebase deploy` (after generating documentation of course) :) It will
 deploy all firebase hosting targets stored in `.fireabserc`
 
-Documentation is
+## GitHub workflows
+
+| Package                     | CI/CD                                                                                                                                                                                            |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| @adminjs                    | <a href="https://github.com/SoftwareBrothers/adminjs/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs/workflows/CI/CD/badge.svg"></a>                                       |
+| @adminjs/bundler            | <a href="https://github.com/SoftwareBrothers/adminjs-bundler/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-bundler/workflows/CI/CD/badge.svg"></a>                       |
+| @adminjs/design-system      | <a href="https://github.com/SoftwareBrothers/adminjs-design-system/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-design-system/workflows/CI/CD/badge.svg"></a>           |
+| @adminjs/example-app        | <a href="https://github.com/SoftwareBrothers/adminjs-example-app/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-example-app/workflows/CI/CD/badge.svg"></a>               |
+| @adminjs/expressjs          | <a href="https://github.com/SoftwareBrothers/adminjs-expressjs/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-expressjs/workflows/CI/CD/badge.svg"></a>                   |
+| @adminjs/fastify            | <a href="https://github.com/SoftwareBrothers/adminjs-fastify/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-fastify/workflows/CI/CD/badge.svg"></a>                       |
+| @adminjs/firebase-functions | <a href="https://github.com/SoftwareBrothers/adminjs-firebase-functions/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-firebase-functions/workflows/CI/CD/badge.svg"></a> |
+| @adminjs/hapijs             | <a href="https://github.com/SoftwareBrothers/adminjs-hapijs/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-hapijs/workflows/CI/CD/badge.svg"></a>                         |
+| @adminjs/import             | <a href="https://github.com/SoftwareBrothers/adminjs-import-export/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-import-export/workflows/CI/CD/badge.svg"></a>           |
+| @adminjs/logger             | <a href="https://github.com/SoftwareBrothers/adminjs-logger/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-logger/workflows/CI/CD/badge.svg"></a>                         |
+| @adminjs/mikroorm           | <a href="https://github.com/SoftwareBrothers/adminjs-mikroorm/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-mikroorm/workflows/CI/CD/badge.svg"></a>                     |
+| @adminjs/mongoose           | <a href="https://github.com/SoftwareBrothers/adminjs-mongoose/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-mongoose/workflows/CI/CD/badge.svg"></a>                     |
+| @adminjs/nestjs             | <a href="https://github.com/SoftwareBrothers/adminjs-nestjs/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-nestjs/workflows/CI/CD/badge.svg"></a>                         |
+| @adminjs/passwords          | <a href="https://github.com/SoftwareBrothers/adminjs-passwords/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-passwords/workflows/CI/CD/badge.svg"></a>                   |
+| @adminjs/prisma             | <a href="https://github.com/SoftwareBrothers/adminjs-prisma/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-prisma/workflows/CI/CD/badge.svg"></a>                         |
+| @adminjs/sequelizejs        | <a href="https://github.com/SoftwareBrothers/adminjs-sequelizejs/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-sequelizejs/workflows/CI/CD/badge.svg"></a>               |
+| @adminjs/typeorm            | <a href="https://github.com/SoftwareBrothers/adminjs-typeorm/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-typeorm/workflows/CI/CD/badge.svg"></a>                       |
+| @adminjs/upload             | <a href="https://github.com/SoftwareBrothers/adminjs-upload/actions"><img alt="" src="https://github.com/SoftwareBrothers/adminjs-upload/workflows/CI/CD/badge.svg"></a>                         |
 
 ## License
 
@@ -146,8 +174,7 @@ AdminJS is Copyright © 2021 SoftwareBrothers.co. It is free software, and may b
 
 <img src="https://softwarebrothers.co/assets/images/software-brothers-logo-full.svg" width=240>
 
-
 We’re an open, friendly team that helps clients from all over the world to transform their businesses and create astonishing products.
 
-* We are available for [hire](https://softwarebrothers.co/contact).
-* If you want to work for us - check out the [career page](https://softwarebrothers.co/career).
+- We are available for [hire](https://softwarebrothers.co/contact).
+- If you want to work for us - check out the [career page](https://softwarebrothers.co/career).
