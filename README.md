@@ -37,7 +37,7 @@ This is a wrapper repo for the entire AdminJS core with a couple of plugins. If 
 
 ### Clone
 
-All AdminJS plugins are embedded as git submodules in `packages` with yarn workspace structure.
+All AdminJS plugins are embedded as git submodules in `packages` with a yarn workspace structure.
 To clone the entire repo with all the dependencies (`--recurse-submodules`) simply run:
 
 ```sh
@@ -56,7 +56,7 @@ $ chmod +x ./scripts/bootstrap.sh && ./scripts/bootstrap.sh
 
 ### Development
 
-Your local environment should bootstrap successfully. Then to work on example app you need databases. **If you have already running MySQL, PostgreSQL and MongoDB on your host machine then skip this step.** Otherwise we made it easier for you with docker-compose. Enter the `./infrastructure` directory and run docker:
+Your local environment should bootstrap successfully. Then to work on an example app you need databases. **If you have already run MySQL, PostgreSQL and MongoDB on your host machine then skip this step**. Otherwise, we made it easier for you with docker-compose. Enter the `./infrastructure` directory and run docker:
 
 ```sh
 $ yarn docker:up
@@ -77,11 +77,11 @@ $ yarn workspace adminjs dev
 $ yarn workspace example dev:watch
 ```
 
-**That's all**. You can now open admin panel on your browser: http://localhost:8080/admin. All changes you will make in AdminJS will be available after refresh page.
+**That's all**. You can now open the admin panel on your browser: http://localhost:8080/admin. All changes you will make in AdminJS will be available after refresh page.
 
 ## Working on plugins
 
-If you want to work on some plugins with auto re-build just modify `watch` directories in main `package.json` (`start:example`) eg. to work on `adminjs-design-system`
+If you want to work on some plugins with auto re-build just modify `watch` directories in the main `package.json` (`start:example`) eg. to work on `adminjs-design-system`
 
 ```json
 {
@@ -102,7 +102,7 @@ $ yarn workspace example dev:watch --watch ../../packages/adminjs-design-system/
 
 ## Note about workspaces
 
-This monorepo contains packages as git submodules. If you want to run script from package just use `yarn workspace [name] [script]` command.
+This monorepo contains packages as git submodules. If you want to run a script from package just use `yarn workspace [name] [script]` command.
 To list available workspaces run `yarn workspaces info`.
 
 For example to build AdminJS or some plugin run
@@ -125,11 +125,11 @@ As mentioned before, this repo contains other repositories as git submodules. Yo
 Repo also contains documentation of the project. To regenerate it you need to make some preparation:
 
 1. make sure you have all submodules on the master branch.
-2. documentation generates previews of react components which is not well handled.
+2. documentation generates previews of react components which are not well handled.
    Documentation (parcel bundler to be exact) has to have one package.json
    from which it takes all dependencies like react, react-dom etc. In submodules each package
    has its own react dependency which causes multiple react versions to be bundled and previews
-   wont work.
+   won't work.
 
 In order to fix that:
 
@@ -143,11 +143,11 @@ In order to fix that:
 yarn run docs
 ```
 
-Documentation uses jsdoc along with the better-docs documentation template. Better-docs is included inside this repo as a submodule.
+The documentation uses jsdoc along with the better-docs documentation template. Better-docs is included inside this repo as a submodule.
 
 You can enter the `better-docs` folder and develop documentation with live reload.
 
-In case of any problems you might need to remove the .cache folder form the root repo (created
+In case of any problems you might need to remove the .cache folder from the root repo (created
 by parcel bundler)
 
 ```sh
@@ -168,7 +168,7 @@ deploy all firebase hosting targets stored in `.fireabserc`
 
 ## License
 
-AdminJS is Copyright © 2021 SoftwareBrothers.co. It is free software, and may be redistributed under the terms specified in the [LICENSE](LICENSE) file.
+AdminJS is Copyright © 2021 SoftwareBrothers.co. It is free software and may be redistributed under the terms specified in the [LICENSE](LICENSE) file.
 
 ## About SoftwareBrothers.co
 
