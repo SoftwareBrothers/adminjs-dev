@@ -36,6 +36,7 @@
     "jsdoc-escape-at": "^1.0.1",
     "jsdoc-mermaid": "^1.0.0",
     "jsdoc-typeof-plugin": "^1.0.0",
+    "npm-run-all": "^4.1.5",
     "react-datepicker": "^4.6.0",
     "rollup": "2.32.1"
   },
