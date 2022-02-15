@@ -17,8 +17,6 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "diffEditor.ignoreTrimWhitespace": true,
-  "diffEditor.renderSideBySide": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
