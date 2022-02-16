@@ -6,6 +6,7 @@ git submodule add -b main git@github.com:SoftwareBrothers/adminjs-bundler.git pa
 git submodule add -b main git@github.com:SoftwareBrothers/adminjs-fastify.git packages/adminjs-fastify
 git submodule add -b main git@github.com:SoftwareBrothers/adminjs-import-export.git packages/adminjs-import-export
 git submodule add -b main git@github.com:SoftwareBrothers/adminjs-prisma.git packages/adminjs-prisma
+git submodule add -b main git@github.com:SoftwareBrothers/adminjs-themes.git packages/adminjs-themes
 git submodule add -b master git@github.com:SoftwareBrothers/adminjs-design-system.git packages/adminjs-design-system
 git submodule add -b master git@github.com:SoftwareBrothers/adminjs-example-app.git packages/adminjs-example-app
 git submodule add -b master git@github.com:SoftwareBrothers/adminjs-expressjs.git packages/adminjs-expressjs
