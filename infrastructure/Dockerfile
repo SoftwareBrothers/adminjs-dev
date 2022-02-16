@@ -3,7 +3,7 @@ FROM node:10.13.0
 WORKDIR /usr/src/app
 
 COPY ["packages/adminjs/package*.json", "packages/adminjs/yarn.lock", "./adminjs/"]
-COPY ["packages/dminjs-hapijs/package*.json", "packages/adminjs-hapijs/yarn.lock" , "./adminjs-hapijs/"]
+COPY ["packages/adminjs-hapijs/package*.json", "packages/adminjs-hapijs/yarn.lock" , "./adminjs-hapijs/"]
 COPY ["packages/adminjs-expressjs/package*.json", "packages/adminjs-expressjs/yarn.lock", "./adminjs-expressjs/"]
 COPY ["packages/adminjs-mongoose/package*.json", "packages/adminjs-mongoose/yarn.lock" , "./adminjs-mongoose/"]
 COPY ["packages/adminjs-sequelizejs/package*.json", "packages/adminjs-sequelizejs/yarn.lock", "./adminjs-sequelizejs/"]
