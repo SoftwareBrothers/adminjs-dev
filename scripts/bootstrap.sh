@@ -20,7 +20,8 @@ yarn install --silent
 
 # Build all packages
 echo -e "${YELLOW}Building packages...${NO_COLOR}"
-# Build adminjs first
+# Build AdminJS types first
+yarn workspace @adminjs/design-system build
 yarn workspace adminjs types
 yarn workspaces --no-progress run build
 
