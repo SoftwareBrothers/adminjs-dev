@@ -30,6 +30,14 @@ echo -e "${YELLOW}Building AdminJS...${NO_COLOR}"
 yarn workspace adminjs bundle:globals
 yarn workspace adminjs build
 
+# Bundle AdminJS design system
+echo -e "${YELLOW}Building AdminJS design system...${NO_COLOR}"
+yarn workspace @adminjs/design-system bundle
+
+# Build AdminJS
+echo -e "${YELLOW}Setting up example app...${NO_COLOR}"
+cp packages/adminjs-example-app/.env-example packages/adminjs-example-app/.env
+
 # Restore all yarn locks
 find . -type f -name 'yarn.lock_' -not -path "*/node_modules/*" -exec sh -c 'f="{}"; mv "$f" "${f%_*}"' \;
 
