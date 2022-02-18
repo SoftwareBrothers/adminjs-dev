@@ -2,12 +2,12 @@ FROM node:10.13.0
 
 WORKDIR /usr/src/app
 
-COPY ["adminjs/package*.json", "adminjs/yarn.lock", "./adminjs/"]
-COPY ["adminjs-hapijs/package*.json", "adminjs-hapijs/yarn.lock" , "./adminjs-hapijs/"]
-COPY ["adminjs-expressjs/package*.json", "adminjs-expressjs/yarn.lock", "./adminjs-expressjs/"]
-COPY ["adminjs-mongoose/package*.json", "adminjs-mongoose/yarn.lock" , "./adminjs-mongoose/"]
-COPY ["adminjs-sequelizejs/package*.json", "adminjs-sequelizejs/yarn.lock", "./adminjs-sequelizejs/"]
-COPY ["adminjs-example-app/package*.json", "adminjs-example-app/yarn.lock", "./adminjs-example-app/"]
+COPY ["packages/adminjs/package*.json", "packages/adminjs/yarn.lock", "./adminjs/"]
+COPY ["packages/adminjs-hapijs/package*.json", "packages/adminjs-hapijs/yarn.lock" , "./adminjs-hapijs/"]
+COPY ["packages/adminjs-expressjs/package*.json", "packages/adminjs-expressjs/yarn.lock", "./adminjs-expressjs/"]
+COPY ["packages/adminjs-mongoose/package*.json", "packages/adminjs-mongoose/yarn.lock" , "./adminjs-mongoose/"]
+COPY ["packages/adminjs-sequelizejs/package*.json", "packages/adminjs-sequelizejs/yarn.lock", "./adminjs-sequelizejs/"]
+COPY ["packages/adminjs-example-app/package*.json", "packages/adminjs-example-app/yarn.lock", "./adminjs-example-app/"]
 COPY ["package*.json", "yarn.lock", "./"]
 
 RUN cd adminjs && yarn install
