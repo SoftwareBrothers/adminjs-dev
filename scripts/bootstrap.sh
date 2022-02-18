@@ -20,8 +20,8 @@ yarn install --silent
 
 # Build all packages
 echo -e "${YELLOW}Building packages...${NO_COLOR}"
-# Build mongoose first in order to be dependencey of @adminjs/import-export
-yarn workspace @adminjs/mongoose build
+# Build adminjs first
+yarn workspace adminjs types
 yarn workspaces --no-progress run build
 
 # Build AdminJS
