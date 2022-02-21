@@ -197,7 +197,72 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="container-overview">
     
         
-            <div class="description"><script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script></div>
+            <div class="description"><script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>
+<h2>The AdminJS Data model</h2>
+<p>Before you dive into the details of the flat helpers, let me briefly introduce the way how the
+database data is stored in AdminJS.</p>
+<h3>The Simple Case</h3>
+<p>On the backend all the information from DataBase tables/collections goes to {@BaseRecord#params}
+object. Usually, it is a <code>{key: value}</code> store where <code>key</code> is a table name, and value could be
+either a string, a number, or an instance of Date() etc.</p>
+<p>On the Frontend - these values go to the corresponding RecordJSON.params property.</p>
+<p>This is an example <code>params</code> property in the &quot;simple case&quot;:</p>
+<pre class="prettyprint source lang-javascript"><code>params: {
+  name: 'John',
+  surname: 'Doe',
+  age: 28,
+}
+</code></pre>
+<h3>The Real World Case</h3>
+<p>In the real world:</p>
+<ul>
+<li>databases have nested JSONB properties or Mixed Schemas</li>
+<li>developers would like to send more complicated data from the Fronted to the backend as arrays.</li>
+</ul>
+<p>To achieve that we &quot;flatten&quot; all the data before saving them to <code>params</code> property.</p>
+<p>So in the real world params could look like:</p>
+<pre class="prettyprint source lang-javascript"><code>params: {
+  name: 'John',
+  surname: 'Doe',
+  age: 28,
+  // nested objects
+  'auth.facebook': 'some login token',
+  'auth.twitter': 'twitter login token',
+  // arrays
+  'interests.0': 'running',
+  'interests.1': 'jogging',
+}
+</code></pre>
+<p>and all the data can be even nested on the deeper levels.</p>
+<h3>Why we did that?</h3>
+<p>An alternative solution would be to store an entire raw object and don't care. But there are 2
+reasons why we picked this one.</p>
+<p><strong>1. storing selected data in the database</strong></p>
+<p>If you send to the ORM unflatten save request like this:</p>
+<pre class="prettyprint source lang-javascript"><code>Model.save({{ auth: { facebook: 'newFacebookToken' } }})
+</code></pre>
+<p>it will override an entire <code>auth</code> property, so from the example above, we will lose <code>auth.twitter</code>.</p>
+<p>In the second (flatten) case:</p>
+<pre class="prettyprint source lang-javascript"><code>Model.save({ `auth.facebook`: 'newFacebookToken' }})
+</code></pre>
+<p>ORM should keep the value of the <code>auth.twitter</code></p>
+<blockquote>
+<p>The above is true for Mongoose adapter which is the most advanced regarding handing mixed values</p>
+</blockquote>
+<p><strong>2. Sending data between the Frontend and the Backend in FormData format</strong></p>
+<p>AdminJS allows you to upload Files from the Frontend to the Backend. The most optimal way of
+doing that is by using FormData.
+But, this requires that values for all the fields are send in <code>[key: string]: string</code> form.
+And this, as you might guess, fits perfectly to our flatten <code>params</code> logic.</p>
+<h3>Consequences</h3>
+<p>Flattening in AdminJS has its consequences everywhere where you use</p>
+<ul>
+<li><a href="BaseRecord.html">BaseRecord</a> and</li>
+<li><a href="RecordJSON.html">RecordJSON</a>,</li>
+</ul>
+<p>because instead of raw object you have it's flatten version.</p>
+<p>Also, (as mentioned) the <code>payload</code> send to the backed is also flattened.</p>
+<p>There you should use helpers gathered in flat</p></div>
         
 
         
@@ -783,7 +848,7 @@ them</p></div>
     
     
     <div class="description">
-        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Merges params together and returns flatten result</p>
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>Merges params together and returns flatten result
     </div>
     
 
@@ -1918,7 +1983,7 @@ them</p></div>
 
 
 <div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Type of flatten params.</p>
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>Type of flatten params.
 </div>
 
 
@@ -2047,7 +2112,7 @@ them</p></div>
 
 
 <div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Available types for flatten values. This is an Union of types:</p>
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>Available types for flatten values. This is an Union of types:
 <ul>
 <li><code>string</code></li>
 <li><code>boolean</code></li>

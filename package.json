@@ -14,7 +14,7 @@
     ]
   },
   "scripts": {
-    "docs": "jsdoc -c jsdoc.json",
+    "docs": "rm -rf docs && jsdoc -c jsdoc.json",
     "validate-docs": "jsdoc -c jsdoc-test.json",
     "debug": "nodemon --inspect=0.0.0.0:9222 --nolazy ./index.js",
     "bootstrap": "./scripts/bootstrap.sh",

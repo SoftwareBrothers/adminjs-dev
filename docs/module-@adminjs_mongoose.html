@@ -197,7 +197,59 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="container-overview">
     
         
-            <div class="description"><script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script></div>
+            <div class="description"><script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>
+<h3>A Mongoose database adapter for AdminJS.</h3>
+<h4>Installation</h4>
+<p>To install the adapter run</p>
+<pre class="prettyprint source"><code>yarn add @adminjs/mongoose
+</code></pre>
+<h3>Usage</h3>
+<p>In order to use it in your project register the adapter first:</p>
+<pre class="prettyprint source lang-javascript"><code>const AdminJS = require('adminjs')
+const AdminJSMongoose = require('@adminjs/mongoose')
+<p>AdminJS.registerAdapter(AdminJSMongoose)
+</code></pre></p>
+<h3>Passing an entire database</h3>
+<p>You can now pass an entire database to <a href="AdminJSOptions.html">AdminJSOptions</a></p>
+<pre class="prettyprint source lang-javascript"><code>const mongoose = require('mongoose')
+<p>// even if we pass entire database, models have to be in scope
+require('path-to-your/mongoose-model1')
+require('path-to-your/mongoose-model2')</p>
+<p>const run = async () =&gt; {
+const connection = await mongoose.connect('mongodb://localhost:27017/test', {
+useNewUrlParser: true,
+})
+const AdminJS = new AdminJS({
+databases: [connection],
+//... other AdminJSOptions
+})
+//...
+}
+run()
+</code></pre></p>
+<blockquote>
+<p>Notice, that we connected with the database BEFORE passing it to
+the <strong>AdminJS({})</strong> options. This is very important. Otherwise,
+AdminJS might not find any resources.</p>
+</blockquote>
+<h3>Passing each resource</h3>
+<p>Passing via <em>resource</em> gives you the ability to add additional <a href="ResourceOptions.html">ResourceOptions</a></p>
+<pre class="prettyprint source lang-javascript"><code>const User = mongoose.model('User', { name: String, email: String, surname: String })
+<p>const run = async () =&gt; {
+await mongoose.connect('mongodb://localhost:27017/test', {
+useNewUrlParser: true,
+})
+const AdminJS = new AdminJS({
+resources: [{
+resource: User,
+options: {
+//...
+}
+}],
+//... other AdminJSOptions
+})
+}
+</code></pre></p></div>
         
 
         

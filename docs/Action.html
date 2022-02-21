@@ -343,7 +343,7 @@ ACTIONS.show.after = async () => {...}
 
 
 <div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Type of an action - could be either <em>resource</em>, <em>record</em> or <em>bulk</em>.</p>
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>Type of an action - could be either _resource_, _record_ or _bulk_.
 <img src="./images/actions.png">
 <p>When you define a new action - it is required.</p>
 </div>
@@ -427,8 +427,8 @@ ACTIONS.show.after = async () => {...}
 
 
 <div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>After action hook. When it is given - it is performed on the returned,
-by <a href="Action.html#handler">handler</a> function response.</p>
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>After action hook. When it is given - it is performed on the returned,
+<p>by <a href="Action.html#handler">handler</a> function response.</p>
 <p>You can use it to (just an idea)</p>
 <ul>
 <li>create log of changes done in the app</li>
@@ -553,8 +553,8 @@ ACTIONS.new.after = [createLog]
 
 
 <div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Before action hook. When it is given - it is performed before the <a href="Action.html#handler">Action#handler</a>
-method.</p>
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>Before action hook. When it is given - it is performed before the <a href="Action.html#handler">Action#handler</a>
+<p>method.</p>
 <p>Example of hashing password before creating it:</p>
 <pre class="prettyprint source lang-javascript"><code>actions: {
   new: {
@@ -652,8 +652,8 @@ method.</p>
 
 
 <div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Component which will be used to render the action. To pass the component
-use <a href="AdminJS.html#.bundle">AdminJS.bundle</a> method.</p>
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>Component which will be used to render the action. To pass the component
+<p>use <a href="AdminJS.html#.bundle">AdminJS.bundle</a> method.</p>
 <p>Action components accepts <a href="BaseActionComponent.html#ActionProps">ActionProps</a> and are rendered by the
 <a href="BaseActionComponent.html">BaseActionComponent</a></p>
 <p>When component is set to <code>false</code> then action doesn't have it's own view.
@@ -743,8 +743,8 @@ an action without a view is <a href="module-DeleteAction.html">module:DeleteActi
 
 
 <div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>The max width of action HTML container.
-You can put here an actual size in px or an array of widths, where different values
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>The max width of action HTML container.
+<p>You can put here an actual size in px or an array of widths, where different values
 will be responsible for different breakpoints.
 It is directly passed to action's wrapping <a href="Box.html">Box</a> component, to its <code>width</code> property.</p>
 <p>Examples</p>
@@ -836,8 +836,8 @@ containerWidth: [1, 1/2, 1/3]
 
 
 <div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Any custom properties you want to pass down to <a href="ActionJSON.html">ActionJSON</a>. They have to
-be stringified.</p>
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>Any custom properties you want to pass down to <a href="ActionJSON.html">ActionJSON</a>. They have to
+<p>be stringified.</p>
 </div>
 
 
@@ -916,7 +916,7 @@ be stringified.</p>
 
 
 <div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>guard message - user will have to confirm it before executing an action.</p>
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>guard message - user will have to confirm it before executing an action.
 <pre class="prettyprint source lang-javascript"><code>new AdminJS({ resources: [{
   resource: Car,
   options: { actions: {
@@ -1011,7 +1011,7 @@ translation in AdminJSOptions.Locale</p>
 
 
 <div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>handler function which will be invoked by either:</p>
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>handler function which will be invoked by either:
 <ul>
 <li><a href="ApiController.html#resourceAction">ApiController#resourceAction</a></li>
 <li><a href="ApiController.html#recordAction">ApiController#recordAction</a></li>
@@ -1114,8 +1114,8 @@ like new and edit we suggest using <a href="Action.html#before">Action#before</a
 
 
 <div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Indicates if Action Header should be hidden.
-Action header consist of:</p>
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>Indicates if Action Header should be hidden.
+<p>Action header consist of:</p>
 <ul>
 <li>breadcrumbs</li>
 <li>action buttons</li>
@@ -1199,8 +1199,8 @@ Action header consist of:</p>
 
 
 <div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>icon name for the action. Take a look <a href="Icon.html">Icon</a> component,
-because what you put here is passed down to it.</p>
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>icon name for the action. Take a look <a href="Icon.html">Icon</a> component,
+<p>because what you put here is passed down to it.</p>
 <pre class="prettyprint source lang-javascript"><code>new AdminJS({ resources: [{
   resource: Car,
   options: { actions: { edit: { icon: 'Add' } } },
@@ -1287,8 +1287,8 @@ because what you put here is passed down to it.</p>
 
 
 <div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Indicates if the action can be invoked for given invocation context.
-You can pass a boolean or function of type <a href="Action.html#IsFunction">IsFunction</a>, which
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>Indicates if the action can be invoked for given invocation context.
+<p>You can pass a boolean or function of type <a href="Action.html#IsFunction">IsFunction</a>, which
 takes <a href="Action.html#ActionContext">ActionContext</a> as an argument.</p>
 <p>You can use it as a carrier between the hooks.</p>
 <p>Example for isVisible function which allows the user to edit cars which belongs only
@@ -1395,8 +1395,8 @@ new AdminJS({ resources: [{
 
 
 <div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>indicates if action should be visible for given invocation context.
-It also can be a simple boolean value.
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>indicates if action should be visible for given invocation context.
+<p>It also can be a simple boolean value.
 <code>True</code> by default.
 The most common example of usage is to hide resources from the UI.
 So let say we have 2 resources <strong>User</strong> and <strong>Cars</strong>:</p>
@@ -1508,7 +1508,7 @@ pick car owner.</p>
 
 
 <div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Definition for the layout. Works with the edit and show actions.</p>
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>Definition for the layout. Works with the edit and show actions.
 <p>With the help of <a href="Action.html#LayoutElement">LayoutElement</a> you can put all the properties to whatever
 layout you like, without knowing React.</p>
 <p>This is an example of defining a layout</p>
@@ -1618,8 +1618,8 @@ given property for restricted users.</p>
 
 
 <div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Name of an action which is its uniq key.
-If you use one of <em>list</em>, <em>search</em>, <em>edit</em>, <em>new</em>, <em>show</em>, <em>delete</em> or
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>Name of an action which is its uniq key.
+<p>If you use one of <em>list</em>, <em>search</em>, <em>edit</em>, <em>new</em>, <em>show</em>, <em>delete</em> or
 <em>bulkDelete</em> you override existing actions.
 For all other keys you create a new action.</p>
 </div>
@@ -1700,8 +1700,8 @@ For all other keys you create a new action.</p>
 
 
 <div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Action can be nested. If you give here another action name - it will be nested under it.
-If parent action doesn't exists - it will be nested under name in the parent.</p>
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>Action can be nested. If you give here another action name - it will be nested under it.
+<p>If parent action doesn't exists - it will be nested under name in the parent.</p>
 </div>
 
 
@@ -1780,7 +1780,7 @@ If parent action doesn't exists - it will be nested under name in the parent.</p
 
 
 <div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>if filter should be visible on the sidebar. Only for <em>resource</em> actions</p>
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>if filter should be visible on the sidebar. Only for _resource_ actions
 <p>Example of creating new resource action with filter</p>
 <pre class="prettyprint source lang-javascript"><code>new AdminJS({ resources: [{
   resource: Car,
@@ -1870,7 +1870,7 @@ If parent action doesn't exists - it will be nested under name in the parent.</p
 
 
 <div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Indicates if given action should be seen in a drawer or in a full screen. Default to false</p>
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>Indicates if given action should be seen in a drawer or in a full screen. Default to false
 </div>
 
 
@@ -1949,7 +1949,7 @@ If parent action doesn't exists - it will be nested under name in the parent.</p
 
 
 <div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Defines the variant of the action. based on that it will receive given color.</p>
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>Defines the variant of the action. based on that it will receive given color.
 </div>
 
 
@@ -2037,8 +2037,8 @@ If parent action doesn't exists - it will be nested under name in the parent.</p
 
 
 <div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Execution context for an action. It is passed to the <a href="Action.html#handler">Action#handler</a>,
-<a href="Action.html#before">Action#before</a> and <a href="Action.html#after">Action#after</a> functions.</p>
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>Execution context for an action. It is passed to the <a href="Action.html#handler">Action#handler</a>,
+<p><a href="Action.html#before">Action#before</a> and <a href="Action.html#after">Action#after</a> functions.</p>
 <p>Apart from the properties defined below it also extends <a href="TranslateFunctions.html">TranslateFunctions</a>.
 So you can use i.e. context.translateMessage(...) and others...</p>
 </div>
@@ -2415,8 +2415,8 @@ interface.</p></td>
     
     
     <div class="description">
-        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Type of a handler function. It has to return response compatible
-with <a href="Action.html#ActionResponse">ActionResponse</a>, <a href="Action.html#BulkActionResponse">BulkActionResponse</a> or <a href="Action.html#RecordActionResponse">RecordActionResponse</a></p>
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>Type of a handler function. It has to return response compatible
+<p>with <a href="Action.html#ActionResponse">ActionResponse</a>, <a href="Action.html#BulkActionResponse">BulkActionResponse</a> or <a href="Action.html#RecordActionResponse">RecordActionResponse</a></p>
     </div>
     
 
@@ -2642,7 +2642,7 @@ with <a href="Action.html#ActionResponse">ActionResponse</a>, <a href="Action.ht
 
 
 <div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>ActionRequest</p>
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>ActionRequest
 </div>
 
 
@@ -3055,7 +3055,7 @@ with <a href="Action.html#ActionResponse">ActionResponse</a>, <a href="Action.ht
 
 
 <div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Base response for all actions</p>
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>Base response for all actions
 </div>
 
 
@@ -3253,7 +3253,7 @@ with <a href="Action.html#ActionResponse">ActionResponse</a>, <a href="Action.ht
     
     
     <div class="description">
-        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Type of an after hook action.</p>
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>Type of an after hook action.
     </div>
     
 
@@ -3455,8 +3455,8 @@ with <a href="Action.html#ActionResponse">ActionResponse</a>, <a href="Action.ht
     
     
     <div class="description">
-        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Before action hook. When it is given - it is performed before the <a href="Action.html#ActionHandler">ActionHandler</a>
-method.</p>
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>Before action hook. When it is given - it is performed before the <a href="Action.html#ActionHandler">ActionHandler</a>
+<p>method.</p>
     </div>
     
 
@@ -3657,7 +3657,7 @@ method.</p>
 
 
 <div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Required response of a Record action. Extends <a href="Action.html#ActionResponse">ActionResponse</a></p>
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>Required response of a Record action. Extends <a href="Action.html#ActionResponse">ActionResponse</a>
 </div>
 
 
@@ -3781,7 +3781,7 @@ method.</p>
     
     
     <div class="description">
-        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Defines the type of <a href="Action.html#isAccessible">Action#isAccessible</a> and <a href="Action.html#isVisible">Action#isVisible</a> functions</p>
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>Defines the type of <a href="Action.html#isAccessible">Action#isAccessible</a> and <a href="Action.html#isVisible">Action#isVisible</a> functions
     </div>
     
 
@@ -4009,7 +4009,7 @@ method.</p>
     
     
     <div class="description">
-        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Function returning Array<LayoutElement> used by <a href="Action.html#layout">Action#layout</a></p>
+        <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>Function returning Array<LayoutElement> used by <a href="Action.html#layout">Action#layout</a>
     </div>
     
 
@@ -4197,7 +4197,7 @@ method.</p>
 
 
 <div class="description">
-    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script><p>Required response of a Record action. Extends <a href="Action.html#ActionResponse">ActionResponse</a></p>
+    <script type="text/javascript" src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>Required response of a Record action. Extends <a href="Action.html#ActionResponse">ActionResponse</a>
 </div>
 
 
