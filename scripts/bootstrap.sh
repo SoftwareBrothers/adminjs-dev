@@ -33,6 +33,7 @@ yarn workspace @adminjs/mikroorm build
 yarn workspace @adminjs/mongoose build
 yarn workspace @adminjs/prisma build
 yarn workspace @adminjs/typeorm build
+yarn workspace @adminjs/themes build
 yarn workspaces --no-progress run build
 
 # Build AdminJS
