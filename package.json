@@ -7,23 +7,22 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "packages/adminjs-design-system",
-      "packages/adminjs",
-      "packages/adminjs-mongoose",
       "packages/*"
     ]
   },
   "scripts": {
-    "docs": "jsdoc -c jsdoc.json",
-    "validate-docs": "jsdoc -c jsdoc-test.json",
-    "debug": "nodemon --inspect=0.0.0.0:9222 --nolazy ./index.js",
     "bootstrap": "./scripts/bootstrap.sh",
-    "start": "yarn start:example",
-    "start:example": "yarn workspace example dev:watch --watch ../../packages/adminjs/lib",
-    "dev": "npm-run-all --parallel start:example dev:adminjs",
+    "bundle:design-system": "yarn workspace @adminjs/design-system bundle",
+    "bundle:adminjs": "yarn workspace adminjs bundle",
+    "debug": "nodemon --inspect=0.0.0.0:9222 --nolazy ./index.js",
     "dev:adminjs": "yarn workspace adminjs dev",
-    "dev:design-system": "yarn workspace @adminjs/design-system dev",
-    "docker:up": "docker-compose -f infrastructure/docker-compose.yml up -d"
+    "dev:design-system": "yarn workspace @adminjs/design-system build --watch --preserveWatchOutput",
+    "dev:example": "yarn workspace example start:dev --watch ../../packages/adminjs/lib --preserveWatchOutput",
+    "dev": "npm-run-all --parallel dev:example dev:adminjs",
+    "docker:up": "docker-compose -f infrastructure/docker-compose.yml up -d",
+    "docs": "jsdoc -c jsdoc.json",
+    "start": "yarn workspace example start:dev",
+    "validate-docs": "jsdoc -c jsdoc-test.json"
   },
   "repository": {
     "type": "git",
@@ -40,8 +39,10 @@
     "jsdoc-mermaid": "^1.0.0",
     "jsdoc-typeof-plugin": "^1.0.0",
     "npm-run-all": "^4.1.5",
+    "parcel": "^2.3.2",
     "react-datepicker": "^4.6.0",
-    "rollup": "2.32.1"
+    "rollup": "2.32.1",
+    "sitemap-generator": "^8.5.1"
   },
   "engines": {
     "node": ">=12"

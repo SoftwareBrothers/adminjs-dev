@@ -25,17 +25,23 @@
   "editor.linkedEditing": true,
   "editor.multiCursorModifier": "alt",
   "editor.renderWhitespace": "trailing",
-  "editor.rulers": [120],
+  "editor.rulers": [80],
   "editor.snippetSuggestions": "inline",
   "editor.tabCompletion": "on",
   "editor.tabSize": 2,
   "files.trimTrailingWhitespace": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "prettier.arrowParens": "avoid",
-  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.preferences.importModuleSpecifier": "relative",
   "typescript.preferences.importModuleSpecifierEnding": "minimal",
   "typescript.suggest.autoImports": true,
   "typescript.suggest.completeFunctionCalls": true,
   "typescript.suggest.paths": true,
-  "typescript.updateImportsOnFileMove.enabled": "always"
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "search.exclude": {
+    "**/packages/**/lib": true,
+    "**/packages/**/types": true,
+    "**/packages/**/docs": true,
+    "**/docs": true,
+  }
 }
