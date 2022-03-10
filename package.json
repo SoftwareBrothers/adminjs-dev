@@ -7,24 +7,24 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "packages/adminjs-design-system",
-      "packages/adminjs",
-      "packages/adminjs-mongoose",
       "packages/*"
     ]
   },
   "scripts": {
-    "docs": "rm -rf docs && jsdoc -c jsdoc.json",
-    "docs:sitemap": "node scripts/generate-sitemap.js",
-    "validate-docs": "jsdoc -c jsdoc-test.json",
-    "debug": "nodemon --inspect=0.0.0.0:9222 --nolazy ./index.js",
     "bootstrap": "./scripts/bootstrap.sh",
-    "start": "yarn start:example",
-    "start:example": "yarn workspace example dev:watch --watch ../../packages/adminjs/lib",
-    "dev": "npm-run-all --parallel start:example dev:adminjs",
+    "bundle:design-system": "yarn workspace @adminjs/design-system bundle",
+    "bundle:adminjs": "yarn workspace adminjs bundle",
+    "debug": "nodemon --inspect=0.0.0.0:9222 --nolazy ./index.js",
     "dev:adminjs": "yarn workspace adminjs dev",
-    "dev:design-system": "yarn workspace @adminjs/design-system dev",
-    "docker:up": "docker-compose -f infrastructure/docker-compose.yml up -d"
+    "dev:design-system": "yarn workspace @adminjs/design-system build --watch --preserveWatchOutput",
+    "dev:example": "yarn workspace example start:dev --watch ../../packages/adminjs/lib --watch ../../packages/adminjs-themes/lib --watch ../../packages/adminjs-design-system/build --preserveWatchOutput",
+    "dev:themes": "yarn workspace @adminjs/themes dev --preserveWatchOutput",
+    "dev": "npm-run-all --parallel dev:example dev:adminjs dev:themes",
+    "docker:example": "docker-compose -f packages/adminjs-example-app/docker-compose.yaml up -d",
+    "docker:up": "docker-compose -f infrastructure/docker-compose.yml up -d",
+    "docs": "jsdoc -c jsdoc.json",
+    "start": "yarn start:example",
+    "validate-docs": "jsdoc -c jsdoc-test.json"
   },
   "repository": {
     "type": "git",
