@@ -30,6 +30,7 @@
   "editor.tabCompletion": "on",
   "editor.tabSize": 2,
   "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "prettier.arrowParens": "avoid",
   "typescript.preferences.importModuleSpecifier": "relative",
@@ -38,10 +39,12 @@
   "typescript.suggest.completeFunctionCalls": true,
   "typescript.suggest.paths": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "search.useIgnoreFiles": false,
+  "eslint.workingDirectories": ["../packages/*"],
   "search.exclude": {
     "**/packages/**/lib": true,
     "**/packages/**/types": true,
     "**/packages/**/docs": true,
-    "**/docs": true,
+    "**/docs": true
   }
 }
