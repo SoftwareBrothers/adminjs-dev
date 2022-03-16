@@ -15,7 +15,7 @@
 	url = git@github.com:SoftwareBrothers/adminjs-sequelizejs.git
 	branch = master
 [submodule "packages/adminjs-example-app"]
-	path = packages/adminjs-example-app
+	path = adminjs-example-app
 	url = git@github.com:SoftwareBrothers/adminjs-example-app.git
 	branch = master
 [submodule "packages/adminjs-expressjs"]
