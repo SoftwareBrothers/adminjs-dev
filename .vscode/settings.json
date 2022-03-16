@@ -48,6 +48,7 @@
     "packages/adminjs-typeorm",
     "packages/adminjs-upload"
   ],
+  "eslint.nodeEnv": "development",
   "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
