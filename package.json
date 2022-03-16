@@ -18,7 +18,7 @@
     "debug": "nodemon --inspect=0.0.0.0:9222 --nolazy ./index.js",
     "dev:adminjs": "yarn workspace adminjs dev",
     "dev:design-system": "yarn workspace @adminjs/design-system build --watch --preserveWatchOutput",
-    "dev:example": "yarn workspace example start:dev --watch ../../packages/adminjs/lib --preserveWatchOutput",
+    "dev:example": "yarn workspace example start:dev --watch ../packages/adminjs/lib --preserveWatchOutput",
     "dev": "npm-run-all --parallel dev:example dev:adminjs",
     "docker:up": "docker-compose -f infrastructure/docker-compose.yml up -d",
     "docs": "jsdoc -c jsdoc.json",
