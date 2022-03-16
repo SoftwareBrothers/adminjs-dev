@@ -36,7 +36,10 @@
   },
   "homepage": "https://github.com/SoftwareBrothers/adminjs-dev#readme",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.15.0",
+    "@typescript-eslint/parser": "^5.15.0",
     "better-docs": "2.4.0-beta.4",
+    "eslint": "^8.11.0",
     "eslint-plugin-workspaces": "^0.7.0",
     "jsdoc": "3.6.7",
     "jsdoc-escape-at": "^1.0.1",
@@ -51,17 +54,5 @@
   "engines": {
     "node": ">=12"
   },
-  "dependencies": {
-    "@types/node": "^17.0.21",
-    "@typescript-eslint/eslint-plugin": "^5.15.0",
-    "@typescript-eslint/parser": "^5.15.0",
-    "eslint": "^8.11.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.0.0",
-    "prettier": "^2.5.1",
-    "typescript": "^4.6.2"
-  }
+  "dependencies": {}
 }
