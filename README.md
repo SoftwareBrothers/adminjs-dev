@@ -123,7 +123,10 @@ As mentioned before, this repo contains other repositories as git submodules. Yo
 To update submodules to the latest version use
 
 ```sh
+# Use git strict command
 $ git submodule update --remote
+# or yarn script
+$ yarn update:submodules
 ```
 
 ## Documentation

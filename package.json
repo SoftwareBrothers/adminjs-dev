@@ -26,7 +26,7 @@
     "storybook:init": "yarn --cwd \"packages/adminjs-design-system/storybook/\" install",
     "storybook:build": "yarn --cwd \"packages/adminjs-design-system/storybook/\" storybook:build",
     "storybook": "yarn --cwd \"packages/adminjs-design-system/storybook/\" storybook",
-    "update": "git submodule update --remote",
+    "update:submodules": "git submodule update --remote",
     "validate-docs": "jsdoc -c jsdoc-test.json"
   },
   "repository": {
