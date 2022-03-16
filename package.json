@@ -38,8 +38,8 @@
   },
   "homepage": "https://github.com/SoftwareBrothers/adminjs-dev#readme",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.15.0",
-    "@typescript-eslint/parser": "^5.15.0",
+    "@typescript-eslint/eslint-plugin": "^4.1.1",
+    "@typescript-eslint/parser": "^4.1.1",
     "better-docs": "2.4.0-beta.4",
     "eslint": "^8.11.0",
     "eslint-plugin-workspaces": "^0.7.0",
