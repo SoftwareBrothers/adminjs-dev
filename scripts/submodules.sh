@@ -7,7 +7,6 @@ git submodule add -b main git@github.com:SoftwareBrothers/adminjs-fastify.git pa
 git submodule add -b main git@github.com:SoftwareBrothers/adminjs-import-export.git packages/adminjs-import-export
 git submodule add -b main git@github.com:SoftwareBrothers/adminjs-prisma.git packages/adminjs-prisma
 git submodule add -b master git@github.com:SoftwareBrothers/adminjs-design-system.git packages/adminjs-design-system
-git submodule add -b master git@github.com:SoftwareBrothers/adminjs-example-app.git packages/adminjs-example-app
 git submodule add -b master git@github.com:SoftwareBrothers/adminjs-expressjs.git packages/adminjs-expressjs
 git submodule add -b master git@github.com:SoftwareBrothers/adminjs-firebase-functions.git packages/adminjs-firebase-functions
 git submodule add -b master git@github.com:SoftwareBrothers/adminjs-hapijs.git packages/adminjs-hapijs
@@ -20,4 +19,5 @@ git submodule add -b master git@github.com:SoftwareBrothers/adminjs-sequelizejs.
 git submodule add -b master git@github.com:SoftwareBrothers/adminjs-typeorm.git packages/adminjs-typeorm
 git submodule add -b master git@github.com:SoftwareBrothers/adminjs-upload.git packages/adminjs-upload
 git submodule add -b master git@github.com:SoftwareBrothers/adminjs.git packages/adminjs
+git submodule add -b master git@github.com:SoftwareBrothers/adminjs-example-app.git adminjs-example-app
 git submodule add -b master git@github.com:SoftwareBrothers/better-docs.git

@@ -7,7 +7,8 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "packages/*"
+      "packages/*",
+      "adminjs-example-app"
     ]
   },
   "scripts": {
@@ -17,11 +18,15 @@
     "debug": "nodemon --inspect=0.0.0.0:9222 --nolazy ./index.js",
     "dev:adminjs": "yarn workspace adminjs dev",
     "dev:design-system": "yarn workspace @adminjs/design-system build --watch --preserveWatchOutput",
-    "dev:example": "yarn workspace example start:dev --watch ../../packages/adminjs/lib --preserveWatchOutput",
+    "dev:example": "yarn workspace example start:dev --watch ../packages/adminjs/lib --preserveWatchOutput",
     "dev": "npm-run-all --parallel dev:example dev:adminjs",
     "docker:up": "docker-compose -f infrastructure/docker-compose.yml up -d",
     "docs": "jsdoc -c jsdoc.json",
     "start": "yarn workspace example start:dev",
+    "storybook:init": "yarn --cwd \"packages/adminjs-design-system/storybook/\" install",
+    "storybook:build": "yarn --cwd \"packages/adminjs-design-system/storybook/\" storybook:build",
+    "storybook": "yarn --cwd \"packages/adminjs-design-system/storybook/\" storybook",
+    "update:submodules": "git submodule update --remote",
     "validate-docs": "jsdoc -c jsdoc-test.json"
   },
   "repository": {

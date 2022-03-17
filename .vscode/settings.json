@@ -17,9 +17,7 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true
-  },
+  "editor.codeActionsOnSave": { "source.fixAll": true },
   "editor.detectIndentation": false,
   "editor.insertSpaces": true,
   "editor.linkedEditing": true,
@@ -29,7 +27,30 @@
   "editor.snippetSuggestions": "inline",
   "editor.tabCompletion": "on",
   "editor.tabSize": 2,
+  "eslint.workingDirectories": [
+    "adminjs-example-app",
+    "packages/adminjs",
+    "packages/adminjs-bundler",
+    "packages/adminjs-design-system",
+    "packages/adminjs-expressjs",
+    "packages/adminjs-fastify",
+    "packages/adminjs-firebase-functions",
+    "packages/adminjs-hapijs",
+    "packages/adminjs-import-export",
+    "packages/adminjs-logger",
+    "packages/adminjs-mikroorm",
+    "packages/adminjs-mongoose",
+    "packages/adminjs-nestjs",
+    "packages/adminjs-passwords",
+    "packages/adminjs-prisma",
+    "packages/adminjs-sequelizejs",
+    "packages/adminjs-themes",
+    "packages/adminjs-typeorm",
+    "packages/adminjs-upload"
+  ],
+  "eslint.nodeEnv": "development",
   "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "prettier.arrowParens": "avoid",
   "typescript.preferences.importModuleSpecifier": "relative",
@@ -38,10 +59,15 @@
   "typescript.suggest.completeFunctionCalls": true,
   "typescript.suggest.paths": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "search.useIgnoreFiles": false,
   "search.exclude": {
     "**/packages/**/lib": true,
     "**/packages/**/types": true,
     "**/packages/**/docs": true,
+    "**/packages/**/dist": true,
+    "**/packages/**/build": true,
+    "**/**/dist": true,
     "**/docs": true,
+    "*.d.ts": true
   }
 }

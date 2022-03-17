@@ -120,6 +120,15 @@ _You don't have to use `yarn link` anymore._
 
 As mentioned before, this repo contains other repositories as git submodules. You can change their branches, modify the content and commit changes to them separately. Committing to this repo won't affect any submodule.
 
+To update submodules to the latest version use
+
+```sh
+# Use git strict command
+$ git submodule update --remote
+# or yarn script
+$ yarn update:submodules
+```
+
 ## Documentation
 
 Repo also contains documentation of the project. To regenerate it you need to make some preparation:
