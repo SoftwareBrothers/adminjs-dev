@@ -12,7 +12,6 @@
     "noImplicitThis": true,
     "noUnusedLocals": true,
     "outDir": "./dist",
-    "paths": { "@monorepo/*": ["packages/*/src/index.ts"] },
     "resolveJsonModule": true,
     "sourceMap": true,
     "strictNullChecks": true,
