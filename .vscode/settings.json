@@ -64,6 +64,9 @@
     "**/packages/**/lib": true,
     "**/packages/**/types": true,
     "**/packages/**/docs": true,
+    "**/packages/**/dist": true,
+    "**/packages/**/build": true,
+    "**/**/dist": true,
     "**/docs": true,
     "*.d.ts": true
   }
