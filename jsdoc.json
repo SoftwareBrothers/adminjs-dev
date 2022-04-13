@@ -10,7 +10,7 @@
       "./packages/adminjs-expressjs/src",
       "./packages/adminjs-fastify/src",
       "./packages/adminjs-firebase-functions/src",
-      "./packages/adminjs-hapijs",
+      "./packages/adminjs-hapijs/src",
       "./packages/adminjs-import-export/src",
       "./packages/adminjs-logger/src",
       "./packages/adminjs-mikroorm/src",
@@ -18,7 +18,7 @@
       "./packages/adminjs-nestjs/src",
       "./packages/adminjs-passwords/src",
       "./packages/adminjs-prisma/src",
-      "./packages/adminjs-sequelizejs/src",
+      "./packages/adminjs-sequelizejs",
       "./packages/adminjs-typeorm/src",
       "./packages/adminjs-upload/src"
     ],
