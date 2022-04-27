@@ -74,3 +74,7 @@
 	path = packages/adminjs-bundler
 	url = git@github.com:SoftwareBrothers/adminjs-bundler.git
 	branch = main
+[submodule "packages/adminjs-koa"]
+	path = packages/adminjs-koa
+	url = git@github.com:SoftwareBrothers/adminjs-koa.git
+	branch = master
