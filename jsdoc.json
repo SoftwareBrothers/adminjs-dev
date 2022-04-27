@@ -12,6 +12,7 @@
       "./packages/adminjs-firebase-functions/src",
       "./packages/adminjs-hapijs/src",
       "./packages/adminjs-import-export/src",
+      "./packages/adminjs-koa/src",
       "./packages/adminjs-logger/src",
       "./packages/adminjs-mikroorm/src",
       "./packages/adminjs-mongoose/src",

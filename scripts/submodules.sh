@@ -10,6 +10,7 @@ git submodule add -b master git@github.com:SoftwareBrothers/adminjs-design-syste
 git submodule add -b master git@github.com:SoftwareBrothers/adminjs-expressjs.git packages/adminjs-expressjs
 git submodule add -b master git@github.com:SoftwareBrothers/adminjs-firebase-functions.git packages/adminjs-firebase-functions
 git submodule add -b master git@github.com:SoftwareBrothers/adminjs-hapijs.git packages/adminjs-hapijs
+git submodule add -b master git@github.com:SoftwareBrothers/adminjs-koa.git packages/adminjs-koa
 git submodule add -b master git@github.com:SoftwareBrothers/adminjs-logger.git packages/adminjs-logger
 git submodule add -b master git@github.com:SoftwareBrothers/adminjs-mikroorm.git packages/adminjs-mikroorm
 git submodule add -b master git@github.com:SoftwareBrothers/adminjs-mongoose.git packages/adminjs-mongoose
